@@ -111,6 +111,11 @@ class FakeSRS:
         report = {"segmentation": {"skipped_sections": [], "skipped_tables": [], "warnings": []},
                   "candidate_review": [UNCERTAIN] if self.uncertain else [], "extraction_failures": []}
         (out_dir / "extraction_report.json").write_text(json.dumps(report), encoding="utf-8")
+        blocks = [{"kind": "heading", "text": "Shop SRS", "level": 1, "rows": [], "location": {"paragraph": 0}}] + [
+            {"kind": "paragraph", "text": r["raw_text"], "level": 1, "rows": [], "location": {"paragraph": i}}
+            for i, r in enumerate(REQUIREMENTS, start=1)]
+        (out_dir / "document_blocks.json").write_text(json.dumps({"type": "text", "blocks": blocks}),
+                                                      encoding="utf-8")
         (out_dir / "candidates.json").write_text(json.dumps([{"text": r["raw_text"]} for r in REQUIREMENTS]
                                                             + [{"text": UNCERTAIN["text"]}]), encoding="utf-8")
         finished = {"event": "finished", "requirements": 4, "uncertain": int(self.uncertain)}

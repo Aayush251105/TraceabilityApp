@@ -33,6 +33,10 @@ TraceabilityApp/
         runner.py            Orchestrator: lanes in parallel, review pause, search/map/verify,
                              cancel, resume, recovery after a restart
         cli.py               the pipeline from the terminal
+      api/
+        app.py               FastAPI routes (runs, live stream, review, settings, health)
+        progress.py          elapsed / ETA / overall % / stage rail from the stored stages
+        __main__.py          python -m tracelight.api  (127.0.0.1:8000)
       runners/               wrapper scripts run with each agent's own Python (stdlib only)
         docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
         srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
@@ -89,6 +93,31 @@ Ctrl+C cancels; `resume N` continues a failed or interrupted run from the
 first unfinished stage.  Run data is written to `TraceabilityApp/data/runs/run-N/`
 (input, source, work, docagent, srs, logs) and the database rows use
 `run-N-<name>` as document and repository IDs.
+
+## API server
+
+```powershell
+cd TraceabilityApp\backend
+..\..\SRS_to_code_traceability\.venv\Scripts\python.exe -m tracelight.api      # http://127.0.0.1:8000/docs
+```
+
+Local and single-user: it binds to 127.0.0.1, has no authentication and can
+read local folders, so do not expose it on a network.  Interactive API docs
+are at `/docs`.  Main endpoints:
+
+| Method | Path | Purpose |
+|---|---|---|
+| POST | `/api/inspect` | size check of a ZIP / folder / URL (New run warnings) |
+| POST | `/api/runs` | create a run (multipart: `srs` + `zip` / `folder` / `git_url`) and start it |
+| GET | `/api/runs`, `/api/runs/{id}` | list; detail with stages, lanes, rail, ETA |
+| GET | `/api/runs/{id}/stream` | live updates (server-sent events `log` and `run`) |
+| POST | `/api/runs/{id}/cancel`, `/resume` | |
+| DELETE | `/api/runs/{id}` | run state, files and its traceability rows |
+| GET | `/api/runs/{id}/review`, `/document`, `/review/targets?item=` | review checkpoint |
+| PUT / DELETE | `/api/runs/{id}/review/items/{key}` | resolve / undo one item |
+| POST | `/api/runs/{id}/review/bulk`, `/skip-remaining`, `/complete` | |
+| GET / PUT | `/api/settings` | models per agent, thresholds, limits |
+| GET | `/api/health` | database, Ollama, pulled models, agents |
 
 ## Run stages
 
