@@ -193,3 +193,17 @@
     transition: none !important;
   }
 }
+
+/* Printing (Results → Export → PDF report): the page without the app chrome. */
+@media print {
+  nav[aria-label="Primary"] {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  [role="status"],
+  [role="toolbar"] {
+    display: none !important;
+  }
+}
