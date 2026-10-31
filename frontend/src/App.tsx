@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "./components/layout/AppShell";
 import { CodeView } from "./pages/CodeView";
-import { ComponentSheet } from "./pages/ComponentSheet";
 import { NewRun } from "./pages/NewRun";
 import { NotFound } from "./pages/NotFound";
 import { Pipeline } from "./pages/Pipeline";
@@ -29,7 +28,6 @@ export function App() {
           <Route path="code" element={<CodeView />} />
         </Route>
         <Route path="settings" element={<Settings />} />
-        <Route path="components" element={<ComponentSheet />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

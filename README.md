@@ -157,7 +157,7 @@ frontend/src/
   components/ui/           Button, StatusChip, ProgressBar, Timer, CodeBlock, ClaimItem, GraphNode
   components/layout/       Sidebar, AppShell, PageHeader
   pages/                   Runs, NewRun, Pipeline, Review, Results, Requirement,
-                           CodeView, Settings, ComponentSheet, NotFound
+                           CodeView, Search, Settings, NotFound
 ```
 
 | Page | Route | What it does |

@@ -142,7 +142,6 @@ export function Sidebar({ collapsed = false, onToggle = () => {} }: { collapsed?
       <div className="flex-1" />
 
       <div className="flex flex-col gap-px border-t border-border px-2 pt-2 pb-2">
-        <Item to="/components" label="Component sheet" />
         <Item to="/settings" label="Settings" />
         <button
           onClick={toggleTheme}
