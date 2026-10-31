@@ -126,6 +126,38 @@ are at `/docs`.  Main endpoints:
 | GET / PUT | `/api/settings` | models per agent, thresholds, limits |
 | GET | `/api/health` | database, Ollama, pulled models, agents |
 
+## Frontend
+
+React + TypeScript + Vite + Tailwind, built from the Tracelight designs
+(`Design description follow-up/Tracelight`).  The design tokens (colours for
+light and dark, IBM Plex Sans/Mono bundled locally, verdict colour + shape +
+label) live in `frontend/src/styles/index.css` and `frontend/src/lib/status.ts`.
+
+```powershell
+# terminal 1: the API
+cd TraceabilityApp\backend
+..\..\SRS_to_code_traceability\.venv\Scripts\python.exe -m tracelight.api
+# terminal 2: the UI (proxies /api to 127.0.0.1:8000)
+cd TraceabilityApp\frontend
+npm install        # first time
+npm run dev        # http://127.0.0.1:5173
+```
+
+`npm test` (Vitest), `npm run typecheck`, `npm run build`.  Add `?theme=dark`
+or `?theme=light` to any URL to force a theme.
+
+```
+frontend/src/
+  styles/index.css         tokens (light/dark), Tailwind theme mapping, base styles
+  lib/status.ts            verdicts and run/stage states: label, colours, glyph shape
+  lib/format.ts            clocks, ETA text, percentages, dates
+  lib/theme.ts             theme toggle (persisted)
+  api/                     fetch client, response types, React Query hooks, live stream hook
+  components/ui/           Button, StatusChip, ProgressBar, Timer, CodeBlock, ClaimItem, GraphNode
+  components/layout/       Sidebar, AppShell, PageHeader
+  pages/                   ComponentSheet (more pages step by step)
+```
+
 ## Run stages
 
 | Stage            | Lane | What it does                                              |

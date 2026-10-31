@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/components/ui/Code.tsx"
+        ],
+        "createdAt": "2026-10-31T10:10:33.092Z",
+        "reason": "Design spec: the user-supplied Tracelight Components.html code block uses border-left:3px on cited code lines as a citation gutter marker (not a card side-tab)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "tailwindcss";
+
+/* Design tokens (from the Tracelight designs). Status = colour + shape + label. */
+:root,
+[data-theme="light"] {
+  --bg: #f7f7f6;
+  --panel: #fff;
+  --sidebar: #f2f2f0;
+  --subtle: #f3f3f1;
+  --hover: #ebebe8;
+  --border: #e3e3e0;
+  --border-strong: #cfcfcb;
+  --fg: #17181a;
+  --fg2: #4f5157;
+  --fg3: #6b6d73;
+  --accent: #2c5bc9;
+  --accent-fg: #fff;
+  --accent-bg: #ebf0fb;
+  --ok: #1d7343;
+  --ok-bg: #e6f3eb;
+  --part: #8a5800;
+  --part-bg: #fbf0d9;
+  --bad: #b3261e;
+  --bad-bg: #fbe9e7;
+  --nf: #5a5c62;
+  --nf-bg: #eeeeec;
+  --ins: #36587f;
+  --ins-bg: #e7edf5;
+  --rev: #8b3a8f;
+  --rev-bg: #f5e9f5;
+  --code-bg: #fbfbfa;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0e0e10;
+  --panel: #151517;
+  --sidebar: #111113;
+  --subtle: #1b1b1e;
+  --hover: #222226;
+  --border: #28282c;
+  --border-strong: #3a3a40;
+  --fg: #ececee;
+  --fg2: #b0b1b8;
+  --fg3: #8e9098;
+  --accent: #7b9ef0;
+  --accent-fg: #0e0e10;
+  --accent-bg: #1c2436;
+  --ok: #5cc08a;
+  --ok-bg: #14261c;
+  --part: #e0ad55;
+  --part-bg: #2b2213;
+  --bad: #f08079;
+  --bad-bg: #2d1716;
+  --nf: #a3a5ac;
+  --nf-bg: #232327;
+  --ins: #8fb0d8;
+  --ins-bg: #18202b;
+  --rev: #d79ad9;
+  --rev-bg: #2a1a2b;
+  --code-bg: #121214;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+/* Tailwind utilities that follow the theme: bg-panel, text-fg3, border-border, … */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-sidebar: var(--sidebar);
+  --color-subtle: var(--subtle);
+  --color-hover: var(--hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg2: var(--fg2);
+  --color-fg3: var(--fg3);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-bg: var(--accent-bg);
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-part: var(--part);
+  --color-part-bg: var(--part-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+  --color-nf: var(--nf);
+  --color-nf-bg: var(--nf-bg);
+  --color-ins: var(--ins);
+  --color-ins-bg: var(--ins-bg);
+  --color-rev: var(--rev);
+  --color-rev-bg: var(--rev-bg);
+  --color-code-bg: var(--code-bg);
+  --shadow-panel: var(--shadow);
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  /* The root font size stays at the browser default (16px): Tailwind sizes are rem-based. */
+  html {
+    background: var(--bg);
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 14px/1.5 "IBM Plex Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    font: inherit;
+    color: inherit;
+    white-space: nowrap;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes tlInd {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
