@@ -29,6 +29,10 @@ TraceabilityApp/
                              counts files and components (ast, never executes code)
         review.py            review checkpoint: build items (uncertain / flagged / incomplete /
                              split-duplicate) and apply keep / edit / discard / merge / rename
+        ollama.py            Ollama reachable? models pulled?
+        runner.py            Orchestrator: lanes in parallel, review pause, search/map/verify,
+                             cancel, resume, recovery after a restart
+        cli.py               the pipeline from the terminal
       runners/               wrapper scripts run with each agent's own Python (stdlib only)
         docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
         srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
@@ -63,6 +67,28 @@ cd TraceabilityApp\backend
 Database tests use `traceability_test` with `test_app_*` tables (password from
 `TEST_PG_PASSWORD`); they are skipped when that database is unreachable.
 Set `TRACELIGHT_NETWORK_TESTS=1` to include a real clone from GitHub.
+
+## Run the pipeline from the terminal
+
+```powershell
+cd TraceabilityApp\backend
+$py = "..\..\SRS_to_code_traceability\.venv\Scripts\python.exe"
+& $py -m tracelight.orchestrator.cli init
+& $py -m tracelight.orchestrator.cli run --srs ..\..\library_traceability_dataset\srs\SRS_Library_Management_System.docx --folder ..\..\library_traceability_dataset\codebase
+& $py -m tracelight.orchestrator.cli review 1          # open review items
+& $py -m tracelight.orchestrator.cli continue 1        # apply the review, run search → map → verify
+& $py -m tracelight.orchestrator.cli status 1
+```
+
+Other sources: `--zip code.zip`, `--git https://github.com/owner/repo [--ref main]`.
+Useful flags: `--auto-approve` (no pause; open items kept as unreviewed),
+`--sequential` (SRS lane, then code lane — faster on a small GPU),
+`--docagent-test-mode placeholder` (no LLM docstrings, for a quick smoke run),
+`--model-docagent / --model-srs / --model-judge / --model-verifier` (per-run models).
+Ctrl+C cancels; `resume N` continues a failed or interrupted run from the
+first unfinished stage.  Run data is written to `TraceabilityApp/data/runs/run-N/`
+(input, source, work, docagent, srs, logs) and the database rows use
+`run-N-<name>` as document and repository IDs.
 
 ## Run stages
 
