@@ -27,6 +27,8 @@ TraceabilityApp/
         agents.py            launch DocAgent / SRS Agent subprocesses, parse their events, cancel
         source.py            fetch code: ZIP (safe extract) / folder / https Git shallow clone + SHA;
                              counts files and components (ast, never executes code)
+        review.py            review checkpoint: build items (uncertain / flagged / incomplete /
+                             split-duplicate) and apply keep / edit / discard / merge / rename
       runners/               wrapper scripts run with each agent's own Python (stdlib only)
         docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
         srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
