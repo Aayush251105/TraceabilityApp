@@ -2,14 +2,16 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "./components/layout/AppShell";
 import { ComponentSheet } from "./pages/ComponentSheet";
+import { NewRun } from "./pages/NewRun";
 import { Placeholder } from "./pages/Placeholder";
+import { Runs } from "./pages/Runs";
 
 export function App() {
   return (
     <Routes>
       <Route element={<AppShell />}>
-        <Route index element={<Placeholder title="Runs" step="Step 8" />} />
-        <Route path="new" element={<Placeholder title="New run" step="Step 8" />} />
+        <Route index element={<Runs />} />
+        <Route path="new" element={<NewRun />} />
         <Route path="runs/:runId">
           <Route index element={<Navigate to="pipeline" replace />} />
           <Route path="pipeline" element={<Placeholder title="Live pipeline" step="Step 9" />} />

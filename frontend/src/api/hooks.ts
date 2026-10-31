@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { api } from "./client";
-import type { Health, RunCard, RunDetail, RunEvent } from "./types";
+import type { AppSettings, Health, RunCard, RunDetail, RunEvent } from "./types";
 
 export const keys = {
   runs: ["runs"] as const,
@@ -65,4 +65,11 @@ export function useRunStream(id: number | null) {
   }, [id, qc]);
 
   return { events, state };
+}
+
+export function useSettings() {
+  return useQuery({
+    queryKey: ["settings"],
+    queryFn: () => api.get<{ settings: AppSettings; defaults: AppSettings }>("/api/settings"),
+  });
 }

@@ -227,9 +227,16 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
 
     @app.post("/api/inspect")
     def inspect(source_kind: str = Form(...), zip: Optional[UploadFile] = File(None),
-                folder: Optional[str] = Form(None), git_url: Optional[str] = Form(None)) -> Dict[str, Any]:
+                folder: Optional[str] = Form(None), git_url: Optional[str] = Form(None),
+                exclude_dirs: Optional[str] = Form(None)) -> Dict[str, Any]:
+        """exclude_dirs: JSON list overriding the saved exclusions (what the run will use)."""
         settings = orch.settings_store.load()
         exclude = settings["source"]["exclude_dirs"]
+        if exclude_dirs:
+            try:
+                exclude = [str(x) for x in json.loads(exclude_dirs)]
+            except (json.JSONDecodeError, TypeError) as exc:
+                raise HTTPException(400, f"exclude_dirs is not a JSON list: {exc}") from exc
         if source_kind == "git":
             return {"kind": "git", "url": validate_git_url(git_url or ""), "stats": None,
                     "warnings": [], "note": "The repository is cloned and measured when the run starts."}

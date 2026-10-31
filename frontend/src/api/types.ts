@@ -96,3 +96,42 @@ export interface Health {
   ollama: { ok: boolean; models?: string[]; error?: string };
   models: Record<string, { name: string; pulled: boolean | null }>;
 }
+
+export interface SourceStats {
+  files: number;
+  python_files: number;
+  python_lines: number;
+  bytes: number;
+  classes: number;
+  functions: number;
+  methods: number;
+  components: number;
+  unparsable: string[];
+}
+
+export interface SourceWarning {
+  code: string;
+  level: "warn" | "error";
+  message: string;
+  files?: string[];
+}
+
+export interface InspectResult {
+  kind: "zip" | "folder" | "git";
+  url?: string;
+  stats: SourceStats | null;
+  warnings: SourceWarning[];
+  note?: string;
+}
+
+export interface AppSettings {
+  models: Record<"docagent" | "srs" | "judge" | "verifier", string>;
+  ollama_host: string;
+  ingest: { parallel: boolean; overwrite_docstrings: boolean };
+  search: { top_n: number; candidate_k: number };
+  mapping: { max_direct_rank: number; max_supporting: number; use_source_references: boolean };
+  verification: { claims: string };
+  review: { duplicate_threshold: number };
+  limits: { max_upload_mb: number; large_repo_files: number; large_repo_components: number };
+  source: { exclude_dirs: string[] };
+}

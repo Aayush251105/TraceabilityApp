@@ -134,6 +134,7 @@
   }
 }
 
+/* Motion from the designs: indeterminate bar, content entering, skeleton shimmer, spinner, live dot. */
 @keyframes tlInd {
   0% {
     transform: translateX(-100%);
@@ -141,6 +142,47 @@
   100% {
     transform: translateX(250%);
   }
+}
+@keyframes tlIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tlShim {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+@keyframes tlSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes tlBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.tl-in {
+  animation: tlIn 200ms ease-out;
+}
+.tl-skeleton {
+  background: linear-gradient(90deg, var(--subtle) 0, var(--hover) 50%, var(--subtle) 100%);
+  background-size: 800px 100%;
+  animation: tlShim 1.4s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

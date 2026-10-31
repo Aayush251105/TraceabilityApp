@@ -308,3 +308,14 @@ def test_results_before_tracing(api):
     assert api.get(f"/api/runs/{run_id}/results").json() == {"ready": False, "summary": None, "requirements": []}
     assert api.get(f"/api/runs/{run_id}/export.csv").status_code == 409
     assert api.get(f"/api/runs/{run_id}/code").json()["files"] == []
+
+
+def test_inspect_uses_run_exclusions(api):
+    tests_dir = api.env["repo"] / "tests"
+    tests_dir.mkdir()
+    (tests_dir / "test_cart.py").write_text("def test_a():\n    pass\n", encoding="utf-8")
+    base = {"source_kind": "folder", "folder": str(api.env["repo"])}
+    assert api.post("/api/inspect", data=base).json()["stats"]["components"] == 6
+    r = api.post("/api/inspect", data={**base, "exclude_dirs": json.dumps(["tests"])}).json()
+    assert r["stats"]["components"] == 5
+    assert api.post("/api/inspect", data={**base, "exclude_dirs": "{bad"}).status_code == 400
