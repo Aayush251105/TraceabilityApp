@@ -212,3 +212,19 @@ def test_srs_wrapper_reports_a_missing_file(tmp_path):
     with pytest.raises(AgentError):
         run_srs(PATHS, DEFAULTS, "detect", out_dir=tmp_path / "srs", log_path=tmp_path / "srs.log",
                 input_path=tmp_path / "missing.docx")
+
+
+@needs_docagent
+def test_docagent_wrapper_real_mode_initialises_agents(tmp_path):
+    """Real (LLM) mode builds DocAgent's agents, which read config relative to DocAgent's folder.
+    A repo without functions needs no LLM call, so this runs without Ollama."""
+    repo = tmp_path / "work"
+    repo.mkdir()
+    (repo / "settings.py").write_text("DEBUG = True\n", encoding="utf-8")
+    out = tmp_path / "docagent"
+    result = run_docagent(PATHS, DEFAULTS, repo_path=repo, out_dir=out, log_path=tmp_path / "docagent.log",
+                          test_mode="none")
+    assert result.last("plan")["total"] == 0 and result.last("finished") is not None
+    graph = Path(result.last("graph_saved")["path"])
+    assert graph.parent == out / "output" / "dependency_graphs"      # in the run folder, not DocAgent/output
+    assert graph.exists()

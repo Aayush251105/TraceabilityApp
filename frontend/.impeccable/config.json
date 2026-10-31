@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-31T10:10:33.092Z",
         "reason": "Design spec: the user-supplied Tracelight Components.html code block uses border-left:3px on cited code lines as a citation gutter marker (not a card side-tab)"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/components/ui/Form.tsx"
+        ],
+        "createdAt": "2026-10-31T10:20:41.739Z",
+        "reason": "False positive: L103 is a zero-size CSS border triangle (warning icon) copied from the user's Tracelight NewRun.html design, not a card side border"
       }
     ]
   }

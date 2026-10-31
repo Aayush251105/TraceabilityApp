@@ -30,7 +30,7 @@ function recentStatus(run: RunCard): string {
     const supported = run.summary?.status_counts?.supported ?? 0;
     return `${supported}/${run.summary?.requirements ?? 0}`;
   }
-  if (run.status === "paused") return "Needs input";
+  if (run.status === "paused") return run.review.open ? "Needs input" : "Ready";
   return runMeta(run.status).label;
 }
 

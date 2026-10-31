@@ -36,7 +36,7 @@ def emit(event: str, **data) -> None:
     sys.stdout.flush()
 
 
-def _patch_visualizers() -> None:
+def _patch_visualizers(workdir: str) -> None:
     """Replace DocAgent's terminal visualizers with event emitters."""
     import importlib
 
@@ -108,9 +108,13 @@ def _patch_visualizers() -> None:
     original_save = cls.save_dependency_graph
 
     def save_and_report(self, output_path):
-        result = original_save(self, output_path)
+        # DocAgent writes output/dependency_graphs/<repo>_dependency_graph.json relative to
+        # its own folder; each run keeps its graph in its run folder instead.
+        target = os.path.join(workdir, "output", "dependency_graphs", os.path.basename(output_path))
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        result = original_save(self, target)
         components = getattr(self, "components", {}) or {}
-        emit("graph_saved", path=os.path.abspath(output_path), components=len(components))
+        emit("graph_saved", path=os.path.abspath(target), components=len(components))
         return result
 
     cls.save_dependency_graph = save_and_report
@@ -134,8 +138,11 @@ def main(argv=None) -> int:
         pass
 
     docagent_dir = os.path.abspath(args.docagent_dir)
-    os.makedirs(args.workdir, exist_ok=True)
-    os.chdir(args.workdir)
+    workdir = os.path.abspath(args.workdir)
+    os.makedirs(workdir, exist_ok=True)
+    # DocAgent resolves some paths relative to its own folder (its Orchestrator agent
+    # loads config/agent_config.yaml without the --config-path), so it runs from there.
+    os.chdir(docagent_dir)
     sys.path.insert(0, docagent_dir)
     sys.argv = ["generate_docstrings.py", "--repo-path", os.path.abspath(args.repo_path),
                 "--config-path", os.path.abspath(args.config_path), "--test-mode", args.test_mode]
@@ -144,7 +151,7 @@ def main(argv=None) -> int:
 
     try:
         import generate_docstrings
-        _patch_visualizers()
+        _patch_visualizers(workdir)
         emit("started", repo_path=os.path.abspath(args.repo_path), test_mode=args.test_mode)
         generate_docstrings.main()
     except SystemExit as exc:

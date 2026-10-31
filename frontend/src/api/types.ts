@@ -135,3 +135,48 @@ export interface AppSettings {
   limits: { max_upload_mb: number; large_repo_files: number; large_repo_components: number };
   source: { exclude_dirs: string[] };
 }
+
+export interface VerdictView {
+  status: string;
+  source: "human" | "verifier" | null;
+  machine: string | null;
+  note?: string | null;
+}
+
+export interface Flag {
+  code: string;
+  label: string;
+  level: "info" | "warn" | "error";
+}
+
+export interface ResultRow {
+  requirement_id: string;
+  title: string;
+  type: string;
+  subtype: string;
+  verdict: VerdictView;
+  claims: { supported: number; total: number };
+  links: { direct: number; supporting: number; total: number };
+  flags: Flag[];
+  human: string | null;
+  location: Record<string, unknown>;
+  verified_at: string | null;
+}
+
+export interface ResultsSummary {
+  requirements: number;
+  counts: Record<string, number>;
+  pending: number;
+  supported: number;
+  likely_not_implemented: number;
+  needs_attention: number;
+  overridden: number;
+  unreviewed: number;
+  components: { total: number; cited_as_evidence: number };
+}
+
+export interface Results {
+  ready: boolean;
+  summary: ResultsSummary | null;
+  requirements: ResultRow[];
+}

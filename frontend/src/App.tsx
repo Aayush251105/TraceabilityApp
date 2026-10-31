@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { ComponentSheet } from "./pages/ComponentSheet";
 import { NewRun } from "./pages/NewRun";
+import { Pipeline } from "./pages/Pipeline";
 import { Placeholder } from "./pages/Placeholder";
 import { Runs } from "./pages/Runs";
 
@@ -14,7 +15,7 @@ export function App() {
         <Route path="new" element={<NewRun />} />
         <Route path="runs/:runId">
           <Route index element={<Navigate to="pipeline" replace />} />
-          <Route path="pipeline" element={<Placeholder title="Live pipeline" step="Step 9" />} />
+          <Route path="pipeline" element={<Pipeline />} />
           <Route path="review" element={<Placeholder title="Review" step="Step 10" />} />
           <Route path="results" element={<Placeholder title="Results" step="Step 11" />} />
           <Route path="requirements/:requirementId" element={<Placeholder title="Requirement" step="Step 12" />} />

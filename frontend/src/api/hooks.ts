@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { api } from "./client";
-import type { AppSettings, Health, RunCard, RunDetail, RunEvent } from "./types";
+import type { AppSettings, Health, Results, RunCard, RunDetail, RunEvent } from "./types";
 
 export const keys = {
   runs: ["runs"] as const,
@@ -71,5 +71,14 @@ export function useSettings() {
   return useQuery({
     queryKey: ["settings"],
     queryFn: () => api.get<{ settings: AppSettings; defaults: AppSettings }>("/api/settings"),
+  });
+}
+
+export function useResults(id: number | null, opts: { enabled?: boolean; live?: boolean } = {}) {
+  return useQuery({
+    queryKey: ["results", id],
+    queryFn: () => api.get<Results>(`/api/runs/${id}/results`),
+    enabled: id != null && (opts.enabled ?? true),
+    refetchInterval: opts.live ? 3000 : false,
   });
 }
