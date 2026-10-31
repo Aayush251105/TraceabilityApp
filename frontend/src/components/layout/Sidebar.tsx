@@ -1,6 +1,7 @@
 import { NavLink, useMatch } from "react-router-dom";
 
 import { useHealth, useRuns } from "../../api/hooks";
+import { PanelIcon } from "../ui/Icon";
 import type { RunCard } from "../../api/types";
 import { runMeta } from "../../lib/status";
 import { useTheme } from "../../lib/theme";
@@ -41,7 +42,28 @@ function useCurrentRun(runs: RunCard[] | undefined): RunCard | undefined {
   return (id != null && runs?.find((r) => r.run_id === id)) || runs?.[0];
 }
 
-export function Sidebar() {
+const COLLAPSE_BUTTON =
+  "flex h-7 w-7 flex-none cursor-pointer items-center justify-center rounded-md border-0 bg-transparent text-fg3 hover:bg-hover hover:text-fg";
+
+/** The slim rail shown while the sidebar is collapsed. */
+function Rail({ onToggle, ollamaOk, healthKnown }: { onToggle: () => void; ollamaOk: boolean; healthKnown: boolean }) {
+  return (
+    <nav aria-label="Primary" className="sticky top-0 flex h-screen w-12 flex-none flex-col items-center gap-2 border-r border-border bg-sidebar py-3">
+      <NavLink to="/" aria-label="Runs" title="Runs" className="relative h-[18px] w-[18px] flex-none rounded bg-fg">
+        <span className="absolute top-1 left-1 h-2.5 w-1.5 rounded-[1px] bg-sidebar" />
+      </NavLink>
+      <button onClick={onToggle} aria-label="Expand sidebar" aria-expanded={false} title="Expand sidebar  [" className={COLLAPSE_BUTTON}>
+        <PanelIcon collapsed />
+      </button>
+      <span className="flex-1" />
+      <span role="status" title={ollamaOk ? "Ollama connected" : healthKnown ? "Ollama unreachable" : "Checking Ollama…"}
+        className="mb-1 h-[7px] w-[7px] rounded-full"
+        style={{ background: ollamaOk ? "var(--ok)" : healthKnown ? "var(--bad)" : "var(--fg3)" }} />
+    </nav>
+  );
+}
+
+export function Sidebar({ collapsed = false, onToggle = () => {} }: { collapsed?: boolean; onToggle?: () => void }) {
   const { data: runs } = useRuns();
   const { data: health, isError: healthDown } = useHealth();
   const [theme, toggleTheme] = useTheme();
@@ -56,6 +78,8 @@ export function Sidebar() {
         ? `Ollama connected · ${health.ollama_host.replace(/^https?:\/\//, "").replace(/:\d+$/, "")}`
         : "Ollama unreachable";
 
+  if (collapsed) return <Rail onToggle={onToggle} ollamaOk={ollamaOk} healthKnown={!!health || healthDown} />;
+
   return (
     <nav
       aria-label="Primary"
@@ -66,6 +90,9 @@ export function Sidebar() {
           <div className="absolute top-1 left-1 h-2.5 w-1.5 rounded-[1px] bg-sidebar" />
         </div>
         <span className="text-sm font-semibold tracking-[-0.01em]">Tracelight</span>
+        <button onClick={onToggle} aria-label="Collapse sidebar" aria-expanded title="Collapse sidebar  [" className={`ml-auto ${COLLAPSE_BUTTON}`}>
+          <PanelIcon />
+        </button>
       </div>
 
       <div className="flex flex-col gap-px px-2 py-1">
@@ -83,6 +110,7 @@ export function Sidebar() {
             <Item to={`/runs/${current.run_id}/pipeline`} label="Live pipeline" />
             <Item to={`/runs/${current.run_id}/review`} label="Review" badge={current.review.open} />
             <Item to={`/runs/${current.run_id}/results`} label="Results" />
+            <Item to={`/runs/${current.run_id}/search`} label="Search" />
             <Item to={`/runs/${current.run_id}/code`} label="Code view" />
           </div>
         </>

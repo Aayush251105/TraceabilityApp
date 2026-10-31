@@ -319,3 +319,35 @@ export interface RequirementDetail {
   search: { component_id: string; name: string; rank: number | null; fused: number | null; channels: Record<string, { rank: number; score: number }>; mapped: boolean }[];
   history: { kind: "verification" | "override"; status: string; model?: string | null; note?: string | null; claims?: { supported: number; total: number }; at: string }[];
 }
+
+export interface SearchMatch {
+  keyword?: boolean;
+  semantic?: boolean;
+  via_docstring?: boolean;
+  exact_id?: boolean;
+}
+
+export interface SearchResult {
+  query: string;
+  mode: "id" | "text" | "empty";
+  scope?: { requirements: boolean; code: boolean };
+  requirements: {
+    requirement_id: string;
+    title: string | null;
+    type: string | null;
+    verdict: string;
+    score: number | null;
+    match: SearchMatch;
+    components: { component_id: string; role: "direct" | "supporting"; path: string; start_line: number; end_line: number }[];
+  }[];
+  components: {
+    component_id: string;
+    type: string | null;
+    path: string;
+    start_line: number;
+    end_line: number;
+    score: number;
+    match: SearchMatch;
+    requirements: { requirement_id: string; role: string; title: string | null; verdict: string }[];
+  }[];
+}

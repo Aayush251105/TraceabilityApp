@@ -8,6 +8,7 @@ import type { RunCard } from "../api/types";
 import { PageHeader } from "../components/layout/AppShell";
 import { Alert, Segmented } from "../components/ui/Form";
 import { XIcon } from "../components/ui/Icon";
+import { ConfirmDialog } from "../components/ui/Dialog";
 import { StatusChip } from "../components/ui/Status";
 import { clock, dateTime } from "../lib/format";
 import {
@@ -162,15 +163,18 @@ export function Runs() {
   const [q, setQ] = useState("");
   const qc = useQueryClient();
   const now = useNow(!!runs?.some((r) => r.status === "running"));
+  const [confirmDelete, setConfirmDelete] = useState<RunCard | null>(null);
   const del = useMutation({
     mutationFn: (run: RunCard) => api.json("DELETE", `/api/runs/${run.run_id}`),
-    onSuccess: () => qc.invalidateQueries({ queryKey: keys.runs }),
+    onSuccess: async () => {
+      await qc.invalidateQueries({ queryKey: keys.runs });
+      setConfirmDelete(null);
+    },
   });
 
   const onDelete = (run: RunCard) => {
-    if (window.confirm(`Delete run #${run.run_id} (${run.name})? Its files and results are removed permanently.`)) {
-      del.mutate(run);
-    }
+    del.reset();
+    setConfirmDelete(run);
   };
 
   const rows = runs ? filterRuns(runs, filter, q) : [];
@@ -218,7 +222,6 @@ export function Runs() {
               }))}
             />
           </div>
-          {del.error && <Alert tone="error" title="Delete failed.">{(del.error as ApiError).message}</Alert>}
           <div className="overflow-x-auto rounded-lg border border-border bg-panel">
             <div className="min-w-[1000px]">
               <div className="grid h-9 items-center gap-4 border-b border-border px-4 text-xs font-medium text-fg3" style={{ gridTemplateColumns: COLS }}>
@@ -254,6 +257,27 @@ export function Runs() {
             Runs are stored in the local database. Deleting a run removes its files and results permanently.
           </div>
         </div>
+      )}
+
+      {confirmDelete && (
+        <ConfirmDialog
+          title={`Delete Run #${confirmDelete.run_id}?`}
+          confirmLabel="Delete run"
+          cancelLabel="Keep run"
+          destructive
+          busy={del.isPending}
+          onCancel={() => setConfirmDelete(null)}
+          onConfirm={() => del.mutate(confirmDelete)}
+        >
+          <p className="m-0">
+            <span className="font-medium text-fg">{confirmDelete.name}</span> and everything it produced will be removed:
+            the uploaded files, the working copy, extracted requirements, mappings, verdicts and your overrides.
+            This can’t be undone.
+          </p>
+          {del.error && (
+            <div className="mt-3"><Alert tone="error" title="Delete failed.">{(del.error as ApiError).message}</Alert></div>
+          )}
+        </ConfirmDialog>
       )}
     </div>
   );

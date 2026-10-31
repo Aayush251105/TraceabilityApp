@@ -58,6 +58,7 @@ from ..orchestrator.source import (SourceError, extract_zip, inspect_tree, size_
 from ..settings import DEFAULTS
 from .progress import run_progress
 from .results import OVERRIDE_STATUSES, ResultsReader
+from .search import search_run
 
 TERMINAL = ("completed", "failed", "cancelled")
 
@@ -599,6 +600,15 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
         except RuntimeError as exc:
             raise HTTPException(409, str(exc)) from exc
         return {"run_id": run_id, "verifying": body.requirement_ids}
+
+    @app.get("/api/runs/{run_id}/search")
+    def search(run_id: int, q: str = "", limit: int = Query(10, ge=1, le=50)) -> Dict[str, Any]:
+        """Find requirements and code by keyword or sentence (hybrid search over this run)."""
+        with _reader(run_id) as r:
+            if not r.run.get("document_id") and not r.run.get("repo_id"):
+                return {"query": q, "mode": "empty", "requirements": [], "components": [],
+                        "scope": {"requirements": False, "code": False}}
+            return jsonable_encoder(search_run(r, orch.embedder_factory(), q, limit=limit))
 
     @app.get("/api/runs/{run_id}/code")
     def code_view(run_id: int) -> Dict[str, Any]:

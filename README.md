@@ -121,6 +121,7 @@ are at `/docs`.  Main endpoints:
 | GET | `/api/runs/{id}/requirements/{rid}` | detail: claims, citations, components with code, edges, search ranks, history |
 | POST | `/api/runs/{id}/requirements/{rid}/override` | human verdict `{status, note}` (`cleared` removes it) |
 | POST | `/api/runs/{id}/verify` | re-verify selected requirements `{requirement_ids}` |
+| GET | `/api/runs/{id}/search?q=` | find requirements and code by keyword, sentence or ID (hybrid search) |
 | GET | `/api/runs/{id}/code`, `/code/component?component_id=`, `/files?path=` | code view (pristine source) |
 | GET | `/api/runs/{id}/export.csv`, `/export.json` | downloads |
 | GET / PUT | `/api/settings` | models per agent, thresholds, limits |
@@ -167,6 +168,7 @@ frontend/src/
 | Review | `/runs/:id/review` | the human checkpoint: keep / discard / edit / merge / fix ID, keyboard, bulk, document preview, continue |
 | Results | `/runs/:id/results` | verdict summary and filters, requirement table, re-run verification, CSV / JSON / print-to-PDF |
 | Requirement | `/runs/:id/requirements/:rid` | claims with cited lines, code evidence, mapping subgraph, search ranks, accept / override, history |
+| Search | `/runs/:id/search?q=` | find a feature by keyword or sentence: matching requirements with their verdict and code, matching code with its requirements |
 | Code view | `/runs/:id/code` | files with traced/total, untraced filter, requirements per component, best match for untraced code |
 | Settings | `/settings` | models per agent (pulled? size), Ollama test, pipeline thresholds, database, agents, exclusions |
 

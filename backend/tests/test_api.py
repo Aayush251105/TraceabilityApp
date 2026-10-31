@@ -333,3 +333,29 @@ def test_inspect_uses_run_exclusions(api):
     r = api.post("/api/inspect", data={**base, "exclude_dirs": json.dumps(["tests"])}).json()
     assert r["stats"]["components"] == 5
     assert api.post("/api/inspect", data={**base, "exclude_dirs": "{bad"}).status_code == 400
+
+
+def test_search_run(api, done_run):
+    r = api.get(f"/api/runs/{done_run}/search", params={"q": "discount code"}).json()
+    assert r["mode"] == "text" and r["scope"] == {"requirements": True, "code": True}
+    assert r["requirements"][0]["requirement_id"] == "FR-003"          # "apply a 10% discount for the code SAVE10"
+    top = r["requirements"][0]
+    assert top["title"] == "Discount code" and top["verdict"] in ("supported", "partially_supported", "not_supported_by_candidate")
+    assert top["components"] and top["components"][0]["role"] == "direct"
+    assert any(c["component_id"].endswith("apply_discount") for c in r["components"][:3])
+    linked = next(c for c in r["components"] if c["component_id"].endswith("apply_discount"))
+    assert linked["requirements"]
+    assert linked["match"]["keyword"] or linked["match"]["semantic"]
+
+    by_id = api.get(f"/api/runs/{done_run}/search", params={"q": "FR-004"}).json()
+    assert by_id["mode"] == "id" and by_id["requirements"][0]["requirement_id"] == "FR-004"
+    assert by_id["requirements"][0]["match"] == {"exact_id": True}
+    unknown_id = api.get(f"/api/runs/{done_run}/search", params={"q": "FR-999"}).json()
+    assert unknown_id["mode"] == "text"                                # not an ID here: searched as text
+    assert api.get(f"/api/runs/{done_run}/search", params={"q": "  "}).json()["requirements"] == []
+
+
+def test_search_before_indexing(api):
+    run_id = create(api, start="false")["run_id"]
+    r = api.get(f"/api/runs/{run_id}/search", params={"q": "cart"}).json()
+    assert r["scope"] == {"requirements": False, "code": False} and r["components"] == []

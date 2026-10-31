@@ -10,6 +10,7 @@ import { Requirement } from "./pages/Requirement";
 import { Results } from "./pages/Results";
 import { Review } from "./pages/Review";
 import { Runs } from "./pages/Runs";
+import { Search } from "./pages/Search";
 import { Settings } from "./pages/Settings";
 
 export function App() {
@@ -24,6 +25,7 @@ export function App() {
           <Route path="review" element={<Review />} />
           <Route path="results" element={<Results />} />
           <Route path="requirements/:requirementId" element={<Requirement />} />
+          <Route path="search" element={<Search />} />
           <Route path="code" element={<CodeView />} />
         </Route>
         <Route path="settings" element={<Settings />} />
