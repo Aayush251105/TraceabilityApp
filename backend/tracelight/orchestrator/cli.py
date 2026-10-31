@@ -39,7 +39,9 @@ RESET = "\033[0m"
 def _print_event(e: Dict[str, Any]) -> None:
     lane = f"[{e['lane']}] " if e.get("lane") else "    "
     color = COLORS.get(e.get("level", "info"), "")
-    print(f"{datetime.now():%H:%M:%S} {lane}{color}{e['message']}{RESET if color else ''}", flush=True)
+    ts = e.get("ts")                      # stored events carry their time; live ones are "now"
+    when = ts.astimezone() if ts is not None else datetime.now()
+    print(f"{when:%H:%M:%S} {lane}{color}{e['message']}{RESET if color else ''}", flush=True)
 
 
 def _orchestrator(args: argparse.Namespace, *, verbose: bool = True) -> Orchestrator:
@@ -60,7 +62,13 @@ def _follow(orch: Orchestrator, run_id: int, auto_approve: bool) -> int:
         run = s.get_run(run_id)
     print(f"\nRun {run_id}: {run['status']}" + (f" — {run['error']}" if run["error"] else ""))
     if run["status"] == "paused":
-        print(f"Review the open items:  python -m tracelight.orchestrator.cli review {run_id}")
+        open_items = orch.review_state(run_id)["counts"]["open"]
+        if open_items:
+            print(f"{open_items} item(s) need your review:  python -m tracelight.orchestrator.cli review {run_id}")
+        else:
+            print("Nothing needs a decision. Check the items with "
+                  f"`review {run_id} --all` if you like, then:")
+        print(f"Continue:  python -m tracelight.orchestrator.cli continue {run_id}")
     if run["status"] == "completed":
         print(json.dumps(run["summary"], indent=2))
     return 0 if run["status"] in ("completed", "paused") else 1
@@ -129,6 +137,8 @@ def cmd_review(args) -> int:
     state = _orchestrator(args, verbose=False).review_state(args.run_id)
     c = state["counts"]
     print(f"{c['open']} open of {c['total']} ({c['open_by_category']})\n")
+    if not c["open"] and not args.all:
+        print(f"Nothing open. Use --all to see the resolved items, or run: continue {args.run_id}")
     for it in state["items"]:
         if it["resolution"] and not args.all:
             continue
