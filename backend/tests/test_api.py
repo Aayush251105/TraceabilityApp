@@ -257,6 +257,14 @@ def test_override_and_clear(api, done_run):
     assert d["history"][0]["kind"] == "override" and d["history"][0]["note"].startswith("export")
     r = api.post(url, json={"status": "cleared"}).json()
     assert r["verdict"]["status"] == "not_supported_by_candidate" and r["verdict"]["source"] == "verifier"
+    rows = {x["requirement_id"]: x for x in api.get(f"/api/runs/{done_run}/results").json()["requirements"]}
+    assert rows["FR-004"]["human"] is None
+    api.post(url, json={"status": "not_supported_by_candidate", "note": "accepted"})      # confirming = accepting
+    rows = {x["requirement_id"]: x for x in api.get(f"/api/runs/{done_run}/results").json()["requirements"]}
+    assert rows["FR-004"]["human"] == "Accepted" and rows["FR-004"]["verdict"]["source"] == "human"
+    api.post(url, json={"status": "supported", "note": "changed my mind"})
+    rows = {x["requirement_id"]: x for x in api.get(f"/api/runs/{done_run}/results").json()["requirements"]}
+    assert rows["FR-004"]["human"] == "Overridden"
 
 
 def test_reverify_selected(api, done_run):

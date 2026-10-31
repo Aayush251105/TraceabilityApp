@@ -177,10 +177,11 @@ class ResultsReader:
             out.append({"code": "low_confidence", "label": "Low extraction confidence", "level": "warn"})
         return out
 
-    def human_label(self, requirement_id: str) -> Optional[str]:
+    def human_label(self, requirement_id: str, machine: Optional[str] = None) -> Optional[str]:
+        """'Accepted' when a reviewer confirmed the verifier's verdict, 'Overridden' when they changed it."""
         override = self.overrides.get(requirement_id)
         if override and override["status"] != "cleared":
-            return "Overridden"
+            return "Accepted" if machine is not None and override["status"] == machine else "Overridden"
         status = self.reviewed().get(requirement_id, {}).get("status")
         return {"edited": "Edited", "kept": "Kept", "unreviewed": None}.get(status or "", None)
 
@@ -200,12 +201,14 @@ class ResultsReader:
             v = latest.get(req["requirement_id"])
             claims = (v or {}).get("claims") or []
             c = counts.get(req["req_pk"], {"direct": 0, "supporting": 0})
+            verdict = self.verdict(req["requirement_id"], v)
             rows.append({
                 "requirement_id": req["requirement_id"], "title": req["title"], "type": req["type"],
-                "subtype": req["subtype"], "verdict": self.verdict(req["requirement_id"], v),
+                "subtype": req["subtype"], "verdict": verdict,
                 "claims": {"supported": sum(x.get("verdict") == "supported" for x in claims), "total": len(claims)},
                 "links": {**c, "total": c["direct"] + c["supporting"]},
-                "flags": self.flags(req, v, c["direct"]), "human": self.human_label(req["requirement_id"]),
+                "flags": self.flags(req, v, c["direct"]),
+                "human": self.human_label(req["requirement_id"], verdict["machine"]),
                 "location": req.get("source_location") or {},
                 "verified_at": (v or {}).get("created_at"),
             })

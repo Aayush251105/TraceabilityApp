@@ -233,3 +233,64 @@ export interface MergeTarget {
   similarity: number;
   suggested: boolean;
 }
+
+export interface Evidence {
+  component_id: string;
+  path: string;
+  start_line: number;
+  end_line: number;
+  quote?: string;
+  tag?: string;
+  realigned_from?: [number, number] | null;
+}
+
+export interface Claim {
+  claim_id: string | null;
+  text: string;
+  verdict: string;
+  model_verdict: string | null;
+  rationale: string;
+  source?: string;
+  evidence: Evidence[];
+  rejected: { reference: { component?: string; start_line?: number; end_line?: number; quote?: string } | null; reason: string }[];
+}
+
+export interface MappedComponent {
+  component_id: string;
+  name: string;
+  type: string;
+  role: "direct" | "supporting";
+  status: string;
+  rank: number | null;
+  reason: string | null;
+  path: string;
+  start_line: number;
+  end_line: number;
+  docstring: { kind: string; content: string } | null;
+  scores: { fused: number | null; channels: Record<string, { rank: number; score: number }> };
+  code: { n: number; text: string }[];
+}
+
+export interface RequirementDetail {
+  requirement: {
+    requirement_id: string;
+    title: string;
+    type: string;
+    subtype: string;
+    raw_text: string;
+    normalized_text: string;
+    location: Record<string, number | string>;
+    sub_requirements: string[];
+    conditions: string[];
+    error_conditions: string[];
+    review: { status?: string; original_raw_text?: string; merged_from?: string[] };
+  };
+  verdict: VerdictView;
+  flags: Flag[];
+  verification: { status: string; rationale: string; model: string | null; prompt_version: string | null; created_at: string; incomplete_text: boolean } | null;
+  claims: Claim[];
+  components: MappedComponent[];
+  edges: { from: string; to: string; type: string; source?: string; line?: number }[];
+  search: { component_id: string; name: string; rank: number | null; fused: number | null; channels: Record<string, { rank: number; score: number }>; mapped: boolean }[];
+  history: { kind: "verification" | "override"; status: string; model?: string | null; note?: string | null; claims?: { supported: number; total: number }; at: string }[];
+}

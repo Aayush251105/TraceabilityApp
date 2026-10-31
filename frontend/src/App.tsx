@@ -5,6 +5,7 @@ import { ComponentSheet } from "./pages/ComponentSheet";
 import { NewRun } from "./pages/NewRun";
 import { Pipeline } from "./pages/Pipeline";
 import { Placeholder } from "./pages/Placeholder";
+import { Requirement } from "./pages/Requirement";
 import { Results } from "./pages/Results";
 import { Review } from "./pages/Review";
 import { Runs } from "./pages/Runs";
@@ -20,7 +21,7 @@ export function App() {
           <Route path="pipeline" element={<Pipeline />} />
           <Route path="review" element={<Review />} />
           <Route path="results" element={<Results />} />
-          <Route path="requirements/:requirementId" element={<Placeholder title="Requirement" step="Step 12" />} />
+          <Route path="requirements/:requirementId" element={<Requirement />} />
           <Route path="code" element={<Placeholder title="Code view" step="Step 13" />} />
         </Route>
         <Route path="settings" element={<Placeholder title="Settings" step="Step 13" />} />
