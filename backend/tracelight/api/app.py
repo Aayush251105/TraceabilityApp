@@ -43,7 +43,7 @@ from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse, Response, StreamingResponse
 from pydantic import BaseModel
 
 from traceability.config import TraceabilityConfig
@@ -56,6 +56,7 @@ from ..orchestrator.source import (SourceError, extract_zip, inspect_tree, size_
                                    validate_git_url)
 from ..settings import DEFAULTS
 from .progress import run_progress
+from .results import OVERRIDE_STATUSES, ResultsReader
 
 TERMINAL = ("completed", "failed", "cancelled")
 
@@ -73,6 +74,15 @@ class Resolution(BaseModel):
 class BulkResolution(BaseModel):
     keys: List[str]
     resolution: str
+
+
+class Override(BaseModel):
+    status: str
+    note: Optional[str] = None
+
+
+class Reverify(BaseModel):
+    requirement_ids: List[str]
 
 
 # ---------------------------------------------------------------------------
@@ -497,6 +507,111 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
         result = orch.complete_review(run_id)          # ReviewError -> 409 with item keys
         orch.start(run_id)                              # no-op while the lanes are still running
         return {"run_id": run_id, **result}
+
+    # -- results ------------------------------------------------------------------
+
+    def _reader(run_id: int) -> ResultsReader:
+        with orch.store() as s:
+            run = _run_or_404(s, run_id)
+            overrides = s.latest_overrides(run_id)
+            source = (s.stage(run_id, "fetch")["detail"].get("source") or {}).get("root")
+        return ResultsReader(orch.cfg, run, overrides, Path(source) if source else None)
+
+    @app.get("/api/runs/{run_id}/results")
+    def results(run_id: int) -> Dict[str, Any]:
+        with _reader(run_id) as r:
+            if not r.ready:
+                return {"ready": False, "summary": None, "requirements": []}
+            rows = r.table()
+            return jsonable_encoder({"ready": True, "summary": r.summary(rows), "requirements": rows})
+
+    @app.get("/api/runs/{run_id}/requirements/{requirement_id}")
+    def requirement_detail(run_id: int, requirement_id: str) -> Dict[str, Any]:
+        with _reader(run_id) as r:
+            detail = r.detail(requirement_id) if r.ready else None
+        if detail is None:
+            raise HTTPException(404, f"No requirement {requirement_id!r} in run {run_id}")
+        with orch.store() as s:
+            overrides = s.override_history(run_id, requirement_id)
+        detail["history"] = sorted(
+            detail["history"] + [{"kind": "override", "status": o["status"], "note": o["note"], "at": o["created_at"]}
+                                 for o in overrides],
+            key=lambda h: h["at"], reverse=True)
+        return jsonable_encoder(detail)
+
+    @app.post("/api/runs/{run_id}/requirements/{requirement_id}/override")
+    def override(run_id: int, requirement_id: str, body: Override) -> Dict[str, Any]:
+        if body.status not in OVERRIDE_STATUSES:
+            raise HTTPException(400, f"status must be one of {', '.join(OVERRIDE_STATUSES)}")
+        with _reader(run_id) as r:
+            if not r.ready or not any(x["requirement_id"] == requirement_id for x in r.requirements()):
+                raise HTTPException(404, f"No requirement {requirement_id!r} in run {run_id}")
+        with orch.store() as s:
+            s.add_override(run_id, requirement_id, body.status, (body.note or "").strip() or None)
+            s.add_event(run_id, f"{requirement_id}: verdict "
+                                + ("override cleared" if body.status == "cleared"
+                                   else f"set to {body.status.replace('_', ' ')} by a reviewer"),
+                        stage="results")
+        with _reader(run_id) as r:
+            row = next(x for x in r.table() if x["requirement_id"] == requirement_id)
+        return jsonable_encoder({"requirement_id": requirement_id, "verdict": row["verdict"]})
+
+    @app.post("/api/runs/{run_id}/verify")
+    def reverify(run_id: int, body: Reverify) -> Dict[str, Any]:
+        if not body.requirement_ids:
+            raise HTTPException(400, "Select at least one requirement")
+        with _reader(run_id) as r:
+            if r.run["status"] != "completed":
+                raise HTTPException(409, "Re-verification needs a completed run")
+            known = {x["requirement_id"] for x in r.requirements()}
+        unknown = [rid for rid in body.requirement_ids if rid not in known]
+        if unknown:
+            raise HTTPException(404, f"Unknown requirement(s): {', '.join(unknown)}")
+        try:
+            orch.start_reverify(run_id, body.requirement_ids)
+        except RuntimeError as exc:
+            raise HTTPException(409, str(exc)) from exc
+        return {"run_id": run_id, "verifying": body.requirement_ids}
+
+    @app.get("/api/runs/{run_id}/code")
+    def code_view(run_id: int) -> Dict[str, Any]:
+        with _reader(run_id) as r:
+            return jsonable_encoder(r.code_view())
+
+    @app.get("/api/runs/{run_id}/code/component")
+    def code_component(run_id: int, component_id: str) -> Dict[str, Any]:
+        with _reader(run_id) as r:
+            comp = r.component(component_id) if r.run["repo_id"] else None
+        if comp is None:
+            raise HTTPException(404, f"No component {component_id!r}")
+        return jsonable_encoder(comp)
+
+    @app.get("/api/runs/{run_id}/files")
+    def source_file(run_id: int, path: str) -> Dict[str, Any]:
+        with _reader(run_id) as r:
+            full = r.safe_source_path(path)
+            if full is None or not full.is_file():
+                raise HTTPException(404, f"No file {path!r} in the run's source")
+            lines = full.read_text(encoding="utf-8", errors="replace").splitlines()
+        return {"path": path, "lines": [{"n": i, "text": t} for i, t in enumerate(lines, start=1)]}
+
+    @app.get("/api/runs/{run_id}/export.csv")
+    def export_csv(run_id: int):
+        with _reader(run_id) as r:
+            if not r.ready:
+                raise HTTPException(409, "No results yet")
+            body = r.export_csv()
+        return Response(body, media_type="text/csv; charset=utf-8",
+                        headers={"Content-Disposition": f'attachment; filename="tracelight-run-{run_id}.csv"'})
+
+    @app.get("/api/runs/{run_id}/export.json")
+    def export_json(run_id: int):
+        with _reader(run_id) as r:
+            if not r.ready:
+                raise HTTPException(409, "No results yet")
+            body = json.dumps(jsonable_encoder(r.export_json()), indent=2, ensure_ascii=False)
+        return Response(body, media_type="application/json",
+                        headers={"Content-Disposition": f'attachment; filename="tracelight-run-{run_id}.json"'})
 
     return app
 

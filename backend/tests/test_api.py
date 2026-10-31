@@ -202,3 +202,109 @@ def test_settings_and_health(api):
     assert h["database"]["ok"] and not h["ollama"]["ok"]
     assert h["models"]["verifier"] == {"name": "qwen2.5-coder:14b", "pulled": None}
     assert h["agents"]["docagent"]["dir_ok"]
+
+
+# ---------------------------------------------------------------------------
+# Results (6b)
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture()
+def done_run(api):
+    run_id = create(api, start="false")["run_id"]
+    assert api.orch.execute(run_id, auto_approve=True) == "completed"
+    return run_id
+
+
+def test_results_table_and_summary(api, done_run):
+    r = api.get(f"/api/runs/{done_run}/results").json()
+    assert r["ready"]
+    s = r["summary"]
+    assert s["requirements"] == 5 and s["pending"] == 0
+    assert s["counts"]["not_supported_by_candidate"] == 1 and s["likely_not_implemented"] == 1
+    assert s["unreviewed"] == 1 and s["components"]["total"] == 5
+    rows = {x["requirement_id"]: x for x in r["requirements"]}
+    assert rows["FR-004"]["verdict"] == {"status": "not_supported_by_candidate", "source": "verifier",
+                                         "machine": "not_supported_by_candidate"}
+    assert rows["FR-001"]["links"]["direct"] >= 1 and rows["FR-001"]["claims"]["total"] >= 1
+    assert [f["code"] for f in rows["REQ-001"]["flags"]] == ["unreviewed", "added_at_review"]
+
+
+def test_requirement_detail(api, done_run):
+    d = api.get(f"/api/runs/{done_run}/requirements/FR-002").json()
+    assert d["requirement"]["title"] == "Cart total" and d["verdict"]["status"] == "supported"
+    assert d["verification"]["model"] == "fake-verifier"
+    comp = d["components"][0]
+    assert comp["role"] == "direct" and comp["code"] and comp["code"][0]["n"] == comp["start_line"]
+    claim = d["claims"][0]
+    assert claim["verdict"] == "supported" and claim["evidence"][0]["quote"]
+    assert d["search"] and any(c["mapped"] for c in d["search"])
+    assert d["history"][0]["kind"] == "verification"
+    assert api.get(f"/api/runs/{done_run}/requirements/FR-999").status_code == 404
+
+
+def test_override_and_clear(api, done_run):
+    url = f"/api/runs/{done_run}/requirements/FR-004/override"
+    assert api.post(url, json={"status": "nonsense"}).status_code == 400
+    assert api.post(f"/api/runs/{done_run}/requirements/FR-999/override",
+                    json={"status": "supported"}).status_code == 404
+    r = api.post(url, json={"status": "supported", "note": "export runs in cron, outside this repo"}).json()
+    assert r["verdict"]["status"] == "supported" and r["verdict"]["source"] == "human"
+    assert r["verdict"]["machine"] == "not_supported_by_candidate"
+    summary = api.get(f"/api/runs/{done_run}/results").json()["summary"]
+    assert summary["overridden"] == 1 and summary["counts"]["not_supported_by_candidate"] == 0
+    d = api.get(f"/api/runs/{done_run}/requirements/FR-004").json()
+    assert d["history"][0]["kind"] == "override" and d["history"][0]["note"].startswith("export")
+    r = api.post(url, json={"status": "cleared"}).json()
+    assert r["verdict"]["status"] == "not_supported_by_candidate" and r["verdict"]["source"] == "verifier"
+
+
+def test_reverify_selected(api, done_run):
+    assert api.post(f"/api/runs/{done_run}/verify", json={"requirement_ids": []}).status_code == 400
+    assert api.post(f"/api/runs/{done_run}/verify", json={"requirement_ids": ["FR-999"]}).status_code == 404
+    r = api.post(f"/api/runs/{done_run}/verify", json={"requirement_ids": ["FR-001"]})
+    assert r.status_code == 200
+    deadline = time.monotonic() + 60
+    while api.orch.is_active(done_run) and time.monotonic() < deadline:
+        time.sleep(0.2)
+    d = api.get(f"/api/runs/{done_run}/requirements/FR-001").json()
+    assert [h["kind"] for h in d["history"]].count("verification") == 2
+    assert api.get(f"/api/runs/{done_run}").json()["status"] == "completed"
+
+
+def test_reverify_needs_completed_run(api):
+    run_id = create(api, start="false")["run_id"]
+    assert api.post(f"/api/runs/{run_id}/verify", json={"requirement_ids": ["FR-001"]}).status_code == 409
+
+
+def test_code_view_component_and_files(api, done_run):
+    cv = api.get(f"/api/runs/{done_run}/code").json()
+    assert cv["components"] == 5 and 0 < cv["traced"] <= 5
+    f = cv["files"][0]
+    assert f["path"] == "shop/cart.py" and f["total"] == 5
+    traced = next(c for c in f["components"] if c["traced"])
+    assert traced["requirements"][0]["verdict"] in ("supported", "partially_supported", "not_supported_by_candidate")
+    comp = api.get(f"/api/runs/{done_run}/code/component", params={"component_id": traced["component_id"]}).json()
+    assert comp["code"][0]["n"] == comp["start_line"] and comp["requirements"]
+    assert api.get(f"/api/runs/{done_run}/code/component", params={"component_id": "nope"}).status_code == 404
+    lines = api.get(f"/api/runs/{done_run}/files", params={"path": "shop/cart.py"}).json()["lines"]
+    assert "\n".join(l["text"] for l in lines) == CART.rstrip("\n")          # pristine source
+    for bad in ("../secret.txt", "/etc/passwd", "C:/Windows/win.ini", "shop/../../x.py"):
+        assert api.get(f"/api/runs/{done_run}/files", params={"path": bad}).status_code == 404
+
+
+def test_exports(api, done_run):
+    r = api.get(f"/api/runs/{done_run}/export.csv")
+    assert r.headers["content-disposition"].endswith(f'tracelight-run-{done_run}.csv"')
+    lines = r.text.strip().splitlines()
+    assert lines[0].startswith("requirement_id,title") and len(lines) == 6
+    j = api.get(f"/api/runs/{done_run}/export.json").json()
+    assert j["summary"]["requirements"] == 5 and len(j["requirements"]) == 5
+    assert j["requirements"][0]["claims"]
+
+
+def test_results_before_tracing(api):
+    run_id = create(api, start="false")["run_id"]
+    assert api.get(f"/api/runs/{run_id}/results").json() == {"ready": False, "summary": None, "requirements": []}
+    assert api.get(f"/api/runs/{run_id}/export.csv").status_code == 409
+    assert api.get(f"/api/runs/{run_id}/code").json()["files"] == []

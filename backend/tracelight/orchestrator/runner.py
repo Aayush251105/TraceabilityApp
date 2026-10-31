@@ -209,6 +209,37 @@ class Orchestrator:
                 recovered.append(run["run_id"])
         return recovered
 
+    def start_reverify(self, run_id: int, requirement_ids: List[str]) -> threading.Thread:
+        """Re-run verification for some requirements of a completed run (the verifier
+        appends new rows; the latest one is shown), then refresh the summary."""
+        with self._lock:
+            thread = self._threads.get(run_id)
+            if thread is not None and thread.is_alive():
+                raise RuntimeError(f"Run {run_id} is busy")
+            thread = threading.Thread(target=self._reverify, args=(run_id, list(requirement_ids)),
+                                      name=f"run-{run_id}-reverify", daemon=True)
+            self._threads[run_id] = thread
+            thread.start()
+            return thread
+
+    def _reverify(self, run_id: int, requirement_ids: List[str]) -> None:
+        cancel = threading.Event()
+        self._cancel[run_id] = cancel
+        with self.store() as s:
+            run = s.get_run(run_id)
+            ctx = RunContext(run_id=run_id, run_dir=Path(run["workdir"]), settings=run["settings"], cancel=cancel)
+            self._log(s, ctx, "verify", f"Re-verifying {len(requirement_ids)} requirement(s): "
+                                        f"{', '.join(requirement_ids)}")
+            try:
+                self._stage_verify(s, ctx, requirement_ids=requirement_ids)
+                self._stage_results(s, ctx)
+                self._log(s, ctx, "verify", "Re-verification done", level="ok")
+            except RunCancelled:
+                self._log(s, ctx, "verify", "Re-verification cancelled", level="warn")
+            except Exception as exc:
+                logger.exception("Re-verification of run %s failed", run_id)
+                self._log(s, ctx, "verify", f"Re-verification failed: {exc}", level="error")
+
     # Review -------------------------------------------------------------
 
     def review_state(self, run_id: int) -> Dict[str, Any]:
@@ -610,7 +641,9 @@ class Orchestrator:
                        detail={"links": links, "without_candidates": report["without_candidates"]})
         self._log(s, ctx, "map", f"{links['direct']} direct links, {links['supporting']} supporting links")
 
-    def _stage_verify(self, s: RunStore, ctx: RunContext) -> None:
+    def _stage_verify(self, s: RunStore, ctx: RunContext,
+                      requirement_ids: Optional[List[str]] = None) -> None:
+        """Verify every requirement, or only `requirement_ids` (a re-run; the stage counters are left alone)."""
         from traceability.query import QueryResolver
         from traceability.store import Store
         from traceability.verification import Verifier, VerifierConfig
@@ -620,7 +653,8 @@ class Orchestrator:
         failures = {"consecutive": 0}
 
         def progress(i: int, n: int, r: Dict[str, Any]) -> None:
-            s.update_stage(ctx.run_id, "verify", done=i, total=n, detail={"current": r["requirement_id"]})
+            if requirement_ids is None:
+                s.update_stage(ctx.run_id, "verify", done=i, total=n, detail={"current": r["requirement_id"]})
             supported = sum(c.get("verdict") == "supported" for c in r.get("claims") or [])
             claims = len(r.get("claims") or [])
             note = f" ({supported}/{claims} claims)" if claims else ""
@@ -639,10 +673,11 @@ class Orchestrator:
         with Store(self.cfg) as store:
             report = Verifier(store, QueryResolver(store), llm,
                               VerifierConfig(claim_splitting=ctx.settings["verification"]["claims"])
-                              ).run(run["document_id"], progress=progress)
-        s.update_stage(ctx.run_id, "verify", detail={"status_counts": report["status_counts"], "current": None,
-                                                     "model": report["model"],
-                                                     "prompt_version": report["prompt_version"]})
+                              ).run(run["document_id"], requirement_ids=requirement_ids, progress=progress)
+        if requirement_ids is None:
+            s.update_stage(ctx.run_id, "verify", detail={"status_counts": report["status_counts"], "current": None,
+                                                         "model": report["model"],
+                                                         "prompt_version": report["prompt_version"]})
 
     def _stage_results(self, s: RunStore, ctx: RunContext) -> None:
         from traceability.query import QueryResolver

@@ -36,6 +36,7 @@ TraceabilityApp/
       api/
         app.py               FastAPI routes (runs, live stream, review, settings, health)
         progress.py          elapsed / ETA / overall % / stage rail from the stored stages
+        results.py           read model for results, requirement detail, code view, exports
         __main__.py          python -m tracelight.api  (127.0.0.1:8000)
       runners/               wrapper scripts run with each agent's own Python (stdlib only)
         docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
@@ -116,6 +117,12 @@ are at `/docs`.  Main endpoints:
 | GET | `/api/runs/{id}/review`, `/document`, `/review/targets?item=` | review checkpoint |
 | PUT / DELETE | `/api/runs/{id}/review/items/{key}` | resolve / undo one item |
 | POST | `/api/runs/{id}/review/bulk`, `/skip-remaining`, `/complete` | |
+| GET | `/api/runs/{id}/results` | summary counts + requirement table (effective verdict, claims, links, flags) |
+| GET | `/api/runs/{id}/requirements/{rid}` | detail: claims, citations, components with code, edges, search ranks, history |
+| POST | `/api/runs/{id}/requirements/{rid}/override` | human verdict `{status, note}` (`cleared` removes it) |
+| POST | `/api/runs/{id}/verify` | re-verify selected requirements `{requirement_ids}` |
+| GET | `/api/runs/{id}/code`, `/code/component?component_id=`, `/files?path=` | code view (pristine source) |
+| GET | `/api/runs/{id}/export.csv`, `/export.json` | downloads |
 | GET / PUT | `/api/settings` | models per agent, thresholds, limits |
 | GET | `/api/health` | database, Ollama, pulled models, agents |
 
