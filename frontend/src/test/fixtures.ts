@@ -1,4 +1,4 @@
-import type { RunCard } from "../api/types";
+import type { ReviewItem, RunCard } from "../api/types";
 
 export function makeRun(id: number, status: RunCard["status"], extra: Partial<RunCard> = {}): RunCard {
   return {
@@ -36,4 +36,13 @@ export function mockFetch(routes: Record<string, unknown | ((init?: RequestInit)
     return new Response(JSON.stringify(body), { status: 200 });
   };
   return { fn, calls };
+}
+
+/** A review item with defaults (a flagged requirement). */
+export function item(key: string, extra: Partial<ReviewItem> = {}, payload: Partial<ReviewItem["payload"]> = {}): ReviewItem {
+  return {
+    run_id: 4, item_key: key, position: 0, category: "flagged", requirement_id: null, resolution: null,
+    resolution_data: {}, resolved_at: null, ...extra,
+    payload: { kind: "requirement", title: "T", source_text: "", normalized_text: "", location: {}, reasons: ["r"], ...payload },
+  };
 }

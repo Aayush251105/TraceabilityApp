@@ -180,3 +180,56 @@ export interface Results {
   summary: ResultsSummary | null;
   requirements: ResultRow[];
 }
+
+export type ReviewCategory = "uncertain" | "flagged" | "incomplete" | "split";
+export type Resolution = "kept" | "edited" | "discarded" | "merged" | "unreviewed";
+
+export interface ReviewItem {
+  run_id: number;
+  item_key: string;
+  position: number;
+  category: ReviewCategory;
+  requirement_id: string | null;
+  payload: {
+    kind: "requirement" | "candidate" | "failure" | "skipped_section" | "skipped_table";
+    title: string;
+    type?: string | null;
+    subtype?: string | null;
+    confidence?: string | null;
+    source_text: string;
+    normalized_text: string;
+    location: Record<string, number | string>;
+    reasons: string[];
+    suggestion?: { action: "edit" | "merge" | "discard"; target?: string };
+    items?: string[];
+    index?: number;
+    also?: string[];
+    similarity?: number;
+  };
+  resolution: Resolution | null;
+  resolution_data: { into?: string; text?: string; requirement_id?: string; auto?: boolean };
+  resolved_at: string | null;
+}
+
+export interface ReviewState {
+  ready: boolean;
+  status: string;
+  counts: ReviewCounts;
+  items: ReviewItem[];
+  requirements: { index: number; requirement_id: string; title: string; type: string; subtype: string; location: Record<string, number | string> }[];
+}
+
+export interface DocBlock {
+  kind: "heading" | "paragraph" | "list_item" | "table";
+  text: string;
+  level: number;
+  rows: string[][];
+  location: Record<string, number | string>;
+}
+
+export interface MergeTarget {
+  requirement_id: string;
+  title: string;
+  similarity: number;
+  suggested: boolean;
+}
