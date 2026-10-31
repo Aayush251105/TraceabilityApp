@@ -25,6 +25,8 @@ TraceabilityApp/
       orchestrator/
         state.py             run state in PostgreSQL (app_* tables)
         agents.py            launch DocAgent / SRS Agent subprocesses, parse their events, cancel
+        source.py            fetch code: ZIP (safe extract) / folder / https Git shallow clone + SHA;
+                             counts files and components (ast, never executes code)
       runners/               wrapper scripts run with each agent's own Python (stdlib only)
         docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
         srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
@@ -58,6 +60,7 @@ cd TraceabilityApp\backend
 
 Database tests use `traceability_test` with `test_app_*` tables (password from
 `TEST_PG_PASSWORD`); they are skipped when that database is unreachable.
+Set `TRACELIGHT_NETWORK_TESTS=1` to include a real clone from GitHub.
 
 ## Run stages
 
