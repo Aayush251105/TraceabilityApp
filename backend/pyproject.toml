@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracelight"
+version = "0.1.0"
+description = "Tracelight: orchestration and API for SRS-to-code traceability (DocAgent + SRS Agent + traceability)"
+requires-python = ">=3.10"
+# The traceability package (../../SRS_to_code_traceability) is installed in the
+# same environment (editable); it brings psycopg2, pgvector, sentence-transformers.
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+include = ["tracelight*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["requires_pg: needs the PostgreSQL test database"]
