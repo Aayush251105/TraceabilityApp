@@ -155,8 +155,20 @@ frontend/src/
   api/                     fetch client, response types, React Query hooks, live stream hook
   components/ui/           Button, StatusChip, ProgressBar, Timer, CodeBlock, ClaimItem, GraphNode
   components/layout/       Sidebar, AppShell, PageHeader
-  pages/                   ComponentSheet (more pages step by step)
+  pages/                   Runs, NewRun, Pipeline, Review, Results, Requirement,
+                           CodeView, Settings, ComponentSheet, NotFound
 ```
+
+| Page | Route | What it does |
+|---|---|---|
+| Runs | `/` | all runs: status, result, duration; search, filters, delete |
+| New run | `/new` | SRS upload / paste; code from ZIP, folder or GitHub URL with a size check; models, exclusions, lanes |
+| Live pipeline | `/runs/:id/pipeline` | stage rail, timers and ETA, the two ingestion lanes with logs, review banner, agents, verified-so-far stream, cancel / resume |
+| Review | `/runs/:id/review` | the human checkpoint: keep / discard / edit / merge / fix ID, keyboard, bulk, document preview, continue |
+| Results | `/runs/:id/results` | verdict summary and filters, requirement table, re-run verification, CSV / JSON / print-to-PDF |
+| Requirement | `/runs/:id/requirements/:rid` | claims with cited lines, code evidence, mapping subgraph, search ranks, accept / override, history |
+| Code view | `/runs/:id/code` | files with traced/total, untraced filter, requirements per component, best match for untraced code |
+| Settings | `/settings` | models per agent (pulled? size), Ollama test, pipeline thresholds, database, agents, exclusions |
 
 ## Run stages
 

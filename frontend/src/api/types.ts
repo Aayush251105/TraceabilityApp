@@ -92,9 +92,34 @@ export interface RunDetail extends RunCard {
 export interface Health {
   agents: Record<string, { dir: string; python: string; dir_ok: boolean; python_ok: boolean }>;
   ollama_host: string;
-  database: { ok: boolean; error?: string };
-  ollama: { ok: boolean; models?: string[]; error?: string };
-  models: Record<string, { name: string; pulled: boolean | null }>;
+  embeddings?: { model: string; dim: number; local: boolean };
+  database: { ok: boolean; error?: string; connection?: string; postgres?: string; pgvector?: string | null; bytes?: number; latency_ms?: number };
+  ollama: { ok: boolean; models?: string[]; details?: { name: string; size: number | null }[]; version?: string | null; error?: string };
+  models: Record<string, { name: string; pulled: boolean | null; size?: number | null }>;
+}
+
+export interface CodeComponent {
+  component_id: string;
+  name: string;
+  type: string;
+  start_line: number;
+  end_line: number;
+  requirements: { requirement_id: string; role: "direct" | "supporting"; link_status: string; verdict: string }[];
+  traced: boolean;
+  best_candidate: { requirement_id: string; score: number; rank: number | null } | null;
+}
+
+export interface CodeView {
+  files: { path: string; components: CodeComponent[]; traced: number; total: number }[];
+  components: number;
+  traced: number;
+}
+
+export interface ComponentDetail extends Omit<CodeComponent, "traced"> {
+  path: string;
+  signature: string | null;
+  docstrings: Record<string, string>;
+  code: { n: number; text: string }[];
 }
 
 export interface SourceStats {

@@ -1,14 +1,16 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "./components/layout/AppShell";
+import { CodeView } from "./pages/CodeView";
 import { ComponentSheet } from "./pages/ComponentSheet";
 import { NewRun } from "./pages/NewRun";
+import { NotFound } from "./pages/NotFound";
 import { Pipeline } from "./pages/Pipeline";
-import { Placeholder } from "./pages/Placeholder";
 import { Requirement } from "./pages/Requirement";
 import { Results } from "./pages/Results";
 import { Review } from "./pages/Review";
 import { Runs } from "./pages/Runs";
+import { Settings } from "./pages/Settings";
 
 export function App() {
   return (
@@ -22,11 +24,11 @@ export function App() {
           <Route path="review" element={<Review />} />
           <Route path="results" element={<Results />} />
           <Route path="requirements/:requirementId" element={<Requirement />} />
-          <Route path="code" element={<Placeholder title="Code view" step="Step 13" />} />
+          <Route path="code" element={<CodeView />} />
         </Route>
-        <Route path="settings" element={<Placeholder title="Settings" step="Step 13" />} />
+        <Route path="settings" element={<Settings />} />
         <Route path="components" element={<ComponentSheet />} />
-        <Route path="*" element={<Placeholder title="Not found" step="no step: this page does not exist" />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

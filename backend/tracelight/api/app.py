@@ -36,6 +36,7 @@ import json
 import math
 import shutil
 import tempfile
+import time
 import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -49,7 +50,7 @@ from pydantic import BaseModel
 from traceability.config import TraceabilityConfig
 
 from ..orchestrator.agents import check_agents
-from ..orchestrator.ollama import OllamaUnavailable, has_model, list_models
+from ..orchestrator.ollama import OllamaUnavailable, has_model, model_details, server_version
 from ..orchestrator.review import (RESOLUTIONS, ReviewError, SRSOutputs, review_counts)
 from ..orchestrator.runner import Orchestrator
 from ..orchestrator.source import (SourceError, extract_zip, inspect_tree, size_warnings,
@@ -193,19 +194,38 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
     # -- health and settings ------------------------------------------------
 
     @app.get("/api/health")
-    def health() -> Dict[str, Any]:
+    def health(host: Optional[str] = None) -> Dict[str, Any]:
+        """host: test another Ollama endpoint than the saved one (Settings → Test connection)."""
         settings = orch.settings_store.load()
-        out: Dict[str, Any] = {"agents": check_agents(orch.paths), "ollama_host": settings["ollama_host"]}
+        ollama_host = (host or settings["ollama_host"]).strip()
+        if not ollama_host.startswith(("http://", "https://")):
+            raise HTTPException(400, "The Ollama endpoint must start with http:// or https://")
+        cfg = orch.cfg
+        out: Dict[str, Any] = {"agents": check_agents(orch.paths), "ollama_host": ollama_host,
+                               "embeddings": {"model": cfg.embed_model, "dim": cfg.embed_dim, "local": True}}
         try:
+            started = time.perf_counter()
             with orch.store() as s:
-                s.list_runs(limit=1)
-            out["database"] = {"ok": True}
+                with s._cursor() as cur:
+                    cur.execute("SELECT current_database() AS db, pg_database_size(current_database()) AS bytes, "
+                                "(SELECT extversion FROM pg_extension WHERE extname = 'vector') AS pgvector, "
+                                "current_setting('server_version') AS postgres")
+                    row = cur.fetchone()
+            out["database"] = {"ok": True, "connection": f"postgresql://{cfg.pg_user}@{cfg.pg_host}:{cfg.pg_port}/{row['db']}",
+                               "postgres": row["postgres"], "pgvector": row["pgvector"], "bytes": row["bytes"],
+                               "latency_ms": round((time.perf_counter() - started) * 1000, 1)}
         except Exception as exc:          # report, do not fail the health call
             out["database"] = {"ok": False, "error": str(exc)}
         try:
-            available = list_models(settings["ollama_host"])
-            out["ollama"] = {"ok": True, "models": available}
-            out["models"] = {role: {"name": name, "pulled": has_model(name, available)}
+            details = model_details(ollama_host)
+            available = [str(m["name"]) for m in details]
+            sizes = {str(m["name"]): m["size"] for m in details}
+            out["ollama"] = {"ok": True, "models": available, "details": details, "version": server_version(ollama_host)}
+
+            def size_of(name: str):
+                return sizes.get(name) or sizes.get(f"{name}:latest")
+
+            out["models"] = {role: {"name": name, "pulled": has_model(name, available), "size": size_of(name)}
                              for role, name in settings["models"].items()}
         except OllamaUnavailable as exc:
             out["ollama"] = {"ok": False, "error": str(exc)}

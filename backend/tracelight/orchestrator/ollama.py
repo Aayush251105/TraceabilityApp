@@ -12,15 +12,32 @@ class OllamaUnavailable(RuntimeError):
     pass
 
 
-def list_models(host: str, timeout: float = 3.0) -> List[str]:
-    """Names of the locally pulled models (e.g. 'llama3.1:latest')."""
-    url = host.rstrip("/") + "/api/tags"
+def _get(host: str, path: str, timeout: float) -> dict:
+    url = host.rstrip("/") + path
     try:
         with urllib.request.urlopen(url, timeout=timeout) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+            return json.loads(resp.read().decode("utf-8"))
     except (urllib.error.URLError, OSError, ValueError) as exc:
         raise OllamaUnavailable(f"Ollama is not reachable at {host} ({exc})") from exc
-    return [m.get("name") or m.get("model") for m in data.get("models", []) if m.get("name") or m.get("model")]
+
+
+def model_details(host: str, timeout: float = 3.0) -> List[Dict[str, object]]:
+    """Pulled models with their size in bytes: [{'name': 'llama3.1:latest', 'size': 4920753328}, …]."""
+    data = _get(host, "/api/tags", timeout)
+    return [{"name": m.get("name") or m.get("model"), "size": m.get("size")}
+            for m in data.get("models", []) if m.get("name") or m.get("model")]
+
+
+def list_models(host: str, timeout: float = 3.0) -> List[str]:
+    """Names of the locally pulled models (e.g. 'llama3.1:latest')."""
+    return [str(m["name"]) for m in model_details(host, timeout)]
+
+
+def server_version(host: str, timeout: float = 3.0) -> str | None:
+    try:
+        return _get(host, "/api/version", timeout).get("version")
+    except OllamaUnavailable:
+        return None
 
 
 def has_model(name: str, available: Iterable[str]) -> bool:

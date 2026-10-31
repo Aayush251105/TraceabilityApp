@@ -200,6 +200,12 @@ def test_settings_and_health(api):
     assert api.put("/api/settings", json={"nope": 1}).status_code == 400
     h = api.get("/api/health").json()
     assert h["database"]["ok"] and not h["ollama"]["ok"]
+    db = h["database"]
+    assert db["connection"].startswith("postgresql://") and "password" not in json.dumps(db).lower()
+    assert db["pgvector"] and db["bytes"] > 0 and db["latency_ms"] >= 0
+    assert h["embeddings"]["local"] is True
+    assert api.get("/api/health", params={"host": "http://127.0.0.1:9"}).json()["ollama_host"] == "http://127.0.0.1:9"
+    assert api.get("/api/health", params={"host": "ftp://x"}).status_code == 400
     assert h["models"]["verifier"] == {"name": "qwen2.5-coder:14b", "pulled": None}
     assert h["agents"]["docagent"]["dir_ok"]
 
