@@ -24,6 +24,10 @@ TraceabilityApp/
       settings.py            paths (agents, venvs, data dir) + user settings (models, thresholds)
       orchestrator/
         state.py             run state in PostgreSQL (app_* tables)
+        agents.py            launch DocAgent / SRS Agent subprocesses, parse their events, cancel
+      runners/               wrapper scripts run with each agent's own Python (stdlib only)
+        docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
+        srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
     tests/
   frontend/                  (later step)
   data/                      run data — uploads, working copies, outputs (git-ignored)
