@@ -247,6 +247,11 @@ def test_requirement_detail(api, done_run):
     assert d["search"] and any(c["mapped"] for c in d["search"])
     assert d["history"][0]["kind"] == "verification"
     assert api.get(f"/api/runs/{done_run}/requirements/FR-999").status_code == 404
+    # IDs may contain "/" (Req-1/2): the route must reach the handler, not miss.
+    r = api.get(f"/api/runs/{done_run}/requirements/Req-1%2F2")
+    assert r.status_code == 404 and "Req-1/2" in r.json()["detail"]
+    r = api.post(f"/api/runs/{done_run}/requirements/Req-1%2F2/override", json={"status": "supported"})
+    assert r.status_code == 404 and "Req-1/2" in r.json()["detail"]
 
 
 def test_override_and_clear(api, done_run):

@@ -553,7 +553,7 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
             rows = r.table()
             return jsonable_encoder({"ready": True, "summary": r.summary(rows), "requirements": rows})
 
-    @app.get("/api/runs/{run_id}/requirements/{requirement_id}")
+    @app.get("/api/runs/{run_id}/requirements/{requirement_id:path}")
     def requirement_detail(run_id: int, requirement_id: str) -> Dict[str, Any]:
         with _reader(run_id) as r:
             detail = r.detail(requirement_id) if r.ready else None
@@ -567,7 +567,7 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
             key=lambda h: h["at"], reverse=True)
         return jsonable_encoder(detail)
 
-    @app.post("/api/runs/{run_id}/requirements/{requirement_id}/override")
+    @app.post("/api/runs/{run_id}/requirements/{requirement_id:path}/override")
     def override(run_id: int, requirement_id: str, body: Override) -> Dict[str, Any]:
         if body.status not in OVERRIDE_STATUSES:
             raise HTTPException(400, f"status must be one of {', '.join(OVERRIDE_STATUSES)}")
