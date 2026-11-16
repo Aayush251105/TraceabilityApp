@@ -1,0 +1,2202 @@
+{
+  "pair_id": "Virtual-clinic",
+  "srs_file": "Software Requirements Specification.pdf",
+  "input_type": "pdf",
+  "candidates": [
+    {
+      "text": "(offline & online) - Sets the flag in prescription",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 10,
+        "section": "04 Lab Incharge ● Performs Lab test and updates the reports"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- Sets the flag in prescription",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 10,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "numbered or bulleted item; included for review",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The following section describes the Use Cases with Pre-and Post Conditions: Table 3: Pre-Post Conditions of use cases",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 10,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "S.No Use Case Name Description Pre-Condition Post-Conditio n",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 11,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-01 Patient Registration Registrant will provide personal, medical and general information upon registering and become a patient System is setup and configured System is running and open for registrations Registrant has accessed website via URL Patient is successfully registered",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 11,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-01"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-01",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-02 Speciality Setup Admin will add the specialties of doctor for which the hospital will give the treatment System is setup and configured. System is running and open for registrations Registrant has accessed website via URL. Admin account is created Default admin is logged into the system. New Specialities will be added into the system.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 11,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-02"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-02",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-03 Doctor Registration Admin will have the option to register doctors into the system. System is setup and configured. System is running and open for registrations Registrant has accessed website via URL. Admin account is created Default admin is logged into the system. New accounts for doctors is created via the admin account.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 11,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-03"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-03",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-04 Labs and Chemist Registration Admin will have option to add labs and Chemist into the system System is setup and configured. System is running and open for registrations Registrant has accessed website via URL. Admin account is created Default admin is logged into the system. New accounts for labs and Chemist is created via admin account.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 12,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-04"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-04",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-05 Update Doctor Information Admin will have the option to update doctors information into the system. System is setup and configured. System is running and open for registrations Registrant has accessed website via URL. Admin account is created Default admin is logged into the system. Account for Doctor is created Doctors profile information will be updated via admin.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 12,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-05"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-05",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-06 Update Lab/Chemist Details Admin will have option to update labs and Chemist into the system System is setup and configured. System is running and admin has accessed website via URL. Admin account is created Default admin is logged into the system. Account for Lab/ Chemist is created Lab/Chemist information will be successfully updated via admin.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 12,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-06"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-06",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-07 Update Patient Profile Information Patient can update their personal details System is setup and configured. System is running and patient has accessed website via URL. Patient account is created Patient is logged into the system. Patients details will be successfully updated",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 13,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-07"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-07",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-08 Create Appointment Patient can create appointment to visit the doctor (future date) System is setup and configured. System is running and patient has accessed website via URL. Patient account is created Patient is logged into the system. Appointment is created and can be viewed in appointments tab vide Patient Appointment File",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 13,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-08"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-08",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-09 Provide Consultation Doctor can easily view the appointments/ consultation request pending in his list and provide consultation System is setup and configured. System is running and doctor has accessed website via URL. Doctor account is created Doctor is logged into the system. Consultation is provided by the doctor and prescription is generated.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 13,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-09"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-09",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-10 Prescribe Lab Tests Doctors while providing consultation can prescribe lab tests System is setup and configured. System is running and doctor has accessed website via URL. Doctor account is created Doctor is logged into the system. Doctor is looking into the patient. Lab Test for the patient is created and lab is requested to perform the lab test.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 14,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-10"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-10",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-11 Prescribe Medicines Doctors while providing consultation can prescribe medicines System is setup and configured. System is running and doctor has accessed website via URL. Doctor account is created Doctor is logged into the system. Doctor is looking into the patient Medicines for the patient are requested to the concerned Chemist for delivery.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 14,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-11"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-11",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-12 Perform Lab Tests and update the reports. Lab tests are performed and reports for corresponding patient are updated (Offline) System is setup and configured. System is running and doctor has accessed website via URL. Lab account is created Lab incharge is logged into the system. Lab specimen for the patient is collected(offline) Lab report for the patient is released to view (Offline)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 15,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-12"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-12",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-13 Deliver medicines to the patient Medicines are delivered as prescribed by the doctor (offline) System is setup and configured. System is running and doctor has accessed website via URL. Pharmacy account is created Chemist is logged into the system. Successfully medicines are delivered to the patient\n-",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 15,
+        "page_end": 15,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-13"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-13",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 1,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "UC-14 View/Print Reports, Invoice Admin, Patient can view the invoice and reports for the appointment. System is setup and configured. System is running and doctor has accessed website via URL. Admin/Patient account is created They are logged into the system. Previous appointment is made by patient Easily invoice and prescription reports can be printed anytime and stored for further need.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 15,
+        "section": "05 Chemist ● Delivers the medicine to concerned patient",
+        "source_requirement_id": "UC-14"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "UC-14",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The system shall be deployed on a Heroku platform which is a service providing platform to host with Ver. 5.7.21 MySQL Database to maintain the databases. The system shall be accessed vide the Hospital’ website which runs on multiple browsers e.g. Google Chrome, Mozilla Firefox etc. The Operating System on the front-end PCs/Laptops can be MS Windows, Unix, Linux or Apple Mac.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 16,
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Table 4-Environment for development",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 16,
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Sr No System Environment for development Description",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 16,
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Database: MYSQL",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 16,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "MySQL is an open-source relational database management system(RDBMS).",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 16,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Frontend: HTML, JavaScript, jQuery, AngularJS",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 17,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "HTML: is the standard mark-up language for creating web pages and web applications JavaScript: As a multi-paradigm language, JavaScript supports event driven functional, and imperative (including object-oriented and prototype based) programming style. jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML AngularJS: The AngularJS framework works by first reading the HTML page, which has additional custom tag attributes embedded into it. Angular interprets those attributes as directives to bind input or output parts of the page to a model that is represented by standard JavaScript variables Styling: CSS, Bootstrap",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 17,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a mark-up language. Bootstrap is a free and open-source front-end web framework for designing websites and web applications. IDE: PyCharm (student version)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 17,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "It provides code analysis, a graphical debugger, an integrated unit tester, integration with version-control systems (VCSes), and supports web development with Django.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 17,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Version Control: Git, GitHub",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "GIT is a version-control system for tracking changes in computer-files and coordinating work on those files among multiple people.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Sublime Text is a cross-platform source code editor with a Python Application programming interface(API) Usage of system library for unit testing: Django- unittest JavaScript/jQuery: assert",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The preferred way to write tests in Django is using the unittest module built in to the Python standard library.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "section": "1. Software used to"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Installation (user testing) Heroku If bugs are found again, coding and unit testing tools will be used along with latest version of software from Git. Heroku is a cloud Platform as a Service (PaaS) supporting several programming languages. that is used as a web application deployment model.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "section": "5. Server hosting/"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The following Design and Implementation Constraints are applicable for the System:\n- The System needs to designed to prevent full scan of Patient Consultation Request Entity for identifying the Appointments for next day/ day range. For this, a derived Entity called as Patient Appointment file shall be designed.\n- To prevent multiple doctors of the same speciality to log-in onto same Patient Consultation Request, a workflow system needs to be designed which routes the Patient Consultation Requests to Doctors. Similarly once the doctor has completed the prescription, the workflow should be routed to the right Chemist (based on Patient and Chemist Pincode) and /or Labs (based on Patient and Lab PinCode).\n- In order to Assist Doctors, a Machine learning algorithm will be designed and trained on a training data-set to predict diseases based on Patient Symptoms, this algorithm will continue to be trained on emerging data sets to improve the quality of predictions.\n- The database shall be maintained by the Administration and Patients who have not consulted for last 3 years would get archived onto a parallel database. Restoring of old Patients data is beyond the scope of the project and would need to be managed by Admin.\n- The system is expected to generate approximately 25,000 Consultation Requests per week, translating to 1.3 Million Consultation Requests per year. A 3 year database would constitute 4.0 Million Consultation requests.System needs to be designed to cater to the same. In all, approximately 250,000 unique Patients are expected to be provisioned.\n- Though initially only 3 Specialities are supposed to be enabled, given the system performance it is expected that the number of specialities may grow to 5 by end of year 3, this may mean further addition of 50,000 unique patients and another 500,000 Consultation Requests. The system has to be designed keeping the future growth in mind.\n- Initially the system would be available on PCs, laptops, but the system should be capable of running on a mobile platform in future (android) - this will mean designing of user interfaces keeping adaptive response in mind.\n- As the system is supposed to be used by Elderly and infirm people as well, care needs to be taken from a usability perspective in terms of font sizes and ease of system usage. It is anticipated that even people with no computer background should be able to use the system relatively easily. For this the system should be designed to keep the system navigation very simple and intuitive. A normal Consultation Request should get filled in less than 5 minutes (Minimal and only relevant questions)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 18,
+        "page_end": 19,
+        "section": "2.5 Design and Implementation Constraints"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 8,
+        "lines": 9
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The User Interface section defines the way the various stakeholders interact with the System. All screens will be developed to work on a PC/Laptop. Error messages will appear at the bottom and shall be self descriptive - The maximum size of error messages will be 80 Characters. Buttons will be used to make the navigation simpler. In order to increase Usability of screens, Patient Registration and Consultation Requests screens will have bigger font size to aid Elderly people.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 20,
+        "section": "3.1 User Interfaces"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Table 5-User Interfaces Sl No User User Interface Name/ Number User Interface Description 1 All Login This is a login Screen - Each user needs a valid login id/ username and password to access the System. User id/login id and passwords will be maintained by Administrator",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 20,
+        "section": "3.1 User Interfaces"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Speciality b) Maintain Doctors c) Maintain Chemist & Labs d) Maintain Symptoms",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "2 Administrator VCMMNU01 Virtual Clinic Main Menu - Comprising of a) Maintain"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Set-up Users/ Passwords b) Set-up Control File (for Pincode) c) Create Appointment File d) View/ Print Invoice e) Back-ups f) Archive Patient Profiles",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "3 Administrator VCMSYS01 Administrators System Administrator Screens for a)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Chemists and Labs",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "4 Administrator VCSYSS02 Administrator Screen to Create Users a) Doctor(s) b)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Add Speciality b) Edit/Update Speciality 6 Administrator VCMSP02 Add Speciality Screen - Speciality Id, Speciality Name, Speciality Description",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "5 Administrator VCMSP01 Administrators Menu Screen to Maintain Speciality a)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Id, Speciality Name, Speciality Description will be displayed and can be modified or deleted. If Speciality does not exist with Speciality Id, an exception error message will be displayed “Speciality does not exist”",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "7 Administrator VCMSP03 Edit/ Update Speciality Screen - Query on Speciality"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Doctors b) Edit/Update Doctors",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "8 Administrator VCMDR01 Administrators Menu Screen to Maintain Doc a) Add"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Name, Age, Sex, Qualification & Experience 10 Administrator VCMDR03 Edit/ Update Doctors Screen - Query on Doctor Id, Doctor Name, Age, Sex, Experience and Qualification will be displayed and can be modified or deleted. If Doctor does not exist with Doctor Id, an exception error message will be displayed “Doctor does not exist”. For Deleting Doctor Details a check will be made from Patient Consultation Request to ensure that there are no open requests - if so, an exception error message will be displayed “Doctor has open Consultation Requests - cannot delete”",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "9 Administrator VCMDR02 Add Doctor Screen - Doctor Id(generated), Doctor"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Labs a) Add Chemist / Labs b) Edit/Update Chemist/ Labs",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "11 Administrator VCMCL01 Administrators Menu Screen to Maintain Chemist &"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": ", Chemist/Lab Flag, Chemist Lab Name, Chemist Lab Address and Chemist Lab Contact Details",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 21,
+        "section": "12 Administrator VCMCL02 Add Chemist/ Lab Screen - Chemist/Lab Id"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Chemist/Lab Id, Chemist/Lab Name, Address and Contact Details will be displayed and can be modified or deleted. If Chemist/Lab does not exist with Chemist/Lab Id, an exception error message will be displayed “Chemist or Lab does not exist”. For Deleting Chemist or Lab Details a check will be made from Prescriptions to ensure that there are no open requests - if so, an exception error message will be displayed “Chemist or Lab has open Prescription Requests - cannot delete”",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 22,
+        "section": "13 Administrator VCMCL03 Edit/ Update Chemist/ Labs Screen - Query on"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Add Symptom Code b) Edit/Update Symptom Codes 15 Administrator VCMSYM02 Add Symptom Code Screen - Symptom Code, Symptom Description",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 22,
+        "section": "14 Administrator VCMSYM01 Administrators Menu Screen to Maintain Symptoms a)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Code,Symptom Description will be displayed and can be modified or deleted. If Symptom does not exist, an exception error message will be displayed “Symptom does not exist”. For Deleting Symptoms a check will be made from Patient Consultation Requests to ensure that there are no usages of Symptom Code - if so, an exception error message will be displayed “Symptom Code used, cannot be deleted”",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 22,
+        "section": "16 Administrator VCMSYM03 Edit/ Update Symptom Screen - Query on Symptom"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Raise Consultation/ Appointment Request c) View/Generate Prescription Reports/Print Invoice 18 Patient VCDPA02 Patient Registration Screen - Patient Id (generated), Name, Age, Sex, Address and Contact details are captured. This screen comes-up when a new Patient registers after creating a valid username/ password 19 Patient VCDPA03 Patient Profile Update Screen - Query on Patient Id, Patient details are displayed and can be modified. Patient pin-code cannot be modified to be outside the Zone",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 22,
+        "section": "17 Patient VCMPA01 Patients Menu Screen a) Update Patient Profile b)"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: can",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Patient Id, to display Patient details and then enter details like Speciality (List of values), Symptoms(List of values), Consultation request/ Appointment, Appointment date etc. Creates an entry into Patient Appointment file if the Appointment Request is for next day",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 22,
+        "section": "20 Patient VCDPA04 Patient Consultation Request Screen - Query on"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "workflow consultation requests and selects them one by one to provide Consultation",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "21 Doctor VCDDR01 Doctor dashboard (by Speciality) - Doctor sees all the"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "enters Diagnosis, Prescribes medicines (max 8) and requests for lab tests (optional) max(5)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "22 Doctor VCDDR02 Doctor sees the Patient Consultation Requests and"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "and selects them one by one to provide Medicines",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "23 Chemist VCDCM01 Chemist sees all the workflow consultation requests"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "and marks the flag in Prescription",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "24 Chemist VCDCM02 Chemist sees the Prescription, dispenses medicines"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "selects them one by one to note down the Lab Requests",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "25 Labs VCDLB01 Lab sees all the workflow consultation requests and"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "starts with an actionable instruction",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "done and the Patient details and marks the flag in prescription and also adds the report",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "26 Labs VCDLB02 Lab sees the Prescription, notes the lab tests to be"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Consultations by Doctor (Month/ Quarter/Year) b) Speciality wise - Revenue Earned per Month/ Quarter/ Year c) Patient History File (based on Patient Id)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "section": "27 Administrator VCSYSS03 Reports Menu a) Speciality wise - Number of"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The System shall be deployed on Heroku Platform. All the Stakeholders are supposed to log-in into the Virtual Clinic website where there will be a specific URL to access the System. Hardware Requirements for stakeholders:\n- Pentium 4 processor or higher\n- Approximately 100 MB of free harddrive space\n- Minimum 128 MB RAM Hardware Requirements for hosting:\n- Minimum 1GB database space\n- Minimum 2GB RAM",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 23,
+        "page_end": 23,
+        "section": "3.2 Hardware Interfaces"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 5,
+        "lines": 6
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The System is self contained and no data is supposed to be shared with any third party - Chemists and Labs are supposed to log-into the system to access the Prescriptions, so are the Patients. Only emails will be sent to Patients including the full prescription and Invoice. There will be an interface with the current standard Payment Gateway available with the Hospital. A button will be enabled to securely accept the payments vide Debit/Credit Cards and Net banking. Software Requirements for Hosting:\n- Django 2.0\n- MySQL Software Requirements for Stakeholders:\n- Browser ( Google Chrome, Mozilla Firefox, Safari etc.)\n- Operating System supporting the above browsers.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 24,
+        "page_end": 24,
+        "section": "3.3 Software Interfaces"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 4,
+        "lines": 5
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The System will be available on hospital Padmavathi website as a URL and will be operational using standard web-browsers (Safari, Google Chrome and firefox). Patients, Chemists and Labs will connect through a secured encrypted connection over internet (https://). Since the data communicated over internet is confidential it is imperative that encrypted protocols are used to prevent data leakages. E-mails shall be used to send the Prescription and Invoice to the Patients after Consultation.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 24,
+        "section": "3.4 Communications Interfaces"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The following section describes the System features and their Priorities: Table 6-Priority Matrix Sl No Feature Priority",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 25,
+        "section": "4.1 System Feature Priority Matrix"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The following section describes the Functional Requirements - Each Requirement has been tagged by a Requirement Number (Convention Used is Req-x and Req-x/x)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-1 Maintain Specialities This functionality will Maintain different types of Specialities",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-1/1 Add Speciality Add a new (unique) Speciality",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-1/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-1/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-1",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-1/2 Edit Speciality View and Update the details of an existing Speciality",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-1/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-1/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-1",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-1/3 Delete Speciality Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-1/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-1/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-1",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-2 Maintain Doctors This functionality will Maintain Doctors and Associate them with the Speciality",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-2/1 Add Doctor Add a new (unique) Doctor - Name, Age,Sex, Qualification, Experience, Speciality",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-2/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-2/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-2",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-2/2 Edit Doctor View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-2/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-2/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-2",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-2/3 Delete Doctor Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-2/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-2/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-2",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-3 Maintain Chemist & Labs This functionality will Maintain Chemist and Lab Details",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-3/1 Add Chemist / Lab Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-3/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-3/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-3",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-3/2 Edit Chemist/Lab View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-3/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-3/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-3",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-3/3 Delete Chemist/ Lab Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-3/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-3/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-3",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-4 Maintain Symptoms This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 26,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-4/1 Add Symptom Add a new Symptom",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-4/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-4/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-4",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-4/2 Edit Symptom View and Update the details of an existing Symptom i,e. description",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-4/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-4/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-4",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-4/3 Delete Symptom Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-4/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-4/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-4",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-5 Maintain Patients Profile This is Patient Registration Functionality",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-5"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-5",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-5/1 Create Patient Profile Register a new Patient",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-5/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-5/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-5",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-5/2 Edit Patient Profile View and Update the details of an existing Patient. Only latest details shall be maintained by the system",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-5/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-5/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-5",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-5/3 Delete Patient Profile Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-5/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-5/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-5",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-6 Consultation Request Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-6"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-6",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-6/1 Create Consultation Request Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-6/1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-6/1",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-6",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-6/2 Create Appointment- Online For Appointment Requests, an entry shall be created in the Patient Appointment File if the appointment is for next day",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-6/2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-6/2",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-6",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-6/3 Create Appointment - Batch This is batch program that will be run by Administration every night to create Appointment File for next 5 days. It will purge the existing files",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-6/3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-6/3",
+      "requirement_class": "functional",
+      "parent_requirement_id": "Req-6",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-7 Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-7"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-7",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-8 Provide Consultation Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-8"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-8",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-9 Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status. Medicines shall be delivered offline to Patient by Chemist",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 27,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-9"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-9",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-10 Perform Lab Tests Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline. Labs shall also submit reports to Patient offline",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-10"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-10",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-11 View/Generate Prescription/ Print Invoice Patient shall have the facility to view the Prescription and print the invoice. Alternately, Admin can print and email the Prescription and Invoice",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-11"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-11",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-12 Housekeeping Patient Profiles and Consultation Requests Quarterly all Patient Profiles which have not raised any Consultation Request for last 3 years will be archived. Also, every quarter, Consultation Requests that are more than 3 years old shall be archived on This will improve the performance",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-12"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-12",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-13 Daily Back-up Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping. The back-ups shall be rotated every 30 days",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-13"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-13",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-14 Learning Disease Every Month Administration will improve the Disease Prediction Database with learning of the prior month, i.e. improve the training data-set by including the actual learning for the month",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-14"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-14",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-15 Maintain Users (Doctors, Patients, Chemist/ Labs) The system shall have a login functionality. Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials. For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-15"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-15",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Req-16 Reports The System will generate following reports:\n- Doctor wise Appointment file for next 5 days\n- Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month)\n- Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month)\n- Patient History File - For a patient, history of consultations done in last 3 years.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 28,
+        "page_end": 29,
+        "section": "4.2 Functional Requirements",
+        "source_requirement_id": "Req-16"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "Req-16",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 4,
+        "lines": 5
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "At the peak, system should be able to scale to 10,000+ users (patients) concurrently. The following processes are critical and must respond as per below",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: must",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Patient Registration <= 4 seconds",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 4 seconds",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Patient Consultation Requests <= 2 seconds",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 2 seconds",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Chemist - Prescription Requests <= 2 seconds",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 2 seconds",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Labs - Lab Requests <=4 seconds",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 4 seconds",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Patient - Prescription & Invoice Look-up <= 4 seconds",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 4 seconds",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Further, since the system needs to be designed for 24/7 Operations hence the Availability should be high - 99.999% with a defined outage window of 10 mts every 2nd Sunday.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: should",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days. This essentially means that there will be a provision to rollback by a month. Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up. Post that the dummy production database shall be purged. Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "There are no specific Safety Requirements, however, the system shall be designed to comply with health care regulations as defined by Government of India. Further, the system shall support Hospital’ and Government of India emerging needs based on the data gathered and analysed by the system.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.2 Safety Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "As the Patient’ data is highly confidential and private care would be taken to ensure that the confidentiality is maintained. Only authorized Hospital staff i.e. Doctors will have the access to Patients Consultation requests. Also, Chemists and Labs will be shown data only on need to know basis. Since there are no published external interfaces, there is no risk envisaged at the moment in terms of unwarranted data cascade.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 29,
+        "section": "5.3 Security Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: need to",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The Key Software Quality Attributes are Availability, Reliability and Usability. As the system is expected to be 24/7 - High availability is very important. Also, since the major transaction i.e. Patient Consultation Requests has classified data/ information the system needs to be highly reliable. Lastly, the system is likely to be used by Old Age Patients more than others, hence the screens have to be designed for Usability i.e. large font size.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.4 Software Quality Attributes"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: needs to",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-1 System shall be available only on Specified PinCodes (Zones). These will be set-up in the Parameter Control File",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-2 All Users shall access the system using a login/user-id and password. The login-id/password will be managed in a secured manner",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-3 Each Speciality ‘has’ one or more Doctors linked to it.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-4 Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-5 Each Doctor shall provide Consultation to ONE or More Patient",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-5"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-5",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-6 Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-6"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-6",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-7 Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-7"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-7",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-8 Each Patient Consultation Request ‘Generates’ ONE prescription. Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 30,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-8"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-8",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-9 Each Chemist “receives” one or more prescriptions (only required fields). Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Chemist",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 31,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-9"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-9",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "BR-10 Each Lab “receives” one or more prescriptions (only required fields). Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Labs",
+      "source": {
+        "file_name": "Software Requirements Specification.pdf",
+        "page": 31,
+        "section": "5.6 Business Rules",
+        "source_requirement_id": "BR-10"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "BR-10",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    }
+  ],
+  "segmentation": {
+    "skipped_sections": [
+      {
+        "heading": "Table of Contents",
+        "location": {
+          "page": 2
+        },
+        "items": [
+          "Business Rules",
+          "Revision History Name Date Reason For Changes Version",
+          "Virtual Clinic 21/02/2018 Added Introduction and Overall Description for the project",
+          "Virtual Clinic 22/02/2018 Added External Interface Requirements, System Features",
+          "Virtual Clinic 25/02/2018 Added Acronyms, abbreviations, revised SRS",
+          "Virtual Clinic 26/02/2018 Revised SRS,added summary ,updated software interfaces, hardware interfaces"
+        ]
+      },
+      {
+        "heading": "1.1 Purpose",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "This document details the Software Requirements Specifications for “Virtual Clinic - An Integrated Care System” for Padhmavati Hospital in Mangalore, Karnataka. Virtual Clinic aims to automate the health-care system of the modern world. The primary aim of the document is to detail out/ describe the whole system and clearly lists all its functionalities."
+        ]
+      },
+      {
+        "heading": "1.2 Document Conventions",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "The font that is followed in this document is arial and its size is 11. Special highlighting is done by making the text bold so that important keywords can easily be differentiated. Every requirement stated in this document has its own unique priority and every functionality is equally important."
+        ]
+      },
+      {
+        "heading": "1.3 Intended Audience and Reading Suggestions",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "This document is meant for staff of Padhmavati Hospital mainly the Doctors and the Administration Staff who will maintain/ operate the system. It is also meant for authorized Chemists and Labs who are associated with the Hospital. Lastly, it is also meant for Patients/ general public at large who will register themselves and request for appointments/ consultations. In lieu of Patients, it is expected that Hospital Staff will identify the information acquired from Patients, Chemists and Labs. They are the ones who will state the requirements of the software and their feedback will also be needed to modify the existing requirements.",
+          "This document shall also serve as the reference document for Project Management and Development team (Mishal and Samyak) who will Analyze, Design and Implement the System, They will coordinate every activity that take place in the Software Engineering process and will be guided by Prof. Chandrasekaran and other esteemed staff of NITK Computer Science & Engineering Department under development."
+        ]
+      },
+      {
+        "heading": "1.4 Product Scope",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "Padmavathi is a Multi-speciality Hospital in the Surathkal suburb of Mangalore. The Chairman of Padmavathi Hospital has created a vision to provide 24/7 Primary Care at Doorstep of Patients using a panel of high quality doctors within a 25 Square Kilometers of Hospital (specified Pincode(s) - also termed as Zone). Further, the Hospital has decided to provide quality medicines vide authorized Chemists located within the zone at the door-step at discounted prices as well as give door-step Laboratory services wherever possible vide specimen collection. The aim is to help elderly and inform people as well as people who need regular monitoring services to get access to quality healthcare services at affordable prices at the Door-step. It is envisaged that preventive and regular monitoring services can reduce the hospital admissions and reduce the suffering in General."
+        ]
+      },
+      {
+        "heading": "1.5 References",
+        "location": {
+          "page": 5
+        },
+        "items": [
+          "The document refers to the following assignments submitted:",
+          "Assignment 1-Lab Report-1",
+          "Assignment 2-Lab Report-2"
+        ]
+      },
+      {
+        "heading": "1.6   Scope of the document",
+        "location": {
+          "page": 5
+        },
+        "items": [
+          "This document details the Software Requirement Specifications for Virtual Clinic - An Integrated Care System. The main purpose of this document is to describe the features and behavior of a system. It includes a variety of elements that attempts to define the intended functionality required by the customer to satisfy their different users. In addition to specifying how the system should behave, the specification also defines at a high-level the main business processes that will be supported, what simplifying assumptions have been made and the design limitations and constraints. Each of these is described in more detail along with the Product Functions, User Classes, Operating Environment, All interfaces (User, Hardware, Software, Communication), System features and functional requirements and Non-functional requirements along with business rules."
+        ]
+      },
+      {
+        "heading": "1.7    Deﬁnitions, acronyms, and abbreviations",
+        "location": {
+          "page": 5
+        },
+        "items": [
+          "Table 1-Deﬁnition",
+          "Term Full Description Admin Someone who controls and operates the entire system Doctor a person who is qualified to treat people who are ill Patient a person receiving or registered to receive medical treatment Chemist a shop where medicinal drugs are dispensed and sold, and in which toiletries and other medical goods can be purchased. Lab Lab is a place where tests are usually done on clinical specimens in order to obtain information about the health of a patient as pertaining to the diagnosis, treatment, and prevention of disease. DFD Data Flow Diagram EIS External Interface Specifications ERD Entity Relationship Diagram NITK National Institute of Technology, Surathkal, Karnataka SRS Software Requirement Specifications UIS User Interface Specifications URS User Requirement Specifications Padmavathi Padmavathi Hospitals, Surathkal, Mangalore, Karnataka Zone Set of Specified PinCodes where the Virtual Clinic Functionality would be available"
+        ]
+      },
+      {
+        "heading": "1.8     Overview",
+        "location": {
+          "page": 6
+        },
+        "items": [
+          "The remaining part of the document comprises of 4 sections as follows:",
+          "Section-2 - It describes the product perspective, its functions, stakeholders involved in the system, its operating environment, design and implementation constraints, user documentation and assumptions and dependencies.",
+          "Section-3 - It describes all the Interfaces comprising of User Interface Specifications, Hardware interfaces, Software interfaces and communication interfaces.",
+          "Section-4 - It describes all the functional requirements of the systems along with a Requirements Table.",
+          "Section-5 - It describes all the non-functional requirements of the system.",
+          "Section-6 - it describes the summary of the document."
+        ]
+      },
+      {
+        "heading": "2.1 Product Perspective",
+        "location": {
+          "page": 7
+        },
+        "items": [
+          "“Virtual Clinic” is based on the concept of integrated care system. Stakeholders for the system are Doctors, Patients, Labs and Chemists. As shown in the below diagram a patient makes his/her consultation request to the system by entering the symptoms, the system forwards the consultation request to a doctor of the concerned speciality. Doctor generates a prescription comprising of Diagnosis, Medicines and Lab Requests(if needed) based on the symptoms provided by the patient. The prescription is received by patient, nearest local chemist and nearest local lab. Using the prescription Chemist provides medicines to the patient via offline delivery. Labs, too, use the same prescription to collect specimen from patient and make the delivery of lab reports based on lab tests and also update the report on the system to view for the patient anytime. For Chemists and Labs, only need to know information will be displayed thereby protecting the Patient’ confidentiality.",
+          "Figure 1-Context Diagram"
+        ]
+      },
+      {
+        "heading": "2.2 Product Functions",
+        "location": {
+          "page": 8
+        },
+        "items": [
+          "Figure 2-DFD",
+          "The above DFD clearly shows various processes associated with the project and how data flows between an entity and database via a specific process",
+          "Admin populates speciality database based on various specialities present in the medical domain. Then it links the specialities to the doctors and populates the doctor database. It takes information from labs and chemists to populate their databases.",
+          "Patient registers into the system by filling his/her details. When patient generates a consultation request then doctor sees that request and gives the diagnosis. The prescription generated by doctor is sent to patient,chemist and labs.",
+          "Chemist use this prescription to deliver the desired medicines to the patient. Labs too use the prescription to collect specimen from the patient and deliver lab report to the patient and update the report into the system for future reference for the patient.",
+          "Non - Functional Features :",
+          "The system should be able to scale to 10,000+ users concurrently and shall have a response time of <=2 seconds for critical functionality, for other functions the response time shall be less than <=4 seconds during peak period. Further the system should have 99.999% Availability (10 mts outage per month on every 4th Sunday night between 12:00 AM – 12:10 AM) and very high reliability and stability."
+        ]
+      },
+      {
+        "heading": "2.3 User Classes and Characteristics",
+        "location": {
+          "page": 9
+        },
+        "items": [
+          "Figure 3-Use-case diagram",
+          "The actors and use cases are clearly shown in above USE-CASE diagram.",
+          "The following are the Stakeholders/ Actors who perform the functions/ use cases as stated above:",
+          "Table 2-Use cases",
+          "S. No Actor Name Description/ Actor’s Role"
+        ]
+      },
+      {
+        "heading": "2.7 Assumptions and Dependencies",
+        "location": {
+          "page": 19
+        },
+        "items": [
+          "The Key Assumptions are:",
+          "The services shall be offered in and around Padmavathi Hospital within a radius of 25 sqkm/ or a set of specified PinCodes. Patients residing in this Zone can only register and apply for Appointments/ Consultation Requests",
+          "There will be 1 Authorized Chemist per Pincode (24/7 Operations). All Prescription requests shall be routed to the Chemist after matching the Patient Pincode (from Address) to Chemist Pincode. Chemist are supposed to deliver the medicines through Offline delivery and collect payments from Patients. They shall mark the Prescription on completion of delivery. There will be no systemic matching done to figure out efficiency of the Chemist.",
+          "There will be 1 Authorised Laboratory per Pincode or there will be 1 Laboratory for the entire Zone. All Lab requests shall be routed to the Laboratory after matching the Patient Pincode. Lab personnel shall make appointments and perform home collection of specimen. This will be offline, also, they will email or send the reports to Patients directly.",
+          "Patients shall have the facility to upload upto 5 reports (upto 1 MB size) per Consultation",
+          "Each Patient Consultation request shall be routed to 1 Doctor of a Speciality",
+          "A Machine Learning Algorithm to assist doctors will be implemented to predict diseases based on Symptoms. This is just a tool, Doctors can accept or modify the diagnosis. The responsibility shall be with Doctor to perform Diagnosis. The Machine Learning algorithm shall be trained using a training data set initially - post that the training set and the live data shall be combined to improve the quality of prediction. It is expected that after a period of 1 year, the prediction from Machine Learning Algorithms will be approximately 50-60%",
+          "In future, based on data, further analysis in terms of Seasonal Disease Predictions, Disease out-break due to demographic profile - patient segmentation based on age and gender shall be done to improve quality of Healthcare.",
+          "The system will have no provision to create a doctor roster or availability schedule, also the patient appointment requests with date/time would be recorded, but no analysis done to validate if the doctor has the slot empty or there are multiple appointments made for the same time i.e Doctor appointment schedule is beyond the scope of the current project",
+          "The system shall interface with a payment gateway for making Payments - the interface definition is beyond the scope of the current project. For patients preferring Appointments, a Cash mode of payment shall also be available at the Hospital, for Offline Consultation, payments shall be vide. Credit/ Debit/ Net Banking enabled thru a Payment Gateway."
+        ]
+      },
+      {
+        "heading": "6. Summary",
+        "location": {
+          "page": 31
+        },
+        "items": [
+          "This document details the software requirement specification for the product Virtual clinic- An integrated care system for Padmavati Hospital, Mangalore. The document has 5 sections, in the first section the document describes the purpose of the document, scope of the product, conventions, and intended audience. Section 2 gives a detailed description of the product. It depicts the product perspective, product functions, user classes (5 -Actors and 14 Use Cases) and characteristics. Operating Environment is also illustrated with help of a table. Design and implementation constraints are also explained along with key assumptions and dependencies. Section 3 describes all the interfaces in details including user interfaces (27), hardware, software and communications interfaces. Section 4 describes all system features and the functional requirement of the system. Priority matrix depicting 7-High, 5-Medium and 2-Low features is illustrated to give clear idea of priority of the requirements. Functional features (16) are shown in the table using a standard convention so as to make the requirement traceable. Section 5 describes non-functional requirements of the system. It includes performance requirement, safety requirements, security requirement, software quality attributes, software back-ups and redundancy and finally a set of 10 business rules."
+        ]
+      }
+    ],
+    "warnings": [
+      {
+        "type": "missing_list",
+        "requirement_id": null,
+        "text": "The system will be built with the help of following software:",
+        "message": "Text introduces a list or table that is not present in the input. The introduction was not extracted.",
+        "dropped": true,
+        "location": {
+          "page": 16
+        }
+      },
+      {
+        "type": "missing_list",
+        "requirement_id": null,
+        "text": "The following documents shall be prepared:",
+        "message": "Text introduces a list or table that is not present in the input. The introduction was not extracted.",
+        "dropped": true,
+        "location": {
+          "page": 19
+        }
+      }
+    ],
+    "duplicates": [
+      {
+        "requirement_id": null,
+        "duplicate_of": null,
+        "text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days. This essentially means that there will be a provision to rollback by a month. Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up. Post that the dummy production database shall be purged. Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+        "location": {
+          "page": 30
+        },
+        "first_location": {
+          "page": 29
+        }
+      }
+    ],
+    "repeated_ids": []
+  }
+}

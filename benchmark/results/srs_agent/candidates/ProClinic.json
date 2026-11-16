@@ -1,0 +1,795 @@
+{
+  "pair_id": "ProClinic",
+  "srs_file": "ProClinicSRS.pdf",
+  "input_type": "pdf",
+  "candidates": [
+    {
+      "text": "Performance: Dashboard and EHR tables must load in under 2 seconds.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: must",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Security & Privacy: Enforce HTTPS in production, JWT for API access, CSRF protection for forms, secure/HttpOnly cookies, and input validation.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "contains a non-functional quality attribute or measurable target",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Maintainability: Modular Django apps and well-documented code; follow PEP8 and use linters.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "contains a non-functional quality attribute or measurable target",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Usability: Responsive UI, clear form validation, accessible color contrast and keyboard navigation.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "contains a non-functional quality attribute or measurable target",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Reliability: Target 99.5% uptime during clinic hours (9 AM – 7 PM).",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 99.5%",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Scalability: Support up to 5,000 active patient records with pagination and proper indexing.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "1.5 Non-Functional Requirements"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "contains a non-functional quality attribute or measurable target",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Secure Authentication: Email/password login with Argon2 hashing. 2",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 3,
+        "section": "2.1 Product Features"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Patient EHR Hub: Digital registration and visit history.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.1 Product Features"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Billing Engine: Automated pricing with 18% GST breakdown.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.1 Product Features"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 18%",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Research Module: Workflow for uploading and approving clinical papers.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.1 Product Features"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Audit Logging: System-wide tracking of administrative updates.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.1 Product Features"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "ID Role Wants To So That",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US001 Admin Manage system roles I can control system permissions.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US001"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US001",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US002 Doctor Book a visit slot I can manage my clinical workload.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US002"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US002",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US003 Patient View medical records I can track my health status.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US003"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US003",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US004 Accountant Generate a final bill Charges are transparent for the patient.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US004"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US004",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US005 Pharmacist View prescriptions I can dispense the correct medications.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US005"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US005",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US006 User Access AI Help Desk I can get immediate answers to system queries.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US006"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US006",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US007 Admin View daily system metrics I can monitor system health and usage.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US007"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US007",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US008 Doctor Upload research paper I can submit research for internal approval.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US008"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US008",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US009 Staff Create support tickets I can track operational issues and resolutions.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US009"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US009",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "US010 Manager Generate management reports I can analyze clinic performance and revenue. 3",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 4,
+        "section": "2.4 User Stories",
+        "source_requirement_id": "US010"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "US010",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "The following table details the functional and non-functional requirements of the ProClinic system. Priorities are defined as: 1 (Mandatory for first implementation), 2 (Mandatory for final implementation), 3 (Optional client request), and 4 (Optional features). ID Title Description Priority Risk",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-1 Secure Auth Authentication using system credentials; passwords hashed with Argon2. 1 Critical (5%)\n[Acceptance Criteria] • FR-1: Users can register/login; password storage verified as Argon2; admin can assign roles. Unit tests cover login and role checks.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-2 Conflict Check Rejects appointment booking if the doctor is busy in the requested slot. 1 High (10%)\n[Acceptance Criteria] • FR-2: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-3 EHR Hub Digital registration and retrieval of patient profiles and history. 1 High (15%)\n[Acceptance Criteria] • FR-3: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-4 Auto- Billing System calculates total bill including services and 18% GST. 2 Medium (20%)\n[Acceptance Criteria] • FR-4: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-5 Audit Log Automated tracking of all record deletions and administrative changes. 2 Medium (10%)\n[Acceptance Criteria] • FR-5: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-5"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-5",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "FR-6 AI Help Desk AI-powered assistant using NLP-based FAQ and Retrieval- Augmented Generation (RAG) to answer system-related queries. 4 Low (30%)\n[Acceptance Criteria] • FR-6: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review. 4",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "FR-6"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 2
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "NFR-1 Performance Dashboard and EHR tables must load in under 2 seconds. 2 Low (40%)",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "NFR-1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "NFR-1",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "NFR-2 Reliability Target 99.5% uptime during standard clinic hours (9 AM – 7 PM). 2 Medium (25%)",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "NFR-2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "NFR-2",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "NFR-3 Security Enforce HTTPS, CSRF protection, and role-based data isolation. 1 Critical (5%)",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "NFR-3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "NFR-3",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "NFR-4 Scalability Support up to 5,000 active patient records; use pagination/indexing for large lists. 3 Low (50%)",
+      "source": {
+        "file_name": "ProClinicSRS.pdf",
+        "page": 5,
+        "section": "3 Requirements Specification (Functional & Non-Functional)",
+        "source_requirement_id": "NFR-4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "NFR-4",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    }
+  ],
+  "segmentation": {
+    "skipped_sections": [
+      {
+        "heading": "Contents",
+        "location": {
+          "page": 2
+        },
+        "items": [
+          "1"
+        ]
+      },
+      {
+        "heading": "1.1 Purpose",
+        "location": {
+          "page": 3
+        },
+        "items": [
+          "This document outlines the detailed specifications for ProClinic, a unified Electronic Health Record (EHR) platform for clinical management, appointment tracking, and billing."
+        ]
+      },
+      {
+        "heading": "1.2 Scope",
+        "location": {
+          "page": 3
+        },
+        "items": [
+          "Manage Electronic Health Records (EHR) for patients.",
+          "Conflict-aware appointment scheduling for doctors.",
+          "Digital prescription generation with medicine tracking.",
+          "Automated, GST-compliant hospital billing.",
+          "Role-based dashboards for specific user classes."
+        ]
+      },
+      {
+        "heading": "1.3 Intended Audience",
+        "location": {
+          "page": 3
+        },
+        "items": [
+          "The intended audience includes the project supervisor, development team, and university evaluators."
+        ]
+      },
+      {
+        "heading": "1.4 Glossary of Terms",
+        "location": {
+          "page": 3
+        },
+        "items": [
+          "EHR Electronic Health Record - Digital version of a patient’s medical history. RBAC Role-Based Access Control - Authorization based on user roles. Argon2 A memory-hard password hashing algorithm used for secure storage. JWT JSON Web Token - Used for secure, stateless API authentication."
+        ]
+      },
+      {
+        "heading": "2 System Overview",
+        "location": {
+          "page": 3
+        }
+      },
+      {
+        "heading": "2.2 Architecture Overview",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "The system follows a modular 3-tier architecture:",
+          "Frontend: Django Templates / Bootstrap 5.",
+          "Backend: Python Django REST Framework (DRF).",
+          "Database: SQLite (Dev); PostgreSQL (Production).",
+          "DevOps: Dockerized services for consistent deployment."
+        ]
+      },
+      {
+        "heading": "2.3 Future Enhancements",
+        "location": {
+          "page": 4
+        },
+        "items": [
+          "AI-based disease risk prediction and clinical decision support.",
+          "Voice-command patient record retrieval and voice notes for clinicians.",
+          "Integration with pharmacy inventory and third-party lab systems.",
+          "Mobile applications for patient-facing features and clinician on-the-go access.",
+          "Telemedicine/video-consultation module."
+        ]
+      },
+      {
+        "heading": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "heading": "4 Project Plan",
+        "location": {
+          "page": 6
+        },
+        "items": [
+          "Project Duration: Approximately 8 weeks.",
+          "Methodology: Agile (Scrum-based with 1-week sprints).",
+          "Tools: GitHub (repo + issues), Figma (UI design), Docker (local deployment), Postman (API testing).",
+          "Week 1: Requirement Analysis & SRS Finalization.",
+          "Week 2: Database Design and ER Mapping.",
+          "Week 3-4: Backend Logic & API Tier Development.",
+          "Week 5-6: Frontend Template & Dashboard Integration.",
+          "Week 7: Testing, Bug Fixing, & Security Review.",
+          "Week 8: Docker-based Deployment."
+        ]
+      },
+      {
+        "heading": "5 Requirements Traceability Matrix (RTM)",
+        "location": {
+          "page": 6
+        },
+        "items": [
+          "Req ID Feature Source Module Test File"
+        ]
+      },
+      {
+        "heading": "6 Tools and Technologies",
+        "location": {
+          "page": 6
+        },
+        "items": [
+          "Area Tools / Stack Frontend Django Templates, Bootstrap 5, HTML, CSS, minimal JS Backend Python, Django REST Framework (DRF) Database SQLite (development), PostgreSQL (production) DevOps Docker, docker-compose, GitHub Actions (CI) Design Figma Testing PyTest, Postman, Selenium (optional) 5",
+          "Phase Duration (Weeks) Sprint(s) Requirement Analysis & Planning 1 Sprint 1 System Design & Prototyping 1 Sprint 2 Backend Logic & API Tier Development 2 Sprints 3–4 Frontend Template & UI Integration 2 Sprints 5–6 System Testing & Security Review 1 Sprint 7 Docker Deployment & MVP Launch 1 Sprint 8 7 Planned Contribution Matrix (as of February 15, 2026) Note: This table records the planned allocation of work for the project. Actual contributions will be recorded in the final submission. Task Naitik Harshal Jaydip Parshwa Requirement Analysis Lead Support Review Support Backend APIs Lead Lead – Support Database Design Lead Support – – Frontend UI / Figma – – Lead Support Testing & QA Support Support – Lead Documentation Lead Support Support Support Deployment (Docker) Support Lead – Support"
+        ]
+      },
+      {
+        "heading": "8 Appendix: API Endpoints",
+        "location": {
+          "page": 7
+        },
+        "items": [
+          "Verb Endpoint Description POST /api/auth/login/ Authenticates user and returns JWT. GET /api/patients/ Returns paginated list of patients. POST /api/appointments/ Creates a new appointment (checks overlap). POST /api/prescriptions/ Creates a prescription and returns PDF URL. GET /api/invoices/ Generate or fetch invoices. 6"
+        ]
+      }
+    ],
+    "warnings": [],
+    "duplicates": [],
+    "repeated_ids": [
+      {
+        "requirement_id": "FR-1",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-2",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-3",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-4",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-5",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-6",
+        "action": "merged into first occurrence",
+        "section": "3.1 Acceptance Criteria",
+        "location": {
+          "page": 5
+        }
+      },
+      {
+        "requirement_id": "FR-1",
+        "action": "dropped: maps the requirement to code files",
+        "section": "5 Requirements Traceability Matrix (RTM)",
+        "location": {
+          "page": 6
+        }
+      },
+      {
+        "requirement_id": "FR-2",
+        "action": "dropped: maps the requirement to code files",
+        "section": "5 Requirements Traceability Matrix (RTM)",
+        "location": {
+          "page": 6
+        }
+      },
+      {
+        "requirement_id": "FR-3",
+        "action": "dropped: maps the requirement to code files",
+        "section": "5 Requirements Traceability Matrix (RTM)",
+        "location": {
+          "page": 6
+        }
+      },
+      {
+        "requirement_id": "FR-6",
+        "action": "dropped: maps the requirement to code files",
+        "section": "5 Requirements Traceability Matrix (RTM)",
+        "location": {
+          "page": 6
+        }
+      }
+    ]
+  }
+}

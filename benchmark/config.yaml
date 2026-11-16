@@ -1,0 +1,72 @@
+# ============================================================
+# Tracelight Benchmark Configuration (SRS Agent + Verifier)
+# ============================================================
+# Mirrors DocAgent/benchmark/config.yaml. One file controls the
+# models, the Ollama endpoint, the sample size and the paths.
+# Paths are relative to the workspace root (the folder that holds
+# DocAgent/, SRSAgent/, SRS_to_code_traceability/, TraceabilityApp/).
+
+# The 8 models compared in the DocAgent benchmark. Used as the SRS Agent
+# extractor, as the verifier, and as leave-one-out judges.
+models:
+  - name: "qwen2.5-coder-7b"
+    ollama_model: "qwen2.5-coder:7b"
+  - name: "qwen3-8b"
+    ollama_model: "qwen3:8b"
+    think: false            # thinking models: judge calls disable thinking
+  - name: "llama3.1-8b"
+    ollama_model: "llama3.1:8b"
+  - name: "mistral-7b"
+    ollama_model: "mistral:7b"
+  - name: "deepseek-coder-6.7b"
+    ollama_model: "deepseek-coder:6.7b"
+  - name: "codegemma-7b"
+    ollama_model: "codegemma:7b"
+  - name: "codellama-7b"
+    ollama_model: "codellama:7b"
+  - name: "yi-coder-9b"
+    ollama_model: "yi-coder:9b"
+
+# SRS Agent candidate judge: only small models (the judge runs on every
+# ambiguous candidate, so it must be cheap). qwen2.5:3b is the default.
+srs_judge_models:
+  - name: "qwen2.5-3b"
+    ollama_model: "qwen2.5:3b"
+  - name: "qwen2.5-coder-3b"
+    ollama_model: "qwen2.5-coder:3b"
+  - name: "qwen2.5-coder-1.5b"
+    ollama_model: "qwen2.5-coder:1.5b"
+  - name: "qwen3-4b"
+    ollama_model: "qwen3:4b"
+
+# Fixed judge used while the extractor model varies (the app default).
+srs_default_judge: "qwen2.5:3b"
+
+ollama:
+  host: "http://localhost:11434"
+  temperature: 0.1          # judge calls (generation uses each agent's own settings)
+  max_tokens: 1024
+  seed: 42
+  timeout_s: 600
+
+sampling:
+  n_samples: 10             # items per pairwise matchup / per point-wise model
+  seed: 42
+
+# Test pairs. Golds are DRAFT (AI-drafted 2026-11-15, not yet reviewed by
+# the two annotators): every report is marked provisional.
+pairs:
+  - id: "Virtual-clinic"
+    srs: "Software Requirements Specification.pdf"
+  - id: "Travel-Agency-Automation-System"
+    srs: "SRS.pdf"
+  - id: "Books-Recommender-System"
+    srs: "SRS.md"
+  - id: "ProClinic"
+    srs: "ProClinicSRS.pdf"
+
+paths:
+  datasets: "datasets/Data"
+  gold_json: "TraceabilityApp/benchmark/data/gold"
+  srs_results: "TraceabilityApp/benchmark/results/srs_agent"
+  verifier_results: "TraceabilityApp/benchmark/results/verifier"

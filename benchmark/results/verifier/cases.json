@@ -1,0 +1,4150 @@
+[
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1",
+    "requirement_text": "Req-1 Maintain Specialities: This functionality will Maintain different types of Specialities",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.add_speciality",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.view_speciality",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.parse_speciality_delete",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Speciality",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1",
+    "requirement_text": "Req-1 Maintain Specialities: This functionality will Maintain different types of Specialities",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/1",
+    "requirement_text": "Req-1/1 Add Speciality: Add a new (unique) Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.add_speciality",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.SpecialityForm",
+        "role": "supporting"
+      },
+      {
+        "component_id": "server.models.Speciality",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/1",
+    "requirement_text": "Req-1/1 Add Speciality: Add a new (unique) Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "testing.test_admin.TestAdminViews.test_add_speciality",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.migrations.0006_profile_speciality.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/2",
+    "requirement_text": "Req-1/2 Edit Speciality: View and Update the details of an existing Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.view_speciality",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/2",
+    "requirement_text": "Req-1/2 Edit Speciality: View and Update the details of an existing Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.parse_speciality_delete",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_medicalinfo.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/3",
+    "requirement_text": "Req-1/3 Delete Speciality: Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.parse_speciality_delete",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-1/3",
+    "requirement_text": "Req-1/3 Delete Speciality: Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-1/3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2",
+    "requirement_text": "Req-2 Maintain Doctors: This functionality will Maintain Doctors and Associate them with the Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.createemployee_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.register_user",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2",
+    "requirement_text": "Req-2 Maintain Doctors: This functionality will Maintain Doctors and Associate them with the Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.AccountRegisterForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/1",
+    "requirement_text": "Req-2/1 Add Doctor: Add a new (unique) Doctor - Name, Age, Sex, Qualification, Experience, Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.createemployee_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.register_user",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.validate_username_available",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/1",
+    "requirement_text": "Req-2/1 Add Doctor: Add a new (unique) Doctor - Name, Age, Sex, Qualification, Experience, Speciality",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.ProfileForm",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Profile",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/2",
+    "requirement_text": "Req-2/2 Edit Doctor: View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_profile.update_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.ProfileForm.assign",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.users_view",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/2",
+    "requirement_text": "Req-2/2 Edit Doctor: View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_appointment.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/3",
+    "requirement_text": "Req-2/3 Delete Doctor: Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.user_archive",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-2/3",
+    "requirement_text": "Req-2/3 Delete Doctor: Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-2/3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3",
+    "requirement_text": "Req-3 Maintain Chemist & Labs: This functionality will Maintain Chemist and Lab Details",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.createemployee_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3",
+    "requirement_text": "Req-3 Maintain Chemist & Labs: This functionality will Maintain Chemist and Lab Details",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.migrations.0004_auto_20180306_1013.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/1",
+    "requirement_text": "Req-3/1 Add Chemist / Lab: Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3/1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.createemployee_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/1",
+    "requirement_text": "Req-3/1 Add Chemist / Lab: Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/2",
+    "requirement_text": "Req-3/2 Edit Chemist/Lab: View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-3/2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_profile.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/2",
+    "requirement_text": "Req-3/2 Edit Chemist/Lab: View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-3/2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_medicalinfo.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/3",
+    "requirement_text": "Req-3/3 Delete Chemist/ Lab: Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3/3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.user_archive",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-3/3",
+    "requirement_text": "Req-3/3 Delete Chemist/ Lab: Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-3/3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4",
+    "requirement_text": "Req-4 Maintain Symptoms: This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.add_symptom",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.view_symptom",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.parse_symptom_delete",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.AppointmentForm",
+        "role": "supporting"
+      },
+      {
+        "component_id": "server.models.Symptom",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4",
+    "requirement_text": "Req-4 Maintain Symptoms: This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/1",
+    "requirement_text": "Req-4/1 Add Symptom: Add a new Symptom",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.add_symptom",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.SymptomForm",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/1",
+    "requirement_text": "Req-4/1 Add Symptom: Add a new Symptom",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "testing.test_admin.TestAdminViews.test_add_symptom",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.migrations.0010_appointment_symptom.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/2",
+    "requirement_text": "Req-4/2 Edit Symptom: View and Update the details of an existing Symptom i,e. description",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.view_symptom",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/2",
+    "requirement_text": "Req-4/2 Edit Symptom: View and Update the details of an existing Symptom i,e. description",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.parse_symptom_delete",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.add_symptom",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/3",
+    "requirement_text": "Req-4/3 Delete Symptom: Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.parse_symptom_delete",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-4/3",
+    "requirement_text": "Req-4/3 Delete Symptom: Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-4/3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.user_archive",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.parse_speciality_delete",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5",
+    "requirement_text": "Req-5 Maintain Patients Profile: This is Patient Registration Functionality",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_home.register_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_profile.update_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.user_archive",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5",
+    "requirement_text": "Req-5 Maintain Patients Profile: This is Patient Registration Functionality",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_api.appointment_views",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/1",
+    "requirement_text": "Req-5/1 Create Patient Profile: Register a new Patient",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_home.register_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.register_user",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.AccountRegisterForm.clean",
+        "role": "supporting"
+      },
+      {
+        "component_id": "server.forms.validate_username_available",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/1",
+    "requirement_text": "Req-5/1 Create Patient Profile: Register a new Patient",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "testing.test_prescription.TestPrescriptionViews.test_prescription_new",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_appointment.create_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/2",
+    "requirement_text": "Req-5/2 Edit Patient Profile: View and Update the details of an existing Patient. Only latest details shall be maintained by the system",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_profile.update_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.ProfileForm.assign",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Profile.get_populated_fields",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/2",
+    "requirement_text": "Req-5/2 Edit Patient Profile: View and Update the details of an existing Patient. Only latest details shall be maintained by the system",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/3",
+    "requirement_text": "Req-5/3 Delete Patient Profile: Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.user_archive",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-5/3",
+    "requirement_text": "Req-5/3 Delete Patient Profile: Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-5/3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6",
+    "requirement_text": "Req-6 Consultation Request: Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-6::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_appointment.create_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Appointment",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6",
+    "requirement_text": "Req-6 Consultation Request: Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-6::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.validate_username_available",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.appointment.parse_appointment_cancel",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6/1",
+    "requirement_text": "Req-6/1 Create Consultation Request: Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-6/1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_appointment.create_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.AppointmentForm.generate",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.AppointmentForm.clean",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6/1",
+    "requirement_text": "Req-6/1 Create Consultation Request: Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-6/1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.appointment.parse_appointment_cancel",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6/2",
+    "requirement_text": "Req-6/2 Create Appointment- Online: For Appointment Requests, an entry shall be created in the Patient Appointment File if the appointment is for next day",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-6/2::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.message.send_appointment_create",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_appointment.create_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-6/3",
+    "requirement_text": "Req-6/3 Create Appointment - Batch: This is batch program that will be run by Administration every night to create Appointment File for next 5 days. It will purge the existing files",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-6/3::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.message.send_appointment_create",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-7",
+    "requirement_text": "Req-7 Predict Disease: This is a batch program that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-7::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-8",
+    "requirement_text": "Req-8 Provide Consultation: Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-8::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_appointment.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_prescription.create_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_medtest.create_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-8",
+    "requirement_text": "Req-8 Provide Consultation: Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-8::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-9",
+    "requirement_text": "Req-9 Deliver Medicines: Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status. Medicines shall be delivered offline to Patient by Chemist",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-9::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-9",
+    "requirement_text": "Req-9 Deliver Medicines: Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status. Medicines shall be delivered offline to Patient by Chemist",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-9::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.appointment.parse_appointment_cancel",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-10",
+    "requirement_text": "Req-10 Perform Lab Tests: Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline. Labs shall also submit reports to Patient offline",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-10::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_medtest.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_medtest.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-10",
+    "requirement_text": "Req-10 Perform Lab Tests: Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline. Labs shall also submit reports to Patient offline",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-10::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.appointment.parse_appointment_cancel",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-11",
+    "requirement_text": "Req-11 View/Generate Prescription/ Print Invoice: Patient shall have the facility to view the Prescription and print the invoice. Alternately, Admin can print and email the Prescription and Invoice",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-11::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.GeneratePdf.get",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.utils.render_to_pdf",
+        "role": "supporting"
+      },
+      {
+        "component_id": "server.views.GeneratePdf",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-11",
+    "requirement_text": "Req-11 View/Generate Prescription/ Print Invoice: Patient shall have the facility to view the Prescription and print the invoice. Alternately, Admin can print and email the Prescription and Invoice",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-11::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-13",
+    "requirement_text": "Req-13 Daily Back-up: Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping. The back-ups shall be rotated every 30 days",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-13::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.backup_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-13",
+    "requirement_text": "Req-13 Daily Back-up: Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping. The back-ups shall be rotated every 30 days",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-13::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "testing.tests.InvalidUser",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-14",
+    "requirement_text": "Req-14 Learning Disease: Every Month Administration will improve the Disease Prediction Database with learning of the prior month, i.e. improve the training data-set by including the actual learning for the month",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-14::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.activity_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.users_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-15",
+    "requirement_text": "Req-15 Maintain Users (Doctors, Patients, Chemist/ Labs): The system shall have a login functionality. Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials. For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-15::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_home.login_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.LoginForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_profile.password_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.createemployee_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_home.register_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-15",
+    "requirement_text": "Req-15 Maintain Users (Doctors, Patients, Chemist/ Labs): The system shall have a login functionality. Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials. For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::Req-15::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-16",
+    "requirement_text": "Req-16 Reports: The System will generate following reports: a) Doctor wise Appointment file for next 5 days b) Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month) c) Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month) d) Patient History File - For a patient, history of consultations done in last 3 years.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-16::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.statistic_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "Req-16",
+    "requirement_text": "Req-16 Reports: The System will generate following reports: a) Doctor wise Appointment file for next 5 days b) Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month) c) Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month) d) Patient History File - For a patient, history of consultations done in last 3 years.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::Req-16::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.appointment.parse_appointments",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-1",
+    "requirement_text": "BR-1 System shall be available only on Specified PinCodes (Zones). These will be set-up in the Parameter Control File",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-1::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.setup_field",
+        "role": "direct"
+      },
+      {
+        "component_id": "testing.tests.InvalidUser.setUp",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-2",
+    "requirement_text": "BR-2 All Users shall access the system using a login/user-id and password. The login-id/password will be managed in a secured manner",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_home.login_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.LoginForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-2",
+    "requirement_text": "BR-2 All Users shall access the system using a login/user-id and password. The login-id/password will be managed in a secured manner",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_home.register_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-3",
+    "requirement_text": "BR-3 Each Speciality 'has' one or more Doctors linked to it.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::BR-3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.models.Profile",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-3",
+    "requirement_text": "BR-3 Each Speciality 'has' one or more Doctors linked to it.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::BR-3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Hospital",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.parse_session",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-4",
+    "requirement_text": "BR-4 Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-4::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Profile",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.ProfileForm",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-4",
+    "requirement_text": "BR-4 Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Hospital",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-5",
+    "requirement_text": "BR-5 Each Doctor shall provide Consultation to ONE or More Patient",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::BR-5::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.models.Appointment",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-5",
+    "requirement_text": "BR-5 Each Doctor shall provide Consultation to ONE or More Patient",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::BR-5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.migrations.0001_initial.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-6",
+    "requirement_text": "BR-6 Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-6::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "server.views_home.register_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.register_user",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-6",
+    "requirement_text": "BR-6 Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-6::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.migrations.0001_initial.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-7",
+    "requirement_text": "BR-7 Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-7::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_appointment.create_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Appointment",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-7",
+    "requirement_text": "BR-7 Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-7::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_admin.handle_user_csv",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-8",
+    "requirement_text": "BR-8 Each Patient Consultation Request 'Generates' ONE prescription. Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-8::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.GeneratePdf.get",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "BR-10",
+    "requirement_text": "BR-10 Each Lab \"receives\" one or more prescriptions (only required fields). Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Labs",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::BR-10::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-003",
+    "requirement_text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days. This essentially means that there will be a provision to rollback by a month. Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up. Post that the dummy production database shall be purged. Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::REQ-003::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views_admin.backup_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-003",
+    "requirement_text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days. This essentially means that there will be a provision to rollback by a month. Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up. Post that the dummy production database shall be purged. Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::REQ-003::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_admin.restore_user",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-005",
+    "requirement_text": "As the Patient' data is highly confidential and private care would be taken to ensure that the confidentiality is maintained. Only authorized Hospital staff i.e. Doctors will have the access to Patients Consultation requests. Also, Chemists and Labs will be shown data only on need to know basis.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::REQ-005::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "server.views.authentication_check",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_appointment.update_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-005",
+    "requirement_text": "As the Patient' data is highly confidential and private care would be taken to ensure that the confidentiality is maintained. Only authorized Hospital staff i.e. Doctors will have the access to Patients Consultation requests. Also, Chemists and Labs will be shown data only on need to know basis.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::REQ-005::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.EmployeeRegistrationForm.clean",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-007",
+    "requirement_text": "The System needs to designed to prevent full scan of Patient Consultation Request Entity for identifying the Appointments for next day/ day range. For this, a derived Entity called as Patient Appointment file shall be designed.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::REQ-007::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.appointment.parse_appointments",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.views_appointment.update_view",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-008",
+    "requirement_text": "To prevent multiple doctors of the same speciality to log-in onto same Patient Consultation Request, a workflow system needs to be designed which routes the Patient Consultation Requests to Doctors. Similarly once the doctor has completed the prescription, the workflow should be routed to the right Chemist (based on Patient and Chemist Pincode) and /or Labs (based on Patient and Lab PinCode).",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::REQ-008::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.views_prescription.list_view",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.models.Account",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-009",
+    "requirement_text": "In order to Assist Doctors, a Machine learning algorithm will be designed and trained on a training data-set to predict diseases based on Patient Symptoms, this algorithm will continue to be trained on emerging data sets to improve the quality of predictions.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Virtual-clinic::REQ-009::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.forms.setup_field",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Virtual-clinic",
+    "requirement_id": "REQ-019",
+    "requirement_text": "Patients, Chemists and Labs will connect through a secured encrypted connection over internet (https://). Since the data communicated over internet is confidential it is imperative that encrypted protocols are used to prevent data leakages. E-mails shall be used to send the Prescription and Invoice to the Patients after Consultation.",
+    "gold_status": "not_implemented",
+    "gold_sure": "no",
+    "case_id": "Virtual-clinic::REQ-019::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "server.forms.PasswordForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "server.appointment.parse_appointment_cancel",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.1",
+    "requirement_text": "4.1 To check the availability of a particular car. 4.1.1 The customer can be able to ask for the availability of a particular car which he could take for rent. 4.1.2 In the options after selecting 'book a car,' there will be an option called 'ask for availability. After selecting it, the system will ask the user to enter the car's name and if they need it with AC or non-AC. Then the system will output if it is available or not. If the ordered car is available, the user can proceed to payment. 4.1.3 REQ1: the input, which is a car name, should be among the cars which the company provides; otherwise, the system will print \" Our company does not provide ________ cars\" (with the car name in the blank) REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.1::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.Booking.token",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.1",
+    "requirement_text": "4.1 To check the availability of a particular car. 4.1.1 The customer can be able to ask for the availability of a particular car which he could take for rent. 4.1.2 In the options after selecting 'book a car,' there will be an option called 'ask for availability. After selecting it, the system will ask the user to enter the car's name and if they need it with AC or non-AC. Then the system will output if it is available or not. If the ordered car is available, the user can proceed to payment. 4.1.3 REQ1: the input, which is a car name, should be among the cars which the company provides; otherwise, the system will print \" Our company does not provide ________ cars\" (with the car name in the blank) REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Customer.Customer.checkAvailability",
+        "role": "direct"
+      },
+      {
+        "component_id": "Customer.Customer",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.2",
+    "requirement_text": "4.2 To check when can a specific car be available. 4.2.1 From feature 4.1, if the asked car is not available at the moment, with this feature, the user will be able to ask the system when can the car be available 4.2.2 There will be an option after the system says the car is not available at the moment. The system checks the returning time of the previous customers of the car and outputs the nearest time. 4.2.3 REQ1: The system should have access to the company database",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.2::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.returning",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.3",
+    "requirement_text": "4.3 To see all the available cars. 4.3.1 The user can choose this feature other than 4.1. To see all the cars available at the moment and choose from them. 4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars. ' If the user selects the option, then the system will output all the available cars. The user can choose any car from it then the user will proceed to payment. 4.3.3 REQ1: The system should have access to the company database",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.3",
+    "requirement_text": "4.3 To see all the available cars. 4.3.1 The user can choose this feature other than 4.1. To see all the cars available at the moment and choose from them. 4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars. ' If the user selects the option, then the system will output all the available cars. The user can choose any car from it then the user will proceed to payment. 4.3.3 REQ1: The system should have access to the company database",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.Booking.token",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.Booking",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.4",
+    "requirement_text": "4.4 Payment of advance. 4.4.1 The user will pay a minimum advance to take the required car for rent 4.4.2 When the user proceeds to payment, the system will display the minimum advance required to pay. If the customer pays it, the system notes down the car's initial readings and asks the user for an expected time of return. The system updates the database, and the car will be the customers to take for rent. 4.4.3 REQ1: A valid expected time of return should be inputted; otherwise, \"invalid return time\" will display on the screen REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.4::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Booking.Booking.token",
+        "role": "direct"
+      },
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.Booking",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Booking.Booking.__init__",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.4",
+    "requirement_text": "4.4 Payment of advance. 4.4.1 The user will pay a minimum advance to take the required car for rent 4.4.2 When the user proceeds to payment, the system will display the minimum advance required to pay. If the customer pays it, the system notes down the car's initial readings and asks the user for an expected time of return. The system updates the database, and the car will be the customers to take for rent. 4.4.3 REQ1: A valid expected time of return should be inputted; otherwise, \"invalid return time\" will display on the screen REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Owner.Owner.updateData",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.5",
+    "requirement_text": "4.5 Return a car. 4.5.1 The customer can return a car using this feature. The customer will proceed to the payment section 4.5.2 There will be an option to return a car in the interface. After selecting it, the system will ask the user for the name of the car and token number. The system will ask the user to enter the mile reading of the user's car. Then the system calculates the cost for the car and outputs it. 4.5.3 REQ1: The customer must input the mile-reading and token number correctly; otherwise system outputs\" Invalid Input.\" REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.5::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.priceCal",
+        "role": "direct"
+      },
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.validateTime",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Booking.returning",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.5",
+    "requirement_text": "4.5 Return a car. 4.5.1 The customer can return a car using this feature. The customer will proceed to the payment section 4.5.2 There will be an option to return a car in the interface. After selecting it, the system will ask the user for the name of the car and token number. The system will ask the user to enter the mile reading of the user's car. Then the system calculates the cost for the car and outputs it. 4.5.3 REQ1: The customer must input the mile-reading and token number correctly; otherwise system outputs\" Invalid Input.\" REQ2: The system should have access to the company database",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Owner.Owner.updateData",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.6",
+    "requirement_text": "4.6 Lookup Database. 4.6.1 The owner would be able to access the database to look at the number of cars and their present status. i.e., in repair, available, or rented. 4.6.2 Choose the Owner in the login options and enter a password. After that, choose the option of lookup database in the given options. Can enter a model if you want to look at the data of one car only or look at the complete database. 4.6.3 REQ1: Password is a unique string. REQ2: If the password is wrong, then outputs message\" Wrong password.\" REQ3: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.6::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Owner.Owner.getData",
+        "role": "direct"
+      },
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner.__init__",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Car.Car.__init__",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.6",
+    "requirement_text": "4.6 Lookup Database. 4.6.1 The owner would be able to access the database to look at the number of cars and their present status. i.e., in repair, available, or rented. 4.6.2 Choose the Owner in the login options and enter a password. After that, choose the option of lookup database in the given options. Can enter a model if you want to look at the data of one car only or look at the complete database. 4.6.3 REQ1: Password is a unique string. REQ2: If the password is wrong, then outputs message\" Wrong password.\" REQ3: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.6::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.returning",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.7",
+    "requirement_text": "4.7 Update-Database. 4.7.1 The owner would be able to update the number of cars in the fleet. If he buys or sells a car, the same can be reflected in the database. 4.7.2 There would be an option to update databases in the options. Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars. 4.7.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The number of cars that must be bought or sold is an integer number.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.7::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Owner.Owner.updateData",
+        "role": "direct"
+      },
+      {
+        "component_id": "main.main",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.7",
+    "requirement_text": "4.7 Update-Database. 4.7.1 The owner would be able to update the number of cars in the fleet. If he buys or sells a car, the same can be reflected in the database. 4.7.2 There would be an option to update databases in the options. Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars. 4.7.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The number of cars that must be bought or sold is an integer number.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.7::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.8",
+    "requirement_text": "4.8 Record data. 4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out. 4.8.2 When a customer makes a booking, the system will record necessary data. The owner has to do nothing. 4.8.3 REQ1: The Recorded data will be stored in another excel sheet indexed with a token number.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.8::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Booking.Booking.token",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.8",
+    "requirement_text": "4.8 Record data. 4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out. 4.8.2 When a customer makes a booking, the system will record necessary data. The owner has to do nothing. 4.8.3 REQ1: The Recorded data will be stored in another excel sheet indexed with a token number.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.8::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner.updateData",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.9",
+    "requirement_text": "4.9 Calculate stats. 4.9.1 The software calculates average demand, maintenance charges, money earned, and other valuable stats for each car model. 4.9.2 There would be an option to calc stats in the options. Choose that option, enter a model. 4.9.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: Previous data and some dummy data which satisfies the industry standards are entered first to get fair stats.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.9::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Owner.Owner.getInfo",
+        "role": "direct"
+      },
+      {
+        "component_id": "Car.Car.getStats",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.9",
+    "requirement_text": "4.9 Calculate stats. 4.9.1 The software calculates average demand, maintenance charges, money earned, and other valuable stats for each car model. 4.9.2 There would be an option to calc stats in the options. Choose that option, enter a model. 4.9.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: Previous data and some dummy data which satisfies the industry standards are entered first to get fair stats.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.9::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.10",
+    "requirement_text": "4.10 Set Price. 4.10.1 The software helps in calculating a profitable and competitive price for each model of car. 4.10.2 There would be an option to set the price in the options. Choose that option, enter model, the sys will show required stats for deciding price, enter the price to set. 4.10.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The sys will only display all the required stats for making this choice but will not choose us.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.10::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "Owner.Owner.setPrice",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner.getInfo",
+        "role": "supporting"
+      },
+      {
+        "component_id": "main.main",
+        "role": "supporting"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.10",
+    "requirement_text": "4.10 Set Price. 4.10.1 The software helps in calculating a profitable and competitive price for each model of car. 4.10.2 There would be an option to set the price in the options. Choose that option, enter model, the sys will show required stats for deciding price, enter the price to set. 4.10.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The sys will only display all the required stats for making this choice but will not choose us.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.10::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.returning.returnCar",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.returning",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "FEAT-4.11",
+    "requirement_text": "4.11 Decide Fate of Car. 4.11.1 The software helps decide which model of car to buy and which to sell off so that the business can make a consistent amount of profit. 4.11.2 There would be an option to decide the fate of a model in the options. Choose that option, enter model, the sys will tell him if the model is worth investing in or should he reduce the number of cars of that model in his fleet. An optimum answer is displayed. 4.11.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The system gives a ballpark number which is the number optimum of cars of that model when owned will give max profit.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::FEAT-4.11::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner.updateData",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "REQ-001",
+    "requirement_text": "Front-end: Text-based interface. Back-end: Python, mainly Pandas library.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Travel-Agency-Automation-System::REQ-001::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "REQ-001",
+    "requirement_text": "Front-end: Text-based interface. Back-end: Python, mainly Pandas library.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Travel-Agency-Automation-System::REQ-001::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Owner.Owner.setPrice",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "REQ-005",
+    "requirement_text": "The owner has a unique password using which he can log in to the system and access its features. Anyone can access the features of the customer.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::REQ-005::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "main.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "Owner.Owner.__init__",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Travel-Agency-Automation-System",
+    "requirement_id": "REQ-005",
+    "requirement_text": "The owner has a unique password using which he can log in to the system and access its features. Anyone can access the features of the customer.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Travel-Agency-Automation-System::REQ-005::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "Booking.Booking.token",
+        "role": "direct"
+      },
+      {
+        "component_id": "Booking.Booking",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.1",
+    "requirement_text": "The system shall read pipeline settings from config.yaml using a YAML reader utility in src/utils/common.py.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.utils.common.read_yaml",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.__init__",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.1",
+    "requirement_text": "The system shall read pipeline settings from config.yaml using a YAML reader utility in src/utils/common.py.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.utils.common.load_bin",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.utils.common.create_directories",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.2",
+    "requirement_text": "The AppConfiguration class (configuration.py) shall instantiate immutable ConfigEntity objects for each stage: DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_transformation_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.entity.config_entity.DataIngestionConfig",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.entity.config_entity.DataValidationConfig",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.entity.config_entity.DataTransformationConfig",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.entity.config_entity.ModelTrainerConfig",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.entity.config_entity.ModelRecommendationConfig",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.2",
+    "requirement_text": "The AppConfiguration class (configuration.py) shall instantiate immutable ConfigEntity objects for each stage: DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.pipeline.training_pipeline.TrainingPipeline",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.4",
+    "requirement_text": "The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.4::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.exception.__init__.error_message_detail",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.exception.__init__.CustomException.__init__",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.exception.__init__.CustomException.__str__",
+        "role": "supporting"
+      },
+      {
+        "component_id": "src.exception.__init__.CustomException",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-1.4",
+    "requirement_text": "The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-1.4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.1",
+    "requirement_text": "The component shall download raw zip archives containing BX-Books.csv, BX-Book-Ratings.csv, and BX-Users.csv from a remote GitHub storage URL specified in configuration.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-2.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion.download_file",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "supporting"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "role": "supporting"
+      },
+      {
+        "component_id": "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.1",
+    "requirement_text": "The component shall download raw zip archives containing BX-Books.csv, BX-Book-Ratings.csv, and BX-Users.csv from a remote GitHub storage URL specified in configuration.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-2.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.2",
+    "requirement_text": "The system shall extract zip contents into artifacts/dataset/raw_data/.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-2.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.2",
+    "requirement_text": "The system shall extract zip contents into artifacts/dataset/raw_data/.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-2.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.3",
+    "requirement_text": "Upon successful extraction, raw files shall be verified and moved to artifacts/dataset/ingested_data/.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-2.3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-2.3",
+    "requirement_text": "Upon successful extraction, raw files shall be verified and moved to artifacts/dataset/ingested_data/.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-2.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.1",
+    "requirement_text": "The system shall load BX-Books.csv and BX-Book-Ratings.csv.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.1",
+    "requirement_text": "The system shall load BX-Books.csv and BX-Book-Ratings.csv.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.2",
+    "requirement_text": "User Filtering Rule: The component shall compute rating counts per user and discard users with fewer than 200 total ratings (ratings_count < 200).",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-3.2::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.2",
+    "requirement_text": "User Filtering Rule: The component shall compute rating counts per user and discard users with fewer than 200 total ratings (ratings_count < 200).",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-3.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.3",
+    "requirement_text": "Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings (ratings_count < 50).",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-3.3::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.3",
+    "requirement_text": "Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings (ratings_count < 50).",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-3.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.4",
+    "requirement_text": "The component shall perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.4::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.4",
+    "requirement_text": "The component shall perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.5",
+    "requirement_text": "Output files shall be saved to: artifacts/dataset/clean_data.csv, artifacts/serialized_objects/final_rating.pkl",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.5::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.utils.common.save_bin",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-3.5",
+    "requirement_text": "Output files shall be saved to: artifacts/dataset/clean_data.csv, artifacts/serialized_objects/final_rating.pkl",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-3.5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.1",
+    "requirement_text": "The system shall construct a pivot table where rows represent unique Book Titles (title) and columns represent unique User IDs (user_id).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.1",
+    "requirement_text": "The system shall construct a pivot table where rows represent unique Book Titles (title) and columns represent unique User IDs (user_id).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.2",
+    "requirement_text": "The system shall replace all NaN entries with 0 to populate missing user ratings.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.2",
+    "requirement_text": "The system shall replace all NaN entries with 0 to populate missing user ratings.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.3",
+    "requirement_text": "The transformed pivot table and book title list shall be serialized to: artifacts/serialized_objects/book_pivot.pkl, artifacts/serialized_objects/book_names.pkl, templates/book_names.pkl (for Streamlit UI binding)",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.utils.common.save_bin",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-4.3",
+    "requirement_text": "The transformed pivot table and book title list shall be serialized to: artifacts/serialized_objects/book_pivot.pkl, artifacts/serialized_objects/book_names.pkl, templates/book_names.pkl (for Streamlit UI binding)",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-4.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.1",
+    "requirement_text": "The component shall convert book_pivot into a Compressed Sparse Row matrix (scipy.sparse.csr_matrix).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.1",
+    "requirement_text": "The component shall convert book_pivot into a Compressed Sparse Row matrix (scipy.sparse.csr_matrix).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.2",
+    "requirement_text": "The system shall initialize and fit a Scikit-Learn NearestNeighbors estimator with parameters: algorithm = 'brute', metric = 'cosine' (or Euclidean distance as defined in configuration)",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.2",
+    "requirement_text": "The system shall initialize and fit a Scikit-Learn NearestNeighbors estimator with parameters: algorithm = 'brute', metric = 'cosine' (or Euclidean distance as defined in configuration)",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.3",
+    "requirement_text": "The trained model instance shall be serialized and saved to artifacts/trained_model/model.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.utils.common.save_bin",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-5.3",
+    "requirement_text": "The trained model instance shall be serialized and saved to artifacts/trained_model/model.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-5.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.1",
+    "requirement_text": "The engine shall deserialize model.pkl, book_pivot.pkl, and final_rating.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.utils.common.load_bin",
+        "role": "supporting"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.1",
+    "requirement_text": "The engine shall deserialize model.pkl, book_pivot.pkl, and final_rating.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_transformation.DataTransformation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.2",
+    "requirement_text": "Given a input book title, the engine shall look up its row index in book_pivot.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.2",
+    "requirement_text": "Given a input book title, the engine shall look up its row index in book_pivot.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.3",
+    "requirement_text": "The engine shall invoke model.kneighbors(..., n_neighbors=6) to retrieve the top 6 nearest neighbor indices (where the 1st neighbor is the query book itself).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.3",
+    "requirement_text": "The engine shall invoke model.kneighbors(..., n_neighbors=6) to retrieve the top 6 nearest neighbor indices (where the 1st neighbor is the query book itself).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.model_trainer.ModelTrainer",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.4",
+    "requirement_text": "For each of the top 5 recommended books, the engine shall query final_rating.pkl to extract the corresponding book image cover URL (Image-URL-L or Image-URL-M).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.4::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.4",
+    "requirement_text": "For each of the top 5 recommended books, the engine shall query final_rating.pkl to extract the corresponding book image cover URL (Image-URL-L or Image-URL-M).",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.5",
+    "requirement_text": "The engine shall return a dictionary/tuple list containing recommended titles and image URLs.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.5::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-6.5",
+    "requirement_text": "The engine shall return a dictionary/tuple list containing recommended titles and image URLs.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::FR-6.5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.1",
+    "requirement_text": "Book Selector Dropdown: Render a searchable dropdown populated with book titles from templates/book_names.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.1",
+    "requirement_text": "Book Selector Dropdown: Render a searchable dropdown populated with book titles from templates/book_names.pkl.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_transformation.DataTransformation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.2",
+    "requirement_text": "Recommendation Button: Render a \"Show Recommendation\" button. Upon clicking: Compute recommendations using the Recommendation Engine. Display recommendations in a responsive 5-Column Layout. Show the cover poster image above each recommended book title.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.2",
+    "requirement_text": "Recommendation Button: Render a \"Show Recommendation\" button. Upon clicking: Compute recommendations using the Recommendation Engine. Display recommendations in a responsive 5-Column Layout. Show the cover poster image above each recommended book title.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.3",
+    "requirement_text": "Train Button: Render a \"Train\" trigger button allowing developers/admins to re-execute the ML Training Pipeline on demand.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "FR-7.3",
+    "requirement_text": "Train Button: Render a \"Train\" trigger button allowing developers/admins to re-execute the ML Training Pipeline on demand.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "Books-Recommender-System::FR-7.3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "app.get_book_names",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "REQ-009",
+    "requirement_text": "Graceful Error Handling: If a book poster image URL is broken or missing, a default fallback placeholder image shall be displayed.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::REQ-009::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "REQ-009",
+    "requirement_text": "Graceful Error Handling: If a book poster image URL is broken or missing, a default fallback placeholder image shall be displayed.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::REQ-009::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "REQ-011",
+    "requirement_text": "Configuration Driven: Hyperparameters (e.g., k=6, user rating threshold =200, book rating threshold =50) can be tuned directly via config.yaml without changing python source code.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::REQ-011::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "Books-Recommender-System",
+    "requirement_id": "REQ-011",
+    "requirement_text": "Configuration Driven: Hyperparameters (e.g., k=6, user rating threshold =200, book rating threshold =50) can be tuned directly via config.yaml without changing python source code.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "Books-Recommender-System::REQ-011::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "src.components.data_validation.DataValidation",
+        "role": "direct"
+      },
+      {
+        "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-1",
+    "requirement_text": "FR-1 Secure Auth: Authentication using system credentials; passwords hashed with Argon2. Acceptance criteria: Users can register/login; password storage verified as Argon2; admin can assign roles. Unit tests cover login and role checks.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-1::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.accounts.views.patient_signup",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.RoleBasedLoginView.form_valid",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.create_staff_account",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.forms.StaffCreationForm",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.models.CustomUser",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.RoleBasedLoginView",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.accounts.views.StaffLoginView",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.accounts.views.PatientLoginView",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-1",
+    "requirement_text": "FR-1 Secure Auth: Authentication using system credentials; passwords hashed with Argon2. Acceptance criteria: Users can register/login; password storage verified as Argon2; admin can assign roles. Unit tests cover login and role checks.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-1::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.api.tests_extended.BaseTestCase",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.test_jwt_auth.JWTAuthenticationTests",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-2",
+    "requirement_text": "FR-2 Conflict Check: Rejects appointment booking if the doctor is busy in the requested slot. Acceptance criteria: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::FR-2::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.appointments.models.Appointment.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.appointments.forms.AppointmentForm.clean",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.appointments.models.Appointment.save",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.appointments.views.book_appointment",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.api.patient_views.PatientAppointmentListCreateView.post",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-2",
+    "requirement_text": "FR-2 Conflict Check: Rejects appointment booking if the doctor is busy in the requested slot. Acceptance criteria: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::FR-2::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.appointments.views.get_available_slots",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.tests.PatientAppointmentTests.test_double_booking_same_doctor_same_time_fails",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-3",
+    "requirement_text": "FR-3 EHR Hub: Digital registration and retrieval of patient profiles and history. Acceptance criteria: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.patients.views.patient_create",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_update",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_detail",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_my_visits",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.patient_signup",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.models.Patient",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.patients.models.Visit",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-3",
+    "requirement_text": "FR-3 EHR Hub: Digital registration and retrieval of patient profiles and history. Acceptance criteria: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.api.patient_views.PatientVisitListView",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.patient_views.PatientProfileView",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-4",
+    "requirement_text": "FR-4 Auto-Billing: System calculates total bill including services and 18% GST. Acceptance criteria: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-4::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "backend.billing.models.Invoice.recalculate_totals",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.views.generate_invoice",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.signals.create_draft_invoice_on_completion",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.models.InvoiceItem.line_total",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.billing.models.Invoice",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-4",
+    "requirement_text": "FR-4 Auto-Billing: System calculates total bill including services and 18% GST. Acceptance criteria: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.billing.admin.InvoiceAdmin.save_related",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.admin.InvoiceAdmin",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-5",
+    "requirement_text": "FR-5 Audit Log: Automated tracking of all record deletions and administrative changes. Acceptance criteria: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::FR-5::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.audit.signals._log_delete",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.audit.signals._log_save",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.deactivate_staff_account",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.audit.signals._capture_old_state",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.audit.signals._write_log",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.audit.signals._get_tracked",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.audit.middleware.AuditUserMiddleware.__call__",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-5",
+    "requirement_text": "FR-5 Audit Log: Automated tracking of all record deletions and administrative changes. Acceptance criteria: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::FR-5::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.audit.utils.log_action",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.views.AuditLogViewSet",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-6",
+    "requirement_text": "FR-6 AI Help Desk: AI-powered assistant using NLP-based FAQ and Retrieval-Augmented Generation (RAG) to answer system-related queries. Acceptance criteria: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-6::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "backend.patients.views.patient_ai_ask",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "FR-6",
+    "requirement_text": "FR-6 AI Help Desk: AI-powered assistant using NLP-based FAQ and Retrieval-Augmented Generation (RAG) to answer system-related queries. Acceptance criteria: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review.",
+    "gold_status": "partial",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::FR-6::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.prescriptions.utils.generate_prescription_pdf",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.core.utils.send_lab_report_notification",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "NFR-3",
+    "requirement_text": "NFR-3 Security: Enforce HTTPS, CSRF protection, and role-based data isolation.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::NFR-3::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.api.permissions.IsPatient.has_permission",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.permissions.IsDoctor.has_permission",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.permissions.IsAdminRole.has_permission",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.permissions.IsStaff.has_permission",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "NFR-3",
+    "requirement_text": "NFR-3 Security: Enforce HTTPS, CSRF protection, and role-based data isolation.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::NFR-3::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.accounts.views.RoleBasedLoginView",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.PatientLoginView",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "NFR-4",
+    "requirement_text": "NFR-4 Scalability: Support up to 5,000 active patient records; use pagination/indexing for large lists.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::NFR-4::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.api.pagination.StandardResultsSetPagination",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.pagination.LargeResultsSetPagination",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_list",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "NFR-4",
+    "requirement_text": "NFR-4 Scalability: Support up to 5,000 active patient records; use pagination/indexing for large lists.",
+    "gold_status": "implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::NFR-4::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.patients.test_lab_reports.LabReportValidationTests",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.views.InvoiceViewSet",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US001",
+    "requirement_text": "US001 Admin: Manage system roles, so that I can control system permissions.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US001::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.accounts.views.create_staff_account",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.forms.StaffCreationForm.save",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.deactivate_staff_account",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.reactivate_staff_account",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US001",
+    "requirement_text": "US001 Admin: Manage system roles, so that I can control system permissions.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US001::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.api.permissions.IsStaff.has_permission",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.permissions.IsStaff",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US002",
+    "requirement_text": "US002 Doctor: Book a visit slot, so that I can manage my clinical workload.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "ProClinic::US002::gold",
+    "kind": "gold",
+    "expected": "partially_supported",
+    "components": [
+      {
+        "component_id": "backend.appointments.views.doctor_unavailability",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.appointments.views.book_appointment",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US002",
+    "requirement_text": "US002 Doctor: Book a visit slot, so that I can manage my clinical workload.",
+    "gold_status": "partial",
+    "gold_sure": "no",
+    "case_id": "ProClinic::US002::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.patients.views.patient_my_visits",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.models.Prescription",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US003",
+    "requirement_text": "US003 Patient: View medical records, so that I can track my health status.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US003::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.patients.views.patient_my_visits",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_my_prescriptions",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.patient_my_lab_reports",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.patient_views.PatientVisitListView.get_queryset",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US003",
+    "requirement_text": "US003 Patient: View medical records, so that I can track my health status.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US003::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.core.views.dashboard",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.tests_extended.PublicationWebViewTests.test_doctor_dashboard_shows_own_papers",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US004",
+    "requirement_text": "US004 Accountant: Generate a final bill, so that charges are transparent for the patient.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US004::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.billing.views.generate_invoice",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.views.invoice_pdf_download",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.utils.generate_invoice_pdf",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US004",
+    "requirement_text": "US004 Accountant: Generate a final bill, so that charges are transparent for the patient.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US004::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.billing.views.invoice_list",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.utils.prescription_pdf_response",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US005",
+    "requirement_text": "US005 Pharmacist: View prescriptions, so that I can dispense the correct medications.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US005::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.prescriptions.views.pharmacist_prescription_list",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.views.pharmacist_prescription_detail",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.views.dispense_prescription",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US005",
+    "requirement_text": "US005 Pharmacist: View prescriptions, so that I can dispense the correct medications.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US005::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.prescriptions.models.Prescription",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.migrations.0003_add_dispense_status.Migration",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US006",
+    "requirement_text": "US006 User: Access AI Help Desk, so that I can get immediate answers to system queries.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US006::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.accounts.migrations.0001_initial.Migration",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.prescriptions.models.Prescription",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US007",
+    "requirement_text": "US007 Admin: View daily system metrics, so that I can monitor system health and usage.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US007::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.core.views.dashboard",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US007",
+    "requirement_text": "US007 Admin: View daily system metrics, so that I can monitor system health and usage.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US007::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.core.views.design_system",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.patients.views.lab_report_verify",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US008",
+    "requirement_text": "US008 Doctor: Upload research paper, so that I can submit research for internal approval.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US008::gold",
+    "kind": "gold",
+    "expected": "supported",
+    "components": [
+      {
+        "component_id": "backend.publications.views.submit_paper",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.publications.views.admin_approve",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.publications.views.admin_reject",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.publications.models.Publication.approve",
+        "role": "supporting"
+      },
+      {
+        "component_id": "backend.publications.models.Publication",
+        "role": "supporting"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US008",
+    "requirement_text": "US008 Doctor: Upload research paper, so that I can submit research for internal approval.",
+    "gold_status": "implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US008::distractor",
+    "kind": "distractor",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.api.tests_extended.PublicationWebViewTests.test_submit_paper_sets_status_pending",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.api.tests_extended.PublicationWebViewTests",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US009",
+    "requirement_text": "US009 Staff: Create support tickets, so that I can track operational issues and resolutions.",
+    "gold_status": "not_implemented",
+    "gold_sure": "yes",
+    "case_id": "ProClinic::US009::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.api.tests.StaffAPIPermissionTests.test_doctor_can_access_staff_api",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.billing.views.invoice_edit_draft",
+        "role": "direct"
+      }
+    ]
+  },
+  {
+    "pair": "ProClinic",
+    "requirement_id": "US010",
+    "requirement_text": "US010 Manager: Generate management reports, so that I can analyze clinic performance and revenue.",
+    "gold_status": "not_implemented",
+    "gold_sure": "no",
+    "case_id": "ProClinic::US010::absent",
+    "kind": "absent",
+    "expected": "not_supported_by_candidate",
+    "components": [
+      {
+        "component_id": "backend.billing.views.invoice_list",
+        "role": "direct"
+      },
+      {
+        "component_id": "backend.accounts.views.patient_forgot_password_request",
+        "role": "direct"
+      }
+    ]
+  }
+]

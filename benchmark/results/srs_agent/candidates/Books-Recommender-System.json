@@ -1,0 +1,1170 @@
+{
+  "pair_id": "Books-Recommender-System",
+  "srs_file": "SRS.md",
+  "input_type": "textfile",
+  "candidates": [
+    {
+      "text": "Operating System: Linux (Debian/Ubuntu in Docker) / Windows / macOS.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Web Server: Streamlit Server (Port `8501`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Containerization Engine: Docker (Base Image: `python:3.7-slim-buster`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Cloud Infrastructure: Cloud deployment ready (AWS EC2 / Elastic Beanstalk / ECS or Azure App Service).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "2.4 Operating Environment"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Provides a central configuration management system using YAML files and Python namedtuples to guarantee type safety and immutability across pipeline stages.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "starts with an actionable instruction",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-1.1: The system shall read pipeline settings from `config.yaml` using a YAML reader utility in `src/utils/common.py`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-1.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-1.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage:\n- `DataIngestionConfig`\n- `DataValidationConfig`\n- `DataTransformationConfig`\n- `ModelTrainerConfig`\n- `ModelRecommendationConfig`",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-1.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-1.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 5,
+        "lines": 6
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-1.3: The Logger module shall record pipeline progress, warnings, and errors to both stdout and standard log files.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-1.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-1.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-1.4: The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-1.4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-1.4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Handles automated retrieval and extraction of raw datasets from remote repositories.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-2.1: The component shall download raw zip archives containing `BX-Books.csv`, `BX-Book-Ratings.csv`, and `BX-Users.csv` from a remote GitHub storage URL specified in configuration.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-2.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-2.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-2.2: The system shall extract zip contents into `artifacts/dataset/raw_data/`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-2.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-2.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-2.3: Upon successful extraction, raw files shall be verified and moved to `artifacts/dataset/ingested_data/`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-2.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-2.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Validates, cleans, and filters raw rating data to isolate statistically significant reader-book interactions.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "starts with an actionable instruction",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-3.1: The system shall load `BX-Books.csv` and `BX-Book-Ratings.csv`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-3.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-3.2: User Filtering Rule: The component shall compute rating counts per user and discard users with fewer than 200 total ratings ($\\text{ratings\\_count} < 200$).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-3.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-3.3: Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings ($\\text{ratings\\_count} < 50$).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-3.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-3.4: The component shall perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-3.4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3.4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-3.5: Output files shall be saved to:\n- `artifacts/dataset/clean_data.csv`\n- `artifacts/serialized_objects/final_rating.pkl`",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-3.5"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-3.5",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 2,
+        "lines": 3
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Transforms cleaned tabular data into a 2D interaction matrix required for Collaborative Filtering algorithms.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-4.1: The system shall construct a pivot table where rows represent unique Book Titles (`title`) and columns represent unique User IDs (`user_id`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-4.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-4.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-4.2: The system shall replace all $NaN$ entries with $0$ to populate missing user ratings.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-4.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-4.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-4.3: The transformed pivot table and book title list shall be serialized to:\n- `artifacts/serialized_objects/book_pivot.pkl`\n- `artifacts/serialized_objects/book_names.pkl`\n- `templates/book_names.pkl` (for Streamlit UI binding)",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-4.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-4.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 3,
+        "lines": 4
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Trains the $k$-Nearest Neighbors machine learning model on the sparse interaction matrix.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-5.1: The component shall convert `book_pivot` into a Compressed Sparse Row matrix (`scipy.sparse.csr_matrix`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-5.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-5.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-5.2: The system shall initialize and fit a Scikit-Learn `NearestNeighbors` estimator with parameters:\n- `algorithm = 'brute'`\n- `metric = 'cosine'` (or Euclidean distance as defined in configuration)",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-5.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-5.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 2,
+        "lines": 3
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-5.3: The trained model instance shall be serialized and saved to `artifacts/trained_model/model.pkl`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-5.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-5.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Provides inference functionality to search for nearest neighbor books and fetch corresponding cover art posters.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "starts with an actionable instruction",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-6.1: The engine shall deserialize `model.pkl`, `book_pivot.pkl`, and `final_rating.pkl`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-6.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-6.2: Given a input book title, the engine shall look up its row index in `book_pivot`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-6.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-6.3: The engine shall invoke `model.kneighbors(..., n_neighbors=6)` to retrieve the top 6 nearest neighbor indices (where the 1st neighbor is the query book itself).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-6.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-6.4: For each of the top 5 recommended books, the engine shall query `final_rating.pkl` to extract the corresponding book image cover URL (`Image-URL-L` or `Image-URL-M`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-6.4"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6.4",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-6.5: The engine shall return a dictionary/tuple list containing recommended titles and image URLs.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-6.5"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-6.5",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Provides an intuitive single-page web interface for end-users and administrators.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Description"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "starts with an actionable instruction",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-7.1: Book Selector Dropdown: Render a searchable dropdown populated with book titles from `templates/book_names.pkl`.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-7.1"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-7.1",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-7.2: Recommendation Button: Render a \"Show Recommendation\" button. Upon clicking:\n- Compute recommendations using the Recommendation Engine.\n- Display recommendations in a responsive 5-Column Layout.\n- Show the cover poster image above each recommended book title.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-7.2"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-7.2",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 3,
+        "lines": 4
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "- FR-7.3: Train Button: Render a \"Train\" trigger button allowing developers/admins to re-execute the ML Training Pipeline on demand.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "Functional Requirements",
+        "source_requirement_id": "FR-7.3"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a source requirement ID",
+      "source_requirement_id": "FR-7.3",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Built with Streamlit (`app.py`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.1 User Interface (UI)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Responsive layout with top control bar (Dropdown, Recommend Button, Train Button) and a main content section rendering a 5-column grid of book cards (Poster + Title).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.1 User Interface (UI)"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "No special hardware required.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.2 Hardware Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Minimum 2 GB RAM and 1 vCPU for hosting containerized inference server.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.2 Hardware Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: Programming Language; Software / Library: Python; Version Requirement: 3.7 or higher",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 1,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: ML Framework; Software / Library: Scikit-Learn; Version Requirement: $\\ge 0.24.0$",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 2,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: Data Processing; Software / Library: Pandas, NumPy, SciPy; Version Requirement: Standard compatibility",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 3,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "contains a non-functional quality attribute or measurable target",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: Web Framework; Software / Library: Streamlit; Version Requirement: $\\ge 1.0.0$",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 4,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: Storage Format; Software / Library: Pickle (.pkl), CSV, YAML; Version Requirement: Standard",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 5,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Component: Container; Software / Library: Docker; Version Requirement: Docker Engine 20.10+",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 6,
+        "section": "4.3 Software Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Protocol: HTTP / HTTPS.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.4 Communications Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Port: `8501` (Default Streamlit port).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.4 Communications Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Remote Data Source: HTTPS GET requests to GitHub repository URL for dataset downloading.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "4.4 Communications Interfaces"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Inference Latency: Real-time recommendation output shall be returned in under 500 ms after user selection.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Image Load Time: Poster images shall load directly from CDN/image URLs in under 1.5 seconds.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Model Training Execution: Pipeline training from Stage 0 to Stage 3 shall complete within 3 minutes on standard cloud VMs.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.1 Performance Requirements"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "System Uptime: 99.5% availability when hosted on cloud container services (AWS ECS / Azure App Service).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.2 Reliability & Availability"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "contains a measurable target: 99.5%",
+      "requirement_class": "non-functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Graceful Error Handling: If a book poster image URL is broken or missing, a default fallback placeholder image shall be displayed.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.2 Reliability & Availability"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: shall",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Modular Design: Pipeline stages are strictly decoupled. Modifying Stage 1 validation rules will not affect Stage 3 model fitting logic.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.3 Scalability & Maintainability"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: will",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Configuration Driven: Hyperparameters (e.g., $k=6$, user rating threshold $=200$, book rating threshold $=50$) can be tuned directly via `config.yaml` without changing python source code.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.3 Scalability & Maintainability"
+      },
+      "detection_confidence": "medium",
+      "detection_reason": "capability or expected behavior wording: can",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Input validation on book search queries to prevent script injection.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.4 Security Requirements"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Docker container runs under standard non-privileged port exposure (`8501`).",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.4 Security Requirements"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Base Docker Image: `python:3.7-slim-buster`",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "5.5 Deployment & Docker Specification"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/dataset/raw_data/`; Format: CSV Files; Description: Extracted uncompressed raw files (`BX-Books.csv`, `BX-Book-Ratings.csv`)",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 1,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/dataset/clean_data.csv`; Format: CSV File; Description: Filtered ratings data after user/book threshold cuts",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 2,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/serialized_objects/final_rating.pkl`; Format: DataFrame Pickle; Description: Serialized pandas DataFrame with merged book metadata and ratings",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 3,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/serialized_objects/book_pivot.pkl`; Format: DataFrame Pickle; Description: Serialized sparse pivot matrix (`title` $\\times$ `user_id`)",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 4,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/serialized_objects/book_names.pkl`; Format: List Pickle; Description: Array of unique book titles present in pivot table",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 5,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `artifacts/trained_model/model.pkl`; Format: Scikit-Learn Model; Description: Fitted `NearestNeighbors` model instance",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 6,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "Artifact Path: `templates/book_names.pkl`; Format: List Pickle; Description: UI copy of book titles used for dropdown rendering",
+      "source": {
+        "file_name": "SRS.md",
+        "row": 7,
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "low",
+      "detection_reason": "no explicit requirement signal; sent to LLM judge",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    },
+    {
+      "text": "> [!NOTE] > This SRS document serves as the formal technical specification for the End-to-End Books Recommender System project. All future enhancements and modifications should align with the functional requirements and architectural design outlined herein.",
+      "source": {
+        "file_name": "SRS.md",
+        "section": "6. Data Dictionary & Artifact Serialization"
+      },
+      "detection_confidence": "high",
+      "detection_reason": "explicit obligation wording: should",
+      "requirement_class": "functional",
+      "structure": {
+        "list_items": 0,
+        "lines": 1
+      },
+      "input_kind": "document"
+    }
+  ],
+  "segmentation": {
+    "skipped_sections": [
+      {
+        "heading": "1.1 Purpose",
+        "location": {},
+        "items": [
+          "This Software Requirements Specification (SRS) document provides a comprehensive overview of the requirements, architecture, data flow, functional features, and non-functional characteristics of the End-to-End Books Recommender System.",
+          "The system leverages Machine Learning (Collaborative Filtering using K-Nearest Neighbors) to deliver personalized book recommendations to users based on historical rating patterns, complete with automated pipeline execution, image/poster fetching, and cloud-ready containerized deployment."
+        ]
+      },
+      {
+        "heading": "1.2 Scope",
+        "location": {},
+        "items": [
+          "The Books Recommender System encompasses:",
+          "Automated ML Pipeline: Modular stages covering Data Ingestion, Data Validation & Cleaning, Data Transformation, and Model Training.",
+          "Recommendation Engine: Real-time inference engine based on $k$-Nearest Neighbors ($k=6$) to compute top-5 similarity scores and retrieve corresponding book cover posters.",
+          "Web Application: Streamlit-based interactive web frontend (`app.py`) allowing users to trigger model training, search/select books, and view recommendation results in a 5-column visual layout.",
+          "Containerization & Deployment: Dockerized runtime setup built on `python:3.7-slim-buster`, exposing port `8501` for deployment to cloud environments (AWS / Azure)."
+        ]
+      },
+      {
+        "heading": "1.3 Definitions, Acronyms, and Abbreviations",
+        "location": {}
+      },
+      {
+        "heading": "1.4 References",
+        "location": {},
+        "items": [
+          "IEEE Std 830-1998: IEEE Recommended Practice for Software Requirements Specifications.",
+          "Book-Crossing Dataset: Public dataset comprising books, users, and ratings data (`BX-Books.csv`, `BX-Book-Ratings.csv`)."
+        ]
+      },
+      {
+        "heading": "2.1 Product Perspective & System Architecture",
+        "location": {},
+        "items": [
+          "The system operates as a self-contained, modular ML application. Below is the high-level architecture overview illustrating the separation between configuration, ML training pipeline, storage/artifacts, recommendation engine, and presentation layer."
+        ]
+      },
+      {
+        "heading": "2.2 Product Functions Summary",
+        "location": {},
+        "items": [
+          "Config & Infrastructure: Reads configuration parameters (`config.yaml`), generates strongly typed namedtuple entities, logs execution status, and captures custom runtime exceptions.",
+          "Data Ingestion: Downloads data archives from GitHub storage, extracts CSV datasets, and saves raw/ingested data.",
+          "Data Validation & Filtering: Applies thresholds to ensure statistical significance:",
+          "Filters out inactive users ($ratings < 200$).",
+          "Filters out infrequently rated books ($ratings < 50$).",
+          "Saves clean merged dataset and serializes `final_rating.pkl`.",
+          "Data Transformation: Constructs a sparse matrix pivot table (`title` $\\times$ `user_id`), handles missing values ($NaN \\rightarrow 0$), and serializes `book_pivot.pkl` & `book_names.pkl`.",
+          "Model Training: Transforms pivot table into a `csr_matrix` format, trains a `NearestNeighbors` model (brute-force algorithm, cosine distance metric), and serializes `model.pkl`.",
+          "Recommendation & Poster Generation: Computes $k$-nearest neighbors for any selected book title, queries image URLs from the dataset, and formats top 5 recommendations.",
+          "Streamlit UI: Offers dropdown selection, button controls, and a multi-column visual showcase."
+        ]
+      },
+      {
+        "heading": "2.3 User Classes and Characteristics",
+        "location": {},
+        "items": [
+          "End-User / Reader: Non-technical user seeking book recommendations via the web UI dropdown.",
+          "Data Scientist / Developer: Technical user responsible for re-training pipelines, updating threshold parameters in `config.yaml`, and maintaining infrastructure code."
+        ]
+      }
+    ],
+    "warnings": [
+      {
+        "type": "missing_list",
+        "requirement_id": null,
+        "text": "Container Commands:",
+        "message": "Text introduces a list or table that is not present in the input. The introduction was not extracted.",
+        "dropped": true,
+        "location": {}
+      }
+    ],
+    "duplicates": [],
+    "repeated_ids": []
+  }
+}
