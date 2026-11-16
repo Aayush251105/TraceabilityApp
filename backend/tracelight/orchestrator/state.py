@@ -21,7 +21,7 @@ from __future__ import annotations
 import json
 from contextlib import contextmanager
 from dataclasses import dataclass
-from typing import Any, Dict, Iterator, List, Optional, Sequence
+from typing import Any, Dict, Iterator, List, Optional, Sequence, Tuple
 
 import psycopg2
 import psycopg2.extras
@@ -268,36 +268,41 @@ class RunStore:
                      done: Optional[int] = None, total: Optional[int] = None,
                      detail: Optional[Dict[str, Any]] = None, error: Optional[str] = None,
                      reset: bool = False) -> None:
-        """Update a stage.  `detail` is merged into the stored detail (not replaced)."""
-        sets, vals = [], []
+        """
+        Update a stage.  `detail` is merged into the stored detail (not
+        replaced); `reset` clears progress first (a restarted stage).
+        """
+        # column -> (SQL expression, parameters); later assignments win
+        cols: Dict[str, Tuple[str, Tuple[Any, ...]]] = {}
         if reset:
-            sets += ["done = 0", "total = NULL", "detail = '{}'::jsonb", "error = NULL",
-                     "started_at = NULL", "finished_at = NULL"]
+            for col, expr in (("done", "0"), ("total", "NULL"), ("detail", "'{}'::jsonb"), ("error", "NULL"),
+                              ("started_at", "NULL"), ("finished_at", "NULL")):
+                cols[col] = (expr, ())
         if status is not None:
             assert status in STAGE_STATUSES, status
-            sets.append("status = %s")
-            vals.append(status)
+            cols["status"] = ("%s", (status,))
             if status == "running":
-                sets += ["started_at = COALESCE(started_at, now())", "finished_at = NULL", "error = NULL"]
+                cols["started_at"] = ("now()", ()) if reset else ("COALESCE(started_at, now())", ())
+                cols["finished_at"] = ("NULL", ())
+                cols["error"] = ("NULL", ())
             elif status in ("done", "failed", "skipped", "cancelled"):
-                sets.append("finished_at = now()")
+                cols["finished_at"] = ("now()", ())
         if done is not None:
-            sets.append("done = %s")
-            vals.append(done)
+            cols["done"] = ("%s", (done,))
         if total is not None:
-            sets.append("total = %s")
-            vals.append(total)
+            cols["total"] = ("%s", (total,))
         if detail:
-            sets.append("detail = detail || %s::jsonb")
-            vals.append(_json(detail))
+            base = "'{}'::jsonb" if reset else "detail"
+            cols["detail"] = (f"{base} || %s::jsonb", (_json(detail),))
         if error is not None:
-            sets.append("error = %s")
-            vals.append(error)
-        if not sets:
+            cols["error"] = ("%s", (error,))
+        if not cols:
             return
+        sets = ", ".join(f"{col} = {expr}" for col, (expr, _) in cols.items())
+        vals = [v for _, params in cols.values() for v in params]
         with self._cursor() as cur:
-            cur.execute(f"UPDATE {self.t('run_stages')} SET {', '.join(sets)} "
-                        f"WHERE run_id = %s AND stage = %s", (*vals, run_id, stage))
+            cur.execute(f"UPDATE {self.t('run_stages')} SET {sets} WHERE run_id = %s AND stage = %s",
+                        (*vals, run_id, stage))
 
     # ------------------------------------------------------------------
     # Events

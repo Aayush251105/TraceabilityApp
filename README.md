@@ -24,6 +24,23 @@ TraceabilityApp/
       settings.py            paths (agents, venvs, data dir) + user settings (models, thresholds)
       orchestrator/
         state.py             run state in PostgreSQL (app_* tables)
+        agents.py            launch DocAgent / SRS Agent subprocesses, parse their events, cancel
+        source.py            fetch code: ZIP (safe extract) / folder / https Git shallow clone + SHA;
+                             counts files and components (ast, never executes code)
+        review.py            review checkpoint: build items (uncertain / flagged / incomplete /
+                             split-duplicate) and apply keep / edit / discard / merge / rename
+        ollama.py            Ollama reachable? models pulled?
+        runner.py            Orchestrator: lanes in parallel, review pause, search/map/verify,
+                             cancel, resume, recovery after a restart
+        cli.py               the pipeline from the terminal
+      api/
+        app.py               FastAPI routes (runs, live stream, review, settings, health)
+        progress.py          elapsed / ETA / overall % / stage rail from the stored stages
+        results.py           read model for results, requirement detail, code view, exports
+        __main__.py          python -m tracelight.api  (127.0.0.1:8000)
+      runners/               wrapper scripts run with each agent's own Python (stdlib only)
+        docagent_runner.py   DocAgent unchanged; its terminal visualizers → JSON progress events
+        srs_runner.py        SRS Agent unchanged; modes: extract | detect | extract-candidates
     tests/
   frontend/                  (later step)
   data/                      run data — uploads, working copies, outputs (git-ignored)
@@ -54,6 +71,106 @@ cd TraceabilityApp\backend
 
 Database tests use `traceability_test` with `test_app_*` tables (password from
 `TEST_PG_PASSWORD`); they are skipped when that database is unreachable.
+Set `TRACELIGHT_NETWORK_TESTS=1` to include a real clone from GitHub.
+
+## Run the pipeline from the terminal
+
+```powershell
+cd TraceabilityApp\backend
+$py = "..\..\SRS_to_code_traceability\.venv\Scripts\python.exe"
+& $py -m tracelight.orchestrator.cli init
+& $py -m tracelight.orchestrator.cli run --srs ..\..\library_traceability_dataset\srs\SRS_Library_Management_System.docx --folder ..\..\library_traceability_dataset\codebase
+& $py -m tracelight.orchestrator.cli review 1          # open review items
+& $py -m tracelight.orchestrator.cli continue 1        # apply the review, run search → map → verify
+& $py -m tracelight.orchestrator.cli status 1
+```
+
+Other sources: `--zip code.zip`, `--git https://github.com/owner/repo [--ref main]`.
+Useful flags: `--auto-approve` (no pause; open items kept as unreviewed),
+`--sequential` (SRS lane, then code lane — faster on a small GPU),
+`--docagent-test-mode placeholder` (no LLM docstrings, for a quick smoke run),
+`--model-docagent / --model-srs / --model-judge / --model-verifier` (per-run models).
+Ctrl+C cancels; `resume N` continues a failed or interrupted run from the
+first unfinished stage.  Run data is written to `TraceabilityApp/data/runs/run-N/`
+(input, source, work, docagent, srs, logs) and the database rows use
+`run-N-<name>` as document and repository IDs.
+
+## API server
+
+```powershell
+cd TraceabilityApp\backend
+..\..\SRS_to_code_traceability\.venv\Scripts\python.exe -m tracelight.api      # http://127.0.0.1:8000/docs
+```
+
+Local and single-user: it binds to 127.0.0.1, has no authentication and can
+read local folders, so do not expose it on a network.  Interactive API docs
+are at `/docs`.  Main endpoints:
+
+| Method | Path | Purpose |
+|---|---|---|
+| POST | `/api/inspect` | size check of a ZIP / folder / URL (New run warnings) |
+| POST | `/api/runs` | create a run (multipart: `srs` + `zip` / `folder` / `git_url`) and start it |
+| GET | `/api/runs`, `/api/runs/{id}` | list; detail with stages, lanes, rail, ETA |
+| GET | `/api/runs/{id}/stream` | live updates (server-sent events `log` and `run`) |
+| POST | `/api/runs/{id}/cancel`, `/resume` | |
+| DELETE | `/api/runs/{id}` | run state, files and its traceability rows |
+| GET | `/api/runs/{id}/review`, `/document`, `/review/targets?item=` | review checkpoint |
+| PUT / DELETE | `/api/runs/{id}/review/items/{key}` | resolve / undo one item |
+| POST | `/api/runs/{id}/review/bulk`, `/skip-remaining`, `/complete` | |
+| GET | `/api/runs/{id}/results` | summary counts + requirement table (effective verdict, claims, links, flags) |
+| GET | `/api/runs/{id}/requirements/{rid}` | detail: claims, citations, components with code, edges, search ranks, history |
+| POST | `/api/runs/{id}/requirements/{rid}/override` | human verdict `{status, note}` (`cleared` removes it) |
+| POST | `/api/runs/{id}/verify` | re-verify selected requirements `{requirement_ids}` |
+| GET | `/api/runs/{id}/search?q=` | find requirements and code by keyword, sentence or ID (hybrid search) |
+| GET | `/api/runs/{id}/code`, `/code/component?component_id=`, `/files?path=` | code view (pristine source) |
+| GET | `/api/runs/{id}/export.csv`, `/export.json` | downloads |
+| GET / PUT | `/api/settings` | models per agent, thresholds, limits |
+| GET | `/api/health` | database, Ollama, pulled models, agents |
+
+## Frontend
+
+React + TypeScript + Vite + Tailwind, built from the Tracelight designs
+(`Design description follow-up/Tracelight`).  The design tokens (colours for
+light and dark, IBM Plex Sans/Mono bundled locally, verdict colour + shape +
+label) live in `frontend/src/styles/index.css` and `frontend/src/lib/status.ts`.
+
+```powershell
+# terminal 1: the API
+cd TraceabilityApp\backend
+..\..\SRS_to_code_traceability\.venv\Scripts\python.exe -m tracelight.api
+# terminal 2: the UI (proxies /api to 127.0.0.1:8000)
+cd TraceabilityApp\frontend
+npm install        # first time
+npm run dev        # http://127.0.0.1:5173
+```
+
+`npm test` (Vitest), `npm run typecheck`, `npm run build`.  Add `?theme=dark`
+or `?theme=light` to any URL to force a theme.
+
+```
+frontend/src/
+  styles/index.css         tokens (light/dark), Tailwind theme mapping, base styles
+  lib/status.ts            verdicts and run/stage states: label, colours, glyph shape
+  lib/format.ts            clocks, ETA text, percentages, dates
+  lib/theme.ts             theme toggle (persisted)
+  api/                     fetch client, response types, React Query hooks, live stream hook
+  components/ui/           Button, StatusChip, ProgressBar, Timer, CodeBlock, ClaimItem, GraphNode
+  components/layout/       Sidebar, AppShell, PageHeader
+  pages/                   Runs, NewRun, Pipeline, Review, Results, Requirement,
+                           CodeView, Search, Settings, NotFound
+```
+
+| Page | Route | What it does |
+|---|---|---|
+| Runs | `/` | all runs: status, result, duration; search, filters, delete |
+| New run | `/new` | SRS upload / paste; code from ZIP, folder or GitHub URL with a size check; models, exclusions, lanes |
+| Live pipeline | `/runs/:id/pipeline` | stage rail, timers and ETA, the two ingestion lanes with logs, review banner, agents, verified-so-far stream, cancel / resume |
+| Review | `/runs/:id/review` | the human checkpoint: keep / discard / edit / merge / fix ID, keyboard, bulk, document preview, continue |
+| Results | `/runs/:id/results` | verdict summary and filters, requirement table, re-run verification, CSV / JSON / print-to-PDF |
+| Requirement | `/runs/:id/requirements/:rid` | claims with cited lines, code evidence, mapping subgraph, search ranks, accept / override, history |
+| Search | `/runs/:id/search?q=` | find a feature by keyword or sentence: matching requirements with their verdict and code, matching code with its requirements |
+| Code view | `/runs/:id/code` | files with traced/total, untraced filter, requirements per component, best match for untraced code |
+| Settings | `/settings` | models per agent (pulled? size), Ollama test, pipeline thresholds, database, agents, exclusions |
 
 ## Run stages
 

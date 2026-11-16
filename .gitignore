@@ -11,6 +11,7 @@ __pycache__/
 # Frontend
 node_modules/
 frontend/dist/
+*.tsbuildinfo
 
 # Editors / OS
 .vscode/
