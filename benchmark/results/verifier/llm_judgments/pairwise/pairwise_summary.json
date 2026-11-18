@@ -1,0 +1,366 @@
+{
+  "head_to_head": {
+    "qwen2.5-coder-7b": {
+      "qwen3-8b": [
+        5,
+        9,
+        46
+      ],
+      "llama3.1-8b": [
+        11,
+        6,
+        43
+      ],
+      "mistral-7b": [
+        3,
+        5,
+        52
+      ],
+      "deepseek-coder-6.7b": [
+        15,
+        11,
+        34
+      ],
+      "codegemma-7b": [
+        15,
+        9,
+        36
+      ],
+      "codellama-7b": [
+        15,
+        14,
+        31
+      ],
+      "yi-coder-9b": [
+        8,
+        15,
+        37
+      ]
+    },
+    "qwen3-8b": {
+      "qwen2.5-coder-7b": [
+        9,
+        5,
+        46
+      ],
+      "llama3.1-8b": [
+        14,
+        5,
+        41
+      ],
+      "mistral-7b": [
+        4,
+        11,
+        45
+      ],
+      "deepseek-coder-6.7b": [
+        12,
+        7,
+        41
+      ],
+      "codegemma-7b": [
+        12,
+        9,
+        39
+      ],
+      "codellama-7b": [
+        20,
+        10,
+        30
+      ],
+      "yi-coder-9b": [
+        5,
+        10,
+        45
+      ]
+    },
+    "llama3.1-8b": {
+      "qwen2.5-coder-7b": [
+        6,
+        11,
+        43
+      ],
+      "qwen3-8b": [
+        5,
+        14,
+        41
+      ],
+      "mistral-7b": [
+        1,
+        14,
+        45
+      ],
+      "deepseek-coder-6.7b": [
+        6,
+        14,
+        40
+      ],
+      "codegemma-7b": [
+        10,
+        17,
+        33
+      ],
+      "codellama-7b": [
+        12,
+        22,
+        26
+      ],
+      "yi-coder-9b": [
+        4,
+        26,
+        30
+      ]
+    },
+    "mistral-7b": {
+      "qwen2.5-coder-7b": [
+        5,
+        3,
+        52
+      ],
+      "qwen3-8b": [
+        11,
+        4,
+        45
+      ],
+      "llama3.1-8b": [
+        14,
+        1,
+        45
+      ],
+      "deepseek-coder-6.7b": [
+        11,
+        5,
+        44
+      ],
+      "codegemma-7b": [
+        9,
+        3,
+        48
+      ],
+      "codellama-7b": [
+        18,
+        9,
+        33
+      ],
+      "yi-coder-9b": [
+        8,
+        7,
+        45
+      ]
+    },
+    "deepseek-coder-6.7b": {
+      "qwen2.5-coder-7b": [
+        11,
+        15,
+        34
+      ],
+      "qwen3-8b": [
+        7,
+        12,
+        41
+      ],
+      "llama3.1-8b": [
+        14,
+        6,
+        40
+      ],
+      "mistral-7b": [
+        5,
+        11,
+        44
+      ],
+      "codegemma-7b": [
+        10,
+        12,
+        38
+      ],
+      "codellama-7b": [
+        14,
+        5,
+        41
+      ],
+      "yi-coder-9b": [
+        8,
+        16,
+        36
+      ]
+    },
+    "codegemma-7b": {
+      "qwen2.5-coder-7b": [
+        9,
+        15,
+        36
+      ],
+      "qwen3-8b": [
+        9,
+        12,
+        39
+      ],
+      "llama3.1-8b": [
+        17,
+        10,
+        33
+      ],
+      "mistral-7b": [
+        3,
+        9,
+        48
+      ],
+      "deepseek-coder-6.7b": [
+        12,
+        10,
+        38
+      ],
+      "codellama-7b": [
+        23,
+        4,
+        33
+      ],
+      "yi-coder-9b": [
+        7,
+        13,
+        40
+      ]
+    },
+    "codellama-7b": {
+      "qwen2.5-coder-7b": [
+        14,
+        15,
+        31
+      ],
+      "qwen3-8b": [
+        10,
+        20,
+        30
+      ],
+      "llama3.1-8b": [
+        22,
+        12,
+        26
+      ],
+      "mistral-7b": [
+        9,
+        18,
+        33
+      ],
+      "deepseek-coder-6.7b": [
+        5,
+        14,
+        41
+      ],
+      "codegemma-7b": [
+        4,
+        23,
+        33
+      ],
+      "yi-coder-9b": [
+        6,
+        24,
+        30
+      ]
+    },
+    "yi-coder-9b": {
+      "qwen2.5-coder-7b": [
+        15,
+        8,
+        37
+      ],
+      "qwen3-8b": [
+        10,
+        5,
+        45
+      ],
+      "llama3.1-8b": [
+        26,
+        4,
+        30
+      ],
+      "mistral-7b": [
+        7,
+        8,
+        45
+      ],
+      "deepseek-coder-6.7b": [
+        16,
+        8,
+        36
+      ],
+      "codegemma-7b": [
+        13,
+        7,
+        40
+      ],
+      "codellama-7b": [
+        24,
+        6,
+        30
+      ]
+    }
+  },
+  "ranking": [
+    {
+      "model": "yi-coder-9b",
+      "wins": 111,
+      "losses": 46,
+      "ties": 263,
+      "total": 420,
+      "win_rate": 0.2642857142857143
+    },
+    {
+      "model": "codegemma-7b",
+      "wins": 80,
+      "losses": 73,
+      "ties": 267,
+      "total": 420,
+      "win_rate": 0.19047619047619047
+    },
+    {
+      "model": "mistral-7b",
+      "wins": 76,
+      "losses": 32,
+      "ties": 312,
+      "total": 420,
+      "win_rate": 0.18095238095238095
+    },
+    {
+      "model": "qwen3-8b",
+      "wins": 76,
+      "losses": 57,
+      "ties": 287,
+      "total": 420,
+      "win_rate": 0.18095238095238095
+    },
+    {
+      "model": "qwen2.5-coder-7b",
+      "wins": 72,
+      "losses": 69,
+      "ties": 279,
+      "total": 420,
+      "win_rate": 0.17142857142857143
+    },
+    {
+      "model": "codellama-7b",
+      "wins": 70,
+      "losses": 126,
+      "ties": 224,
+      "total": 420,
+      "win_rate": 0.16666666666666666
+    },
+    {
+      "model": "deepseek-coder-6.7b",
+      "wins": 69,
+      "losses": 77,
+      "ties": 274,
+      "total": 420,
+      "win_rate": 0.16428571428571428
+    },
+    {
+      "model": "llama3.1-8b",
+      "wins": 44,
+      "losses": 118,
+      "ties": 258,
+      "total": 420,
+      "win_rate": 0.10476190476190476
+    }
+  ]
+}

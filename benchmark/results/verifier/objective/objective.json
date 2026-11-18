@@ -1,0 +1,332 @@
+{
+  "qwen2.5-coder-7b": {
+    "cases": 196,
+    "seconds": 1170.2,
+    "exact_accuracy": 0.6275510204081632,
+    "macro_f1": 0.5163532079498465,
+    "f1_per_class": {
+      "supported": 0.5647058823529411,
+      "partially_supported": 0.23333333333333336,
+      "not_supported_by_candidate": 0.7510204081632652
+    },
+    "support_accuracy": 0.6887755102040817,
+    "false_support_rate": 0.12264150943396226,
+    "implemented_recall": 0.5957446808510638,
+    "implemented_exact": 0.5106382978723404,
+    "partial_recall": 0.32558139534883723,
+    "abstain_rate": 0.01020408163265306,
+    "citation_validity": 0.7784431137724551,
+    "valid_citations": 260,
+    "rejected_citations": 74,
+    "model_failures": 0,
+    "sec_per_case": 5.970408163265306,
+    "confusion": {
+      "partially_supported": {
+        "supported": 7,
+        "not_supported_by_candidate": 29,
+        "partially_supported": 7
+      },
+      "not_supported_by_candidate": {
+        "not_supported_by_candidate": 92,
+        "supported": 7,
+        "insufficient_evidence": 1,
+        "partially_supported": 6
+      },
+      "supported": {
+        "not_supported_by_candidate": 18,
+        "supported": 24,
+        "partially_supported": 4,
+        "insufficient_evidence": 1
+      }
+    }
+  },
+  "qwen3-8b": {
+    "cases": 196,
+    "seconds": 27377.6,
+    "exact_accuracy": 0.45918367346938777,
+    "macro_f1": 0.507272515186591,
+    "f1_per_class": {
+      "supported": 0.6896551724137931,
+      "partially_supported": 0.2857142857142857,
+      "not_supported_by_candidate": 0.5464480874316939
+    },
+    "support_accuracy": 0.7295918367346939,
+    "false_support_rate": 0.14150943396226415,
+    "implemented_recall": 0.7872340425531915,
+    "implemented_exact": 0.6382978723404256,
+    "partial_recall": 0.3488372093023256,
+    "abstain_rate": 0.2653061224489796,
+    "citation_validity": 0.8818897637795275,
+    "valid_citations": 224,
+    "rejected_citations": 30,
+    "model_failures": 1,
+    "sec_per_case": 139.68163265306123,
+    "confusion": {
+      "partially_supported": {
+        "supported": 5,
+        "not_supported_by_candidate": 22,
+        "partially_supported": 10,
+        "insufficient_evidence": 6
+      },
+      "not_supported_by_candidate": {
+        "insufficient_evidence": 41,
+        "not_supported_by_candidate": 50,
+        "supported": 5,
+        "partially_supported": 10
+      },
+      "supported": {
+        "supported": 30,
+        "partially_supported": 7,
+        "not_supported_by_candidate": 5,
+        "insufficient_evidence": 5
+      }
+    }
+  },
+  "llama3.1-8b": {
+    "cases": 196,
+    "seconds": 9410.5,
+    "exact_accuracy": 0.4744897959183674,
+    "macro_f1": 0.4819150253932863,
+    "f1_per_class": {
+      "supported": 0.5641025641025642,
+      "partially_supported": 0.32608695652173914,
+      "not_supported_by_candidate": 0.5555555555555556
+    },
+    "support_accuracy": 0.7295918367346939,
+    "false_support_rate": 0.3867924528301887,
+    "implemented_recall": 0.9361702127659575,
+    "implemented_exact": 0.7021276595744681,
+    "partial_recall": 0.7906976744186046,
+    "abstain_rate": 0.10714285714285714,
+    "citation_validity": 0.9713541666666666,
+    "valid_citations": 373,
+    "rejected_citations": 11,
+    "model_failures": 2,
+    "sec_per_case": 48.01275510204081,
+    "confusion": {
+      "partially_supported": {
+        "supported": 19,
+        "not_supported_by_candidate": 8,
+        "partially_supported": 15,
+        "insufficient_evidence": 1
+      },
+      "not_supported_by_candidate": {
+        "insufficient_evidence": 20,
+        "supported": 18,
+        "not_supported_by_candidate": 45,
+        "partially_supported": 23
+      },
+      "supported": {
+        "not_supported_by_candidate": 3,
+        "supported": 33,
+        "partially_supported": 11
+      }
+    }
+  },
+  "mistral-7b": {
+    "cases": 196,
+    "seconds": 3655.3,
+    "exact_accuracy": 0.5408163265306123,
+    "macro_f1": 0.5007421488838311,
+    "f1_per_class": {
+      "supported": 0.59375,
+      "partially_supported": 0.2716049382716049,
+      "not_supported_by_candidate": 0.6368715083798883
+    },
+    "support_accuracy": 0.6683673469387755,
+    "false_support_rate": 0.44339622641509435,
+    "implemented_recall": 0.8936170212765957,
+    "implemented_exact": 0.8085106382978723,
+    "partial_recall": 0.6976744186046512,
+    "abstain_rate": 0.02040816326530612,
+    "citation_validity": 0.9528023598820059,
+    "valid_citations": 323,
+    "rejected_citations": 16,
+    "model_failures": 0,
+    "sec_per_case": 18.649489795918367,
+    "confusion": {
+      "partially_supported": {
+        "supported": 19,
+        "not_supported_by_candidate": 12,
+        "partially_supported": 11,
+        "insufficient_evidence": 1
+      },
+      "not_supported_by_candidate": {
+        "supported": 24,
+        "not_supported_by_candidate": 57,
+        "partially_supported": 23,
+        "insufficient_evidence": 2
+      },
+      "supported": {
+        "insufficient_evidence": 1,
+        "supported": 38,
+        "partially_supported": 4,
+        "not_supported_by_candidate": 4
+      }
+    }
+  },
+  "deepseek-coder-6.7b": {
+    "cases": 196,
+    "seconds": 4069.2,
+    "exact_accuracy": 0.2755102040816326,
+    "macro_f1": 0.2453283349578812,
+    "f1_per_class": {
+      "supported": 0.40404040404040414,
+      "partially_supported": 0.3132530120481927,
+      "not_supported_by_candidate": 0.018691588785046728
+    },
+    "support_accuracy": 0.4642857142857143,
+    "false_support_rate": 0.9716981132075472,
+    "implemented_recall": 0.9787234042553191,
+    "implemented_exact": 0.851063829787234,
+    "partial_recall": 0.9767441860465116,
+    "abstain_rate": 0.02040816326530612,
+    "citation_validity": 0.9560185185185185,
+    "valid_citations": 413,
+    "rejected_citations": 19,
+    "model_failures": 0,
+    "sec_per_case": 20.761224489795918,
+    "confusion": {
+      "partially_supported": {
+        "supported": 29,
+        "insufficient_evidence": 1,
+        "partially_supported": 13
+      },
+      "not_supported_by_candidate": {
+        "supported": 82,
+        "insufficient_evidence": 2,
+        "partially_supported": 21,
+        "not_supported_by_candidate": 1
+      },
+      "supported": {
+        "supported": 40,
+        "partially_supported": 6,
+        "insufficient_evidence": 1
+      }
+    }
+  },
+  "codegemma-7b": {
+    "cases": 196,
+    "seconds": 3680.8,
+    "exact_accuracy": 0.35714285714285715,
+    "macro_f1": 0.3459486971991548,
+    "f1_per_class": {
+      "supported": 0.47674418604651164,
+      "partially_supported": 0.28169014084507044,
+      "not_supported_by_candidate": 0.27941176470588236
+    },
+    "support_accuracy": 0.5459183673469388,
+    "false_support_rate": 0.7169811320754716,
+    "implemented_recall": 0.9574468085106383,
+    "implemented_exact": 0.8723404255319149,
+    "partial_recall": 0.7441860465116279,
+    "abstain_rate": 0.0663265306122449,
+    "citation_validity": 0.9129287598944591,
+    "valid_citations": 346,
+    "rejected_citations": 33,
+    "model_failures": 0,
+    "sec_per_case": 18.779591836734696,
+    "confusion": {
+      "partially_supported": {
+        "supported": 22,
+        "not_supported_by_candidate": 10,
+        "partially_supported": 10,
+        "insufficient_evidence": 1
+      },
+      "not_supported_by_candidate": {
+        "supported": 62,
+        "not_supported_by_candidate": 19,
+        "partially_supported": 14,
+        "insufficient_evidence": 11
+      },
+      "supported": {
+        "supported": 41,
+        "partially_supported": 4,
+        "not_supported_by_candidate": 1,
+        "insufficient_evidence": 1
+      }
+    }
+  },
+  "codellama-7b": {
+    "cases": 196,
+    "seconds": 4918.9,
+    "exact_accuracy": 0.2653061224489796,
+    "macro_f1": 0.2600601216096195,
+    "f1_per_class": {
+      "supported": 0.41463414634146345,
+      "partially_supported": 0.2142857142857143,
+      "not_supported_by_candidate": 0.15126050420168066
+    },
+    "support_accuracy": 0.46938775510204084,
+    "false_support_rate": 0.8113207547169812,
+    "implemented_recall": 0.8723404255319149,
+    "implemented_exact": 0.723404255319149,
+    "partial_recall": 0.7209302325581395,
+    "abstain_rate": 0.12755102040816327,
+    "citation_validity": 0.8512396694214877,
+    "valid_citations": 309,
+    "rejected_citations": 54,
+    "model_failures": 0,
+    "sec_per_case": 25.096428571428568,
+    "confusion": {
+      "partially_supported": {
+        "supported": 22,
+        "insufficient_evidence": 8,
+        "not_supported_by_candidate": 4,
+        "partially_supported": 9
+      },
+      "not_supported_by_candidate": {
+        "supported": 61,
+        "not_supported_by_candidate": 9,
+        "insufficient_evidence": 11,
+        "partially_supported": 25
+      },
+      "supported": {
+        "supported": 34,
+        "partially_supported": 7,
+        "insufficient_evidence": 6
+      }
+    }
+  },
+  "yi-coder-9b": {
+    "cases": 196,
+    "seconds": 4211.4,
+    "exact_accuracy": 0.2857142857142857,
+    "macro_f1": 0.25713778522767283,
+    "f1_per_class": {
+      "supported": 0.4831460674157303,
+      "partially_supported": 0.15151515151515152,
+      "not_supported_by_candidate": 0.13675213675213674
+    },
+    "support_accuracy": 0.6020408163265306,
+    "false_support_rate": 0.6698113207547169,
+    "implemented_recall": 0.9787234042553191,
+    "implemented_exact": 0.9148936170212766,
+    "partial_recall": 0.8604651162790697,
+    "abstain_rate": 0.15816326530612246,
+    "citation_validity": 0.9636752136752137,
+    "valid_citations": 451,
+    "rejected_citations": 17,
+    "model_failures": 0,
+    "sec_per_case": 21.486734693877548,
+    "confusion": {
+      "partially_supported": {
+        "supported": 32,
+        "not_supported_by_candidate": 2,
+        "insufficient_evidence": 4,
+        "partially_supported": 5
+      },
+      "not_supported_by_candidate": {
+        "insufficient_evidence": 27,
+        "supported": 56,
+        "not_supported_by_candidate": 8,
+        "partially_supported": 15
+      },
+      "supported": {
+        "supported": 43,
+        "partially_supported": 3,
+        "not_supported_by_candidate": 1
+      }
+    }
+  }
+}

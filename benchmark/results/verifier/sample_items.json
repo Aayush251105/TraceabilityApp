@@ -1,0 +1,12 @@
+[
+  "Books-Recommender-System::FR-2.1::gold",
+  "Books-Recommender-System::FR-4.3::distractor",
+  "Books-Recommender-System::FR-5.1::gold",
+  "Books-Recommender-System::FR-6.1::distractor",
+  "ProClinic::FR-2::distractor",
+  "ProClinic::FR-5::gold",
+  "ProClinic::US001::gold",
+  "Virtual-clinic::Req-3/1::distractor",
+  "Virtual-clinic::Req-5/1::distractor",
+  "Virtual-clinic::Req-5/2::gold"
+]
