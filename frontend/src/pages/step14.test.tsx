@@ -98,7 +98,7 @@ describe("search", () => {
     expect(queryTerms("The system shall renew a LOAN for members")).toEqual(["renew", "loan", "members"]);
   });
 
-  it("searches as you type and shows requirements with their code, and code with its requirements", async () => {
+  it("searches on Enter (not while typing) and shows requirements with their code, and code with its requirements", async () => {
     const api = mockFetch({
       "GET /api/runs/2/results": { ready: true, summary: null, requirements: [{ requirement_id: "FR-020", title: "Renew a loan" }] },
       "GET /api/runs/2/search": {
@@ -116,7 +116,12 @@ describe("search", () => {
     vi.stubGlobal("fetch", api.fn);
     wrap(<Search />, "/runs/2/search", "/runs/:runId/search");
     expect(await screen.findByText("“Renew a loan”")).toBeInTheDocument();             // example from the run
-    fireEvent.change(screen.getByLabelText("Search requirements and code"), { target: { value: "renew a loan" } });
+    const box = screen.getByLabelText("Search requirements and code");
+    fireEvent.change(box, { target: { value: "renew a loan" } });
+    expect(screen.getByText(/to search/)).toBeInTheDocument();                         // hint, no request yet
+    await new Promise((r) => setTimeout(r, 600));
+    expect(api.calls.some((c) => c.url.startsWith("/api/runs/2/search"))).toBe(false);
+    fireEvent.submit(box.closest("form")!);
     expect(await screen.findByText("Implemented by", {}, { timeout: 3000 })).toBeInTheDocument();
     expect(api.calls.some((c) => c.url === "/api/runs/2/search?q=renew%20a%20loan&limit=10")).toBe(true);
     expect(screen.getByText("+ 1 supporting component")).toBeInTheDocument();

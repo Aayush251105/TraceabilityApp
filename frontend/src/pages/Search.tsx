@@ -54,13 +54,8 @@ export function Search() {
 
   useEffect(() => setDraft(q), [q]);
 
-  // Search as you type (debounced); the query lives in the URL.
-  useEffect(() => {
-    const t = setTimeout(() => {
-      if (draft.trim() !== q) setParams(draft.trim() ? { q: draft.trim() } : {}, { replace: true });
-    }, 400);
-    return () => clearTimeout(t);
-  }, [draft]);
+  // The query lives in the URL and only runs when the form is submitted (Enter),
+  // not on every keystroke: each search is a hybrid lexical + embedding query.
 
   // "/" focuses the search box.
   useEffect(() => {
@@ -105,7 +100,9 @@ export function Search() {
             <button type="button" aria-label="Clear search" onClick={() => { setDraft(""); setParams({}, { replace: true }); input.current?.focus(); }}
               className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border-0 bg-transparent text-fg3 hover:bg-hover hover:text-fg"><XIcon /></button>
           )}
-          <kbd className="rounded-[3px] border border-b-2 border-border-strong px-[5px] font-mono text-[11px] text-fg3">/</kbd>
+          {draft.trim() && draft.trim() !== q
+            ? <span className="text-[11px] whitespace-nowrap text-fg3">Press <kbd className="rounded-[3px] border border-b-2 border-border-strong px-[5px] font-mono text-[11px]">Enter</kbd> to search</span>
+            : <kbd className="rounded-[3px] border border-b-2 border-border-strong px-[5px] font-mono text-[11px] text-fg3">/</kbd>}
         </form>
       </header>
 
