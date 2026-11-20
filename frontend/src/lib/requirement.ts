@@ -189,4 +189,115 @@ export function whyRows(detail: RequirementDetail): WhyRow[] {
   return [...mapped, ...others];
 }
 
+// ---------------------------------------------------------------------------
+// Helper: what each linked component does and why it is linked (no LLM;
+// built from the docstring, the mapping reason, the graph edges and the claims)
+// ---------------------------------------------------------------------------
+
+const DOC_SECTION = /^\s*(args|arguments|parameters|params|returns?|yields?|raises|exceptions|examples?|attributes|notes?|see also|todo)\s*:?\s*$/i;
+
+/** First paragraph of a docstring, without Args/Returns/... sections, at most `max` characters. */
+export function docSummary(content: string | null | undefined, max = 280): string {
+  if (!content) return "";
+  const lines = content.replace(/\r/g, "").trim().split("\n");
+  const kept: string[] = [];
+  for (const line of lines) {
+    if (DOC_SECTION.test(line)) break;              // a Google/NumPy-style section starts
+    if (/^\s*[-=]{3,}\s*$/.test(line)) break;       // NumPy underline
+    if (!line.trim()) {
+      if (kept.length) break;                       // end of the first paragraph
+      continue;
+    }
+    kept.push(line.trim());
+  }
+  const text = kept.join(" ").replace(/\s+/g, " ").trim();
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), max - 20)).trimEnd()}…`;
+}
+
+/** The mapping agent's selection reason in plain words. */
+export function plainReason(reason: string | null | undefined, rank: number | null): string {
+  const r = (reason ?? "").trim();
+  if (!r || /^rank 1$/i.test(r)) return rank != null && rank > 1 ? `Search match #${rank} for this requirement` : "Best search match for this requirement";
+  let m = r.match(/^rank (\d+);\s*top-(\d+) in (\d+)\/(\d+)/i);
+  if (m) return `Strong search match: #${m[1]} overall, in the top ${m[2]} of ${m[3]} of ${m[4]} search methods`;
+  m = r.match(/^promoted: method of top-ranked class (.+)$/i);
+  if (m) return `Method of ${shortComponent(m[1])}, the class that matched best`;
+  m = r.match(/^class containing direct candidate (.+)$/i);
+  if (m) return `Class that contains ${shortComponent(m[1])}`;
+  return r.charAt(0).toUpperCase() + r.slice(1);
+}
+
+/** How a component relates to another linked component, seen from `self`. */
+function edgePhrase(type: string, outgoing: boolean, other: string): string {
+  const t = type.replace(/_/g, " ");
+  const o = shortComponent(other);
+  if (t === "calls" || t === "call reference") return outgoing ? `Calls ${o}` : `Called by ${o}`;
+  if (t === "contains") return outgoing ? `Contains ${o}` : `Part of ${o}`;
+  if (t === "instantiates") return outgoing ? `Creates ${o}` : `Created by ${o}`;
+  if (t === "inherits") return outgoing ? `Subclass of ${o}` : `Base class of ${o}`;
+  if (t === "imports") return outgoing ? `Uses ${o}` : `Used by ${o}`;
+  return outgoing ? `${t} ${o}` : `${o} ${t} it`;
+}
+
+export interface HelperRow {
+  component_id: string;
+  name: string;
+  role: "direct" | "supporting";
+  where: string;
+  what: { text: string; kind: string } | null;
+  why: string[];
+  claims: { n: number; meta: StatusMeta }[];
+}
+
+/** One row per linked component, direct ones first. */
+export function helperRows(detail: RequirementDetail): HelperRow[] {
+  const linked = new Set(detail.components.map((c) => c.component_id));
+  const direct = new Set(detail.components.filter((c) => c.role === "direct").map((c) => c.component_id));
+  const ordered = [...detail.components].sort((a, b) => (a.role === b.role ? 0 : a.role === "direct" ? -1 : 1));
+  return ordered.map((c) => {
+    const rel = detail.edges
+      .filter((e) => e.from !== e.to && (e.from === c.component_id || e.to === c.component_id))
+      .map((e) => {
+        const outgoing = e.from === c.component_id;
+        const other = outgoing ? e.to : e.from;
+        return { other, text: edgePhrase(e.type, outgoing, other) };
+      })
+      .filter((x) => linked.has(x.other))
+      .sort((a, b) => Number(direct.has(b.other)) - Number(direct.has(a.other)));   // relations to direct code first
+    const rels = [...new Set(rel.map((x) => x.text))].slice(0, 3);
+    const why = c.role === "direct"
+      ? [plainReason(c.reason, c.rank), ...rels]
+      : rels.length ? rels : [c.reason ? plainReason(c.reason, c.rank) : "Linked through the code graph"];
+    const claims = detail.claims
+      .map((cl, i) => ({ cl, i }))
+      .filter(({ cl }) => cl.evidence.some((e) => e.component_id === c.component_id))
+      .map(({ cl, i }) => ({ n: i + 1, meta: claimMeta(cl.verdict) }));
+    const summary = docSummary(c.docstring?.content);
+    return {
+      component_id: c.component_id,
+      name: c.name,
+      role: c.role,
+      where: `${fileName(c.path)}:${c.start_line}–${c.end_line}`,
+      what: summary ? { text: summary, kind: c.docstring!.kind } : null,
+      why,
+      claims,
+    };
+  });
+}
+
+/** One sentence that orients a newcomer before the per-component rows. */
+export function helperOverview(detail: RequirementDetail): string {
+  const direct = detail.components.filter((c) => c.role === "direct").map((c) => c.name);
+  const supporting = detail.components.length - direct.length;
+  if (!direct.length) return "No code was mapped to this requirement.";
+  const names = direct.length <= 3 ? direct.join(", ") : `${direct.slice(0, 3).join(", ")} and ${direct.length - 3} more`;
+  const parts = [`Mainly implemented in ${names}`];
+  if (supporting) parts.push(`${supporting} supporting component${supporting === 1 ? "" : "s"} give${supporting === 1 ? "s" : ""} context`);
+  const verified = detail.claims.filter((c) => c.verdict === "supported").length;
+  if (detail.claims.length) parts.push(`the verifier confirmed ${verified} of ${detail.claims.length} claim${detail.claims.length === 1 ? "" : "s"}`);
+  return `${parts.join("; ")}.`;
+}
+
 export { shortComponent };
