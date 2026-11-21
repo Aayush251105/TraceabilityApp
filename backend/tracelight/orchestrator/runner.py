@@ -105,6 +105,7 @@ class Orchestrator:
                  agents: Optional[Agents] = None,
                  llm_factory: Optional[Callable[[Dict[str, Any]], Any]] = None,
                  embedder_factory: Optional[Callable[[], Any]] = None,
+                 ask_llm_factory: Optional[Callable[[Dict[str, Any]], Any]] = None,
                  docagent_test_mode: str = "none", preflight: bool = True,
                  on_event: Optional[Callable[[Dict[str, Any]], None]] = None) -> None:
         self.cfg = cfg
@@ -114,6 +115,7 @@ class Orchestrator:
         self.agents = agents or Agents()
         self.llm_factory = llm_factory or self._ollama_client
         self.embedder_factory = embedder_factory or self._embedder
+        self.ask_llm_factory = ask_llm_factory or self._ask_client
         self.docagent_test_mode = docagent_test_mode
         self.preflight = preflight
         self.on_event = on_event
@@ -715,6 +717,12 @@ class Orchestrator:
     def _ollama_client(self, settings: Dict[str, Any]):
         from traceability.verification import OllamaClient
         return OllamaClient(settings["models"]["verifier"], host=settings["ollama_host"])
+
+    def _ask_client(self, settings: Dict[str, Any]):
+        """Small, fast model that only turns an Ask question into JSON (the judge model)."""
+        from traceability.verification import OllamaClient
+        return OllamaClient(settings["models"]["judge"], host=settings["ollama_host"], num_ctx=2048,
+                            timeout=60.0, retries=0)
 
     def _embedder(self):
         if self._embedder_instance is None:
