@@ -144,8 +144,17 @@ def test_commands(tmp_path):
 
 def test_srs_env_sets_models():
     env = srs_env(DEFAULTS)
-    assert env["LLM_MODEL"] == "llama3.1" and env["JUDGE_MODEL"] == "qwen2.5:3b"
+    assert env["LLM_MODEL"] == "qwen3:8b" and env["JUDGE_MODEL"] == "qwen3:4b"
     assert env["OLLAMA_HOST"] == DEFAULTS["ollama_host"]
+
+
+def test_srs_env_thinking_switch():
+    env = srs_env(DEFAULTS)                       # extraction: thinking off; judge: model default
+    assert env["LLM_THINK"] == "false" and "JUDGE_THINK" not in env
+    env = srs_env({**DEFAULTS, "thinking": {"srs": None, "judge": True}})
+    assert "LLM_THINK" not in env and env["JUDGE_THINK"] == "true"
+    no_section = {k: v for k, v in DEFAULTS.items() if k != "thinking"}   # settings saved before the switch
+    assert "LLM_THINK" not in srs_env(no_section)
 
 
 def test_check_agents_reports_missing(tmp_path):

@@ -190,12 +190,17 @@ def run_docagent(paths: AppPaths, settings: Dict[str, Any], *, repo_path: Path, 
 
 
 def srs_env(settings: Dict[str, Any]) -> Dict[str, str]:
-    return _base_env({
+    env = {
         "LLM_PROVIDER": "ollama",
         "LLM_MODEL": settings["models"]["srs"],
         "JUDGE_MODEL": settings["models"]["judge"],
         "OLLAMA_HOST": settings["ollama_host"],
-    })
+    }
+    thinking = settings.get("thinking") or {}
+    for role, var in (("srs", "LLM_THINK"), ("judge", "JUDGE_THINK")):
+        if thinking.get(role) is not None:
+            env[var] = "true" if thinking[role] else "false"
+    return _base_env(env)
 
 
 def srs_command(paths: AppPaths, mode: str, *, out_dir: Path, input_path: Optional[Path] = None,

@@ -42,10 +42,15 @@ def _venv_python(project: Path) -> Path:
 DEFAULTS: Dict[str, Any] = {
     "models": {
         "docagent": "yi-coder:9b",          # docstring generation
-        "srs": "llama3.1",                  # requirement extraction
-        "judge": "qwen2.5:3b",              # candidate judge
+        "srs": "qwen3:8b",                  # requirement extraction
+        "judge": "qwen3:4b",                # candidate judge
         "verifier": "qwen2.5-coder:7b",     # claim verification
     },
+    # Thinking models (qwen3): false disables the hidden reasoning pass, null
+    # leaves the model's default. Chosen from the model benchmark
+    # (TraceabilityApp/benchmark): with thinking on, qwen3:8b extraction took
+    # 11h44m instead of 19 min; the qwen3:4b judge was benchmarked with thinking on.
+    "thinking": {"docagent": None, "srs": False, "judge": None, "verifier": None},
     "ollama_host": "http://localhost:11434",
     "ingest": {
         # Run the code lane and the SRS lane at the same time.  On a GPU that

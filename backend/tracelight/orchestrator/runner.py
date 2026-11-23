@@ -714,7 +714,8 @@ class Orchestrator:
 
     def _ollama_client(self, settings: Dict[str, Any]):
         from traceability.verification import OllamaClient
-        return OllamaClient(settings["models"]["verifier"], host=settings["ollama_host"])
+        return OllamaClient(settings["models"]["verifier"], host=settings["ollama_host"],
+                            think=(settings.get("thinking") or {}).get("verifier"))
 
     def _embedder(self):
         if self._embedder_instance is None:

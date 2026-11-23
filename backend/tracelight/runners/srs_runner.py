@@ -21,7 +21,7 @@ document_blocks.json       the parsed document (headings, paragraphs, list items
                            tables with locations) for the review page's source view
 
 Models come from the SRS Agent's environment variables, which the
-orchestrator sets: LLM_MODEL, JUDGE_MODEL, OLLAMA_HOST.
+orchestrator sets: LLM_MODEL, JUDGE_MODEL, OLLAMA_HOST (and LLM_THINK / JUDGE_THINK when configured).
 
 Uses the standard library only (plus the SRS Agent itself).
 """
@@ -156,7 +156,11 @@ def run_extract_candidates(app, args, out_dir: Path) -> dict:
     candidates = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
     progress = EventProgress(out_dir)
     config = app.LLMConfig()
-    agent = app.SRSAgent(llm_provider=app.create_provider(config))
+    try:      # SRS Agents without the thinking switch take no `think` argument
+        provider = app.create_provider(config, think=getattr(config, "think", None))
+    except TypeError:
+        provider = app.create_provider(config)
+    agent = app.SRSAgent(llm_provider=provider)
     requirements = agent.extract(candidates, progress_callback=progress)
     reqs = [_requirement_dict(r) for r in requirements]
     _dump(out_dir / "requirements.json", reqs)

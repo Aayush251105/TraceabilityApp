@@ -17,7 +17,7 @@ def test_save_merges_nested_and_keeps_other_defaults(tmp_path):
 
 def test_save_does_not_mutate_defaults(tmp_path):
     SettingsStore(tmp_path / "settings.json").save({"models": {"srs": "other"}})
-    assert DEFAULTS["models"]["srs"] == "llama3.1"
+    assert DEFAULTS["models"]["srs"] == "qwen3:8b"
 
 
 def test_corrupt_file_falls_back_to_defaults(tmp_path):

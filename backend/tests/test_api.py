@@ -196,7 +196,7 @@ def test_settings_and_health(api):
     r = api.put("/api/settings", json={"models": {"verifier": "qwen2.5-coder:14b"},
                                        "ollama_host": "http://127.0.0.1:9"}).json()
     assert r["settings"]["models"]["verifier"] == "qwen2.5-coder:14b"
-    assert r["settings"]["models"]["srs"] == "llama3.1"
+    assert r["settings"]["models"]["srs"] == "qwen3:8b"
     assert api.put("/api/settings", json={"nope": 1}).status_code == 400
     h = api.get("/api/health").json()
     assert h["database"]["ok"] and not h["ollama"]["ok"]
