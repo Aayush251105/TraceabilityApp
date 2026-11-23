@@ -1,0 +1,958 @@
+{
+  "dataset": "Virtual-clinic",
+  "document_id": "run-4-Software Requirements Specification",
+  "pipeline_version": "verification-v1",
+  "requirements_judged": 52,
+  "scores": {
+    "exact_accuracy": 0.2692,
+    "false_support_rate": 0.0,
+    "implemented_recall": 0.3,
+    "citation_validity": 0.873,
+    "citation_on_gold": 0.7273,
+    "claim_accuracy": null
+  },
+  "counts": {
+    "false_support": 0,
+    "partial_or_not_implemented": 42,
+    "implemented_supported": 3,
+    "implemented": 10,
+    "citations_valid": 55,
+    "citations_rejected": 8,
+    "gold_claims_compared": 0,
+    "incomplete_requirement_text": 0
+  },
+  "confusion": {
+    "partial": {
+      "not_supported_by_candidate": 27,
+      "partially_supported": 3,
+      "unverified": 1
+    },
+    "implemented": {
+      "not_supported_by_candidate": 5,
+      "supported": 3,
+      "partially_supported": 2
+    },
+    "not_implemented": {
+      "not_supported_by_candidate": 8,
+      "unverified": 3
+    },
+    "cross_cutting": {
+      "not_supported_by_candidate": 2,
+      "supported": 1,
+      "unverified": 2
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "Req-1",
+      "gold_status": "partial",
+      "matched_to": "Req-1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "gold_status": "partial",
+      "matched_to": "Req-1/1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-1/1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "gold_status": "partial",
+      "matched_to": "Req-1/2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-1/2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "gold_status": "partial",
+      "matched_to": "Req-1/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-1/3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-2",
+      "gold_status": "partial",
+      "matched_to": "Req-2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "gold_status": "partial",
+      "matched_to": "Req-2/1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-2/1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "gold_status": "partial",
+      "matched_to": "Req-2/2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-2/2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "gold_status": "partial",
+      "matched_to": "Req-2/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-2/3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-3",
+      "gold_status": "partial",
+      "matched_to": "Req-3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "gold_status": "partial",
+      "matched_to": "Req-3/1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-3/1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "gold_status": "partial",
+      "matched_to": "Req-3/2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-3/2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "gold_status": "partial",
+      "matched_to": "Req-3/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-3/3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-4",
+      "gold_status": "implemented",
+      "matched_to": "Req-4",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-4.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "gold_status": "implemented",
+      "matched_to": "Req-4/1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-4/1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "gold_status": "partial",
+      "matched_to": "Req-4/2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-4/2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "gold_status": "partial",
+      "matched_to": "Req-4/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-4/3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-5",
+      "gold_status": "implemented",
+      "matched_to": "Req-5",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "Req-5.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "gold_status": "implemented",
+      "matched_to": "Req-5/1",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "Req-5/1.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "gold_status": "implemented",
+      "matched_to": "Req-5/2",
+      "predicted": "partially_supported",
+      "correct": false,
+      "claims": [
+        [
+          "Req-5/2.c1",
+          "supported"
+        ],
+        [
+          "Req-5/2.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "gold_status": "partial",
+      "matched_to": "Req-5/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-5/3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-6",
+      "gold_status": "implemented",
+      "matched_to": "Req-6",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-6.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "gold_status": "partial",
+      "matched_to": "Req-6/1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-6/1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-6/2",
+      "gold_status": "not_implemented",
+      "matched_to": "Req-6/2",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "Req-6/2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-6/3",
+      "gold_status": "not_implemented",
+      "matched_to": "Req-6/3",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "Req-6/3.c1",
+          "not_supported"
+        ],
+        [
+          "Req-6/3.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-7",
+      "gold_status": "not_implemented",
+      "matched_to": "Req-7",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "Req-7.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-8",
+      "gold_status": "partial",
+      "matched_to": "Req-8",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-8.c1",
+          "not_supported"
+        ],
+        [
+          "Req-8.c2",
+          "not_supported"
+        ],
+        [
+          "Req-8.c3",
+          "not_supported"
+        ],
+        [
+          "Req-8.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-9",
+      "gold_status": "partial",
+      "matched_to": "Req-9",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-9.c1",
+          "not_supported"
+        ],
+        [
+          "Req-9.c2",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-10",
+      "gold_status": "partial",
+      "matched_to": "Req-10",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "Req-10.c1",
+          "supported"
+        ],
+        [
+          "Req-10.c2",
+          "not_supported"
+        ],
+        [
+          "Req-10.c3",
+          "not_supported"
+        ],
+        [
+          "Req-10.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-11",
+      "gold_status": "partial",
+      "matched_to": "Req-11",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-11.c1",
+          "not_supported"
+        ],
+        [
+          "Req-11.c2",
+          "not_supported"
+        ],
+        [
+          "Req-11.c3",
+          "not_supported"
+        ],
+        [
+          "Req-11.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-12",
+      "gold_status": "partial",
+      "matched_to": "Req-12",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-12.c1",
+          "not_supported"
+        ],
+        [
+          "Req-12.c2",
+          "not_supported"
+        ],
+        [
+          "Req-12.c3",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-13",
+      "gold_status": "partial",
+      "matched_to": "Req-13",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-13.c1",
+          "not_supported"
+        ],
+        [
+          "Req-13.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-14",
+      "gold_status": "not_implemented",
+      "matched_to": "Req-14",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "Req-14.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-15",
+      "gold_status": "implemented",
+      "matched_to": "Req-15",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "Req-15.c1",
+          "supported"
+        ],
+        [
+          "Req-15.c2",
+          "supported"
+        ],
+        [
+          "Req-15.c3",
+          "supported"
+        ],
+        [
+          "Req-15.c4",
+          "supported"
+        ],
+        [
+          "Req-15.c5",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "Req-16",
+      "gold_status": "partial",
+      "matched_to": "Req-16",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "Req-16.c1",
+          "not_supported"
+        ],
+        [
+          "Req-16.c2",
+          "not_supported"
+        ],
+        [
+          "Req-16.c3",
+          "not_supported"
+        ],
+        [
+          "Req-16.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-1",
+      "gold_status": "not_implemented",
+      "matched_to": "BR-1",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "BR-1.c1",
+          "not_supported"
+        ],
+        [
+          "BR-1.c2",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-2",
+      "gold_status": "implemented",
+      "matched_to": "BR-2",
+      "predicted": "partially_supported",
+      "correct": false,
+      "claims": [
+        [
+          "BR-2.c1",
+          "supported"
+        ],
+        [
+          "BR-2.c2",
+          "supported"
+        ],
+        [
+          "BR-2.c3",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-3",
+      "gold_status": "partial",
+      "matched_to": "BR-3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "BR-3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-4",
+      "gold_status": "partial",
+      "matched_to": "BR-4",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "BR-4.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-5",
+      "gold_status": "implemented",
+      "matched_to": "BR-5",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "BR-5.c1",
+          "not_supported"
+        ],
+        [
+          "BR-5.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-6",
+      "gold_status": "implemented",
+      "matched_to": "BR-6",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "BR-6.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-7",
+      "gold_status": "partial",
+      "matched_to": "BR-7",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "BR-7.c1",
+          "not_supported"
+        ],
+        [
+          "BR-7.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-8",
+      "gold_status": "not_implemented",
+      "matched_to": "BR-8",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "BR-8.c1",
+          "not_supported"
+        ],
+        [
+          "BR-8.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-9",
+      "gold_status": "partial",
+      "matched_to": "BR-9",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "BR-9.c1",
+          "not_supported"
+        ],
+        [
+          "BR-9.c2",
+          "supported"
+        ],
+        [
+          "BR-9.c3",
+          "not_supported"
+        ],
+        [
+          "BR-9.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "BR-10",
+      "gold_status": "not_implemented",
+      "matched_to": "BR-10",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "BR-10.c1",
+          "not_supported"
+        ],
+        [
+          "BR-10.c2",
+          "not_supported"
+        ],
+        [
+          "BR-10.c3",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-001",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-001",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-001.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-002",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-002",
+      "predicted": "supported",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-002.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-003",
+      "gold_status": "partial",
+      "matched_to": "REQ-077",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-077.c1",
+          "not_supported"
+        ],
+        [
+          "REQ-077.c2",
+          "not_supported"
+        ],
+        [
+          "REQ-077.c3",
+          "not_supported"
+        ],
+        [
+          "REQ-077.c4",
+          "not_supported"
+        ],
+        [
+          "REQ-077.c5",
+          "not_supported"
+        ],
+        [
+          "REQ-077.c6",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "gold_status": "partial",
+      "matched_to": "REQ-079",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-079.c1",
+          "insufficient_evidence"
+        ],
+        [
+          "REQ-079.c2",
+          "not_supported"
+        ],
+        [
+          "REQ-079.c3",
+          "supported"
+        ],
+        [
+          "REQ-079.c4",
+          "not_supported"
+        ],
+        [
+          "REQ-079.c5",
+          "not_supported"
+        ],
+        [
+          "REQ-079.c6",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-006",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-080",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-080.c1",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c2",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c3",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c4",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c5",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c6",
+          "not_supported"
+        ],
+        [
+          "REQ-080.c7",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-007",
+      "gold_status": "not_implemented",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": false,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-008",
+      "gold_status": "not_implemented",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": false,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-009",
+      "gold_status": "not_implemented",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": false,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-010",
+      "gold_status": "partial",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": false,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-011",
+      "gold_status": "cross_cutting",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": null,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-012",
+      "gold_status": "cross_cutting",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": null,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-018",
+      "gold_status": "partial",
+      "matched_to": "REQ-018",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-018.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-019",
+      "gold_status": "not_implemented",
+      "matched_to": "REQ-019",
+      "predicted": "not_supported_by_candidate",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-019.c1",
+          "not_supported"
+        ],
+        [
+          "REQ-019.c2",
+          "not_supported"
+        ]
+      ]
+    }
+  ]
+}

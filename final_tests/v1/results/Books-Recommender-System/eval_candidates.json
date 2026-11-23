@@ -1,0 +1,265 @@
+{
+  "dataset": "Books-Recommender-System",
+  "document_id": "run-3-SRS",
+  "pipeline_version": "candidates-v1",
+  "requirements_scored": 28,
+  "matching": {
+    "by_id": 26,
+    "by_text": 2,
+    "unmatched": []
+  },
+  "scores": {
+    "hit@1": 0.5357,
+    "hit@3": 0.9286,
+    "hit@5": 0.9286,
+    "hit@10": 0.9286,
+    "recall@1": 0.5179,
+    "recall@3": 0.8583,
+    "recall@5": 0.8619,
+    "recall@10": 0.8869,
+    "mrr": 0.7083,
+    "ndcg@10": 0.7219
+  },
+  "missed": [
+    "REQ-009",
+    "REQ-012"
+  ],
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1.1",
+      "matched_to": "FR-1.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.config.configuration.AppConfiguration.__init__": 2,
+        "src.utils.common.read_yaml": 1
+      }
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "matched_to": "FR-1.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config": 7,
+        "src.config.configuration.AppConfiguration.get_data_transformation_config": 3,
+        "src.config.configuration.AppConfiguration.get_data_validation_config": 8,
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config": 2,
+        "src.config.configuration.AppConfiguration.get_model_trainer_config": null,
+        "src.entity.config_entity.DataIngestionConfig": null,
+        "src.entity.config_entity.DataTransformationConfig": null,
+        "src.entity.config_entity.DataValidationConfig": null,
+        "src.entity.config_entity.ModelRecommendationConfig": 5,
+        "src.entity.config_entity.ModelTrainerConfig": null
+      }
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "matched_to": "FR-1.4",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.exception.__init__.CustomException.__init__": 2,
+        "src.exception.__init__.error_message_detail": 3
+      }
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "matched_to": "FR-2.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_ingestion.DataIngestion.download_file": 3
+      }
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "matched_to": "FR-2.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+      }
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "matched_to": "FR-2.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 6,
+        "src.components.data_ingestion.DataIngestion.extract_zip_file": 3
+      }
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "matched_to": "FR-3.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+      }
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "matched_to": "FR-3.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_validation.DataValidation.validate_and_clean_data": 3
+      }
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "matched_to": "FR-3.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+      }
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "matched_to": "FR-3.4",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_validation.DataValidation.validate_and_clean_data": 3
+      }
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "matched_to": "FR-3.5",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+      }
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "matched_to": "FR-4.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+      }
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "matched_to": "FR-4.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+      }
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "matched_to": "FR-4.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+      }
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "matched_to": "FR-5.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+      }
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "matched_to": "FR-5.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+      }
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "matched_to": "FR-5.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+      }
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "matched_to": "FR-6.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": 1
+      }
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "matched_to": "FR-6.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+      }
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "matched_to": "FR-6.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+      }
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "matched_to": "FR-6.4",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+      }
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "matched_to": "FR-6.5",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+      }
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "matched_to": "FR-7.1",
+      "candidates": 10,
+      "primary_ranks": {
+        "app.get_book_names": 1
+      }
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "matched_to": "FR-7.2",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+      }
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "matched_to": "FR-7.3",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 1
+      }
+    },
+    {
+      "requirement_id": "REQ-009",
+      "matched_to": "REQ-009",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": null
+      }
+    },
+    {
+      "requirement_id": "REQ-011",
+      "matched_to": "REQ-054",
+      "candidates": 10,
+      "primary_ranks": {
+        "src.config.configuration.AppConfiguration.get_data_validation_config": 2,
+        "src.config.configuration.AppConfiguration.get_model_trainer_config": null,
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": null
+      }
+    },
+    {
+      "requirement_id": "REQ-012",
+      "matched_to": "REQ-055",
+      "candidates": 10,
+      "primary_ranks": {}
+    }
+  ]
+}

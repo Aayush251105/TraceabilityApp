@@ -1,0 +1,1690 @@
+{
+  "dataset": "Virtual-clinic",
+  "repo_id": "run-7-code",
+  "document_id": "run-7-Software Requirements Specification",
+  "query_source": "ingested",
+  "requirements_scored": 41,
+  "docstrings_present": true,
+  "gold_components_missing_from_repo": [],
+  "channels": {
+    "code_lexical": {
+      "hit@1": 0.1463,
+      "hit@3": 0.3171,
+      "hit@5": 0.4146,
+      "hit@10": 0.5122,
+      "recall@1": 0.0976,
+      "recall@3": 0.2203,
+      "recall@5": 0.2862,
+      "recall@10": 0.4333,
+      "mrr": 0.2667,
+      "ndcg@10": 0.2772
+    },
+    "code_vector": {
+      "hit@1": 0.1707,
+      "hit@3": 0.2927,
+      "hit@5": 0.3659,
+      "hit@10": 0.4878,
+      "recall@1": 0.0935,
+      "recall@3": 0.1776,
+      "recall@5": 0.2346,
+      "recall@10": 0.3585,
+      "mrr": 0.2714,
+      "ndcg@10": 0.2587
+    },
+    "code_hybrid": {
+      "hit@1": 0.1707,
+      "hit@3": 0.3659,
+      "hit@5": 0.4634,
+      "hit@10": 0.6098,
+      "recall@1": 0.1057,
+      "recall@3": 0.2317,
+      "recall@5": 0.3171,
+      "recall@10": 0.4886,
+      "mrr": 0.3123,
+      "ndcg@10": 0.3274
+    },
+    "doc_lexical": {
+      "hit@1": 0.122,
+      "hit@3": 0.2683,
+      "hit@5": 0.3659,
+      "hit@10": 0.5854,
+      "recall@1": 0.0935,
+      "recall@3": 0.2195,
+      "recall@5": 0.3008,
+      "recall@10": 0.4569,
+      "mrr": 0.2597,
+      "ndcg@10": 0.2841
+    },
+    "doc_vector": {
+      "hit@1": 0.122,
+      "hit@3": 0.3171,
+      "hit@5": 0.4878,
+      "hit@10": 0.5854,
+      "recall@1": 0.0935,
+      "recall@3": 0.2175,
+      "recall@5": 0.3841,
+      "recall@10": 0.4654,
+      "mrr": 0.2678,
+      "ndcg@10": 0.2934
+    },
+    "doc_hybrid": {
+      "hit@1": 0.2439,
+      "hit@3": 0.3902,
+      "hit@5": 0.439,
+      "hit@10": 0.6098,
+      "recall@1": 0.1911,
+      "recall@3": 0.3211,
+      "recall@5": 0.3516,
+      "recall@10": 0.4756,
+      "mrr": 0.3563,
+      "ndcg@10": 0.3582
+    },
+    "all_hybrid": {
+      "hit@1": 0.2439,
+      "hit@3": 0.3415,
+      "hit@5": 0.439,
+      "hit@10": 0.6585,
+      "recall@1": 0.1789,
+      "recall@3": 0.2642,
+      "recall@5": 0.3293,
+      "recall@10": 0.5211,
+      "mrr": 0.3457,
+      "ndcg@10": 0.3534
+    }
+  },
+  "negatives": {
+    "not_implemented_top1_code_similarity": {
+      "Req-6/2": 0.5014,
+      "Req-6/3": 0.3675,
+      "Req-7": 0.3302,
+      "Req-14": 0.2308,
+      "BR-1": 0.1153,
+      "BR-8": 0.3706,
+      "BR-10": 0.432,
+      "REQ-007": null,
+      "REQ-008": null,
+      "REQ-009": null,
+      "REQ-019": 0.2282
+    },
+    "mean_not_implemented": 0.322,
+    "mean_implemented": 0.3582
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "Req-1",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.add_speciality": 22,
+          "server.views_admin.parse_speciality_delete": 19,
+          "server.views_admin.view_speciality": 16
+        },
+        "code_vector": {
+          "server.views_admin.add_speciality": 43,
+          "server.views_admin.parse_speciality_delete": 45,
+          "server.views_admin.view_speciality": 24
+        },
+        "code_hybrid": {
+          "server.views_admin.add_speciality": 18,
+          "server.views_admin.parse_speciality_delete": 17,
+          "server.views_admin.view_speciality": 11
+        },
+        "doc_lexical": {
+          "server.views_admin.add_speciality": 7,
+          "server.views_admin.parse_speciality_delete": null,
+          "server.views_admin.view_speciality": 8
+        },
+        "doc_vector": {
+          "server.views_admin.add_speciality": 15,
+          "server.views_admin.parse_speciality_delete": 5,
+          "server.views_admin.view_speciality": 2
+        },
+        "doc_hybrid": {
+          "server.views_admin.add_speciality": 7,
+          "server.views_admin.parse_speciality_delete": 20,
+          "server.views_admin.view_speciality": 3
+        },
+        "all_hybrid": {
+          "server.views_admin.add_speciality": 10,
+          "server.views_admin.parse_speciality_delete": 16,
+          "server.views_admin.view_speciality": 5
+        }
+      },
+      "top5_all": [
+        "testing.test_admin.TestAdminViews.test_add_speciality",
+        "server.forms.EmployeeRegistrationForm.clean",
+        "testing.test_admin.TestAdminViews.test_speciality_view",
+        "testing.test_admin.TestAdminViews.test_specilaity_delete",
+        "server.views_admin.view_speciality"
+      ]
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.add_speciality": 3
+        },
+        "code_vector": {
+          "server.views_admin.add_speciality": 28
+        },
+        "code_hybrid": {
+          "server.views_admin.add_speciality": 11
+        },
+        "doc_lexical": {
+          "server.views_admin.add_speciality": 2
+        },
+        "doc_vector": {
+          "server.views_admin.add_speciality": 6
+        },
+        "doc_hybrid": {
+          "server.views_admin.add_speciality": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.add_speciality": 5
+        }
+      },
+      "top5_all": [
+        "testing.test_admin.TestAdminViews.test_add_speciality",
+        "server.migrations.0006_profile_speciality.Migration",
+        "server.forms.SpecialityForm",
+        "testing.test_models.SpecialityTestCase",
+        "server.views_admin.add_speciality"
+      ]
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.view_speciality": 22
+        },
+        "code_vector": {
+          "server.views_admin.view_speciality": 6
+        },
+        "code_hybrid": {
+          "server.views_admin.view_speciality": 10
+        },
+        "doc_lexical": {
+          "server.views_admin.view_speciality": 10
+        },
+        "doc_vector": {
+          "server.views_admin.view_speciality": 5
+        },
+        "doc_hybrid": {
+          "server.views_admin.view_speciality": 5
+        },
+        "all_hybrid": {
+          "server.views_admin.view_speciality": 8
+        }
+      },
+      "top5_all": [
+        "server.views_medicalinfo.update_view",
+        "server.views_appointment.update_view",
+        "server.views_profile.update_view",
+        "server.views_admin.users_view",
+        "server.views_admin.add_speciality"
+      ]
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.parse_speciality_delete": 1
+        },
+        "code_vector": {
+          "server.views_admin.parse_speciality_delete": 2
+        },
+        "code_hybrid": {
+          "server.views_admin.parse_speciality_delete": 1
+        },
+        "doc_lexical": {
+          "server.views_admin.parse_speciality_delete": 1
+        },
+        "doc_vector": {
+          "server.views_admin.parse_speciality_delete": 1
+        },
+        "doc_hybrid": {
+          "server.views_admin.parse_speciality_delete": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.parse_speciality_delete": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.parse_speciality_delete",
+        "testing.test_admin.TestAdminViews.test_specilaity_delete",
+        "server.views_prescription.list_view",
+        "server.models.MedicalTest",
+        "server.forms.EmployeeRegistrationForm.clean"
+      ]
+    },
+    {
+      "requirement_id": "Req-2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": 12,
+          "server.views_admin.createemployee_view": 36
+        },
+        "code_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 10,
+          "server.views_admin.createemployee_view": null
+        },
+        "code_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 3,
+          "server.views_admin.createemployee_view": 63
+        },
+        "doc_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": 7,
+          "server.views_admin.createemployee_view": 33
+        },
+        "doc_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 8,
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.views_admin.createemployee_view": 58
+        },
+        "all_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.views_admin.createemployee_view": 55
+        }
+      },
+      "top5_all": [
+        "server.models.Account",
+        "server.forms.EmployeeRegistrationForm.clean",
+        "server.migrations.0004_auto_20180306_1013.Migration",
+        "server.models.Appointment",
+        "server.migrations.0011_auto_20181031_0310.Migration"
+      ]
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": null,
+          "server.forms.validate_username_available": 50,
+          "server.views.register_user": null,
+          "server.views_admin.createemployee_view": 23
+        },
+        "code_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 3,
+          "server.forms.validate_username_available": 33,
+          "server.views.register_user": 9,
+          "server.views_admin.createemployee_view": null
+        },
+        "code_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 24,
+          "server.forms.validate_username_available": 21,
+          "server.views.register_user": 30,
+          "server.views_admin.createemployee_view": 43
+        },
+        "doc_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": 13,
+          "server.forms.validate_username_available": 24,
+          "server.views.register_user": 12,
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.forms.validate_username_available": 10,
+          "server.views.register_user": 9,
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 4,
+          "server.forms.validate_username_available": 12,
+          "server.views.register_user": 7,
+          "server.views_admin.createemployee_view": null
+        },
+        "all_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 13,
+          "server.forms.validate_username_available": 12,
+          "server.views.register_user": 15,
+          "server.views_admin.createemployee_view": 69
+        }
+      },
+      "top5_all": [
+        "server.forms.ProfileForm",
+        "server.migrations.0004_auto_20180306_1013.Migration",
+        "server.admin.MedicalTestAdmin",
+        "server.forms.EmployeeRegistrationForm",
+        "server.models.Account"
+      ]
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.ProfileForm.assign": null,
+          "server.views_profile.update_view": 23
+        },
+        "code_vector": {
+          "server.forms.ProfileForm.assign": 49,
+          "server.views_profile.update_view": 45
+        },
+        "code_hybrid": {
+          "server.forms.ProfileForm.assign": 74,
+          "server.views_profile.update_view": 19
+        },
+        "doc_lexical": {
+          "server.forms.ProfileForm.assign": null,
+          "server.views_profile.update_view": 12
+        },
+        "doc_vector": {
+          "server.forms.ProfileForm.assign": 38,
+          "server.views_profile.update_view": 37
+        },
+        "doc_hybrid": {
+          "server.forms.ProfileForm.assign": 64,
+          "server.views_profile.update_view": 13
+        },
+        "all_hybrid": {
+          "server.forms.ProfileForm.assign": 54,
+          "server.views_profile.update_view": 12
+        }
+      },
+      "top5_all": [
+        "server.views_medtest.update_view",
+        "server.views_appointment.update_view",
+        "server.views_medicalinfo.update_view",
+        "server.admin.MedicalTestAdmin",
+        "server.forms.EmployeeRegistrationForm.clean"
+      ]
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.user_archive": 38
+        },
+        "code_vector": {
+          "server.views_admin.user_archive": 15
+        },
+        "code_hybrid": {
+          "server.views_admin.user_archive": 24
+        },
+        "doc_lexical": {
+          "server.views_admin.user_archive": 12
+        },
+        "doc_vector": {
+          "server.views_admin.user_archive": 5
+        },
+        "doc_hybrid": {
+          "server.views_admin.user_archive": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.user_archive": 9
+        }
+      },
+      "top5_all": [
+        "server.views_prescription.list_view",
+        "server.views_appointment.list_view",
+        "server.appointment.parse_appointment_cancel",
+        "server.views_admin.parse_speciality_delete",
+        "server.appointment.parse_appointments"
+      ]
+    },
+    {
+      "requirement_id": "Req-3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.createemployee_view": null
+        },
+        "code_vector": {
+          "server.views_admin.createemployee_view": null
+        },
+        "code_hybrid": {
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_lexical": {
+          "server.views_admin.createemployee_view": 16
+        },
+        "doc_vector": {
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_hybrid": {
+          "server.views_admin.createemployee_view": 35
+        },
+        "all_hybrid": {
+          "server.views_admin.createemployee_view": 65
+        }
+      },
+      "top5_all": [
+        "server.models.Account",
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+        "testing.test_medtest.TestMedicalTest.test_medtest_update",
+        "server.models.Admin",
+        "server.admin.AppointmentAdmin"
+      ]
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.createemployee_view": 40
+        },
+        "code_vector": {
+          "server.views_admin.createemployee_view": null
+        },
+        "code_hybrid": {
+          "server.views_admin.createemployee_view": 71
+        },
+        "doc_lexical": {
+          "server.views_admin.createemployee_view": 30
+        },
+        "doc_vector": {
+          "server.views_admin.createemployee_view": null
+        },
+        "doc_hybrid": {
+          "server.views_admin.createemployee_view": 56
+        },
+        "all_hybrid": {
+          "server.views_admin.createemployee_view": 48
+        }
+      },
+      "top5_all": [
+        "server.forms.validate_username_available",
+        "server.views_admin.handle_hospital_csv",
+        "server.views_admin.handle_user_csv",
+        "server.forms.EmployeeRegistrationForm",
+        "testing.test_admin.TestAdminViews.test_add_speciality"
+      ]
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_profile.update_view": 9
+        },
+        "code_vector": {
+          "server.views_profile.update_view": 41
+        },
+        "code_hybrid": {
+          "server.views_profile.update_view": 11
+        },
+        "doc_lexical": {
+          "server.views_profile.update_view": 1
+        },
+        "doc_vector": {
+          "server.views_profile.update_view": 27
+        },
+        "doc_hybrid": {
+          "server.views_profile.update_view": 3
+        },
+        "all_hybrid": {
+          "server.views_profile.update_view": 3
+        }
+      },
+      "top5_all": [
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+        "server.migrations.0004_auto_20180306_1013.Migration",
+        "server.views_profile.update_view",
+        "testing.test_medicalinfo.TestMedicalInfoViews",
+        "server.migrations.0003_auto_20180305_0900.Migration"
+      ]
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.user_archive": 13
+        },
+        "code_vector": {
+          "server.views_admin.user_archive": null
+        },
+        "code_hybrid": {
+          "server.views_admin.user_archive": 31
+        },
+        "doc_lexical": {
+          "server.views_admin.user_archive": 6
+        },
+        "doc_vector": {
+          "server.views_admin.user_archive": 37
+        },
+        "doc_hybrid": {
+          "server.views_admin.user_archive": 13
+        },
+        "all_hybrid": {
+          "server.views_admin.user_archive": 16
+        }
+      },
+      "top5_all": [
+        "server.views_prescription.list_view",
+        "server.forms.PrescriptionForm.assign",
+        "server.models.Prescription",
+        "server.forms.PrescriptionForm",
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_new"
+      ]
+    },
+    {
+      "requirement_id": "Req-4",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.add_symptom": 13,
+          "server.views_admin.parse_symptom_delete": 10,
+          "server.views_admin.view_symptom": 7
+        },
+        "code_vector": {
+          "server.views_admin.add_symptom": 8,
+          "server.views_admin.parse_symptom_delete": 20,
+          "server.views_admin.view_symptom": 1
+        },
+        "code_hybrid": {
+          "server.views_admin.add_symptom": 6,
+          "server.views_admin.parse_symptom_delete": 8,
+          "server.views_admin.view_symptom": 3
+        },
+        "doc_lexical": {
+          "server.views_admin.add_symptom": 1,
+          "server.views_admin.parse_symptom_delete": 14,
+          "server.views_admin.view_symptom": 2
+        },
+        "doc_vector": {
+          "server.views_admin.add_symptom": 29,
+          "server.views_admin.parse_symptom_delete": 45,
+          "server.views_admin.view_symptom": 1
+        },
+        "doc_hybrid": {
+          "server.views_admin.add_symptom": 10,
+          "server.views_admin.parse_symptom_delete": 16,
+          "server.views_admin.view_symptom": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.add_symptom": 6,
+          "server.views_admin.parse_symptom_delete": 10,
+          "server.views_admin.view_symptom": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.view_symptom",
+        "server.views_appointment.list_view",
+        "server.views_medtest.list_view",
+        "server.views_medicalinfo.list_view",
+        "server.views_prescription.list_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.add_symptom": 3
+        },
+        "code_vector": {
+          "server.views_admin.add_symptom": 30
+        },
+        "code_hybrid": {
+          "server.views_admin.add_symptom": 10
+        },
+        "doc_lexical": {
+          "server.views_admin.add_symptom": 4
+        },
+        "doc_vector": {
+          "server.views_admin.add_symptom": 34
+        },
+        "doc_hybrid": {
+          "server.views_admin.add_symptom": 11
+        },
+        "all_hybrid": {
+          "server.views_admin.add_symptom": 8
+        }
+      },
+      "top5_all": [
+        "testing.test_admin.TestAdminViews.test_add_symptom",
+        "server.forms.SymptomForm",
+        "server.models.Symptom",
+        "testing.test_admin.TestAdminViews.test_symptom_view",
+        "testing.test_admin.TestAdminViews.test_symptom_delete"
+      ]
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.view_symptom": 21
+        },
+        "code_vector": {
+          "server.views_admin.view_symptom": 12
+        },
+        "code_hybrid": {
+          "server.views_admin.view_symptom": 10
+        },
+        "doc_lexical": {
+          "server.views_admin.view_symptom": 3
+        },
+        "doc_vector": {
+          "server.views_admin.view_symptom": 5
+        },
+        "doc_hybrid": {
+          "server.views_admin.view_symptom": 2
+        },
+        "all_hybrid": {
+          "server.views_admin.view_symptom": 3
+        }
+      },
+      "top5_all": [
+        "server.forms.SymptomForm",
+        "server.views_medtest.update_view",
+        "server.views_admin.view_symptom",
+        "server.views_medicalinfo.update_view",
+        "server.models.Symptom"
+      ]
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.parse_symptom_delete": 1
+        },
+        "code_vector": {
+          "server.views_admin.parse_symptom_delete": 2
+        },
+        "code_hybrid": {
+          "server.views_admin.parse_symptom_delete": 1
+        },
+        "doc_lexical": {
+          "server.views_admin.parse_symptom_delete": 1
+        },
+        "doc_vector": {
+          "server.views_admin.parse_symptom_delete": 2
+        },
+        "doc_hybrid": {
+          "server.views_admin.parse_symptom_delete": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.parse_symptom_delete": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.parse_symptom_delete",
+        "server.views_admin.add_symptom",
+        "testing.test_admin.TestAdminViews.test_symptom_delete",
+        "server.views_admin.view_symptom",
+        "server.views_prescription.list_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-5",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.user_archive": null,
+          "server.views_home.register_view": 8,
+          "server.views_profile.update_view": 3
+        },
+        "code_vector": {
+          "server.views_admin.user_archive": null,
+          "server.views_home.register_view": null,
+          "server.views_profile.update_view": 20
+        },
+        "code_hybrid": {
+          "server.views_admin.user_archive": null,
+          "server.views_home.register_view": 35,
+          "server.views_profile.update_view": 2
+        },
+        "doc_lexical": {
+          "server.views_admin.user_archive": 21,
+          "server.views_home.register_view": 4,
+          "server.views_profile.update_view": 14
+        },
+        "doc_vector": {
+          "server.views_admin.user_archive": null,
+          "server.views_home.register_view": 46,
+          "server.views_profile.update_view": null
+        },
+        "doc_hybrid": {
+          "server.views_admin.user_archive": 45,
+          "server.views_home.register_view": 9,
+          "server.views_profile.update_view": 33
+        },
+        "all_hybrid": {
+          "server.views_admin.user_archive": 67,
+          "server.views_home.register_view": 16,
+          "server.views_profile.update_view": 13
+        }
+      },
+      "top5_all": [
+        "server.models.Appointment.get_populated_fields",
+        "server.views.register_user",
+        "server.forms.ProfileForm.assign",
+        "server.models.Prescription.get_populated_fields",
+        "server.models.Appointment"
+      ]
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": 32
+        },
+        "code_vector": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": null
+        },
+        "code_hybrid": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": 55
+        },
+        "doc_lexical": {
+          "server.views.register_user": 3,
+          "server.views_home.register_view": 2
+        },
+        "doc_vector": {
+          "server.views.register_user": 25,
+          "server.views_home.register_view": null
+        },
+        "doc_hybrid": {
+          "server.views.register_user": 6,
+          "server.views_home.register_view": 31
+        },
+        "all_hybrid": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": 41
+        }
+      },
+      "top5_all": [
+        "server.views.register_user",
+        "server.forms.MedTestForm",
+        "server.forms.PrescriptionForm",
+        "server.admin.MedicalTestAdmin",
+        "server.models.Prescription.get_populated_fields"
+      ]
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.ProfileForm.assign": null,
+          "server.views_profile.update_view": 2
+        },
+        "code_vector": {
+          "server.forms.ProfileForm.assign": 12,
+          "server.views_profile.update_view": 1
+        },
+        "code_hybrid": {
+          "server.forms.ProfileForm.assign": 24,
+          "server.views_profile.update_view": 1
+        },
+        "doc_lexical": {
+          "server.forms.ProfileForm.assign": null,
+          "server.views_profile.update_view": null
+        },
+        "doc_vector": {
+          "server.forms.ProfileForm.assign": 4,
+          "server.views_profile.update_view": 5
+        },
+        "doc_hybrid": {
+          "server.forms.ProfileForm.assign": 22,
+          "server.views_profile.update_view": 24
+        },
+        "all_hybrid": {
+          "server.forms.ProfileForm.assign": 24,
+          "server.views_profile.update_view": 10
+        }
+      },
+      "top5_all": [
+        "server.views_appointment.update_view",
+        "server.views_medicalinfo.update_view",
+        "server.views_medtest.update_view",
+        "server.views_appointment.create_view",
+        "server.views_prescription.create_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.user_archive": 8
+        },
+        "code_vector": {
+          "server.views_admin.user_archive": 9
+        },
+        "code_hybrid": {
+          "server.views_admin.user_archive": 5
+        },
+        "doc_lexical": {
+          "server.views_admin.user_archive": 4
+        },
+        "doc_vector": {
+          "server.views_admin.user_archive": 3
+        },
+        "doc_hybrid": {
+          "server.views_admin.user_archive": 2
+        },
+        "all_hybrid": {
+          "server.views_admin.user_archive": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.user_archive",
+        "server.views_admin.parse_speciality_delete",
+        "server.views_prescription.list_view",
+        "server.appointment.parse_appointments",
+        "server.views_admin.parse_symptom_delete"
+      ]
+    },
+    {
+      "requirement_id": "Req-6",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_appointment.create_view": 8
+        },
+        "code_vector": {
+          "server.views_appointment.create_view": 10
+        },
+        "code_hybrid": {
+          "server.views_appointment.create_view": 8
+        },
+        "doc_lexical": {
+          "server.views_appointment.create_view": 27
+        },
+        "doc_vector": {
+          "server.views_appointment.create_view": 5
+        },
+        "doc_hybrid": {
+          "server.views_appointment.create_view": 12
+        },
+        "all_hybrid": {
+          "server.views_appointment.create_view": 11
+        }
+      },
+      "top5_all": [
+        "server.appointment.parse_appointments",
+        "server.views_appointment.list_view",
+        "server.appointment.parse_appointment_cancel",
+        "server.message.send_appointment_update",
+        "server.views_api.appointment_views"
+      ]
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.AppointmentForm.generate": 4,
+          "server.views_appointment.create_view": 8
+        },
+        "code_vector": {
+          "server.forms.AppointmentForm.generate": 3,
+          "server.views_appointment.create_view": 2
+        },
+        "code_hybrid": {
+          "server.forms.AppointmentForm.generate": 1,
+          "server.views_appointment.create_view": 2
+        },
+        "doc_lexical": {
+          "server.forms.AppointmentForm.generate": 49,
+          "server.views_appointment.create_view": 19
+        },
+        "doc_vector": {
+          "server.forms.AppointmentForm.generate": 34,
+          "server.views_appointment.create_view": 4
+        },
+        "doc_hybrid": {
+          "server.forms.AppointmentForm.generate": 26,
+          "server.views_appointment.create_view": 6
+        },
+        "all_hybrid": {
+          "server.forms.AppointmentForm.generate": 12,
+          "server.views_appointment.create_view": 4
+        }
+      },
+      "top5_all": [
+        "server.forms.AppointmentForm",
+        "server.models.Appointment",
+        "server.models.Appointment.get_populated_fields",
+        "server.views_appointment.create_view",
+        "server.views_medtest.create_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-8",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_appointment.list_view": 21,
+          "server.views_medtest.create_view": 5,
+          "server.views_prescription.create_view": 4
+        },
+        "code_vector": {
+          "server.views_appointment.list_view": 36,
+          "server.views_medtest.create_view": 21,
+          "server.views_prescription.create_view": 4
+        },
+        "code_hybrid": {
+          "server.views_appointment.list_view": 23,
+          "server.views_medtest.create_view": 10,
+          "server.views_prescription.create_view": 1
+        },
+        "doc_lexical": {
+          "server.views_appointment.list_view": 20,
+          "server.views_medtest.create_view": 7,
+          "server.views_prescription.create_view": 15
+        },
+        "doc_vector": {
+          "server.views_appointment.list_view": 7,
+          "server.views_medtest.create_view": 37,
+          "server.views_prescription.create_view": 13
+        },
+        "doc_hybrid": {
+          "server.views_appointment.list_view": 11,
+          "server.views_medtest.create_view": 18,
+          "server.views_prescription.create_view": 14
+        },
+        "all_hybrid": {
+          "server.views_appointment.list_view": 13,
+          "server.views_medtest.create_view": 9,
+          "server.views_prescription.create_view": 5
+        }
+      },
+      "top5_all": [
+        "server.models.Prescription.get_populated_fields",
+        "server.forms.PrescriptionForm",
+        "server.models.Prescription",
+        "server.views_medtest.list_view",
+        "server.views_prescription.create_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-9",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_prescription.list_view": 3
+        },
+        "code_vector": {
+          "server.views_prescription.list_view": 9
+        },
+        "code_hybrid": {
+          "server.views_prescription.list_view": 5
+        },
+        "doc_lexical": {
+          "server.views_prescription.list_view": 12
+        },
+        "doc_vector": {
+          "server.views_prescription.list_view": 5
+        },
+        "doc_hybrid": {
+          "server.views_prescription.list_view": 7
+        },
+        "all_hybrid": {
+          "server.views_prescription.list_view": 6
+        }
+      },
+      "top5_all": [
+        "server.views_prescription.update_view",
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+        "server.forms.PrescriptionForm.assign",
+        "server.forms.PrescriptionForm",
+        "testing.test_prescription.TestPrescriptionViews"
+      ]
+    },
+    {
+      "requirement_id": "Req-10",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_medtest.list_view": 1,
+          "server.views_medtest.update_view": 7
+        },
+        "code_vector": {
+          "server.views_medtest.list_view": 11,
+          "server.views_medtest.update_view": 17
+        },
+        "code_hybrid": {
+          "server.views_medtest.list_view": 2,
+          "server.views_medtest.update_view": 6
+        },
+        "doc_lexical": {
+          "server.views_medtest.list_view": 2,
+          "server.views_medtest.update_view": 1
+        },
+        "doc_vector": {
+          "server.views_medtest.list_view": 11,
+          "server.views_medtest.update_view": 2
+        },
+        "doc_hybrid": {
+          "server.views_medtest.list_view": 3,
+          "server.views_medtest.update_view": 1
+        },
+        "all_hybrid": {
+          "server.views_medtest.list_view": 2,
+          "server.views_medtest.update_view": 3
+        }
+      },
+      "top5_all": [
+        "server.views_medtest.create_view",
+        "server.views_medtest.list_view",
+        "server.views_medtest.update_view",
+        "testing.test_appointment.TestAppointmentViews.test_appointment_update",
+        "testing.test_prescription.TestPrescriptionViews"
+      ]
+    },
+    {
+      "requirement_id": "Req-11",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views.GeneratePdf.get": 2,
+          "server.views_prescription.list_view": 25
+        },
+        "code_vector": {
+          "server.views.GeneratePdf.get": 5,
+          "server.views_prescription.list_view": 12
+        },
+        "code_hybrid": {
+          "server.views.GeneratePdf.get": 2,
+          "server.views_prescription.list_view": 9
+        },
+        "doc_lexical": {
+          "server.views.GeneratePdf.get": null,
+          "server.views_prescription.list_view": 25
+        },
+        "doc_vector": {
+          "server.views.GeneratePdf.get": null,
+          "server.views_prescription.list_view": 7
+        },
+        "doc_hybrid": {
+          "server.views.GeneratePdf.get": null,
+          "server.views_prescription.list_view": 9
+        },
+        "all_hybrid": {
+          "server.views.GeneratePdf.get": 18,
+          "server.views_prescription.list_view": 7
+        }
+      },
+      "top5_all": [
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_list",
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_new",
+        "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+        "testing.test_prescription.TestPrescriptionViews",
+        "server.admin.MedicalTestAdmin"
+      ]
+    },
+    {
+      "requirement_id": "Req-12",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {},
+        "code_vector": {},
+        "code_hybrid": {},
+        "doc_lexical": {},
+        "doc_vector": {},
+        "doc_hybrid": {},
+        "all_hybrid": {}
+      },
+      "top5_all": [
+        "server.views_admin.user_archive",
+        "server.views_admin.view_archived_users",
+        "server.views_profile.profile_view",
+        "server.message.parse_message_archive",
+        "server.views_prescription.list_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-13",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.backup_data": 4
+        },
+        "code_vector": {
+          "server.views_admin.backup_data": 1
+        },
+        "code_hybrid": {
+          "server.views_admin.backup_data": 2
+        },
+        "doc_lexical": {
+          "server.views_admin.backup_data": 5
+        },
+        "doc_vector": {
+          "server.views_admin.backup_data": 1
+        },
+        "doc_hybrid": {
+          "server.views_admin.backup_data": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.backup_data": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.backup_data",
+        "testing.test_admin.TestAdminViews.test_backup",
+        "server.message.parse_message_archive",
+        "server.forms.AppointmentForm.clean",
+        "server.views_appointment.update_view"
+      ]
+    },
+    {
+      "requirement_id": "Req-15",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.LoginForm.clean": 24,
+          "server.views_admin.createemployee_view": 3,
+          "server.views_home.login_view": 13,
+          "server.views_home.register_view": 4,
+          "server.views_profile.password_view": 7
+        },
+        "code_vector": {
+          "server.forms.LoginForm.clean": 3,
+          "server.views_admin.createemployee_view": null,
+          "server.views_home.login_view": null,
+          "server.views_home.register_view": null,
+          "server.views_profile.password_view": null
+        },
+        "code_hybrid": {
+          "server.forms.LoginForm.clean": 8,
+          "server.views_admin.createemployee_view": 25,
+          "server.views_home.login_view": 31,
+          "server.views_home.register_view": 26,
+          "server.views_profile.password_view": 27
+        },
+        "doc_lexical": {
+          "server.forms.LoginForm.clean": 22,
+          "server.views_admin.createemployee_view": 30,
+          "server.views_home.login_view": 6,
+          "server.views_home.register_view": 9,
+          "server.views_profile.password_view": 15
+        },
+        "doc_vector": {
+          "server.forms.LoginForm.clean": 19,
+          "server.views_admin.createemployee_view": 31,
+          "server.views_home.login_view": null,
+          "server.views_home.register_view": null,
+          "server.views_profile.password_view": null
+        },
+        "doc_hybrid": {
+          "server.forms.LoginForm.clean": 12,
+          "server.views_admin.createemployee_view": 15,
+          "server.views_home.login_view": 21,
+          "server.views_home.register_view": 23,
+          "server.views_profile.password_view": 33
+        },
+        "all_hybrid": {
+          "server.forms.LoginForm.clean": 8,
+          "server.views_admin.createemployee_view": 16,
+          "server.views_home.login_view": 24,
+          "server.views_home.register_view": 22,
+          "server.views_profile.password_view": 25
+        }
+      },
+      "top5_all": [
+        "server.models.Account",
+        "server.views.register_user",
+        "server.views_prescription.create_view",
+        "server.views_medtest.create_view",
+        "server.forms.EmployeeRegistrationForm"
+      ]
+    },
+    {
+      "requirement_id": "Req-16",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.statistic_view": 47
+        },
+        "code_vector": {
+          "server.views_admin.statistic_view": null
+        },
+        "code_hybrid": {
+          "server.views_admin.statistic_view": 58
+        },
+        "doc_lexical": {
+          "server.views_admin.statistic_view": null
+        },
+        "doc_vector": {
+          "server.views_admin.statistic_view": 37
+        },
+        "doc_hybrid": {
+          "server.views_admin.statistic_view": 54
+        },
+        "all_hybrid": {
+          "server.views_admin.statistic_view": 56
+        }
+      },
+      "top5_all": [
+        "server.models.Appointment.get_populated_fields",
+        "server.models.Appointment",
+        "server.forms.AppointmentForm.generate",
+        "server.forms.AppointmentForm",
+        "server.appointment.parse_appointments"
+      ]
+    },
+    {
+      "requirement_id": "BR-2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 3
+        },
+        "code_vector": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 4
+        },
+        "code_hybrid": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 3
+        },
+        "doc_lexical": {
+          "server.forms.LoginForm.clean": 2,
+          "server.views_home.login_view": 16
+        },
+        "doc_vector": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 10
+        },
+        "doc_hybrid": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 8
+        },
+        "all_hybrid": {
+          "server.forms.LoginForm.clean": 1,
+          "server.views_home.login_view": 4
+        }
+      },
+      "top5_all": [
+        "server.forms.LoginForm.clean",
+        "server.forms.LoginForm",
+        "server.templatetags.app_filters.isAuthenticated",
+        "server.views_home.login_view",
+        "server.views_profile.password_view"
+      ]
+    },
+    {
+      "requirement_id": "BR-3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.models.Profile": 18
+        },
+        "code_vector": {
+          "server.models.Profile": 33
+        },
+        "code_hybrid": {
+          "server.models.Profile": 16
+        },
+        "doc_lexical": {
+          "server.models.Profile": null
+        },
+        "doc_vector": {
+          "server.models.Profile": null
+        },
+        "doc_hybrid": {
+          "server.models.Profile": null
+        },
+        "all_hybrid": {
+          "server.models.Profile": 43
+        }
+      },
+      "top5_all": [
+        "server.admin.MedicalTestAdmin",
+        "testing.test_models.SpecialityTestCase",
+        "server.models.Speciality",
+        "server.forms.EmployeeRegistrationForm.clean",
+        "server.forms.SpecialityForm"
+      ]
+    },
+    {
+      "requirement_id": "BR-4",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": 1,
+          "server.models.Profile": 6
+        },
+        "code_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 13,
+          "server.models.Profile": 28
+        },
+        "code_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.models.Profile": 7
+        },
+        "doc_lexical": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.models.Profile": null
+        },
+        "doc_vector": {
+          "server.forms.EmployeeRegistrationForm.clean": 2,
+          "server.models.Profile": null
+        },
+        "doc_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 1,
+          "server.models.Profile": null
+        },
+        "all_hybrid": {
+          "server.forms.EmployeeRegistrationForm.clean": 1,
+          "server.models.Profile": 39
+        }
+      },
+      "top5_all": [
+        "server.forms.EmployeeRegistrationForm.clean",
+        "server.migrations.0004_auto_20180306_1013.Migration",
+        "testing.test_models.SpecialityTestCase",
+        "server.models.Account",
+        "server.admin.MedicalTestAdmin"
+      ]
+    },
+    {
+      "requirement_id": "BR-5",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.models.Appointment": 24
+        },
+        "code_vector": {
+          "server.models.Appointment": 17
+        },
+        "code_hybrid": {
+          "server.models.Appointment": 19
+        },
+        "doc_lexical": {
+          "server.models.Appointment": 6
+        },
+        "doc_vector": {
+          "server.models.Appointment": 3
+        },
+        "doc_hybrid": {
+          "server.models.Appointment": 3
+        },
+        "all_hybrid": {
+          "server.models.Appointment": 10
+        }
+      },
+      "top5_all": [
+        "server.forms.PrescriptionForm.assign",
+        "server.forms.PrescriptionForm",
+        "server.models.Appointment.get_populated_fields",
+        "server.forms.AppointmentForm",
+        "server.admin.AppointmentAdmin"
+      ]
+    },
+    {
+      "requirement_id": "BR-6",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views.register_user": 14,
+          "server.views_home.register_view": 30
+        },
+        "code_vector": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": null
+        },
+        "code_hybrid": {
+          "server.views.register_user": 2,
+          "server.views_home.register_view": 52
+        },
+        "doc_lexical": {
+          "server.views.register_user": 9,
+          "server.views_home.register_view": 25
+        },
+        "doc_vector": {
+          "server.views.register_user": 3,
+          "server.views_home.register_view": 49
+        },
+        "doc_hybrid": {
+          "server.views.register_user": 6,
+          "server.views_home.register_view": 22
+        },
+        "all_hybrid": {
+          "server.views.register_user": 1,
+          "server.views_home.register_view": 36
+        }
+      },
+      "top5_all": [
+        "server.views.register_user",
+        "server.forms.ProfileForm",
+        "server.forms.MedTestForm",
+        "server.forms.ProfileForm.assign",
+        "server.models.Account"
+      ]
+    },
+    {
+      "requirement_id": "BR-7",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.models.Appointment": null,
+          "server.views_appointment.create_view": 16
+        },
+        "code_vector": {
+          "server.models.Appointment": 20,
+          "server.views_appointment.create_view": 1
+        },
+        "code_hybrid": {
+          "server.models.Appointment": 34,
+          "server.views_appointment.create_view": 4
+        },
+        "doc_lexical": {
+          "server.models.Appointment": null,
+          "server.views_appointment.create_view": null
+        },
+        "doc_vector": {
+          "server.models.Appointment": 11,
+          "server.views_appointment.create_view": 18
+        },
+        "doc_hybrid": {
+          "server.models.Appointment": 26,
+          "server.views_appointment.create_view": 34
+        },
+        "all_hybrid": {
+          "server.models.Appointment": 34,
+          "server.views_appointment.create_view": 16
+        }
+      },
+      "top5_all": [
+        "server.views_appointment.list_view",
+        "server.views_api.appointment_views",
+        "server.views_medicalinfo.list_view",
+        "server.appointment.parse_appointments",
+        "server.views_admin.view_speciality"
+      ]
+    },
+    {
+      "requirement_id": "BR-9",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {},
+        "code_vector": {},
+        "code_hybrid": {},
+        "doc_lexical": {},
+        "doc_vector": {},
+        "doc_hybrid": {},
+        "all_hybrid": {}
+      },
+      "top5_all": [
+        "server.models.Prescription.get_populated_fields",
+        "server.models.Prescription",
+        "server.forms.PrescriptionForm",
+        "server.forms.PrescriptionForm.assign",
+        "server.models.Account"
+      ]
+    },
+    {
+      "requirement_id": "REQ-003",
+      "status": "partial",
+      "query": "by_text",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views_admin.backup_data": 17
+        },
+        "code_vector": {
+          "server.views_admin.backup_data": 4
+        },
+        "code_hybrid": {
+          "server.views_admin.backup_data": 5
+        },
+        "doc_lexical": {
+          "server.views_admin.backup_data": 6
+        },
+        "doc_vector": {
+          "server.views_admin.backup_data": 1
+        },
+        "doc_hybrid": {
+          "server.views_admin.backup_data": 1
+        },
+        "all_hybrid": {
+          "server.views_admin.backup_data": 1
+        }
+      },
+      "top5_all": [
+        "server.views_admin.backup_data",
+        "testing.test_models.HospitalTestCase.setUp",
+        "testing.test_form.TestProfileForm",
+        "testing.test_models.HospitalTestCase",
+        "testing.test_form.TestProfileForm.setUp"
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "status": "partial",
+      "query": "by_text",
+      "primary_ranks": {
+        "code_lexical": {
+          "server.views.authentication_check": 39,
+          "server.views_appointment.update_view": 4,
+          "server.views_prescription.list_view": 7
+        },
+        "code_vector": {
+          "server.views.authentication_check": 28,
+          "server.views_appointment.update_view": 48,
+          "server.views_prescription.list_view": 17
+        },
+        "code_hybrid": {
+          "server.views.authentication_check": 30,
+          "server.views_appointment.update_view": 19,
+          "server.views_prescription.list_view": 7
+        },
+        "doc_lexical": {
+          "server.views.authentication_check": 21,
+          "server.views_appointment.update_view": 2,
+          "server.views_prescription.list_view": 31
+        },
+        "doc_vector": {
+          "server.views.authentication_check": null,
+          "server.views_appointment.update_view": 20,
+          "server.views_prescription.list_view": 23
+        },
+        "doc_hybrid": {
+          "server.views.authentication_check": 39,
+          "server.views_appointment.update_view": 7,
+          "server.views_prescription.list_view": 24
+        },
+        "all_hybrid": {
+          "server.views.authentication_check": 29,
+          "server.views_appointment.update_view": 8,
+          "server.views_prescription.list_view": 15
+        }
+      },
+      "top5_all": [
+        "server.models.Appointment",
+        "server.models.Appointment.get_populated_fields",
+        "server.views_medtest.list_view",
+        "server.views_medicalinfo.list_view",
+        "server.admin.MedicalTestAdmin"
+      ]
+    },
+    {
+      "requirement_id": "REQ-010",
+      "status": "partial",
+      "query": "unmatched",
+      "primary_ranks": {
+        "code_lexical": {},
+        "code_vector": {},
+        "code_hybrid": {},
+        "doc_lexical": {},
+        "doc_vector": {},
+        "doc_hybrid": {},
+        "all_hybrid": {}
+      },
+      "top5_all": []
+    },
+    {
+      "requirement_id": "REQ-018",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {},
+        "code_vector": {},
+        "code_hybrid": {},
+        "doc_lexical": {},
+        "doc_vector": {},
+        "doc_hybrid": {},
+        "all_hybrid": {}
+      },
+      "top5_all": [
+        "testing.apps.TestingConfig",
+        "testing.test_models.SpecialityTestCase.testSpeciality",
+        "testing.test_models.SpecialityTestCase.setUp",
+        "testing.tests.InvalidUser.setUp",
+        "testing.test_profile.TestProfileViews.test_password"
+      ]
+    }
+  ],
+  "matching": {
+    "by_id": 38,
+    "by_text": 2,
+    "unmatched": [
+      "REQ-010"
+    ]
+  }
+}

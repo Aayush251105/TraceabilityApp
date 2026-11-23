@@ -1,0 +1,297 @@
+{
+  "search": {
+    "requirements": 15,
+    "map": 0.26066137566137565,
+    "map_ci": [
+      0.0961111111111111,
+      0.4432010582010582
+    ],
+    "mrr": 0.34793650793650793,
+    "mrr_ci": [
+      0.15619047619047619,
+      0.5463492063492063
+    ],
+    "r@1": 0.14666666666666667,
+    "r@1_ci": [
+      0.02666666666666667,
+      0.3
+    ],
+    "r@5": 0.2911111111111111,
+    "r@5_ci": [
+      0.1,
+      0.4911111111111111
+    ],
+    "r@10": 0.46888888888888886,
+    "r@10_ci": [
+      0.2711111111111111,
+      0.6777777777777777
+    ],
+    "sr@|G|": 0.13333333333333333,
+    "sr@|G|_ci": [
+      0.0,
+      0.3333333333333333
+    ],
+    "ndcg@10_stored_candidates": 0.3255,
+    "evaluate_channels": {
+      "code_lexical": {
+        "hit@1": 0.2667,
+        "hit@3": 0.4667,
+        "hit@5": 0.5333,
+        "hit@10": 0.6667,
+        "recall@1": 0.1444,
+        "recall@3": 0.2244,
+        "recall@5": 0.2911,
+        "recall@10": 0.4411,
+        "mrr": 0.4033,
+        "ndcg@10": 0.3154
+      },
+      "code_vector": {
+        "hit@1": 0.3333,
+        "hit@3": 0.6,
+        "hit@5": 0.6667,
+        "hit@10": 0.7333,
+        "recall@1": 0.2111,
+        "recall@3": 0.35,
+        "recall@5": 0.4222,
+        "recall@10": 0.5444,
+        "mrr": 0.4952,
+        "ndcg@10": 0.4248
+      },
+      "code_hybrid": {
+        "hit@1": 0.4,
+        "hit@3": 0.6667,
+        "hit@5": 0.7333,
+        "hit@10": 0.8,
+        "recall@1": 0.1911,
+        "recall@3": 0.4022,
+        "recall@5": 0.5078,
+        "recall@10": 0.5633,
+        "mrr": 0.5407,
+        "ndcg@10": 0.4292
+      },
+      "doc_lexical": {
+        "hit@1": 0.1333,
+        "hit@3": 0.2,
+        "hit@5": 0.2667,
+        "hit@10": 0.4667,
+        "recall@1": 0.1,
+        "recall@3": 0.1333,
+        "recall@5": 0.18,
+        "recall@10": 0.3244,
+        "mrr": 0.2267,
+        "ndcg@10": 0.2183
+      },
+      "doc_vector": {
+        "hit@1": 0.3333,
+        "hit@3": 0.4667,
+        "hit@5": 0.4667,
+        "hit@10": 0.6,
+        "recall@1": 0.1689,
+        "recall@3": 0.2356,
+        "recall@5": 0.2689,
+        "recall@10": 0.4489,
+        "mrr": 0.4219,
+        "ndcg@10": 0.3592
+      },
+      "doc_hybrid": {
+        "hit@1": 0.2,
+        "hit@3": 0.4,
+        "hit@5": 0.4,
+        "hit@10": 0.5333,
+        "recall@1": 0.1133,
+        "recall@3": 0.1911,
+        "recall@5": 0.2244,
+        "recall@10": 0.4022,
+        "mrr": 0.3018,
+        "ndcg@10": 0.2727
+      },
+      "all_hybrid": {
+        "hit@1": 0.2667,
+        "hit@3": 0.4,
+        "hit@5": 0.4,
+        "hit@10": 0.6667,
+        "recall@1": 0.1467,
+        "recall@3": 0.2689,
+        "recall@5": 0.2911,
+        "recall@10": 0.4689,
+        "mrr": 0.367,
+        "ndcg@10": 0.3255
+      }
+    },
+    "mrr_all_hybrid": 0.367,
+    "gold_components_missing_from_repo": []
+  },
+  "mapping": {
+    "requirements": 15,
+    "direct": {
+      "precision": 0.25,
+      "recall": 0.09523809523809523,
+      "f1": 0.13793103448275862,
+      "f2": 0.10869565217391303,
+      "tp": 4,
+      "fp": 12,
+      "fn": 38,
+      "precision_ci": [
+        0.058823529411764705,
+        0.4666666666666667
+      ],
+      "recall_ci": [
+        0.022222222222222223,
+        0.19047619047619047
+      ],
+      "f1_ci": [
+        0.03225806451612903,
+        0.2692307692307693
+      ],
+      "f2_ci": [
+        0.025510204081632657,
+        0.21739130434782605
+      ]
+    },
+    "all_links": {
+      "precision": 0.10526315789473684,
+      "recall": 0.06451612903225806,
+      "f1": 0.07999999999999999,
+      "f2": 0.06993006993006992,
+      "tp": 4,
+      "fp": 34,
+      "fn": 58,
+      "precision_ci": [
+        0.022222222222222223,
+        0.25
+      ],
+      "recall_ci": [
+        0.014925373134328358,
+        0.1276595744680851
+      ],
+      "f1_ci": [
+        0.01834862385321101,
+        0.1643835616438356
+      ],
+      "f2_ci": [
+        0.016233766233766236,
+        0.1394422310756972
+      ]
+    },
+    "links_on_requirements_without_code": 0
+  },
+  "verification": {
+    "requirements_judged": 18,
+    "exact_accuracy": 0.2777777777777778,
+    "exact_accuracy_ci": [
+      0.1111111111111111,
+      0.5
+    ],
+    "macro_f1": 0.20634920634920637,
+    "macro_f1_ci": [
+      0.07017543859649122,
+      0.37229437229437234
+    ],
+    "weighted_kappa": 0.09589041095890405,
+    "weighted_kappa_ci": [
+      0.0,
+      0.27586206896551735
+    ],
+    "false_support_rate": 0.0,
+    "false_support_rate_ci": [
+      0.0,
+      0.0
+    ],
+    "false_support_not_implemented_sup_or_part": 0.0,
+    "false_support_not_implemented_sup_or_part_ci": [
+      0.0,
+      0.0
+    ],
+    "implemented_recall": 0.16666666666666666,
+    "implemented_recall_ci": [
+      0.0,
+      0.4
+    ],
+    "implemented_or_partial_found": 0.2,
+    "implemented_or_partial_found_ci": [
+      0.0,
+      0.42857142857142855
+    ],
+    "confusion": {
+      "implemented": {
+        "not_supported_by_candidate": 9,
+        "partially_supported": 1,
+        "supported": 2
+      },
+      "partial": {
+        "not_supported_by_candidate": 3
+      },
+      "not_implemented": {
+        "not_supported_by_candidate": 3
+      }
+    },
+    "cross_cutting": {
+      "not_supported_by_candidate": 3
+    },
+    "supported": 2,
+    "errors": {
+      "retrieval miss": 5,
+      "mapping miss": 5,
+      "verifier error": 3
+    },
+    "citation_validity": 0.72,
+    "citation_on_gold": 0.5,
+    "evaluator_scores": {
+      "exact_accuracy": 0.2778,
+      "false_support_rate": 0.0,
+      "implemented_recall": 0.1667,
+      "citation_validity": 0.72,
+      "citation_on_gold": 0.5,
+      "claim_accuracy": null
+    },
+    "citations": {
+      "citations_valid": 18,
+      "citations_rejected": 7
+    }
+  },
+  "extraction": {
+    "gold_requirements": 21,
+    "gold_incl_excluded": 22,
+    "extracted": 31,
+    "matched_extracted": 22,
+    "precision": 0.7096774193548387,
+    "recall": 1.0,
+    "recall_incl_excluded": 1.0,
+    "by": {
+      "by_id": 22
+    },
+    "text_threshold": 0.6,
+    "f1": 0.8301886792452831,
+    "recall_ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "minutes": {
+    "fetch": 0.0,
+    "docstrings": 431.46,
+    "index_code": 0.08,
+    "extract": 8.31,
+    "prepare_review": 0.12,
+    "index_srs": 0.02,
+    "search": 0.01,
+    "map": 0.0,
+    "verify": 2.23,
+    "results": 0.0,
+    "wall_total": 433.87
+  },
+  "run": {
+    "run_id": 6,
+    "document_id": "run-6-ProClinicSRS",
+    "repo_id": "run-6-code",
+    "commit_sha": "ee23cb7e8b875745e2c355f9955e24d654169345",
+    "status": "completed",
+    "models": {
+      "srs": "qwen3:8b",
+      "judge": "qwen3:4b",
+      "docagent": "yi-coder:9b",
+      "verifier": "qwen2.5-coder:7b"
+    }
+  },
+  "label": "V1 - human-annotated gold"
+}

@@ -1,0 +1,345 @@
+{
+  "dataset": "Travel-Agency-Automation-System",
+  "document_id": "run-2-SRS",
+  "pipeline_version": "mapping-v1",
+  "requirements_scored": 11,
+  "scores": {
+    "direct": {
+      "precision": 0.625,
+      "recall": 0.5882,
+      "f1": 0.6061,
+      "tp": 10,
+      "fp": 6,
+      "fn": 7
+    },
+    "supporting": {
+      "precision": 0.1579,
+      "recall": 0.6,
+      "f1": 0.25,
+      "tp": 9,
+      "fp": 48,
+      "fn": 6
+    },
+    "all": {
+      "precision": 0.3288,
+      "recall": 0.75,
+      "f1": 0.4571,
+      "tp": 24,
+      "fp": 49,
+      "fn": 8
+    }
+  },
+  "requirements_without_code": {
+    "FEAT-4.2": {
+      "status": "not_implemented",
+      "links": 4
+    },
+    "FEAT-4.11": {
+      "status": "not_implemented",
+      "links": 0
+    },
+    "REQ-002": {
+      "status": "cross_cutting",
+      "links": 7
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FEAT-4.1",
+      "matched_to": "REQ-010",
+      "direct": [
+        "Booking.Booking.token",
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.Booking.__init__",
+        "Booking.returning",
+        "Booking.returning.returnCar",
+        "Car.Car",
+        "Owner.Owner"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "Booking.Booking",
+        "Booking.Booking.__init__",
+        "Booking.returning",
+        "Booking.returning.returnCar",
+        "Car.Car",
+        "Owner.Owner"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.3",
+      "matched_to": "REQ-012",
+      "direct": [
+        "Booking.Booking"
+      ],
+      "supporting": [
+        "main.main"
+      ],
+      "missed_primary": [
+        "main.main"
+      ],
+      "primary_found_as_supporting": [
+        "main.main"
+      ],
+      "missed_supporting": [],
+      "extra": [
+        "Booking.Booking"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.4",
+      "matched_to": "REQ-013",
+      "direct": [
+        "Booking.returning.returnCar",
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.Booking.token",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Booking.returning.priceCal",
+        "Owner.Owner.updateData"
+      ],
+      "missed_primary": [
+        "Booking.Booking.token"
+      ],
+      "primary_found_as_supporting": [
+        "Booking.Booking.token"
+      ],
+      "missed_supporting": [
+        "Booking.Booking.__init__"
+      ],
+      "extra": [
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Booking.returning.priceCal",
+        "Booking.returning.returnCar",
+        "Owner.Owner.updateData"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.5",
+      "matched_to": "REQ-014",
+      "direct": [
+        "Booking.returning.returnCar",
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.Booking.token",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Booking.returning.priceCal",
+        "Owner.Owner"
+      ],
+      "missed_primary": [
+        "Booking.returning.priceCal"
+      ],
+      "primary_found_as_supporting": [
+        "Booking.returning.priceCal"
+      ],
+      "missed_supporting": [
+        "Booking.returning.validateTime"
+      ],
+      "extra": [
+        "Booking.Booking",
+        "Booking.Booking.token",
+        "Booking.returning.__init__",
+        "Owner.Owner"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.6",
+      "matched_to": "REQ-015",
+      "direct": [
+        "Owner.Owner.getData",
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.returning.returnCar",
+        "Owner.Owner",
+        "Owner.Owner.__init__",
+        "Owner.Owner.getInfo",
+        "Owner.Owner.updateData"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "Car.Car.__init__"
+      ],
+      "extra": [
+        "Booking.Booking",
+        "Booking.returning.returnCar",
+        "Owner.Owner.getInfo",
+        "Owner.Owner.updateData"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.7",
+      "matched_to": "REQ-016",
+      "direct": [
+        "Owner.Owner.updateData"
+      ],
+      "supporting": [
+        "Car.Car.getModel",
+        "Car.Car.getType",
+        "Owner.Owner",
+        "Owner.Owner.__init__",
+        "TestOwner.TestOwner",
+        "main.main"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "Car.Car.getModel",
+        "Car.Car.getType",
+        "Owner.Owner.__init__",
+        "TestOwner.TestOwner"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.8",
+      "matched_to": "REQ-018",
+      "direct": [
+        "Booking.returning.returnCar",
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.Booking.token",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Owner.Owner",
+        "Owner.Owner.__init__"
+      ],
+      "missed_primary": [
+        "Booking.Booking.token"
+      ],
+      "primary_found_as_supporting": [
+        "Booking.Booking.token"
+      ],
+      "missed_supporting": [],
+      "extra": [
+        "Booking.Booking",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Owner.Owner",
+        "Owner.Owner.__init__",
+        "main.main"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.9",
+      "matched_to": "REQ-026",
+      "direct": [
+        "Owner.Owner.getData"
+      ],
+      "supporting": [
+        "Car.Car.getModel",
+        "Car.Car.getType",
+        "Owner.Owner",
+        "Owner.Owner.__init__",
+        "TestOwner.TestOwner",
+        "main.main"
+      ],
+      "missed_primary": [
+        "Owner.Owner.getInfo"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "Car.Car.getStats"
+      ],
+      "extra": [
+        "Car.Car.getModel",
+        "Car.Car.getType",
+        "Owner.Owner.__init__",
+        "Owner.Owner.getData",
+        "TestOwner.TestOwner",
+        "main.main"
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.10",
+      "matched_to": "REQ-019",
+      "direct": [
+        "Owner.Owner.setPrice"
+      ],
+      "supporting": [
+        "Car.Car.getModel",
+        "Owner.Owner",
+        "Owner.Owner.__init__",
+        "TestOwner.TestOwner.test_setPricePerHr_CI",
+        "TestOwner.TestOwner.test_setPricePerKm_CI",
+        "main.main"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "Owner.Owner.getInfo"
+      ],
+      "extra": [
+        "Car.Car.getModel",
+        "Owner.Owner.__init__",
+        "TestOwner.TestOwner.test_setPricePerHr_CI",
+        "TestOwner.TestOwner.test_setPricePerKm_CI"
+      ]
+    },
+    {
+      "requirement_id": "REQ-001",
+      "matched_to": "REQ-001",
+      "direct": [
+        "Booking.Booking.token"
+      ],
+      "supporting": [
+        "Booking.Booking",
+        "Booking.Booking.__init__"
+      ],
+      "missed_primary": [
+        "main.main"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "Booking.Booking",
+        "Booking.Booking.__init__",
+        "Booking.Booking.token"
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "matched_to": "REQ-005",
+      "direct": [
+        "main.main"
+      ],
+      "supporting": [
+        "Booking.Booking.__init__",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Booking.returning.returnCar",
+        "Owner.Owner",
+        "Owner.Owner.setPrice"
+      ],
+      "missed_primary": [
+        "Owner.Owner.__init__"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "Booking.Booking.__init__",
+        "Booking.returning",
+        "Booking.returning.__init__",
+        "Booking.returning.returnCar",
+        "Owner.Owner",
+        "Owner.Owner.setPrice"
+      ]
+    }
+  ]
+}

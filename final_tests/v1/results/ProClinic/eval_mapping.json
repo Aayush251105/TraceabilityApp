@@ -1,0 +1,400 @@
+{
+  "dataset": "ProClinic",
+  "document_id": "run-6-ProClinicSRS",
+  "pipeline_version": "mapping-v1",
+  "requirements_scored": 15,
+  "scores": {
+    "direct": {
+      "precision": 0.25,
+      "recall": 0.0952,
+      "f1": 0.1379,
+      "tp": 4,
+      "fp": 12,
+      "fn": 38
+    },
+    "supporting": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 22,
+      "fn": 20
+    },
+    "all": {
+      "precision": 0.1053,
+      "recall": 0.0645,
+      "f1": 0.08,
+      "tp": 4,
+      "fp": 34,
+      "fn": 58
+    }
+  },
+  "requirements_without_code": {
+    "NFR-1": {
+      "status": "cross_cutting",
+      "links": 2
+    },
+    "NFR-2": {
+      "status": "cross_cutting",
+      "links": 2
+    },
+    "US006": {
+      "status": "not_implemented",
+      "links": 1
+    },
+    "US009": {
+      "status": "not_implemented",
+      "links": 3
+    },
+    "US010": {
+      "status": "not_implemented",
+      "links": 5
+    },
+    "REQ-001": {
+      "status": "cross_cutting",
+      "links": 2
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1",
+      "matched_to": "FR-1",
+      "direct": [
+        "backend.api.permissions.IsAdminRole"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "backend.accounts.forms.StaffCreationForm",
+        "backend.accounts.models.CustomUser",
+        "backend.accounts.views.RoleBasedLoginView.form_valid",
+        "backend.accounts.views.create_staff_account",
+        "backend.accounts.views.patient_signup"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.accounts.views.PatientLoginView",
+        "backend.accounts.views.RoleBasedLoginView",
+        "backend.accounts.views.StaffLoginView"
+      ],
+      "extra": [
+        "backend.api.permissions.IsAdminRole"
+      ]
+    },
+    {
+      "requirement_id": "FR-2",
+      "matched_to": "FR-2",
+      "direct": [
+        "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails"
+      ],
+      "supporting": [
+        "backend.api.tests.PatientAppointmentTests"
+      ],
+      "missed_primary": [
+        "backend.appointments.forms.AppointmentForm.clean",
+        "backend.appointments.models.Appointment.clean"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.api.patient_views.PatientAppointmentListCreateView.post",
+        "backend.appointments.models.Appointment.save",
+        "backend.appointments.views.book_appointment"
+      ],
+      "extra": [
+        "backend.api.tests.PatientAppointmentTests",
+        "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails"
+      ]
+    },
+    {
+      "requirement_id": "FR-3",
+      "matched_to": "FR-3",
+      "direct": [
+        "backend.patients.views.patient_my_visits"
+      ],
+      "supporting": [
+        "backend.patients.utils.get_patient_profile"
+      ],
+      "missed_primary": [
+        "backend.accounts.views.patient_signup",
+        "backend.patients.views.patient_create",
+        "backend.patients.views.patient_detail",
+        "backend.patients.views.patient_update"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.patients.models.Patient",
+        "backend.patients.models.Visit"
+      ],
+      "extra": [
+        "backend.patients.utils.get_patient_profile"
+      ]
+    },
+    {
+      "requirement_id": "FR-4",
+      "matched_to": "FR-4",
+      "direct": [
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice"
+      ],
+      "supporting": [
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_consultation_fee_does_not_override_total",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_line_items_saved",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_1000_saved_correctly",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_500_saved_correctly",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_totals_correct_after_reopen"
+      ],
+      "missed_primary": [
+        "backend.billing.models.Invoice.recalculate_totals",
+        "backend.billing.signals.create_draft_invoice_on_completion",
+        "backend.billing.views.generate_invoice"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.billing.models.Invoice",
+        "backend.billing.models.InvoiceItem.line_total"
+      ],
+      "extra": [
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_consultation_fee_does_not_override_total",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_line_items_saved",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_1000_saved_correctly",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_500_saved_correctly",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_totals_correct_after_reopen"
+      ]
+    },
+    {
+      "requirement_id": "FR-5",
+      "matched_to": "FR-5",
+      "direct": [
+        "backend.audit.models.AuditLog",
+        "backend.audit.utils.log_action"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "backend.accounts.views.deactivate_staff_account",
+        "backend.audit.signals._log_delete",
+        "backend.audit.signals._log_save"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.audit.middleware.AuditUserMiddleware.__call__",
+        "backend.audit.signals._capture_old_state",
+        "backend.audit.signals._get_tracked",
+        "backend.audit.signals._write_log"
+      ],
+      "extra": [
+        "backend.audit.models.AuditLog",
+        "backend.audit.utils.log_action"
+      ]
+    },
+    {
+      "requirement_id": "FR-6",
+      "matched_to": "FR-6",
+      "direct": [
+        "backend.patients.views.patient_ai_ask"
+      ],
+      "supporting": [],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": []
+    },
+    {
+      "requirement_id": "NFR-3",
+      "matched_to": "NFR-3",
+      "direct": [
+        "backend.api.permissions.IsAdminRole"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "backend.api.permissions.IsAdminRole.has_permission",
+        "backend.api.permissions.IsDoctor.has_permission",
+        "backend.api.permissions.IsPatient.has_permission",
+        "backend.api.permissions.IsStaff.has_permission"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "backend.api.permissions.IsAdminRole"
+      ]
+    },
+    {
+      "requirement_id": "NFR-4",
+      "matched_to": "NFR-4",
+      "direct": [
+        "backend.api.tests_extended.StaffPatientAPITests.test_list_patients_paginated"
+      ],
+      "supporting": [
+        "backend.api.tests_extended.StaffPatientAPITests"
+      ],
+      "missed_primary": [
+        "backend.api.pagination.LargeResultsSetPagination",
+        "backend.api.pagination.StandardResultsSetPagination",
+        "backend.patients.views.patient_list"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "backend.api.tests_extended.StaffPatientAPITests",
+        "backend.api.tests_extended.StaffPatientAPITests.test_list_patients_paginated"
+      ]
+    },
+    {
+      "requirement_id": "US001",
+      "matched_to": "US001",
+      "direct": [
+        "backend.api.permissions.IsAdminRole.has_permission"
+      ],
+      "supporting": [
+        "backend.api.permissions.IsAdminRole"
+      ],
+      "missed_primary": [
+        "backend.accounts.forms.StaffCreationForm.save",
+        "backend.accounts.views.create_staff_account",
+        "backend.accounts.views.deactivate_staff_account",
+        "backend.accounts.views.reactivate_staff_account"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "backend.api.permissions.IsAdminRole",
+        "backend.api.permissions.IsAdminRole.has_permission"
+      ]
+    },
+    {
+      "requirement_id": "US002",
+      "matched_to": "US002",
+      "direct": [
+        "backend.patients.views.patient_my_visits"
+      ],
+      "supporting": [
+        "backend.patients.utils.get_patient_profile"
+      ],
+      "missed_primary": [
+        "backend.appointments.views.book_appointment",
+        "backend.appointments.views.doctor_unavailability"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "backend.patients.utils.get_patient_profile",
+        "backend.patients.views.patient_my_visits"
+      ]
+    },
+    {
+      "requirement_id": "US003",
+      "matched_to": "US003",
+      "direct": [
+        "backend.api.patient_views.PatientAppointmentListCreateView"
+      ],
+      "supporting": [
+        "backend.accounts.models.PatientOTP.is_valid",
+        "backend.api.patient_serializers.PatientAppointmentBookSerializer",
+        "backend.api.patient_serializers.PatientAppointmentSerializer",
+        "backend.api.patient_views.PatientAppointmentListCreateView.get",
+        "backend.api.patient_views._require_patient",
+        "backend.appointments.models.Appointment"
+      ],
+      "missed_primary": [
+        "backend.patients.views.patient_my_lab_reports",
+        "backend.patients.views.patient_my_prescriptions",
+        "backend.patients.views.patient_my_visits"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.api.patient_views.PatientVisitListView.get_queryset"
+      ],
+      "extra": [
+        "backend.accounts.models.PatientOTP.is_valid",
+        "backend.api.patient_serializers.PatientAppointmentBookSerializer",
+        "backend.api.patient_serializers.PatientAppointmentSerializer",
+        "backend.api.patient_views.PatientAppointmentListCreateView",
+        "backend.api.patient_views.PatientAppointmentListCreateView.get",
+        "backend.api.patient_views._require_patient",
+        "backend.appointments.models.Appointment"
+      ]
+    },
+    {
+      "requirement_id": "US004",
+      "matched_to": "US004",
+      "direct": [
+        "backend.billing.views.invoice_send_email_manual"
+      ],
+      "supporting": [
+        "backend.audit.utils.log_action",
+        "backend.billing.utils.generate_invoice_pdf_bytes",
+        "backend.billing.views._accountant_or_admin"
+      ],
+      "missed_primary": [
+        "backend.billing.views.generate_invoice",
+        "backend.billing.views.invoice_pdf_download"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.billing.utils.generate_invoice_pdf"
+      ],
+      "extra": [
+        "backend.audit.utils.log_action",
+        "backend.billing.utils.generate_invoice_pdf_bytes",
+        "backend.billing.views._accountant_or_admin",
+        "backend.billing.views.invoice_send_email_manual"
+      ]
+    },
+    {
+      "requirement_id": "US005",
+      "matched_to": "US005",
+      "direct": [
+        "backend.prescriptions.views.pharmacist_prescription_detail"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "backend.prescriptions.views.pharmacist_prescription_list"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.prescriptions.views.dispense_prescription"
+      ],
+      "extra": []
+    },
+    {
+      "requirement_id": "US007",
+      "matched_to": "US007",
+      "direct": [
+        "backend.appointments.views.receptionist_appointments"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "backend.core.views.dashboard"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "backend.appointments.views.receptionist_appointments"
+      ]
+    },
+    {
+      "requirement_id": "US008",
+      "matched_to": "US008",
+      "direct": [
+        "backend.publications.views.submit_paper"
+      ],
+      "supporting": [
+        "backend.accounts.models.PatientOTP.is_valid",
+        "backend.publications.forms.PublicationForm"
+      ],
+      "missed_primary": [
+        "backend.publications.views.admin_approve"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "backend.publications.models.Publication",
+        "backend.publications.models.Publication.approve",
+        "backend.publications.views.admin_reject"
+      ],
+      "extra": [
+        "backend.accounts.models.PatientOTP.is_valid",
+        "backend.publications.forms.PublicationForm"
+      ]
+    }
+  ]
+}

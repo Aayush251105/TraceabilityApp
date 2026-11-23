@@ -1,0 +1,759 @@
+{
+  "schema_version": "2.0",
+  "label": "V1 - human-annotated gold",
+  "dataset": "Travel-Agency-Automation-System",
+  "code_root": "code",
+  "srs_file": "SRS.pdf",
+  "repository_url": "https://github.com/PAnuragReddy/Travel-Agency-Automation-System.git",
+  "commit_sha": "2cc23a2f3b265d97e99df8b402a92979447ab7da",
+  "line_numbering": "1-based, inclusive, original code before any docstring insertion",
+  "annotation": "human-annotated (workbook repo_info still says DRAFT; reviewed by the annotators)",
+  "source_workbook": "Travel-Agency-Automation-System_gold.xlsx",
+  "guide_version": "ANNOTATION_GUIDE.md 1.1",
+  "requirements": [
+    {
+      "requirement_id": "FEAT-4.1",
+      "title": null,
+      "text": "4.1 To check the availability of a particular car. 4.1.1 The customer can be able to ask for the availability of a particular car which he could take for rent. 4.1.2 In the options after selecting 'book a car,' there will be an option called 'ask for availability. After selecting it, the system will ask the user to enter the car's name and if they need it with AC or non-AC. Then the system will output if it is available or not. If the ordered car is available, the user can proceed to payment. 4.1.3 REQ1: the input, which is a car name, should be among the cars which the company provides; otherwise, the system will print \" Our company does not provide ________ cars\" (with the car name in the blank) REQ2: The system should have access to the company database",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Availability check is done inline in main() ('Ask for certain car'). Unknown car prints 'Car Not Available/Invalid Car, Try Again..', not 'Our company does not provide ___ cars'.",
+      "links": [
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "inline availability check and messages",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 94,
+              "end_line": 128,
+              "anchor_text": "elif (choice == '1'):"
+            }
+          ]
+        },
+        {
+          "component_id": "Booking.Booking.token",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 10,
+          "end_line": 30,
+          "anchor_text": "def token(self,time):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: re-checks availability while booking",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.2",
+      "title": null,
+      "text": "4.2 To check when can a specific car be available. 4.2.1 From feature 4.1, if the asked car is not available at the moment, with this feature, the user will be able to ask the system when can the car be available 4.2.2 There will be an option after the system says the car is not available at the moment. The system checks the returning time of the previous customers of the car and outputs the nearest time. 4.2.3 REQ1: The system should have access to the company database",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "The expected return time is stored at booking (Booking.py:18) but nothing reports when a car becomes available.",
+      "links": []
+    },
+    {
+      "requirement_id": "FEAT-4.3",
+      "title": null,
+      "text": "4.3 To see all the available cars. 4.3.1 The user can choose this feature other than 4.1. To see all the cars available at the moment and choose from them. 4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars. ' If the user selects the option, then the system will output all the available cars. The user can choose any car from it then the user will proceed to payment. 4.3.3 REQ1: The system should have access to the company database",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Option 'Show all available Cars' in main().",
+      "links": [
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "prints available cars",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 99,
+              "end_line": 104,
+              "anchor_text": "if (choice1 == '1' or choice1 == '2'):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.4",
+      "title": null,
+      "text": "4.4 Payment of advance. 4.4.1 The user will pay a minimum advance to take the required car for rent 4.4.2 When the user proceeds to payment, the system will display the minimum advance required to pay. If the customer pays it, the system notes down the car's initial readings and asks the user for an expected time of return. The system updates the database, and the car will be the customers to take for rent. 4.4.3 REQ1: A valid expected time of return should be inputted; otherwise, \"invalid return time\" will display on the screen REQ2: The system should have access to the company database",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Advance (4 x hourly price) is shown, the expected return time is asked and the record is updated. Missing: return-time validation ('invalid return time'), recording the car's initial reading at booking.",
+      "links": [
+        {
+          "component_id": "Booking.Booking.token",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 10,
+          "end_line": 30,
+          "anchor_text": "def token(self,time):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "marks car Not Available, stores return time, returns token and advance",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Booking.py",
+              "start_line": 10,
+              "end_line": 30,
+              "anchor_text": "def token(self,time):"
+            }
+          ]
+        },
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "asks return time, shows advance and token",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 118,
+              "end_line": 126,
+              "anchor_text": "if available == \"1\":"
+            }
+          ]
+        },
+        {
+          "component_id": "Booking.Booking",
+          "component_type": "class",
+          "path": "Booking.py",
+          "start_line": 3,
+          "end_line": 30,
+          "anchor_text": "class Booking:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        },
+        {
+          "component_id": "Booking.Booking.__init__",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 5,
+          "end_line": 8,
+          "anchor_text": "def __init__(self, model, type1, file):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "constructor_state",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.5",
+      "title": null,
+      "text": "4.5 Return a car. 4.5.1 The customer can return a car using this feature. The customer will proceed to the payment section 4.5.2 There will be an option to return a car in the interface. After selecting it, the system will ask the user for the name of the car and token number. The system will ask the user to enter the mile reading of the user's car. Then the system calculates the cost for the car and outputs it. 4.5.3 REQ1: The customer must input the mile-reading and token number correctly; otherwise system outputs\" Invalid Input.\" REQ2: The system should have access to the company database",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Asks token, mile reading, pick-up and return times (not the car name), computes max(distance price, time price) and prints the bill. An invalid token returns 'Invalid Token Number', which main() then fails to unpack (crash); no 'Invalid Input' message.",
+      "links": [
+        {
+          "component_id": "Booking.returning.returnCar",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 35,
+          "end_line": 64,
+          "anchor_text": "def returnCar(self,token, MileReading, StartTime, ReturnTime):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Booking.py",
+              "start_line": 35,
+              "end_line": 64,
+              "anchor_text": "def returnCar(self,token, MileReading, StartTime, ReturnTime):"
+            }
+          ]
+        },
+        {
+          "component_id": "Booking.returning.priceCal",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 66,
+          "end_line": 78,
+          "anchor_text": "def priceCal(StartTime,ReturnTime,oldReturnTime,MileReading,oldMileReading,phr,pkm):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "cost calculation",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Booking.py",
+              "start_line": 66,
+              "end_line": 78,
+              "anchor_text": "def priceCal(StartTime,ReturnTime,oldReturnTime,MileReading,oldMileReading,phr,pkm):"
+            }
+          ]
+        },
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "inputs and bill",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 137,
+              "end_line": 159,
+              "anchor_text": "elif (choice == '2'):"
+            }
+          ]
+        },
+        {
+          "component_id": "Booking.returning.validateTime",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 80,
+          "end_line": 93,
+          "anchor_text": "def validateTime(time):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "Booking.returning",
+          "component_type": "class",
+          "path": "Booking.py",
+          "start_line": 32,
+          "end_line": 93,
+          "anchor_text": "class returning:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.6",
+      "title": null,
+      "text": "4.6 Lookup Database. 4.6.1 The owner would be able to access the database to look at the number of cars and their present status. i.e., in repair, available, or rented. 4.6.2 Choose the Owner in the login options and enter a password. After that, choose the option of lookup database in the given options. Can enter a model if you want to look at the data of one car only or look at the complete database. 4.6.3 REQ1: Password is a unique string. REQ2: If the password is wrong, then outputs message\" Wrong password.\" REQ3: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Owner login and lookup of one model or the whole database work. Wrong password prints 'Please enter the correct password'; wrong model prints 'Please enter correct Model and Type' without listing models; password is hard-coded ('PP').",
+      "links": [
+        {
+          "component_id": "Owner.Owner.getData",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 18,
+          "end_line": 35,
+          "anchor_text": "def getData(self,car = None):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Owner.py",
+              "start_line": 18,
+              "end_line": 35,
+              "anchor_text": "def getData(self,car = None):"
+            }
+          ]
+        },
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "password check and lookup menu",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 18,
+              "end_line": 21,
+              "anchor_text": "if(choice == '1'):"
+            },
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 35,
+              "end_line": 45,
+              "anchor_text": "elif(choice == '1'):"
+            },
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 78,
+              "end_line": 79,
+              "anchor_text": "else:"
+            }
+          ]
+        },
+        {
+          "component_id": "Owner.Owner.__init__",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 6,
+          "end_line": 16,
+          "anchor_text": "def __init__(self, file):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "constructor_state: password and data",
+          "evidence": []
+        },
+        {
+          "component_id": "Car.Car.__init__",
+          "component_type": "method",
+          "path": "Car.py",
+          "start_line": 5,
+          "end_line": 24,
+          "anchor_text": "def __init__(self,model_,Type_,file):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: marks unknown models Invalid",
+          "evidence": []
+        },
+        {
+          "component_id": "Owner.Owner",
+          "component_type": "class",
+          "path": "Owner.py",
+          "start_line": 4,
+          "end_line": 136,
+          "anchor_text": "class Owner:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.7",
+      "title": null,
+      "text": "4.7 Update-Database. 4.7.1 The owner would be able to update the number of cars in the fleet. If he buys or sells a car, the same can be reflected in the database. 4.7.2 There would be an option to update databases in the options. Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars. 4.7.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The number of cars that must be bought or sold is an integer number.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Buy/sell updates both Excel files. Wrong model prints a different message without the list; a non-integer count raises an exception rather than being rejected.",
+      "links": [
+        {
+          "component_id": "Owner.Owner.updateData",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 39,
+          "end_line": 88,
+          "anchor_text": "def updateData(self,car):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Owner.py",
+              "start_line": 39,
+              "end_line": 88,
+              "anchor_text": "def updateData(self,car):"
+            }
+          ]
+        },
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "entry_point",
+          "evidence": []
+        },
+        {
+          "component_id": "Owner.Owner",
+          "component_type": "class",
+          "path": "Owner.py",
+          "start_line": 4,
+          "end_line": 136,
+          "anchor_text": "class Owner:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.8",
+      "title": null,
+      "text": "4.8 Record data. 4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out. 4.8.2 When a customer makes a booking, the system will record necessary data. The owner has to do nothing. 4.8.3 REQ1: The Recorded data will be stored in another excel sheet indexed with a token number.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Booking records status and expected return time in DataRecord.xlsx (token column); the rental date/time and mile reading are not recorded at rent-out (mile reading is updated at return).",
+      "links": [
+        {
+          "component_id": "Booking.Booking.token",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 10,
+          "end_line": 30,
+          "anchor_text": "def token(self,time):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "writes status / return time to DataRecord.xlsx keyed by token",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Booking.py",
+              "start_line": 15,
+              "end_line": 26,
+              "anchor_text": "for item in data:"
+            }
+          ]
+        },
+        {
+          "component_id": "Booking.returning.returnCar",
+          "component_type": "method",
+          "path": "Booking.py",
+          "start_line": 35,
+          "end_line": 64,
+          "anchor_text": "def returnCar(self,token, MileReading, StartTime, ReturnTime):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "mile reading recorded only at return",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Booking.py",
+              "start_line": 47,
+              "end_line": 48,
+              "anchor_text": "oldMileReading = int(item[7])"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.9",
+      "title": null,
+      "text": "4.9 Calculate stats. 4.9.1 The software calculates average demand, maintenance charges, money earned, and other valuable stats for each car model. 4.9.2 There would be an option to calc stats in the options. Choose that option, enter a model. 4.9.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: Previous data and some dummy data which satisfies the industry standards are entered first to get fair stats.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "'Get Info of Car' shows demand, maintenance and profit read from precomputed columns of DataCars.xlsx; nothing is calculated; wrong-model message differs.",
+      "links": [
+        {
+          "component_id": "Owner.Owner.getInfo",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 92,
+          "end_line": 103,
+          "anchor_text": "def getInfo(self,car):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "shows stored stats",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Owner.py",
+              "start_line": 92,
+              "end_line": 103,
+              "anchor_text": "def getInfo(self,car):"
+            }
+          ]
+        },
+        {
+          "component_id": "Car.Car.getStats",
+          "component_type": "method",
+          "path": "Car.py",
+          "start_line": 41,
+          "end_line": 42,
+          "anchor_text": "def getStats(self):",
+          "relevance": "supporting",
+          "sure": "no",
+          "notes": "other: returns stored demand/maintenance/profit",
+          "evidence": []
+        },
+        {
+          "component_id": "Owner.Owner",
+          "component_type": "class",
+          "path": "Owner.py",
+          "start_line": 4,
+          "end_line": 136,
+          "anchor_text": "class Owner:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.10",
+      "title": null,
+      "text": "4.10 Set Price. 4.10.1 The software helps in calculating a profitable and competitive price for each model of car. 4.10.2 There would be an option to set the price in the options. Choose that option, enter model, the sys will show required stats for deciding price, enter the price to set. 4.10.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The sys will only display all the required stats for making this choice but will not choose us.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Shows the present price and stats and sets the per-hour or per-km price; wrong-model message differs.",
+      "links": [
+        {
+          "component_id": "Owner.Owner.setPrice",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 105,
+          "end_line": 136,
+          "anchor_text": "def setPrice(self,car):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Owner.py",
+              "start_line": 105,
+              "end_line": 136,
+              "anchor_text": "def setPrice(self,car):"
+            }
+          ]
+        },
+        {
+          "component_id": "Owner.Owner.getInfo",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 92,
+          "end_line": 103,
+          "anchor_text": "def getInfo(self,car):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: stats shown before setting the price",
+          "evidence": []
+        },
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "entry_point",
+          "evidence": []
+        },
+        {
+          "component_id": "Owner.Owner",
+          "component_type": "class",
+          "path": "Owner.py",
+          "start_line": 4,
+          "end_line": 136,
+          "anchor_text": "class Owner:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.11",
+      "title": null,
+      "text": "4.11 Decide Fate of Car. 4.11.1 The software helps decide which model of car to buy and which to sell off so that the business can make a consistent amount of profit. 4.11.2 There would be an option to decide the fate of a model in the options. Choose that option, enter model, the sys will tell him if the model is worth investing in or should he reduce the number of cars of that model in his fleet. An optimum answer is displayed. 4.11.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available. REQ2: The system gives a ballpark number which is the number optimum of cars of that model when owned will give max profit.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "No such option or computation.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-001",
+      "title": null,
+      "text": "Front-end: Text-based interface. Back-end: Python, mainly Pandas library.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Console menus in main().",
+      "links": [
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "text menus",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 11,
+              "end_line": 164,
+              "anchor_text": "def main():"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-002",
+      "title": null,
+      "text": "There is no communication between any two users, and the software is being designed to be deployed locally on a pc with all the data. So, there is no communication with the internet too.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-005",
+      "title": null,
+      "text": "The owner has a unique password using which he can log in to the system and access its features. Anyone can access the features of the customer.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Hard-coded owner password; customer menu has no login.",
+      "links": [
+        {
+          "component_id": "main.main",
+          "component_type": "function",
+          "path": "main.py",
+          "start_line": 11,
+          "end_line": 164,
+          "anchor_text": "def main():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "owner password check; customer menu without login",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 18,
+              "end_line": 21,
+              "anchor_text": "if(choice == '1'):"
+            },
+            {
+              "kind": "block",
+              "path": "main.py",
+              "start_line": 83,
+              "end_line": 85,
+              "anchor_text": "elif(choice == '2'):"
+            }
+          ]
+        },
+        {
+          "component_id": "Owner.Owner.__init__",
+          "component_type": "method",
+          "path": "Owner.py",
+          "start_line": 6,
+          "end_line": 16,
+          "anchor_text": "def __init__(self, file):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "the owner password",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "Owner.py",
+              "start_line": 8,
+              "end_line": 8,
+              "anchor_text": "self.password = \"PP\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded_requirements": [
+    {
+      "requirement_id": "REQ-003",
+      "title": null,
+      "text": "Requirements such as RAM, CPU speed, etc., will help the software run smoothly. This helps the load time for user interface screens to be minimum and for also quick responses from the system",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "untestable_or_vague",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-004",
+      "title": null,
+      "text": "If there is extensive damage to the company database, such as file corruption or disk damage. It is recommended to backup all this data to an internet cloud storage to avoid these problems So we can restore the data if any of it happens",
+      "type": null,
+      "status": "excluded",
+      "sure": "no",
+      "notes": "No backup code (it is phrased as a recommendation). : environment",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-006",
+      "title": null,
+      "text": "Usability: The company should have more cars which have more demand. Maintainability: The company should keep their vehicles, and customers should return the vehicles in good condition. Reliability: They should always keep the database updated and correct.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "not_a_requirement (business advice)",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-007",
+      "title": null,
+      "text": "If the system crashes, then the owner can easily re-run the application and start using it again. If the system shows the wrong amount of payment to the customer while returning the car, then it is the owner's responsibility to check if the database has not been tampered with. If the system shows that a model is available, but in reality, it is unavailable, then it is the owner's responsibility to rectify the problem.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "not_a_requirement (business rules for the owner)",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-008",
+      "title": null,
+      "text": "Tools to be used are python, excel, and windows. Requires Python 3.4 or higher. Made packages of individual classes and made them into a package installed in each pc of the business for implementation.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "environment",
+      "links": []
+    }
+  ]
+}

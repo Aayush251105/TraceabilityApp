@@ -1,0 +1,1155 @@
+Run 3 created
+11:32:43     Run started
+11:32:43 [B] Extract requirements started
+11:32:43 [A] Fetch source started
+11:32:43 [A] code @ 69ed627: 23 Python file(s), 53 components
+11:32:43 [A] [32mFetch source done in 0 s[0m
+11:32:43 [A] Parse code and generate docstrings started
+11:32:43 [B] Input detected as textfile
+11:32:43 [B] Parsing input
+11:32:43 [B] Extracted 15,921 text characters
+11:32:43 [B] Detecting requirement candidates
+11:32:43 [B] [33mUnlabelled: Text introduces a list or table that is not present in the input. The introduction was not extracted.[0m
+11:32:43 [B] Detected 68 candidate statement(s)
+11:32:43 [B] Reviewing 68 candidate(s): strong-signal fast path, then ollama/qwen3:4b for ambiguous items
+11:32:44 [A] Parsed 53 components; generating docstrings in dependency order
+11:32:44 [A] Reader: Analyzing code component... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:19 [B] Judge batch 1/3: kept 14, discarded 1, uncertain 0
+11:34:33 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:33 [A] Searcher: Searching for additional context... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:33 [A] Reader: Search complete, Context updated, restarting analysis... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:33 [A] Reader: Analyzing code component... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:44 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:44 [A] Searcher: Searching for additional context... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:44 [A] Reader: Search complete, Context updated, restarting analysis... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:44 [A] Reader: Analyzing code component... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:54 [A] Reader: Max search attempts (2) reached, proceeding with current context... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:54 [A] Reader: No additional context needed, starting docstring generation... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:34:54 [A] Writer: Generating docstring... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:01 [A] Verifier: Verifying docstring quality... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:12 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:12 [A] Writer: Generating docstring... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:29 [A] Verifier: Verifying docstring quality... (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:44 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (to_csv(ratings_file, index=False, sep=';', encoding='latin-1')
+
+        logger.info(f"Sample CSV datasets generated at {unzip_path}"))
+11:35:44 [A] [32mDocstring written for DataIngestion._create_sample_dataset[0m
+11:35:45 [A] Reader: Analyzing code component... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:35:55 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:35:55 [A] Searcher: Searching for additional context... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:35:55 [A] Reader: Search complete, Context updated, restarting analysis... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:35:55 [A] Reader: Analyzing code component... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:09 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:09 [A] Searcher: Searching for additional context... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:09 [A] Reader: Search complete, Context updated, restarting analysis... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:09 [A] Reader: Analyzing code component... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:18 [A] Reader: No additional context needed, starting docstring generation... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:18 [A] Writer: Generating docstring... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:22 [A] Verifier: Verifying docstring quality... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:35 [A] Verifier: Docstring generated successfully! No need for revision. (exists(ratings_file)):
+            self._create_sample_dataset())
+11:36:35 [A] [32mDocstring written for DataIngestion._ensure_raw_csv_files[0m
+11:36:35 [A] Reader: Analyzing code component... (')
+            self._create_sample_dataset()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:36:43 [A] Reader: No additional context needed, starting docstring generation... (')
+            self._create_sample_dataset()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:36:43 [A] Writer: Generating docstring... (')
+            self._create_sample_dataset()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:36:46 [A] Verifier: Verifying docstring quality... (')
+            self._create_sample_dataset()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:36:52 [A] Verifier: Docstring generated successfully! No need for revision. (')
+            self._create_sample_dataset()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:36:52 [A] [32mDocstring written for DataIngestion.download_file[0m
+11:36:52 [A] Reader: Analyzing code component... (')
+                self._ensure_raw_csv_files()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:37:00 [A] Reader: No additional context needed, starting docstring generation... (')
+                self._ensure_raw_csv_files()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:37:00 [A] Writer: Generating docstring... (')
+                self._ensure_raw_csv_files()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:37:02 [A] Verifier: Verifying docstring quality... (')
+                self._ensure_raw_csv_files()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:37:13 [A] Verifier: Docstring generated successfully! No need for revision. (')
+                self._ensure_raw_csv_files()
+        except Exception as e:
+            raise CustomException(e, sys))
+11:37:13 [A] [32mDocstring written for DataIngestion.extract_zip_file[0m
+11:37:13 [A] Reader: Analyzing code component... (class DataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path)
+11:37:21 [A] Reader: No additional context needed, starting docstring generation... (class DataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path)
+11:37:21 [A] Writer: Generating docstring... (class DataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path)
+11:37:25 [A] Verifier: Verifying docstring quality... (class DataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path)
+11:37:25 [B] Judge batch 2/3: kept 13, discarded 0, uncertain 2
+11:37:25 [B] [33mJudge: C-0044 → uncertain, queued for review (Ambiguous term 'standard compatibility' without specific context; may refer to compatibility standards but not clearly defined as a requirement)[0m
+11:37:25 [B] [33mJudge: C-0046 → uncertain, queued for review (Ambiguous term 'standard' without specific context; may refer to standard formats but not clearly defined as a requirement)[0m
+11:37:37 [A] Verifier: Docstring generated successfully! No need for revision. (class DataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path)
+11:37:37 [A] [32mDocstring written for config_entity.DataIngestionConfig[0m
+11:37:38 [A] Reader: Analyzing code component... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:37:47 [A] Reader: No additional context needed, starting docstring generation... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:37:47 [A] Writer: Generating docstring... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:37:54 [A] Verifier: Verifying docstring quality... (exists(ratings_file)):
+            self._create_sample_dataset())
+11:38:27 [A] Verifier: Docstring generated successfully! No need for revision. (exists(ratings_file)):
+            self._create_sample_dataset())
+11:38:27 [A] [32mDocstring written for data_ingestion.DataIngestion[0m
+11:38:27 [A] Reader: Analyzing code component... (makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"Created directory at: {path}")
+    except Exception as e:
+        raise CustomException(e, sys))
+11:38:37 [A] Reader: No additional context needed, starting docstring generation... (makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"Created directory at: {path}")
+    except Exception as e:
+        raise CustomException(e, sys))
+11:38:37 [A] Writer: Generating docstring... (makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"Created directory at: {path}")
+    except Exception as e:
+        raise CustomException(e, sys))
+11:38:45 [A] Verifier: Verifying docstring quality... (makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"Created directory at: {path}")
+    except Exception as e:
+        raise CustomException(e, sys))
+11:38:52 [A] Verifier: Docstring generated successfully! No need for revision. (makedirs(path, exist_ok=True)
+            if verbose:
+                logger.info(f"Created directory at: {path}")
+    except Exception as e:
+        raise CustomException(e, sys))
+11:38:52 [A] [32mDocstring written for common.create_directories[0m
+11:38:52 [A] Reader: Analyzing code component... (def get_data_ingestion_config(self) -> DataIngestionConfig:
+        config = self.config['data_ingestion']
+        create_directories([Path(config['root_dir']), Path(config['unzip_dir'])])
+
+        return DataIngestionConfig(
+            root_dir=Path(config['root_dir']),
+            source_URL=config['source_URL'],
+            local_data_file=Path(config['local_data_file']),
+            unzip_dir=Path(config['unzip_dir'])
+        ))
+11:39:02 [A] Reader: No additional context needed, starting docstring generation... (def get_data_ingestion_config(self) -> DataIngestionConfig:
+        config = self.config['data_ingestion']
+        create_directories([Path(config['root_dir']), Path(config['unzip_dir'])])
+
+        return DataIngestionConfig(
+            root_dir=Path(config['root_dir']),
+            source_URL=config['source_URL'],
+            local_data_file=Path(config['local_data_file']),
+            unzip_dir=Path(config['unzip_dir'])
+        ))
+11:39:02 [A] Writer: Generating docstring... (def get_data_ingestion_config(self) -> DataIngestionConfig:
+        config = self.config['data_ingestion']
+        create_directories([Path(config['root_dir']), Path(config['unzip_dir'])])
+
+        return DataIngestionConfig(
+            root_dir=Path(config['root_dir']),
+            source_URL=config['source_URL'],
+            local_data_file=Path(config['local_data_file']),
+            unzip_dir=Path(config['unzip_dir'])
+        ))
+11:39:09 [A] Verifier: Verifying docstring quality... (def get_data_ingestion_config(self) -> DataIngestionConfig:
+        config = self.config['data_ingestion']
+        create_directories([Path(config['root_dir']), Path(config['unzip_dir'])])
+
+        return DataIngestionConfig(
+            root_dir=Path(config['root_dir']),
+            source_URL=config['source_URL'],
+            local_data_file=Path(config['local_data_file']),
+            unzip_dir=Path(config['unzip_dir'])
+        ))
+11:39:11 [B] Judge batch 3/3: kept 0, discarded 6, uncertain 0
+11:39:11 [B] Fast accepted 32; quickly judged 36; kept 59 item(s) for generation; 2 uncertain item(s) are review-only
+11:39:11 [B] Generating structured JSON for 59 retained candidate(s)
+11:39:21 [A] Verifier: Docstring generated successfully! No need for revision. (def get_data_ingestion_config(self) -> DataIngestionConfig:
+        config = self.config['data_ingestion']
+        create_directories([Path(config['root_dir']), Path(config['unzip_dir'])])
+
+        return DataIngestionConfig(
+            root_dir=Path(config['root_dir']),
+            source_URL=config['source_URL'],
+            local_data_file=Path(config['local_data_file']),
+            unzip_dir=Path(config['unzip_dir'])
+        ))
+11:39:21 [A] [32mDocstring written for AppConfiguration.get_data_ingestion_config[0m
+11:39:21 [A] Reader: Analyzing code component... (class DataTransformationConfig:
+    root_dir: Path
+    final_rating_path: Path
+    book_pivot_path: Path
+    book_names_path: Path
+    template_book_names_path: Path)
+11:39:29 [B] [33mExtracted REQ-001 “Operating Environment”[0m
+11:39:34 [A] Reader: No additional context needed, starting docstring generation... (class DataTransformationConfig:
+    root_dir: Path
+    final_rating_path: Path
+    book_pivot_path: Path
+    book_names_path: Path
+    template_book_names_path: Path)
+11:39:34 [A] Writer: Generating docstring... (class DataTransformationConfig:
+    root_dir: Path
+    final_rating_path: Path
+    book_pivot_path: Path
+    book_names_path: Path
+    template_book_names_path: Path)
+11:39:36 [B] [33mExtracted REQ-002 “Web Server Configuration”[0m
+11:39:40 [A] Verifier: Verifying docstring quality... (class DataTransformationConfig:
+    root_dir: Path
+    final_rating_path: Path
+    book_pivot_path: Path
+    book_names_path: Path
+    template_book_names_path: Path)
+11:39:45 [B] [33mExtracted REQ-003 “Containerization Engine Specification”[0m
+11:39:54 [B] [33mExtracted REQ-004 “Cloud Deployment Readiness”[0m
+11:40:02 [A] Verifier: Docstring generated successfully! No need for revision. (class DataTransformationConfig:
+    root_dir: Path
+    final_rating_path: Path
+    book_pivot_path: Path
+    book_names_path: Path
+    template_book_names_path: Path)
+11:40:02 [A] [32mDocstring written for config_entity.DataTransformationConfig[0m
+11:40:02 [A] Reader: Analyzing code component... (def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir']), Path('templates')])
+        return DataTransformationConfig(root_dir=Path(config['root_dir']), final_rating_path=Path(config['final_rating_path']), book_pivot_path=Path(config['book_pivot_path']), book_names_path=Path(config['book_names_path']), template_book_names_path=Path(config['template_book_names_path'])))
+11:40:04 [B] Extracted FR-1.1 “Pipeline Settings Reading”
+11:40:11 [A] Reader: No additional context needed, starting docstring generation... (def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir']), Path('templates')])
+        return DataTransformationConfig(root_dir=Path(config['root_dir']), final_rating_path=Path(config['final_rating_path']), book_pivot_path=Path(config['book_pivot_path']), book_names_path=Path(config['book_names_path']), template_book_names_path=Path(config['template_book_names_path'])))
+11:40:11 [A] Writer: Generating docstring... (def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir']), Path('templates')])
+        return DataTransformationConfig(root_dir=Path(config['root_dir']), final_rating_path=Path(config['final_rating_path']), book_pivot_path=Path(config['book_pivot_path']), book_names_path=Path(config['book_names_path']), template_book_names_path=Path(config['template_book_names_path'])))
+11:40:16 [A] Verifier: Verifying docstring quality... (def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir']), Path('templates')])
+        return DataTransformationConfig(root_dir=Path(config['root_dir']), final_rating_path=Path(config['final_rating_path']), book_pivot_path=Path(config['book_pivot_path']), book_names_path=Path(config['book_names_path']), template_book_names_path=Path(config['template_book_names_path'])))
+11:40:23 [B] Extracted FR-1.2 “Immutable ConfigEntity Instantiation”
+11:40:36 [B] Extracted FR-1.3 “Logger Module Output”
+11:40:46 [B] Extracted FR-1.4 “Exception Handling”
+11:40:53 [A] Verifier: Docstring generated successfully! No need for revision. (def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config['data_transformation']
+        create_directories([Path(config['root_dir']), Path('templates')])
+        return DataTransformationConfig(root_dir=Path(config['root_dir']), final_rating_path=Path(config['final_rating_path']), book_pivot_path=Path(config['book_pivot_path']), book_names_path=Path(config['book_names_path']), template_book_names_path=Path(config['template_book_names_path'])))
+11:40:53 [A] [32mDocstring written for AppConfiguration.get_data_transformation_config[0m
+11:40:54 [A] Reader: Analyzing code component... (class DataValidationConfig:
+    root_dir: Path
+    books_csv: Path
+    ratings_csv: Path
+    clean_data_path: Path
+    final_rating_path: Path
+    min_user_ratings: int
+    min_book_ratings: int)
+11:40:55 [B] [33mExtracted REQ-009 “Automated Dataset Retrieval”[0m
+11:41:08 [B] Extracted FR-2.1 “Data Download from GitHub”
+11:41:08 [A] Reader: No additional context needed, starting docstring generation... (class DataValidationConfig:
+    root_dir: Path
+    books_csv: Path
+    ratings_csv: Path
+    clean_data_path: Path
+    final_rating_path: Path
+    min_user_ratings: int
+    min_book_ratings: int)
+11:41:08 [A] Writer: Generating docstring... (class DataValidationConfig:
+    root_dir: Path
+    books_csv: Path
+    ratings_csv: Path
+    clean_data_path: Path
+    final_rating_path: Path
+    min_user_ratings: int
+    min_book_ratings: int)
+11:41:15 [A] Verifier: Verifying docstring quality... (class DataValidationConfig:
+    root_dir: Path
+    books_csv: Path
+    ratings_csv: Path
+    clean_data_path: Path
+    final_rating_path: Path
+    min_user_ratings: int
+    min_book_ratings: int)
+11:41:17 [B] Extracted FR-2.2 “Zip Content Extraction”
+11:41:28 [B] Extracted FR-2.3 “Raw File Verification and Movement”
+11:41:38 [B] [33mExtracted REQ-013 “Rating Data Processing”[0m
+11:41:47 [B] Extracted FR-3.1 “Data Loading”
+11:41:59 [B] Extracted FR-3.2 “User Filtering Rule”
+11:42:09 [A] Verifier: Docstring generated successfully! No need for revision. (class DataValidationConfig:
+    root_dir: Path
+    books_csv: Path
+    ratings_csv: Path
+    clean_data_path: Path
+    final_rating_path: Path
+    min_user_ratings: int
+    min_book_ratings: int)
+11:42:09 [A] [32mDocstring written for config_entity.DataValidationConfig[0m
+11:42:09 [A] Reader: Analyzing code component... (def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config['data_validation']
+        create_directories([Path(config['root_dir']), Path('artifacts/serialized_objects')])
+        return DataValidationConfig(root_dir=Path(config['root_dir']), books_csv=Path(config['books_csv']), ratings_csv=Path(config['ratings_csv']), clean_data_path=Path(config['clean_data_path']), final_rating_path=Path(config['final_rating_path']), min_user_ratings=int(config['min_user_ratings']), min_book_ratings=int(config['min_book_ratings'])))
+11:42:11 [B] Extracted FR-3.3 “Book Filtering Rule”
+11:42:18 [A] Reader: No additional context needed, starting docstring generation... (def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config['data_validation']
+        create_directories([Path(config['root_dir']), Path('artifacts/serialized_objects')])
+        return DataValidationConfig(root_dir=Path(config['root_dir']), books_csv=Path(config['books_csv']), ratings_csv=Path(config['ratings_csv']), clean_data_path=Path(config['clean_data_path']), final_rating_path=Path(config['final_rating_path']), min_user_ratings=int(config['min_user_ratings']), min_book_ratings=int(config['min_book_ratings'])))
+11:42:18 [A] Writer: Generating docstring... (def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config['data_validation']
+        create_directories([Path(config['root_dir']), Path('artifacts/serialized_objects')])
+        return DataValidationConfig(root_dir=Path(config['root_dir']), books_csv=Path(config['books_csv']), ratings_csv=Path(config['ratings_csv']), clean_data_path=Path(config['clean_data_path']), final_rating_path=Path(config['final_rating_path']), min_user_ratings=int(config['min_user_ratings']), min_book_ratings=int(config['min_book_ratings'])))
+11:42:22 [B] Extracted FR-3.4 “Clean Ratings Dataset”
+11:42:26 [A] Verifier: Verifying docstring quality... (def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config['data_validation']
+        create_directories([Path(config['root_dir']), Path('artifacts/serialized_objects')])
+        return DataValidationConfig(root_dir=Path(config['root_dir']), books_csv=Path(config['books_csv']), ratings_csv=Path(config['ratings_csv']), clean_data_path=Path(config['clean_data_path']), final_rating_path=Path(config['final_rating_path']), min_user_ratings=int(config['min_user_ratings']), min_book_ratings=int(config['min_book_ratings'])))
+11:42:35 [B] Extracted FR-3.5 “Output File Storage Location”
+11:42:44 [B] [33mExtracted REQ-019 “Interaction Matrix Generation”[0m
+11:42:55 [B] Extracted FR-4.1 “Pivot Table Construction”
+11:43:06 [B] Extracted FR-4.2 “Populate Missing User Ratings”
+11:43:13 [A] Verifier: Docstring generated successfully! No need for revision. (def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config['data_validation']
+        create_directories([Path(config['root_dir']), Path('artifacts/serialized_objects')])
+        return DataValidationConfig(root_dir=Path(config['root_dir']), books_csv=Path(config['books_csv']), ratings_csv=Path(config['ratings_csv']), clean_data_path=Path(config['clean_data_path']), final_rating_path=Path(config['final_rating_path']), min_user_ratings=int(config['min_user_ratings']), min_book_ratings=int(config['min_book_ratings'])))
+11:43:13 [A] [32mDocstring written for AppConfiguration.get_data_validation_config[0m
+11:43:13 [A] Reader: Analyzing code component... (class ModelRecommendationConfig:
+    model_path: Path
+    book_pivot_path: Path
+    final_rating_path: Path)
+11:43:22 [B] Extracted FR-4.3 “Serialization of Pivot Table and Book Titles”
+11:43:25 [A] Reader: No additional context needed, starting docstring generation... (class ModelRecommendationConfig:
+    model_path: Path
+    book_pivot_path: Path
+    final_rating_path: Path)
+11:43:25 [A] Writer: Generating docstring... (class ModelRecommendationConfig:
+    model_path: Path
+    book_pivot_path: Path
+    final_rating_path: Path)
+11:43:32 [A] Verifier: Verifying docstring quality... (class ModelRecommendationConfig:
+    model_path: Path
+    book_pivot_path: Path
+    final_rating_path: Path)
+11:43:32 [B] [33mExtracted REQ-023 “Train k-Nearest Neighbors Model”[0m
+11:43:43 [B] Extracted FR-5.1 “Convert Book Pivot to CSR Matrix”
+11:43:52 [A] Verifier: Docstring generated successfully! No need for revision. (class ModelRecommendationConfig:
+    model_path: Path
+    book_pivot_path: Path
+    final_rating_path: Path)
+11:43:52 [A] [32mDocstring written for config_entity.ModelRecommendationConfig[0m
+11:43:52 [A] Reader: Analyzing code component... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:44:00 [B] Extracted FR-5.2 “NearestNeighbors Estimator Initialization”
+11:44:03 [A] Reader: No additional context needed, starting docstring generation... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:44:03 [A] Writer: Generating docstring... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:44:09 [A] Verifier: Verifying docstring quality... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:44:10 [B] Extracted FR-5.3 “Model Serialization and Saving”
+11:44:19 [B] [33mExtracted REQ-027 “Inference Functionality for Book Search”[0m
+11:44:28 [B] Extracted FR-6.1 “Model Deserialization”
+11:44:39 [B] Extracted FR-6.2 “Book Title Row Index Lookup”
+11:44:51 [B] Extracted FR-6.3 “Retrieve Nearest Neighbors”
+11:44:59 [A] Verifier: Docstring generated successfully! No need for revision. (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:44:59 [A] [32mDocstring written for AppConfiguration.get_model_recommendation_config[0m
+11:44:59 [A] Reader: Analyzing code component... (class ModelTrainerConfig:
+    root_dir: Path
+    book_pivot_path: Path
+    model_path: Path
+    algorithm: str
+    metric: str
+    n_neighbors: int)
+11:45:06 [B] Extracted FR-6.4 “Book Image Cover URL Extraction”
+11:45:14 [A] Reader: No additional context needed, starting docstring generation... (class ModelTrainerConfig:
+    root_dir: Path
+    book_pivot_path: Path
+    model_path: Path
+    algorithm: str
+    metric: str
+    n_neighbors: int)
+11:45:14 [A] Writer: Generating docstring... (class ModelTrainerConfig:
+    root_dir: Path
+    book_pivot_path: Path
+    model_path: Path
+    algorithm: str
+    metric: str
+    n_neighbors: int)
+11:45:17 [B] Extracted FR-6.5 “Recommended Titles and Image URLs”
+11:45:23 [A] Verifier: Verifying docstring quality... (class ModelTrainerConfig:
+    root_dir: Path
+    book_pivot_path: Path
+    model_path: Path
+    algorithm: str
+    metric: str
+    n_neighbors: int)
+11:45:25 [B] [33mExtracted REQ-033 “Single-Page Web Interface”[0m
+11:45:35 [B] Extracted FR-7.1 “Book Selector Dropdown”
+11:45:50 [B] Extracted FR-7.2 “Recommendation Button”
+11:46:01 [B] Extracted FR-7.3 “Train Button”
+11:46:07 [B] [33mExtracted REQ-037 “UI Framework Selection”[0m
+11:46:14 [A] Verifier: Docstring generated successfully! No need for revision. (class ModelTrainerConfig:
+    root_dir: Path
+    book_pivot_path: Path
+    model_path: Path
+    algorithm: str
+    metric: str
+    n_neighbors: int)
+11:46:14 [A] [32mDocstring written for config_entity.ModelTrainerConfig[0m
+11:46:14 [A] Reader: Analyzing code component... (def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config['model_trainer']
+        create_directories([Path(config['root_dir'])])
+        return ModelTrainerConfig(root_dir=Path(config['root_dir']), book_pivot_path=Path(config['book_pivot_path']), model_path=Path(config['model_path']), algorithm=config['algorithm'], metric=config['metric'], n_neighbors=int(config['n_neighbors'])))
+11:46:21 [B] [33mExtracted REQ-038 “Responsive UI Layout”[0m
+11:46:26 [A] Reader: No additional context needed, starting docstring generation... (def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config['model_trainer']
+        create_directories([Path(config['root_dir'])])
+        return ModelTrainerConfig(root_dir=Path(config['root_dir']), book_pivot_path=Path(config['book_pivot_path']), model_path=Path(config['model_path']), algorithm=config['algorithm'], metric=config['metric'], n_neighbors=int(config['n_neighbors'])))
+11:46:26 [A] Writer: Generating docstring... (def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config['model_trainer']
+        create_directories([Path(config['root_dir'])])
+        return ModelTrainerConfig(root_dir=Path(config['root_dir']), book_pivot_path=Path(config['book_pivot_path']), model_path=Path(config['model_path']), algorithm=config['algorithm'], metric=config['metric'], n_neighbors=int(config['n_neighbors'])))
+11:46:26 [B] [33mExtracted REQ-039 “No Special Hardware Required”[0m
+11:46:34 [A] Verifier: Verifying docstring quality... (def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config['model_trainer']
+        create_directories([Path(config['root_dir'])])
+        return ModelTrainerConfig(root_dir=Path(config['root_dir']), book_pivot_path=Path(config['book_pivot_path']), model_path=Path(config['model_path']), algorithm=config['algorithm'], metric=config['metric'], n_neighbors=int(config['n_neighbors'])))
+11:46:36 [B] [33mExtracted REQ-040 “Minimum Hardware Requirements”[0m
+11:46:44 [B] [33mExtracted REQ-041 “Python Version Requirement”[0m
+11:46:53 [B] [33mExtracted REQ-042 “Minimum ML Framework Version”[0m
+11:47:02 [B] [33mExtracted REQ-043 “Web Framework and Library Version Requirement”[0m
+11:47:12 [B] [33mExtracted REQ-044 “Containerization Platform Requirement”[0m
+11:47:17 [A] Verifier: Docstring generated successfully! No need for revision. (def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config['model_trainer']
+        create_directories([Path(config['root_dir'])])
+        return ModelTrainerConfig(root_dir=Path(config['root_dir']), book_pivot_path=Path(config['book_pivot_path']), model_path=Path(config['model_path']), algorithm=config['algorithm'], metric=config['metric'], n_neighbors=int(config['n_neighbors'])))
+11:47:17 [A] [32mDocstring written for AppConfiguration.get_model_trainer_config[0m
+11:47:17 [A] Reader: Analyzing code component... (info(f'YAML file: {path_to_yaml} loaded successfully.')
+            return content
+    except Exception as e:
+        raise CustomException(e, sys))
+11:47:18 [B] [33mExtracted REQ-045 “Communication Protocol”[0m
+11:47:26 [B] [33mExtracted REQ-046 “Default Communication Port”[0m
+11:47:28 [A] Reader: No additional context needed, starting docstring generation... (info(f'YAML file: {path_to_yaml} loaded successfully.')
+            return content
+    except Exception as e:
+        raise CustomException(e, sys))
+11:47:28 [A] Writer: Generating docstring... (info(f'YAML file: {path_to_yaml} loaded successfully.')
+            return content
+    except Exception as e:
+        raise CustomException(e, sys))
+11:47:36 [A] Verifier: Verifying docstring quality... (info(f'YAML file: {path_to_yaml} loaded successfully.')
+            return content
+    except Exception as e:
+        raise CustomException(e, sys))
+11:47:37 [B] [33mExtracted REQ-047 “Remote Data Source for Dataset Downloading”[0m
+11:47:47 [B] Extracted REQ-048 “Inference Latency”
+11:47:56 [B] Extracted REQ-049 “Image Load Time”
+11:48:06 [B] Extracted REQ-050 “Model Training Execution Time”
+11:48:16 [B] Extracted REQ-051 “System Uptime”
+11:48:28 [A] Verifier: Docstring generated successfully! No need for revision. (info(f'YAML file: {path_to_yaml} loaded successfully.')
+            return content
+    except Exception as e:
+        raise CustomException(e, sys))
+11:48:28 [A] [32mDocstring written for common.read_yaml[0m
+11:48:28 [B] Extracted REQ-052 “Graceful Error Handling for Book Poster Image”
+11:48:28 [A] Reader: Analyzing code component... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:48:39 [B] [33mExtracted REQ-053 “Modular Pipeline Design”[0m
+11:48:43 [A] Reader: No additional context needed, starting docstring generation... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:48:43 [A] Writer: Generating docstring... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:48:52 [B] [33mExtracted REQ-054 “Configuration Driven Hyperparameters”[0m
+11:48:54 [A] Verifier: Verifying docstring quality... (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:49:00 [B] [33mExtracted REQ-055 “Input Validation for Book Search”[0m
+11:49:10 [B] [33mExtracted REQ-056 “Non-Privileged Port Exposure”[0m
+11:49:18 [B] [33mExtracted REQ-057 “Base Docker Image Specification”[0m
+11:49:20 [A] Verifier: Docstring generated successfully! No need for revision. (config['data_transformation']['book_pivot_path']), final_rating_path=Path(self.config['data_validation']['final_rating_path'])))
+11:49:20 [A] [32mDocstring written for configuration.AppConfiguration[0m
+11:49:20 [A] Reader: Analyzing code component... (download_file()
+        data_ingestion.extract_zip_file())
+11:49:30 [B] [33mExtracted REQ-058 “Raw Data Artifact Storage”[0m
+11:49:34 [A] Reader: No additional context needed, starting docstring generation... (download_file()
+        data_ingestion.extract_zip_file())
+11:49:34 [A] Writer: Generating docstring... (download_file()
+        data_ingestion.extract_zip_file())
+11:49:39 [B] Extracted REQ-059 “SRS Document Purpose”
+11:49:40 [B] [32mExtract requirements done in 1017 s[0m
+11:49:40 [B] Prepare review started
+11:49:41 [A] Verifier: Verifying docstring quality... (download_file()
+        data_ingestion.extract_zip_file())
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8782.36it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+11:49:47 [B] [33m59 requirement(s) extracted; 29 item(s) need your review[0m
+11:49:47 [B] [32mPrepare review done in 7 s[0m
+11:49:52 [A] Verifier: Docstring generated successfully! No need for revision. (download_file()
+        data_ingestion.extract_zip_file())
+11:49:52 [A] [32mDocstring written for DataIngestionPipeline.main[0m
+11:49:52 [A] Reader: Analyzing code component... (download_file()
+        data_ingestion.extract_zip_file())
+11:49:59 [A] Reader: No additional context needed, starting docstring generation... (download_file()
+        data_ingestion.extract_zip_file())
+11:49:59 [A] Writer: Generating docstring... (download_file()
+        data_ingestion.extract_zip_file())
+11:50:03 [A] Verifier: Verifying docstring quality... (download_file()
+        data_ingestion.extract_zip_file())
+11:50:38 [A] Verifier: Docstring generated successfully! No need for revision. (download_file()
+        data_ingestion.extract_zip_file())
+11:50:38 [A] [32mDocstring written for stage_00_data_ingestion.DataIngestionPipeline[0m
+11:50:38 [A] Reader: Analyzing code component... (dump(data, f)
+        logger.info(f'Binary file saved successfully at: {path}')
+    except Exception as e:
+        raise CustomException(e, sys))
+11:50:44 [A] Reader: No additional context needed, starting docstring generation... (dump(data, f)
+        logger.info(f'Binary file saved successfully at: {path}')
+    except Exception as e:
+        raise CustomException(e, sys))
+11:50:44 [A] Writer: Generating docstring... (dump(data, f)
+        logger.info(f'Binary file saved successfully at: {path}')
+    except Exception as e:
+        raise CustomException(e, sys))
+11:50:48 [A] Verifier: Verifying docstring quality... (dump(data, f)
+        logger.info(f'Binary file saved successfully at: {path}')
+    except Exception as e:
+        raise CustomException(e, sys))
+11:50:57 [A] Verifier: Docstring generated successfully! No need for revision. (dump(data, f)
+        logger.info(f'Binary file saved successfully at: {path}')
+    except Exception as e:
+        raise CustomException(e, sys))
+11:50:57 [A] [32mDocstring written for common.save_bin[0m
+11:50:57 [A] Reader: Analyzing code component... (config.final_rating_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:03 [A] Reader: No additional context needed, starting docstring generation... (config.final_rating_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:03 [A] Writer: Generating docstring... (config.final_rating_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:10 [A] Verifier: Verifying docstring quality... (config.final_rating_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:41 [A] Verifier: Docstring generated successfully! No need for revision. (config.final_rating_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:41 [A] [32mDocstring written for DataValidation.validate_and_clean_data[0m
+11:51:41 [A] Reader: Analyzing code component... (config.final_rating_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:47 [A] Reader: No additional context needed, starting docstring generation... (config.final_rating_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:48 [A] Writer: Generating docstring... (config.final_rating_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:51:52 [A] Verifier: Verifying docstring quality... (config.final_rating_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:52:03 [A] Verifier: Docstring generated successfully! No need for revision. (config.final_rating_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:52:03 [A] [32mDocstring written for data_validation.DataValidation[0m
+11:52:03 [A] Reader: Analyzing code component... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:08 [A] Reader: No additional context needed, starting docstring generation... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:08 [A] Writer: Generating docstring... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:11 [A] Verifier: Verifying docstring quality... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:20 [A] Verifier: Docstring generated successfully! No need for revision. (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:20 [A] [32mDocstring written for DataValidationPipeline.main[0m
+11:52:20 [A] Reader: Analyzing code component... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:25 [A] Reader: No additional context needed, starting docstring generation... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:25 [A] Writer: Generating docstring... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:52:27 [A] Verifier: Verifying docstring quality... (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:53:34 [A] Verifier: Docstring generated successfully! No need for revision. (get_data_validation_config()
+        data_validation = DataValidation(config=data_validation_config)
+        data_validation.validate_and_clean_data())
+11:53:34 [A] [32mDocstring written for stage_01_data_validation.DataValidationPipeline[0m
+11:53:34 [A] Reader: Analyzing code component... (load(f)
+        logger.info(f'Binary file loaded successfully from: {path}')
+        return data
+    except Exception as e:
+        raise CustomException(e, sys))
+11:53:40 [A] Reader: No additional context needed, starting docstring generation... (load(f)
+        logger.info(f'Binary file loaded successfully from: {path}')
+        return data
+    except Exception as e:
+        raise CustomException(e, sys))
+11:53:40 [A] Writer: Generating docstring... (load(f)
+        logger.info(f'Binary file loaded successfully from: {path}')
+        return data
+    except Exception as e:
+        raise CustomException(e, sys))
+11:53:42 [A] Verifier: Verifying docstring quality... (load(f)
+        logger.info(f'Binary file loaded successfully from: {path}')
+        return data
+    except Exception as e:
+        raise CustomException(e, sys))
+11:53:50 [A] Verifier: Docstring generated successfully! No need for revision. (load(f)
+        logger.info(f'Binary file loaded successfully from: {path}')
+        return data
+    except Exception as e:
+        raise CustomException(e, sys))
+11:53:50 [A] [32mDocstring written for common.load_bin[0m
+11:53:50 [A] Reader: Analyzing code component... (config.template_book_names_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:53:56 [A] Reader: No additional context needed, starting docstring generation... (config.template_book_names_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:53:56 [A] Writer: Generating docstring... (config.template_book_names_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:00 [A] Verifier: Verifying docstring quality... (config.template_book_names_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:19 [A] Verifier: Docstring generated successfully! No need for revision. (config.template_book_names_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:19 [A] [32mDocstring written for DataTransformation.initiate_data_transformation[0m
+11:54:19 [A] Reader: Analyzing code component... (config.template_book_names_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:25 [A] Reader: No additional context needed, starting docstring generation... (config.template_book_names_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:25 [A] Writer: Generating docstring... (config.template_book_names_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:29 [A] Verifier: Verifying docstring quality... (config.template_book_names_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:37 [A] Verifier: Docstring generated successfully! No need for revision. (config.template_book_names_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:54:37 [A] [32mDocstring written for data_transformation.DataTransformation[0m
+11:54:37 [A] Reader: Analyzing code component... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:54:43 [A] Reader: No additional context needed, starting docstring generation... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:54:43 [A] Writer: Generating docstring... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:54:47 [A] Verifier: Verifying docstring quality... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:07 [A] Verifier: Docstring generated successfully! No need for revision. (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:07 [A] [32mDocstring written for DataTransformationPipeline.main[0m
+11:55:07 [A] Reader: Analyzing code component... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:13 [A] Reader: No additional context needed, starting docstring generation... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:13 [A] Writer: Generating docstring... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:18 [A] Verifier: Verifying docstring quality... (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:28 [A] Verifier: Docstring generated successfully! No need for revision. (get_data_transformation_config()
+        data_transformation = DataTransformation(config=data_transformation_config)
+        data_transformation.initiate_data_transformation())
+11:55:28 [A] [32mDocstring written for stage_02_data_transformation.DataTransformationPipeline[0m
+11:55:28 [A] Reader: Analyzing code component... (config.model_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:35 [A] Reader: No additional context needed, starting docstring generation... (config.model_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:35 [A] Writer: Generating docstring... (config.model_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:40 [A] Verifier: Verifying docstring quality... (config.model_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:50 [A] Verifier: Docstring generated successfully! No need for revision. (config.model_path}")
+
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:50 [A] [32mDocstring written for ModelTrainer.initiate_model_training[0m
+11:55:50 [A] Reader: Analyzing code component... (config.model_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:57 [A] Reader: No additional context needed, starting docstring generation... (config.model_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:55:57 [A] Writer: Generating docstring... (config.model_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:56:03 [A] Verifier: Verifying docstring quality... (config.model_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:56:16 [A] Verifier: Docstring generated successfully! No need for revision. (config.model_path}')
+        except Exception as e:
+            raise CustomException(e, sys))
+11:56:16 [A] [32mDocstring written for model_trainer.ModelTrainer[0m
+11:56:16 [A] Reader: Analyzing code component... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:56:22 [A] Reader: No additional context needed, starting docstring generation... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:56:22 [A] Writer: Generating docstring... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:56:26 [A] Verifier: Verifying docstring quality... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:00 [A] Verifier: Docstring generated successfully! No need for revision. (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:00 [A] [32mDocstring written for ModelTrainerPipeline.main[0m
+11:57:00 [A] Reader: Analyzing code component... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:07 [A] Reader: No additional context needed, starting docstring generation... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:07 [A] Writer: Generating docstring... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:12 [A] Verifier: Verifying docstring quality... (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:21 [A] Verifier: Docstring generated successfully! No need for revision. (get_model_trainer_config()
+        model_trainer = ModelTrainer(config=model_trainer_config)
+        model_trainer.initiate_model_training())
+11:57:21 [A] [32mDocstring written for stage_03_model_trainer.ModelTrainerPipeline[0m
+11:57:21 [A] Reader: Analyzing code component... (info("End-to-End Training Pipeline executed successfully!")
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:28 [A] Reader: No additional context needed, starting docstring generation... (info("End-to-End Training Pipeline executed successfully!")
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:28 [A] Writer: Generating docstring... (info("End-to-End Training Pipeline executed successfully!")
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:32 [A] Verifier: Verifying docstring quality... (info("End-to-End Training Pipeline executed successfully!")
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:42 [A] Verifier: Docstring generated successfully! No need for revision. (info("End-to-End Training Pipeline executed successfully!")
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:42 [A] [32mDocstring written for TrainingPipeline.run_pipeline[0m
+11:57:42 [A] Reader: Analyzing code component... (info('End-to-End Training Pipeline executed successfully!')
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:48 [A] Reader: No additional context needed, starting docstring generation... (info('End-to-End Training Pipeline executed successfully!')
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:48 [A] Writer: Generating docstring... (info('End-to-End Training Pipeline executed successfully!')
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:57:53 [A] Verifier: Verifying docstring quality... (info('End-to-End Training Pipeline executed successfully!')
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:58:06 [A] Verifier: Docstring generated successfully! No need for revision. (info('End-to-End Training Pipeline executed successfully!')
+        except Exception as e:
+            logger.exception(e)
+            raise CustomException(e, sys))
+11:58:06 [A] [32mDocstring written for training_pipeline.TrainingPipeline[0m
+11:58:06 [A] Reader: Analyzing code component... (pkl", "rb") as f:
+            return pickle.load(f)
+    return [])
+11:58:12 [A] Reader: No additional context needed, starting docstring generation... (pkl", "rb") as f:
+            return pickle.load(f)
+    return [])
+11:58:12 [A] Writer: Generating docstring... (pkl", "rb") as f:
+            return pickle.load(f)
+    return [])
+11:58:16 [A] Verifier: Verifying docstring quality... (pkl", "rb") as f:
+            return pickle.load(f)
+    return [])
+11:58:37 [A] Verifier: Docstring generated successfully! No need for revision. (pkl", "rb") as f:
+            return pickle.load(f)
+    return [])
+11:58:37 [A] [32mDocstring written for app.get_book_names[0m
+11:58:37 [A] Reader: Analyzing code component... (def __str__(self):
+        return self.error_message)
+11:58:43 [A] Reader: No additional context needed, starting docstring generation... (def __str__(self):
+        return self.error_message)
+11:58:43 [A] Writer: Generating docstring... (def __str__(self):
+        return self.error_message)
+11:58:45 [A] Verifier: Verifying docstring quality... (def __str__(self):
+        return self.error_message)
+11:59:03 [A] Verifier: Docstring generated successfully! No need for revision. (def __str__(self):
+        return self.error_message)
+11:59:03 [A] [32mDocstring written for CustomException.__str__[0m
+11:59:03 [A] Reader: Analyzing code component... (co_filename
+        line_number = exc_tb.tb_lineno
+        error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+    else:
+        error_message = str(error)
+    return error_message)
+11:59:09 [A] Reader: No additional context needed, starting docstring generation... (co_filename
+        line_number = exc_tb.tb_lineno
+        error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+    else:
+        error_message = str(error)
+    return error_message)
+11:59:09 [A] Writer: Generating docstring... (co_filename
+        line_number = exc_tb.tb_lineno
+        error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+    else:
+        error_message = str(error)
+    return error_message)
+11:59:14 [A] Verifier: Verifying docstring quality... (co_filename
+        line_number = exc_tb.tb_lineno
+        error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+    else:
+        error_message = str(error)
+    return error_message)
+11:59:23 [A] Verifier: Docstring generated successfully! No need for revision. (co_filename
+        line_number = exc_tb.tb_lineno
+        error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+    else:
+        error_message = str(error)
+    return error_message)
+11:59:23 [A] [32mDocstring written for __init__.error_message_detail[0m
+11:59:23 [A] Reader: Analyzing code component... (
+        """
+        return self.error_message)
+11:59:29 [A] Reader: No additional context needed, starting docstring generation... (
+        """
+        return self.error_message)
+11:59:29 [A] Writer: Generating docstring... (
+        """
+        return self.error_message)
+11:59:34 [A] Verifier: Verifying docstring quality... (
+        """
+        return self.error_message)
+12:00:02 [A] Verifier: Docstring generated successfully! No need for revision. (
+        """
+        return self.error_message)
+12:00:02 [A] [32mDocstring written for __init__.CustomException[0m
+12:00:03 [A] Reader: Analyzing code component... (startswith("http") else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+
+            return recommended_books[:5], poster_urls[:5]
+
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:11 [A] Reader: No additional context needed, starting docstring generation... (startswith("http") else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+
+            return recommended_books[:5], poster_urls[:5]
+
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:11 [A] Writer: Generating docstring... (startswith("http") else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+
+            return recommended_books[:5], poster_urls[:5]
+
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:16 [A] Verifier: Verifying docstring quality... (startswith("http") else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+
+            return recommended_books[:5], poster_urls[:5]
+
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:31 [A] Verifier: Docstring generated successfully! No need for revision. (startswith("http") else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+
+            return recommended_books[:5], poster_urls[:5]
+
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:31 [A] [32mDocstring written for RecommendationEngine.recommend[0m
+12:00:31 [A] Reader: Analyzing code component... (startswith('http') else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+            return (recommended_books[:5], poster_urls[:5])
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:38 [A] Reader: No additional context needed, starting docstring generation... (startswith('http') else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+            return (recommended_books[:5], poster_urls[:5])
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:38 [A] Writer: Generating docstring... (startswith('http') else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+            return (recommended_books[:5], poster_urls[:5])
+        except Exception as e:
+            raise CustomException(e, sys))
+12:00:43 [A] Verifier: Verifying docstring quality... (startswith('http') else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+            return (recommended_books[:5], poster_urls[:5])
+        except Exception as e:
+            raise CustomException(e, sys))
+12:01:14 [A] Verifier: Docstring generated successfully! No need for revision. (startswith('http') else default_poster)
+                else:
+                    poster_urls.append(default_poster)
+            return (recommended_books[:5], poster_urls[:5])
+        except Exception as e:
+            raise CustomException(e, sys))
+12:01:14 [A] [32mDocstring written for prediction_pipeline.RecommendationEngine[0m
+12:01:15 [A] [32mParse code and generate docstrings done in 1713 s[0m
+12:01:15 [A] Index code for search started
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12679.80it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (425 > 256). Running this sequence through the model will result in indexing errors
+12 text(s) exceed the model's max sequence length and will be truncated when embedded.
+2 text(s) exceed the model's max sequence length and will be truncated when embedded.
+12:01:17 [A] Indexed 53 components, 130 relationships, 42 generated docstrings
+12:01:17 [A] [32mIndex code for search done in 2 s[0m
+12:01:17     Auto-approve: 29 open item(s) kept as unreviewed
+12:01:17     Index requirements started
+12:01:17     Extracting 2 item(s) kept at review
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15231.04it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (418 > 256). Running this sequence through the model will result in indexing errors
+1 text(s) exceed the model's max sequence length and will be truncated when embedded.
+12:01:30     Indexed 61 requirement(s)
+12:01:30     [32mIndex requirements done in 13 s[0m
+12:01:30     Search agent started
+12:01:30     61 requirement(s) with candidates
+12:01:31     [32mSearch agent done in 1 s[0m
+12:01:31     Mapping agent started
+12:01:31     73 direct links, 318 supporting links
+12:01:31     [32mMapping agent done in 0 s[0m
+12:01:31     Verifier agent started
+12:01:39     REQ-001 → not supported by candidate (0/1 claims)
+12:01:42     REQ-002 → not supported by candidate (0/1 claims)
+12:01:46     REQ-003 → not supported by candidate (0/1 claims)
+12:01:51     REQ-004 → not supported by candidate (0/2 claims)
+12:01:54     [32mFR-1.1 → supported (1/1 claims)[0m
+12:01:59     FR-1.2 → not supported by candidate (0/5 claims)
+12:02:03     FR-1.3 → not supported by candidate (0/1 claims)
+12:02:09     FR-1.4 → not supported by candidate (0/1 claims)
+12:02:14     [33mREQ-009 → partially supported (1/2 claims)[0m
+12:02:19     FR-2.1 → not supported by candidate (0/1 claims)
+12:02:22     [32mFR-2.2 → supported (1/1 claims)[0m
+12:02:25     FR-2.3 → not supported by candidate (0/1 claims)
+12:02:37     [32mREQ-013 → supported (3/3 claims)[0m
+12:02:40     FR-3.1 → not supported by candidate (0/1 claims)
+12:02:44     FR-3.2 → not supported by candidate (0/1 claims)
+12:02:49     FR-3.3 → not supported by candidate (0/1 claims)
+12:02:53     FR-3.4 → not supported by candidate (0/1 claims)
+12:02:56     FR-3.5 → not supported by candidate (0/2 claims)
+12:03:00     [32mREQ-019 → supported (1/1 claims)[0m
+12:03:03     [32mFR-4.1 → supported (1/1 claims)[0m
+12:03:06     [32mFR-4.2 → supported (1/1 claims)[0m
+12:03:15     [32mFR-4.3 → supported (3/3 claims)[0m
+12:03:18     [32mREQ-023 → supported (1/1 claims)[0m
+12:03:21     [32mFR-5.1 → supported (1/1 claims)[0m
+12:03:28     [32mFR-5.2 → supported (2/2 claims)[0m
+12:03:32     FR-5.3 → not supported by candidate (0/1 claims)
+12:03:42     [32mREQ-027 → supported (1/1 claims)[0m
+12:03:46     [32mFR-6.1 → supported (1/1 claims)[0m
+12:03:50     [32mFR-6.2 → supported (1/1 claims)[0m
+12:03:53     [32mFR-6.3 → supported (1/1 claims)[0m
+12:03:59     FR-6.4 → not supported by candidate (0/1 claims)
+12:04:08     [32mFR-6.5 → supported (1/1 claims)[0m
+12:04:11     REQ-033 → not supported by candidate (0/2 claims)
+12:04:15     FR-7.1 → not supported by candidate (0/1 claims)
+12:04:19     FR-7.2 → not supported by candidate (0/4 claims)
+12:04:23     FR-7.3 → not supported by candidate (0/1 claims)
+12:04:25     REQ-037 → not supported by candidate (0/1 claims)
+12:04:30     REQ-038 → not supported by candidate (0/1 claims)
+12:04:32     REQ-039 → not supported by candidate (0/1 claims)
+12:04:36     REQ-040 → not supported by candidate (0/2 claims)
+12:04:39     REQ-041 → not supported by candidate (0/1 claims)
+12:04:42     REQ-042 → not supported by candidate (0/1 claims)
+12:04:44     REQ-043 → not supported by candidate (0/1 claims)
+12:04:48     REQ-044 → not supported by candidate (0/1 claims)
+12:04:51     REQ-045 → not supported by candidate (0/1 claims)
+12:04:53     REQ-046 → not supported by candidate (0/1 claims)
+12:04:55     [32mREQ-047 → supported (1/1 claims)[0m
+12:04:58     REQ-048 → not supported by candidate (0/1 claims)
+12:05:01     REQ-049 → not supported by candidate (0/1 claims)
+12:05:05     REQ-050 → not supported by candidate (0/1 claims)
+12:05:07     REQ-051 → not supported by candidate (0/1 claims)
+12:05:12     REQ-052 → not supported by candidate (0/2 claims)
+12:05:16     REQ-053 → not supported by candidate (0/2 claims)
+12:05:21     REQ-054 → not supported by candidate (0/1 claims)
+12:05:24     REQ-055 → not supported by candidate (0/1 claims)
+12:05:27     REQ-056 → not supported by candidate (0/1 claims)
+12:05:30     REQ-057 → not supported by candidate (0/1 claims)
+12:05:34     [32mREQ-058 → supported (1/1 claims)[0m
+12:05:38     REQ-059 → insufficient evidence (0/3 claims)
+12:05:41     REQ-060 → not supported by candidate (0/1 claims)
+12:05:45     [32mREQ-061 → supported (1/1 claims)[0m
+12:05:45     [32mVerifier agent done in 255 s[0m
+12:05:45     Results started
+12:05:45     18/61 supported, 1 partially supported, 41 not supported, 0 not found
+12:05:45     [32mResults done in 0 s[0m
+12:05:45     [32mRun completed[0m
+
+Run 3: completed
+{
+  "links": {
+    "direct": 73,
+    "docstrings": 62,
+    "supporting": 318
+  },
+  "components": 53,
+  "unreviewed": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-004",
+    "REQ-009",
+    "REQ-013",
+    "REQ-019",
+    "REQ-023",
+    "REQ-027",
+    "REQ-033",
+    "REQ-037",
+    "REQ-038",
+    "REQ-039",
+    "REQ-040",
+    "REQ-041",
+    "REQ-042",
+    "REQ-043",
+    "REQ-044",
+    "REQ-045",
+    "REQ-046",
+    "REQ-047",
+    "REQ-053",
+    "REQ-054",
+    "REQ-055",
+    "REQ-056",
+    "REQ-057",
+    "REQ-058",
+    "REQ-060",
+    "REQ-061"
+  ],
+  "requirements": 61,
+  "status_counts": {
+    "supported": 18,
+    "partially_supported": 1,
+    "insufficient_evidence": 1,
+    "not_supported_by_candidate": 41
+  },
+  "verifier_model": "qwen2.5-coder:7b"
+}

@@ -1,0 +1,780 @@
+{
+  "dataset": "Books-Recommender-System",
+  "document_id": "run-3-SRS",
+  "pipeline_version": "mapping-v1",
+  "requirements_scored": 28,
+  "scores": {
+    "direct": {
+      "precision": 0.6757,
+      "recall": 0.6098,
+      "f1": 0.641,
+      "tp": 25,
+      "fp": 12,
+      "fn": 16
+    },
+    "supporting": {
+      "precision": 0.0438,
+      "recall": 0.3529,
+      "f1": 0.0779,
+      "tp": 6,
+      "fp": 131,
+      "fn": 11
+    },
+    "all": {
+      "precision": 0.2011,
+      "recall": 0.6034,
+      "f1": 0.3017,
+      "tp": 35,
+      "fp": 139,
+      "fn": 23
+    }
+  },
+  "requirements_without_code": {
+    "REQ-005": {
+      "status": "cross_cutting",
+      "links": 8
+    },
+    "REQ-006": {
+      "status": "cross_cutting",
+      "links": 7
+    },
+    "REQ-007": {
+      "status": "cross_cutting",
+      "links": 7
+    },
+    "REQ-008": {
+      "status": "cross_cutting",
+      "links": 7
+    },
+    "REQ-010": {
+      "status": "cross_cutting",
+      "links": 4
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1.1",
+      "matched_to": "FR-1.1",
+      "direct": [
+        "src.config.configuration.AppConfiguration.__init__",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.utils.common.read_yaml"
+      ],
+      "supporting": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline.main"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline.main"
+      ]
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "matched_to": "FR-1.2",
+      "direct": [
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config"
+      ],
+      "supporting": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.__init__",
+        "src.entity.config_entity.ModelRecommendationConfig"
+      ],
+      "missed_primary": [
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.config.configuration.AppConfiguration.get_data_transformation_config",
+        "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "src.config.configuration.AppConfiguration.get_model_trainer_config",
+        "src.entity.config_entity.DataIngestionConfig",
+        "src.entity.config_entity.DataTransformationConfig",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.entity.config_entity.ModelRecommendationConfig",
+        "src.entity.config_entity.ModelTrainerConfig"
+      ],
+      "primary_found_as_supporting": [
+        "src.entity.config_entity.ModelRecommendationConfig"
+      ],
+      "missed_supporting": [],
+      "extra": [
+        "src.config.configuration.AppConfiguration.__init__"
+      ]
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "matched_to": "FR-1.4",
+      "direct": [
+        "src.exception.__init__.CustomException.__init__",
+        "src.exception.__init__.error_message_detail"
+      ],
+      "supporting": [
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.training_pipeline.TrainingPipeline",
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.exception.__init__.CustomException.__str__"
+      ],
+      "extra": [
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.pipeline.training_pipeline.TrainingPipeline",
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "matched_to": "FR-2.1",
+      "direct": [
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset"
+      ],
+      "supporting": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+        "src.components.data_ingestion.DataIngestion.download_file"
+      ],
+      "missed_primary": [
+        "src.components.data_ingestion.DataIngestion.download_file"
+      ],
+      "primary_found_as_supporting": [
+        "src.components.data_ingestion.DataIngestion.download_file"
+      ],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ],
+      "extra": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "matched_to": "FR-2.2",
+      "direct": [
+        "src.components.data_ingestion.DataIngestion.extract_zip_file"
+      ],
+      "supporting": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config"
+      ],
+      "extra": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "matched_to": "FR-2.3",
+      "direct": [
+        "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ],
+      "supporting": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__"
+      ],
+      "missed_primary": [
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files"
+      ],
+      "primary_found_as_supporting": [
+        "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files"
+      ],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "matched_to": "FR-3.1",
+      "direct": [
+        "src.entity.config_entity.DataValidationConfig"
+      ],
+      "supporting": [],
+      "missed_primary": [
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.entity.config_entity.DataValidationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "matched_to": "FR-3.2",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_data_validation_config"
+      ],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "matched_to": "FR-3.3",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_data_validation_config"
+      ],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "matched_to": "FR-3.4",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "matched_to": "FR-3.5",
+      "direct": [
+        "src.entity.config_entity.DataValidationConfig"
+      ],
+      "supporting": [
+        "src.config.configuration.AppConfiguration.get_data_validation_config"
+      ],
+      "missed_primary": [
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.utils.common.save_bin"
+      ],
+      "extra": [
+        "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "src.entity.config_entity.DataValidationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "matched_to": "FR-4.1",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "matched_to": "FR-4.2",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "matched_to": "FR-4.3",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline",
+        "src.utils.common.load_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "matched_to": "FR-5.1",
+      "direct": [
+        "src.components.model_trainer.ModelTrainer.initiate_model_training"
+      ],
+      "supporting": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "matched_to": "FR-5.2",
+      "direct": [
+        "src.components.model_trainer.ModelTrainer.initiate_model_training"
+      ],
+      "supporting": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_model_trainer_config"
+      ],
+      "extra": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "matched_to": "FR-5.3",
+      "direct": [
+        "src.components.model_trainer.ModelTrainer.initiate_model_training"
+      ],
+      "supporting": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.utils.common.load_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "matched_to": "FR-6.1",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.config.configuration.AppConfiguration",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.utils.common.load_bin",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config"
+      ],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.config.configuration.AppConfiguration",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "matched_to": "FR-6.2",
+      "direct": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.utils.common.save_bin"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_transformation.DataTransformation.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "matched_to": "FR-6.3",
+      "direct": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "matched_to": "FR-6.4",
+      "direct": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ],
+      "extra": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "matched_to": "FR-6.5",
+      "direct": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "matched_to": "FR-7.1",
+      "direct": [
+        "app.get_book_names"
+      ],
+      "supporting": [
+        "src.pipeline.training_pipeline.TrainingPipeline",
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.pipeline.training_pipeline.TrainingPipeline",
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "matched_to": "FR-7.2",
+      "direct": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "matched_to": "FR-7.3",
+      "direct": [
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline"
+      ],
+      "supporting": [
+        "app.get_book_names",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.pipeline.training_pipeline.TrainingPipeline"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "app.get_book_names",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.__init__",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.pipeline.training_pipeline.TrainingPipeline"
+      ]
+    },
+    {
+      "requirement_id": "REQ-009",
+      "matched_to": "REQ-009",
+      "direct": [
+        "src.components.data_ingestion.DataIngestion.download_file"
+      ],
+      "supporting": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ],
+      "missed_primary": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.__init__",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.components.data_ingestion.DataIngestion.download_file",
+        "src.exception.__init__.CustomException",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main"
+      ]
+    },
+    {
+      "requirement_id": "REQ-011",
+      "matched_to": "REQ-054",
+      "direct": [
+        "src.config.configuration.AppConfiguration.get_data_validation_config"
+      ],
+      "supporting": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.__init__",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.pipeline.stage_01_data_validation.DataValidationPipeline.main",
+        "src.utils.common.create_directories"
+      ],
+      "missed_primary": [
+        "src.config.configuration.AppConfiguration.get_model_trainer_config",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.__init__",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.pipeline.stage_01_data_validation.DataValidationPipeline.main",
+        "src.utils.common.create_directories"
+      ]
+    },
+    {
+      "requirement_id": "REQ-012",
+      "matched_to": "REQ-055",
+      "direct": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ],
+      "supporting": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__"
+      ],
+      "missed_primary": [],
+      "primary_found_as_supporting": [],
+      "missed_supporting": [],
+      "extra": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ]
+    }
+  ]
+}

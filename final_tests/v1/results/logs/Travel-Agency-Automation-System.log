@@ -1,0 +1,1222 @@
+Run 2 created
+11:06:01     Run started
+11:06:01 [A] Fetch source started
+11:06:01 [B] Extract requirements started
+11:06:01 [A] code @ 2cc23a2: 7 Python file(s), 44 components
+11:06:01 [A] [32mFetch source done in 0 s[0m
+11:06:01 [A] Parse code and generate docstrings started
+11:06:02 [B] Input detected as pdf
+11:06:02 [B] Parsing input
+11:06:02 [B] Extracted 19,429 text characters from 12 pages
+11:06:02 [B] Detecting requirement candidates
+11:06:02 [B] Detected 32 candidate statement(s)
+11:06:02 [B] Reviewing 32 candidate(s): strong-signal fast path, then ollama/qwen3:4b for ambiguous items
+11:06:09 [A] Parsed 44 components; generating docstrings in dependency order
+11:06:09 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:13 [B] Judge batch 1/3: kept 8, discarded 5, uncertain 0
+11:07:25 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:25 [A] Searcher: Searching for additional context... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:25 [A] Reader: Search complete, Context updated, restarting analysis... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:25 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:35 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:35 [A] Searcher: Searching for additional context... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:35 [A] Reader: Search complete, Context updated, restarting analysis... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:35 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:47 [A] Reader: Max search attempts (2) reached, proceeding with current context... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:47 [A] Reader: No additional context needed, starting docstring generation... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:47 [A] Writer: Generating docstring... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:51 [A] Verifier: Verifying docstring quality... (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:55 [A] Verifier: Docstring generated successfully! No need for revision. (data['Status'] == 'Available')]
+            ndata = ndata[["Model", "Type", "Status"]]
+            if (ndata['Status'] == 'Available').any():
+                return("Car is Available")
+            else:
+                return("Car is not Available"))
+11:07:55 [A] [32mDocstring written for Customer.checkAvailability[0m
+11:07:55 [A] Reader: Analyzing code component... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:06 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:06 [A] Searcher: Searching for additional context... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:06 [A] Reader: Search complete, Context updated, restarting analysis... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:06 [A] Reader: Analyzing code component... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:13 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:13 [A] Searcher: Searching for additional context... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:13 [A] Reader: Search complete, Context updated, restarting analysis... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:13 [A] Reader: Analyzing code component... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:26 [A] Reader: Max search attempts (2) reached, proceeding with current context... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:26 [A] Reader: No additional context needed, starting docstring generation... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:26 [A] Writer: Generating docstring... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:29 [A] Verifier: Verifying docstring quality... (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:32 [A] Verifier: Docstring generated successfully! No need for revision. (DataFrame(data=ndata)
+            print(df.drop_duplicates(subset=['Model', 'Type'], keep='first')))
+11:08:32 [A] [32mDocstring written for Customer.getAvailableCars[0m
+11:08:32 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:47 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:47 [A] Searcher: Searching for additional context... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:47 [A] Reader: Search complete, Context updated, restarting analysis... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:47 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:57 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:57 [A] Searcher: Searching for additional context... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:57 [A] Reader: Search complete, Context updated, restarting analysis... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:08:57 [A] Reader: Analyzing code component... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:08 [A] Reader: Max search attempts (2) reached, proceeding with current context... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:08 [A] Reader: No additional context needed, starting docstring generation... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:08 [A] Writer: Generating docstring... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:11 [A] Verifier: Verifying docstring quality... (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:14 [A] Verifier: Docstring generated successfully! No need for revision. (data['Status'] == 'Available')]
+            ndata = ndata[['Model', 'Type', 'Status']]
+            if (ndata['Status'] == 'Available').any():
+                return 'Car is Available'
+            else:
+                return 'Car is not Available')
+11:09:14 [A] [32mDocstring written for Customer.Customer[0m
+11:09:15 [A] Reader: Analyzing code component... (def getFeff(self):
+        return self.feff)
+11:09:23 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (def getFeff(self):
+        return self.feff)
+11:09:23 [A] Searcher: Searching for additional context... (def getFeff(self):
+        return self.feff)
+11:09:23 [A] Reader: Search complete, Context updated, restarting analysis... (def getFeff(self):
+        return self.feff)
+11:09:23 [A] Reader: Analyzing code component... (def getFeff(self):
+        return self.feff)
+11:09:32 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (def getFeff(self):
+        return self.feff)
+11:09:32 [A] Searcher: Searching for additional context... (def getFeff(self):
+        return self.feff)
+11:09:32 [A] Reader: Search complete, Context updated, restarting analysis... (def getFeff(self):
+        return self.feff)
+11:09:32 [A] Reader: Analyzing code component... (def getFeff(self):
+        return self.feff)
+11:09:42 [A] Reader: Max search attempts (2) reached, proceeding with current context... (def getFeff(self):
+        return self.feff)
+11:09:42 [A] Reader: No additional context needed, starting docstring generation... (def getFeff(self):
+        return self.feff)
+11:09:42 [A] Writer: Generating docstring... (def getFeff(self):
+        return self.feff)
+11:09:46 [A] Verifier: Verifying docstring quality... (def getFeff(self):
+        return self.feff)
+11:09:53 [A] Verifier: Docstring generated successfully! No need for revision. (def getFeff(self):
+        return self.feff)
+11:09:53 [A] [32mDocstring written for Car.getFeff[0m
+11:09:53 [A] Reader: Analyzing code component... (def getMR(self):
+        None)
+11:09:59 [B] Judge batch 2/3: kept 5, discarded 0, uncertain 1
+11:09:59 [B] [33mJudge: C-0024 → uncertain, queued for review (Heuristic confidence low; candidate text contains requirements but context suggests fragmentary or ambiguous phrasing.)[0m
+11:10:00 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (def getMR(self):
+        None)
+11:10:00 [A] Searcher: Searching for additional context... (def getMR(self):
+        None)
+11:10:00 [A] Reader: Search complete, Context updated, restarting analysis... (def getMR(self):
+        None)
+11:10:00 [A] Reader: Analyzing code component... (def getMR(self):
+        None)
+11:10:09 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (def getMR(self):
+        None)
+11:10:09 [A] Searcher: Searching for additional context... (def getMR(self):
+        None)
+11:10:09 [A] Reader: Search complete, Context updated, restarting analysis... (def getMR(self):
+        None)
+11:10:09 [A] Reader: Analyzing code component... (def getMR(self):
+        None)
+11:10:18 [A] Reader: Max search attempts (2) reached, proceeding with current context... (def getMR(self):
+        None)
+11:10:18 [A] Reader: No additional context needed, starting docstring generation... (def getMR(self):
+        None)
+11:10:18 [A] Writer: Generating docstring... (def getMR(self):
+        None)
+11:10:22 [A] Verifier: Verifying docstring quality... (def getMR(self):
+        None)
+11:10:28 [A] Verifier: Docstring generated successfully! No need for revision. (def getMR(self):
+        None)
+11:10:28 [A] [32mDocstring written for Car.getMR[0m
+11:10:28 [A] Reader: Analyzing code component... (def getModel(self):
+        return self.model)
+11:10:36 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (def getModel(self):
+        return self.model)
+11:10:36 [A] Searcher: Searching for additional context... (def getModel(self):
+        return self.model)
+11:10:36 [A] Reader: Search complete, Context updated, restarting analysis... (def getModel(self):
+        return self.model)
+11:10:36 [A] Reader: Analyzing code component... (def getModel(self):
+        return self.model)
+11:10:43 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (def getModel(self):
+        return self.model)
+11:10:43 [A] Searcher: Searching for additional context... (def getModel(self):
+        return self.model)
+11:10:43 [A] Reader: Search complete, Context updated, restarting analysis... (def getModel(self):
+        return self.model)
+11:10:43 [A] Reader: Analyzing code component... (def getModel(self):
+        return self.model)
+11:10:51 [A] Reader: Max search attempts (2) reached, proceeding with current context... (def getModel(self):
+        return self.model)
+11:10:51 [A] Reader: No additional context needed, starting docstring generation... (def getModel(self):
+        return self.model)
+11:10:51 [A] Writer: Generating docstring... (def getModel(self):
+        return self.model)
+11:10:52 [A] Verifier: Verifying docstring quality... (def getModel(self):
+        return self.model)
+11:10:54 [A] Verifier: Docstring generated successfully! No need for revision. (def getModel(self):
+        return self.model)
+11:10:54 [A] [32mDocstring written for Car.getModel[0m
+11:10:54 [A] Reader: Analyzing code component... (pph, self.ppk))
+11:11:03 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (pph, self.ppk))
+11:11:03 [A] Searcher: Searching for additional context... (pph, self.ppk))
+11:11:03 [A] Reader: Search complete, Context updated, restarting analysis... (pph, self.ppk))
+11:11:03 [A] Reader: Analyzing code component... (pph, self.ppk))
+11:11:10 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (pph, self.ppk))
+11:11:10 [A] Searcher: Searching for additional context... (pph, self.ppk))
+11:11:10 [A] Reader: Search complete, Context updated, restarting analysis... (pph, self.ppk))
+11:11:10 [A] Reader: Analyzing code component... (pph, self.ppk))
+11:11:19 [A] Reader: Max search attempts (2) reached, proceeding with current context... (pph, self.ppk))
+11:11:19 [A] Reader: No additional context needed, starting docstring generation... (pph, self.ppk))
+11:11:19 [A] Writer: Generating docstring... (pph, self.ppk))
+11:11:23 [A] Verifier: Verifying docstring quality... (pph, self.ppk))
+11:11:33 [A] Verifier: Docstring generated successfully! No need for revision. (pph, self.ppk))
+11:11:33 [A] [32mDocstring written for Car.getPrice[0m
+11:11:33 [A] Reader: Analyzing code component... (mCharges, self.profit))
+11:11:43 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (mCharges, self.profit))
+11:11:43 [A] Searcher: Searching for additional context... (mCharges, self.profit))
+11:11:43 [A] Reader: Search complete, Context updated, restarting analysis... (mCharges, self.profit))
+11:11:43 [A] Reader: Analyzing code component... (mCharges, self.profit))
+11:11:52 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (mCharges, self.profit))
+11:11:52 [A] Searcher: Searching for additional context... (mCharges, self.profit))
+11:11:52 [A] Reader: Search complete, Context updated, restarting analysis... (mCharges, self.profit))
+11:11:52 [A] Reader: Analyzing code component... (mCharges, self.profit))
+11:12:01 [A] Reader: Max search attempts (2) reached, proceeding with current context... (mCharges, self.profit))
+11:12:01 [A] Reader: No additional context needed, starting docstring generation... (mCharges, self.profit))
+11:12:01 [A] Writer: Generating docstring... (mCharges, self.profit))
+11:12:03 [A] Verifier: Verifying docstring quality... (mCharges, self.profit))
+11:12:14 [A] Verifier: Docstring generated successfully! No need for revision. (mCharges, self.profit))
+11:12:14 [A] [32mDocstring written for Car.getStats[0m
+11:12:14 [A] Reader: Analyzing code component... (def getType(self):
+        return self.Type)
+11:12:23 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (def getType(self):
+        return self.Type)
+11:12:23 [A] Searcher: Searching for additional context... (def getType(self):
+        return self.Type)
+11:12:23 [A] Reader: Search complete, Context updated, restarting analysis... (def getType(self):
+        return self.Type)
+11:12:23 [A] Reader: Analyzing code component... (def getType(self):
+        return self.Type)
+11:12:37 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (def getType(self):
+        return self.Type)
+11:12:37 [A] Searcher: Searching for additional context... (def getType(self):
+        return self.Type)
+11:12:37 [A] Reader: Search complete, Context updated, restarting analysis... (def getType(self):
+        return self.Type)
+11:12:37 [A] Reader: Analyzing code component... (def getType(self):
+        return self.Type)
+11:12:44 [B] Judge batch 3/3: kept 2, discarded 0, uncertain 1
+11:12:44 [B] [33mJudge: C-0030 → uncertain, queued for review (Ambiguous 'anyone' access phrase; uncertain if requirement.)[0m
+11:12:44 [B] Fast accepted 10; quickly judged 22; kept 25 item(s) for generation; 2 uncertain item(s) are review-only
+11:12:44 [B] Generating structured JSON for 25 retained candidate(s)
+11:12:47 [A] Reader: Max search attempts (2) reached, proceeding with current context... (def getType(self):
+        return self.Type)
+11:12:47 [A] Reader: No additional context needed, starting docstring generation... (def getType(self):
+        return self.Type)
+11:12:47 [A] Writer: Generating docstring... (def getType(self):
+        return self.Type)
+11:12:50 [A] Verifier: Verifying docstring quality... (def getType(self):
+        return self.Type)
+11:12:53 [A] Verifier: Docstring generated successfully! No need for revision. (def getType(self):
+        return self.Type)
+11:12:53 [A] [32mDocstring written for Car.getType[0m
+11:12:53 [A] Reader: Analyzing code component... (mCharges, self.profit))
+11:13:02 [B] [33mExtracted REQ-001 “Operating System Specification”[0m
+11:13:06 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (mCharges, self.profit))
+11:13:06 [A] Searcher: Searching for additional context... (mCharges, self.profit))
+11:13:06 [A] Reader: Search complete, Context updated, restarting analysis... (mCharges, self.profit))
+11:13:06 [A] Reader: Analyzing code component... (mCharges, self.profit))
+11:13:09 [A] Reader: No additional context needed, starting docstring generation... (mCharges, self.profit))
+11:13:09 [A] Writer: Generating docstring... (mCharges, self.profit))
+11:13:09 [B] [33mExtracted REQ-002 “Database Access with pandas”[0m
+11:13:13 [A] Verifier: Verifying docstring quality... (mCharges, self.profit))
+11:13:22 [B] [33mExtracted REQ-003 “Implementation Constraints”[0m
+11:13:33 [B] Extracted REQ-004 “Command Prompt Usage for Package Execution”
+11:13:41 [B] [33mExtracted REQ-005 “Text-Based Front-End”[0m
+11:13:43 [A] Verifier: Docstring generated successfully! No need for revision. (mCharges, self.profit))
+11:13:43 [A] [32mDocstring written for Car.Car[0m
+11:13:43 [A] Reader: Analyzing code component... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:13:48 [B] [33mExtracted REQ-006 “Back-end Technology Selection”[0m
+11:13:52 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:13:52 [A] Searcher: Searching for additional context... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:13:52 [A] Reader: Search complete, Context updated, restarting analysis... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:13:52 [A] Reader: Analyzing code component... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:01 [B] [33mExtracted REQ-007 “Windows Device Support and Data Storage”[0m
+11:14:06 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:06 [A] Searcher: Searching for additional context... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:06 [A] Reader: Search complete, Context updated, restarting analysis... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:06 [A] Reader: Analyzing code component... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:20 [B] [33mExtracted REQ-008 “Software Compatibility and Dependencies”[0m
+11:14:22 [A] Reader: No additional context needed, starting docstring generation... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:22 [A] Writer: Generating docstring... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:31 [A] Verifier: Verifying docstring quality... (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:33 [B] [33mExtracted REQ-009 “Local Deployment and No Communication”[0m
+11:14:37 [A] Verifier: Docstring generated successfully! No need for revision. (getMR()
+        
+        self.assertEqual(MR, None,f'MR must be 142 and not {MR}'))
+11:14:37 [A] [32mDocstring written for TestCar.test_getMR[0m
+11:14:37 [A] Reader: Analyzing code component... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:14:53 [A] Reader: No additional context needed, starting docstring generation... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:14:53 [A] Writer: Generating docstring... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:00 [A] Verifier: Verifying docstring quality... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:02 [B] Extracted REQ-010 “Car Availability Check”
+11:15:05 [A] Verifier: Need more context (rejection 1/1), hands back to reader... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:05 [A] Reader: Analyzing code component... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:19 [A] Reader: No additional context needed, starting docstring generation... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:19 [A] Writer: Generating docstring... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:23 [B] Extracted REQ-011 “Car Availability Check”
+11:15:23 [A] Verifier: Verifying docstring quality... (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:31 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (getModel()
+        self.assertEqual(model, 'Honda City', f'Model is Honda City and not {model}'))
+11:15:31 [A] [32mDocstring written for TestCar.test_getModel[0m
+11:15:31 [A] Reader: Analyzing code component... (getPrice()
+        self.assertEqual(pph, 300, f'price must be 300 and not {pph}'))
+11:15:44 [B] Extracted REQ-012 “See All Available Cars”
+11:15:47 [A] Reader: No additional context needed, starting docstring generation... (getPrice()
+        self.assertEqual(pph, 300, f'price must be 300 and not {pph}'))
+11:15:47 [A] Writer: Generating docstring... (getPrice()
+        self.assertEqual(pph, 300, f'price must be 300 and not {pph}'))
+11:15:50 [A] Verifier: Verifying docstring quality... (getPrice()
+        self.assertEqual(pph, 300, f'price must be 300 and not {pph}'))
+11:16:07 [B] Extracted REQ-013 “Advance Payment and Return Time”
+11:16:14 [A] Verifier: Docstring generated successfully! No need for revision. (getPrice()
+        self.assertEqual(pph, 300, f'price must be 300 and not {pph}'))
+11:16:14 [A] [32mDocstring written for TestCar.test_getPricePerHr[0m
+11:16:14 [A] Reader: Analyzing code component... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:16:27 [B] Extracted REQ-014 “Return a Car”
+11:16:35 [A] Reader: No additional context needed, starting docstring generation... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:16:35 [A] Writer: Generating docstring... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:16:37 [A] Verifier: Verifying docstring quality... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:16:55 [B] [33mExtracted REQ-015 “Database Lookup for Owner”[0m
+11:17:02 [A] Verifier: Docstring generated successfully! No need for revision. (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:17:02 [A] [32mDocstring written for TestCar.test_getStats[0m
+11:17:02 [A] Reader: Analyzing code component... (getType()
+        self.assertEqual(Type, 'Non-AC', f'Type is Non-AC and not {Type}'))
+11:17:18 [A] Reader: No additional context needed, starting docstring generation... (getType()
+        self.assertEqual(Type, 'Non-AC', f'Type is Non-AC and not {Type}'))
+11:17:18 [A] Writer: Generating docstring... (getType()
+        self.assertEqual(Type, 'Non-AC', f'Type is Non-AC and not {Type}'))
+11:17:19 [B] [33mExtracted REQ-016 “Update Fleet Car Count”[0m
+11:17:20 [A] Verifier: Verifying docstring quality... (getType()
+        self.assertEqual(Type, 'Non-AC', f'Type is Non-AC and not {Type}'))
+11:17:27 [B] Extracted REQ-017 “Integer Car Count”
+11:17:33 [A] Verifier: Docstring generated successfully! No need for revision. (getType()
+        self.assertEqual(Type, 'Non-AC', f'Type is Non-AC and not {Type}'))
+11:17:33 [A] [32mDocstring written for TestCar.test_getType[0m
+11:17:33 [A] Reader: Analyzing code component... (getPrice()
+        self.assertEqual(ppk, 200, f'price must be 200 and not {ppk}'))
+11:17:44 [B] Extracted REQ-018 “Data Recording for Car Rentals”
+11:17:50 [A] Reader: No additional context needed, starting docstring generation... (getPrice()
+        self.assertEqual(ppk, 200, f'price must be 200 and not {ppk}'))
+11:17:50 [A] Writer: Generating docstring... (getPrice()
+        self.assertEqual(ppk, 200, f'price must be 200 and not {ppk}'))
+11:17:52 [A] Verifier: Verifying docstring quality... (getPrice()
+        self.assertEqual(ppk, 200, f'price must be 200 and not {ppk}'))
+11:17:58 [A] Verifier: Docstring generated successfully! No need for revision. (getPrice()
+        self.assertEqual(ppk, 200, f'price must be 200 and not {ppk}'))
+11:17:58 [A] [32mDocstring written for TestCar.test_getpricePerKm[0m
+11:17:58 [A] Reader: Analyzing code component... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:18:04 [B] [33mExtracted REQ-019 “Set Car Price”[0m
+11:18:21 [A] Reader: No additional context needed, starting docstring generation... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:18:21 [A] Writer: Generating docstring... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:18:25 [A] Verifier: Verifying docstring quality... (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:18:30 [B] Extracted REQ-020 “Car Model Decision Support”
+11:18:42 [B] [33mExtracted REQ-021 “Optimal Car Ownership for Max Profit”[0m
+11:18:47 [A] Verifier: Docstring generated successfully! No need for revision. (assertEqual(mcharges, 2000, f'Maintenance Expenses must be 2000 and not {mcharges}')
+        self.assertEqual(profits, 1000, f'Profits must be 1000 and not {profits}'))
+11:18:47 [A] [32mDocstring written for TestCar.TestCar[0m
+11:18:47 [A] Reader: Analyzing code component... (data['Type'] == Type)]
+                ndata = ndata[["Sl No","Model","Type","Status"]]
+                ndata.reset_index(inplace = True, drop = True)
+                return ndata
+            else:
+                print("\nPlease enter correct Model and Type ")
+                return None)
+11:18:54 [B] [33mExtracted REQ-022 “Performance Requirements”[0m
+11:19:08 [B] [33mExtracted REQ-023 “Database Backup and Recovery”[0m
+11:19:09 [A] Reader: No additional context needed, starting docstring generation... (data['Type'] == Type)]
+                ndata = ndata[["Sl No","Model","Type","Status"]]
+                ndata.reset_index(inplace = True, drop = True)
+                return ndata
+            else:
+                print("\nPlease enter correct Model and Type ")
+                return None)
+11:19:09 [A] Writer: Generating docstring... (data['Type'] == Type)]
+                ndata = ndata[["Sl No","Model","Type","Status"]]
+                ndata.reset_index(inplace = True, drop = True)
+                return ndata
+            else:
+                print("\nPlease enter correct Model and Type ")
+                return None)
+11:19:15 [A] Verifier: Verifying docstring quality... (data['Type'] == Type)]
+                ndata = ndata[["Sl No","Model","Type","Status"]]
+                ndata.reset_index(inplace = True, drop = True)
+                return ndata
+            else:
+                print("\nPlease enter correct Model and Type ")
+                return None)
+11:19:23 [B] Extracted REQ-024 “Software Quality Attributes”
+11:19:23 [A] Verifier: Docstring generated successfully! No need for revision. (data['Type'] == Type)]
+                ndata = ndata[["Sl No","Model","Type","Status"]]
+                ndata.reset_index(inplace = True, drop = True)
+                return ndata
+            else:
+                print("\nPlease enter correct Model and Type ")
+                return None)
+11:19:23 [A] [32mDocstring written for Owner.getData[0m
+11:19:23 [A] Reader: Analyzing code component... (data['Model'] == model) & (self.data['Type'] == Type)]
+                ndata = ndata[['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)']]
+                return ndata
+            else:
+                return None)
+11:19:41 [A] Reader: No additional context needed, starting docstring generation... (data['Model'] == model) & (self.data['Type'] == Type)]
+                ndata = ndata[['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)']]
+                return ndata
+            else:
+                return None)
+11:19:41 [A] Writer: Generating docstring... (data['Model'] == model) & (self.data['Type'] == Type)]
+                ndata = ndata[['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)']]
+                return ndata
+            else:
+                return None)
+11:19:42 [B] [33mExtracted REQ-025 “Owner Responsibility for System Issues”[0m
+11:19:42 [B] [32mExtract requirements done in 821 s[0m
+11:19:42 [B] Prepare review started
+11:19:45 [A] Verifier: Verifying docstring quality... (data['Model'] == model) & (self.data['Type'] == Type)]
+                ndata = ndata[['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)']]
+                return ndata
+            else:
+                return None)
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11061.38it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+11:19:48 [B] [33m25 requirement(s) extracted; 17 item(s) need your review[0m
+11:19:48 [B] [32mPrepare review done in 5 s[0m
+11:19:53 [A] Verifier: Docstring generated successfully! No need for revision. (data['Model'] == model) & (self.data['Type'] == Type)]
+                ndata = ndata[['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)']]
+                return ndata
+            else:
+                return None)
+11:19:53 [A] [32mDocstring written for Owner.getInfo[0m
+11:19:53 [A] Reader: Analyzing code component... (rfile, index=False)
+            return self.data)
+11:20:06 [A] Reader: No additional context needed, starting docstring generation... (rfile, index=False)
+            return self.data)
+11:20:06 [A] Writer: Generating docstring... (rfile, index=False)
+            return self.data)
+11:20:09 [A] Verifier: Verifying docstring quality... (rfile, index=False)
+            return self.data)
+11:20:15 [A] Verifier: Docstring generated successfully! No need for revision. (rfile, index=False)
+            return self.data)
+11:20:15 [A] [32mDocstring written for Owner.setPrice[0m
+11:20:15 [A] Reader: Analyzing code component... (rfile, index=False)
+                return self.data)
+11:20:27 [A] Reader: No additional context needed, starting docstring generation... (rfile, index=False)
+                return self.data)
+11:20:27 [A] Writer: Generating docstring... (rfile, index=False)
+                return self.data)
+11:20:30 [A] Verifier: Verifying docstring quality... (rfile, index=False)
+                return self.data)
+11:20:40 [A] Verifier: Docstring generated successfully! No need for revision. (rfile, index=False)
+                return self.data)
+11:20:40 [A] [32mDocstring written for Owner.updateData[0m
+11:20:40 [A] Reader: Analyzing code component... (rfile, index=False)
+            return self.data)
+11:20:49 [A] Reader: No additional context needed, starting docstring generation... (rfile, index=False)
+            return self.data)
+11:20:49 [A] Writer: Generating docstring... (rfile, index=False)
+            return self.data)
+11:20:53 [A] Verifier: Verifying docstring quality... (rfile, index=False)
+            return self.data)
+11:21:07 [A] Verifier: Docstring generated successfully! No need for revision. (rfile, index=False)
+            return self.data)
+11:21:07 [A] [32mDocstring written for Owner.Owner[0m
+11:21:07 [A] Reader: Analyzing code component... (getData(ccar)
+        data = [[1,'Honda City','Non-AC','Available']]
+        dfTest = pds.DataFrame(data, columns =['Sl No','Model','Type','Status'])
+        assert_frame_equal(df,dfTest))
+11:21:15 [A] Reader: No additional context needed, starting docstring generation... (getData(ccar)
+        data = [[1,'Honda City','Non-AC','Available']]
+        dfTest = pds.DataFrame(data, columns =['Sl No','Model','Type','Status'])
+        assert_frame_equal(df,dfTest))
+11:21:15 [A] Writer: Generating docstring... (getData(ccar)
+        data = [[1,'Honda City','Non-AC','Available']]
+        dfTest = pds.DataFrame(data, columns =['Sl No','Model','Type','Status'])
+        assert_frame_equal(df,dfTest))
+11:21:18 [A] Verifier: Verifying docstring quality... (getData(ccar)
+        data = [[1,'Honda City','Non-AC','Available']]
+        dfTest = pds.DataFrame(data, columns =['Sl No','Model','Type','Status'])
+        assert_frame_equal(df,dfTest))
+11:21:27 [A] Verifier: Docstring generated successfully! No need for revision. (getData(ccar)
+        data = [[1,'Honda City','Non-AC','Available']]
+        dfTest = pds.DataFrame(data, columns =['Sl No','Model','Type','Status'])
+        assert_frame_equal(df,dfTest))
+11:21:27 [A] [32mDocstring written for TestOwner.test_getData_CI[0m
+11:21:27 [A] Reader: Analyzing code component... (getData()
+        data = [[1, 'Honda City', 'Non-AC', 'Available']]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status'])
+        assert_frame_equal(df, dfTest))
+11:21:33 [A] Reader: No additional context needed, starting docstring generation... (getData()
+        data = [[1, 'Honda City', 'Non-AC', 'Available']]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status'])
+        assert_frame_equal(df, dfTest))
+11:21:33 [A] Writer: Generating docstring... (getData()
+        data = [[1, 'Honda City', 'Non-AC', 'Available']]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status'])
+        assert_frame_equal(df, dfTest))
+11:21:35 [A] Verifier: Verifying docstring quality... (getData()
+        data = [[1, 'Honda City', 'Non-AC', 'Available']]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status'])
+        assert_frame_equal(df, dfTest))
+11:21:40 [A] Verifier: Docstring generated successfully! No need for revision. (getData()
+        data = [[1, 'Honda City', 'Non-AC', 'Available']]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status'])
+        assert_frame_equal(df, dfTest))
+11:21:40 [A] [32mDocstring written for TestOwner.test_getData_NI[0m
+11:21:40 [A] Reader: Analyzing code component... (DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfTest} and not {df}'))
+11:21:48 [A] Reader: No additional context needed, starting docstring generation... (DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfTest} and not {df}'))
+11:21:48 [A] Writer: Generating docstring... (DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfTest} and not {df}'))
+11:21:50 [A] Verifier: Verifying docstring quality... (DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfTest} and not {df}'))
+11:22:10 [A] Verifier: Docstring generated successfully! No need for revision. (DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfTest} and not {df}'))
+11:22:10 [A] [32mDocstring written for TestOwner.test_getData_WI[0m
+11:22:10 [A] Reader: Analyzing code component... (getInfo(ccar)
+        info = [[1, 'Honda City', 'Non-AC', 'Available', 2, 2000, 1000]]
+        dfInfoTest = pds.DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfInfoTest))
+11:22:17 [A] Reader: No additional context needed, starting docstring generation... (getInfo(ccar)
+        info = [[1, 'Honda City', 'Non-AC', 'Available', 2, 2000, 1000]]
+        dfInfoTest = pds.DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfInfoTest))
+11:22:17 [A] Writer: Generating docstring... (getInfo(ccar)
+        info = [[1, 'Honda City', 'Non-AC', 'Available', 2, 2000, 1000]]
+        dfInfoTest = pds.DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfInfoTest))
+11:22:19 [A] Verifier: Verifying docstring quality... (getInfo(ccar)
+        info = [[1, 'Honda City', 'Non-AC', 'Available', 2, 2000, 1000]]
+        dfInfoTest = pds.DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfInfoTest))
+11:22:39 [A] Verifier: Docstring generated successfully! No need for revision. (getInfo(ccar)
+        info = [[1, 'Honda City', 'Non-AC', 'Available', 2, 2000, 1000]]
+        dfInfoTest = pds.DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfInfoTest))
+11:22:39 [A] [32mDocstring written for TestOwner.test_getInfo_CI[0m
+11:22:39 [A] Reader: Analyzing code component... (DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfInfoTest} and not {df}'))
+11:22:48 [A] Reader: No additional context needed, starting docstring generation... (DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfInfoTest} and not {df}'))
+11:22:48 [A] Writer: Generating docstring... (DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfInfoTest} and not {df}'))
+11:22:50 [A] Verifier: Verifying docstring quality... (DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfInfoTest} and not {df}'))
+11:22:57 [A] Verifier: Docstring generated successfully! No need for revision. (DataFrame(info, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average Maintenance Expenses per Week(Rupees)', 'Profit(Per Week)'])
+        self.assertEqual(df, None, f'Data must be {dfInfoTest} and not {df}'))
+11:22:57 [A] [32mDocstring written for TestOwner.test_getInfo_WI[0m
+11:22:57 [A] Reader: Analyzing code component... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:23:08 [A] Reader: No additional context needed, starting docstring generation... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:23:08 [A] Writer: Generating docstring... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:23:10 [A] Verifier: Verifying docstring quality... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:23:19 [A] Verifier: Docstring generated successfully! No need for revision. (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:23:19 [A] [32mDocstring written for TestOwner.test_setPricePerHr_CI[0m
+11:23:19 [A] Reader: Analyzing code component... (assertEqual(df.loc[0, 'Price(Per Km)'], 250, f'Price must be 275 and not {int(df['Price(Per Km)'])}'))
+11:23:29 [A] Reader: No additional context needed, starting docstring generation... (assertEqual(df.loc[0, 'Price(Per Km)'], 250, f'Price must be 275 and not {int(df['Price(Per Km)'])}'))
+11:23:29 [A] Writer: Generating docstring... (assertEqual(df.loc[0, 'Price(Per Km)'], 250, f'Price must be 275 and not {int(df['Price(Per Km)'])}'))
+11:23:33 [A] Verifier: Verifying docstring quality... (assertEqual(df.loc[0, 'Price(Per Km)'], 250, f'Price must be 275 and not {int(df['Price(Per Km)'])}'))
+11:23:40 [A] Verifier: Docstring generated successfully! No need for revision. (assertEqual(df.loc[0, 'Price(Per Km)'], 250, f'Price must be 275 and not {int(df['Price(Per Km)'])}'))
+11:23:40 [A] [32mDocstring written for TestOwner.test_setPricePerKm_CI[0m
+11:23:40 [A] Reader: Analyzing code component... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000], [2, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:23:51 [A] Reader: No additional context needed, starting docstring generation... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000], [2, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:23:51 [A] Writer: Generating docstring... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000], [2, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:23:55 [A] Verifier: Verifying docstring quality... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000], [2, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:03 [A] Verifier: Docstring generated successfully! No need for revision. (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000], [2, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:03 [A] [32mDocstring written for TestOwner.test_updateData_BCI[0m
+11:24:03 [A] Reader: Analyzing code component... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:13 [A] Reader: No additional context needed, starting docstring generation... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:13 [A] Writer: Generating docstring... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:16 [A] Verifier: Verifying docstring quality... (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:26 [A] Verifier: Docstring generated successfully! No need for revision. (updateData(ccar)
+        data = [[1, 'Honda City', 'Non-AC', 'Available', 2, 18, 2000, 350, 250, 1000]]
+        dfTest = pds.DataFrame(data, columns=['Sl No', 'Model', 'Type', 'Status', 'Average Demand per Week', 'Average fuel efficiency(Km/L)', 'Average Maintenance Expenses per Week(Rupees)', 'Price(Per Hour)', 'Price(Per Km)', 'Profit(Per Week)'])
+        assert_frame_equal(df, dfTest))
+11:24:26 [A] [32mDocstring written for TestOwner.test_updateData_SCI[0m
+11:24:26 [A] Reader: Analyzing code component... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:24:36 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:24:36 [A] Searcher: Searching for additional context... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:24:36 [A] Reader: Search complete, Context updated, restarting analysis... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:24:36 [A] Reader: Analyzing code component... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:25:41 [A] Reader: No additional context needed, starting docstring generation... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:25:41 [A] Writer: Generating docstring... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:25:52 [A] Verifier: Verifying docstring quality... (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:26:03 [A] Verifier: Docstring generated successfully! No need for revision. (assertEqual(df.loc[0, 'Price(Per Hour)'], 350, f'Price must be 350 and not {int(df['Price(Per Hour)'])}'))
+11:26:03 [A] [32mDocstring written for TestOwner.TestOwner[0m
+11:26:03 [A] Reader: Analyzing code component... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:10 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:10 [A] Searcher: Searching for additional context... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:10 [A] Reader: Search complete, Context updated, restarting analysis... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:10 [A] Reader: Analyzing code component... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:15 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:15 [A] Searcher: Searching for additional context... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:15 [A] Reader: Search complete, Context updated, restarting analysis... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:15 [A] Reader: Analyzing code component... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:22 [A] Reader: Max search attempts (2) reached, proceeding with current context... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:22 [A] Reader: No additional context needed, starting docstring generation... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:22 [A] Writer: Generating docstring... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:25 [A] Verifier: Verifying docstring quality... (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:35 [A] Verifier: Docstring generated successfully! No need for revision. (to_excel(self.file,index=False)
+                return item[8],(price*4)
+            except:
+                print("Check if the file is opened in other window/tab")
+        else:
+            return str("Car Not Available"))
+11:26:35 [A] [32mDocstring written for Booking.token[0m
+11:26:35 [A] Reader: Analyzing code component... (to_excel(self.file, index=False)
+                return (item[8], price * 4)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Car Not Available'))
+11:26:43 [A] Reader: No additional context needed, starting docstring generation... (to_excel(self.file, index=False)
+                return (item[8], price * 4)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Car Not Available'))
+11:26:43 [A] Writer: Generating docstring... (to_excel(self.file, index=False)
+                return (item[8], price * 4)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Car Not Available'))
+11:26:46 [A] Verifier: Verifying docstring quality... (to_excel(self.file, index=False)
+                return (item[8], price * 4)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Car Not Available'))
+11:26:50 [A] Verifier: Docstring generated successfully! No need for revision. (to_excel(self.file, index=False)
+                return (item[8], price * 4)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Car Not Available'))
+11:26:50 [A] [32mDocstring written for Booking.Booking[0m
+11:26:50 [A] Reader: Analyzing code component... (validateTime(ReturnTime)
+        x = ReturnTime - StartTime
+        z = timedelta.total_seconds(x)
+        price2 = int(z / 3600 * phr)
+        if price1 > price2:
+            return price1
+        elif price1 < price2:
+            return price2
+        else:
+            return price2)
+11:27:00 [A] Reader: No additional context needed, starting docstring generation... (validateTime(ReturnTime)
+        x = ReturnTime - StartTime
+        z = timedelta.total_seconds(x)
+        price2 = int(z / 3600 * phr)
+        if price1 > price2:
+            return price1
+        elif price1 < price2:
+            return price2
+        else:
+            return price2)
+11:27:00 [A] Writer: Generating docstring... (validateTime(ReturnTime)
+        x = ReturnTime - StartTime
+        z = timedelta.total_seconds(x)
+        price2 = int(z / 3600 * phr)
+        if price1 > price2:
+            return price1
+        elif price1 < price2:
+            return price2
+        else:
+            return price2)
+11:27:03 [A] Verifier: Verifying docstring quality... (validateTime(ReturnTime)
+        x = ReturnTime - StartTime
+        z = timedelta.total_seconds(x)
+        price2 = int(z / 3600 * phr)
+        if price1 > price2:
+            return price1
+        elif price1 < price2:
+            return price2
+        else:
+            return price2)
+11:27:12 [A] Verifier: Docstring generated successfully! No need for revision. (validateTime(ReturnTime)
+        x = ReturnTime - StartTime
+        z = timedelta.total_seconds(x)
+        price2 = int(z / 3600 * phr)
+        if price1 > price2:
+            return price1
+        elif price1 < price2:
+            return price2
+        else:
+            return price2)
+11:27:12 [A] [32mDocstring written for returning.priceCal[0m
+11:27:12 [A] Reader: Analyzing code component... (to_excel(self.file, index=False)
+                return (price, adv)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Invalid Token Number'))
+11:27:25 [A] Reader: No additional context needed, starting docstring generation... (to_excel(self.file, index=False)
+                return (price, adv)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Invalid Token Number'))
+11:27:25 [A] Writer: Generating docstring... (to_excel(self.file, index=False)
+                return (price, adv)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Invalid Token Number'))
+11:27:31 [A] Verifier: Verifying docstring quality... (to_excel(self.file, index=False)
+                return (price, adv)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Invalid Token Number'))
+11:27:37 [A] Verifier: Docstring generated successfully! No need for revision. (to_excel(self.file, index=False)
+                return (price, adv)
+            except:
+                print('Check if the file is opened in other window/tab')
+        else:
+            return str('Invalid Token Number'))
+11:27:37 [A] [32mDocstring written for returning.returnCar[0m
+11:27:37 [A] Reader: Analyzing code component... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:27:45 [A] Reader: No additional context needed, starting docstring generation... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:27:45 [A] Writer: Generating docstring... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:27:49 [A] Verifier: Verifying docstring quality... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:27:57 [A] Verifier: Docstring generated successfully! No need for revision. (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:27:57 [A] [32mDocstring written for returning.validateTime[0m
+11:27:57 [A] Reader: Analyzing code component... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:28:19 [A] Reader: No additional context needed, starting docstring generation... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:28:19 [A] Writer: Generating docstring... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:28:26 [A] Verifier: Verifying docstring quality... (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:28:34 [A] Verifier: Docstring generated successfully! No need for revision. (split(':')[0]) < 0:
+                    print('Invalid time format')
+                else:
+                    break
+            except:
+                print('Time should be numerical only')
+                return
+        time = date + ' ' + time
+        x = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
+        return x)
+11:28:34 [A] [32mDocstring written for Booking.returning[0m
+11:28:34 [A] Reader: Analyzing code component... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:42 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:42 [A] Searcher: Searching for additional context... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:42 [A] Reader: Search complete, Context updated, restarting analysis... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:42 [A] Reader: Analyzing code component... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:51 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:51 [A] Searcher: Searching for additional context... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:51 [A] Reader: Search complete, Context updated, restarting analysis... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:51 [A] Reader: Analyzing code component... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:59 [A] Reader: Max search attempts (2) reached, proceeding with current context... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:59 [A] Reader: No additional context needed, starting docstring generation... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:28:59 [A] Writer: Generating docstring... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:29:05 [A] Verifier: Verifying docstring quality... ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:29:22 [A] Verifier: Docstring generated successfully! No need for revision. ( Try again.")
+        
+        elif(choice == '3'):
+            break)
+11:29:22 [A] [32mDocstring written for main.main[0m
+11:29:22 [A] [32mParse code and generate docstrings done in 1401 s[0m
+11:29:22 [A] Index code for search started
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15403.19it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (430 > 256). Running this sequence through the model will result in indexing errors
+15 text(s) exceed the model's max sequence length and will be truncated when embedded.
+2 text(s) exceed the model's max sequence length and will be truncated when embedded.
+11:29:24 [A] Indexed 44 components, 94 relationships, 39 generated docstrings
+11:29:24 [A] [32mIndex code for search done in 2 s[0m
+11:29:25     Auto-approve: 17 open item(s) kept as unreviewed
+11:29:25     Index requirements started
+11:29:25     Extracting 2 item(s) kept at review
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15457.75it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (395 > 256). Running this sequence through the model will result in indexing errors
+6 text(s) exceed the model's max sequence length and will be truncated when embedded.
+11:29:45     Indexed 27 requirement(s)
+11:29:45     [32mIndex requirements done in 20 s[0m
+11:29:45     Search agent started
+11:29:45     27 requirement(s) with candidates
+11:29:45     [32mSearch agent done in 0 s[0m
+11:29:45     Mapping agent started
+11:29:45     32 direct links, 120 supporting links
+11:29:45     [32mMapping agent done in 0 s[0m
+11:29:45     Verifier agent started
+11:29:51     REQ-001 → not supported by candidate (0/1 claims)
+11:29:55     REQ-002 → not supported by candidate (0/1 claims)
+11:30:01     REQ-003 → not supported by candidate (0/6 claims)
+11:30:04     REQ-004 → not supported by candidate (0/1 claims)
+11:30:07     REQ-005 → insufficient evidence (0/1 claims)
+11:30:12     [32mREQ-006 → supported (1/1 claims)[0m
+11:30:20     [33mREQ-007 → partially supported (2/4 claims)[0m
+11:30:31     [33mREQ-008 → partially supported (3/7 claims)[0m
+11:30:35     REQ-009 → not supported by candidate (0/3 claims)
+11:30:46     [33mREQ-010 → partially supported (5/6 claims)[0m
+11:30:56     REQ-011 → not supported by candidate (0/2 claims)
+11:31:01     REQ-012 → not supported by candidate (0/3 claims)
+11:31:09     REQ-013 → not supported by candidate (0/4 claims)
+11:31:17     REQ-014 → not supported by candidate (0/6 claims)
+11:31:29     [33mREQ-015 → partially supported (3/4 claims)[0m
+11:31:37     REQ-016 → not supported by candidate (0/3 claims)
+11:31:40     REQ-017 → not supported by candidate (0/1 claims)
+11:31:46     REQ-018 → not supported by candidate (0/2 claims)
+11:31:57     [33mREQ-019 → partially supported (2/3 claims)[0m
+11:32:06     REQ-020 → not supported by candidate (0/3 claims)
+11:32:09     REQ-021 → not supported by candidate (0/1 claims)
+11:32:12     REQ-022 → not supported by candidate (0/3 claims)
+11:32:15     REQ-023 → not supported by candidate (0/2 claims)
+11:32:20     REQ-024 → not supported by candidate (0/3 claims)
+11:32:25     REQ-025 → not supported by candidate (0/4 claims)
+11:32:32     REQ-026 → not supported by candidate (0/3 claims)
+11:32:42     [33mREQ-027 → partially supported (3/7 claims)[0m
+11:32:42     [32mVerifier agent done in 176 s[0m
+11:32:42     Results started
+11:32:42     1/27 supported, 6 partially supported, 19 not supported, 0 not found
+11:32:42     [32mResults done in 0 s[0m
+11:32:42     [32mRun completed[0m
+
+Run 2: completed
+{
+  "links": {
+    "direct": 32,
+    "docstrings": 28,
+    "supporting": 120
+  },
+  "components": 44,
+  "unreviewed": [
+    "REQ-001",
+    "REQ-002",
+    "REQ-003",
+    "REQ-005",
+    "REQ-006",
+    "REQ-007",
+    "REQ-008",
+    "REQ-009",
+    "REQ-015",
+    "REQ-016",
+    "REQ-019",
+    "REQ-021",
+    "REQ-022",
+    "REQ-023",
+    "REQ-025",
+    "REQ-026",
+    "REQ-027"
+  ],
+  "requirements": 27,
+  "status_counts": {
+    "supported": 1,
+    "partially_supported": 6,
+    "insufficient_evidence": 1,
+    "not_supported_by_candidate": 19
+  },
+  "verifier_model": "qwen2.5-coder:7b"
+}

@@ -1,0 +1,470 @@
+{
+  "label": "V1 - human-annotated gold",
+  "status": "completed",
+  "error": null,
+  "cli_returncode": 0,
+  "run_id": 7,
+  "document_id": "run-7-Software Requirements Specification",
+  "repo_id": "run-7-code",
+  "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6",
+  "srs_file": "Software Requirements Specification.pdf",
+  "python_components": 233,
+  "models": {
+    "srs": "qwen3:8b",
+    "judge": "qwen3:4b",
+    "docagent": "yi-coder:9b",
+    "verifier": "qwen2.5-coder:7b"
+  },
+  "settings": {
+    "ingest": {
+      "parallel": false,
+      "overwrite_docstrings": true
+    },
+    "limits": {
+      "max_upload_mb": 200,
+      "large_repo_files": 400,
+      "large_repo_components": 1500
+    },
+    "models": {
+      "srs": "qwen3:8b",
+      "judge": "qwen3:4b",
+      "docagent": "yi-coder:9b",
+      "verifier": "qwen2.5-coder:7b"
+    },
+    "review": {
+      "duplicate_threshold": 0.9
+    },
+    "search": {
+      "top_n": 10,
+      "candidate_k": 50
+    },
+    "source": {
+      "exclude_dirs": [
+        ".git",
+        ".hg",
+        ".svn",
+        "venv",
+        ".venv",
+        "env",
+        "node_modules",
+        "build",
+        "dist",
+        "site-packages",
+        "__pycache__",
+        ".tox",
+        ".mypy_cache",
+        ".pytest_cache",
+        ".idea",
+        ".vscode"
+      ]
+    },
+    "mapping": {
+      "max_supporting": 6,
+      "max_direct_rank": 3,
+      "use_source_references": true
+    },
+    "thinking": {
+      "srs": false,
+      "judge": null,
+      "docagent": null,
+      "verifier": null
+    },
+    "ollama_host": "http://127.0.0.1:11435",
+    "verification": {
+      "claims": "clauses"
+    }
+  },
+  "wall_minutes": 274.29,
+  "stage_minutes": {
+    "fetch": 0.0,
+    "docstrings": 221.72,
+    "index_code": 0.04,
+    "extract": 34.46,
+    "prepare_review": 0.11,
+    "index_srs": 0.39,
+    "search": 0.03,
+    "map": 0.01,
+    "verify": 17.46,
+    "results": 0.0
+  },
+  "stages": [
+    {
+      "run_id": 7,
+      "stage": "fetch",
+      "position": 0,
+      "lane": "A",
+      "status": "done",
+      "done": 242,
+      "total": 242,
+      "detail": {
+        "source": {
+          "ref": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/datasets/Data/Virtual-clinic/code",
+          "kind": "folder",
+          "name": "code",
+          "root": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/source",
+          "stats": {
+            "bytes": 24930444,
+            "files": 242,
+            "classes": 70,
+            "methods": 93,
+            "functions": 73,
+            "components": 236,
+            "unparsable": [],
+            "python_files": 54,
+            "python_lines": 4073,
+            "skipped_dirs": []
+          },
+          "git_ref": null,
+          "warnings": [],
+          "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6"
+        }
+      },
+      "error": null,
+      "started_at": "2026-11-21 12:34:53.218693+05:30",
+      "finished_at": "2026-11-21 12:34:53.323711+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "docstrings",
+      "position": 1,
+      "lane": "A",
+      "status": "done",
+      "done": 234,
+      "total": 234,
+      "detail": {
+        "agent": "verifier",
+        "types": {
+          "class": 68,
+          "method": 93,
+          "function": 73
+        },
+        "current": "testing.tests.InvalidUser",
+        "graph_path": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/docagent/output/dependency_graphs/work_dependency_graph.json"
+      },
+      "error": null,
+      "started_at": "2026-11-21 12:34:53.328537+05:30",
+      "finished_at": "2026-11-21 16:16:36.481259+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "index_code",
+      "position": 2,
+      "lane": "A",
+      "status": "done",
+      "done": 234,
+      "total": 234,
+      "detail": {
+        "report": {
+          "repo_id": "run-7-code",
+          "repo_pk": 4,
+          "components": 234,
+          "docstrings": {
+            "existing": 30,
+            "generated": 232
+          },
+          "graph_format": "v1",
+          "code_embedded": 234,
+          "relationships": 479,
+          "code_truncated_text": [
+            "server.views_medicalinfo.update_view",
+            "server.appointment.parse_appointments",
+            "server.appointment.parse_appointment_cancel",
+            "server.views_medtest.create_view",
+            "server.views_medtest.display_view",
+            "server.views_medtest.update_view",
+            "server.views_admin.parse_speciality_delete",
+            "server.views_admin.parse_symptom_delete",
+            "server.views_admin.restore_user",
+            "server.views_admin.users_view",
+            "server.views_admin.add_speciality",
+            "server.views_admin.add_symptom",
+            "server.views_admin.add_hospital_view",
+            "server.views_admin.createemployee_view",
+            "server.views_admin.statistic_view",
+            "server.views_admin.csv_import_view",
+            "server.views_admin.handle_user_csv",
+            "server.views_admin.generate_user_csv",
+            "server.views_admin.backup_data",
+            "server.views_message.new_view",
+            "server.message.parse_message_archive",
+            "server.models.Profile",
+            "server.models.Account",
+            "server.models.Action",
+            "server.models.Appointment",
+            "server.models.MedicalInfo",
+            "server.models.MedicalTest",
+            "server.views_profile.profile_view",
+            "server.views_profile.password_view",
+            "server.views_profile.update_view",
+            "server.views.authentication_check",
+            "server.forms.AccountRegisterForm",
+            "server.forms.PasswordForm",
+            "server.forms.ProfileForm",
+            "server.forms.AppointmentForm",
+            "server.forms.EmployeeRegistrationForm",
+            "server.forms.PrescriptionForm",
+            "server.forms.MedTestForm",
+            "server.forms.MedTestDisplayForm",
+            "server.forms.MedicalInfoForm",
+            "server.views_prescription.create_view",
+            "server.views_prescription.list_view",
+            "server.views_prescription.update_view",
+            "server.views_appointment.update_view",
+            "server.views_appointment.create_view",
+            "server.views_home.setup_view",
+            "server.views_home.logout_view",
+            "server.views_home.login_view",
+            "server.views_home.register_view",
+            "server.migrations.0002_message_notification.Migration",
+            "server.migrations.0001_initial.Migration",
+            "testing.test_prescription.TestPrescriptionViews",
+            "testing.test_home.TestHomeViews",
+            "testing.test_appointment.TestAppointmentViews",
+            "testing.test_form.TestProfileForm",
+            "testing.test_form_validators.TestFormValidators",
+            "testing.test_medtest.TestMedicalTest",
+            "testing.test_profile.TestProfileViews",
+            "testing.test_admin.TestAdminViews"
+          ],
+          "docstrings_embedded": 262,
+          "relationships_skipped": {
+            "unknown_type": 0,
+            "unknown_endpoint": 0
+          },
+          "code_skipped_empty_text": [],
+          "malformed_relationships": 0,
+          "docstring_truncated_text": [
+            [
+              "server.models.Account",
+              "generated"
+            ],
+            [
+              "server.models.MedicalTest",
+              "generated"
+            ],
+            [
+              "server.forms.ProfileForm",
+              "generated"
+            ],
+            [
+              "testing.test_models.LocationTestCase",
+              "generated"
+            ],
+            [
+              "testing.test_form_validators.TestFormValidators",
+              "generated"
+            ]
+          ],
+          "post_run_components_located": 233
+        }
+      },
+      "error": null,
+      "started_at": "2026-11-21 16:16:36.486669+05:30",
+      "finished_at": "2026-11-21 16:16:38.600915+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "extract",
+      "position": 3,
+      "lane": "B",
+      "status": "done",
+      "done": 90,
+      "total": 90,
+      "detail": {
+        "judge": {
+          "done": true,
+          "batch": 4,
+          "batches": 4
+        },
+        "phase": "done",
+        "result": {
+          "event": "finished",
+          "failed": 0,
+          "out_dir": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/srs",
+          "seconds": 2066.2,
+          "uncertain": 1,
+          "requirements": 90
+        },
+        "current": "BR-10",
+        "candidates": 116,
+        "confidence": {
+          "low": 33,
+          "high": 74,
+          "medium": 9
+        },
+        "segmentation": {
+          "labelled": 58,
+          "candidates": 116,
+          "skipped_tables": 0,
+          "skipped_sections": 14
+        }
+      },
+      "error": null,
+      "started_at": "2026-11-21 12:00:18.747092+05:30",
+      "finished_at": "2026-11-21 12:34:46.486205+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "prepare_review",
+      "position": 4,
+      "lane": "B",
+      "status": "done",
+      "done": 31,
+      "total": 31,
+      "detail": {
+        "counts": {
+          "open": 17,
+          "total": 31,
+          "resolved": 14,
+          "open_by_category": {
+            "split": 1,
+            "flagged": 15,
+            "uncertain": 1,
+            "incomplete": 0
+          }
+        },
+        "requirements": 90
+      },
+      "error": null,
+      "started_at": "2026-11-21 12:34:46.492730+05:30",
+      "finished_at": "2026-11-21 12:34:53.186283+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "review",
+      "position": 5,
+      "lane": null,
+      "status": "done",
+      "done": 31,
+      "total": 31,
+      "detail": {
+        "summary": {
+          "kept": 0,
+          "edited": 0,
+          "merged": 0,
+          "discarded": 14,
+          "unreviewed": 17
+        },
+        "to_extract": 1,
+        "requirements": 90
+      },
+      "error": null,
+      "started_at": null,
+      "finished_at": "2026-11-21 16:16:38.685828+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "index_srs",
+      "position": 6,
+      "lane": null,
+      "status": "done",
+      "done": 91,
+      "total": 91,
+      "detail": {
+        "report": {
+          "embedded": 91,
+          "document_id": "run-7-Software Requirements Specification",
+          "document_pk": 4,
+          "requirements": 91,
+          "truncated_text": [
+            "UC-12",
+            "REQ-020",
+            "REQ-021",
+            "REQ-023",
+            "REQ-024",
+            "REQ-025",
+            "REQ-026",
+            "REQ-033",
+            "REQ-034",
+            "REQ-035",
+            "REQ-077"
+          ],
+          "skipped_empty_text": []
+        }
+      },
+      "error": null,
+      "started_at": "2026-11-21 16:16:38.691123+05:30",
+      "finished_at": "2026-11-21 16:17:02.005289+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "search",
+      "position": 7,
+      "lane": null,
+      "status": "done",
+      "done": 91,
+      "total": 91,
+      "detail": {
+        "current": null,
+        "without_candidates": []
+      },
+      "error": null,
+      "started_at": "2026-11-21 16:17:02.009776+05:30",
+      "finished_at": "2026-11-21 16:17:03.732651+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "map",
+      "position": 8,
+      "lane": null,
+      "status": "done",
+      "done": 91,
+      "total": 91,
+      "detail": {
+        "links": {
+          "direct": 97,
+          "docstrings": 97,
+          "supporting": 230
+        },
+        "without_candidates": []
+      },
+      "error": null,
+      "started_at": "2026-11-21 16:17:03.737133+05:30",
+      "finished_at": "2026-11-21 16:17:04.206807+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "verify",
+      "position": 9,
+      "lane": null,
+      "status": "done",
+      "done": 91,
+      "total": 91,
+      "detail": {
+        "model": "qwen2.5-coder:7b",
+        "current": null,
+        "status_counts": {
+          "supported": 4,
+          "partially_supported": 5,
+          "not_supported_by_candidate": 82
+        },
+        "prompt_version": "verify-v2.3"
+      },
+      "error": null,
+      "started_at": "2026-11-21 16:17:04.211575+05:30",
+      "finished_at": "2026-11-21 16:34:32.103369+05:30"
+    },
+    {
+      "run_id": 7,
+      "stage": "results",
+      "position": 10,
+      "lane": null,
+      "status": "done",
+      "done": 91,
+      "total": 91,
+      "detail": {},
+      "error": null,
+      "started_at": "2026-11-21 16:34:32.108221+05:30",
+      "finished_at": "2026-11-21 16:34:32.140744+05:30"
+    }
+  ],
+  "component_id_check": {
+    "gold_components": 46,
+    "found": 46,
+    "missing": [],
+    "stored_components": 234,
+    "ok": true
+  },
+  "log": "final_tests/v1/results/logs/Virtual-clinic.log",
+  "ollama_host": "http://127.0.0.1:11435"
+}

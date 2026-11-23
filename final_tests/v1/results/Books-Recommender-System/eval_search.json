@@ -1,0 +1,1171 @@
+{
+  "dataset": "Books-Recommender-System",
+  "repo_id": "run-3-code",
+  "document_id": "run-3-SRS",
+  "query_source": "ingested",
+  "requirements_scored": 28,
+  "docstrings_present": true,
+  "gold_components_missing_from_repo": [],
+  "channels": {
+    "code_lexical": {
+      "hit@1": 0.6429,
+      "hit@3": 0.8214,
+      "hit@5": 0.8929,
+      "hit@10": 0.9286,
+      "recall@1": 0.6071,
+      "recall@3": 0.7714,
+      "recall@5": 0.8369,
+      "recall@10": 0.8726,
+      "mrr": 0.7561,
+      "ndcg@10": 0.7272
+    },
+    "code_vector": {
+      "hit@1": 0.3571,
+      "hit@3": 0.6429,
+      "hit@5": 0.7857,
+      "hit@10": 0.7857,
+      "recall@1": 0.3393,
+      "recall@3": 0.6071,
+      "recall@5": 0.7333,
+      "recall@10": 0.7405,
+      "mrr": 0.5376,
+      "ndcg@10": 0.573
+    },
+    "code_hybrid": {
+      "hit@1": 0.4643,
+      "hit@3": 0.75,
+      "hit@5": 0.7857,
+      "hit@10": 0.9286,
+      "recall@1": 0.4286,
+      "recall@3": 0.6762,
+      "recall@5": 0.7333,
+      "recall@10": 0.8798,
+      "mrr": 0.631,
+      "ndcg@10": 0.6521
+    },
+    "doc_lexical": {
+      "hit@1": 0.4286,
+      "hit@3": 0.6429,
+      "hit@5": 0.7857,
+      "hit@10": 0.8214,
+      "recall@1": 0.4286,
+      "recall@3": 0.6071,
+      "recall@5": 0.7036,
+      "recall@10": 0.7464,
+      "mrr": 0.5603,
+      "ndcg@10": 0.5914
+    },
+    "doc_vector": {
+      "hit@1": 0.6071,
+      "hit@3": 0.75,
+      "hit@5": 0.8571,
+      "hit@10": 0.8929,
+      "recall@1": 0.5655,
+      "recall@3": 0.6619,
+      "recall@5": 0.7762,
+      "recall@10": 0.8417,
+      "mrr": 0.7064,
+      "ndcg@10": 0.7019
+    },
+    "doc_hybrid": {
+      "hit@1": 0.4286,
+      "hit@3": 0.75,
+      "hit@5": 0.7857,
+      "hit@10": 0.8929,
+      "recall@1": 0.4107,
+      "recall@3": 0.6857,
+      "recall@5": 0.7286,
+      "recall@10": 0.819,
+      "mrr": 0.6111,
+      "ndcg@10": 0.6518
+    },
+    "all_hybrid": {
+      "hit@1": 0.5357,
+      "hit@3": 0.9286,
+      "hit@5": 0.9286,
+      "hit@10": 0.9286,
+      "recall@1": 0.5179,
+      "recall@3": 0.8583,
+      "recall@5": 0.8619,
+      "recall@10": 0.8869,
+      "mrr": 0.7092,
+      "ndcg@10": 0.7219
+    }
+  },
+  "negatives": {
+    "not_implemented_top1_code_similarity": {},
+    "mean_not_implemented": null,
+    "mean_implemented": 0.4576
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.config.configuration.AppConfiguration.__init__": 1,
+          "src.utils.common.read_yaml": 2
+        },
+        "code_vector": {
+          "src.config.configuration.AppConfiguration.__init__": 3,
+          "src.utils.common.read_yaml": 1
+        },
+        "code_hybrid": {
+          "src.config.configuration.AppConfiguration.__init__": 2,
+          "src.utils.common.read_yaml": 1
+        },
+        "doc_lexical": {
+          "src.config.configuration.AppConfiguration.__init__": null,
+          "src.utils.common.read_yaml": 3
+        },
+        "doc_vector": {
+          "src.config.configuration.AppConfiguration.__init__": null,
+          "src.utils.common.read_yaml": 1
+        },
+        "doc_hybrid": {
+          "src.config.configuration.AppConfiguration.__init__": null,
+          "src.utils.common.read_yaml": 1
+        },
+        "all_hybrid": {
+          "src.config.configuration.AppConfiguration.__init__": 2,
+          "src.utils.common.read_yaml": 1
+        }
+      },
+      "top5_all": [
+        "src.utils.common.read_yaml",
+        "src.config.configuration.AppConfiguration.__init__",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.config.configuration.AppConfiguration",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline"
+      ]
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 20,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 22,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 17,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 2,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 21,
+          "src.entity.config_entity.DataIngestionConfig": 14,
+          "src.entity.config_entity.DataTransformationConfig": 16,
+          "src.entity.config_entity.DataValidationConfig": 18,
+          "src.entity.config_entity.ModelRecommendationConfig": 12,
+          "src.entity.config_entity.ModelTrainerConfig": 15
+        },
+        "code_vector": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 12,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 7,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 21,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 16,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 20,
+          "src.entity.config_entity.DataIngestionConfig": 28,
+          "src.entity.config_entity.DataTransformationConfig": 9,
+          "src.entity.config_entity.DataValidationConfig": 15,
+          "src.entity.config_entity.ModelRecommendationConfig": 5,
+          "src.entity.config_entity.ModelTrainerConfig": 4
+        },
+        "code_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 19,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 15,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 22,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 3,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 24,
+          "src.entity.config_entity.DataIngestionConfig": 23,
+          "src.entity.config_entity.DataTransformationConfig": 11,
+          "src.entity.config_entity.DataValidationConfig": 20,
+          "src.entity.config_entity.ModelRecommendationConfig": 4,
+          "src.entity.config_entity.ModelTrainerConfig": 7
+        },
+        "doc_lexical": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 7,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 5,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 6,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 4,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 14,
+          "src.entity.config_entity.DataIngestionConfig": 26,
+          "src.entity.config_entity.DataTransformationConfig": 21,
+          "src.entity.config_entity.DataValidationConfig": 24,
+          "src.entity.config_entity.ModelRecommendationConfig": 16,
+          "src.entity.config_entity.ModelTrainerConfig": 25
+        },
+        "doc_vector": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 7,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 4,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 5,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 3,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 2,
+          "src.entity.config_entity.DataIngestionConfig": 12,
+          "src.entity.config_entity.DataTransformationConfig": 8,
+          "src.entity.config_entity.DataValidationConfig": 10,
+          "src.entity.config_entity.ModelRecommendationConfig": 6,
+          "src.entity.config_entity.ModelTrainerConfig": 9
+        },
+        "doc_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 5,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 3,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 4,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 2,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 6,
+          "src.entity.config_entity.DataIngestionConfig": 22,
+          "src.entity.config_entity.DataTransformationConfig": 11,
+          "src.entity.config_entity.DataValidationConfig": 20,
+          "src.entity.config_entity.ModelRecommendationConfig": 7,
+          "src.entity.config_entity.ModelTrainerConfig": 19
+        },
+        "all_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_ingestion_config": 7,
+          "src.config.configuration.AppConfiguration.get_data_transformation_config": 3,
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 8,
+          "src.config.configuration.AppConfiguration.get_model_recommendation_config": 2,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 17,
+          "src.entity.config_entity.DataIngestionConfig": 24,
+          "src.entity.config_entity.DataTransformationConfig": 15,
+          "src.entity.config_entity.DataValidationConfig": 23,
+          "src.entity.config_entity.ModelRecommendationConfig": 5,
+          "src.entity.config_entity.ModelTrainerConfig": 12
+        }
+      },
+      "top5_all": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+        "src.config.configuration.AppConfiguration.get_data_transformation_config",
+        "src.pipeline.stage_02_data_transformation.DataTransformationPipeline",
+        "src.entity.config_entity.ModelRecommendationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.exception.__init__.CustomException.__init__": 2,
+          "src.exception.__init__.error_message_detail": 3
+        },
+        "code_vector": {
+          "src.exception.__init__.CustomException.__init__": 2,
+          "src.exception.__init__.error_message_detail": 4
+        },
+        "code_hybrid": {
+          "src.exception.__init__.CustomException.__init__": 2,
+          "src.exception.__init__.error_message_detail": 4
+        },
+        "doc_lexical": {
+          "src.exception.__init__.CustomException.__init__": null,
+          "src.exception.__init__.error_message_detail": 2
+        },
+        "doc_vector": {
+          "src.exception.__init__.CustomException.__init__": null,
+          "src.exception.__init__.error_message_detail": 3
+        },
+        "doc_hybrid": {
+          "src.exception.__init__.CustomException.__init__": null,
+          "src.exception.__init__.error_message_detail": 2
+        },
+        "all_hybrid": {
+          "src.exception.__init__.CustomException.__init__": 2,
+          "src.exception.__init__.error_message_detail": 3
+        }
+      },
+      "top5_all": [
+        "src.exception.__init__.CustomException",
+        "src.exception.__init__.CustomException.__init__",
+        "src.exception.__init__.error_message_detail",
+        "src.exception.__init__.CustomException.__str__",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_ingestion.DataIngestion.download_file": 4
+        },
+        "code_vector": {
+          "src.components.data_ingestion.DataIngestion.download_file": 1
+        },
+        "code_hybrid": {
+          "src.components.data_ingestion.DataIngestion.download_file": 2
+        },
+        "doc_lexical": {
+          "src.components.data_ingestion.DataIngestion.download_file": 14
+        },
+        "doc_vector": {
+          "src.components.data_ingestion.DataIngestion.download_file": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_ingestion.DataIngestion.download_file": 6
+        },
+        "all_hybrid": {
+          "src.components.data_ingestion.DataIngestion.download_file": 3
+        }
+      },
+      "top5_all": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.components.data_ingestion.DataIngestion.download_file",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.entity.config_entity.DataValidationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 2
+        },
+        "code_vector": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        },
+        "code_hybrid": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        },
+        "doc_lexical": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 5
+        },
+        "doc_vector": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 2
+        },
+        "all_hybrid": {
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        }
+      },
+      "top5_all": [
+        "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "src.components.data_ingestion.DataIngestion",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.components.data_ingestion.DataIngestion.download_file",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline"
+      ]
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 5,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        },
+        "code_vector": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 2,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 5
+        },
+        "code_hybrid": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 3,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 1
+        },
+        "doc_lexical": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 12,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 4
+        },
+        "doc_vector": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 6,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 8
+        },
+        "doc_hybrid": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 9,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 6
+        },
+        "all_hybrid": {
+          "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files": 6,
+          "src.components.data_ingestion.DataIngestion.extract_zip_file": 3
+        }
+      },
+      "top5_all": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.components.data_ingestion.DataIngestion.extract_zip_file",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline",
+        "src.entity.config_entity.DataIngestionConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 7
+        },
+        "code_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 5
+        },
+        "code_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 5
+        },
+        "doc_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        },
+        "doc_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "all_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        }
+      },
+      "top5_all": [
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "code_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 17
+        },
+        "code_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 6
+        },
+        "doc_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "all_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 3
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_validation.DataValidation"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "code_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 15
+        },
+        "code_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 6
+        },
+        "doc_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "all_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "code_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 16
+        },
+        "code_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 7
+        },
+        "doc_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "all_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 3
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.data_transformation.DataTransformation",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset"
+      ]
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        },
+        "code_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 20
+        },
+        "code_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 8
+        },
+        "doc_lexical": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 1
+        },
+        "doc_vector": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 4
+        },
+        "doc_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        },
+        "all_hybrid": {
+          "src.components.data_validation.DataValidation.validate_and_clean_data": 2
+        }
+      },
+      "top5_all": [
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.utils.common.save_bin"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "code_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "code_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "all_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_transformation.DataTransformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.model_trainer.ModelTrainer.initiate_model_training"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "code_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 2
+        },
+        "code_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 2
+        },
+        "doc_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "all_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_transformation.DataTransformation",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.components.data_validation.DataValidation"
+      ]
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "code_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "code_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_lexical": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 2
+        },
+        "doc_vector": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        },
+        "doc_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 2
+        },
+        "all_hybrid": {
+          "src.components.data_transformation.DataTransformation.initiate_data_transformation": 1
+        }
+      },
+      "top5_all": [
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_transformation.DataTransformation",
+        "src.entity.config_entity.DataTransformationConfig",
+        "src.config.configuration.AppConfiguration.get_data_transformation_config",
+        "app.get_book_names"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "code_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "code_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "doc_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "doc_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "doc_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "all_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        }
+      },
+      "top5_all": [
+        "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_transformation.DataTransformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "code_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "code_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "doc_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 3
+        },
+        "doc_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "doc_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 3
+        },
+        "all_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        }
+      },
+      "top5_all": [
+        "src.components.model_trainer.ModelTrainer",
+        "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "src.entity.config_entity.ModelTrainerConfig",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.config.configuration.AppConfiguration.get_model_trainer_config"
+      ]
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "code_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "code_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        },
+        "doc_lexical": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 6
+        },
+        "doc_vector": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 2
+        },
+        "doc_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 4
+        },
+        "all_hybrid": {
+          "src.components.model_trainer.ModelTrainer.initiate_model_training": 1
+        }
+      },
+      "top5_all": [
+        "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "src.components.model_trainer.ModelTrainer",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "app.get_book_names"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": 1
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": 3
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": null
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": null
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": null
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.__init__": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.entity.config_entity.ModelRecommendationConfig",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.components.data_transformation.DataTransformation"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 4
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.components.data_transformation.DataTransformation",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.components.model_trainer.ModelTrainer.initiate_model_training"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 3
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.entity.config_entity.ModelTrainerConfig",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.components.model_trainer.ModelTrainer.initiate_model_training",
+        "src.components.model_trainer.ModelTrainer"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.entity.config_entity.ModelRecommendationConfig",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset"
+      ]
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 2
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.entity.config_entity.ModelRecommendationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "app.get_book_names": 1
+        },
+        "code_vector": {
+          "app.get_book_names": 1
+        },
+        "code_hybrid": {
+          "app.get_book_names": 1
+        },
+        "doc_lexical": {
+          "app.get_book_names": 5
+        },
+        "doc_vector": {
+          "app.get_book_names": 1
+        },
+        "doc_hybrid": {
+          "app.get_book_names": 1
+        },
+        "all_hybrid": {
+          "app.get_book_names": 1
+        }
+      },
+      "top5_all": [
+        "app.get_book_names",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.entity.config_entity.DataTransformationConfig",
+        "src.pipeline.prediction_pipeline.RecommendationEngine"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.pipeline.prediction_pipeline.RecommendationEngine",
+        "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+        "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+        "src.entity.config_entity.ModelRecommendationConfig"
+      ]
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 1
+        },
+        "code_vector": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 4
+        },
+        "code_hybrid": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 1
+        },
+        "doc_lexical": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 1
+        },
+        "doc_vector": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 4
+        },
+        "doc_hybrid": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 2
+        },
+        "all_hybrid": {
+          "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline": 1
+        }
+      },
+      "top5_all": [
+        "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline",
+        "src.pipeline.training_pipeline.TrainingPipeline",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.main",
+        "src.pipeline.stage_03_model_trainer.ModelTrainerPipeline.__init__"
+      ]
+    },
+    {
+      "requirement_id": "REQ-009",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 35
+        },
+        "code_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 32
+        },
+        "code_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 31
+        },
+        "doc_lexical": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": null
+        },
+        "doc_vector": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 33
+        },
+        "doc_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 38
+        },
+        "all_hybrid": {
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 40
+        }
+      },
+      "top5_all": [
+        "src.components.data_ingestion.DataIngestion",
+        "src.components.data_ingestion.DataIngestion.download_file",
+        "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+        "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+        "src.components.data_validation.DataValidation.validate_and_clean_data"
+      ]
+    },
+    {
+      "requirement_id": "REQ-011",
+      "status": "partial",
+      "query": "by_text",
+      "primary_ranks": {
+        "code_lexical": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 4,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 20,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 21
+        },
+        "code_vector": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 4,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 18,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 40
+        },
+        "code_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 2,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 17,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 36
+        },
+        "doc_lexical": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 20,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 21,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 29
+        },
+        "doc_vector": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 1,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 6,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 17
+        },
+        "doc_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 6,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 12,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 26
+        },
+        "all_hybrid": {
+          "src.config.configuration.AppConfiguration.get_data_validation_config": 2,
+          "src.config.configuration.AppConfiguration.get_model_trainer_config": 15,
+          "src.pipeline.prediction_pipeline.RecommendationEngine.recommend": 33
+        }
+      },
+      "top5_all": [
+        "src.config.configuration.AppConfiguration",
+        "src.config.configuration.AppConfiguration.get_data_validation_config",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+        "src.config.configuration.AppConfiguration.__init__"
+      ]
+    },
+    {
+      "requirement_id": "REQ-012",
+      "status": "partial",
+      "query": "by_text",
+      "primary_ranks": {
+        "code_lexical": {},
+        "code_vector": {},
+        "code_hybrid": {},
+        "doc_lexical": {},
+        "doc_vector": {},
+        "doc_hybrid": {},
+        "all_hybrid": {}
+      },
+      "top5_all": [
+        "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+        "src.components.data_validation.DataValidation",
+        "src.components.data_validation.DataValidation.validate_and_clean_data",
+        "src.entity.config_entity.DataValidationConfig",
+        "src.config.configuration.AppConfiguration.get_data_validation_config"
+      ]
+    }
+  ],
+  "matching": {
+    "by_id": 26,
+    "by_text": 2,
+    "unmatched": []
+  }
+}

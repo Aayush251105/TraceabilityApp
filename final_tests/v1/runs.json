@@ -1,0 +1,1928 @@
+{
+  "label": "V1 - human-annotated gold",
+  "pairs": {
+    "Travel-Agency-Automation-System": {
+      "label": "V1 - human-annotated gold",
+      "status": "completed",
+      "error": null,
+      "cli_returncode": 0,
+      "run_id": 2,
+      "document_id": "run-2-SRS",
+      "repo_id": "run-2-code",
+      "commit_sha": "2cc23a2f3b265d97e99df8b402a92979447ab7da",
+      "srs_file": "SRS.pdf",
+      "python_components": 44,
+      "models": {
+        "srs": "qwen3:8b",
+        "judge": "qwen3:4b",
+        "docagent": "yi-coder:9b",
+        "verifier": "qwen2.5-coder:7b"
+      },
+      "settings": {
+        "ingest": {
+          "parallel": true,
+          "overwrite_docstrings": true
+        },
+        "limits": {
+          "max_upload_mb": 200,
+          "large_repo_files": 400,
+          "large_repo_components": 1500
+        },
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        },
+        "review": {
+          "duplicate_threshold": 0.9
+        },
+        "search": {
+          "top_n": 10,
+          "candidate_k": 50
+        },
+        "source": {
+          "exclude_dirs": [
+            ".git",
+            ".hg",
+            ".svn",
+            "venv",
+            ".venv",
+            "env",
+            "node_modules",
+            "build",
+            "dist",
+            "site-packages",
+            "__pycache__",
+            ".tox",
+            ".mypy_cache",
+            ".pytest_cache",
+            ".idea",
+            ".vscode"
+          ]
+        },
+        "mapping": {
+          "max_supporting": 6,
+          "max_direct_rank": 3,
+          "use_source_references": true
+        },
+        "thinking": {
+          "srs": false,
+          "judge": null,
+          "docagent": null,
+          "verifier": null
+        },
+        "ollama_host": "http://localhost:11434",
+        "verification": {
+          "claims": "clauses"
+        }
+      },
+      "wall_minutes": 26.69,
+      "stage_minutes": {
+        "fetch": 0.0,
+        "docstrings": 23.34,
+        "index_code": 0.04,
+        "extract": 13.68,
+        "prepare_review": 0.09,
+        "index_srs": 0.34,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 2.94,
+        "results": 0.0
+      },
+      "stages": [
+        {
+          "run_id": 2,
+          "stage": "fetch",
+          "position": 0,
+          "lane": "A",
+          "status": "done",
+          "done": 12,
+          "total": 12,
+          "detail": {
+            "source": {
+              "ref": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/datasets/Data/Travel-Agency-Automation-System/code",
+              "kind": "folder",
+              "name": "code",
+              "root": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-2/source",
+              "stats": {
+                "bytes": 470282,
+                "files": 12,
+                "classes": 7,
+                "methods": 36,
+                "functions": 1,
+                "components": 44,
+                "unparsable": [],
+                "python_files": 7,
+                "python_lines": 631,
+                "skipped_dirs": []
+              },
+              "git_ref": null,
+              "warnings": [],
+              "commit_sha": "2cc23a2f3b265d97e99df8b402a92979447ab7da"
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:06:01.901693+05:30",
+          "finished_at": "2026-11-20 11:06:01.924929+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "docstrings",
+          "position": 1,
+          "lane": "A",
+          "status": "done",
+          "done": 44,
+          "total": 44,
+          "detail": {
+            "agent": "verifier",
+            "types": {
+              "class": 7,
+              "method": 36,
+              "function": 1
+            },
+            "current": "main.main",
+            "graph_path": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-2/docagent/output/dependency_graphs/work_dependency_graph.json"
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:06:01.933244+05:30",
+          "finished_at": "2026-11-20 11:29:22.594026+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "index_code",
+          "position": 2,
+          "lane": "A",
+          "status": "done",
+          "done": 44,
+          "total": 44,
+          "detail": {
+            "report": {
+              "repo_id": "run-2-code",
+              "repo_pk": 1,
+              "components": 44,
+              "docstrings": {
+                "existing": 0,
+                "generated": 39
+              },
+              "graph_format": "v1",
+              "code_embedded": 44,
+              "relationships": 94,
+              "code_truncated_text": [
+                "Car.Car",
+                "Car.Car.__init__",
+                "main.main",
+                "Booking.returning",
+                "Booking.returning.returnCar",
+                "Customer.Customer",
+                "Owner.Owner",
+                "Owner.Owner.getData",
+                "Owner.Owner.updateData",
+                "Owner.Owner.setPrice",
+                "TestCar.TestCar",
+                "TestOwner.TestOwner",
+                "TestOwner.TestOwner.test_updateData_BCI",
+                "TestOwner.TestOwner.test_setPricePerKm_CI",
+                "TestOwner.TestOwner.test_setPricePerHr_CI"
+              ],
+              "docstrings_embedded": 39,
+              "relationships_skipped": {
+                "unknown_type": 0,
+                "unknown_endpoint": 0
+              },
+              "code_skipped_empty_text": [],
+              "malformed_relationships": 0,
+              "docstring_truncated_text": [
+                [
+                  "Booking.returning",
+                  "generated"
+                ],
+                [
+                  "TestOwner.TestOwner",
+                  "generated"
+                ]
+              ],
+              "post_run_components_located": 44
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:29:22.600901+05:30",
+          "finished_at": "2026-11-20 11:29:24.980156+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "extract",
+          "position": 3,
+          "lane": "B",
+          "status": "done",
+          "done": 25,
+          "total": 25,
+          "detail": {
+            "judge": {
+              "done": true,
+              "batch": 3,
+              "batches": 3
+            },
+            "phase": "done",
+            "result": {
+              "event": "finished",
+              "failed": 0,
+              "out_dir": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-2/srs",
+              "seconds": 820.3,
+              "uncertain": 2,
+              "requirements": 25
+            },
+            "current": "REQ-025",
+            "candidates": 32,
+            "confidence": {
+              "low": 12,
+              "high": 10,
+              "medium": 10
+            },
+            "segmentation": {
+              "labelled": 0,
+              "candidates": 32,
+              "skipped_tables": 0,
+              "skipped_sections": 5
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:06:01.901965+05:30",
+          "finished_at": "2026-11-20 11:19:42.911701+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "prepare_review",
+          "position": 4,
+          "lane": "B",
+          "status": "done",
+          "done": 22,
+          "total": 22,
+          "detail": {
+            "counts": {
+              "open": 17,
+              "total": 22,
+              "resolved": 5,
+              "open_by_category": {
+                "split": 0,
+                "flagged": 15,
+                "uncertain": 2,
+                "incomplete": 0
+              }
+            },
+            "requirements": 25
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:19:42.917463+05:30",
+          "finished_at": "2026-11-20 11:19:48.408807+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "review",
+          "position": 5,
+          "lane": null,
+          "status": "done",
+          "done": 22,
+          "total": 22,
+          "detail": {
+            "summary": {
+              "kept": 0,
+              "edited": 0,
+              "merged": 0,
+              "discarded": 5,
+              "unreviewed": 17
+            },
+            "to_extract": 2,
+            "requirements": 25
+          },
+          "error": null,
+          "started_at": null,
+          "finished_at": "2026-11-20 11:29:25.046633+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "index_srs",
+          "position": 6,
+          "lane": null,
+          "status": "done",
+          "done": 27,
+          "total": 27,
+          "detail": {
+            "report": {
+              "embedded": 27,
+              "document_id": "run-2-SRS",
+              "document_pk": 1,
+              "requirements": 27,
+              "truncated_text": [
+                "REQ-010",
+                "REQ-011",
+                "REQ-012",
+                "REQ-015",
+                "REQ-016",
+                "REQ-020"
+              ],
+              "skipped_empty_text": []
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:29:25.051221+05:30",
+          "finished_at": "2026-11-20 11:29:45.423891+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "search",
+          "position": 7,
+          "lane": null,
+          "status": "done",
+          "done": 27,
+          "total": 27,
+          "detail": {
+            "current": null,
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:29:45.429084+05:30",
+          "finished_at": "2026-11-20 11:29:45.737833+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "map",
+          "position": 8,
+          "lane": null,
+          "status": "done",
+          "done": 27,
+          "total": 27,
+          "detail": {
+            "links": {
+              "direct": 32,
+              "docstrings": 28,
+              "supporting": 120
+            },
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:29:45.741880+05:30",
+          "finished_at": "2026-11-20 11:29:45.864676+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "verify",
+          "position": 9,
+          "lane": null,
+          "status": "done",
+          "done": 27,
+          "total": 27,
+          "detail": {
+            "model": "qwen2.5-coder:7b",
+            "current": null,
+            "status_counts": {
+              "supported": 1,
+              "partially_supported": 6,
+              "insufficient_evidence": 1,
+              "not_supported_by_candidate": 19
+            },
+            "prompt_version": "verify-v2.3"
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:29:45.869165+05:30",
+          "finished_at": "2026-11-20 11:32:42.310972+05:30"
+        },
+        {
+          "run_id": 2,
+          "stage": "results",
+          "position": 10,
+          "lane": null,
+          "status": "done",
+          "done": 27,
+          "total": 27,
+          "detail": {},
+          "error": null,
+          "started_at": "2026-11-20 11:32:42.315626+05:30",
+          "finished_at": "2026-11-20 11:32:42.344184+05:30"
+        }
+      ],
+      "component_id_check": {
+        "gold_components": 16,
+        "found": 16,
+        "missing": [],
+        "stored_components": 44,
+        "ok": true
+      },
+      "log": "final_tests/v1/results/logs/Travel-Agency-Automation-System.log"
+    },
+    "Books-Recommender-System": {
+      "label": "V1 - human-annotated gold",
+      "status": "completed",
+      "error": null,
+      "cli_returncode": 0,
+      "run_id": 3,
+      "document_id": "run-3-SRS",
+      "repo_id": "run-3-code",
+      "commit_sha": "69ed627f0fca6e4c6749336a1a159dfda80af67a",
+      "srs_file": "SRS.md",
+      "python_components": 53,
+      "models": {
+        "srs": "qwen3:8b",
+        "judge": "qwen3:4b",
+        "docagent": "yi-coder:9b",
+        "verifier": "qwen2.5-coder:7b"
+      },
+      "settings": {
+        "ingest": {
+          "parallel": true,
+          "overwrite_docstrings": true
+        },
+        "limits": {
+          "max_upload_mb": 200,
+          "large_repo_files": 400,
+          "large_repo_components": 1500
+        },
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        },
+        "review": {
+          "duplicate_threshold": 0.9
+        },
+        "search": {
+          "top_n": 10,
+          "candidate_k": 50
+        },
+        "source": {
+          "exclude_dirs": [
+            ".git",
+            ".hg",
+            ".svn",
+            "venv",
+            ".venv",
+            "env",
+            "node_modules",
+            "build",
+            "dist",
+            "site-packages",
+            "__pycache__",
+            ".tox",
+            ".mypy_cache",
+            ".pytest_cache",
+            ".idea",
+            ".vscode"
+          ]
+        },
+        "mapping": {
+          "max_supporting": 6,
+          "max_direct_rank": 3,
+          "use_source_references": true
+        },
+        "thinking": {
+          "srs": false,
+          "judge": null,
+          "docagent": null,
+          "verifier": null
+        },
+        "ollama_host": "http://localhost:11434",
+        "verification": {
+          "claims": "clauses"
+        }
+      },
+      "wall_minutes": 33.08,
+      "stage_minutes": {
+        "fetch": 0.0,
+        "docstrings": 28.55,
+        "index_code": 0.03,
+        "extract": 16.95,
+        "prepare_review": 0.12,
+        "index_srs": 0.21,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 4.24,
+        "results": 0.0
+      },
+      "stages": [
+        {
+          "run_id": 3,
+          "stage": "fetch",
+          "position": 0,
+          "lane": "A",
+          "status": "done",
+          "done": 29,
+          "total": 29,
+          "detail": {
+            "source": {
+              "ref": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/datasets/Data/Books-Recommender-System/code",
+              "kind": "folder",
+              "name": "code",
+              "root": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-3/source",
+              "stats": {
+                "bytes": 54221,
+                "files": 29,
+                "classes": 17,
+                "methods": 30,
+                "functions": 6,
+                "components": 53,
+                "unparsable": [],
+                "python_files": 23,
+                "python_lines": 881,
+                "skipped_dirs": []
+              },
+              "git_ref": null,
+              "warnings": [],
+              "commit_sha": "69ed627f0fca6e4c6749336a1a159dfda80af67a"
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:32:43.189999+05:30",
+          "finished_at": "2026-11-20 11:32:43.214742+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "docstrings",
+          "position": 1,
+          "lane": "A",
+          "status": "done",
+          "done": 53,
+          "total": 53,
+          "detail": {
+            "agent": "verifier",
+            "types": {
+              "class": 17,
+              "method": 30,
+              "function": 6
+            },
+            "current": "src.pipeline.prediction_pipeline.RecommendationEngine",
+            "graph_path": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-3/docagent/output/dependency_graphs/work_dependency_graph.json"
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:32:43.219819+05:30",
+          "finished_at": "2026-11-20 12:01:15.937299+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "index_code",
+          "position": 2,
+          "lane": "A",
+          "status": "done",
+          "done": 53,
+          "total": 53,
+          "detail": {
+            "report": {
+              "repo_id": "run-3-code",
+              "repo_pk": 2,
+              "components": 53,
+              "docstrings": {
+                "existing": 11,
+                "generated": 42
+              },
+              "graph_format": "v1",
+              "code_embedded": 53,
+              "relationships": 130,
+              "code_truncated_text": [
+                "src.pipeline.prediction_pipeline.RecommendationEngine",
+                "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+                "src.config.configuration.AppConfiguration",
+                "src.config.configuration.AppConfiguration.get_data_validation_config",
+                "src.components.data_validation.DataValidation",
+                "src.components.data_validation.DataValidation.validate_and_clean_data",
+                "src.components.data_ingestion.DataIngestion",
+                "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+                "src.components.model_trainer.ModelTrainer",
+                "src.components.model_trainer.ModelTrainer.initiate_model_training",
+                "src.components.data_transformation.DataTransformation",
+                "src.components.data_transformation.DataTransformation.initiate_data_transformation"
+              ],
+              "docstrings_embedded": 53,
+              "relationships_skipped": {
+                "unknown_type": 0,
+                "unknown_endpoint": 0
+              },
+              "code_skipped_empty_text": [],
+              "malformed_relationships": 0,
+              "docstring_truncated_text": [
+                [
+                  "src.components.data_validation.DataValidation.validate_and_clean_data",
+                  "generated"
+                ],
+                [
+                  "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+                  "generated"
+                ]
+              ],
+              "post_run_components_located": 53
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 12:01:15.942304+05:30",
+          "finished_at": "2026-11-20 12:01:17.673989+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "extract",
+          "position": 3,
+          "lane": "B",
+          "status": "done",
+          "done": 59,
+          "total": 59,
+          "detail": {
+            "judge": {
+              "done": true,
+              "batch": 3,
+              "batches": 3
+            },
+            "phase": "done",
+            "result": {
+              "event": "finished",
+              "failed": 0,
+              "out_dir": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-3/srs",
+              "seconds": 1016.4,
+              "uncertain": 2,
+              "requirements": 59
+            },
+            "current": "REQ-059",
+            "candidates": 68,
+            "confidence": {
+              "low": 29,
+              "high": 32,
+              "medium": 7
+            },
+            "segmentation": {
+              "labelled": 26,
+              "candidates": 68,
+              "skipped_tables": 0,
+              "skipped_sections": 7
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:32:43.187147+05:30",
+          "finished_at": "2026-11-20 11:49:40.384460+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "prepare_review",
+          "position": 4,
+          "lane": "B",
+          "status": "done",
+          "done": 35,
+          "total": 35,
+          "detail": {
+            "counts": {
+              "open": 29,
+              "total": 35,
+              "resolved": 6,
+              "open_by_category": {
+                "split": 1,
+                "flagged": 26,
+                "uncertain": 2,
+                "incomplete": 0
+              }
+            },
+            "requirements": 59
+          },
+          "error": null,
+          "started_at": "2026-11-20 11:49:40.390288+05:30",
+          "finished_at": "2026-11-20 11:49:47.415870+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "review",
+          "position": 5,
+          "lane": null,
+          "status": "done",
+          "done": 35,
+          "total": 35,
+          "detail": {
+            "summary": {
+              "kept": 0,
+              "edited": 0,
+              "merged": 0,
+              "discarded": 6,
+              "unreviewed": 29
+            },
+            "to_extract": 2,
+            "requirements": 59
+          },
+          "error": null,
+          "started_at": null,
+          "finished_at": "2026-11-20 12:01:17.776990+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "index_srs",
+          "position": 6,
+          "lane": null,
+          "status": "done",
+          "done": 61,
+          "total": 61,
+          "detail": {
+            "report": {
+              "embedded": 61,
+              "document_id": "run-3-SRS",
+              "document_pk": 2,
+              "requirements": 61,
+              "truncated_text": [
+                "FR-1.2"
+              ],
+              "skipped_empty_text": []
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-20 12:01:17.782075+05:30",
+          "finished_at": "2026-11-20 12:01:30.299707+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "search",
+          "position": 7,
+          "lane": null,
+          "status": "done",
+          "done": 61,
+          "total": 61,
+          "detail": {
+            "current": null,
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-20 12:01:30.304561+05:30",
+          "finished_at": "2026-11-20 12:01:31.000058+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "map",
+          "position": 8,
+          "lane": null,
+          "status": "done",
+          "done": 61,
+          "total": 61,
+          "detail": {
+            "links": {
+              "direct": 73,
+              "docstrings": 62,
+              "supporting": 318
+            },
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-20 12:01:31.004656+05:30",
+          "finished_at": "2026-11-20 12:01:31.245660+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "verify",
+          "position": 9,
+          "lane": null,
+          "status": "done",
+          "done": 61,
+          "total": 61,
+          "detail": {
+            "model": "qwen2.5-coder:7b",
+            "current": null,
+            "status_counts": {
+              "supported": 18,
+              "partially_supported": 1,
+              "insufficient_evidence": 1,
+              "not_supported_by_candidate": 41
+            },
+            "prompt_version": "verify-v2.3"
+          },
+          "error": null,
+          "started_at": "2026-11-20 12:01:31.250229+05:30",
+          "finished_at": "2026-11-20 12:05:45.855950+05:30"
+        },
+        {
+          "run_id": 3,
+          "stage": "results",
+          "position": 10,
+          "lane": null,
+          "status": "done",
+          "done": 61,
+          "total": 61,
+          "detail": {},
+          "error": null,
+          "started_at": "2026-11-20 12:05:45.861095+05:30",
+          "finished_at": "2026-11-20 12:05:45.898390+05:30"
+        }
+      ],
+      "component_id_check": {
+        "gold_components": 31,
+        "found": 31,
+        "missing": [],
+        "stored_components": 53,
+        "ok": true
+      },
+      "log": "final_tests/v1/results/logs/Books-Recommender-System.log"
+    },
+    "Virtual-clinic": {
+      "label": "V1 - human-annotated gold",
+      "status": "completed",
+      "error": null,
+      "cli_returncode": 0,
+      "run_id": 7,
+      "document_id": "run-7-Software Requirements Specification",
+      "repo_id": "run-7-code",
+      "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6",
+      "srs_file": "Software Requirements Specification.pdf",
+      "python_components": 233,
+      "models": {
+        "srs": "qwen3:8b",
+        "judge": "qwen3:4b",
+        "docagent": "yi-coder:9b",
+        "verifier": "qwen2.5-coder:7b"
+      },
+      "settings": {
+        "ingest": {
+          "parallel": false,
+          "overwrite_docstrings": true
+        },
+        "limits": {
+          "max_upload_mb": 200,
+          "large_repo_files": 400,
+          "large_repo_components": 1500
+        },
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        },
+        "review": {
+          "duplicate_threshold": 0.9
+        },
+        "search": {
+          "top_n": 10,
+          "candidate_k": 50
+        },
+        "source": {
+          "exclude_dirs": [
+            ".git",
+            ".hg",
+            ".svn",
+            "venv",
+            ".venv",
+            "env",
+            "node_modules",
+            "build",
+            "dist",
+            "site-packages",
+            "__pycache__",
+            ".tox",
+            ".mypy_cache",
+            ".pytest_cache",
+            ".idea",
+            ".vscode"
+          ]
+        },
+        "mapping": {
+          "max_supporting": 6,
+          "max_direct_rank": 3,
+          "use_source_references": true
+        },
+        "thinking": {
+          "srs": false,
+          "judge": null,
+          "docagent": null,
+          "verifier": null
+        },
+        "ollama_host": "http://127.0.0.1:11435",
+        "verification": {
+          "claims": "clauses"
+        }
+      },
+      "wall_minutes": 274.29,
+      "stage_minutes": {
+        "fetch": 0.0,
+        "docstrings": 221.72,
+        "index_code": 0.04,
+        "extract": 34.46,
+        "prepare_review": 0.11,
+        "index_srs": 0.39,
+        "search": 0.03,
+        "map": 0.01,
+        "verify": 17.46,
+        "results": 0.0
+      },
+      "stages": [
+        {
+          "run_id": 7,
+          "stage": "fetch",
+          "position": 0,
+          "lane": "A",
+          "status": "done",
+          "done": 242,
+          "total": 242,
+          "detail": {
+            "source": {
+              "ref": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/datasets/Data/Virtual-clinic/code",
+              "kind": "folder",
+              "name": "code",
+              "root": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/source",
+              "stats": {
+                "bytes": 24930444,
+                "files": 242,
+                "classes": 70,
+                "methods": 93,
+                "functions": 73,
+                "components": 236,
+                "unparsable": [],
+                "python_files": 54,
+                "python_lines": 4073,
+                "skipped_dirs": []
+              },
+              "git_ref": null,
+              "warnings": [],
+              "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6"
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 12:34:53.218693+05:30",
+          "finished_at": "2026-11-21 12:34:53.323711+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "docstrings",
+          "position": 1,
+          "lane": "A",
+          "status": "done",
+          "done": 234,
+          "total": 234,
+          "detail": {
+            "agent": "verifier",
+            "types": {
+              "class": 68,
+              "method": 93,
+              "function": 73
+            },
+            "current": "testing.tests.InvalidUser",
+            "graph_path": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/docagent/output/dependency_graphs/work_dependency_graph.json"
+          },
+          "error": null,
+          "started_at": "2026-11-21 12:34:53.328537+05:30",
+          "finished_at": "2026-11-21 16:16:36.481259+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "index_code",
+          "position": 2,
+          "lane": "A",
+          "status": "done",
+          "done": 234,
+          "total": 234,
+          "detail": {
+            "report": {
+              "repo_id": "run-7-code",
+              "repo_pk": 4,
+              "components": 234,
+              "docstrings": {
+                "existing": 30,
+                "generated": 232
+              },
+              "graph_format": "v1",
+              "code_embedded": 234,
+              "relationships": 479,
+              "code_truncated_text": [
+                "server.views_medicalinfo.update_view",
+                "server.appointment.parse_appointments",
+                "server.appointment.parse_appointment_cancel",
+                "server.views_medtest.create_view",
+                "server.views_medtest.display_view",
+                "server.views_medtest.update_view",
+                "server.views_admin.parse_speciality_delete",
+                "server.views_admin.parse_symptom_delete",
+                "server.views_admin.restore_user",
+                "server.views_admin.users_view",
+                "server.views_admin.add_speciality",
+                "server.views_admin.add_symptom",
+                "server.views_admin.add_hospital_view",
+                "server.views_admin.createemployee_view",
+                "server.views_admin.statistic_view",
+                "server.views_admin.csv_import_view",
+                "server.views_admin.handle_user_csv",
+                "server.views_admin.generate_user_csv",
+                "server.views_admin.backup_data",
+                "server.views_message.new_view",
+                "server.message.parse_message_archive",
+                "server.models.Profile",
+                "server.models.Account",
+                "server.models.Action",
+                "server.models.Appointment",
+                "server.models.MedicalInfo",
+                "server.models.MedicalTest",
+                "server.views_profile.profile_view",
+                "server.views_profile.password_view",
+                "server.views_profile.update_view",
+                "server.views.authentication_check",
+                "server.forms.AccountRegisterForm",
+                "server.forms.PasswordForm",
+                "server.forms.ProfileForm",
+                "server.forms.AppointmentForm",
+                "server.forms.EmployeeRegistrationForm",
+                "server.forms.PrescriptionForm",
+                "server.forms.MedTestForm",
+                "server.forms.MedTestDisplayForm",
+                "server.forms.MedicalInfoForm",
+                "server.views_prescription.create_view",
+                "server.views_prescription.list_view",
+                "server.views_prescription.update_view",
+                "server.views_appointment.update_view",
+                "server.views_appointment.create_view",
+                "server.views_home.setup_view",
+                "server.views_home.logout_view",
+                "server.views_home.login_view",
+                "server.views_home.register_view",
+                "server.migrations.0002_message_notification.Migration",
+                "server.migrations.0001_initial.Migration",
+                "testing.test_prescription.TestPrescriptionViews",
+                "testing.test_home.TestHomeViews",
+                "testing.test_appointment.TestAppointmentViews",
+                "testing.test_form.TestProfileForm",
+                "testing.test_form_validators.TestFormValidators",
+                "testing.test_medtest.TestMedicalTest",
+                "testing.test_profile.TestProfileViews",
+                "testing.test_admin.TestAdminViews"
+              ],
+              "docstrings_embedded": 262,
+              "relationships_skipped": {
+                "unknown_type": 0,
+                "unknown_endpoint": 0
+              },
+              "code_skipped_empty_text": [],
+              "malformed_relationships": 0,
+              "docstring_truncated_text": [
+                [
+                  "server.models.Account",
+                  "generated"
+                ],
+                [
+                  "server.models.MedicalTest",
+                  "generated"
+                ],
+                [
+                  "server.forms.ProfileForm",
+                  "generated"
+                ],
+                [
+                  "testing.test_models.LocationTestCase",
+                  "generated"
+                ],
+                [
+                  "testing.test_form_validators.TestFormValidators",
+                  "generated"
+                ]
+              ],
+              "post_run_components_located": 233
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 16:16:36.486669+05:30",
+          "finished_at": "2026-11-21 16:16:38.600915+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "extract",
+          "position": 3,
+          "lane": "B",
+          "status": "done",
+          "done": 90,
+          "total": 90,
+          "detail": {
+            "judge": {
+              "done": true,
+              "batch": 4,
+              "batches": 4
+            },
+            "phase": "done",
+            "result": {
+              "event": "finished",
+              "failed": 0,
+              "out_dir": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-7/srs",
+              "seconds": 2066.2,
+              "uncertain": 1,
+              "requirements": 90
+            },
+            "current": "BR-10",
+            "candidates": 116,
+            "confidence": {
+              "low": 33,
+              "high": 74,
+              "medium": 9
+            },
+            "segmentation": {
+              "labelled": 58,
+              "candidates": 116,
+              "skipped_tables": 0,
+              "skipped_sections": 14
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 12:00:18.747092+05:30",
+          "finished_at": "2026-11-21 12:34:46.486205+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "prepare_review",
+          "position": 4,
+          "lane": "B",
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "counts": {
+              "open": 17,
+              "total": 31,
+              "resolved": 14,
+              "open_by_category": {
+                "split": 1,
+                "flagged": 15,
+                "uncertain": 1,
+                "incomplete": 0
+              }
+            },
+            "requirements": 90
+          },
+          "error": null,
+          "started_at": "2026-11-21 12:34:46.492730+05:30",
+          "finished_at": "2026-11-21 12:34:53.186283+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "review",
+          "position": 5,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "summary": {
+              "kept": 0,
+              "edited": 0,
+              "merged": 0,
+              "discarded": 14,
+              "unreviewed": 17
+            },
+            "to_extract": 1,
+            "requirements": 90
+          },
+          "error": null,
+          "started_at": null,
+          "finished_at": "2026-11-21 16:16:38.685828+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "index_srs",
+          "position": 6,
+          "lane": null,
+          "status": "done",
+          "done": 91,
+          "total": 91,
+          "detail": {
+            "report": {
+              "embedded": 91,
+              "document_id": "run-7-Software Requirements Specification",
+              "document_pk": 4,
+              "requirements": 91,
+              "truncated_text": [
+                "UC-12",
+                "REQ-020",
+                "REQ-021",
+                "REQ-023",
+                "REQ-024",
+                "REQ-025",
+                "REQ-026",
+                "REQ-033",
+                "REQ-034",
+                "REQ-035",
+                "REQ-077"
+              ],
+              "skipped_empty_text": []
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 16:16:38.691123+05:30",
+          "finished_at": "2026-11-21 16:17:02.005289+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "search",
+          "position": 7,
+          "lane": null,
+          "status": "done",
+          "done": 91,
+          "total": 91,
+          "detail": {
+            "current": null,
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-21 16:17:02.009776+05:30",
+          "finished_at": "2026-11-21 16:17:03.732651+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "map",
+          "position": 8,
+          "lane": null,
+          "status": "done",
+          "done": 91,
+          "total": 91,
+          "detail": {
+            "links": {
+              "direct": 97,
+              "docstrings": 97,
+              "supporting": 230
+            },
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-21 16:17:03.737133+05:30",
+          "finished_at": "2026-11-21 16:17:04.206807+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "verify",
+          "position": 9,
+          "lane": null,
+          "status": "done",
+          "done": 91,
+          "total": 91,
+          "detail": {
+            "model": "qwen2.5-coder:7b",
+            "current": null,
+            "status_counts": {
+              "supported": 4,
+              "partially_supported": 5,
+              "not_supported_by_candidate": 82
+            },
+            "prompt_version": "verify-v2.3"
+          },
+          "error": null,
+          "started_at": "2026-11-21 16:17:04.211575+05:30",
+          "finished_at": "2026-11-21 16:34:32.103369+05:30"
+        },
+        {
+          "run_id": 7,
+          "stage": "results",
+          "position": 10,
+          "lane": null,
+          "status": "done",
+          "done": 91,
+          "total": 91,
+          "detail": {},
+          "error": null,
+          "started_at": "2026-11-21 16:34:32.108221+05:30",
+          "finished_at": "2026-11-21 16:34:32.140744+05:30"
+        }
+      ],
+      "component_id_check": {
+        "gold_components": 46,
+        "found": 46,
+        "missing": [],
+        "stored_components": 234,
+        "ok": true
+      },
+      "log": "final_tests/v1/results/logs/Virtual-clinic.log",
+      "ollama_host": "http://127.0.0.1:11435"
+    },
+    "ProClinic": {
+      "label": "V1 - human-annotated gold",
+      "status": "completed",
+      "error": null,
+      "cli_returncode": 0,
+      "run_id": 6,
+      "document_id": "run-6-ProClinicSRS",
+      "repo_id": "run-6-code",
+      "commit_sha": "ee23cb7e8b875745e2c355f9955e24d654169345",
+      "srs_file": "ProClinicSRS.pdf",
+      "python_components": 558,
+      "models": {
+        "srs": "qwen3:8b",
+        "judge": "qwen3:4b",
+        "docagent": "yi-coder:9b",
+        "verifier": "qwen2.5-coder:7b"
+      },
+      "settings": {
+        "ingest": {
+          "parallel": true,
+          "overwrite_docstrings": true
+        },
+        "limits": {
+          "max_upload_mb": 200,
+          "large_repo_files": 400,
+          "large_repo_components": 1500
+        },
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        },
+        "review": {
+          "duplicate_threshold": 0.9
+        },
+        "search": {
+          "top_n": 10,
+          "candidate_k": 50
+        },
+        "source": {
+          "exclude_dirs": [
+            ".git",
+            ".hg",
+            ".svn",
+            "venv",
+            ".venv",
+            "env",
+            "node_modules",
+            "build",
+            "dist",
+            "site-packages",
+            "__pycache__",
+            ".tox",
+            ".mypy_cache",
+            ".pytest_cache",
+            ".idea",
+            ".vscode"
+          ]
+        },
+        "mapping": {
+          "max_supporting": 6,
+          "max_direct_rank": 3,
+          "use_source_references": true
+        },
+        "thinking": {
+          "srs": false,
+          "judge": null,
+          "docagent": null,
+          "verifier": null
+        },
+        "ollama_host": "http://localhost:11434",
+        "verification": {
+          "claims": "clauses"
+        }
+      },
+      "wall_minutes": 433.87,
+      "stage_minutes": {
+        "fetch": 0.0,
+        "docstrings": 431.46,
+        "index_code": 0.08,
+        "extract": 8.31,
+        "prepare_review": 0.12,
+        "index_srs": 0.02,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 2.23,
+        "results": 0.0
+      },
+      "stages": [
+        {
+          "run_id": 6,
+          "stage": "fetch",
+          "position": 0,
+          "lane": "A",
+          "status": "done",
+          "done": 1205,
+          "total": 1205,
+          "detail": {
+            "source": {
+              "ref": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/datasets/Data/ProClinic/code",
+              "kind": "folder",
+              "name": "code",
+              "root": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-6/source",
+              "stats": {
+                "bytes": 15487703,
+                "files": 1205,
+                "classes": 194,
+                "methods": 292,
+                "functions": 110,
+                "components": 596,
+                "unparsable": [],
+                "python_files": 127,
+                "python_lines": 10143,
+                "skipped_dirs": []
+              },
+              "git_ref": null,
+              "warnings": [],
+              "commit_sha": "ee23cb7e8b875745e2c355f9955e24d654169345"
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 11:46:53.379556+05:30",
+          "finished_at": "2026-11-21 11:46:53.624007+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "docstrings",
+          "position": 1,
+          "lane": "A",
+          "status": "done",
+          "done": 571,
+          "total": 571,
+          "detail": {
+            "agent": "verifier",
+            "types": {
+              "class": 169,
+              "method": 292,
+              "function": 110
+            },
+            "current": "backend.appointments.models.Appointment",
+            "graph_path": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-6/docagent/output/dependency_graphs/work_dependency_graph.json"
+          },
+          "error": null,
+          "started_at": "2026-11-21 11:46:53.628679+05:30",
+          "finished_at": "2026-11-21 18:58:21.026298+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "index_code",
+          "position": 2,
+          "lane": "A",
+          "status": "done",
+          "done": 571,
+          "total": 571,
+          "detail": {
+            "report": {
+              "repo_id": "run-6-code",
+              "repo_pk": 5,
+              "components": 571,
+              "docstrings": {
+                "existing": 148,
+                "generated": 554
+              },
+              "graph_format": "v1",
+              "code_embedded": 571,
+              "relationships": 425,
+              "code_truncated_text": [
+                "get_structure.parse_file",
+                "backend.core.views.dashboard",
+                "backend.core.utils.send_appointment_notification",
+                "backend.core.utils.send_lab_report_notification",
+                "backend.appointments.test_noshow.AutoNoshowServiceTests",
+                "backend.appointments.tests.AppointmentCheckInTests",
+                "backend.appointments.tests.AppointmentCheckInTests.setUp",
+                "backend.appointments.test_consultation.ConsultationNotesTests",
+                "backend.appointments.test_consultation.ConsultationNotesTests.test_notes_submitted_successfully",
+                "backend.appointments.test_consultation.ConsultationNotesTests.test_notes_visible_after_completion",
+                "backend.appointments.test_consultation.ConsultationNotesTests.test_blank_notes",
+                "backend.appointments.models.DoctorUnavailability",
+                "backend.appointments.models.DoctorUnavailability.clean",
+                "backend.appointments.models.Appointment",
+                "backend.appointments.models.Appointment.clean",
+                "backend.appointments.test_conflicts.DoctorUnavailabilityConflictTests",
+                "backend.appointments.services.auto_mark_noshow",
+                "backend.appointments.views.book_appointment",
+                "backend.appointments.views.doctor_appointment_detail",
+                "backend.appointments.views.get_available_slots",
+                "backend.appointments.views.receptionist_appointments",
+                "backend.appointments.views.receptionist_cancel_appointment",
+                "backend.appointments.views.receptionist_reschedule_appointment",
+                "backend.appointments.views.receptionist_mark_noshow",
+                "backend.appointments.views.receptionist_checkin_appointment",
+                "backend.appointments.forms.AppointmentForm",
+                "backend.appointments.forms.AppointmentForm.__init__",
+                "backend.appointments.forms.AppointmentForm.clean",
+                "backend.appointments.forms.DoctorUnavailabilityForm",
+                "backend.appointments.forms.DoctorUnavailabilityForm.clean",
+                "backend.appointments.migrations.0002_doctorunavailability.Migration",
+                "backend.appointments.migrations.0003_add_rescheduled_status_cancellation_fields.Migration",
+                "backend.appointments.migrations.0001_initial.Migration",
+                "backend.billing.tests.InvoicePDFDownloadTest",
+                "backend.billing.tests.InvoicePDFDownloadTest.setUp",
+                "backend.billing.tests.InvoiceManualEmailTest",
+                "backend.billing.tests.InvoiceManualEmailTest.setUp",
+                "backend.billing.tests.InvoiceManualEmailTest.test_manual_email_success_with_pdf_attachment",
+                "backend.billing.models.Invoice",
+                "backend.billing.models.InvoiceItem",
+                "backend.billing.signals.create_draft_invoice_on_completion",
+                "backend.billing.views.generate_invoice",
+                "backend.billing.views.patient_invoices",
+                "backend.billing.views.invoice_edit_draft",
+                "backend.billing.views.invoice_list",
+                "backend.billing.views.invoice_update_status",
+                "backend.billing.views.invoice_send_email_manual",
+                "backend.billing.views.api_prescription_context",
+                "backend.billing.views.api_patient_appointments",
+                "backend.billing.views.medicine_create",
+                "backend.billing.views.invoice_pdf_download",
+                "backend.billing.test_invoice_flow.AppointmentTimeDisplayTest",
+                "backend.billing.test_invoice_flow.AppointmentTimeDisplayTest.setUp",
+                "backend.billing.test_invoice_flow.AppointmentTimeDisplayTest.test_api_returns_local_time_not_utc",
+                "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest",
+                "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice",
+                "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_500_saved_correctly",
+                "backend.billing.utils.generate_invoice_pdf",
+                "backend.billing.utils.send_draft_invoice_email",
+                "backend.billing.utils.send_paid_invoice_email",
+                "backend.billing.forms.InvoiceForm",
+                "backend.billing.migrations.0001_initial.Migration",
+                "backend.billing.migrations.0002_medicinemaster_invoice_discount_amount_and_more.Migration",
+                "backend.prescriptions.models.Prescription",
+                "backend.prescriptions.views.create_prescription",
+                "backend.prescriptions.views.pharmacist_prescription_list",
+                "backend.prescriptions.views.dispense_prescription",
+                "backend.prescriptions.migrations.0002_add_visit_fk_remove_notes.Migration",
+                "backend.prescriptions.migrations.0001_initial.Migration",
+                "backend.api.serializers.PublicationSerializer",
+                "backend.api.tests.PatientTestBase",
+                "backend.api.tests.PatientTestBase.setUpTestData",
+                "backend.api.tests.PatientProfileTests",
+                "backend.api.tests.PatientAppointmentTests",
+                "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+                "backend.api.tests.PatientPrescriptionTests",
+                "backend.api.tests.PatientInvoiceTests",
+                "backend.api.tests.PatientLabReportTests",
+                "backend.api.tests.PatientVisitTests",
+                "backend.api.tests.StaffAPIPermissionTests",
+                "backend.api.test_jwt_auth.JWTAuthenticationTests",
+                "backend.api.tests_extended.BaseTestCase",
+                "backend.api.tests_extended.BaseTestCase.setUpTestData",
+                "backend.api.tests_extended.AuditMiddlewareTests",
+                "backend.api.tests_extended.AuditSignalHelperTests",
+                "backend.api.tests_extended.AuditSignalIntegrationTests",
+                "backend.api.tests_extended.AuditSignalIntegrationTests.test_patient_update_diff_captured",
+                "backend.api.tests_extended.AuditSignalIntegrationTests.test_no_update_log_when_nothing_changes",
+                "backend.api.tests_extended.PublicationModelTests",
+                "backend.api.tests_extended.PublicationAPITests",
+                "backend.api.tests_extended.AppointmentModelTests",
+                "backend.api.tests_extended.LabReportModelTests",
+                "backend.api.tests_extended.StaffAppointmentAPITests",
+                "backend.api.tests_extended.StaffPrescriptionAPITests",
+                "backend.api.tests_extended.StaffInvoiceAPITests",
+                "backend.api.tests_extended.StaffPatientAPITests",
+                "backend.api.tests_extended.PublicationWebViewTests",
+                "backend.api.views.AppointmentViewSet",
+                "backend.api.views.AppointmentViewSet.reschedule",
+                "backend.api.views.PrescriptionViewSet",
+                "backend.api.views.PublicationViewSet",
+                "backend.api.views.PublicationViewSet.public_list",
+                "backend.api.patient_views.PatientAppointmentListCreateView",
+                "backend.api.patient_views.PatientAppointmentListCreateView.post",
+                "backend.api.patient_views.PatientAppointmentRescheduleView",
+                "backend.api.patient_views.PatientAppointmentRescheduleView.put",
+                "backend.api.patient_views.PatientAppointmentCancelView",
+                "backend.api.patient_views.PatientAppointmentCancelView.post",
+                "backend.api.patient_views.PatientLabReportListCreateView",
+                "backend.publications.models.Publication",
+                "backend.publications.admin.PublicationAdmin",
+                "backend.publications.migrations.0001_initial.Migration",
+                "backend.publications.migrations.0002_add_approval_fields.Migration",
+                "backend.patients.test_lab_reports.LabReportValidationTests",
+                "backend.patients.tests.PatientWebViewsTests",
+                "backend.patients.tests.PatientWebViewsTests.setUp",
+                "backend.patients.models.Patient",
+                "backend.patients.models.LabReport",
+                "backend.patients.views.patient_list",
+                "backend.patients.views.patient_detail",
+                "backend.patients.views.lab_report_verify",
+                "backend.patients.views.patient_my_lab_reports",
+                "backend.patients.views.patient_ai_ask",
+                "backend.patients.forms.PatientForm",
+                "backend.patients.forms.Meta",
+                "backend.patients.admin.LabReportAdmin",
+                "backend.patients.migrations.0002_add_user_fk_visit_labreport.Migration",
+                "backend.patients.migrations.0004_upgrade_labreport_pdf_status.Migration",
+                "backend.patients.migrations.0001_initial.Migration",
+                "backend.audit.models.AuditLog",
+                "backend.audit.signals._log_save",
+                "backend.audit.views.audit_log_list",
+                "backend.audit.migrations.0001_initial.Migration",
+                "backend.accounts.tests.StaffProfileViewTest",
+                "backend.accounts.views.patient_signup",
+                "backend.accounts.views.deactivate_staff_account",
+                "backend.accounts.views.reactivate_staff_account",
+                "backend.accounts.views.patient_profile",
+                "backend.accounts.views.patient_forgot_password_request",
+                "backend.accounts.views.patient_forgot_password_verify",
+                "backend.accounts.views.patient_forgot_password_reset",
+                "backend.accounts.forms.PatientSignUpForm",
+                "backend.accounts.forms.StaffCreationForm",
+                "backend.accounts.forms.PatientProfileForm",
+                "backend.accounts.migrations.0001_initial.Migration"
+              ],
+              "docstrings_embedded": 702,
+              "relationships_skipped": {
+                "unknown_type": 0,
+                "unknown_endpoint": 0
+              },
+              "code_skipped_empty_text": [],
+              "malformed_relationships": 0,
+              "docstring_truncated_text": [
+                [
+                  "backend.appointments.test_noshow.AutoNoshowServiceTests",
+                  "generated"
+                ],
+                [
+                  "backend.appointments.tests.AppointmentCheckInTests",
+                  "generated"
+                ],
+                [
+                  "backend.appointments.models.Appointment",
+                  "generated"
+                ],
+                [
+                  "backend.appointments.admin.AppointmentAdmin",
+                  "generated"
+                ],
+                [
+                  "backend.billing.tests.InvoicePDFDownloadTest",
+                  "generated"
+                ],
+                [
+                  "backend.billing.tests.InvoiceManualEmailTest",
+                  "generated"
+                ],
+                [
+                  "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest",
+                  "generated"
+                ],
+                [
+                  "backend.billing.utils.generate_invoice_pdf_bytes",
+                  "generated"
+                ],
+                [
+                  "backend.billing.utils.generate_invoice_pdf",
+                  "generated"
+                ],
+                [
+                  "backend.billing.migrations.0001_initial.Migration",
+                  "generated"
+                ],
+                [
+                  "backend.billing.migrations.0002_medicinemaster_invoice_discount_amount_and_more.Migration",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.PatientTestBase",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.PatientProfileTests",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.PatientAppointmentTests",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.PatientLabReportTests",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.PatientLabReportTests.test_other_patient_cannot_see_lab_reports",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests.StaffAPIPermissionTests",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests_extended.BaseTestCase",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests_extended.PublicationAPITests",
+                  "generated"
+                ],
+                [
+                  "backend.api.tests_extended.StaffAppointmentAPITests",
+                  "generated"
+                ],
+                [
+                  "backend.api.views.AuditLogViewSet",
+                  "generated"
+                ],
+                [
+                  "backend.api.patient_views.PatientLabReportListCreateView",
+                  "generated"
+                ],
+                [
+                  "backend.publications.models.Publication",
+                  "generated"
+                ],
+                [
+                  "backend.publications.migrations.0001_initial.Migration",
+                  "generated"
+                ],
+                [
+                  "backend.patients.tests.PatientWebViewsTests",
+                  "generated"
+                ],
+                [
+                  "backend.patients.migrations.0002_add_user_fk_visit_labreport.Migration",
+                  "generated"
+                ],
+                [
+                  "backend.audit.signals._write_log",
+                  "generated"
+                ],
+                [
+                  "backend.audit.admin.AuditLogAdmin",
+                  "generated"
+                ],
+                [
+                  "backend.accounts.forms.PatientSignUpForm",
+                  "generated"
+                ],
+                [
+                  "backend.accounts.migrations.0001_initial.Migration",
+                  "generated"
+                ]
+              ],
+              "post_run_components_located": 558
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 18:58:21.032881+05:30",
+          "finished_at": "2026-11-21 18:58:25.543255+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "extract",
+          "position": 3,
+          "lane": "B",
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "judge": {
+              "done": true,
+              "batch": 1,
+              "batches": 1
+            },
+            "phase": "done",
+            "result": {
+              "event": "finished",
+              "failed": 0,
+              "out_dir": "/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/data/runs/run-6/srs",
+              "seconds": 497.8,
+              "uncertain": 0,
+              "requirements": 31
+            },
+            "current": "NFR-4",
+            "candidates": 33,
+            "confidence": {
+              "low": 6,
+              "high": 23,
+              "medium": 4
+            },
+            "segmentation": {
+              "labelled": 20,
+              "candidates": 33,
+              "skipped_tables": 0,
+              "skipped_sections": 13
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 11:46:53.380447+05:30",
+          "finished_at": "2026-11-21 11:55:12.090319+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "prepare_review",
+          "position": 4,
+          "lane": "B",
+          "status": "done",
+          "done": 19,
+          "total": 19,
+          "detail": {
+            "counts": {
+              "open": 8,
+              "total": 19,
+              "resolved": 11,
+              "open_by_category": {
+                "split": 0,
+                "flagged": 8,
+                "uncertain": 0,
+                "incomplete": 0
+              }
+            },
+            "requirements": 31
+          },
+          "error": null,
+          "started_at": "2026-11-21 11:55:12.098690+05:30",
+          "finished_at": "2026-11-21 11:55:19.562543+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "review",
+          "position": 5,
+          "lane": null,
+          "status": "done",
+          "done": 19,
+          "total": 19,
+          "detail": {
+            "summary": {
+              "kept": 0,
+              "edited": 0,
+              "merged": 0,
+              "discarded": 11,
+              "unreviewed": 8
+            },
+            "to_extract": 0,
+            "requirements": 31
+          },
+          "error": null,
+          "started_at": null,
+          "finished_at": "2026-11-21 18:58:25.602911+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "index_srs",
+          "position": 6,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "report": {
+              "embedded": 31,
+              "document_id": "run-6-ProClinicSRS",
+              "document_pk": 5,
+              "requirements": 31,
+              "truncated_text": [],
+              "skipped_empty_text": []
+            }
+          },
+          "error": null,
+          "started_at": "2026-11-21 18:58:25.607814+05:30",
+          "finished_at": "2026-11-21 18:58:26.992979+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "search",
+          "position": 7,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "current": null,
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-21 18:58:26.999599+05:30",
+          "finished_at": "2026-11-21 18:58:27.613383+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "map",
+          "position": 8,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "links": {
+              "direct": 33,
+              "docstrings": 33,
+              "supporting": 48
+            },
+            "without_candidates": []
+          },
+          "error": null,
+          "started_at": "2026-11-21 18:58:27.617905+05:30",
+          "finished_at": "2026-11-21 18:58:27.788524+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "verify",
+          "position": 9,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {
+            "model": "qwen2.5-coder:7b",
+            "current": null,
+            "status_counts": {
+              "supported": 6,
+              "partially_supported": 2,
+              "not_supported_by_candidate": 23
+            },
+            "prompt_version": "verify-v2.3"
+          },
+          "error": null,
+          "started_at": "2026-11-21 18:58:27.793072+05:30",
+          "finished_at": "2026-11-21 19:00:41.623086+05:30"
+        },
+        {
+          "run_id": 6,
+          "stage": "results",
+          "position": 10,
+          "lane": null,
+          "status": "done",
+          "done": 31,
+          "total": 31,
+          "detail": {},
+          "error": null,
+          "started_at": "2026-11-21 19:00:41.627783+05:30",
+          "finished_at": "2026-11-21 19:00:41.657166+05:30"
+        }
+      ],
+      "component_id_check": {
+        "gold_components": 56,
+        "found": 56,
+        "missing": [],
+        "stored_components": 571,
+        "ok": true
+      },
+      "log": "final_tests/v1/results/logs/ProClinic.log"
+    }
+  }
+}

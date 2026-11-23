@@ -1,0 +1,179 @@
+{
+  "dataset": "ProClinic",
+  "document_id": "run-6-ProClinicSRS",
+  "pipeline_version": "candidates-v1",
+  "requirements_scored": 15,
+  "matching": {
+    "by_id": 15,
+    "by_text": 0,
+    "unmatched": []
+  },
+  "scores": {
+    "hit@1": 0.2667,
+    "hit@3": 0.4,
+    "hit@5": 0.4,
+    "hit@10": 0.6667,
+    "recall@1": 0.1467,
+    "recall@3": 0.2689,
+    "recall@5": 0.2911,
+    "recall@10": 0.4689,
+    "mrr": 0.3479,
+    "ndcg@10": 0.3255
+  },
+  "missed": [
+    "FR-1",
+    "FR-4",
+    "NFR-3",
+    "US001",
+    "US002"
+  ],
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1",
+      "matched_to": "FR-1",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.accounts.forms.StaffCreationForm": null,
+        "backend.accounts.models.CustomUser": null,
+        "backend.accounts.views.RoleBasedLoginView.form_valid": null,
+        "backend.accounts.views.create_staff_account": null,
+        "backend.accounts.views.patient_signup": null
+      }
+    },
+    {
+      "requirement_id": "FR-2",
+      "matched_to": "FR-2",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.appointments.forms.AppointmentForm.clean": 8,
+        "backend.appointments.models.Appointment.clean": 6
+      }
+    },
+    {
+      "requirement_id": "FR-3",
+      "matched_to": "FR-3",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.accounts.views.patient_signup": null,
+        "backend.patients.views.patient_create": null,
+        "backend.patients.views.patient_detail": null,
+        "backend.patients.views.patient_my_visits": 1,
+        "backend.patients.views.patient_update": null
+      }
+    },
+    {
+      "requirement_id": "FR-4",
+      "matched_to": "FR-4",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.billing.models.Invoice.recalculate_totals": null,
+        "backend.billing.signals.create_draft_invoice_on_completion": null,
+        "backend.billing.views.generate_invoice": null
+      }
+    },
+    {
+      "requirement_id": "FR-5",
+      "matched_to": "FR-5",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.accounts.views.deactivate_staff_account": null,
+        "backend.audit.signals._log_delete": 4,
+        "backend.audit.signals._log_save": 3
+      }
+    },
+    {
+      "requirement_id": "FR-6",
+      "matched_to": "FR-6",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.patients.views.patient_ai_ask": 1
+      }
+    },
+    {
+      "requirement_id": "NFR-3",
+      "matched_to": "NFR-3",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.api.permissions.IsAdminRole.has_permission": null,
+        "backend.api.permissions.IsDoctor.has_permission": null,
+        "backend.api.permissions.IsPatient.has_permission": null,
+        "backend.api.permissions.IsStaff.has_permission": null
+      }
+    },
+    {
+      "requirement_id": "NFR-4",
+      "matched_to": "NFR-4",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.api.pagination.LargeResultsSetPagination": 7,
+        "backend.api.pagination.StandardResultsSetPagination": null,
+        "backend.patients.views.patient_list": null
+      }
+    },
+    {
+      "requirement_id": "US001",
+      "matched_to": "US001",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.accounts.forms.StaffCreationForm.save": null,
+        "backend.accounts.views.create_staff_account": null,
+        "backend.accounts.views.deactivate_staff_account": null,
+        "backend.accounts.views.reactivate_staff_account": null
+      }
+    },
+    {
+      "requirement_id": "US002",
+      "matched_to": "US002",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.appointments.views.book_appointment": null,
+        "backend.appointments.views.doctor_unavailability": null
+      }
+    },
+    {
+      "requirement_id": "US003",
+      "matched_to": "US003",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.patients.views.patient_my_lab_reports": null,
+        "backend.patients.views.patient_my_prescriptions": 10,
+        "backend.patients.views.patient_my_visits": null
+      }
+    },
+    {
+      "requirement_id": "US004",
+      "matched_to": "US004",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.billing.views.generate_invoice": null,
+        "backend.billing.views.invoice_pdf_download": 3
+      }
+    },
+    {
+      "requirement_id": "US005",
+      "matched_to": "US005",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.prescriptions.views.pharmacist_prescription_detail": 1,
+        "backend.prescriptions.views.pharmacist_prescription_list": 3
+      }
+    },
+    {
+      "requirement_id": "US007",
+      "matched_to": "US007",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.core.views.dashboard": 7
+      }
+    },
+    {
+      "requirement_id": "US008",
+      "matched_to": "US008",
+      "candidates": 10,
+      "primary_ranks": {
+        "backend.publications.views.admin_approve": 2,
+        "backend.publications.views.submit_paper": 1
+      }
+    }
+  ]
+}

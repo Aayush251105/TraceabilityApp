@@ -1,0 +1,300 @@
+{
+  "search": {
+    "requirements": 11,
+    "map": 0.6065656565656566,
+    "map_ci": [
+      0.42424242424242425,
+      0.7702020202020201
+    ],
+    "mrr": 0.7045454545454546,
+    "mrr_ci": [
+      0.5,
+      0.9090909090909091
+    ],
+    "r@1": 0.3939393939393939,
+    "r@1_ci": [
+      0.16666666666666666,
+      0.6363636363636364
+    ],
+    "r@5": 0.7878787878787878,
+    "r@5_ci": [
+      0.5606060606060607,
+      0.9545454545454546
+    ],
+    "r@10": 0.8636363636363636,
+    "r@10_ci": [
+      0.6363636363636364,
+      1.0
+    ],
+    "sr@|G|": 0.2727272727272727,
+    "sr@|G|_ci": [
+      0.0,
+      0.5454545454545454
+    ],
+    "ndcg@10_stored_candidates": 0.6672,
+    "evaluate_channels": {
+      "code_lexical": {
+        "hit@1": 0.4545,
+        "hit@3": 0.7273,
+        "hit@5": 0.8182,
+        "hit@10": 0.8182,
+        "recall@1": 0.303,
+        "recall@3": 0.5152,
+        "recall@5": 0.697,
+        "recall@10": 0.697,
+        "mrr": 0.589,
+        "ndcg@10": 0.5862
+      },
+      "code_vector": {
+        "hit@1": 0.3636,
+        "hit@3": 0.7273,
+        "hit@5": 0.9091,
+        "hit@10": 0.9091,
+        "recall@1": 0.2727,
+        "recall@3": 0.6515,
+        "recall@5": 0.7879,
+        "recall@10": 0.8636,
+        "mrr": 0.5963,
+        "ndcg@10": 0.5765
+      },
+      "code_hybrid": {
+        "hit@1": 0.5455,
+        "hit@3": 0.8182,
+        "hit@5": 0.9091,
+        "hit@10": 0.9091,
+        "recall@1": 0.4545,
+        "recall@3": 0.6515,
+        "recall@5": 0.7879,
+        "recall@10": 0.8636,
+        "mrr": 0.7053,
+        "ndcg@10": 0.6889
+      },
+      "doc_lexical": {
+        "hit@1": 0.2727,
+        "hit@3": 0.5455,
+        "hit@5": 0.5455,
+        "hit@10": 0.7273,
+        "recall@1": 0.1667,
+        "recall@3": 0.3333,
+        "recall@5": 0.4091,
+        "recall@10": 0.6818,
+        "mrr": 0.4186,
+        "ndcg@10": 0.4287
+      },
+      "doc_vector": {
+        "hit@1": 0.3636,
+        "hit@3": 0.5455,
+        "hit@5": 0.7273,
+        "hit@10": 0.9091,
+        "recall@1": 0.303,
+        "recall@3": 0.4242,
+        "recall@5": 0.5606,
+        "recall@10": 0.8182,
+        "mrr": 0.5078,
+        "ndcg@10": 0.5517
+      },
+      "doc_hybrid": {
+        "hit@1": 0.1818,
+        "hit@3": 0.5455,
+        "hit@5": 0.7273,
+        "hit@10": 1.0,
+        "recall@1": 0.0758,
+        "recall@3": 0.3788,
+        "recall@5": 0.5152,
+        "recall@10": 0.9091,
+        "mrr": 0.4106,
+        "ndcg@10": 0.4967
+      },
+      "all_hybrid": {
+        "hit@1": 0.5455,
+        "hit@3": 0.8182,
+        "hit@5": 0.9091,
+        "hit@10": 0.9091,
+        "recall@1": 0.3939,
+        "recall@3": 0.6515,
+        "recall@5": 0.7879,
+        "recall@10": 0.8636,
+        "mrr": 0.7106,
+        "ndcg@10": 0.6672
+      }
+    },
+    "mrr_all_hybrid": 0.7106,
+    "gold_components_missing_from_repo": []
+  },
+  "mapping": {
+    "requirements": 11,
+    "direct": {
+      "precision": 0.625,
+      "recall": 0.5882352941176471,
+      "f1": 0.6060606060606061,
+      "f2": 0.5952380952380952,
+      "tp": 10,
+      "fp": 6,
+      "fn": 7,
+      "precision_ci": [
+        0.4,
+        0.8235294117647058
+      ],
+      "recall_ci": [
+        0.4,
+        0.75
+      ],
+      "f1_ci": [
+        0.39999999999999997,
+        0.7777777777777778
+      ],
+      "f2_ci": [
+        0.4,
+        0.7647058823529411
+      ]
+    },
+    "all_links": {
+      "precision": 0.3287671232876712,
+      "recall": 0.75,
+      "f1": 0.45714285714285713,
+      "f2": 0.5970149253731344,
+      "tp": 24,
+      "fp": 49,
+      "fn": 8,
+      "precision_ci": [
+        0.23880597014925373,
+        0.410958904109589
+      ],
+      "recall_ci": [
+        0.6153846153846154,
+        0.8571428571428571
+      ],
+      "f1_ci": [
+        0.3488372093023256,
+        0.544
+      ],
+      "f2_ci": [
+        0.4761904761904763,
+        0.6818181818181819
+      ]
+    },
+    "links_on_requirements_without_code": 0
+  },
+  "verification": {
+    "requirements_judged": 13,
+    "exact_accuracy": 0.3076923076923077,
+    "exact_accuracy_ci": [
+      0.07692307692307693,
+      0.5384615384615384
+    ],
+    "macro_f1": 0.24848484848484845,
+    "macro_f1_ci": [
+      0.06666666666666667,
+      0.4511784511784511
+    ],
+    "weighted_kappa": 0.07741935483870965,
+    "weighted_kappa_ci": [
+      0.0,
+      0.3157894736842105
+    ],
+    "false_support_rate": 0.0,
+    "false_support_rate_ci": [
+      0.0,
+      0.0
+    ],
+    "false_support_not_implemented_sup_or_part": 0.0,
+    "false_support_not_implemented_sup_or_part_ci": [
+      0.0,
+      0.0
+    ],
+    "implemented_recall": 0.0,
+    "implemented_recall_ci": [
+      0.0,
+      0.0
+    ],
+    "implemented_or_partial_found": 0.2727272727272727,
+    "implemented_or_partial_found_ci": [
+      0.0,
+      0.5454545454545454
+    ],
+    "confusion": {
+      "partial": {
+        "partially_supported": 3,
+        "not_supported_by_candidate": 5
+      },
+      "not_implemented": {
+        "not_supported_by_candidate": 1,
+        "unverified": 1
+      },
+      "implemented": {
+        "not_supported_by_candidate": 2,
+        "insufficient_evidence": 1
+      }
+    },
+    "cross_cutting": {
+      "not_supported_by_candidate": 1
+    },
+    "supported": 0,
+    "errors": {
+      "verifier error": 6,
+      "mapping miss": 1,
+      "extraction miss": 1,
+      "retrieval miss": 1
+    },
+    "citation_validity": 0.7778,
+    "citation_on_gold": null,
+    "evaluator_scores": {
+      "exact_accuracy": 0.3077,
+      "false_support_rate": 0.0,
+      "implemented_recall": 0.0,
+      "citation_validity": 0.7778,
+      "citation_on_gold": null,
+      "claim_accuracy": null
+    },
+    "citations": {
+      "citations_valid": 21,
+      "citations_rejected": 6
+    }
+  },
+  "extraction": {
+    "gold_requirements": 14,
+    "gold_incl_excluded": 19,
+    "extracted": 27,
+    "matched_extracted": 18,
+    "precision": 0.6666666666666666,
+    "recall": 0.9285714285714286,
+    "recall_incl_excluded": 0.9473684210526315,
+    "by": {
+      "by_id": 8,
+      "by_text": 10
+    },
+    "text_threshold": 0.6,
+    "f1": 0.7761194029850746,
+    "recall_ci": [
+      0.7857142857142857,
+      1.0
+    ]
+  },
+  "minutes": {
+    "fetch": 0.0,
+    "docstrings": 23.34,
+    "index_code": 0.04,
+    "extract": 13.68,
+    "prepare_review": 0.09,
+    "index_srs": 0.34,
+    "search": 0.01,
+    "map": 0.0,
+    "verify": 2.94,
+    "results": 0.0,
+    "wall_total": 26.69
+  },
+  "run": {
+    "run_id": 2,
+    "document_id": "run-2-SRS",
+    "repo_id": "run-2-code",
+    "commit_sha": "2cc23a2f3b265d97e99df8b402a92979447ab7da",
+    "status": "completed",
+    "models": {
+      "srs": "qwen3:8b",
+      "judge": "qwen3:4b",
+      "docagent": "yi-coder:9b",
+      "verifier": "qwen2.5-coder:7b"
+    }
+  },
+  "label": "V1 - human-annotated gold"
+}

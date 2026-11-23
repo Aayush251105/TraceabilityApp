@@ -1,0 +1,122 @@
+{
+  "dataset": "Travel-Agency-Automation-System",
+  "document_id": "run-2-SRS",
+  "pipeline_version": "candidates-v1",
+  "requirements_scored": 11,
+  "matching": {
+    "by_id": 2,
+    "by_text": 9,
+    "unmatched": []
+  },
+  "scores": {
+    "hit@1": 0.5455,
+    "hit@3": 0.8182,
+    "hit@5": 0.9091,
+    "hit@10": 0.9091,
+    "recall@1": 0.3939,
+    "recall@3": 0.6515,
+    "recall@5": 0.7879,
+    "recall@10": 0.8636,
+    "mrr": 0.7045,
+    "ndcg@10": 0.6672
+  },
+  "missed": [
+    "REQ-001"
+  ],
+  "per_requirement": [
+    {
+      "requirement_id": "FEAT-4.1",
+      "matched_to": "REQ-010",
+      "candidates": 10,
+      "primary_ranks": {
+        "main.main": 1
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.3",
+      "matched_to": "REQ-012",
+      "candidates": 10,
+      "primary_ranks": {
+        "main.main": 2
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.4",
+      "matched_to": "REQ-013",
+      "candidates": 10,
+      "primary_ranks": {
+        "Booking.Booking.token": 6,
+        "main.main": 1
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.5",
+      "matched_to": "REQ-014",
+      "candidates": 10,
+      "primary_ranks": {
+        "Booking.returning.priceCal": 6,
+        "Booking.returning.returnCar": 3,
+        "main.main": 1
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.6",
+      "matched_to": "REQ-015",
+      "candidates": 10,
+      "primary_ranks": {
+        "Owner.Owner.getData": 3,
+        "main.main": 2
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.7",
+      "matched_to": "REQ-016",
+      "candidates": 10,
+      "primary_ranks": {
+        "Owner.Owner.updateData": 1
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.8",
+      "matched_to": "REQ-018",
+      "candidates": 10,
+      "primary_ranks": {
+        "Booking.Booking.token": 5,
+        "Booking.returning.returnCar": 2
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.9",
+      "matched_to": "REQ-026",
+      "candidates": 10,
+      "primary_ranks": {
+        "Owner.Owner.getInfo": 4
+      }
+    },
+    {
+      "requirement_id": "FEAT-4.10",
+      "matched_to": "REQ-019",
+      "candidates": 10,
+      "primary_ranks": {
+        "Owner.Owner.setPrice": 1
+      }
+    },
+    {
+      "requirement_id": "REQ-001",
+      "matched_to": "REQ-001",
+      "candidates": 10,
+      "primary_ranks": {
+        "main.main": null
+      }
+    },
+    {
+      "requirement_id": "REQ-005",
+      "matched_to": "REQ-005",
+      "candidates": 10,
+      "primary_ranks": {
+        "Owner.Owner.__init__": null,
+        "main.main": 1
+      }
+    }
+  ]
+}

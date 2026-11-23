@@ -1,0 +1,2231 @@
+{
+  "schema_version": "2.0",
+  "label": "V1 - human-annotated gold",
+  "dataset": "Virtual-clinic",
+  "code_root": "code",
+  "srs_file": "Software Requirements Specification.pdf",
+  "repository_url": "https://github.com/mishal23/virtual-clinic.git",
+  "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6",
+  "line_numbering": "1-based, inclusive, original code before any docstring insertion",
+  "annotation": "human-annotated (workbook repo_info still says DRAFT; reviewed by the annotators)",
+  "source_workbook": "Virtual-clinic_gold.xlsx",
+  "guide_version": "ANNOTATION_GUIDE.md 1.1",
+  "requirements": [
+    {
+      "requirement_id": "Req-1",
+      "title": null,
+      "text": "Req-1 Maintain Specialities: This functionality will Maintain different types of Specialities",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Add, list and delete exist; no edit.",
+      "links": [
+        {
+          "component_id": "server.views_admin.add_speciality",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 176,
+          "end_line": 203,
+          "anchor_text": "def add_speciality(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 176,
+              "end_line": 203,
+              "anchor_text": "def add_speciality(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.view_speciality",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 154,
+          "end_line": 162,
+          "anchor_text": "def view_speciality(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 154,
+              "end_line": 162,
+              "anchor_text": "def view_speciality(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.parse_speciality_delete",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 17,
+          "end_line": 36,
+          "anchor_text": "def parse_speciality_delete(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 17,
+              "end_line": 36,
+              "anchor_text": "def parse_speciality_delete(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Speciality",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 22,
+          "end_line": 27,
+          "anchor_text": "class Speciality(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: the entity",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "title": null,
+      "text": "Req-1/1 Add Speciality: Add a new (unique) Speciality",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Specialities can be added; uniqueness is not checked (no unique constraint, no duplicate check).",
+      "links": [
+        {
+          "component_id": "server.views_admin.add_speciality",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 176,
+          "end_line": 203,
+          "anchor_text": "def add_speciality(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "creates the speciality, no duplicate check",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 188,
+              "end_line": 199,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.SpecialityForm",
+          "component_type": "class",
+          "path": "server/forms.py",
+          "start_line": 221,
+          "end_line": 225,
+          "anchor_text": "class SpecialityForm(BasicForm):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "server.models.Speciality",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 22,
+          "end_line": 27,
+          "anchor_text": "class Speciality(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "instantiated_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "title": null,
+      "text": "Req-1/2 Edit Speciality: View and Update the details of an existing Speciality",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "List view only; no update view.",
+      "links": [
+        {
+          "component_id": "server.views_admin.view_speciality",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 154,
+          "end_line": 162,
+          "anchor_text": "def view_speciality(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "view only",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 154,
+              "end_line": 162,
+              "anchor_text": "def view_speciality(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "title": null,
+      "text": "Req-1/3 Delete Speciality: Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Deletes without checking attached doctors (Profile.speciality is on_delete=CASCADE).",
+      "links": [
+        {
+          "component_id": "server.views_admin.parse_speciality_delete",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 17,
+          "end_line": 36,
+          "anchor_text": "def parse_speciality_delete(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "deletes without the doctor check",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 25,
+              "end_line": 36,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-2",
+      "title": null,
+      "text": "Req-2 Maintain Doctors: This functionality will Maintain Doctors and Associate them with the Speciality",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Admin creates doctor accounts with a speciality; no dedicated edit/delete of doctor details.",
+      "links": [
+        {
+          "component_id": "server.views_admin.createemployee_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 272,
+          "end_line": 296,
+          "anchor_text": "def createemployee_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 272,
+              "end_line": 296,
+              "anchor_text": "def createemployee_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.EmployeeRegistrationForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 251,
+          "end_line": 267,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "doctor must have a speciality",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 263,
+              "end_line": 266,
+              "anchor_text": "if int(employee)==20 and speciality is None:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.register_user",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 102,
+          "end_line": 125,
+          "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "title": null,
+      "text": "Req-2/1 Add Doctor: Add a new (unique) Doctor - Name, Age, Sex, Qualification, Experience, Speciality",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Unique e-mail, first/last name, password and speciality are captured; no age, sex, qualification or experience at creation.",
+      "links": [
+        {
+          "component_id": "server.views_admin.createemployee_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 272,
+          "end_line": 296,
+          "anchor_text": "def createemployee_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 279,
+              "end_line": 292,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.register_user",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 102,
+          "end_line": 125,
+          "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "creates user, profile, account",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.validate_username_available",
+          "component_type": "function",
+          "path": "server/forms.py",
+          "start_line": 10,
+          "end_line": 14,
+          "anchor_text": "def validate_username_available(username):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "uniqueness (e-mail)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 10,
+              "end_line": 14,
+              "anchor_text": "def validate_username_available(username):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.EmployeeRegistrationForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 251,
+          "end_line": 267,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "speciality required for doctors",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 263,
+              "end_line": 266,
+              "anchor_text": "if int(employee)==20 and speciality is None:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.EmployeeRegistrationForm",
+          "component_type": "class",
+          "path": "server/forms.py",
+          "start_line": 235,
+          "end_line": 267,
+          "anchor_text": "class EmployeeRegistrationForm(BasicForm):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class: captured fields",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "title": null,
+      "text": "Req-2/2 Edit Doctor: View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Doctors edit their own profile, but the profile form lets them change the speciality (violates the rule).",
+      "links": [
+        {
+          "component_id": "server.views_profile.update_view",
+          "component_type": "function",
+          "path": "server/views_profile.py",
+          "start_line": 60,
+          "end_line": 84,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_profile.py",
+              "start_line": 60,
+              "end_line": 84,
+              "anchor_text": "def update_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.ProfileForm.assign",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 155,
+          "end_line": 165,
+          "anchor_text": "def assign(self, profile):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "line 165 lets the speciality change (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 155,
+              "end_line": 165,
+              "anchor_text": "def assign(self, profile):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.users_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 120,
+          "end_line": 139,
+          "anchor_text": "def users_view(request):",
+          "relevance": "supporting",
+          "sure": "no",
+          "notes": "other: admin changes roles",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "title": null,
+      "text": "Req-2/3 Delete Doctor: Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Admin archives any account; no pending-appointment check.",
+      "links": [
+        {
+          "component_id": "server.views_admin.user_archive",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 61,
+          "end_line": 81,
+          "anchor_text": "def user_archive(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "archives without the pending-request check",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 69,
+              "end_line": 81,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-3",
+      "title": null,
+      "text": "Req-3 Maintain Chemist & Labs: This functionality will Maintain Chemist and Lab Details",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Chemist and Lab exist only as account roles created by the admin; no address/contact/pincode details.",
+      "links": [
+        {
+          "component_id": "server.views_admin.createemployee_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 272,
+          "end_line": 296,
+          "anchor_text": "def createemployee_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 272,
+              "end_line": 296,
+              "anchor_text": "def createemployee_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Account",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 119,
+          "end_line": 183,
+          "anchor_text": "class Account(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: LAB / CHEMIST roles",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "title": null,
+      "text": "Req-3/1 Add Chemist / Lab: Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Created through the employee form; no pincode, so the one-lab-per-pincode rule is absent.",
+      "links": [
+        {
+          "component_id": "server.views_admin.createemployee_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 272,
+          "end_line": 296,
+          "anchor_text": "def createemployee_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 279,
+              "end_line": 292,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Account",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 119,
+          "end_line": 183,
+          "anchor_text": "class Account(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: LAB / CHEMIST roles",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "title": null,
+      "text": "Req-3/2 Edit Chemist/Lab: View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Only the generic own-profile update; pincode does not exist.",
+      "links": [
+        {
+          "component_id": "server.views_profile.update_view",
+          "component_type": "function",
+          "path": "server/views_profile.py",
+          "start_line": 60,
+          "end_line": 84,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "generic own-profile update",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_profile.py",
+              "start_line": 60,
+              "end_line": 84,
+              "anchor_text": "def update_view(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "title": null,
+      "text": "Req-3/3 Delete Chemist/ Lab: Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Archived like any account; no pending-prescription check.",
+      "links": [
+        {
+          "component_id": "server.views_admin.user_archive",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 61,
+          "end_line": 81,
+          "anchor_text": "def user_archive(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 69,
+              "end_line": 81,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-4",
+      "title": null,
+      "text": "Req-4 Maintain Symptoms: This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Symptom master list (add/list/delete) and a symptom selector in the appointment form; edit missing (see Req-4/2).",
+      "links": [
+        {
+          "component_id": "server.views_admin.add_symptom",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 205,
+          "end_line": 232,
+          "anchor_text": "def add_symptom(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 205,
+              "end_line": 232,
+              "anchor_text": "def add_symptom(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.view_symptom",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 165,
+          "end_line": 173,
+          "anchor_text": "def view_symptom(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 165,
+              "end_line": 173,
+              "anchor_text": "def view_symptom(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.parse_symptom_delete",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 39,
+          "end_line": 58,
+          "anchor_text": "def parse_symptom_delete(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 39,
+              "end_line": 58,
+              "anchor_text": "def parse_symptom_delete(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.AppointmentForm",
+          "component_type": "class",
+          "path": "server/forms.py",
+          "start_line": 168,
+          "end_line": 218,
+          "anchor_text": "class AppointmentForm(BasicForm):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: symptom selector (line 171)",
+          "evidence": []
+        },
+        {
+          "component_id": "server.models.Symptom",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 30,
+          "end_line": 35,
+          "anchor_text": "class Symptom(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: the entity",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "title": null,
+      "text": "Req-4/1 Add Symptom: Add a new Symptom",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "server.views_admin.add_symptom",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 205,
+          "end_line": 232,
+          "anchor_text": "def add_symptom(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 217,
+              "end_line": 228,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.SymptomForm",
+          "component_type": "class",
+          "path": "server/forms.py",
+          "start_line": 228,
+          "end_line": 232,
+          "anchor_text": "class SymptomForm(BasicForm):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "title": null,
+      "text": "Req-4/2 Edit Symptom: View and Update the details of an existing Symptom i,e. description",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "List view only; no update.",
+      "links": [
+        {
+          "component_id": "server.views_admin.view_symptom",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 165,
+          "end_line": 173,
+          "anchor_text": "def view_symptom(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "view only",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 165,
+              "end_line": 173,
+              "anchor_text": "def view_symptom(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "title": null,
+      "text": "Req-4/3 Delete Symptom: Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Deletes without a usage check (Appointment.symptom is CASCADE, so appointments are deleted too).",
+      "links": [
+        {
+          "component_id": "server.views_admin.parse_symptom_delete",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 39,
+          "end_line": 58,
+          "anchor_text": "def parse_symptom_delete(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "no usage check",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 47,
+              "end_line": 58,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5",
+      "title": null,
+      "text": "Req-5 Maintain Patients Profile: This is Patient Registration Functionality",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Create and edit implemented; delete rule missing (Req-5/3).",
+      "links": [
+        {
+          "component_id": "server.views_home.register_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 92,
+          "end_line": 123,
+          "anchor_text": "def register_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 92,
+              "end_line": 123,
+              "anchor_text": "def register_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_profile.update_view",
+          "component_type": "function",
+          "path": "server/views_profile.py",
+          "start_line": 60,
+          "end_line": 84,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_profile.py",
+              "start_line": 60,
+              "end_line": 84,
+              "anchor_text": "def update_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.user_archive",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 61,
+          "end_line": 81,
+          "anchor_text": "def user_archive(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "anchor_text": "def user_archive(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "title": null,
+      "text": "Req-5/1 Create Patient Profile: Register a new Patient",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "server.views_home.register_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 92,
+          "end_line": 123,
+          "anchor_text": "def register_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 101,
+              "end_line": 119,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.register_user",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 102,
+          "end_line": 125,
+          "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.AccountRegisterForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 97,
+          "end_line": 105,
+          "anchor_text": "def clean(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: password confirmation",
+          "evidence": []
+        },
+        {
+          "component_id": "server.forms.validate_username_available",
+          "component_type": "function",
+          "path": "server/forms.py",
+          "start_line": 10,
+          "end_line": 14,
+          "anchor_text": "def validate_username_available(username):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: unique e-mail",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "title": null,
+      "text": "Req-5/2 Edit Patient Profile: View and Update the details of an existing Patient. Only latest details shall be maintained by the system",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Profile is overwritten in place.",
+      "links": [
+        {
+          "component_id": "server.views_profile.update_view",
+          "component_type": "function",
+          "path": "server/views_profile.py",
+          "start_line": 60,
+          "end_line": 84,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_profile.py",
+              "start_line": 67,
+              "end_line": 77,
+              "anchor_text": "profile = request.user.account.profile"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.ProfileForm.assign",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 155,
+          "end_line": 165,
+          "anchor_text": "def assign(self, profile):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "overwrites the profile fields",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 155,
+              "end_line": 165,
+              "anchor_text": "def assign(self, profile):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Profile.get_populated_fields",
+          "component_type": "method",
+          "path": "server/models.py",
+          "start_line": 92,
+          "end_line": 113,
+          "anchor_text": "def get_populated_fields(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: pre-fills the form",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "title": null,
+      "text": "Req-5/3 Delete Patient Profile: Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Archived without checking appointments.",
+      "links": [
+        {
+          "component_id": "server.views_admin.user_archive",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 61,
+          "end_line": 81,
+          "anchor_text": "def user_archive(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 69,
+              "end_line": 81,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6",
+      "title": null,
+      "text": "Req-6 Consultation Request: Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Patients create appointments with type Offline/Online (APPOINTMENT_TYPE) - modes named differently from the SRS.",
+      "links": [
+        {
+          "component_id": "server.views_appointment.create_view",
+          "component_type": "function",
+          "path": "server/views_appointment.py",
+          "start_line": 110,
+          "end_line": 163,
+          "anchor_text": "def create_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_appointment.py",
+              "start_line": 110,
+              "end_line": 163,
+              "anchor_text": "def create_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Appointment",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 241,
+          "end_line": 264,
+          "anchor_text": "class Appointment(models.Model):",
+          "relevance": "supporting",
+          "sure": "no",
+          "notes": "other: appointment_type field (line 248)",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "title": null,
+      "text": "Req-6/1 Create Consultation Request: Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "One symptom and the mode are entered; patients cannot upload reports (only doctors/labs upload medical tests).",
+      "links": [
+        {
+          "component_id": "server.views_appointment.create_view",
+          "component_type": "function",
+          "path": "server/views_appointment.py",
+          "start_line": 110,
+          "end_line": 163,
+          "anchor_text": "def create_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_appointment.py",
+              "start_line": 132,
+              "end_line": 155,
+              "anchor_text": "form = AppointmentForm(request.POST)"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.AppointmentForm.generate",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 196,
+          "end_line": 206,
+          "anchor_text": "def generate(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "symptom and appointment_type",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 196,
+              "end_line": 206,
+              "anchor_text": "def generate(self):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.AppointmentForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 211,
+          "end_line": 218,
+          "anchor_text": "def clean(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6/2",
+      "title": null,
+      "text": "Req-6/2 Create Appointment- Online: For Appointment Requests, an entry shall be created in the Patient Appointment File if the appointment is for next day",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "Req-6/3",
+      "title": null,
+      "text": "Req-6/3 Create Appointment - Batch: This is batch program that will be run by Administration every night to create Appointment File for next 5 days. It will purge the existing files",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "Req-7",
+      "title": null,
+      "text": "Req-7 Predict Disease: This is a batch program that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "Req-8",
+      "title": null,
+      "text": "Req-8 Provide Consultation: Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Doctors see their appointments, create prescriptions and medical tests; no prioritisation and no diagnosis field.",
+      "links": [
+        {
+          "component_id": "server.views_appointment.list_view",
+          "component_type": "function",
+          "path": "server/views_appointment.py",
+          "start_line": 13,
+          "end_line": 31,
+          "anchor_text": "def list_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "doctor's own appointments",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_appointment.py",
+              "start_line": 25,
+              "end_line": 26,
+              "anchor_text": "if request.user.account.role == Account.ACCOUNT_DOCTOR:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_prescription.create_view",
+          "component_type": "function",
+          "path": "server/views_prescription.py",
+          "start_line": 11,
+          "end_line": 52,
+          "anchor_text": "def create_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "prescribe medicines",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_prescription.py",
+              "start_line": 11,
+              "end_line": 52,
+              "anchor_text": "def create_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_medtest.create_view",
+          "component_type": "function",
+          "path": "server/views_medtest.py",
+          "start_line": 11,
+          "end_line": 45,
+          "anchor_text": "def create_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "medical / lab tests",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_medtest.py",
+              "start_line": 11,
+              "end_line": 45,
+              "anchor_text": "def create_view(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-9",
+      "title": null,
+      "text": "Req-9 Deliver Medicines: Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status. Medicines shall be delivered offline to Patient by Chemist",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Chemists see all prescriptions (no pincode assignment); 'status update' is only deactivating a prescription.",
+      "links": [
+        {
+          "component_id": "server.views_prescription.list_view",
+          "component_type": "function",
+          "path": "server/views_prescription.py",
+          "start_line": 55,
+          "end_line": 84,
+          "anchor_text": "def list_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "chemist sees all; deactivate",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_prescription.py",
+              "start_line": 66,
+              "end_line": 84,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-10",
+      "title": null,
+      "text": "Req-10 Perform Lab Tests: Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline. Labs shall also submit reports to Patient offline",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Labs list all medical tests (not only open ones) and can update them, including 'completed'.",
+      "links": [
+        {
+          "component_id": "server.views_medtest.list_view",
+          "component_type": "function",
+          "path": "server/views_medtest.py",
+          "start_line": 48,
+          "end_line": 65,
+          "anchor_text": "def list_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_medtest.py",
+              "start_line": 59,
+              "end_line": 62,
+              "anchor_text": "if request.user.account.role == Account.ACCOUNT_DOCTOR:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_medtest.update_view",
+          "component_type": "function",
+          "path": "server/views_medtest.py",
+          "start_line": 116,
+          "end_line": 153,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "includes the completed flag",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_medtest.py",
+              "start_line": 116,
+              "end_line": 153,
+              "anchor_text": "def update_view(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-11",
+      "title": null,
+      "text": "Req-11 View/Generate Prescription/ Print Invoice: Patient shall have the facility to view the Prescription and print the invoice. Alternately, Admin can print and email the Prescription and Invoice",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Patients view their prescriptions and can download a prescription PDF; no invoice, no e-mail.",
+      "links": [
+        {
+          "component_id": "server.views_prescription.list_view",
+          "component_type": "function",
+          "path": "server/views_prescription.py",
+          "start_line": 55,
+          "end_line": 84,
+          "anchor_text": "def list_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "patient's own prescriptions",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_prescription.py",
+              "start_line": 79,
+              "end_line": 80,
+              "anchor_text": "elif request.user.account.role == Account.ACCOUNT_PATIENT:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.GeneratePdf.get",
+          "component_type": "method",
+          "path": "server/views.py",
+          "start_line": 15,
+          "end_line": 38,
+          "anchor_text": "def get(self, request, *args, **kwargs):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "prescription PDF",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views.py",
+              "start_line": 15,
+              "end_line": 38,
+              "anchor_text": "def get(self, request, *args, **kwargs):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.utils.render_to_pdf",
+          "component_type": "function",
+          "path": "server/utils.py",
+          "start_line": 7,
+          "end_line": 14,
+          "anchor_text": "def render_to_pdf(template_src, context_dict={}):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "server.views.GeneratePdf",
+          "component_type": "class",
+          "path": "server/views.py",
+          "start_line": 14,
+          "end_line": 38,
+          "anchor_text": "class GeneratePdf(View):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-12",
+      "title": null,
+      "text": "Req-12 Housekeeping Patient Profiles and Consultation Requests: Quarterly all Patient Profiles which have not raised any Consultation Request for last 3 years will be archived. Also, every quarter, Consultation Requests that are more than 3 years old shall be archived on This will improve the performance",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Only manual archiving of single accounts (user_archive), no periodic housekeeping.",
+      "links": []
+    },
+    {
+      "requirement_id": "Req-13",
+      "title": null,
+      "text": "Req-13 Daily Back-up: Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping. The back-ups shall be rotated every 30 days",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Admin-triggered JSON export of the tables to backups/; no schedule, no code backup, no remote site, no rotation.",
+      "links": [
+        {
+          "component_id": "server.views_admin.backup_data",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 538,
+          "end_line": 609,
+          "anchor_text": "def backup_data(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "manual JSON export",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "anchor_text": "def backup_data(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-14",
+      "title": null,
+      "text": "Req-14 Learning Disease: Every Month Administration will improve the Disease Prediction Database with learning of the prior month, i.e. improve the training data-set by including the actual learning for the month",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "Req-15",
+      "title": null,
+      "text": "Req-15 Maintain Users (Doctors, Patients, Chemist/ Labs): The system shall have a login functionality. Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials. For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "server.views_home.login_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 61,
+          "end_line": 89,
+          "anchor_text": "def login_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 61,
+              "end_line": 89,
+              "anchor_text": "def login_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.LoginForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 69,
+          "end_line": 80,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "password check",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 69,
+              "end_line": 80,
+              "anchor_text": "def clean(self):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_profile.password_view",
+          "component_type": "function",
+          "path": "server/views_profile.py",
+          "start_line": 34,
+          "end_line": 57,
+          "anchor_text": "def password_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "change password",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_profile.py",
+              "start_line": 34,
+              "end_line": 57,
+              "anchor_text": "def password_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_admin.createemployee_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 272,
+          "end_line": 296,
+          "anchor_text": "def createemployee_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "admin sets the initial password",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 279,
+              "end_line": 292,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_home.register_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 92,
+          "end_line": 123,
+          "anchor_text": "def register_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "patient creates credentials",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 101,
+              "end_line": 119,
+              "anchor_text": "if request.method == 'POST':"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.authentication_check",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 41,
+          "end_line": 67,
+          "anchor_text": "def authentication_check(request, required_roles=None, required_GET=None):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: guards pages after login",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-16",
+      "title": null,
+      "text": "Req-16 Reports: The System will generate following reports: a) Doctor wise Appointment file for next 5 days b) Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month) c) Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month) d) Patient History File - For a patient, history of consultations done in last 3 years.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Only an admin statistics page with activity counts in a date range; none of the four reports. Could be not_implemented.",
+      "links": [
+        {
+          "component_id": "server.views_admin.statistic_view",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 299,
+          "end_line": 347,
+          "anchor_text": "def statistic_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "activity counts only",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 299,
+              "end_line": 347,
+              "anchor_text": "def statistic_view(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-1",
+      "title": null,
+      "text": "BR-1 System shall be available only on Specified PinCodes (Zones). These will be set-up in the Parameter Control File",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "BR-2",
+      "title": null,
+      "text": "BR-2 All Users shall access the system using a login/user-id and password. The login-id/password will be managed in a secured manner",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Django authentication with hashed passwords.",
+      "links": [
+        {
+          "component_id": "server.views_home.login_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 61,
+          "end_line": 89,
+          "anchor_text": "def login_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 61,
+              "end_line": 89,
+              "anchor_text": "def login_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.LoginForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 69,
+          "end_line": 80,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 69,
+              "end_line": 80,
+              "anchor_text": "def clean(self):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-3",
+      "title": null,
+      "text": "BR-3 Each Speciality 'has' one or more Doctors linked to it.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Doctors link to a speciality (many per speciality); 'one or more' is not enforced.",
+      "links": [
+        {
+          "component_id": "server.models.Profile",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 68,
+          "end_line": 116,
+          "anchor_text": "class Profile(models.Model):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "speciality foreign key",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/models.py",
+              "start_line": 90,
+              "end_line": 90,
+              "anchor_text": "speciality = models.ForeignKey('Speciality', null=True, max_length=250, on_delete = models.CASCADE)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-4",
+      "title": null,
+      "text": "BR-4 Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Enforced when an employee is created; the profile form lets the speciality be cleared or changed later.",
+      "links": [
+        {
+          "component_id": "server.forms.EmployeeRegistrationForm.clean",
+          "component_type": "method",
+          "path": "server/forms.py",
+          "start_line": 251,
+          "end_line": 267,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/forms.py",
+              "start_line": 263,
+              "end_line": 266,
+              "anchor_text": "if int(employee)==20 and speciality is None:"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Profile",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 68,
+          "end_line": 116,
+          "anchor_text": "class Profile(models.Model):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "single speciality FK",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/models.py",
+              "start_line": 90,
+              "end_line": 90,
+              "anchor_text": "speciality = models.ForeignKey('Speciality', null=True, max_length=250, on_delete = models.CASCADE)"
+            }
+          ]
+        },
+        {
+          "component_id": "server.forms.ProfileForm",
+          "component_type": "class",
+          "path": "server/forms.py",
+          "start_line": 134,
+          "end_line": 165,
+          "anchor_text": "class ProfileForm(BasicForm):",
+          "relevance": "supporting",
+          "sure": "no",
+          "notes": "other: speciality optional/changeable (line 152)",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-5",
+      "title": null,
+      "text": "BR-5 Each Doctor shall provide Consultation to ONE or More Patient",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Data relationship (appointment doctor-patient); nothing to enforce.",
+      "links": [
+        {
+          "component_id": "server.models.Appointment",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 241,
+          "end_line": 264,
+          "anchor_text": "class Appointment(models.Model):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "doctor and patient foreign keys",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/models.py",
+              "start_line": 242,
+              "end_line": 243,
+              "anchor_text": "doctor = models.ForeignKey(Account, related_name=\"appointment_doctor\",on_delete = models.CASCADE)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-6",
+      "title": null,
+      "text": "BR-6 Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Unique id = database primary key.",
+      "links": [
+        {
+          "component_id": "server.views_home.register_view",
+          "component_type": "function",
+          "path": "server/views_home.py",
+          "start_line": 92,
+          "end_line": 123,
+          "anchor_text": "def register_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_home.py",
+              "start_line": 92,
+              "end_line": 123,
+              "anchor_text": "def register_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views.register_user",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 102,
+          "end_line": 125,
+          "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "anchor_text": "def register_user(email, password, firstname, lastname, role, speciality=None):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-7",
+      "title": null,
+      "text": "BR-7 Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Many appointments per patient; they are linked to a symptom and a doctor, not a speciality.",
+      "links": [
+        {
+          "component_id": "server.views_appointment.create_view",
+          "component_type": "function",
+          "path": "server/views_appointment.py",
+          "start_line": 110,
+          "end_line": 163,
+          "anchor_text": "def create_view(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_appointment.py",
+              "start_line": 110,
+              "end_line": 163,
+              "anchor_text": "def create_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.models.Appointment",
+          "component_type": "class",
+          "path": "server/models.py",
+          "start_line": 241,
+          "end_line": 264,
+          "anchor_text": "class Appointment(models.Model):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "linked to symptom and doctor, not speciality",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/models.py",
+              "start_line": 241,
+              "end_line": 250,
+              "anchor_text": "class Appointment(models.Model):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-8",
+      "title": null,
+      "text": "BR-8 Each Patient Consultation Request 'Generates' ONE prescription. Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "Prescription has no link to an appointment.",
+      "links": []
+    },
+    {
+      "requirement_id": "BR-9",
+      "title": null,
+      "text": "BR-9 Each Chemist \"receives\" one or more prescriptions (only required fields). Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Chemist",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "BR-10",
+      "title": null,
+      "text": "BR-10 Each Lab \"receives\" one or more prescriptions (only required fields). Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Labs",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-001",
+      "title": null,
+      "text": "At the peak, system should be able to scale to 10,000+ users (patients) concurrently. The following processes are critical and must respond as per below: Patient Registration <= 4 seconds; Patient Consultation Requests <= 2 seconds; Chemist - Prescription Requests <= 2 seconds; Labs - Lab Requests <=4 seconds; Patient - Prescription & Invoice Look-up <= 4 seconds",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-002",
+      "title": null,
+      "text": "Further, since the system needs to be designed for 24/7 Operations hence the Availability should be high - 99.999% with a defined outage window of 10 mts every 2nd Sunday.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-003",
+      "title": null,
+      "text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days. This essentially means that there will be a provision to rollback by a month. Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up. Post that the dummy production database shall be purged. Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Stated twice (5.1 and 5.5). Only the manual JSON export exists.",
+      "links": [
+        {
+          "component_id": "server.views_admin.backup_data",
+          "component_type": "function",
+          "path": "server/views_admin.py",
+          "start_line": 538,
+          "end_line": 609,
+          "anchor_text": "def backup_data(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "anchor_text": "def backup_data(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "title": null,
+      "text": "As the Patient' data is highly confidential and private care would be taken to ensure that the confidentiality is maintained. Only authorized Hospital staff i.e. Doctors will have the access to Patients Consultation requests. Also, Chemists and Labs will be shown data only on need to know basis.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Role checks guard most views, but appointment/medical-test update views have no role restriction and chemists/labs see all prescriptions/tests.",
+      "links": [
+        {
+          "component_id": "server.views.authentication_check",
+          "component_type": "function",
+          "path": "server/views.py",
+          "start_line": 41,
+          "end_line": 67,
+          "anchor_text": "def authentication_check(request, required_roles=None, required_GET=None):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "role checks",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views.py",
+              "start_line": 41,
+              "end_line": 67,
+              "anchor_text": "def authentication_check(request, required_roles=None, required_GET=None):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_appointment.update_view",
+          "component_type": "function",
+          "path": "server/views_appointment.py",
+          "start_line": 50,
+          "end_line": 107,
+          "anchor_text": "def update_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "no role restriction (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_appointment.py",
+              "start_line": 50,
+              "end_line": 54,
+              "anchor_text": "def update_view(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "server.views_prescription.list_view",
+          "component_type": "function",
+          "path": "server/views_prescription.py",
+          "start_line": 55,
+          "end_line": 84,
+          "anchor_text": "def list_view(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "chemists see all prescriptions (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "server/views_prescription.py",
+              "start_line": 57,
+              "end_line": 62,
+              "anchor_text": "authentication_result = views.authentication_check("
+            },
+            {
+              "kind": "block",
+              "path": "server/views_prescription.py",
+              "start_line": 81,
+              "end_line": 82,
+              "anchor_text": "else:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-006",
+      "title": null,
+      "text": "The Key Software Quality Attributes are Availability, Reliability and Usability. As the system is expected to be 24/7 - High availability is very important. Also, since the major transaction i.e. Patient Consultation Requests has classified data/ information the system needs to be highly reliable. Lastly, the system is likely to be used by Old Age Patients more than others, hence the screens have to be designed for Usability i.e. large font size.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-007",
+      "title": null,
+      "text": "The System needs to designed to prevent full scan of Patient Consultation Request Entity for identifying the Appointments for next day/ day range. For this, a derived Entity called as Patient Appointment file shall be designed.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-008",
+      "title": null,
+      "text": "To prevent multiple doctors of the same speciality to log-in onto same Patient Consultation Request, a workflow system needs to be designed which routes the Patient Consultation Requests to Doctors. Similarly once the doctor has completed the prescription, the workflow should be routed to the right Chemist (based on Patient and Chemist Pincode) and /or Labs (based on Patient and Lab PinCode).",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-009",
+      "title": null,
+      "text": "In order to Assist Doctors, a Machine learning algorithm will be designed and trained on a training data-set to predict diseases based on Patient Symptoms, this algorithm will continue to be trained on emerging data sets to improve the quality of predictions.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "Same feature as Req-7 / Req-14.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-010",
+      "title": null,
+      "text": "The database shall be maintained by the Administration and Patients who have not consulted for last 3 years would get archived onto a parallel database. Restoring of old Patients data is beyond the scope of the project and would need to be managed by Admin.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "BECAUSE BR-9 : views_admin.py:61,96 (manual archive/restore); no parallel DB / 3yr auto",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-011",
+      "title": null,
+      "text": "The system is expected to generate approximately 25,000 Consultation Requests per week, translating to 1.3 Million Consultation Requests per year. A 3 year database would constitute 4.0 Million Consultation requests. System needs to be designed to cater to the same. In all, approximately 250,000 unique Patients are expected to be provisioned.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-012",
+      "title": null,
+      "text": "Though initially only 3 Specialities are supposed to be enabled, given the system performance it is expected that the number of specialities may grow to 5 by end of year 3, this may mean further addition of 50,000 unique patients and another 500,000 Consultation Requests. The system has to be designed keeping the future growth in mind.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-018",
+      "title": null,
+      "text": "Only emails will be sent to Patients including the full prescription and Invoice. There will be an interface with the current standard Payment Gateway available with the Hospital. A button will be enabled to securely accept the payments vide Debit/Credit Cards and Net banking.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "No e-mail, invoice or payment code.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-019",
+      "title": null,
+      "text": "Patients, Chemists and Labs will connect through a secured encrypted connection over internet (https://). Since the data communicated over internet is confidential it is imperative that encrypted protocols are used to prevent data leakages. E-mails shall be used to send the Prescription and Invoice to the Patients after Consultation.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "no",
+      "notes": "No HTTPS settings and no e-mail sending in the code (HTTPS could be provided by the hosting platform).",
+      "links": []
+    }
+  ],
+  "excluded_requirements": [
+    {
+      "requirement_id": "REQ-004",
+      "title": null,
+      "text": "There are no specific Safety Requirements, however, the system shall be designed to comply with health care regulations as defined by Government of India. Further, the system shall support Hospital' and Government of India emerging needs based on the data gathered and analysed by the system.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "untestable_or_vague",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-013",
+      "title": null,
+      "text": "Initially the system would be available on PCs, laptops, but the system should be capable of running on a mobile platform in future (android) - this will mean designing of user interfaces keeping adaptive response in mind.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "non_python_only: templates/CSS",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-014",
+      "title": null,
+      "text": "As the system is supposed to be used by Elderly and infirm people as well, care needs to be taken from a usability perspective in terms of font sizes and ease of system usage. A normal Consultation Request should get filled in less than 5 minutes (Minimal and only relevant questions)",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "non_python_only / untestable: UI design",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-015",
+      "title": null,
+      "text": "The system shall be deployed on a Heroku platform which is a service providing platform to host with Ver. 5.7.21 MySQL Database to maintain the databases. The system shall be accessed vide the Hospital' website which runs on multiple browsers e.g. Google Chrome, Mozilla Firefox etc.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "deployment environment (the code actually configures SQLite)",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-016",
+      "title": null,
+      "text": "The following documents shall be prepared: 1. Installation Guide 2. User Manual for end users",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "not_a_requirement on the code",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-017",
+      "title": null,
+      "text": "All screens will be developed to work on a PC/Laptop. Error messages will appear at the bottom and shall be self descriptive - The maximum size of error messages will be 80 Characters. Buttons will be used to make the navigation simpler. In order to increase Usability of screens, Patient Registration and Consultation Requests screens will have bigger font size to aid Elderly people.",
+      "type": null,
+      "status": "excluded",
+      "sure": "no",
+      "notes": "non_python_only: templates/CSS (error texts are set in Python but their length is not controlled)",
+      "links": []
+    }
+  ]
+}

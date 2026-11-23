@@ -1,0 +1,391 @@
+{
+  "dataset": "Virtual-clinic",
+  "document_id": "run-4-Software Requirements Specification",
+  "pipeline_version": "candidates-v1",
+  "requirements_scored": 41,
+  "matching": {
+    "by_id": 38,
+    "by_text": 2,
+    "unmatched": [
+      "REQ-010"
+    ]
+  },
+  "scores": {
+    "hit@1": 0.2683,
+    "hit@3": 0.4146,
+    "hit@5": 0.4878,
+    "hit@10": 0.6585,
+    "recall@1": 0.1789,
+    "recall@3": 0.2642,
+    "recall@5": 0.326,
+    "recall@10": 0.4988,
+    "mrr": 0.3743,
+    "ndcg@10": 0.3486
+  },
+  "missed": [
+    "Req-2/2",
+    "Req-2/3",
+    "Req-3",
+    "Req-3/1",
+    "Req-3/3",
+    "Req-4/2",
+    "Req-6",
+    "Req-12",
+    "Req-16",
+    "BR-3",
+    "BR-7",
+    "BR-9",
+    "REQ-010",
+    "REQ-018"
+  ],
+  "per_requirement": [
+    {
+      "requirement_id": "Req-1",
+      "matched_to": "Req-1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.add_speciality": null,
+        "server.views_admin.parse_speciality_delete": 7,
+        "server.views_admin.view_speciality": 4
+      }
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "matched_to": "Req-1/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.add_speciality": 2
+      }
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "matched_to": "Req-1/2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.view_speciality": 7
+      }
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "matched_to": "Req-1/3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.parse_speciality_delete": 1
+      }
+    },
+    {
+      "requirement_id": "Req-2",
+      "matched_to": "Req-2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.EmployeeRegistrationForm.clean": 10,
+        "server.views_admin.createemployee_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "matched_to": "Req-2/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.EmployeeRegistrationForm.clean": null,
+        "server.forms.validate_username_available": null,
+        "server.views.register_user": 6,
+        "server.views_admin.createemployee_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "matched_to": "Req-2/2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.ProfileForm.assign": null,
+        "server.views_profile.update_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "matched_to": "Req-2/3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.user_archive": null
+      }
+    },
+    {
+      "requirement_id": "Req-3",
+      "matched_to": "Req-3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.createemployee_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "matched_to": "Req-3/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.createemployee_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "matched_to": "Req-3/2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_profile.update_view": 9
+      }
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "matched_to": "Req-3/3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.user_archive": null
+      }
+    },
+    {
+      "requirement_id": "Req-4",
+      "matched_to": "Req-4",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.add_symptom": 6,
+        "server.views_admin.parse_symptom_delete": 7,
+        "server.views_admin.view_symptom": 1
+      }
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "matched_to": "Req-4/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.add_symptom": 3
+      }
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "matched_to": "Req-4/2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.view_symptom": null
+      }
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "matched_to": "Req-4/3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.parse_symptom_delete": 1
+      }
+    },
+    {
+      "requirement_id": "Req-5",
+      "matched_to": "Req-5",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.user_archive": null,
+        "server.views_home.register_view": 10,
+        "server.views_profile.update_view": 2
+      }
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "matched_to": "Req-5/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views.register_user": 1,
+        "server.views_home.register_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "matched_to": "Req-5/2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.ProfileForm.assign": null,
+        "server.views_profile.update_view": 1
+      }
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "matched_to": "Req-5/3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.user_archive": 7
+      }
+    },
+    {
+      "requirement_id": "Req-6",
+      "matched_to": "Req-6",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_appointment.create_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "matched_to": "Req-6/1",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.AppointmentForm.generate": null,
+        "server.views_appointment.create_view": 7
+      }
+    },
+    {
+      "requirement_id": "Req-8",
+      "matched_to": "Req-8",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_appointment.list_view": null,
+        "server.views_medtest.create_view": null,
+        "server.views_prescription.create_view": 2
+      }
+    },
+    {
+      "requirement_id": "Req-9",
+      "matched_to": "Req-9",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_prescription.list_view": 4
+      }
+    },
+    {
+      "requirement_id": "Req-10",
+      "matched_to": "Req-10",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_medtest.list_view": 1,
+        "server.views_medtest.update_view": 4
+      }
+    },
+    {
+      "requirement_id": "Req-11",
+      "matched_to": "Req-11",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views.GeneratePdf.get": 9,
+        "server.views_prescription.list_view": 1
+      }
+    },
+    {
+      "requirement_id": "Req-12",
+      "matched_to": "Req-12",
+      "candidates": 10,
+      "primary_ranks": {}
+    },
+    {
+      "requirement_id": "Req-13",
+      "matched_to": "Req-13",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.backup_data": 1
+      }
+    },
+    {
+      "requirement_id": "Req-15",
+      "matched_to": "Req-15",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.LoginForm.clean": 4,
+        "server.views_admin.createemployee_view": null,
+        "server.views_home.login_view": null,
+        "server.views_home.register_view": null,
+        "server.views_profile.password_view": null
+      }
+    },
+    {
+      "requirement_id": "Req-16",
+      "matched_to": "Req-16",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.statistic_view": null
+      }
+    },
+    {
+      "requirement_id": "BR-2",
+      "matched_to": "BR-2",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.LoginForm.clean": 1,
+        "server.views_home.login_view": 4
+      }
+    },
+    {
+      "requirement_id": "BR-3",
+      "matched_to": "BR-3",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.models.Profile": null
+      }
+    },
+    {
+      "requirement_id": "BR-4",
+      "matched_to": "BR-4",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.forms.EmployeeRegistrationForm.clean": 2,
+        "server.models.Profile": null
+      }
+    },
+    {
+      "requirement_id": "BR-5",
+      "matched_to": "BR-5",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.models.Appointment": 8
+      }
+    },
+    {
+      "requirement_id": "BR-6",
+      "matched_to": "BR-6",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views.register_user": 1,
+        "server.views_home.register_view": null
+      }
+    },
+    {
+      "requirement_id": "BR-7",
+      "matched_to": "BR-7",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.models.Appointment": null,
+        "server.views_appointment.create_view": null
+      }
+    },
+    {
+      "requirement_id": "BR-9",
+      "matched_to": "BR-9",
+      "candidates": 10,
+      "primary_ranks": {}
+    },
+    {
+      "requirement_id": "REQ-003",
+      "matched_to": "REQ-077",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views_admin.backup_data": 1
+      }
+    },
+    {
+      "requirement_id": "REQ-005",
+      "matched_to": "REQ-079",
+      "candidates": 10,
+      "primary_ranks": {
+        "server.views.authentication_check": null,
+        "server.views_appointment.update_view": null,
+        "server.views_prescription.list_view": 3
+      }
+    },
+    {
+      "requirement_id": "REQ-010",
+      "matched_to": null,
+      "candidates": 0,
+      "primary_ranks": {}
+    },
+    {
+      "requirement_id": "REQ-018",
+      "matched_to": "REQ-018",
+      "candidates": 10,
+      "primary_ranks": {}
+    }
+  ]
+}

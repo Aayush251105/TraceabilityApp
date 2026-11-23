@@ -1,0 +1,1075 @@
+######## 2026-11-20 11:06:01 start
+/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/SRS_to_code_traceability/.venv/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
+
+=== Travel-Agency-Automation-System: commit 2cc23a2f3b OK; 44 components; SRS SRS.pdf
+  run 2 created (log: final_tests/v1/results/logs/Travel-Agency-Automation-System.log)
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (430 > 256). Running this sequence through the model will result in indexing errors
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (395 > 256). Running this sequence through the model will result in indexing errors
+  Run 2: completed
+  -> completed in 26.7 min; gold components found 16/17
+/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/SRS_to_code_traceability/.venv/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
+
+ETA Books-Recommender-System: 53 components x 32 s/component (measured) = 0.5 h docstrings + ~3 min other stages
+
+=== Books-Recommender-System: commit 69ed627f0f OK; 53 components; SRS SRS.md
+  run 3 created (log: final_tests/v1/results/logs/Books-Recommender-System.log)
+  11:48:28 [B] Extracted REQ-052 “Graceful Error Handling for Book Poster Image”
+  11:50:38 [A] [32mDocstring written for stage_00_data_ingestion.DataIngestionPipeline[0m
+  11:53:34 [A] [32mDocstring written for stage_01_data_validation.DataValidationPipeline[0m
+  11:55:28 [A] [32mDocstring written for stage_02_data_transformation.DataTransformationPipeline[0m
+  11:57:21 [A] [32mDocstring written for stage_03_model_trainer.ModelTrainerPipeline[0m
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+          error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+          error_message = str(error)
+      return error_message)
+          error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+          error_message = str(error)
+      return error_message)
+          error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+          error_message = str(error)
+      return error_message)
+          error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+          error_message = str(error)
+      return error_message)
+          error_message = f'Error occurred in script [{file_name}] at line [{line_number}]: {str(error)}'
+          error_message = str(error)
+      return error_message)
+  11:59:23 [A] [32mDocstring written for __init__.error_message_detail[0m
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+          return self.error_message)
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (425 > 256). Running this sequence through the model will result in indexing errors
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (418 > 256). Running this sequence through the model will result in indexing errors
+  Run 3: completed
+  -> completed in 33.1 min; gold components found 31/32
+/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/SRS_to_code_traceability/.venv/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
+
+ETA Virtual-clinic: 233 components x 32 s/component (measured) = 2.1 h docstrings + ~4 min other stages
+
+=== Virtual-clinic: commit b8241e502d OK; 233 components; SRS Software Requirements Specification.pdf
+  run 4 created (log: final_tests/v1/results/logs/Virtual-clinic.log)
+      console_logger.error(message))
+      console_logger.error(message))
+      console_logger.error(message))
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (508 > 256). Running this sequence through the model will result in indexing errors
+      console_logger.error(message))
+      console_logger.error(message))
+                  return HttpResponseRedirect('/error/denied/'))
+                  return HttpResponseRedirect('/error/denied/'))
+                  return HttpResponseRedirect('/error/denied/'))
+                  return HttpResponseRedirect('/error/denied/'))
+                  return HttpResponseRedirect('/error/denied/'))
+  13:00:50 [A] Reader: Analyzing code component... (def clear_errors(self):
+          self._errors = {})
+  13:00:55 [A] Reader: No additional context needed, starting docstring generation... (def clear_errors(self):
+          self._errors = {})
+  13:00:55 [A] Writer: Generating docstring... (def clear_errors(self):
+          self._errors = {})
+  13:01:04 [A] Verifier: Verifying docstring quality... (def clear_errors(self):
+          self._errors = {})
+  13:01:30 [A] Verifier: Docstring generated successfully! No need for revision. (def clear_errors(self):
+          self._errors = {})
+  13:01:30 [A] [32mDocstring written for BasicForm.clear_errors[0m
+  13:02:06 [A] Reader: Analyzing code component... (error_class([description])
+  13:02:12 [A] Reader: No additional context needed, starting docstring generation... (error_class([description])
+  13:02:12 [A] Writer: Generating docstring... (error_class([description])
+  13:02:21 [A] Verifier: Verifying docstring quality... (error_class([description])
+  13:02:50 [A] Verifier: Docstring generated successfully! No need for revision. (error_class([description])
+  13:02:50 [A] [32mDocstring written for BasicForm.mark_error[0m
+          self._errors = {})
+          self._errors = {})
+          self._errors = {})
+          self._errors = {})
+          self._errors = {})
+  13:11:33 [A] Reader: Analyzing code component... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:11:39 [A] Reader: No additional context needed, starting docstring generation... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:11:39 [A] Writer: Generating docstring... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:11:53 [A] Verifier: Verifying docstring quality... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:12:10 [A] Verifier: Docstring generated successfully! No need for revision. (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+          raise forms.ValidationError('This email is already registered'))
+          raise forms.ValidationError('This email is already registered'))
+          raise forms.ValidationError('This email is already registered'))
+          raise forms.ValidationError('This email is already registered'))
+          raise forms.ValidationError('This email is already registered'))
+  13:12:43 [A] Reader: Analyzing code component... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:12:49 [A] Reader: No additional context needed, starting docstring generation... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:12:49 [A] Writer: Generating docstring... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:13:03 [A] Verifier: Verifying docstring quality... (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+  13:13:16 [A] Verifier: Docstring generated successfully! No need for revision. (mark_error('speciality', 'Doctor must have a speciality')
+              self.mark_error('speciality', 'Only doctor can have a speciality')
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+              except (IntegrityError, ValueError):
+      return render(request,'virtualclinic/error/denied.html',template_data))
+      return render(request,'virtualclinic/error/denied.html',template_data))
+      return render(request,'virtualclinic/error/denied.html',template_data))
+      return render(request,'virtualclinic/error/denied.html',template_data))
+      return render(request,'virtualclinic/error/denied.html',template_data))
+  13:28:48 [A] [32mDocstring written for views_home.error_denied_view[0m
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+          raise forms.ValidationError('This email does not exist'))
+          raise forms.ValidationError('This email does not exist'))
+          raise forms.ValidationError('This email does not exist'))
+          raise forms.ValidationError('This email does not exist'))
+          raise forms.ValidationError('This email does not exist'))
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+                  self.mark_error('password', 'Incorrect password')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+              self.mark_error('password_second', 'Passwords do not match')
+  13:48:51 [A] Reader: Analyzing code component... (clear_errors()
+  13:49:01 [A] Reader: No additional context needed, starting docstring generation... (clear_errors()
+  13:49:01 [A] Writer: Generating docstring... (clear_errors()
+  13:49:27 [A] Verifier: Verifying docstring quality... (clear_errors()
+  13:49:40 [A] Verifier: Docstring generated successfully! No need for revision. (clear_errors()
+  13:54:06 [A] Reader: Analyzing code component... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:54:18 [A] Reader: No additional context needed, starting docstring generation... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:54:18 [A] Writer: Generating docstring... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:54:44 [A] Verifier: Verifying docstring quality... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:55:11 [A] Verifier: Docstring generated successfully! No need for revision. (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:55:12 [A] Reader: Analyzing code component... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:55:23 [A] Reader: No additional context needed, starting docstring generation... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:55:23 [A] Writer: Generating docstring... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:55:50 [A] Verifier: Verifying docstring quality... (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+  13:56:19 [A] Verifier: Docstring generated successfully! No need for revision. (mark_error('password_second', 'Passwords do not match')
+                  self.mark_error('password_current', 'Your current and new passwords must be different')
+          raise forms.ValidationError('Please choose an earlier date'))
+          raise forms.ValidationError('Please choose an earlier date'))
+          raise forms.ValidationError('Please choose an earlier date'))
+          raise forms.ValidationError('Please choose an earlier date'))
+          raise forms.ValidationError('Please choose an earlier date'))
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+                  self.mark_error('endTime', 'The appointment end time must come after the start time')
+  14:47:27 [A] Reader: Analyzing code component... (ValidationError, validate_birthday, self.birthday))
+  14:47:33 [A] Reader: No additional context needed, starting docstring generation... (ValidationError, validate_birthday, self.birthday))
+  14:47:33 [A] Writer: Generating docstring... (ValidationError, validate_birthday, self.birthday))
+  14:48:13 [A] Verifier: Verifying docstring quality... (ValidationError, validate_birthday, self.birthday))
+  14:48:33 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError, validate_birthday, self.birthday))
+  14:48:34 [A] Reader: Analyzing code component... (ValidationError, validate_birthday, self.birthday))
+  14:48:40 [A] Reader: No additional context needed, starting docstring generation... (ValidationError, validate_birthday, self.birthday))
+  14:48:40 [A] Writer: Generating docstring... (ValidationError, validate_birthday, self.birthday))
+  14:49:21 [A] Verifier: Verifying docstring quality... (ValidationError, validate_birthday, self.birthday))
+  14:49:43 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError, validate_birthday, self.birthday))
+  14:49:44 [A] Reader: Analyzing code component... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:49:51 [A] Reader: No additional context needed, starting docstring generation... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:49:51 [A] Writer: Generating docstring... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:50:33 [A] Verifier: Verifying docstring quality... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:50:52 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:50:53 [A] Reader: Analyzing code component... (ValidationError, validate_username_exists, 'test1@virtualclinic.com'))
+  14:51:00 [A] Reader: No additional context needed, starting docstring generation... (ValidationError, validate_username_exists, 'test1@virtualclinic.com'))
+  14:51:00 [A] Writer: Generating docstring... (ValidationError, validate_username_exists, 'test1@virtualclinic.com'))
+  14:51:42 [A] Verifier: Verifying docstring quality... (ValidationError, validate_username_exists, 'test1@virtualclinic.com'))
+  14:52:02 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError, validate_username_exists, 'test1@virtualclinic.com'))
+  14:52:03 [A] Reader: Analyzing code component... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:52:13 [A] Reader: No additional context needed, starting docstring generation... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:52:13 [A] Writer: Generating docstring... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:52:56 [A] Verifier: Verifying docstring quality... (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:53:23 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError, validate_username_available, 'test@virtualclinic.com'))
+  14:53:24 [A] Reader: Analyzing code component... (GREEN + "register error verified")
+  14:53:31 [A] Reader: No additional context needed, starting docstring generation... (GREEN + "register error verified")
+  14:53:31 [A] Writer: Generating docstring... (GREEN + "register error verified")
+  14:54:14 [A] Verifier: Verifying docstring quality... (GREEN + "register error verified")
+  14:54:32 [A] Verifier: Docstring generated successfully! No need for revision. (GREEN + "register error verified")
+  14:54:32 [A] [32mDocstring written for TestHomeViews.test_error[0m
+  14:59:22 [A] Reader: Analyzing code component... (GREEN + 'register error verified')
+  14:59:30 [A] Reader: No additional context needed, starting docstring generation... (GREEN + 'register error verified')
+  14:59:30 [A] Writer: Generating docstring... (GREEN + 'register error verified')
+  15:00:14 [A] Verifier: Verifying docstring quality... (GREEN + 'register error verified')
+  15:00:35 [A] Verifier: Docstring generated successfully! No need for revision. (GREEN + 'register error verified')
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (395 > 256). Running this sequence through the model will result in indexing errors
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (266 > 256). Running this sequence through the model will result in indexing errors
+  Run 4: completed
+  -> completed in 228.3 min; gold components found 46/47
+/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/SRS_to_code_traceability/.venv/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
+
+ETA ProClinic: 558 components x 49 s/component (measured) = 7.6 h docstrings + ~6 min other stages
+
+=== ProClinic: commit ee23cb7e8b OK; 558 components; SRS ProClinicSRS.pdf
+  run 5 created (log: final_tests/v1/results/logs/ProClinic.log)
+  15:56:13 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:21 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:21 [A] Searcher: Searching for additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:21 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:21 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:26 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:26 [A] Searcher: Searching for additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:26 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:26 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:42 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:42 [A] Reader: No additional context needed, starting docstring generation... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:42 [A] Writer: Generating docstring... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:47 [A] Verifier: Verifying docstring quality... (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:52 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError("Your new password cannot be the same as your old password.")
+  15:56:56 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:05 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:05 [A] Searcher: Searching for additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:05 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:05 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:17 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:17 [A] Searcher: Searching for additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:17 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:17 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:30 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:30 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:30 [A] Writer: Generating docstring... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:33 [A] Verifier: Verifying docstring quality... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:39 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:39 [A] Writer: Generating docstring... (ValidationError('Your new password cannot be the same as your old password.')
+  15:57:45 [A] Verifier: Verifying docstring quality... (ValidationError('Your new password cannot be the same as your old password.')
+  15:58:07 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (ValidationError('Your new password cannot be the same as your old password.')
+  16:01:17 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  16:01:29 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  16:01:29 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  16:01:29 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  16:01:29 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  16:01:39 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  16:01:39 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  16:01:39 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  16:01:39 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  16:01:58 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('A patient profile with this email already exists.')
+  16:01:58 [A] Writer: Generating docstring... (ValidationError('A patient profile with this email already exists.')
+  16:02:04 [A] Verifier: Verifying docstring quality... (ValidationError('A patient profile with this email already exists.')
+  16:02:49 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('A patient profile with this email already exists.')
+  16:02:52 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  16:02:57 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('A patient profile with this email already exists.')
+  16:02:57 [A] Writer: Generating docstring... (ValidationError('A patient profile with this email already exists.')
+  16:03:02 [A] Verifier: Verifying docstring quality... (ValidationError('A patient profile with this email already exists.')
+  16:03:39 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('A patient profile with this email already exists.')
+  16:11:32 [A] Reader: Analyzing code component... (context['form'].errors))
+  16:11:37 [A] Reader: No additional context needed, starting docstring generation... (context['form'].errors))
+  16:11:37 [A] Writer: Generating docstring... (context['form'].errors))
+  16:11:42 [A] Verifier: Verifying docstring quality... (context['form'].errors))
+  16:11:54 [A] Verifier: Docstring generated successfully! No need for revision. (context['form'].errors))
+  16:26:28 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  16:26:33 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected user is not a doctor.')
+  16:26:33 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  16:26:40 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  16:27:02 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('Selected user is not a doctor.')
+  16:27:05 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  16:27:10 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected user is not a doctor.')
+  16:27:10 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  16:27:17 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  16:27:28 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('Selected user is not a doctor.')
+  16:27:32 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:27:37 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:27:37 [A] Writer: Generating docstring... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:27:44 [A] Verifier: Verifying docstring quality... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:17 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:20 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:25 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:25 [A] Writer: Generating docstring... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:32 [A] Verifier: Verifying docstring quality... (ValidationError('Selected doctor does not exist or is inactive.')
+  16:28:41 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('Selected doctor does not exist or is inactive.')
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+  21:59:48 [A] Reader: Analyzing code component... (add_error('end_time', 'End time must be after start time.')
+  21:59:58 [A] Reader: No additional context needed, starting docstring generation... (add_error('end_time', 'End time must be after start time.')
+  21:59:58 [A] Writer: Generating docstring... (add_error('end_time', 'End time must be after start time.')
+  22:01:48 [A] Verifier: Verifying docstring quality... (add_error('end_time', 'End time must be after start time.')
+  22:03:20 [A] Verifier: Docstring generated successfully! No need for revision. (add_error('end_time', 'End time must be after start time.')
+  22:41:11 [A] [32mDocstring written for DoctorUnavailabilityConflictTests.test_booking_during_unavailability_raises_error[0m
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+  03:18:24 [A] Reader: Analyzing code component... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  03:18:47 [A] Reader: No additional context needed, starting docstring generation... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  03:18:47 [A] Writer: Generating docstring... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  03:21:31 [A] Verifier: Verifying docstring quality... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  03:22:24 [A] Verifier: Docstring generated successfully! No need for revision. (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+  05:16:43 [A] Reader: Analyzing code component... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  05:17:13 [A] Reader: No additional context needed, starting docstring generation... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  05:17:13 [A] Writer: Generating docstring... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  05:20:18 [A] Verifier: Verifying docstring quality... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  05:21:18 [A] Verifier: Docstring generated successfully! No need for revision. (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  05:40:35 [A] Reader: Analyzing code component... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  05:41:07 [A] Reader: No additional context needed, starting docstring generation... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  05:41:07 [A] Writer: Generating docstring... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  05:44:17 [A] Verifier: Verifying docstring quality... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  05:45:27 [A] Verifier: Docstring generated successfully! No need for revision. (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  05:45:30 [A] Reader: Analyzing code component... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  05:46:03 [A] Reader: No additional context needed, starting docstring generation... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  05:46:03 [A] Writer: Generating docstring... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  05:49:12 [A] Verifier: Verifying docstring quality... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  05:50:18 [A] Verifier: Docstring generated successfully! No need for revision. (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+  07:13:44 [A] Reader: Analyzing code component... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  07:14:22 [A] Reader: No additional context needed, starting docstring generation... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  07:14:22 [A] Writer: Generating docstring... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  07:17:50 [A] Verifier: Verifying docstring quality... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  07:19:01 [A] Verifier: Docstring generated successfully! No need for revision. (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+  07:40:59 [A] Reader: Analyzing code component... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  07:41:36 [A] Reader: No additional context needed, starting docstring generation... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  07:41:36 [A] Writer: Generating docstring... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  07:45:09 [A] Verifier: Verifying docstring quality... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  07:46:21 [A] Verifier: Docstring generated successfully! No need for revision. (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  07:46:21 [A] [32mDocstring written for views.permission_error[0m
+Terminated
+######## 2026-11-21 11:46:43 runs finished (rc=0)
+=== Sat Nov 21 11:46:53 AM IST 2026 restart ProClinic with the DocAgent memory-reset fix (run 5 stopped at 479/558)
+/home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/SRS_to_code_traceability/.venv/lib/python3.12/site-packages/openpyxl/worksheet/_reader.py:329: UserWarning: Data Validation extension is not supported and will be removed
+  warn(msg)
+
+ETA ProClinic: 558 components x 49 s/component (measured) = 7.6 h docstrings + ~6 min other stages
+
+=== ProClinic: commit ee23cb7e8b OK; 558 components; SRS ProClinicSRS.pdf
+  run 6 created (log: final_tests/v1/results/logs/ProClinic.log)
+  11:49:48 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  11:49:59 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  11:49:59 [A] Searcher: Searching for additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  11:49:59 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError("Your new password cannot be the same as your old password.")
+  11:49:59 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:12 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:12 [A] Searcher: Searching for additional context... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:12 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:12 [A] Reader: Analyzing code component... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:24 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:24 [A] Reader: No additional context needed, starting docstring generation... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:24 [A] Writer: Generating docstring... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:28 [A] Verifier: Verifying docstring quality... (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:32 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError("Your new password cannot be the same as your old password.")
+  11:50:35 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:45 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:45 [A] Searcher: Searching for additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:45 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:45 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:56 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:56 [A] Searcher: Searching for additional context... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:56 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Your new password cannot be the same as your old password.')
+  11:50:56 [A] Reader: Analyzing code component... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:08 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:08 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:08 [A] Writer: Generating docstring... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:13 [A] Verifier: Verifying docstring quality... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:18 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:18 [A] Writer: Generating docstring... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:23 [A] Verifier: Verifying docstring quality... (ValidationError('Your new password cannot be the same as your old password.')
+  11:51:34 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (ValidationError('Your new password cannot be the same as your old password.')
+  11:53:51 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:54:01 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:01 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:01 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  11:54:01 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:54:17 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:17 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:17 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  11:54:17 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:54:29 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('A patient profile with this email already exists.')
+  11:54:29 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('A patient profile with this email already exists.')
+  11:54:29 [A] Writer: Generating docstring... (ValidationError('A patient profile with this email already exists.')
+  11:54:34 [A] Verifier: Verifying docstring quality... (ValidationError('A patient profile with this email already exists.')
+  11:54:39 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('A patient profile with this email already exists.')
+  11:54:42 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:54:53 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:53 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  11:54:53 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  11:54:53 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:55:04 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('A patient profile with this email already exists.')
+  11:55:04 [A] Searcher: Searching for additional context... (ValidationError('A patient profile with this email already exists.')
+  11:55:04 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('A patient profile with this email already exists.')
+  11:55:04 [A] Reader: Analyzing code component... (ValidationError('A patient profile with this email already exists.')
+  11:55:13 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('A patient profile with this email already exists.')
+  11:55:13 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('A patient profile with this email already exists.')
+  11:55:13 [A] Writer: Generating docstring... (ValidationError('A patient profile with this email already exists.')
+  11:55:20 [A] Verifier: Verifying docstring quality... (ValidationError('A patient profile with this email already exists.')
+  11:55:22 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('A patient profile with this email already exists.')
+  12:06:51 [A] Reader: Analyzing code component... (context['form'].errors))
+  12:06:59 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (context['form'].errors))
+  12:06:59 [A] Searcher: Searching for additional context... (context['form'].errors))
+  12:06:59 [A] Reader: Search complete, Context updated, restarting analysis... (context['form'].errors))
+  12:06:59 [A] Reader: Analyzing code component... (context['form'].errors))
+  12:07:11 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (context['form'].errors))
+  12:07:11 [A] Searcher: Searching for additional context... (context['form'].errors))
+  12:07:11 [A] Reader: Search complete, Context updated, restarting analysis... (context['form'].errors))
+  12:07:11 [A] Reader: Analyzing code component... (context['form'].errors))
+  12:07:22 [A] Reader: Max search attempts (2) reached, proceeding with current context... (context['form'].errors))
+  12:07:22 [A] Reader: No additional context needed, starting docstring generation... (context['form'].errors))
+  12:07:22 [A] Writer: Generating docstring... (context['form'].errors))
+  12:07:27 [A] Verifier: Verifying docstring quality... (context['form'].errors))
+  12:07:33 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (context['form'].errors))
+  12:07:33 [A] Writer: Generating docstring... (context['form'].errors))
+  12:07:39 [A] Verifier: Verifying docstring quality... (context['form'].errors))
+  12:07:46 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (context['form'].errors))
+  12:34:14 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:34:24 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Selected user is not a doctor.')
+  12:34:24 [A] Searcher: Searching for additional context... (ValidationError('Selected user is not a doctor.')
+  12:34:24 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected user is not a doctor.')
+  12:34:24 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:34:34 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Selected user is not a doctor.')
+  12:34:34 [A] Searcher: Searching for additional context... (ValidationError('Selected user is not a doctor.')
+  12:34:34 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected user is not a doctor.')
+  12:34:34 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:34:46 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Selected user is not a doctor.')
+  12:34:46 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected user is not a doctor.')
+  12:34:46 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  12:34:47 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  12:34:50 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (ValidationError('Selected user is not a doctor.')
+  12:34:50 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  12:34:52 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  12:34:55 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (ValidationError('Selected user is not a doctor.')
+  12:34:58 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:35:08 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Selected user is not a doctor.')
+  12:35:08 [A] Searcher: Searching for additional context... (ValidationError('Selected user is not a doctor.')
+  12:35:08 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected user is not a doctor.')
+  12:35:08 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:35:24 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Selected user is not a doctor.')
+  12:35:24 [A] Searcher: Searching for additional context... (ValidationError('Selected user is not a doctor.')
+  12:35:24 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected user is not a doctor.')
+  12:35:24 [A] Reader: Analyzing code component... (ValidationError('Selected user is not a doctor.')
+  12:35:36 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Selected user is not a doctor.')
+  12:35:36 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected user is not a doctor.')
+  12:35:36 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  12:35:43 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  12:35:52 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (ValidationError('Selected user is not a doctor.')
+  12:35:52 [A] Writer: Generating docstring... (ValidationError('Selected user is not a doctor.')
+  12:35:59 [A] Verifier: Verifying docstring quality... (ValidationError('Selected user is not a doctor.')
+  12:36:04 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (ValidationError('Selected user is not a doctor.')
+  12:36:07 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:19 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:19 [A] Searcher: Searching for additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:19 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:19 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:33 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:33 [A] Searcher: Searching for additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:33 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:33 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:45 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:45 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:45 [A] Writer: Generating docstring... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:50 [A] Verifier: Verifying docstring quality... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:54 [A] Verifier: Docstring generated successfully! No need for revision. (ValidationError('Selected doctor does not exist or is inactive.')
+  12:36:56 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:11 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:11 [A] Searcher: Searching for additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:11 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:11 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:24 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:24 [A] Searcher: Searching for additional context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:24 [A] Reader: Search complete, Context updated, restarting analysis... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:24 [A] Reader: Analyzing code component... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:38 [A] Reader: Max search attempts (2) reached, proceeding with current context... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:38 [A] Reader: No additional context needed, starting docstring generation... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:38 [A] Writer: Generating docstring... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:41 [A] Verifier: Verifying docstring quality... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:46 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:46 [A] Writer: Generating docstring... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:37:51 [A] Verifier: Verifying docstring quality... (ValidationError('Selected doctor does not exist or is inactive.')
+  12:38:04 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (ValidationError('Selected doctor does not exist or is inactive.')
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+          except RuntimeError as exc:
+              return Response({'detail': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR))
+  16:40:58 [A] Reader: Analyzing code component... (add_error('end_time', 'End time must be after start time.')
+  16:41:04 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (add_error('end_time', 'End time must be after start time.')
+  16:41:04 [A] Searcher: Searching for additional context... (add_error('end_time', 'End time must be after start time.')
+  16:41:04 [A] Reader: Search complete, Context updated, restarting analysis... (add_error('end_time', 'End time must be after start time.')
+  16:41:04 [A] Reader: Analyzing code component... (add_error('end_time', 'End time must be after start time.')
+  16:41:11 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (add_error('end_time', 'End time must be after start time.')
+  16:41:11 [A] Searcher: Searching for additional context... (add_error('end_time', 'End time must be after start time.')
+  16:41:11 [A] Reader: Search complete, Context updated, restarting analysis... (add_error('end_time', 'End time must be after start time.')
+  16:41:11 [A] Reader: Analyzing code component... (add_error('end_time', 'End time must be after start time.')
+  16:41:15 [A] Reader: No additional context needed, starting docstring generation... (add_error('end_time', 'End time must be after start time.')
+  16:41:15 [A] Writer: Generating docstring... (add_error('end_time', 'End time must be after start time.')
+  16:41:19 [A] Verifier: Verifying docstring quality... (add_error('end_time', 'End time must be after start time.')
+  16:41:22 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (add_error('end_time', 'End time must be after start time.')
+  16:41:22 [A] Writer: Generating docstring... (add_error('end_time', 'End time must be after start time.')
+  16:41:26 [A] Verifier: Verifying docstring quality... (add_error('end_time', 'End time must be after start time.')
+  16:41:46 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (add_error('end_time', 'End time must be after start time.')
+  16:48:17 [A] [32mDocstring written for DoctorUnavailabilityConflictTests.test_booking_during_unavailability_raises_error[0m
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+      except (TypeError, ValueError):
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+          logger.exception('AuditLog write failed: action=%s entity=%s id=%s', action_type, entity_type, entity_id))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Financial amounts cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+              raise ValidationError('Unit cost cannot be negative.'))
+  17:29:08 [A] Reader: Analyzing code component... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:14 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:14 [A] Searcher: Searching for additional context... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:14 [A] Reader: Search complete, Context updated, restarting analysis... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:14 [A] Reader: Analyzing code component... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:19 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:19 [A] Searcher: Searching for additional context... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:19 [A] Reader: Search complete, Context updated, restarting analysis... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:19 [A] Reader: Analyzing code component... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:26 [A] Reader: Max search attempts (2) reached, proceeding with current context... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:26 [A] Reader: No additional context needed, starting docstring generation... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:26 [A] Writer: Generating docstring... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:30 [A] Verifier: Verifying docstring quality... (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+  17:29:32 [A] Verifier: Docstring generated successfully! No need for revision. (error(
+              "Failed to create draft invoice for appointment #%s: %s",
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+          self.assertTrue(any(('PDF generation failed' in str(m) for m in messages))))
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+  17:44:55 [A] Reader: Analyzing code component... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:00 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:00 [A] Searcher: Searching for additional context... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:00 [A] Reader: Search complete, Context updated, restarting analysis... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:00 [A] Reader: Analyzing code component... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:06 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:06 [A] Searcher: Searching for additional context... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:06 [A] Reader: Search complete, Context updated, restarting analysis... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:06 [A] Reader: Analyzing code component... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:15 [A] Reader: No additional context needed, starting docstring generation... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:15 [A] Writer: Generating docstring... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:20 [A] Verifier: Verifying docstring quality... (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:45:22 [A] Verifier: Docstring generated successfully! No need for revision. (exception('WeasyPrint failed for invoice %s: %s', invoice.pk, exc)
+          raise RuntimeError(f'WeasyPrint failed: {str(exc)}') from exc
+  17:47:16 [A] Reader: Analyzing code component... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:20 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:20 [A] Searcher: Searching for additional context... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:20 [A] Reader: Search complete, Context updated, restarting analysis... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:20 [A] Reader: Analyzing code component... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:25 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:25 [A] Searcher: Searching for additional context... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:25 [A] Reader: Search complete, Context updated, restarting analysis... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:25 [A] Reader: Analyzing code component... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:30 [A] Reader: Max search attempts (2) reached, proceeding with current context... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:30 [A] Reader: No additional context needed, starting docstring generation... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:30 [A] Writer: Generating docstring... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:32 [A] Verifier: Verifying docstring quality... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:34 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:34 [A] Writer: Generating docstring... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:35 [A] Verifier: Verifying docstring quality... (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:39 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (error('Failed to send draft invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:42 [A] Reader: Analyzing code component... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:47 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:47 [A] Searcher: Searching for additional context... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:47 [A] Reader: Search complete, Context updated, restarting analysis... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:47 [A] Reader: Analyzing code component... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:51 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:51 [A] Searcher: Searching for additional context... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:51 [A] Reader: Search complete, Context updated, restarting analysis... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:51 [A] Reader: Analyzing code component... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:57 [A] Reader: Max search attempts (2) reached, proceeding with current context... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:57 [A] Reader: No additional context needed, starting docstring generation... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:57 [A] Writer: Generating docstring... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:47:58 [A] Verifier: Verifying docstring quality... (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+  17:48:01 [A] Verifier: Docstring generated successfully! No need for revision. (error('Failed to send paid invoice email for invoice %s: %s', invoice.pk, e))
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+          logger.exception('api_patient_appointments error: %s', e)
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      return JsonResponse({'items': items, 'error': None}))
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+      except (InvalidOperation, TypeError, ValueError):
+  17:57:27 [A] Reader: Analyzing code component... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:33 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:33 [A] Searcher: Searching for additional context... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:33 [A] Reader: Search complete, Context updated, restarting analysis... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:33 [A] Reader: Analyzing code component... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:41 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:41 [A] Searcher: Searching for additional context... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:41 [A] Reader: Search complete, Context updated, restarting analysis... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:41 [A] Reader: Analyzing code component... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:48 [A] Reader: Max search attempts (2) reached, proceeding with current context... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:48 [A] Reader: No additional context needed, starting docstring generation... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:48 [A] Writer: Generating docstring... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:51 [A] Verifier: Verifying docstring quality... (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+  17:57:57 [A] Verifier: Docstring generated successfully! No need for revision. (error("Failed to send appointment %s email for appt %s: %s", action, appointment.pk, e)
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+              logger.error('Failed to send lab report notification to %s: %s', email, exc))
+  18:00:03 [A] Reader: Analyzing code component... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:07 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:07 [A] Searcher: Searching for additional context... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:07 [A] Reader: Search complete, Context updated, restarting analysis... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:07 [A] Reader: Analyzing code component... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:13 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:13 [A] Searcher: Searching for additional context... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:13 [A] Reader: Search complete, Context updated, restarting analysis... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:13 [A] Reader: Analyzing code component... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:19 [A] Reader: Max search attempts (2) reached, proceeding with current context... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:19 [A] Reader: No additional context needed, starting docstring generation... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:19 [A] Writer: Generating docstring... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:21 [A] Verifier: Verifying docstring quality... (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:23 [A] Verifier: Docstring generated successfully! No need for revision. (def permission_error(request):
+      return render(request, 'prototype/permission_error.html', status=403))
+  18:00:23 [A] [32mDocstring written for views.permission_error[0m
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+      return render(request, 'patients/patient_ai_ask.html', {'question': question, 'ai_response': ai_response, 'error_message': error_message}))
+  18:37:58 [A] Reader: Analyzing code component... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:02 [A] Reader: Need more information (attempt 1/2), ask Searcher to search additional context... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:02 [A] Searcher: Searching for additional context... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:02 [A] Reader: Search complete, Context updated, restarting analysis... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:02 [A] Reader: Analyzing code component... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:08 [A] Reader: Need more information (attempt 2/2), ask Searcher to search additional context... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:08 [A] Searcher: Searching for additional context... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:08 [A] Reader: Search complete, Context updated, restarting analysis... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:08 [A] Reader: Analyzing code component... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:14 [A] Reader: Max search attempts (2) reached, proceeding with current context... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:14 [A] Reader: No additional context needed, starting docstring generation... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:14 [A] Writer: Generating docstring... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:16 [A] Verifier: Verifying docstring quality... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:19 [A] Verifier: Content is not good enough (rejection 1/1), hands back to writer... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:19 [A] Writer: Generating docstring... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:21 [A] Verifier: Verifying docstring quality... (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+  18:38:28 [A] Verifier: Max rejection attempts (1) reached, accepting current docstring. (exception('WeasyPrint PDF generation failed for prescription %s', prescription.pk)
+          raise RuntimeError(f'PDF generation failed: {exc}') from exc
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+              errors['end_time'] = 'End time must be after start time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+                  errors['scheduled_time'] = 'You already have an appointment booked at this time.'
+          if errors:
+              raise ValidationError(errors))
+  [transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (306 > 256). Running this sequence through the model will result in indexing errors
+  Run 6: completed
+  -> completed in 433.9 min; gold components found 56/56
+
+all pairs done

@@ -1,0 +1,206 @@
+{
+  "label": "V1 - human-annotated gold",
+  "pairs": {
+    "Books-Recommender-System": {
+      "components_parsed": 53,
+      "requirements": 33,
+      "excluded": 7,
+      "status": {
+        "implemented": 22,
+        "partial": 6,
+        "cross_cutting": 5
+      },
+      "links": 58,
+      "errors": [
+        {
+          "check": "implemented_without_primary_link",
+          "requirement": "REQ-012",
+          "status": "partial"
+        }
+      ],
+      "warnings": [
+        {
+          "check": "evidence_outside_component_module_constant",
+          "lines": [
+            11,
+            11
+          ],
+          "component_lines": [
+            14,
+            16
+          ],
+          "anchor_text": "CONFIG_FILE_PATH = Path(\"config/config.yaml\")",
+          "requirement": "FR-1.1",
+          "component": "src.config.configuration.AppConfiguration.__init__"
+        },
+        {
+          "check": "evidence_outside_component_decorator",
+          "lines": [
+            4,
+            9
+          ],
+          "component_lines": [
+            5,
+            9
+          ],
+          "anchor_text": "@dataclass(frozen=True)",
+          "requirement": "FR-1.2",
+          "component": "src.entity.config_entity.DataIngestionConfig"
+        },
+        {
+          "check": "evidence_outside_component_decorator",
+          "lines": [
+            11,
+            19
+          ],
+          "component_lines": [
+            12,
+            19
+          ],
+          "anchor_text": "@dataclass(frozen=True)",
+          "requirement": "FR-1.2",
+          "component": "src.entity.config_entity.DataValidationConfig"
+        },
+        {
+          "check": "evidence_outside_component_decorator",
+          "lines": [
+            21,
+            27
+          ],
+          "component_lines": [
+            22,
+            27
+          ],
+          "anchor_text": "@dataclass(frozen=True)",
+          "requirement": "FR-1.2",
+          "component": "src.entity.config_entity.DataTransformationConfig"
+        },
+        {
+          "check": "evidence_outside_component_decorator",
+          "lines": [
+            29,
+            36
+          ],
+          "component_lines": [
+            30,
+            36
+          ],
+          "anchor_text": "@dataclass(frozen=True)",
+          "requirement": "FR-1.2",
+          "component": "src.entity.config_entity.ModelTrainerConfig"
+        },
+        {
+          "check": "evidence_outside_component_decorator",
+          "lines": [
+            38,
+            42
+          ],
+          "component_lines": [
+            39,
+            42
+          ],
+          "anchor_text": "@dataclass(frozen=True)",
+          "requirement": "FR-1.2",
+          "component": "src.entity.config_entity.ModelRecommendationConfig"
+        }
+      ]
+    },
+    "ProClinic": {
+      "components_parsed": 571,
+      "requirements": 21,
+      "excluded": 1,
+      "status": {
+        "implemented": 12,
+        "partial": 3,
+        "cross_cutting": 3,
+        "not_implemented": 3
+      },
+      "links": 63,
+      "errors": [
+        {
+          "check": "not_implemented_with_links",
+          "requirement": "US006",
+          "links": 1
+        }
+      ],
+      "warnings": [
+        {
+          "check": "components_sheet_vs_parser",
+          "only_in_sheet": [],
+          "only_in_parser": [
+            "backend.accounts.forms.Meta",
+            "backend.api.filters.Meta",
+            "backend.api.patient_serializers.Meta",
+            "backend.api.serializers.Meta",
+            "backend.appointments.forms.Meta",
+            "backend.billing.forms.Meta",
+            "backend.patients.forms.Meta",
+            "backend.patients.models.Meta",
+            "backend.patients.serializers.Meta",
+            "backend.prescriptions.forms.Meta",
+            "backend.prescriptions.models.Meta",
+            "backend.publications.forms.Meta",
+            "backend.publications.models.Meta"
+          ]
+        }
+      ]
+    },
+    "Travel-Agency-Automation-System": {
+      "components_parsed": 44,
+      "requirements": 14,
+      "excluded": 5,
+      "status": {
+        "partial": 8,
+        "not_implemented": 2,
+        "implemented": 3,
+        "cross_cutting": 1
+      },
+      "links": 32,
+      "errors": [],
+      "warnings": []
+    },
+    "Virtual-clinic": {
+      "components_parsed": 234,
+      "requirements": 57,
+      "excluded": 6,
+      "status": {
+        "partial": 31,
+        "implemented": 10,
+        "not_implemented": 11,
+        "cross_cutting": 5
+      },
+      "links": 85,
+      "errors": [
+        {
+          "check": "implemented_without_primary_link",
+          "requirement": "Req-12",
+          "status": "partial"
+        },
+        {
+          "check": "implemented_without_primary_link",
+          "requirement": "BR-9",
+          "status": "partial"
+        },
+        {
+          "check": "implemented_without_primary_link",
+          "requirement": "REQ-010",
+          "status": "partial"
+        },
+        {
+          "check": "implemented_without_primary_link",
+          "requirement": "REQ-018",
+          "status": "partial"
+        }
+      ],
+      "warnings": [
+        {
+          "check": "components_sheet_vs_parser",
+          "only_in_sheet": [],
+          "only_in_parser": [
+            "server.models.Admin"
+          ]
+        }
+      ]
+    }
+  }
+}

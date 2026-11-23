@@ -1,0 +1,520 @@
+{
+  "dataset": "Books-Recommender-System",
+  "document_id": "run-3-SRS",
+  "pipeline_version": "verification-v1",
+  "requirements_judged": 28,
+  "scores": {
+    "exact_accuracy": 0.4286,
+    "false_support_rate": 0.0,
+    "implemented_recall": 0.5,
+    "citation_validity": 0.9231,
+    "citation_on_gold": 1.0,
+    "claim_accuracy": null
+  },
+  "counts": {
+    "false_support": 0,
+    "partial_or_not_implemented": 6,
+    "implemented_supported": 11,
+    "implemented": 22,
+    "citations_valid": 36,
+    "citations_rejected": 3,
+    "gold_claims_compared": 0,
+    "incomplete_requirement_text": 0
+  },
+  "confusion": {
+    "implemented": {
+      "supported": 11,
+      "not_supported_by_candidate": 11
+    },
+    "partial": {
+      "not_supported_by_candidate": 5,
+      "partially_supported": 1
+    },
+    "cross_cutting": {
+      "not_supported_by_candidate": 5
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-1.1",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-1.1.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-1.2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-1.2.c1",
+          "not_supported"
+        ],
+        [
+          "FR-1.2.c2",
+          "not_supported"
+        ],
+        [
+          "FR-1.2.c3",
+          "not_supported"
+        ],
+        [
+          "FR-1.2.c4",
+          "not_supported"
+        ],
+        [
+          "FR-1.2.c5",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "gold_status": "implemented",
+      "matched_to": "FR-1.4",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-1.4.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-2.1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-2.1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-2.2",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-2.2.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "gold_status": "partial",
+      "matched_to": "FR-2.3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-2.3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-3.1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-3.1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "gold_status": "partial",
+      "matched_to": "FR-3.2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-3.2.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "gold_status": "partial",
+      "matched_to": "FR-3.3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-3.3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "gold_status": "implemented",
+      "matched_to": "FR-3.4",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-3.4.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "gold_status": "implemented",
+      "matched_to": "FR-3.5",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-3.5.c1",
+          "not_supported"
+        ],
+        [
+          "FR-3.5.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-4.1",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-4.1.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-4.2",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-4.2.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "gold_status": "implemented",
+      "matched_to": "FR-4.3",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-4.3.c1",
+          "supported"
+        ],
+        [
+          "FR-4.3.c2",
+          "supported"
+        ],
+        [
+          "FR-4.3.c3",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-5.1",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-5.1.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-5.2",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-5.2.c1",
+          "supported"
+        ],
+        [
+          "FR-5.2.c2",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "gold_status": "implemented",
+      "matched_to": "FR-5.3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-5.3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-6.1",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-6.1.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-6.2",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-6.2.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "gold_status": "implemented",
+      "matched_to": "FR-6.3",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-6.3.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "gold_status": "implemented",
+      "matched_to": "FR-6.4",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-6.4.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "gold_status": "implemented",
+      "matched_to": "FR-6.5",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "FR-6.5.c1",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "gold_status": "implemented",
+      "matched_to": "FR-7.1",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-7.1.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "gold_status": "implemented",
+      "matched_to": "FR-7.2",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-7.2.c1",
+          "not_supported"
+        ],
+        [
+          "FR-7.2.c2",
+          "not_supported"
+        ],
+        [
+          "FR-7.2.c3",
+          "not_supported"
+        ],
+        [
+          "FR-7.2.c4",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "gold_status": "implemented",
+      "matched_to": "FR-7.3",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "FR-7.3.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-048",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-048.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-006",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-049",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-049.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-007",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-050",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-050.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-008",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-051",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-051.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-009",
+      "gold_status": "partial",
+      "matched_to": "REQ-009",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-009.c1",
+          "supported"
+        ],
+        [
+          "REQ-009.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-010",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-053",
+      "predicted": "not_supported_by_candidate",
+      "correct": null,
+      "claims": [
+        [
+          "REQ-053.c1",
+          "not_supported"
+        ],
+        [
+          "REQ-053.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-011",
+      "gold_status": "partial",
+      "matched_to": "REQ-054",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-054.c1",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-012",
+      "gold_status": "partial",
+      "matched_to": "REQ-055",
+      "predicted": "not_supported_by_candidate",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-055.c1",
+          "not_supported"
+        ]
+      ]
+    }
+  ]
+}

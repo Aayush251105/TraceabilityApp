@@ -1,0 +1,292 @@
+{
+  "search": {
+    "requirements": 27,
+    "map": 0.7177645502645503,
+    "map_ci": [
+      0.5987654320987654,
+      0.8425925925925926
+    ],
+    "mrr": 0.7345679012345678,
+    "mrr_ci": [
+      0.6234567901234568,
+      0.8518518518518519
+    ],
+    "r@1": 0.5370370370370371,
+    "r@1_ci": [
+      0.37037037037037035,
+      0.7222222222222222
+    ],
+    "r@5": 0.8938271604938272,
+    "r@5_ci": [
+      0.7876543209876543,
+      0.9814814814814815
+    ],
+    "r@10": 0.9197530864197531,
+    "r@10_ci": [
+      0.8209876543209877,
+      1.0
+    ],
+    "sr@|G|": 0.5555555555555556,
+    "sr@|G|_ci": [
+      0.37037037037037035,
+      0.7407407407407407
+    ],
+    "ndcg@10_stored_candidates": 0.7219,
+    "evaluate_channels": {
+      "code_lexical": {
+        "hit@1": 0.6429,
+        "hit@3": 0.8214,
+        "hit@5": 0.8929,
+        "hit@10": 0.9286,
+        "recall@1": 0.6071,
+        "recall@3": 0.7714,
+        "recall@5": 0.8369,
+        "recall@10": 0.8726,
+        "mrr": 0.7561,
+        "ndcg@10": 0.7272
+      },
+      "code_vector": {
+        "hit@1": 0.3571,
+        "hit@3": 0.6429,
+        "hit@5": 0.7857,
+        "hit@10": 0.7857,
+        "recall@1": 0.3393,
+        "recall@3": 0.6071,
+        "recall@5": 0.7333,
+        "recall@10": 0.7405,
+        "mrr": 0.5376,
+        "ndcg@10": 0.573
+      },
+      "code_hybrid": {
+        "hit@1": 0.4643,
+        "hit@3": 0.75,
+        "hit@5": 0.7857,
+        "hit@10": 0.9286,
+        "recall@1": 0.4286,
+        "recall@3": 0.6762,
+        "recall@5": 0.7333,
+        "recall@10": 0.8798,
+        "mrr": 0.631,
+        "ndcg@10": 0.6521
+      },
+      "doc_lexical": {
+        "hit@1": 0.4286,
+        "hit@3": 0.6429,
+        "hit@5": 0.7857,
+        "hit@10": 0.8214,
+        "recall@1": 0.4286,
+        "recall@3": 0.6071,
+        "recall@5": 0.7036,
+        "recall@10": 0.7464,
+        "mrr": 0.5603,
+        "ndcg@10": 0.5914
+      },
+      "doc_vector": {
+        "hit@1": 0.6071,
+        "hit@3": 0.75,
+        "hit@5": 0.8571,
+        "hit@10": 0.8929,
+        "recall@1": 0.5655,
+        "recall@3": 0.6619,
+        "recall@5": 0.7762,
+        "recall@10": 0.8417,
+        "mrr": 0.7064,
+        "ndcg@10": 0.7019
+      },
+      "doc_hybrid": {
+        "hit@1": 0.4286,
+        "hit@3": 0.75,
+        "hit@5": 0.7857,
+        "hit@10": 0.8929,
+        "recall@1": 0.4107,
+        "recall@3": 0.6857,
+        "recall@5": 0.7286,
+        "recall@10": 0.819,
+        "mrr": 0.6111,
+        "ndcg@10": 0.6518
+      },
+      "all_hybrid": {
+        "hit@1": 0.5357,
+        "hit@3": 0.9286,
+        "hit@5": 0.9286,
+        "hit@10": 0.9286,
+        "recall@1": 0.5179,
+        "recall@3": 0.8583,
+        "recall@5": 0.8619,
+        "recall@10": 0.8869,
+        "mrr": 0.7092,
+        "ndcg@10": 0.7219
+      }
+    },
+    "mrr_all_hybrid": 0.7092,
+    "gold_components_missing_from_repo": []
+  },
+  "mapping": {
+    "requirements": 28,
+    "direct": {
+      "precision": 0.6756756756756757,
+      "recall": 0.6097560975609756,
+      "f1": 0.6410256410256411,
+      "f2": 0.6218905472636815,
+      "tp": 25,
+      "fp": 12,
+      "fn": 16,
+      "precision_ci": [
+        0.5555555555555556,
+        0.8
+      ],
+      "recall_ci": [
+        0.3939393939393939,
+        0.8928571428571429
+      ],
+      "f1_ci": [
+        0.4941176470588235,
+        0.8055555555555555
+      ],
+      "f2_ci": [
+        0.4316546762589928,
+        0.851063829787234
+      ]
+    },
+    "all_links": {
+      "precision": 0.20114942528735633,
+      "recall": 0.603448275862069,
+      "f1": 0.3017241379310345,
+      "f2": 0.43103448275862066,
+      "tp": 35,
+      "fp": 139,
+      "fn": 23,
+      "precision_ci": [
+        0.15675675675675677,
+        0.25
+      ],
+      "recall_ci": [
+        0.4666666666666667,
+        0.7727272727272727
+      ],
+      "f1_ci": [
+        0.24999999999999997,
+        0.35042735042735046
+      ],
+      "f2_ci": [
+        0.36432160804020103,
+        0.4988662131519274
+      ]
+    },
+    "links_on_requirements_without_code": 0
+  },
+  "verification": {
+    "requirements_judged": 28,
+    "exact_accuracy": 0.42857142857142855,
+    "exact_accuracy_ci": [
+      0.25,
+      0.6071428571428571
+    ],
+    "macro_f1": 0.47619047619047616,
+    "macro_f1_ci": [
+      0.25806451612903225,
+      0.7142857142857143
+    ],
+    "weighted_kappa": 0.14864864864864868,
+    "weighted_kappa_ci": [
+      0.04680851063829794,
+      0.2962962962962963
+    ],
+    "false_support_rate": 0.0,
+    "false_support_rate_ci": [
+      0.0,
+      0.0
+    ],
+    "false_support_not_implemented_sup_or_part": null,
+    "false_support_not_implemented_sup_or_part_ci": null,
+    "implemented_recall": 0.5,
+    "implemented_recall_ci": [
+      0.3,
+      0.7142857142857143
+    ],
+    "implemented_or_partial_found": 0.42857142857142855,
+    "implemented_or_partial_found_ci": [
+      0.25,
+      0.6071428571428571
+    ],
+    "confusion": {
+      "implemented": {
+        "supported": 11,
+        "not_supported_by_candidate": 11
+      },
+      "partial": {
+        "not_supported_by_candidate": 5,
+        "partially_supported": 1
+      }
+    },
+    "cross_cutting": {
+      "not_supported_by_candidate": 5
+    },
+    "supported": 11,
+    "errors": {
+      "verifier error": 13,
+      "mapping miss": 2,
+      "gold has no links": 1
+    },
+    "citation_validity": 0.9231,
+    "citation_on_gold": 1.0,
+    "evaluator_scores": {
+      "exact_accuracy": 0.4286,
+      "false_support_rate": 0.0,
+      "implemented_recall": 0.5,
+      "citation_validity": 0.9231,
+      "citation_on_gold": 1.0,
+      "claim_accuracy": null
+    },
+    "citations": {
+      "citations_valid": 36,
+      "citations_rejected": 3
+    }
+  },
+  "extraction": {
+    "gold_requirements": 33,
+    "gold_incl_excluded": 40,
+    "extracted": 61,
+    "matched_extracted": 39,
+    "precision": 0.639344262295082,
+    "recall": 1.0,
+    "recall_incl_excluded": 0.975,
+    "by": {
+      "by_id": 32,
+      "by_text": 7
+    },
+    "text_threshold": 0.6,
+    "f1": 0.78,
+    "recall_ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "minutes": {
+    "fetch": 0.0,
+    "docstrings": 28.55,
+    "index_code": 0.03,
+    "extract": 16.95,
+    "prepare_review": 0.12,
+    "index_srs": 0.21,
+    "search": 0.01,
+    "map": 0.0,
+    "verify": 4.24,
+    "results": 0.0,
+    "wall_total": 33.08
+  },
+  "run": {
+    "run_id": 3,
+    "document_id": "run-3-SRS",
+    "repo_id": "run-3-code",
+    "commit_sha": "69ed627f0fca6e4c6749336a1a159dfda80af67a",
+    "status": "completed",
+    "models": {
+      "srs": "qwen3:8b",
+      "judge": "qwen3:4b",
+      "docagent": "yi-coder:9b",
+      "verifier": "qwen2.5-coder:7b"
+    }
+  },
+  "label": "V1 - human-annotated gold"
+}

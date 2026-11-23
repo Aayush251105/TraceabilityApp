@@ -1,0 +1,825 @@
+{
+  "dataset": "ProClinic",
+  "repo_id": "run-6-code",
+  "document_id": "run-6-ProClinicSRS",
+  "query_source": "ingested",
+  "requirements_scored": 15,
+  "docstrings_present": true,
+  "gold_components_missing_from_repo": [],
+  "channels": {
+    "code_lexical": {
+      "hit@1": 0.2667,
+      "hit@3": 0.4667,
+      "hit@5": 0.5333,
+      "hit@10": 0.6667,
+      "recall@1": 0.1444,
+      "recall@3": 0.2244,
+      "recall@5": 0.2911,
+      "recall@10": 0.4411,
+      "mrr": 0.4033,
+      "ndcg@10": 0.3154
+    },
+    "code_vector": {
+      "hit@1": 0.3333,
+      "hit@3": 0.6,
+      "hit@5": 0.6667,
+      "hit@10": 0.7333,
+      "recall@1": 0.2111,
+      "recall@3": 0.35,
+      "recall@5": 0.4222,
+      "recall@10": 0.5444,
+      "mrr": 0.4952,
+      "ndcg@10": 0.4248
+    },
+    "code_hybrid": {
+      "hit@1": 0.4,
+      "hit@3": 0.6667,
+      "hit@5": 0.7333,
+      "hit@10": 0.8,
+      "recall@1": 0.1911,
+      "recall@3": 0.4022,
+      "recall@5": 0.5078,
+      "recall@10": 0.5633,
+      "mrr": 0.5407,
+      "ndcg@10": 0.4292
+    },
+    "doc_lexical": {
+      "hit@1": 0.1333,
+      "hit@3": 0.2,
+      "hit@5": 0.2667,
+      "hit@10": 0.4667,
+      "recall@1": 0.1,
+      "recall@3": 0.1333,
+      "recall@5": 0.18,
+      "recall@10": 0.3244,
+      "mrr": 0.2267,
+      "ndcg@10": 0.2183
+    },
+    "doc_vector": {
+      "hit@1": 0.3333,
+      "hit@3": 0.4667,
+      "hit@5": 0.4667,
+      "hit@10": 0.6,
+      "recall@1": 0.1689,
+      "recall@3": 0.2356,
+      "recall@5": 0.2689,
+      "recall@10": 0.4489,
+      "mrr": 0.4219,
+      "ndcg@10": 0.3592
+    },
+    "doc_hybrid": {
+      "hit@1": 0.2,
+      "hit@3": 0.4,
+      "hit@5": 0.4,
+      "hit@10": 0.5333,
+      "recall@1": 0.1133,
+      "recall@3": 0.1911,
+      "recall@5": 0.2244,
+      "recall@10": 0.4022,
+      "mrr": 0.3018,
+      "ndcg@10": 0.2727
+    },
+    "all_hybrid": {
+      "hit@1": 0.2667,
+      "hit@3": 0.4,
+      "hit@5": 0.4,
+      "hit@10": 0.6667,
+      "recall@1": 0.1467,
+      "recall@3": 0.2689,
+      "recall@5": 0.2911,
+      "recall@10": 0.4689,
+      "mrr": 0.367,
+      "ndcg@10": 0.3255
+    }
+  },
+  "negatives": {
+    "not_implemented_top1_code_similarity": {
+      "US006": 0.3261,
+      "US009": 0.2346,
+      "US010": 0.3001
+    },
+    "mean_not_implemented": 0.287,
+    "mean_implemented": 0.4179
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": null,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "code_vector": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": 22,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "code_hybrid": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": 42,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "doc_lexical": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": null,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "doc_vector": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": 23,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "doc_hybrid": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": 43,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        },
+        "all_hybrid": {
+          "backend.accounts.forms.StaffCreationForm": null,
+          "backend.accounts.models.CustomUser": null,
+          "backend.accounts.views.RoleBasedLoginView.form_valid": 32,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.patient_signup": null
+        }
+      },
+      "top5_all": [
+        "backend.api.permissions.IsAdminRole",
+        "backend.api.test_jwt_auth.JWTAuthenticationTests",
+        "backend.api.tests_extended.PublicationWebViewTests.test_admin_approval_panel_requires_auth",
+        "backend.api.permissions.IsAdminRole.has_permission",
+        "backend.api.tests_extended.BaseTestCase.staff_client"
+      ]
+    },
+    {
+      "requirement_id": "FR-2",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.appointments.forms.AppointmentForm.clean": 2,
+          "backend.appointments.models.Appointment.clean": 4
+        },
+        "code_vector": {
+          "backend.appointments.forms.AppointmentForm.clean": 4,
+          "backend.appointments.models.Appointment.clean": 7
+        },
+        "code_hybrid": {
+          "backend.appointments.forms.AppointmentForm.clean": 1,
+          "backend.appointments.models.Appointment.clean": 4
+        },
+        "doc_lexical": {
+          "backend.appointments.forms.AppointmentForm.clean": 19,
+          "backend.appointments.models.Appointment.clean": 8
+        },
+        "doc_vector": {
+          "backend.appointments.forms.AppointmentForm.clean": 36,
+          "backend.appointments.models.Appointment.clean": 25
+        },
+        "doc_hybrid": {
+          "backend.appointments.forms.AppointmentForm.clean": 16,
+          "backend.appointments.models.Appointment.clean": 9
+        },
+        "all_hybrid": {
+          "backend.appointments.forms.AppointmentForm.clean": 8,
+          "backend.appointments.models.Appointment.clean": 6
+        }
+      },
+      "top5_all": [
+        "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+        "backend.appointments.test_conflicts.DoctorUnavailabilityConflictTests.test_booking_during_unavailability_raises_error",
+        "backend.api.tests.PatientAppointmentTests.test_double_booking_same_doctor_same_time_fails",
+        "backend.appointments.test_conflicts.DoctorUnavailabilityConflictTests.test_booking_outside_unavailability_succeeds",
+        "backend.api.tests.PatientAppointmentTests"
+      ]
+    },
+    {
+      "requirement_id": "FR-3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.accounts.views.patient_signup": null,
+          "backend.patients.views.patient_create": null,
+          "backend.patients.views.patient_detail": null,
+          "backend.patients.views.patient_my_visits": 2,
+          "backend.patients.views.patient_update": null
+        },
+        "code_vector": {
+          "backend.accounts.views.patient_signup": 35,
+          "backend.patients.views.patient_create": null,
+          "backend.patients.views.patient_detail": 16,
+          "backend.patients.views.patient_my_visits": 11,
+          "backend.patients.views.patient_update": 18
+        },
+        "code_hybrid": {
+          "backend.accounts.views.patient_signup": 59,
+          "backend.patients.views.patient_create": null,
+          "backend.patients.views.patient_detail": 32,
+          "backend.patients.views.patient_my_visits": 1,
+          "backend.patients.views.patient_update": 35
+        },
+        "doc_lexical": {
+          "backend.accounts.views.patient_signup": null,
+          "backend.patients.views.patient_create": null,
+          "backend.patients.views.patient_detail": null,
+          "backend.patients.views.patient_my_visits": 4,
+          "backend.patients.views.patient_update": null
+        },
+        "doc_vector": {
+          "backend.accounts.views.patient_signup": null,
+          "backend.patients.views.patient_create": 29,
+          "backend.patients.views.patient_detail": 17,
+          "backend.patients.views.patient_my_visits": 1,
+          "backend.patients.views.patient_update": 9
+        },
+        "doc_hybrid": {
+          "backend.accounts.views.patient_signup": null,
+          "backend.patients.views.patient_create": 50,
+          "backend.patients.views.patient_detail": 28,
+          "backend.patients.views.patient_my_visits": 1,
+          "backend.patients.views.patient_update": 18
+        },
+        "all_hybrid": {
+          "backend.accounts.views.patient_signup": 89,
+          "backend.patients.views.patient_create": 74,
+          "backend.patients.views.patient_detail": 29,
+          "backend.patients.views.patient_my_visits": 1,
+          "backend.patients.views.patient_update": 28
+        }
+      },
+      "top5_all": [
+        "backend.patients.views.patient_my_visits",
+        "backend.api.tests.PatientProfileTests.test_cannot_access_other_patient_profile",
+        "backend.api.patient_views.PatientVisitListView",
+        "backend.api.patient_views.PatientProfileView",
+        "backend.api.tests.PatientProfileTests"
+      ]
+    },
+    {
+      "requirement_id": "FR-4",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.billing.models.Invoice.recalculate_totals": 10,
+          "backend.billing.signals.create_draft_invoice_on_completion": 21,
+          "backend.billing.views.generate_invoice": 8
+        },
+        "code_vector": {
+          "backend.billing.models.Invoice.recalculate_totals": 1,
+          "backend.billing.signals.create_draft_invoice_on_completion": 50,
+          "backend.billing.views.generate_invoice": 15
+        },
+        "code_hybrid": {
+          "backend.billing.models.Invoice.recalculate_totals": 2,
+          "backend.billing.signals.create_draft_invoice_on_completion": 32,
+          "backend.billing.views.generate_invoice": 9
+        },
+        "doc_lexical": {
+          "backend.billing.models.Invoice.recalculate_totals": null,
+          "backend.billing.signals.create_draft_invoice_on_completion": null,
+          "backend.billing.views.generate_invoice": 12
+        },
+        "doc_vector": {
+          "backend.billing.models.Invoice.recalculate_totals": 7,
+          "backend.billing.signals.create_draft_invoice_on_completion": 17,
+          "backend.billing.views.generate_invoice": null
+        },
+        "doc_hybrid": {
+          "backend.billing.models.Invoice.recalculate_totals": 27,
+          "backend.billing.signals.create_draft_invoice_on_completion": 35,
+          "backend.billing.views.generate_invoice": 30
+        },
+        "all_hybrid": {
+          "backend.billing.models.Invoice.recalculate_totals": 19,
+          "backend.billing.signals.create_draft_invoice_on_completion": 33,
+          "backend.billing.views.generate_invoice": 25
+        }
+      },
+      "top5_all": [
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice",
+        "backend.billing.models.Invoice",
+        "backend.billing.admin.InvoiceAdmin.save_related",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_500_saved_correctly",
+        "backend.billing.models.InvoiceItem.line_total"
+      ]
+    },
+    {
+      "requirement_id": "FR-5",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.accounts.views.deactivate_staff_account": 17,
+          "backend.audit.signals._log_delete": 1,
+          "backend.audit.signals._log_save": 7
+        },
+        "code_vector": {
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.audit.signals._log_delete": 2,
+          "backend.audit.signals._log_save": 4
+        },
+        "code_hybrid": {
+          "backend.accounts.views.deactivate_staff_account": 36,
+          "backend.audit.signals._log_delete": 1,
+          "backend.audit.signals._log_save": 4
+        },
+        "doc_lexical": {
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.audit.signals._log_delete": 9,
+          "backend.audit.signals._log_save": 7
+        },
+        "doc_vector": {
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.audit.signals._log_delete": 9,
+          "backend.audit.signals._log_save": 2
+        },
+        "doc_hybrid": {
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.audit.signals._log_delete": 8,
+          "backend.audit.signals._log_save": 3
+        },
+        "all_hybrid": {
+          "backend.accounts.views.deactivate_staff_account": 52,
+          "backend.audit.signals._log_delete": 4,
+          "backend.audit.signals._log_save": 3
+        }
+      },
+      "top5_all": [
+        "backend.audit.utils.log_action",
+        "backend.audit.models.AuditLog",
+        "backend.audit.signals._log_save",
+        "backend.audit.signals._log_delete",
+        "backend.audit.admin.AuditLogAdmin"
+      ]
+    },
+    {
+      "requirement_id": "FR-6",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "code_vector": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "code_hybrid": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "doc_lexical": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "doc_vector": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "doc_hybrid": {
+          "backend.patients.views.patient_ai_ask": 1
+        },
+        "all_hybrid": {
+          "backend.patients.views.patient_ai_ask": 1
+        }
+      },
+      "top5_all": [
+        "backend.patients.views.patient_ai_ask",
+        "backend.api.views.AuditLogViewSet",
+        "backend.audit.models.AuditLog",
+        "backend.audit.migrations.0001_initial.Migration",
+        "backend.billing.views.invoice_list"
+      ]
+    },
+    {
+      "requirement_id": "NFR-3",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.api.permissions.IsAdminRole.has_permission": null,
+          "backend.api.permissions.IsDoctor.has_permission": null,
+          "backend.api.permissions.IsPatient.has_permission": null,
+          "backend.api.permissions.IsStaff.has_permission": null
+        },
+        "code_vector": {
+          "backend.api.permissions.IsAdminRole.has_permission": 4,
+          "backend.api.permissions.IsDoctor.has_permission": 17,
+          "backend.api.permissions.IsPatient.has_permission": 6,
+          "backend.api.permissions.IsStaff.has_permission": 2
+        },
+        "code_hybrid": {
+          "backend.api.permissions.IsAdminRole.has_permission": 16,
+          "backend.api.permissions.IsDoctor.has_permission": 32,
+          "backend.api.permissions.IsPatient.has_permission": 17,
+          "backend.api.permissions.IsStaff.has_permission": 13
+        },
+        "doc_lexical": {
+          "backend.api.permissions.IsAdminRole.has_permission": 14,
+          "backend.api.permissions.IsDoctor.has_permission": 12,
+          "backend.api.permissions.IsPatient.has_permission": 13,
+          "backend.api.permissions.IsStaff.has_permission": null
+        },
+        "doc_vector": {
+          "backend.api.permissions.IsAdminRole.has_permission": 47,
+          "backend.api.permissions.IsDoctor.has_permission": null,
+          "backend.api.permissions.IsPatient.has_permission": 35,
+          "backend.api.permissions.IsStaff.has_permission": 22
+        },
+        "doc_hybrid": {
+          "backend.api.permissions.IsAdminRole.has_permission": 12,
+          "backend.api.permissions.IsDoctor.has_permission": 25,
+          "backend.api.permissions.IsPatient.has_permission": 11,
+          "backend.api.permissions.IsStaff.has_permission": 38
+        },
+        "all_hybrid": {
+          "backend.api.permissions.IsAdminRole.has_permission": 12,
+          "backend.api.permissions.IsDoctor.has_permission": 23,
+          "backend.api.permissions.IsPatient.has_permission": 11,
+          "backend.api.permissions.IsStaff.has_permission": 19
+        }
+      },
+      "top5_all": [
+        "backend.api.permissions.IsAdminRole",
+        "backend.api.permissions.IsStaff",
+        "backend.api.permissions.IsPatient",
+        "backend.api.permissions.IsDoctor",
+        "backend.accounts.views.StaffLoginView"
+      ]
+    },
+    {
+      "requirement_id": "NFR-4",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.api.pagination.LargeResultsSetPagination": 1,
+          "backend.api.pagination.StandardResultsSetPagination": null,
+          "backend.patients.views.patient_list": 16
+        },
+        "code_vector": {
+          "backend.api.pagination.LargeResultsSetPagination": 7,
+          "backend.api.pagination.StandardResultsSetPagination": 16,
+          "backend.patients.views.patient_list": 1
+        },
+        "code_hybrid": {
+          "backend.api.pagination.LargeResultsSetPagination": 1,
+          "backend.api.pagination.StandardResultsSetPagination": 33,
+          "backend.patients.views.patient_list": 3
+        },
+        "doc_lexical": {
+          "backend.api.pagination.LargeResultsSetPagination": null,
+          "backend.api.pagination.StandardResultsSetPagination": null,
+          "backend.patients.views.patient_list": null
+        },
+        "doc_vector": {
+          "backend.api.pagination.LargeResultsSetPagination": 6,
+          "backend.api.pagination.StandardResultsSetPagination": 3,
+          "backend.patients.views.patient_list": 32
+        },
+        "doc_hybrid": {
+          "backend.api.pagination.LargeResultsSetPagination": 24,
+          "backend.api.pagination.StandardResultsSetPagination": 22,
+          "backend.patients.views.patient_list": 53
+        },
+        "all_hybrid": {
+          "backend.api.pagination.LargeResultsSetPagination": 7,
+          "backend.api.pagination.StandardResultsSetPagination": 25,
+          "backend.patients.views.patient_list": 11
+        }
+      },
+      "top5_all": [
+        "backend.api.tests_extended.StaffPatientAPITests",
+        "backend.api.tests_extended.StaffPatientAPITests.test_list_patients_paginated",
+        "backend.api.patient_views.PatientVisitListView",
+        "backend.api.tests_extended.StaffPrescriptionAPITests",
+        "backend.api.views.PublicationViewSet"
+      ]
+    },
+    {
+      "requirement_id": "US001",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.accounts.forms.StaffCreationForm.save": 6,
+          "backend.accounts.views.create_staff_account": 48,
+          "backend.accounts.views.deactivate_staff_account": 40,
+          "backend.accounts.views.reactivate_staff_account": 50
+        },
+        "code_vector": {
+          "backend.accounts.forms.StaffCreationForm.save": 10,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.deactivate_staff_account": 25,
+          "backend.accounts.views.reactivate_staff_account": 36
+        },
+        "code_hybrid": {
+          "backend.accounts.forms.StaffCreationForm.save": 5,
+          "backend.accounts.views.create_staff_account": 65,
+          "backend.accounts.views.deactivate_staff_account": 27,
+          "backend.accounts.views.reactivate_staff_account": 31
+        },
+        "doc_lexical": {
+          "backend.accounts.forms.StaffCreationForm.save": null,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.accounts.views.reactivate_staff_account": null
+        },
+        "doc_vector": {
+          "backend.accounts.forms.StaffCreationForm.save": null,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.accounts.views.reactivate_staff_account": null
+        },
+        "doc_hybrid": {
+          "backend.accounts.forms.StaffCreationForm.save": null,
+          "backend.accounts.views.create_staff_account": null,
+          "backend.accounts.views.deactivate_staff_account": null,
+          "backend.accounts.views.reactivate_staff_account": null
+        },
+        "all_hybrid": {
+          "backend.accounts.forms.StaffCreationForm.save": 35,
+          "backend.accounts.views.create_staff_account": 87,
+          "backend.accounts.views.deactivate_staff_account": 42,
+          "backend.accounts.views.reactivate_staff_account": 49
+        }
+      },
+      "top5_all": [
+        "backend.api.permissions.IsAdminRole",
+        "backend.api.permissions.IsAdminRole.has_permission",
+        "backend.api.permissions.IsStaff",
+        "backend.api.permissions.IsDoctor",
+        "backend.api.permissions.IsPatient"
+      ]
+    },
+    {
+      "requirement_id": "US002",
+      "status": "partial",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.appointments.views.book_appointment": 38,
+          "backend.appointments.views.doctor_unavailability": null
+        },
+        "code_vector": {
+          "backend.appointments.views.book_appointment": 1,
+          "backend.appointments.views.doctor_unavailability": null
+        },
+        "code_hybrid": {
+          "backend.appointments.views.book_appointment": 3,
+          "backend.appointments.views.doctor_unavailability": null
+        },
+        "doc_lexical": {
+          "backend.appointments.views.book_appointment": null,
+          "backend.appointments.views.doctor_unavailability": 21
+        },
+        "doc_vector": {
+          "backend.appointments.views.book_appointment": 15,
+          "backend.appointments.views.doctor_unavailability": null
+        },
+        "doc_hybrid": {
+          "backend.appointments.views.book_appointment": 30,
+          "backend.appointments.views.doctor_unavailability": 37
+        },
+        "all_hybrid": {
+          "backend.appointments.views.book_appointment": 12,
+          "backend.appointments.views.doctor_unavailability": 66
+        }
+      },
+      "top5_all": [
+        "backend.patients.views.patient_my_visits",
+        "backend.prescriptions.models.Prescription",
+        "backend.patients.admin.VisitAdmin",
+        "backend.prescriptions.views.create_prescription",
+        "backend.prescriptions.forms.PrescriptionForm"
+      ]
+    },
+    {
+      "requirement_id": "US003",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.patients.views.patient_my_lab_reports": null,
+          "backend.patients.views.patient_my_prescriptions": null,
+          "backend.patients.views.patient_my_visits": null
+        },
+        "code_vector": {
+          "backend.patients.views.patient_my_lab_reports": null,
+          "backend.patients.views.patient_my_prescriptions": 23,
+          "backend.patients.views.patient_my_visits": 15
+        },
+        "code_hybrid": {
+          "backend.patients.views.patient_my_lab_reports": null,
+          "backend.patients.views.patient_my_prescriptions": 45,
+          "backend.patients.views.patient_my_visits": 32
+        },
+        "doc_lexical": {
+          "backend.patients.views.patient_my_lab_reports": null,
+          "backend.patients.views.patient_my_prescriptions": 23,
+          "backend.patients.views.patient_my_visits": 39
+        },
+        "doc_vector": {
+          "backend.patients.views.patient_my_lab_reports": 21,
+          "backend.patients.views.patient_my_prescriptions": 2,
+          "backend.patients.views.patient_my_visits": 1
+        },
+        "doc_hybrid": {
+          "backend.patients.views.patient_my_lab_reports": 39,
+          "backend.patients.views.patient_my_prescriptions": 3,
+          "backend.patients.views.patient_my_visits": 7
+        },
+        "all_hybrid": {
+          "backend.patients.views.patient_my_lab_reports": 70,
+          "backend.patients.views.patient_my_prescriptions": 10,
+          "backend.patients.views.patient_my_visits": 12
+        }
+      },
+      "top5_all": [
+        "backend.api.patient_views.PatientAppointmentListCreateView",
+        "backend.patients.views.patient_detail",
+        "backend.api.patient_views.PatientLabReportListCreateView",
+        "backend.api.patient_views.PatientVisitListView",
+        "backend.api.patient_views.PatientAppointmentListCreateView.get"
+      ]
+    },
+    {
+      "requirement_id": "US004",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.billing.views.generate_invoice": 10,
+          "backend.billing.views.invoice_pdf_download": 2
+        },
+        "code_vector": {
+          "backend.billing.views.generate_invoice": null,
+          "backend.billing.views.invoice_pdf_download": 24
+        },
+        "code_hybrid": {
+          "backend.billing.views.generate_invoice": 33,
+          "backend.billing.views.invoice_pdf_download": 9
+        },
+        "doc_lexical": {
+          "backend.billing.views.generate_invoice": 4,
+          "backend.billing.views.invoice_pdf_download": 2
+        },
+        "doc_vector": {
+          "backend.billing.views.generate_invoice": 22,
+          "backend.billing.views.invoice_pdf_download": 24
+        },
+        "doc_hybrid": {
+          "backend.billing.views.generate_invoice": 9,
+          "backend.billing.views.invoice_pdf_download": 7
+        },
+        "all_hybrid": {
+          "backend.billing.views.generate_invoice": 18,
+          "backend.billing.views.invoice_pdf_download": 3
+        }
+      },
+      "top5_all": [
+        "backend.billing.views.invoice_send_email_manual",
+        "backend.billing.views.invoice_detail",
+        "backend.billing.views.invoice_pdf_download",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice",
+        "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest"
+      ]
+    },
+    {
+      "requirement_id": "US005",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 5,
+          "backend.prescriptions.views.pharmacist_prescription_list": 9
+        },
+        "code_vector": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 3,
+          "backend.prescriptions.views.pharmacist_prescription_list": 7
+        },
+        "code_hybrid": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 2,
+          "backend.prescriptions.views.pharmacist_prescription_list": 4
+        },
+        "doc_lexical": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 12,
+          "backend.prescriptions.views.pharmacist_prescription_list": 8
+        },
+        "doc_vector": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 1,
+          "backend.prescriptions.views.pharmacist_prescription_list": 6
+        },
+        "doc_hybrid": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 3,
+          "backend.prescriptions.views.pharmacist_prescription_list": 4
+        },
+        "all_hybrid": {
+          "backend.prescriptions.views.pharmacist_prescription_detail": 1,
+          "backend.prescriptions.views.pharmacist_prescription_list": 3
+        }
+      },
+      "top5_all": [
+        "backend.prescriptions.views.pharmacist_prescription_detail",
+        "backend.prescriptions.views.create_prescription",
+        "backend.prescriptions.views.pharmacist_prescription_list",
+        "backend.prescriptions.models.Prescription",
+        "backend.prescriptions.migrations.0003_add_dispense_status.Migration"
+      ]
+    },
+    {
+      "requirement_id": "US007",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.core.views.dashboard": 32
+        },
+        "code_vector": {
+          "backend.core.views.dashboard": 1
+        },
+        "code_hybrid": {
+          "backend.core.views.dashboard": 3
+        },
+        "doc_lexical": {
+          "backend.core.views.dashboard": null
+        },
+        "doc_vector": {
+          "backend.core.views.dashboard": 9
+        },
+        "doc_hybrid": {
+          "backend.core.views.dashboard": 23
+        },
+        "all_hybrid": {
+          "backend.core.views.dashboard": 7
+        }
+      },
+      "top5_all": [
+        "backend.appointments.views.receptionist_appointments",
+        "backend.audit.views.audit_log_list",
+        "backend.api.views.AuditLogViewSet",
+        "backend.appointments.admin.DoctorUnavailabilityAdmin",
+        "backend.appointments.admin.AppointmentAdmin"
+      ]
+    },
+    {
+      "requirement_id": "US008",
+      "status": "implemented",
+      "query": "by_id",
+      "primary_ranks": {
+        "code_lexical": {
+          "backend.publications.views.admin_approve": 12,
+          "backend.publications.views.submit_paper": 1
+        },
+        "code_vector": {
+          "backend.publications.views.admin_approve": 3,
+          "backend.publications.views.submit_paper": 2
+        },
+        "code_hybrid": {
+          "backend.publications.views.admin_approve": 2,
+          "backend.publications.views.submit_paper": 1
+        },
+        "doc_lexical": {
+          "backend.publications.views.admin_approve": 8,
+          "backend.publications.views.submit_paper": 1
+        },
+        "doc_vector": {
+          "backend.publications.views.admin_approve": 5,
+          "backend.publications.views.submit_paper": 1
+        },
+        "doc_hybrid": {
+          "backend.publications.views.admin_approve": 6,
+          "backend.publications.views.submit_paper": 1
+        },
+        "all_hybrid": {
+          "backend.publications.views.admin_approve": 2,
+          "backend.publications.views.submit_paper": 1
+        }
+      },
+      "top5_all": [
+        "backend.publications.views.submit_paper",
+        "backend.publications.views.admin_approve",
+        "backend.publications.models.Publication.approve",
+        "backend.api.tests_extended.PublicationWebViewTests.test_submit_paper_sets_status_pending",
+        "backend.api.tests_extended.PublicationAPITests.test_doctor_cannot_approve"
+      ]
+    }
+  ],
+  "matching": {
+    "by_id": 15,
+    "by_text": 0,
+    "unmatched": []
+  }
+}

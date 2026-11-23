@@ -1,0 +1,1353 @@
+{
+  "schema_version": "2.0",
+  "label": "V1 - human-annotated gold",
+  "dataset": "ProClinic",
+  "code_root": "code",
+  "srs_file": "ProClinicSRS.pdf",
+  "repository_url": "https://github.com/24Chessman/ProClinic.git",
+  "commit_sha": "ee23cb7e8b875745e2c355f9955e24d654169345",
+  "line_numbering": "1-based, inclusive, original code before any docstring insertion",
+  "annotation": "human-annotated (workbook repo_info still says DRAFT; reviewed by the annotators)",
+  "source_workbook": "ProClinic_gold.xlsx",
+  "guide_version": "ANNOTATION_GUIDE.md 1.1",
+  "requirements": [
+    {
+      "requirement_id": "FR-1",
+      "title": null,
+      "text": "FR-1 Secure Auth: Authentication using system credentials; passwords hashed with Argon2. Acceptance criteria: Users can register/login; password storage verified as Argon2; admin can assign roles. Unit tests cover login and role checks.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Argon2PasswordHasher is first in PASSWORD_HASHERS (core/settings.py:171-177, module-level).",
+      "links": [
+        {
+          "component_id": "backend.accounts.views.patient_signup",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 72,
+          "end_line": 108,
+          "anchor_text": "def patient_signup(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "registration",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 72,
+              "end_line": 108,
+              "anchor_text": "def patient_signup(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.RoleBasedLoginView.form_valid",
+          "component_type": "method",
+          "path": "backend/accounts/views.py",
+          "start_line": 39,
+          "end_line": 57,
+          "anchor_text": "def form_valid(self, form):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "role-checked login",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 39,
+              "end_line": 57,
+              "anchor_text": "def form_valid(self, form):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.create_staff_account",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 112,
+          "end_line": 129,
+          "anchor_text": "def create_staff_account(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "admin assigns roles",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 112,
+              "end_line": 129,
+              "anchor_text": "def create_staff_account(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.forms.StaffCreationForm",
+          "component_type": "class",
+          "path": "backend/accounts/forms.py",
+          "start_line": 45,
+          "end_line": 70,
+          "anchor_text": "class StaffCreationForm(UserCreationForm):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "role field",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/forms.py",
+              "start_line": 45,
+              "end_line": 70,
+              "anchor_text": "class StaffCreationForm(UserCreationForm):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.models.CustomUser",
+          "component_type": "class",
+          "path": "backend/accounts/models.py",
+          "start_line": 4,
+          "end_line": 19,
+          "anchor_text": "class CustomUser(AbstractUser):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "roles",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/models.py",
+              "start_line": 5,
+              "end_line": 14,
+              "anchor_text": "ROLE_CHOICES = ("
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.RoleBasedLoginView",
+          "component_type": "class",
+          "path": "backend/accounts/views.py",
+          "start_line": 34,
+          "end_line": 57,
+          "anchor_text": "class RoleBasedLoginView(LoginView):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.accounts.views.StaffLoginView",
+          "component_type": "class",
+          "path": "backend/accounts/views.py",
+          "start_line": 60,
+          "end_line": 63,
+          "anchor_text": "class StaffLoginView(RoleBasedLoginView):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: staff portal",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.accounts.views.PatientLoginView",
+          "component_type": "class",
+          "path": "backend/accounts/views.py",
+          "start_line": 66,
+          "end_line": 69,
+          "anchor_text": "class PatientLoginView(RoleBasedLoginView):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: patient portal",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2",
+      "title": null,
+      "text": "FR-2 Conflict Check: Rejects appointment booking if the doctor is busy in the requested slot. Acceptance criteria: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Conflict = same start time for the doctor (web form enforces 30-minute slots), not the interval-overlap formula; API bookings skip the 30-minute rule, so off-grid times could overlap. Could be partial.",
+      "links": [
+        {
+          "component_id": "backend.appointments.models.Appointment.clean",
+          "component_type": "method",
+          "path": "backend/appointments/models.py",
+          "start_line": 99,
+          "end_line": 168,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "doctor double-booking",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/appointments/models.py",
+              "start_line": 145,
+              "end_line": 155,
+              "anchor_text": "# Check for double-booking for the same doctor at the same time."
+            }
+          ]
+        },
+        {
+          "component_id": "backend.appointments.forms.AppointmentForm.clean",
+          "component_type": "method",
+          "path": "backend/appointments/forms.py",
+          "start_line": 65,
+          "end_line": 131,
+          "anchor_text": "def clean(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "30-minute slots, doctor busy",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/appointments/forms.py",
+              "start_line": 76,
+              "end_line": 100,
+              "anchor_text": "if scheduled_time:"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.appointments.models.Appointment.save",
+          "component_type": "method",
+          "path": "backend/appointments/models.py",
+          "start_line": 170,
+          "end_line": 172,
+          "anchor_text": "def save(self, *args, **kwargs):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: full_clean before save",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.appointments.views.book_appointment",
+          "component_type": "function",
+          "path": "backend/appointments/views.py",
+          "start_line": 24,
+          "end_line": 63,
+          "anchor_text": "def book_appointment(request):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "entry_point",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.api.patient_views.PatientAppointmentListCreateView.post",
+          "component_type": "method",
+          "path": "backend/api/patient_views.py",
+          "start_line": 116,
+          "end_line": 149,
+          "anchor_text": "def post(self, request):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "entry_point (API)",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3",
+      "title": null,
+      "text": "FR-3 EHR Hub: Digital registration and retrieval of patient profiles and history. Acceptance criteria: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "backend.patients.views.patient_create",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 113,
+          "end_line": 127,
+          "anchor_text": "def patient_create(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 113,
+              "end_line": 127,
+              "anchor_text": "def patient_create(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_update",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 130,
+          "end_line": 145,
+          "anchor_text": "def patient_update(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 130,
+              "end_line": 145,
+              "anchor_text": "def patient_update(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_detail",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 84,
+          "end_line": 108,
+          "anchor_text": "def patient_detail(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "profile with history",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 84,
+              "end_line": 108,
+              "anchor_text": "def patient_detail(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_my_visits",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 228,
+          "end_line": 245,
+          "anchor_text": "def patient_my_visits(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "visit history",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "anchor_text": "def patient_my_visits(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.patient_signup",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 72,
+          "end_line": 108,
+          "anchor_text": "def patient_signup(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "self-registration creates the profile",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 85,
+              "end_line": 96,
+              "anchor_text": "Patient.objects.create("
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.models.Patient",
+          "component_type": "class",
+          "path": "backend/patients/models.py",
+          "start_line": 7,
+          "end_line": 32,
+          "anchor_text": "class Patient(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: the EHR entity",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.patients.models.Visit",
+          "component_type": "class",
+          "path": "backend/patients/models.py",
+          "start_line": 35,
+          "end_line": 59,
+          "anchor_text": "class Visit(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: visit record",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4",
+      "title": null,
+      "text": "FR-4 Auto-Billing: System calculates total bill including services and 18% GST. Acceptance criteria: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Server sums line items, but GST is never computed in Python: generate_invoice stores tax/total sent by the browser (JS), auto-drafted invoices get tax 0; GST_RATE is only used for a dashboard estimate.",
+      "links": [
+        {
+          "component_id": "backend.billing.models.Invoice.recalculate_totals",
+          "component_type": "method",
+          "path": "backend/billing/models.py",
+          "start_line": 48,
+          "end_line": 59,
+          "anchor_text": "def recalculate_totals(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "sum of items; tax taken as stored",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/billing/models.py",
+              "start_line": 48,
+              "end_line": 59,
+              "anchor_text": "def recalculate_totals(self):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.billing.views.generate_invoice",
+          "component_type": "function",
+          "path": "backend/billing/views.py",
+          "start_line": 40,
+          "end_line": 152,
+          "anchor_text": "def generate_invoice(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "totals parsed from the browser (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/billing/views.py",
+              "start_line": 54,
+              "end_line": 60,
+              "anchor_text": "invoice.subtotal        = _parse_decimal(request.POST.get('subtotal'))"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.billing.signals.create_draft_invoice_on_completion",
+          "component_type": "function",
+          "path": "backend/billing/signals.py",
+          "start_line": 31,
+          "end_line": 109,
+          "anchor_text": "def create_draft_invoice_on_completion(sender, instance, created, **kwargs):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "draft invoices with tax 0",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/billing/signals.py",
+              "start_line": 46,
+              "end_line": 97,
+              "anchor_text": "invoice = Invoice.objects.create("
+            }
+          ]
+        },
+        {
+          "component_id": "backend.billing.models.InvoiceItem.line_total",
+          "component_type": "method",
+          "path": "backend/billing/models.py",
+          "start_line": 81,
+          "end_line": 82,
+          "anchor_text": "def line_total(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.billing.models.Invoice",
+          "component_type": "class",
+          "path": "backend/billing/models.py",
+          "start_line": 14,
+          "end_line": 62,
+          "anchor_text": "class Invoice(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5",
+      "title": null,
+      "text": "FR-5 Audit Log: Automated tracking of all record deletions and administrative changes. Acceptance criteria: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Signals log create/update/delete for Patient, Appointment, Prescription, Invoice, Publication, LabReport; account (de)activation is logged explicitly. Other models (e.g. MedicineMaster, role edits in Django admin) are not tracked.",
+      "links": [
+        {
+          "component_id": "backend.audit.signals._log_delete",
+          "component_type": "function",
+          "path": "backend/audit/signals.py",
+          "start_line": 220,
+          "end_line": 241,
+          "anchor_text": "def _log_delete(sender, instance, **kwargs):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/audit/signals.py",
+              "start_line": 220,
+              "end_line": 241,
+              "anchor_text": "def _log_delete(sender, instance, **kwargs):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.audit.signals._log_save",
+          "component_type": "function",
+          "path": "backend/audit/signals.py",
+          "start_line": 183,
+          "end_line": 212,
+          "anchor_text": "def _log_save(sender, instance, created, **kwargs):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "create/update diffs",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/audit/signals.py",
+              "start_line": 183,
+              "end_line": 212,
+              "anchor_text": "def _log_save(sender, instance, created, **kwargs):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.audit.signals._capture_old_state",
+          "component_type": "function",
+          "path": "backend/audit/signals.py",
+          "start_line": 157,
+          "end_line": 175,
+          "anchor_text": "def _capture_old_state(sender, instance, **kwargs):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: before-state",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.audit.signals._write_log",
+          "component_type": "function",
+          "path": "backend/audit/signals.py",
+          "start_line": 135,
+          "end_line": 149,
+          "anchor_text": "def _write_log(*, actor, action_type, entity_type, entity_id, changes=None):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.audit.signals._get_tracked",
+          "component_type": "function",
+          "path": "backend/audit/signals.py",
+          "start_line": 100,
+          "end_line": 117,
+          "anchor_text": "def _get_tracked():",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: tracked models",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.audit.middleware.AuditUserMiddleware.__call__",
+          "component_type": "method",
+          "path": "backend/audit/middleware.py",
+          "start_line": 39,
+          "end_line": 51,
+          "anchor_text": "def __call__(self, request):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: records the actor",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.accounts.views.deactivate_staff_account",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 133,
+          "end_line": 165,
+          "anchor_text": "def deactivate_staff_account(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "explicit audit entry",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 156,
+              "end_line": 162,
+              "anchor_text": "AuditLog.objects.create("
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6",
+      "title": null,
+      "text": "FR-6 AI Help Desk: AI-powered assistant using NLP-based FAQ and Retrieval-Augmented Generation (RAG) to answer system-related queries. Acceptance criteria: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Patients can ask Gemini general health questions; no FAQ/RAG, not system-related, queries are not stored for review (only logged to the app log).",
+      "links": [
+        {
+          "component_id": "backend.patients.views.patient_ai_ask",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 372,
+          "end_line": 425,
+          "anchor_text": "def patient_ai_ask(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "Gemini call",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 372,
+              "end_line": 425,
+              "anchor_text": "def patient_ai_ask(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-1",
+      "title": null,
+      "text": "NFR-1 Performance: Dashboard and EHR tables must load in under 2 seconds.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": "Also stated in 1.5.",
+      "links": []
+    },
+    {
+      "requirement_id": "NFR-2",
+      "title": null,
+      "text": "NFR-2 Reliability: Target 99.5% uptime during standard clinic hours (9 AM - 7 PM).",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": "Also stated in 1.5.",
+      "links": []
+    },
+    {
+      "requirement_id": "NFR-3",
+      "title": null,
+      "text": "NFR-3 Security: Enforce HTTPS, CSRF protection, and role-based data isolation.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Role checks in views and DRF permission classes; CSRF via Django middleware; HTTPS redirect / secure cookies only when the environment variables are set (settings.py:230-236, default off). Section 1.5 adds JWT, HttpOnly cookies and input validation.",
+      "links": [
+        {
+          "component_id": "backend.api.permissions.IsPatient.has_permission",
+          "component_type": "method",
+          "path": "backend/api/permissions.py",
+          "start_line": 14,
+          "end_line": 19,
+          "anchor_text": "def has_permission(self, request, view):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "role isolation",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/permissions.py",
+              "start_line": 14,
+              "end_line": 19,
+              "anchor_text": "def has_permission(self, request, view):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.api.permissions.IsDoctor.has_permission",
+          "component_type": "method",
+          "path": "backend/api/permissions.py",
+          "start_line": 25,
+          "end_line": 30,
+          "anchor_text": "def has_permission(self, request, view):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/permissions.py",
+              "start_line": 25,
+              "end_line": 30,
+              "anchor_text": "def has_permission(self, request, view):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.api.permissions.IsAdminRole.has_permission",
+          "component_type": "method",
+          "path": "backend/api/permissions.py",
+          "start_line": 36,
+          "end_line": 41,
+          "anchor_text": "def has_permission(self, request, view):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "anchor_text": "def has_permission(self, request, view):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.api.permissions.IsStaff.has_permission",
+          "component_type": "method",
+          "path": "backend/api/permissions.py",
+          "start_line": 47,
+          "end_line": 52,
+          "anchor_text": "def has_permission(self, request, view):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/permissions.py",
+              "start_line": 47,
+              "end_line": 52,
+              "anchor_text": "def has_permission(self, request, view):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-4",
+      "title": null,
+      "text": "NFR-4 Scalability: Support up to 5,000 active patient records; use pagination/indexing for large lists.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "API pagination classes, paginated patient list, db_index on status fields; the 5,000-record capacity itself is not testable statically.",
+      "links": [
+        {
+          "component_id": "backend.api.pagination.StandardResultsSetPagination",
+          "component_type": "class",
+          "path": "backend/api/pagination.py",
+          "start_line": 9,
+          "end_line": 20,
+          "anchor_text": "class StandardResultsSetPagination(PageNumberPagination):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "class-level page sizes",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/pagination.py",
+              "start_line": 9,
+              "end_line": 20,
+              "anchor_text": "class StandardResultsSetPagination(PageNumberPagination):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.api.pagination.LargeResultsSetPagination",
+          "component_type": "class",
+          "path": "backend/api/pagination.py",
+          "start_line": 23,
+          "end_line": 28,
+          "anchor_text": "class LargeResultsSetPagination(PageNumberPagination):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/api/pagination.py",
+              "start_line": 23,
+              "end_line": 28,
+              "anchor_text": "class LargeResultsSetPagination(PageNumberPagination):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_list",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 42,
+          "end_line": 81,
+          "anchor_text": "def patient_list(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "Paginator(20)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 68,
+              "end_line": 70,
+              "anchor_text": "paginator = Paginator(patients, 20)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US001",
+      "title": null,
+      "text": "US001 Admin: Manage system roles, so that I can control system permissions.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "backend.accounts.views.create_staff_account",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 112,
+          "end_line": 129,
+          "anchor_text": "def create_staff_account(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 112,
+              "end_line": 129,
+              "anchor_text": "def create_staff_account(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.forms.StaffCreationForm.save",
+          "component_type": "method",
+          "path": "backend/accounts/forms.py",
+          "start_line": 62,
+          "end_line": 70,
+          "anchor_text": "def save(self, commit=True):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "role -> is_staff",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/forms.py",
+              "start_line": 62,
+              "end_line": 70,
+              "anchor_text": "def save(self, commit=True):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.deactivate_staff_account",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 133,
+          "end_line": 165,
+          "anchor_text": "def deactivate_staff_account(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 133,
+              "end_line": 165,
+              "anchor_text": "def deactivate_staff_account(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.accounts.views.reactivate_staff_account",
+          "component_type": "function",
+          "path": "backend/accounts/views.py",
+          "start_line": 170,
+          "end_line": 197,
+          "anchor_text": "def reactivate_staff_account(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/accounts/views.py",
+              "start_line": 170,
+              "end_line": 197,
+              "anchor_text": "def reactivate_staff_account(request, pk):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US002",
+      "title": null,
+      "text": "US002 Doctor: Book a visit slot, so that I can manage my clinical workload.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Doctors are redirected away from booking (book_appointment lines 25-26); they can block unavailable time and see their appointments. Could be not_implemented.",
+      "links": [
+        {
+          "component_id": "backend.appointments.views.doctor_unavailability",
+          "component_type": "function",
+          "path": "backend/appointments/views.py",
+          "start_line": 178,
+          "end_line": 198,
+          "anchor_text": "def doctor_unavailability(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "doctor blocks time",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/appointments/views.py",
+              "start_line": 178,
+              "end_line": 198,
+              "anchor_text": "def doctor_unavailability(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.appointments.views.book_appointment",
+          "component_type": "function",
+          "path": "backend/appointments/views.py",
+          "start_line": 24,
+          "end_line": 63,
+          "anchor_text": "def book_appointment(request):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "doctors redirected away (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/appointments/views.py",
+              "start_line": 25,
+              "end_line": 26,
+              "anchor_text": "if request.user.role == 'DOCTOR':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US003",
+      "title": null,
+      "text": "US003 Patient: View medical records, so that I can track my health status.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Visits, prescriptions, lab reports.",
+      "links": [
+        {
+          "component_id": "backend.patients.views.patient_my_visits",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 228,
+          "end_line": 245,
+          "anchor_text": "def patient_my_visits(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "anchor_text": "def patient_my_visits(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_my_prescriptions",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 206,
+          "end_line": 224,
+          "anchor_text": "def patient_my_prescriptions(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 206,
+              "end_line": 224,
+              "anchor_text": "def patient_my_prescriptions(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.patients.views.patient_my_lab_reports",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 249,
+          "end_line": 300,
+          "anchor_text": "def patient_my_lab_reports(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 249,
+              "end_line": 300,
+              "anchor_text": "def patient_my_lab_reports(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.api.patient_views.PatientVisitListView.get_queryset",
+          "component_type": "method",
+          "path": "backend/api/patient_views.py",
+          "start_line": 88,
+          "end_line": 90,
+          "anchor_text": "def get_queryset(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: API equivalent",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "US004",
+      "title": null,
+      "text": "US004 Accountant: Generate a final bill, so that charges are transparent for the patient.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "backend.billing.views.generate_invoice",
+          "component_type": "function",
+          "path": "backend/billing/views.py",
+          "start_line": 40,
+          "end_line": 152,
+          "anchor_text": "def generate_invoice(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/billing/views.py",
+              "start_line": 40,
+              "end_line": 152,
+              "anchor_text": "def generate_invoice(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.billing.views.invoice_pdf_download",
+          "component_type": "function",
+          "path": "backend/billing/views.py",
+          "start_line": 730,
+          "end_line": 772,
+          "anchor_text": "def invoice_pdf_download(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/billing/views.py",
+              "start_line": 730,
+              "end_line": 772,
+              "anchor_text": "def invoice_pdf_download(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.billing.utils.generate_invoice_pdf",
+          "component_type": "function",
+          "path": "backend/billing/utils.py",
+          "start_line": 86,
+          "end_line": 119,
+          "anchor_text": "def generate_invoice_pdf(invoice):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "US005",
+      "title": null,
+      "text": "US005 Pharmacist: View prescriptions, so that I can dispense the correct medications.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "backend.prescriptions.views.pharmacist_prescription_list",
+          "component_type": "function",
+          "path": "backend/prescriptions/views.py",
+          "start_line": 79,
+          "end_line": 122,
+          "anchor_text": "def pharmacist_prescription_list(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/prescriptions/views.py",
+              "start_line": 79,
+              "end_line": 122,
+              "anchor_text": "def pharmacist_prescription_list(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.prescriptions.views.pharmacist_prescription_detail",
+          "component_type": "function",
+          "path": "backend/prescriptions/views.py",
+          "start_line": 126,
+          "end_line": 145,
+          "anchor_text": "def pharmacist_prescription_detail(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/prescriptions/views.py",
+              "start_line": 126,
+              "end_line": 145,
+              "anchor_text": "def pharmacist_prescription_detail(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.prescriptions.views.dispense_prescription",
+          "component_type": "function",
+          "path": "backend/prescriptions/views.py",
+          "start_line": 150,
+          "end_line": 189,
+          "anchor_text": "def dispense_prescription(request, pk):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: dispensing",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "US006",
+      "title": null,
+      "text": "US006 User: Access AI Help Desk, so that I can get immediate answers to system queries.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "Patients only, general health questions (see FR-6).",
+      "links": [
+        {
+          "component_id": "backend.patients.views.patient_ai_ask",
+          "component_type": "function",
+          "path": "backend/patients/views.py",
+          "start_line": 372,
+          "end_line": 425,
+          "anchor_text": "def patient_ai_ask(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/patients/views.py",
+              "start_line": 372,
+              "end_line": 425,
+              "anchor_text": "def patient_ai_ask(request):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US007",
+      "title": null,
+      "text": "US007 Admin: View daily system metrics, so that I can monitor system health and usage.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Admin dashboard: today's appointments, daily logins, totals, audit feed.",
+      "links": [
+        {
+          "component_id": "backend.core.views.dashboard",
+          "component_type": "function",
+          "path": "backend/core/views.py",
+          "start_line": 49,
+          "end_line": 176,
+          "anchor_text": "def dashboard(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "admin metrics",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/core/views.py",
+              "start_line": 60,
+              "end_line": 70,
+              "anchor_text": "if user.role == 'ADMIN':"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US008",
+      "title": null,
+      "text": "US008 Doctor: Upload research paper, so that I can submit research for internal approval.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "backend.publications.views.submit_paper",
+          "component_type": "function",
+          "path": "backend/publications/views.py",
+          "start_line": 83,
+          "end_line": 101,
+          "anchor_text": "def submit_paper(request):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/publications/views.py",
+              "start_line": 83,
+              "end_line": 101,
+              "anchor_text": "def submit_paper(request):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.publications.views.admin_approve",
+          "component_type": "function",
+          "path": "backend/publications/views.py",
+          "start_line": 137,
+          "end_line": 144,
+          "anchor_text": "def admin_approve(request, pk):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "internal approval",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "backend/publications/views.py",
+              "start_line": 137,
+              "end_line": 144,
+              "anchor_text": "def admin_approve(request, pk):"
+            }
+          ]
+        },
+        {
+          "component_id": "backend.publications.views.admin_reject",
+          "component_type": "function",
+          "path": "backend/publications/views.py",
+          "start_line": 148,
+          "end_line": 156,
+          "anchor_text": "def admin_reject(request, pk):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.publications.models.Publication.approve",
+          "component_type": "method",
+          "path": "backend/publications/models.py",
+          "start_line": 62,
+          "end_line": 68,
+          "anchor_text": "def approve(self, reviewer):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "backend.publications.models.Publication",
+          "component_type": "class",
+          "path": "backend/publications/models.py",
+          "start_line": 6,
+          "end_line": 80,
+          "anchor_text": "class Publication(models.Model):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: status workflow",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "US009",
+      "title": null,
+      "text": "US009 Staff: Create support tickets, so that I can track operational issues and resolutions.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "yes",
+      "notes": "No ticket model; the admin dashboard's 'support_queue' only counts cancelled/no-show appointments.",
+      "links": []
+    },
+    {
+      "requirement_id": "US010",
+      "title": null,
+      "text": "US010 Manager: Generate management reports, so that I can analyze clinic performance and revenue.",
+      "type": null,
+      "status": "not_implemented",
+      "sure": "no",
+      "notes": "No Manager role or report generation; the accountant dashboard shows paid/pending totals (core/views.py:109-127).",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-001",
+      "title": null,
+      "text": "Maintainability: Modular Django apps and well-documented code; follow PEP8 and use linters.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    }
+  ],
+  "excluded_requirements": [
+    {
+      "requirement_id": "REQ-002",
+      "title": null,
+      "text": "Usability: Responsive UI, clear form validation, accessible color contrast and keyboard navigation.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "non_python_only: templates/CSS",
+      "links": []
+    }
+  ]
+}

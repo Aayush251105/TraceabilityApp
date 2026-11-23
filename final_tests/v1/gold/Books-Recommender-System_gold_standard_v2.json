@@ -1,0 +1,1489 @@
+{
+  "schema_version": "2.0",
+  "label": "V1 - human-annotated gold",
+  "dataset": "Books-Recommender-System",
+  "code_root": "code",
+  "srs_file": "SRS.md",
+  "repository_url": "https://github.com/murmu21/Books-Recommender-System-.git",
+  "commit_sha": "69ed627f0fca6e4c6749336a1a159dfda80af67a",
+  "line_numbering": "1-based, inclusive, original code before any docstring insertion",
+  "annotation": "human-annotated (workbook repo_info still says DRAFT; reviewed by the annotators)",
+  "source_workbook": "Books-Recommender-System_gold.xlsx",
+  "guide_version": "ANNOTATION_GUIDE.md 1.1",
+  "requirements": [
+    {
+      "requirement_id": "FR-1.1",
+      "title": null,
+      "text": "The system shall read pipeline settings from config.yaml using a YAML reader utility in src/utils/common.py.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.utils.common.read_yaml",
+          "component_type": "function",
+          "path": "src/utils/common.py",
+          "start_line": 10,
+          "end_line": 18,
+          "anchor_text": "def read_yaml(path_to_yaml: Path) -> dict:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "YAML reader utility",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/utils/common.py",
+              "start_line": 10,
+              "end_line": 18,
+              "anchor_text": "def read_yaml(path_to_yaml: Path) -> dict:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.__init__",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 14,
+          "end_line": 16,
+          "anchor_text": "def __init__(self, config_filepath=CONFIG_FILE_PATH):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "reads config/config.yaml via read_yaml",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 11,
+              "end_line": 11,
+              "anchor_text": "CONFIG_FILE_PATH = Path(\"config/config.yaml\")"
+            },
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 14,
+              "end_line": 16,
+              "anchor_text": "def __init__(self, config_filepath=CONFIG_FILE_PATH):"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration",
+          "component_type": "class",
+          "path": "src/config/configuration.py",
+          "start_line": 13,
+          "end_line": 73,
+          "anchor_text": "class AppConfiguration:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "title": null,
+      "text": "The AppConfiguration class (configuration.py) shall instantiate immutable ConfigEntity objects for each stage: DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelRecommendationConfig.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Entities are frozen dataclasses (immutable).",
+      "links": [
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 18,
+          "end_line": 27,
+          "anchor_text": "def get_data_ingestion_config(self) -> DataIngestionConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 18,
+              "end_line": 27,
+              "anchor_text": "def get_data_ingestion_config(self) -> DataIngestionConfig:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 29,
+          "end_line": 41,
+          "anchor_text": "def get_data_validation_config(self) -> DataValidationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 29,
+              "end_line": 41,
+              "anchor_text": "def get_data_validation_config(self) -> DataValidationConfig:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_transformation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 43,
+          "end_line": 53,
+          "anchor_text": "def get_data_transformation_config(self) -> DataTransformationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 43,
+              "end_line": 53,
+              "anchor_text": "def get_data_transformation_config(self) -> DataTransformationConfig:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 55,
+          "end_line": 66,
+          "anchor_text": "def get_model_trainer_config(self) -> ModelTrainerConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 55,
+              "end_line": 66,
+              "anchor_text": "def get_model_trainer_config(self) -> ModelTrainerConfig:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 68,
+          "end_line": 73,
+          "anchor_text": "def get_model_recommendation_config(self) -> ModelRecommendationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 68,
+              "end_line": 73,
+              "anchor_text": "def get_model_recommendation_config(self) -> ModelRecommendationConfig:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.entity.config_entity.DataIngestionConfig",
+          "component_type": "class",
+          "path": "src/entity/config_entity.py",
+          "start_line": 5,
+          "end_line": 9,
+          "anchor_text": "class DataIngestionConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "frozen dataclass (immutable)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/entity/config_entity.py",
+              "start_line": 4,
+              "end_line": 9,
+              "anchor_text": "@dataclass(frozen=True)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.entity.config_entity.DataValidationConfig",
+          "component_type": "class",
+          "path": "src/entity/config_entity.py",
+          "start_line": 12,
+          "end_line": 19,
+          "anchor_text": "class DataValidationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/entity/config_entity.py",
+              "start_line": 11,
+              "end_line": 19,
+              "anchor_text": "@dataclass(frozen=True)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.entity.config_entity.DataTransformationConfig",
+          "component_type": "class",
+          "path": "src/entity/config_entity.py",
+          "start_line": 22,
+          "end_line": 27,
+          "anchor_text": "class DataTransformationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/entity/config_entity.py",
+              "start_line": 21,
+              "end_line": 27,
+              "anchor_text": "@dataclass(frozen=True)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.entity.config_entity.ModelTrainerConfig",
+          "component_type": "class",
+          "path": "src/entity/config_entity.py",
+          "start_line": 30,
+          "end_line": 36,
+          "anchor_text": "class ModelTrainerConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/entity/config_entity.py",
+              "start_line": 29,
+              "end_line": 36,
+              "anchor_text": "@dataclass(frozen=True)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.entity.config_entity.ModelRecommendationConfig",
+          "component_type": "class",
+          "path": "src/entity/config_entity.py",
+          "start_line": 39,
+          "end_line": 42,
+          "anchor_text": "class ModelRecommendationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/entity/config_entity.py",
+              "start_line": 38,
+              "end_line": 42,
+              "anchor_text": "@dataclass(frozen=True)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration",
+          "component_type": "class",
+          "path": "src/config/configuration.py",
+          "start_line": 13,
+          "end_line": 73,
+          "anchor_text": "class AppConfiguration:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "title": null,
+      "text": "The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.exception.__init__.error_message_detail",
+          "component_type": "function",
+          "path": "src/exception/__init__.py",
+          "start_line": 3,
+          "end_line": 11,
+          "anchor_text": "def error_message_detail(error, error_detail: sys):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "captures file and line from the traceback",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/exception/__init__.py",
+              "start_line": 3,
+              "end_line": 11,
+              "anchor_text": "def error_message_detail(error, error_detail: sys):"
+            }
+          ]
+        },
+        {
+          "component_id": "src.exception.__init__.CustomException.__init__",
+          "component_type": "method",
+          "path": "src/exception/__init__.py",
+          "start_line": 15,
+          "end_line": 17,
+          "anchor_text": "def __init__(self, error_message, error_detail: sys):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "formats the structured message",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/exception/__init__.py",
+              "start_line": 15,
+              "end_line": 17,
+              "anchor_text": "def __init__(self, error_message, error_detail: sys):"
+            }
+          ]
+        },
+        {
+          "component_id": "src.exception.__init__.CustomException.__str__",
+          "component_type": "method",
+          "path": "src/exception/__init__.py",
+          "start_line": 19,
+          "end_line": 20,
+          "anchor_text": "def __str__(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: returns the formatted report",
+          "evidence": []
+        },
+        {
+          "component_id": "src.exception.__init__.CustomException",
+          "component_type": "class",
+          "path": "src/exception/__init__.py",
+          "start_line": 14,
+          "end_line": 20,
+          "anchor_text": "class CustomException(Exception):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "containing_class",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "title": null,
+      "text": "The component shall download raw zip archives containing BX-Books.csv, BX-Book-Ratings.csv, and BX-Users.csv from a remote GitHub storage URL specified in configuration.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Downloads from the configured URL; if the download fails it generates a sample dataset (without BX-Users.csv) instead.",
+      "links": [
+        {
+          "component_id": "src.components.data_ingestion.DataIngestion.download_file",
+          "component_type": "method",
+          "path": "src/components/data_ingestion.py",
+          "start_line": 15,
+          "end_line": 33,
+          "anchor_text": "def download_file(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_ingestion.py",
+              "start_line": 17,
+              "end_line": 31,
+              "anchor_text": "try:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+          "component_type": "method",
+          "path": "src/components/data_ingestion.py",
+          "start_line": 51,
+          "end_line": 102,
+          "anchor_text": "def _create_sample_dataset(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee: offline fallback",
+          "evidence": []
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 18,
+          "end_line": 27,
+          "anchor_text": "def get_data_ingestion_config(self) -> DataIngestionConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: provides source_URL from configuration",
+          "evidence": []
+        },
+        {
+          "component_id": "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+          "component_type": "method",
+          "path": "src/pipeline/stage_00_data_ingestion.py",
+          "start_line": 13,
+          "end_line": 18,
+          "anchor_text": "def main(self):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "entry_point",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "title": null,
+      "text": "The system shall extract zip contents into artifacts/dataset/raw_data/.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "unzip_dir comes from config.yaml.",
+      "links": [
+        {
+          "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+          "component_type": "method",
+          "path": "src/components/data_ingestion.py",
+          "start_line": 35,
+          "end_line": 49,
+          "anchor_text": "def extract_zip_file(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_ingestion.py",
+              "start_line": 37,
+              "end_line": 44,
+              "anchor_text": "try:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_ingestion_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 18,
+          "end_line": 27,
+          "anchor_text": "def get_data_ingestion_config(self) -> DataIngestionConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: unzip_dir",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "title": null,
+      "text": "Upon successful extraction, raw files shall be verified and moved to artifacts/dataset/ingested_data/.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Presence of the raw CSVs is checked (sample data generated if missing); nothing is moved to ingested_data/.",
+      "links": [
+        {
+          "component_id": "src.components.data_ingestion.DataIngestion._ensure_raw_csv_files",
+          "component_type": "method",
+          "path": "src/components/data_ingestion.py",
+          "start_line": 104,
+          "end_line": 108,
+          "anchor_text": "def _ensure_raw_csv_files(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "verifies raw files exist",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_ingestion.py",
+              "start_line": 104,
+              "end_line": 108,
+              "anchor_text": "def _ensure_raw_csv_files(self):"
+            }
+          ]
+        },
+        {
+          "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+          "component_type": "method",
+          "path": "src/components/data_ingestion.py",
+          "start_line": 35,
+          "end_line": 49,
+          "anchor_text": "def extract_zip_file(self):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "falls back to the check; no move",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_ingestion.py",
+              "start_line": 45,
+              "end_line": 47,
+              "anchor_text": "else:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "title": null,
+      "text": "The system shall load BX-Books.csv and BX-Book-Ratings.csv.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 20,
+              "end_line": 30,
+              "anchor_text": "def read_csv_flex(filepath):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "title": null,
+      "text": "User Filtering Rule: The component shall compute rating counts per user and discard users with fewer than 200 total ratings (ratings_count < 200).",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Threshold 200 from config, but if fewer than 50 rows survive it silently lowers the threshold to 5.",
+      "links": [
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "includes the adaptive fallback",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 54,
+              "end_line": 64,
+              "anchor_text": "# Filter 1: Active Users (users with ratings count >= min_user_ratings)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 29,
+          "end_line": 41,
+          "anchor_text": "def get_data_validation_config(self) -> DataValidationConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: min_user_ratings",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "title": null,
+      "text": "Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings (ratings_count < 50).",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Threshold 50 from config, but if fewer than 5 books survive it lowers the threshold to 2.",
+      "links": [
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "includes the adaptive fallback",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 66,
+              "end_line": 73,
+              "anchor_text": "# Filter 2: Frequently Rated Books (books with ratings count >= min_book_ratings)"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 29,
+          "end_line": 41,
+          "anchor_text": "def get_data_validation_config(self) -> DataValidationConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: min_book_ratings",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "title": null,
+      "text": "The component shall perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 51,
+              "end_line": 52,
+              "anchor_text": "# Merge books and ratings"
+            },
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 75,
+              "end_line": 76,
+              "anchor_text": "final_rating = filtered_by_user[filtered_by_user['title'].isin(famous_books)]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "title": null,
+      "text": "Output files shall be saved to: artifacts/dataset/clean_data.csv, artifacts/serialized_objects/final_rating.pkl",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_validation.py",
+              "start_line": 80,
+              "end_line": 85,
+              "anchor_text": "# Save clean CSV and serialized final_rating.pkl"
+            }
+          ]
+        },
+        {
+          "component_id": "src.utils.common.save_bin",
+          "component_type": "function",
+          "path": "src/utils/common.py",
+          "start_line": 30,
+          "end_line": 38,
+          "anchor_text": "def save_bin(data: Any, path: Path):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "title": null,
+      "text": "The system shall construct a pivot table where rows represent unique Book Titles (title) and columns represent unique User IDs (user_id).",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+          "component_type": "method",
+          "path": "src/components/data_transformation.py",
+          "start_line": 15,
+          "end_line": 40,
+          "anchor_text": "def initiate_data_transformation(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_transformation.py",
+              "start_line": 23,
+              "end_line": 24,
+              "anchor_text": "# Create pivot table: rows=title, columns=user_id, values=rating"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "title": null,
+      "text": "The system shall replace all NaN entries with 0 to populate missing user ratings.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+          "component_type": "method",
+          "path": "src/components/data_transformation.py",
+          "start_line": 15,
+          "end_line": 40,
+          "anchor_text": "def initiate_data_transformation(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_transformation.py",
+              "start_line": 25,
+              "end_line": 25,
+              "anchor_text": "book_pivot.fillna(0, inplace=True)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "title": null,
+      "text": "The transformed pivot table and book title list shall be serialized to: artifacts/serialized_objects/book_pivot.pkl, artifacts/serialized_objects/book_names.pkl, templates/book_names.pkl (for Streamlit UI binding)",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+          "component_type": "method",
+          "path": "src/components/data_transformation.py",
+          "start_line": 15,
+          "end_line": 40,
+          "anchor_text": "def initiate_data_transformation(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/data_transformation.py",
+              "start_line": 30,
+              "end_line": 37,
+              "anchor_text": "# Serialize book_pivot.pkl and book_names.pkl"
+            }
+          ]
+        },
+        {
+          "component_id": "src.utils.common.save_bin",
+          "component_type": "function",
+          "path": "src/utils/common.py",
+          "start_line": 30,
+          "end_line": 38,
+          "anchor_text": "def save_bin(data: Any, path: Path):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "title": null,
+      "text": "The component shall convert book_pivot into a Compressed Sparse Row matrix (scipy.sparse.csr_matrix).",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+          "component_type": "method",
+          "path": "src/components/model_trainer.py",
+          "start_line": 14,
+          "end_line": 38,
+          "anchor_text": "def initiate_model_training(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/model_trainer.py",
+              "start_line": 22,
+              "end_line": 23,
+              "anchor_text": "# Convert to CSR sparse matrix"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "title": null,
+      "text": "The system shall initialize and fit a Scikit-Learn NearestNeighbors estimator with parameters: algorithm = 'brute', metric = 'cosine' (or Euclidean distance as defined in configuration)",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "algorithm/metric read from config.yaml (brute, cosine).",
+      "links": [
+        {
+          "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+          "component_type": "method",
+          "path": "src/components/model_trainer.py",
+          "start_line": 14,
+          "end_line": 38,
+          "anchor_text": "def initiate_model_training(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/model_trainer.py",
+              "start_line": 25,
+              "end_line": 30,
+              "anchor_text": "# Fit NearestNeighbors algorithm"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 55,
+          "end_line": 66,
+          "anchor_text": "def get_model_trainer_config(self) -> ModelTrainerConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "other: algorithm and metric",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "title": null,
+      "text": "The trained model instance shall be serialized and saved to artifacts/trained_model/model.pkl.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+          "component_type": "method",
+          "path": "src/components/model_trainer.py",
+          "start_line": 14,
+          "end_line": 38,
+          "anchor_text": "def initiate_model_training(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/components/model_trainer.py",
+              "start_line": 33,
+              "end_line": 34,
+              "anchor_text": "# Save model artifact"
+            }
+          ]
+        },
+        {
+          "component_id": "src.utils.common.save_bin",
+          "component_type": "function",
+          "path": "src/utils/common.py",
+          "start_line": 30,
+          "end_line": 38,
+          "anchor_text": "def save_bin(data: Any, path: Path):",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "title": null,
+      "text": "The engine shall deserialize model.pkl, book_pivot.pkl, and final_rating.pkl.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 11,
+          "end_line": 21,
+          "anchor_text": "def __init__(self):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 12,
+              "end_line": 19,
+              "anchor_text": "try:"
+            }
+          ]
+        },
+        {
+          "component_id": "src.utils.common.load_bin",
+          "component_type": "function",
+          "path": "src/utils/common.py",
+          "start_line": 40,
+          "end_line": 48,
+          "anchor_text": "def load_bin(path: Path) -> Any:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_model_recommendation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 68,
+          "end_line": 73,
+          "anchor_text": "def get_model_recommendation_config(self) -> ModelRecommendationConfig:",
+          "relevance": "supporting",
+          "sure": "yes",
+          "notes": "callee",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "title": null,
+      "text": "Given a input book title, the engine shall look up its row index in book_pivot.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 26,
+              "end_line": 31,
+              "anchor_text": "if book_name not in self.book_pivot.index:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "title": null,
+      "text": "The engine shall invoke model.kneighbors(..., n_neighbors=6) to retrieve the top 6 nearest neighbor indices (where the 1st neighbor is the query book itself).",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": null,
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 33,
+              "end_line": 37,
+              "anchor_text": "# Find 6 nearest neighbors (1st neighbor is the query book itself)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "title": null,
+      "text": "For each of the top 5 recommended books, the engine shall query final_rating.pkl to extract the corresponding book image cover URL (Image-URL-L or Image-URL-M).",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "URL column chosen in data validation (Image_URL_M, else Image_URL_L).",
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 44,
+              "end_line": 60,
+              "anchor_text": "for i in range(len(suggestions[0])):"
+            }
+          ]
+        },
+        {
+          "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+          "component_type": "method",
+          "path": "src/components/data_validation.py",
+          "start_line": 14,
+          "end_line": 88,
+          "anchor_text": "def validate_and_clean_data(self):",
+          "relevance": "supporting",
+          "sure": "no",
+          "notes": "other: chooses Image_URL_M / Image_URL_L (line 43)",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "title": null,
+      "text": "The engine shall return a dictionary/tuple list containing recommended titles and image URLs.",
+      "type": null,
+      "status": "implemented",
+      "sure": "yes",
+      "notes": "Returns a tuple of two lists.",
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": null,
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 62,
+              "end_line": 62,
+              "anchor_text": "return recommended_books[:5], poster_urls[:5]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "title": null,
+      "text": "Book Selector Dropdown: Render a searchable dropdown populated with book titles from templates/book_names.pkl.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Titles loaded by get_book_names(); the selectbox itself is module-level code (app.py:113-117).",
+      "links": [
+        {
+          "component_id": "app.get_book_names",
+          "component_type": "function",
+          "path": "app.py",
+          "start_line": 70,
+          "end_line": 88,
+          "anchor_text": "def get_book_names():",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "loads templates/book_names.pkl first",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "app.py",
+              "start_line": 70,
+              "end_line": 88,
+              "anchor_text": "def get_book_names():"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "title": null,
+      "text": "Recommendation Button: Render a \"Show Recommendation\" button. Upon clicking: Compute recommendations using the Recommendation Engine. Display recommendations in a responsive 5-Column Layout. Show the cover poster image above each recommended book title.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Button and 5-column layout are module-level code (app.py:122-141); the computation is RecommendationEngine.recommend.",
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "computation; rendering is module-level app.py",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 23,
+              "end_line": 65,
+              "anchor_text": "def recommend(self, book_name: str):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "title": null,
+      "text": "Train Button: Render a \"Train\" trigger button allowing developers/admins to re-execute the ML Training Pipeline on demand.",
+      "type": null,
+      "status": "implemented",
+      "sure": "no",
+      "notes": "Sidebar button is module-level code (app.py:94-102) calling TrainingPipeline.run_pipeline.",
+      "links": [
+        {
+          "component_id": "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+          "component_type": "method",
+          "path": "src/pipeline/training_pipeline.py",
+          "start_line": 10,
+          "end_line": 33,
+          "anchor_text": "def run_pipeline(self):",
+          "relevance": "primary",
+          "sure": "no",
+          "notes": "what the button runs; button is module-level app.py",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/training_pipeline.py",
+              "start_line": 10,
+              "end_line": 33,
+              "anchor_text": "def run_pipeline(self):"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-005",
+      "title": null,
+      "text": "Inference Latency: Real-time recommendation output shall be returned in under 500 ms after user selection.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-006",
+      "title": null,
+      "text": "Image Load Time: Poster images shall load directly from CDN/image URLs in under 1.5 seconds.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-007",
+      "title": null,
+      "text": "Model Training Execution: Pipeline training from Stage 0 to Stage 3 shall complete within 3 minutes on standard cloud VMs.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-008",
+      "title": null,
+      "text": "System Uptime: 99.5% availability when hosted on cloud container services (AWS ECS / Azure App Service).",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-009",
+      "title": null,
+      "text": "Graceful Error Handling: If a book poster image URL is broken or missing, a default fallback placeholder image shall be displayed.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Fallback used when the URL is missing or not http(s); a broken (unreachable) URL is not detected.",
+      "links": [
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "default poster",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 42,
+              "end_line": 42,
+              "anchor_text": "default_poster = \"https://images.amazon.com/images/P/059035342X.01.MZZZZZZZ.jpg\""
+            },
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 56,
+              "end_line": 60,
+              "anchor_text": "if not matching_items.empty and 'image_url' in matching_items.columns:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-010",
+      "title": null,
+      "text": "Modular Design: Pipeline stages are strictly decoupled. Modifying Stage 1 validation rules will not affect Stage 3 model fitting logic.",
+      "type": null,
+      "status": "cross_cutting",
+      "sure": "yes",
+      "notes": null,
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-011",
+      "title": null,
+      "text": "Configuration Driven: Hyperparameters (e.g., k=6, user rating threshold =200, book rating threshold =50) can be tuned directly via config.yaml without changing python source code.",
+      "type": null,
+      "status": "partial",
+      "sure": "yes",
+      "notes": "Thresholds, algorithm and metric come from config.yaml, but n_neighbors=6 is hard-coded in recommend() (the config value is unused).",
+      "links": [
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 29,
+          "end_line": 41,
+          "anchor_text": "def get_data_validation_config(self) -> DataValidationConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "thresholds from config",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 39,
+              "end_line": 40,
+              "anchor_text": "min_user_ratings=int(config['min_user_ratings']),"
+            }
+          ]
+        },
+        {
+          "component_id": "src.config.configuration.AppConfiguration.get_model_trainer_config",
+          "component_type": "method",
+          "path": "src/config/configuration.py",
+          "start_line": 55,
+          "end_line": 66,
+          "anchor_text": "def get_model_trainer_config(self) -> ModelTrainerConfig:",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "algorithm, metric, n_neighbors from config",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/config/configuration.py",
+              "start_line": 63,
+              "end_line": 65,
+              "anchor_text": "algorithm=config['algorithm'],"
+            }
+          ]
+        },
+        {
+          "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+          "component_type": "method",
+          "path": "src/pipeline/prediction_pipeline.py",
+          "start_line": 23,
+          "end_line": 65,
+          "anchor_text": "def recommend(self, book_name: str):",
+          "relevance": "primary",
+          "sure": "yes",
+          "notes": "n_neighbors=6 hard-coded (shortfall)",
+          "evidence": [
+            {
+              "kind": "block",
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 34,
+              "end_line": 37,
+              "anchor_text": "distances, suggestions = self.model.kneighbors("
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-012",
+      "title": null,
+      "text": "Input validation on book search queries to prevent script injection.",
+      "type": null,
+      "status": "partial",
+      "sure": "no",
+      "notes": "Selection is limited to dropdown values and recommend() checks the title exists, but titles are rendered with unsafe_allow_html (app.py:137); no injection protection.",
+      "links": []
+    }
+  ],
+  "excluded_requirements": [
+    {
+      "requirement_id": "FR-1.3",
+      "title": null,
+      "text": "The Logger module shall record pipeline progress, warnings, and errors to both stdout and standard log files.",
+      "type": null,
+      "status": "excluded",
+      "sure": "no",
+      "notes": "Implemented, but only in module-level code of src/logger/__init__.py:6-21 (no function/class to link). Decide: keep excluded or treat as implemented without links.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-001",
+      "title": null,
+      "text": "User Interface (UI): Built with Streamlit (app.py). Responsive layout with top control bar (Dropdown, Recommend Button, Train Button) and a main content section rendering a 5-column grid of book cards (Poster + Title).",
+      "type": null,
+      "status": "excluded",
+      "sure": "no",
+      "notes": "Module-level Streamlit code only; also the Train button is in the sidebar, not a top bar.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-002",
+      "title": null,
+      "text": "Hardware Interfaces: No special hardware required. Minimum 2 GB RAM and 1 vCPU for hosting containerized inference server.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "environment, not code",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-003",
+      "title": null,
+      "text": "Software Interfaces: Python 3.7 or higher; Scikit-Learn >= 0.24.0; Pandas, NumPy, SciPy; Streamlit >= 1.0.0; Pickle (.pkl), CSV, YAML; Docker Engine 20.10+.",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "dependency versions (requirements.txt / Dockerfile), not Python logic",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-004",
+      "title": null,
+      "text": "Communications Interfaces: Protocol: HTTP / HTTPS. Port: 8501 (Default Streamlit port). Remote Data Source: HTTPS GET requests to GitHub repository URL for dataset downloading.",
+      "type": null,
+      "status": "excluded",
+      "sure": "no",
+      "notes": "Mostly deployment; the HTTPS GET download is covered by FR-2.1.",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-013",
+      "title": null,
+      "text": "Docker container runs under standard non-privileged port exposure (8501).",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "non_python_only: Dockerfile",
+      "links": []
+    },
+    {
+      "requirement_id": "REQ-014",
+      "title": null,
+      "text": "Deployment & Docker Specification: Base Docker Image: python:3.7-slim-buster; Container Commands: FROM python:3.7-slim-buster, WORKDIR /app, COPY . /app, RUN pip install -r requirements.txt, EXPOSE 8501, CMD [\"streamlit\", \"run\", \"app.py\"]",
+      "type": null,
+      "status": "excluded",
+      "sure": "yes",
+      "notes": "non_python_only: Dockerfile",
+      "links": []
+    }
+  ]
+}

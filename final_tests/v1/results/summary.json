@@ -1,0 +1,1434 @@
+{
+  "label": "V1 - human-annotated gold",
+  "pairs": {
+    "Travel-Agency-Automation-System": {
+      "search": {
+        "requirements": 11,
+        "map": 0.6065656565656566,
+        "map_ci": [
+          0.42424242424242425,
+          0.7702020202020201
+        ],
+        "mrr": 0.7045454545454546,
+        "mrr_ci": [
+          0.5,
+          0.9090909090909091
+        ],
+        "r@1": 0.3939393939393939,
+        "r@1_ci": [
+          0.16666666666666666,
+          0.6363636363636364
+        ],
+        "r@5": 0.7878787878787878,
+        "r@5_ci": [
+          0.5606060606060607,
+          0.9545454545454546
+        ],
+        "r@10": 0.8636363636363636,
+        "r@10_ci": [
+          0.6363636363636364,
+          1.0
+        ],
+        "sr@|G|": 0.2727272727272727,
+        "sr@|G|_ci": [
+          0.0,
+          0.5454545454545454
+        ],
+        "ndcg@10_stored_candidates": 0.6672,
+        "evaluate_channels": {
+          "code_lexical": {
+            "hit@1": 0.4545,
+            "hit@3": 0.7273,
+            "hit@5": 0.8182,
+            "hit@10": 0.8182,
+            "recall@1": 0.303,
+            "recall@3": 0.5152,
+            "recall@5": 0.697,
+            "recall@10": 0.697,
+            "mrr": 0.589,
+            "ndcg@10": 0.5862
+          },
+          "code_vector": {
+            "hit@1": 0.3636,
+            "hit@3": 0.7273,
+            "hit@5": 0.9091,
+            "hit@10": 0.9091,
+            "recall@1": 0.2727,
+            "recall@3": 0.6515,
+            "recall@5": 0.7879,
+            "recall@10": 0.8636,
+            "mrr": 0.5963,
+            "ndcg@10": 0.5765
+          },
+          "code_hybrid": {
+            "hit@1": 0.5455,
+            "hit@3": 0.8182,
+            "hit@5": 0.9091,
+            "hit@10": 0.9091,
+            "recall@1": 0.4545,
+            "recall@3": 0.6515,
+            "recall@5": 0.7879,
+            "recall@10": 0.8636,
+            "mrr": 0.7053,
+            "ndcg@10": 0.6889
+          },
+          "doc_lexical": {
+            "hit@1": 0.2727,
+            "hit@3": 0.5455,
+            "hit@5": 0.5455,
+            "hit@10": 0.7273,
+            "recall@1": 0.1667,
+            "recall@3": 0.3333,
+            "recall@5": 0.4091,
+            "recall@10": 0.6818,
+            "mrr": 0.4186,
+            "ndcg@10": 0.4287
+          },
+          "doc_vector": {
+            "hit@1": 0.3636,
+            "hit@3": 0.5455,
+            "hit@5": 0.7273,
+            "hit@10": 0.9091,
+            "recall@1": 0.303,
+            "recall@3": 0.4242,
+            "recall@5": 0.5606,
+            "recall@10": 0.8182,
+            "mrr": 0.5078,
+            "ndcg@10": 0.5517
+          },
+          "doc_hybrid": {
+            "hit@1": 0.1818,
+            "hit@3": 0.5455,
+            "hit@5": 0.7273,
+            "hit@10": 1.0,
+            "recall@1": 0.0758,
+            "recall@3": 0.3788,
+            "recall@5": 0.5152,
+            "recall@10": 0.9091,
+            "mrr": 0.4106,
+            "ndcg@10": 0.4967
+          },
+          "all_hybrid": {
+            "hit@1": 0.5455,
+            "hit@3": 0.8182,
+            "hit@5": 0.9091,
+            "hit@10": 0.9091,
+            "recall@1": 0.3939,
+            "recall@3": 0.6515,
+            "recall@5": 0.7879,
+            "recall@10": 0.8636,
+            "mrr": 0.7106,
+            "ndcg@10": 0.6672
+          }
+        },
+        "mrr_all_hybrid": 0.7106,
+        "gold_components_missing_from_repo": []
+      },
+      "mapping": {
+        "requirements": 11,
+        "direct": {
+          "precision": 0.625,
+          "recall": 0.5882352941176471,
+          "f1": 0.6060606060606061,
+          "f2": 0.5952380952380952,
+          "tp": 10,
+          "fp": 6,
+          "fn": 7,
+          "precision_ci": [
+            0.4,
+            0.8235294117647058
+          ],
+          "recall_ci": [
+            0.4,
+            0.75
+          ],
+          "f1_ci": [
+            0.39999999999999997,
+            0.7777777777777778
+          ],
+          "f2_ci": [
+            0.4,
+            0.7647058823529411
+          ]
+        },
+        "all_links": {
+          "precision": 0.3287671232876712,
+          "recall": 0.75,
+          "f1": 0.45714285714285713,
+          "f2": 0.5970149253731344,
+          "tp": 24,
+          "fp": 49,
+          "fn": 8,
+          "precision_ci": [
+            0.23880597014925373,
+            0.410958904109589
+          ],
+          "recall_ci": [
+            0.6153846153846154,
+            0.8571428571428571
+          ],
+          "f1_ci": [
+            0.3488372093023256,
+            0.544
+          ],
+          "f2_ci": [
+            0.4761904761904763,
+            0.6818181818181819
+          ]
+        },
+        "links_on_requirements_without_code": 0
+      },
+      "verification": {
+        "requirements_judged": 13,
+        "exact_accuracy": 0.3076923076923077,
+        "exact_accuracy_ci": [
+          0.07692307692307693,
+          0.5384615384615384
+        ],
+        "macro_f1": 0.24848484848484845,
+        "macro_f1_ci": [
+          0.06666666666666667,
+          0.4511784511784511
+        ],
+        "weighted_kappa": 0.07741935483870965,
+        "weighted_kappa_ci": [
+          0.0,
+          0.3157894736842105
+        ],
+        "false_support_rate": 0.0,
+        "false_support_rate_ci": [
+          0.0,
+          0.0
+        ],
+        "false_support_not_implemented_sup_or_part": 0.0,
+        "false_support_not_implemented_sup_or_part_ci": [
+          0.0,
+          0.0
+        ],
+        "implemented_recall": 0.0,
+        "implemented_recall_ci": [
+          0.0,
+          0.0
+        ],
+        "implemented_or_partial_found": 0.2727272727272727,
+        "implemented_or_partial_found_ci": [
+          0.0,
+          0.5454545454545454
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 3,
+            "not_supported_by_candidate": 5
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 1,
+            "unverified": 1
+          },
+          "implemented": {
+            "not_supported_by_candidate": 2,
+            "insufficient_evidence": 1
+          }
+        },
+        "cross_cutting": {
+          "not_supported_by_candidate": 1
+        },
+        "supported": 0,
+        "errors": {
+          "verifier error": 6,
+          "mapping miss": 1,
+          "extraction miss": 1,
+          "retrieval miss": 1
+        },
+        "citation_validity": 0.7778,
+        "citation_on_gold": null,
+        "evaluator_scores": {
+          "exact_accuracy": 0.3077,
+          "false_support_rate": 0.0,
+          "implemented_recall": 0.0,
+          "citation_validity": 0.7778,
+          "citation_on_gold": null,
+          "claim_accuracy": null
+        },
+        "citations": {
+          "citations_valid": 21,
+          "citations_rejected": 6
+        }
+      },
+      "extraction": {
+        "gold_requirements": 14,
+        "gold_incl_excluded": 19,
+        "extracted": 27,
+        "matched_extracted": 18,
+        "precision": 0.6666666666666666,
+        "recall": 0.9285714285714286,
+        "recall_incl_excluded": 0.9473684210526315,
+        "by": {
+          "by_id": 8,
+          "by_text": 10
+        },
+        "text_threshold": 0.6,
+        "f1": 0.7761194029850746,
+        "recall_ci": [
+          0.7857142857142857,
+          1.0
+        ]
+      },
+      "minutes": {
+        "fetch": 0.0,
+        "docstrings": 23.34,
+        "index_code": 0.04,
+        "extract": 13.68,
+        "prepare_review": 0.09,
+        "index_srs": 0.34,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 2.94,
+        "results": 0.0,
+        "wall_total": 26.69
+      },
+      "run": {
+        "run_id": 2,
+        "document_id": "run-2-SRS",
+        "repo_id": "run-2-code",
+        "commit_sha": "2cc23a2f3b265d97e99df8b402a92979447ab7da",
+        "status": "completed",
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        }
+      },
+      "label": "V1 - human-annotated gold"
+    },
+    "Books-Recommender-System": {
+      "search": {
+        "requirements": 27,
+        "map": 0.7177645502645503,
+        "map_ci": [
+          0.5987654320987654,
+          0.8425925925925926
+        ],
+        "mrr": 0.7345679012345678,
+        "mrr_ci": [
+          0.6234567901234568,
+          0.8518518518518519
+        ],
+        "r@1": 0.5370370370370371,
+        "r@1_ci": [
+          0.37037037037037035,
+          0.7222222222222222
+        ],
+        "r@5": 0.8938271604938272,
+        "r@5_ci": [
+          0.7876543209876543,
+          0.9814814814814815
+        ],
+        "r@10": 0.9197530864197531,
+        "r@10_ci": [
+          0.8209876543209877,
+          1.0
+        ],
+        "sr@|G|": 0.5555555555555556,
+        "sr@|G|_ci": [
+          0.37037037037037035,
+          0.7407407407407407
+        ],
+        "ndcg@10_stored_candidates": 0.7219,
+        "evaluate_channels": {
+          "code_lexical": {
+            "hit@1": 0.6429,
+            "hit@3": 0.8214,
+            "hit@5": 0.8929,
+            "hit@10": 0.9286,
+            "recall@1": 0.6071,
+            "recall@3": 0.7714,
+            "recall@5": 0.8369,
+            "recall@10": 0.8726,
+            "mrr": 0.7561,
+            "ndcg@10": 0.7272
+          },
+          "code_vector": {
+            "hit@1": 0.3571,
+            "hit@3": 0.6429,
+            "hit@5": 0.7857,
+            "hit@10": 0.7857,
+            "recall@1": 0.3393,
+            "recall@3": 0.6071,
+            "recall@5": 0.7333,
+            "recall@10": 0.7405,
+            "mrr": 0.5376,
+            "ndcg@10": 0.573
+          },
+          "code_hybrid": {
+            "hit@1": 0.4643,
+            "hit@3": 0.75,
+            "hit@5": 0.7857,
+            "hit@10": 0.9286,
+            "recall@1": 0.4286,
+            "recall@3": 0.6762,
+            "recall@5": 0.7333,
+            "recall@10": 0.8798,
+            "mrr": 0.631,
+            "ndcg@10": 0.6521
+          },
+          "doc_lexical": {
+            "hit@1": 0.4286,
+            "hit@3": 0.6429,
+            "hit@5": 0.7857,
+            "hit@10": 0.8214,
+            "recall@1": 0.4286,
+            "recall@3": 0.6071,
+            "recall@5": 0.7036,
+            "recall@10": 0.7464,
+            "mrr": 0.5603,
+            "ndcg@10": 0.5914
+          },
+          "doc_vector": {
+            "hit@1": 0.6071,
+            "hit@3": 0.75,
+            "hit@5": 0.8571,
+            "hit@10": 0.8929,
+            "recall@1": 0.5655,
+            "recall@3": 0.6619,
+            "recall@5": 0.7762,
+            "recall@10": 0.8417,
+            "mrr": 0.7064,
+            "ndcg@10": 0.7019
+          },
+          "doc_hybrid": {
+            "hit@1": 0.4286,
+            "hit@3": 0.75,
+            "hit@5": 0.7857,
+            "hit@10": 0.8929,
+            "recall@1": 0.4107,
+            "recall@3": 0.6857,
+            "recall@5": 0.7286,
+            "recall@10": 0.819,
+            "mrr": 0.6111,
+            "ndcg@10": 0.6518
+          },
+          "all_hybrid": {
+            "hit@1": 0.5357,
+            "hit@3": 0.9286,
+            "hit@5": 0.9286,
+            "hit@10": 0.9286,
+            "recall@1": 0.5179,
+            "recall@3": 0.8583,
+            "recall@5": 0.8619,
+            "recall@10": 0.8869,
+            "mrr": 0.7092,
+            "ndcg@10": 0.7219
+          }
+        },
+        "mrr_all_hybrid": 0.7092,
+        "gold_components_missing_from_repo": []
+      },
+      "mapping": {
+        "requirements": 28,
+        "direct": {
+          "precision": 0.6756756756756757,
+          "recall": 0.6097560975609756,
+          "f1": 0.6410256410256411,
+          "f2": 0.6218905472636815,
+          "tp": 25,
+          "fp": 12,
+          "fn": 16,
+          "precision_ci": [
+            0.5555555555555556,
+            0.8
+          ],
+          "recall_ci": [
+            0.3939393939393939,
+            0.8928571428571429
+          ],
+          "f1_ci": [
+            0.4941176470588235,
+            0.8055555555555555
+          ],
+          "f2_ci": [
+            0.4316546762589928,
+            0.851063829787234
+          ]
+        },
+        "all_links": {
+          "precision": 0.20114942528735633,
+          "recall": 0.603448275862069,
+          "f1": 0.3017241379310345,
+          "f2": 0.43103448275862066,
+          "tp": 35,
+          "fp": 139,
+          "fn": 23,
+          "precision_ci": [
+            0.15675675675675677,
+            0.25
+          ],
+          "recall_ci": [
+            0.4666666666666667,
+            0.7727272727272727
+          ],
+          "f1_ci": [
+            0.24999999999999997,
+            0.35042735042735046
+          ],
+          "f2_ci": [
+            0.36432160804020103,
+            0.4988662131519274
+          ]
+        },
+        "links_on_requirements_without_code": 0
+      },
+      "verification": {
+        "requirements_judged": 28,
+        "exact_accuracy": 0.42857142857142855,
+        "exact_accuracy_ci": [
+          0.25,
+          0.6071428571428571
+        ],
+        "macro_f1": 0.47619047619047616,
+        "macro_f1_ci": [
+          0.25806451612903225,
+          0.7142857142857143
+        ],
+        "weighted_kappa": 0.14864864864864868,
+        "weighted_kappa_ci": [
+          0.04680851063829794,
+          0.2962962962962963
+        ],
+        "false_support_rate": 0.0,
+        "false_support_rate_ci": [
+          0.0,
+          0.0
+        ],
+        "false_support_not_implemented_sup_or_part": null,
+        "false_support_not_implemented_sup_or_part_ci": null,
+        "implemented_recall": 0.5,
+        "implemented_recall_ci": [
+          0.3,
+          0.7142857142857143
+        ],
+        "implemented_or_partial_found": 0.42857142857142855,
+        "implemented_or_partial_found_ci": [
+          0.25,
+          0.6071428571428571
+        ],
+        "confusion": {
+          "implemented": {
+            "supported": 11,
+            "not_supported_by_candidate": 11
+          },
+          "partial": {
+            "not_supported_by_candidate": 5,
+            "partially_supported": 1
+          }
+        },
+        "cross_cutting": {
+          "not_supported_by_candidate": 5
+        },
+        "supported": 11,
+        "errors": {
+          "verifier error": 13,
+          "mapping miss": 2,
+          "gold has no links": 1
+        },
+        "citation_validity": 0.9231,
+        "citation_on_gold": 1.0,
+        "evaluator_scores": {
+          "exact_accuracy": 0.4286,
+          "false_support_rate": 0.0,
+          "implemented_recall": 0.5,
+          "citation_validity": 0.9231,
+          "citation_on_gold": 1.0,
+          "claim_accuracy": null
+        },
+        "citations": {
+          "citations_valid": 36,
+          "citations_rejected": 3
+        }
+      },
+      "extraction": {
+        "gold_requirements": 33,
+        "gold_incl_excluded": 40,
+        "extracted": 61,
+        "matched_extracted": 39,
+        "precision": 0.639344262295082,
+        "recall": 1.0,
+        "recall_incl_excluded": 0.975,
+        "by": {
+          "by_id": 32,
+          "by_text": 7
+        },
+        "text_threshold": 0.6,
+        "f1": 0.78,
+        "recall_ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "minutes": {
+        "fetch": 0.0,
+        "docstrings": 28.55,
+        "index_code": 0.03,
+        "extract": 16.95,
+        "prepare_review": 0.12,
+        "index_srs": 0.21,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 4.24,
+        "results": 0.0,
+        "wall_total": 33.08
+      },
+      "run": {
+        "run_id": 3,
+        "document_id": "run-3-SRS",
+        "repo_id": "run-3-code",
+        "commit_sha": "69ed627f0fca6e4c6749336a1a159dfda80af67a",
+        "status": "completed",
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        }
+      },
+      "label": "V1 - human-annotated gold"
+    },
+    "Virtual-clinic": {
+      "search": {
+        "requirements": 37,
+        "map": 0.2894430144430144,
+        "map_ci": [
+          0.18304375804375803,
+          0.40548048048048047
+        ],
+        "mrr": 0.3685757185757186,
+        "mrr_ci": [
+          0.23903903903903906,
+          0.5036357786357787
+        ],
+        "r@1": 0.1981981981981982,
+        "r@1_ci": [
+          0.0945945945945946,
+          0.31981981981981983
+        ],
+        "r@5": 0.36486486486486486,
+        "r@5_ci": [
+          0.22972972972972974,
+          0.4954954954954955
+        ],
+        "r@10": 0.5774774774774775,
+        "r@10_ci": [
+          0.4423423423423424,
+          0.7036036036036036
+        ],
+        "sr@|G|": 0.13513513513513514,
+        "sr@|G|_ci": [
+          0.02702702702702703,
+          0.24324324324324326
+        ],
+        "ndcg@10_stored_candidates": 0.3534,
+        "evaluate_channels": {
+          "code_lexical": {
+            "hit@1": 0.1463,
+            "hit@3": 0.3171,
+            "hit@5": 0.4146,
+            "hit@10": 0.5122,
+            "recall@1": 0.0976,
+            "recall@3": 0.2203,
+            "recall@5": 0.2862,
+            "recall@10": 0.4333,
+            "mrr": 0.2667,
+            "ndcg@10": 0.2772
+          },
+          "code_vector": {
+            "hit@1": 0.1707,
+            "hit@3": 0.2927,
+            "hit@5": 0.3659,
+            "hit@10": 0.4878,
+            "recall@1": 0.0935,
+            "recall@3": 0.1776,
+            "recall@5": 0.2346,
+            "recall@10": 0.3585,
+            "mrr": 0.2714,
+            "ndcg@10": 0.2587
+          },
+          "code_hybrid": {
+            "hit@1": 0.1707,
+            "hit@3": 0.3659,
+            "hit@5": 0.4634,
+            "hit@10": 0.6098,
+            "recall@1": 0.1057,
+            "recall@3": 0.2317,
+            "recall@5": 0.3171,
+            "recall@10": 0.4886,
+            "mrr": 0.3123,
+            "ndcg@10": 0.3274
+          },
+          "doc_lexical": {
+            "hit@1": 0.122,
+            "hit@3": 0.2683,
+            "hit@5": 0.3659,
+            "hit@10": 0.5854,
+            "recall@1": 0.0935,
+            "recall@3": 0.2195,
+            "recall@5": 0.3008,
+            "recall@10": 0.4569,
+            "mrr": 0.2597,
+            "ndcg@10": 0.2841
+          },
+          "doc_vector": {
+            "hit@1": 0.122,
+            "hit@3": 0.3171,
+            "hit@5": 0.4878,
+            "hit@10": 0.5854,
+            "recall@1": 0.0935,
+            "recall@3": 0.2175,
+            "recall@5": 0.3841,
+            "recall@10": 0.4654,
+            "mrr": 0.2678,
+            "ndcg@10": 0.2934
+          },
+          "doc_hybrid": {
+            "hit@1": 0.2439,
+            "hit@3": 0.3902,
+            "hit@5": 0.439,
+            "hit@10": 0.6098,
+            "recall@1": 0.1911,
+            "recall@3": 0.3211,
+            "recall@5": 0.3516,
+            "recall@10": 0.4756,
+            "mrr": 0.3563,
+            "ndcg@10": 0.3582
+          },
+          "all_hybrid": {
+            "hit@1": 0.2439,
+            "hit@3": 0.3415,
+            "hit@5": 0.439,
+            "hit@10": 0.6585,
+            "recall@1": 0.1789,
+            "recall@3": 0.2642,
+            "recall@5": 0.3293,
+            "recall@10": 0.5211,
+            "mrr": 0.3457,
+            "ndcg@10": 0.3534
+          }
+        },
+        "mrr_all_hybrid": 0.3457,
+        "gold_components_missing_from_repo": []
+      },
+      "mapping": {
+        "requirements": 41,
+        "direct": {
+          "precision": 0.23809523809523808,
+          "recall": 0.15384615384615385,
+          "f1": 0.1869158878504673,
+          "f2": 0.16556291390728478,
+          "tp": 10,
+          "fp": 32,
+          "fn": 55,
+          "precision_ci": [
+            0.11363636363636363,
+            0.37209302325581395
+          ],
+          "recall_ci": [
+            0.07058823529411765,
+            0.25
+          ],
+          "f1_ci": [
+            0.08849557522123894,
+            0.2947368421052632
+          ],
+          "f2_ci": [
+            0.07645259938837921,
+            0.26785714285714285
+          ]
+        },
+        "all_links": {
+          "precision": 0.08904109589041095,
+          "recall": 0.15294117647058825,
+          "f1": 0.11255411255411256,
+          "f2": 0.13374485596707822,
+          "tp": 13,
+          "fp": 133,
+          "fn": 72,
+          "precision_ci": [
+            0.05,
+            0.13013698630136986
+          ],
+          "recall_ci": [
+            0.08602150537634409,
+            0.23595505617977527
+          ],
+          "f1_ci": [
+            0.06451612903225806,
+            0.1630901287553648
+          ],
+          "f2_ci": [
+            0.07677543186180422,
+            0.19823788546255508
+          ]
+        },
+        "links_on_requirements_without_code": 0
+      },
+      "verification": {
+        "requirements_judged": 52,
+        "exact_accuracy": 0.15384615384615385,
+        "exact_accuracy_ci": [
+          0.057692307692307696,
+          0.2692307692307692
+        ],
+        "macro_f1": 0.13933236574746008,
+        "macro_f1_ci": [
+          0.04938271604938271,
+          0.24405458089668616
+        ],
+        "weighted_kappa": 0.028037383177569986,
+        "weighted_kappa_ci": [
+          -0.06879194630872498,
+          0.12811693895098886
+        ],
+        "false_support_rate": 0.047619047619047616,
+        "false_support_rate_ci": [
+          0.0,
+          0.11904761904761904
+        ],
+        "false_support_not_implemented_sup_or_part": 0.09090909090909091,
+        "false_support_not_implemented_sup_or_part_ci": [
+          0.0,
+          0.3125
+        ],
+        "implemented_recall": 0.1,
+        "implemented_recall_ci": [
+          0.0,
+          0.3333333333333333
+        ],
+        "implemented_or_partial_found": 0.12195121951219512,
+        "implemented_or_partial_found_ci": [
+          0.02631578947368421,
+          0.2222222222222222
+        ],
+        "confusion": {
+          "partial": {
+            "not_supported_by_candidate": 28,
+            "supported": 2,
+            "unverified": 1
+          },
+          "implemented": {
+            "not_supported_by_candidate": 7,
+            "supported": 1,
+            "partially_supported": 2
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 7,
+            "partially_supported": 1,
+            "unverified": 3
+          }
+        },
+        "cross_cutting": {
+          "not_supported_by_candidate": 2,
+          "supported": 1,
+          "unverified": 2
+        },
+        "supported": 4,
+        "errors": {
+          "mapping miss": 15,
+          "verifier error": 12,
+          "retrieval miss": 10,
+          "gold has no links": 3,
+          "extraction miss": 4
+        },
+        "citation_validity": 0.7115,
+        "citation_on_gold": 0.6667,
+        "evaluator_scores": {
+          "exact_accuracy": 0.1538,
+          "false_support_rate": 0.0476,
+          "implemented_recall": 0.1,
+          "citation_validity": 0.7115,
+          "citation_on_gold": 0.6667,
+          "claim_accuracy": null
+        },
+        "citations": {
+          "citations_valid": 37,
+          "citations_rejected": 15
+        }
+      },
+      "extraction": {
+        "gold_requirements": 57,
+        "gold_incl_excluded": 63,
+        "extracted": 91,
+        "matched_extracted": 53,
+        "precision": 0.5824175824175825,
+        "recall": 0.8947368421052632,
+        "recall_incl_excluded": 0.8412698412698413,
+        "by": {
+          "by_id": 49,
+          "by_text": 4
+        },
+        "text_threshold": 0.6,
+        "f1": 0.7055599060297573,
+        "recall_ci": [
+          0.8070175438596491,
+          0.9649122807017544
+        ]
+      },
+      "minutes": {
+        "fetch": 0.0,
+        "docstrings": 221.72,
+        "index_code": 0.04,
+        "extract": 34.46,
+        "prepare_review": 0.11,
+        "index_srs": 0.39,
+        "search": 0.03,
+        "map": 0.01,
+        "verify": 17.46,
+        "results": 0.0,
+        "wall_total": 274.29
+      },
+      "run": {
+        "run_id": 7,
+        "document_id": "run-7-Software Requirements Specification",
+        "repo_id": "run-7-code",
+        "commit_sha": "b8241e502d9bb15435477943eec26f0aac7287b6",
+        "status": "completed",
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        }
+      },
+      "label": "V1 - human-annotated gold"
+    },
+    "ProClinic": {
+      "search": {
+        "requirements": 15,
+        "map": 0.26066137566137565,
+        "map_ci": [
+          0.0961111111111111,
+          0.4432010582010582
+        ],
+        "mrr": 0.34793650793650793,
+        "mrr_ci": [
+          0.15619047619047619,
+          0.5463492063492063
+        ],
+        "r@1": 0.14666666666666667,
+        "r@1_ci": [
+          0.02666666666666667,
+          0.3
+        ],
+        "r@5": 0.2911111111111111,
+        "r@5_ci": [
+          0.1,
+          0.4911111111111111
+        ],
+        "r@10": 0.46888888888888886,
+        "r@10_ci": [
+          0.2711111111111111,
+          0.6777777777777777
+        ],
+        "sr@|G|": 0.13333333333333333,
+        "sr@|G|_ci": [
+          0.0,
+          0.3333333333333333
+        ],
+        "ndcg@10_stored_candidates": 0.3255,
+        "evaluate_channels": {
+          "code_lexical": {
+            "hit@1": 0.2667,
+            "hit@3": 0.4667,
+            "hit@5": 0.5333,
+            "hit@10": 0.6667,
+            "recall@1": 0.1444,
+            "recall@3": 0.2244,
+            "recall@5": 0.2911,
+            "recall@10": 0.4411,
+            "mrr": 0.4033,
+            "ndcg@10": 0.3154
+          },
+          "code_vector": {
+            "hit@1": 0.3333,
+            "hit@3": 0.6,
+            "hit@5": 0.6667,
+            "hit@10": 0.7333,
+            "recall@1": 0.2111,
+            "recall@3": 0.35,
+            "recall@5": 0.4222,
+            "recall@10": 0.5444,
+            "mrr": 0.4952,
+            "ndcg@10": 0.4248
+          },
+          "code_hybrid": {
+            "hit@1": 0.4,
+            "hit@3": 0.6667,
+            "hit@5": 0.7333,
+            "hit@10": 0.8,
+            "recall@1": 0.1911,
+            "recall@3": 0.4022,
+            "recall@5": 0.5078,
+            "recall@10": 0.5633,
+            "mrr": 0.5407,
+            "ndcg@10": 0.4292
+          },
+          "doc_lexical": {
+            "hit@1": 0.1333,
+            "hit@3": 0.2,
+            "hit@5": 0.2667,
+            "hit@10": 0.4667,
+            "recall@1": 0.1,
+            "recall@3": 0.1333,
+            "recall@5": 0.18,
+            "recall@10": 0.3244,
+            "mrr": 0.2267,
+            "ndcg@10": 0.2183
+          },
+          "doc_vector": {
+            "hit@1": 0.3333,
+            "hit@3": 0.4667,
+            "hit@5": 0.4667,
+            "hit@10": 0.6,
+            "recall@1": 0.1689,
+            "recall@3": 0.2356,
+            "recall@5": 0.2689,
+            "recall@10": 0.4489,
+            "mrr": 0.4219,
+            "ndcg@10": 0.3592
+          },
+          "doc_hybrid": {
+            "hit@1": 0.2,
+            "hit@3": 0.4,
+            "hit@5": 0.4,
+            "hit@10": 0.5333,
+            "recall@1": 0.1133,
+            "recall@3": 0.1911,
+            "recall@5": 0.2244,
+            "recall@10": 0.4022,
+            "mrr": 0.3018,
+            "ndcg@10": 0.2727
+          },
+          "all_hybrid": {
+            "hit@1": 0.2667,
+            "hit@3": 0.4,
+            "hit@5": 0.4,
+            "hit@10": 0.6667,
+            "recall@1": 0.1467,
+            "recall@3": 0.2689,
+            "recall@5": 0.2911,
+            "recall@10": 0.4689,
+            "mrr": 0.367,
+            "ndcg@10": 0.3255
+          }
+        },
+        "mrr_all_hybrid": 0.367,
+        "gold_components_missing_from_repo": []
+      },
+      "mapping": {
+        "requirements": 15,
+        "direct": {
+          "precision": 0.25,
+          "recall": 0.09523809523809523,
+          "f1": 0.13793103448275862,
+          "f2": 0.10869565217391303,
+          "tp": 4,
+          "fp": 12,
+          "fn": 38,
+          "precision_ci": [
+            0.058823529411764705,
+            0.4666666666666667
+          ],
+          "recall_ci": [
+            0.022222222222222223,
+            0.19047619047619047
+          ],
+          "f1_ci": [
+            0.03225806451612903,
+            0.2692307692307693
+          ],
+          "f2_ci": [
+            0.025510204081632657,
+            0.21739130434782605
+          ]
+        },
+        "all_links": {
+          "precision": 0.10526315789473684,
+          "recall": 0.06451612903225806,
+          "f1": 0.07999999999999999,
+          "f2": 0.06993006993006992,
+          "tp": 4,
+          "fp": 34,
+          "fn": 58,
+          "precision_ci": [
+            0.022222222222222223,
+            0.25
+          ],
+          "recall_ci": [
+            0.014925373134328358,
+            0.1276595744680851
+          ],
+          "f1_ci": [
+            0.01834862385321101,
+            0.1643835616438356
+          ],
+          "f2_ci": [
+            0.016233766233766236,
+            0.1394422310756972
+          ]
+        },
+        "links_on_requirements_without_code": 0
+      },
+      "verification": {
+        "requirements_judged": 18,
+        "exact_accuracy": 0.2777777777777778,
+        "exact_accuracy_ci": [
+          0.1111111111111111,
+          0.5
+        ],
+        "macro_f1": 0.20634920634920637,
+        "macro_f1_ci": [
+          0.07017543859649122,
+          0.37229437229437234
+        ],
+        "weighted_kappa": 0.09589041095890405,
+        "weighted_kappa_ci": [
+          0.0,
+          0.27586206896551735
+        ],
+        "false_support_rate": 0.0,
+        "false_support_rate_ci": [
+          0.0,
+          0.0
+        ],
+        "false_support_not_implemented_sup_or_part": 0.0,
+        "false_support_not_implemented_sup_or_part_ci": [
+          0.0,
+          0.0
+        ],
+        "implemented_recall": 0.16666666666666666,
+        "implemented_recall_ci": [
+          0.0,
+          0.4
+        ],
+        "implemented_or_partial_found": 0.2,
+        "implemented_or_partial_found_ci": [
+          0.0,
+          0.42857142857142855
+        ],
+        "confusion": {
+          "implemented": {
+            "not_supported_by_candidate": 9,
+            "partially_supported": 1,
+            "supported": 2
+          },
+          "partial": {
+            "not_supported_by_candidate": 3
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 3
+          }
+        },
+        "cross_cutting": {
+          "not_supported_by_candidate": 3
+        },
+        "supported": 2,
+        "errors": {
+          "retrieval miss": 5,
+          "mapping miss": 5,
+          "verifier error": 3
+        },
+        "citation_validity": 0.72,
+        "citation_on_gold": 0.5,
+        "evaluator_scores": {
+          "exact_accuracy": 0.2778,
+          "false_support_rate": 0.0,
+          "implemented_recall": 0.1667,
+          "citation_validity": 0.72,
+          "citation_on_gold": 0.5,
+          "claim_accuracy": null
+        },
+        "citations": {
+          "citations_valid": 18,
+          "citations_rejected": 7
+        }
+      },
+      "extraction": {
+        "gold_requirements": 21,
+        "gold_incl_excluded": 22,
+        "extracted": 31,
+        "matched_extracted": 22,
+        "precision": 0.7096774193548387,
+        "recall": 1.0,
+        "recall_incl_excluded": 1.0,
+        "by": {
+          "by_id": 22
+        },
+        "text_threshold": 0.6,
+        "f1": 0.8301886792452831,
+        "recall_ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "minutes": {
+        "fetch": 0.0,
+        "docstrings": 431.46,
+        "index_code": 0.08,
+        "extract": 8.31,
+        "prepare_review": 0.12,
+        "index_srs": 0.02,
+        "search": 0.01,
+        "map": 0.0,
+        "verify": 2.23,
+        "results": 0.0,
+        "wall_total": 433.87
+      },
+      "run": {
+        "run_id": 6,
+        "document_id": "run-6-ProClinicSRS",
+        "repo_id": "run-6-code",
+        "commit_sha": "ee23cb7e8b875745e2c355f9955e24d654169345",
+        "status": "completed",
+        "models": {
+          "srs": "qwen3:8b",
+          "judge": "qwen3:4b",
+          "docagent": "yi-coder:9b",
+          "verifier": "qwen2.5-coder:7b"
+        }
+      },
+      "label": "V1 - human-annotated gold"
+    }
+  },
+  "micro": {
+    "search": {
+      "requirements": 90,
+      "map": 0.4519019694297472,
+      "map_ci": [
+        0.37470502645502646,
+        0.5346018518518518
+      ],
+      "mrr": 0.5159964726631393,
+      "mrr_ci": [
+        0.4344708994708995,
+        0.6051455026455026
+      ],
+      "r@1": 0.3151851851851852,
+      "r@1_ci": [
+        0.2303703703703704,
+        0.4059259259259259
+      ],
+      "r@5": 0.5629629629629629,
+      "r@5_ci": [
+        0.4703703703703704,
+        0.6559259259259259
+      ],
+      "r@10": 0.697037037037037,
+      "r@10_ci": [
+        0.6125925925925926,
+        0.7785185185185185
+      ],
+      "sr@|G|": 0.2777777777777778,
+      "sr@|G|_ci": [
+        0.18888888888888888,
+        0.37777777777777777
+      ],
+      "mrr_all_hybrid": null,
+      "ndcg@10_stored_candidates": null
+    },
+    "mapping": {
+      "requirements": 95,
+      "direct": {
+        "precision": 0.44144144144144143,
+        "recall": 0.296969696969697,
+        "f1": 0.3550724637681159,
+        "f2": 0.317769130998703,
+        "tp": 49,
+        "fp": 62,
+        "fn": 116,
+        "precision_ci": [
+          0.35714285714285715,
+          0.5333333333333333
+        ],
+        "recall_ci": [
+          0.22485207100591717,
+          0.38636363636363635
+        ],
+        "f1_ci": [
+          0.27819548872180455,
+          0.443579766536965
+        ],
+        "f2_ci": [
+          0.24375,
+          0.40740740740740744
+        ]
+      },
+      "all_links": {
+        "precision": 0.17633410672853828,
+        "recall": 0.3206751054852321,
+        "f1": 0.22754491017964074,
+        "f2": 0.27556200145032633,
+        "tp": 76,
+        "fp": 355,
+        "fn": 161,
+        "precision_ci": [
+          0.14213197969543148,
+          0.21476510067114093
+        ],
+        "recall_ci": [
+          0.2462686567164179,
+          0.40540540540540543
+        ],
+        "f1_ci": [
+          0.1833616298811545,
+          0.2745709828393136
+        ],
+        "f2_ci": [
+          0.21723646723646725,
+          0.33809166040571004
+        ]
+      },
+      "links_on_requirements_without_code": 0
+    },
+    "verification": {
+      "requirements_judged": 111,
+      "exact_accuracy": 0.26126126126126126,
+      "exact_accuracy_ci": [
+        0.17117117117117117,
+        0.35135135135135137
+      ],
+      "macro_f1": 0.2713685703376425,
+      "macro_f1_ci": [
+        0.1846611232405816,
+        0.35224520415818233
+      ],
+      "weighted_kappa": 0.15207242891498085,
+      "weighted_kappa_ci": [
+        0.07157548334018915,
+        0.23917164940936264
+      ],
+      "false_support_rate": 0.03125,
+      "false_support_rate_ci": [
+        0.0,
+        0.08
+      ],
+      "false_support_not_implemented_sup_or_part": 0.0625,
+      "false_support_not_implemented_sup_or_part_ci": [
+        0.0,
+        0.21052631578947367
+      ],
+      "implemented_recall": 0.2978723404255319,
+      "implemented_recall_ci": [
+        0.16981132075471697,
+        0.4339622641509434
+      ],
+      "implemented_or_partial_found": 0.24210526315789474,
+      "implemented_or_partial_found_ci": [
+        0.15463917525773196,
+        0.33
+      ],
+      "confusion": {
+        "partial": {
+          "partially_supported": 4,
+          "not_supported_by_candidate": 41,
+          "supported": 2,
+          "unverified": 1
+        },
+        "not_implemented": {
+          "not_supported_by_candidate": 11,
+          "unverified": 4,
+          "partially_supported": 1
+        },
+        "implemented": {
+          "not_supported_by_candidate": 29,
+          "insufficient_evidence": 1,
+          "supported": 14,
+          "partially_supported": 3
+        }
+      },
+      "cross_cutting": {
+        "not_supported_by_candidate": 11,
+        "supported": 1,
+        "unverified": 2
+      },
+      "supported": 17,
+      "errors": {
+        "verifier error": 34,
+        "mapping miss": 23,
+        "extraction miss": 5,
+        "retrieval miss": 16,
+        "gold has no links": 4
+      },
+      "citation_validity": 0.7832167832167832
+    },
+    "extraction": {
+      "extracted": 210,
+      "precision": 0.6285714285714286,
+      "recall": 0.944,
+      "f1": 0.7546511627906977,
+      "recall_ci": [
+        0.904,
+        0.976
+      ]
+    },
+    "minutes": {
+      "wall_total": 767.9300000000001
+    }
+  },
+  "macro": {
+    "extraction": {
+      "extracted": 52.5,
+      "precision": 0.6495264826835425,
+      "recall": 0.9558270676691729,
+      "f1": 0.7729669970650288,
+      "recall_incl_excluded": 0.9409095655806182
+    },
+    "search": {
+      "map": 0.46860864923364925,
+      "mrr": 0.5389063955730622,
+      "r@1": 0.318960323960324,
+      "r@5": 0.5844204810871477,
+      "r@10": 0.7074389541056207,
+      "sr@|G|": 0.27418782418782417,
+      "ndcg@10_stored_candidates": 0.517,
+      "mrr_all_hybrid": 0.5331250000000001
+    },
+    "mapping": {
+      "direct": {
+        "precision": 0.44719272844272845,
+        "recall": 0.36176891019071794,
+        "f1": 0.3929832923548683,
+        "f2": 0.3728468021457436
+      },
+      "all_links": {
+        "precision": 0.18105520059004382,
+        "recall": 0.39272639534122883,
+        "f1": 0.23785527690700103,
+        "f2": 0.3079310835072258
+      }
+    },
+    "verification": {
+      "requirements_judged": 27.75,
+      "exact_accuracy": 0.291971916971917,
+      "macro_f1": 0.26758922419299774,
+      "weighted_kappa": 0.08749894940595809,
+      "false_support_rate": 0.011904761904761904,
+      "implemented_recall": 0.19166666666666665,
+      "citation_validity": 0.7831
+    },
+    "minutes": {
+      "wall_total": 191.98250000000002
+    }
+  },
+  "run6_library_baseline": {
+    "search_mrr_all_hybrid": 0.936,
+    "mapping_direct_p": 0.67,
+    "mapping_direct_r": 0.87,
+    "verifier_exact": 0.833,
+    "false_support": 0.0,
+    "supported": "27/39",
+    "minutes_total": 85
+  },
+  "text_threshold": 0.6,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 42
+  }
+}
