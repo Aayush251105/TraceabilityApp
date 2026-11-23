@@ -1,0 +1,285 @@
+
+######## 2026-11-19 11:33:20 1. SRS extractor generation: qwen3-8b
+
+=== extractor qwen3-8b (qwen3:8b)
+  Virtual-clinic: 82/82 extracted, 0 failed, 639s
+  Travel-Agency-Automation-System: 16/16 extracted, 0 failed, 149s
+  Books-Recommender-System: 38/38 extracted, 0 failed, 214s
+  ProClinic: 24/24 extracted, 0 failed, 145s
+
+######## 2026-11-19 11:52:27 2. verifier generation: qwen3-8b
+
+=== verifier qwen3-8b (qwen3:8b)
+  [1/196] Virtual-clinic::Req-1::gold: supported (expected partially_supported) 5s
+  [2/196] Virtual-clinic::Req-1::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [3/196] Virtual-clinic::Req-1/1::gold: supported (expected partially_supported) 3s
+  [4/196] Virtual-clinic::Req-1/1::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [5/196] Virtual-clinic::Req-1/2::gold: insufficient_evidence (expected partially_supported) 2s
+  [6/196] Virtual-clinic::Req-1/2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [7/196] Virtual-clinic::Req-1/3::gold: not_supported_by_candidate (expected partially_supported) 2s
+  [8/196] Virtual-clinic::Req-1/3::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [9/196] Virtual-clinic::Req-2::gold: supported (expected partially_supported) 7s
+  [10/196] Virtual-clinic::Req-2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [11/196] Virtual-clinic::Req-2/1::gold: not_supported_by_candidate (expected partially_supported) 4s
+  [12/196] Virtual-clinic::Req-2/1::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [13/196] Virtual-clinic::Req-2/2::gold: insufficient_evidence (expected partially_supported) 3s
+  [14/196] Virtual-clinic::Req-2/2::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [15/196] Virtual-clinic::Req-2/3::gold: not_supported_by_candidate (expected partially_supported) 3s
+  [16/196] Virtual-clinic::Req-2/3::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [17/196] Virtual-clinic::Req-3::gold: insufficient_evidence (expected partially_supported) 3s
+  [18/196] Virtual-clinic::Req-3::distractor: supported (expected not_supported_by_candidate) 7s
+  [19/196] Virtual-clinic::Req-3/1::gold: insufficient_evidence (expected partially_supported) 3s
+  [20/196] Virtual-clinic::Req-3/1::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [21/196] Virtual-clinic::Req-3/2::gold: insufficient_evidence (expected partially_supported) 3s
+  [22/196] Virtual-clinic::Req-3/2::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [23/196] Virtual-clinic::Req-3/3::gold: not_supported_by_candidate (expected partially_supported) 3s
+  [24/196] Virtual-clinic::Req-3/3::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [25/196] Virtual-clinic::Req-4::gold: supported (expected supported) 3s
+  [26/196] Virtual-clinic::Req-4::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [27/196] Virtual-clinic::Req-4/1::gold: supported (expected supported) 5s
+  [28/196] Virtual-clinic::Req-4/1::distractor: supported (expected not_supported_by_candidate) 4s
+  [29/196] Virtual-clinic::Req-4/2::gold: insufficient_evidence (expected partially_supported) 2s
+  [30/196] Virtual-clinic::Req-4/2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [31/196] Virtual-clinic::Req-4/3::gold: not_supported_by_candidate (expected partially_supported) 3s
+  [32/196] Virtual-clinic::Req-4/3::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [33/196] Virtual-clinic::Req-5::gold: supported (expected supported) 8s
+  [34/196] Virtual-clinic::Req-5::distractor: insufficient_evidence (expected not_supported_by_candidate) 1s
+  [35/196] Virtual-clinic::Req-5/1::gold: supported (expected supported) 6s
+  [36/196] Virtual-clinic::Req-5/1::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [37/196] Virtual-clinic::Req-5/2::gold: supported (expected supported) 10s
+  [38/196] Virtual-clinic::Req-5/2::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [39/196] Virtual-clinic::Req-5/3::gold: not_supported_by_candidate (expected partially_supported) 3s
+  [40/196] Virtual-clinic::Req-5/3::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [41/196] Virtual-clinic::Req-6::gold: supported (expected supported) 7s
+  [42/196] Virtual-clinic::Req-6::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [43/196] Virtual-clinic::Req-6/1::gold: supported (expected partially_supported) 17s
+  [44/196] Virtual-clinic::Req-6/1::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [45/196] Virtual-clinic::Req-6/2::absent: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [46/196] Virtual-clinic::Req-6/3::absent: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [47/196] Virtual-clinic::Req-7::absent: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [48/196] Virtual-clinic::Req-8::gold: insufficient_evidence (expected partially_supported) 4s
+  [49/196] Virtual-clinic::Req-8::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 10s
+  [50/196] Virtual-clinic::Req-9::gold: insufficient_evidence (expected partially_supported) 4s
+  [51/196] Virtual-clinic::Req-9::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [52/196] Virtual-clinic::Req-10::gold: insufficient_evidence (expected partially_supported) 5s
+  [53/196] Virtual-clinic::Req-10::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [54/196] Virtual-clinic::Req-11::gold: partially_supported (expected partially_supported) 10s
+  [55/196] Virtual-clinic::Req-11::distractor: insufficient_evidence (expected not_supported_by_candidate) 5s
+  [56/196] Virtual-clinic::Req-13::gold: insufficient_evidence (expected partially_supported) 5s
+  [57/196] Virtual-clinic::Req-13::distractor: insufficient_evidence (expected not_supported_by_candidate) 5s
+  [58/196] Virtual-clinic::Req-14::absent: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [59/196] Virtual-clinic::Req-15::gold: partially_supported (expected supported) 10s
+  [60/196] Virtual-clinic::Req-15::distractor: partially_supported (expected not_supported_by_candidate) 6s
+  [61/196] Virtual-clinic::Req-16::gold: insufficient_evidence (expected partially_supported) 2s
+  [62/196] Virtual-clinic::Req-16::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [63/196] Virtual-clinic::BR-1::absent: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [64/196] Virtual-clinic::BR-2::gold: partially_supported (expected supported) 6s
+  [65/196] Virtual-clinic::BR-2::distractor: partially_supported (expected not_supported_by_candidate) 4s
+  [66/196] Virtual-clinic::BR-3::gold: insufficient_evidence (expected partially_supported) 3s
+  [67/196] Virtual-clinic::BR-3::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [68/196] Virtual-clinic::BR-4::gold: not_supported_by_candidate (expected partially_supported) 5s
+  [69/196] Virtual-clinic::BR-4::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [70/196] Virtual-clinic::BR-5::gold: not_supported_by_candidate (expected supported) 3s
+  [71/196] Virtual-clinic::BR-5::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 6s
+  [72/196] Virtual-clinic::BR-6::gold: supported (expected supported) 3s
+  [73/196] Virtual-clinic::BR-6::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [74/196] Virtual-clinic::BR-7::gold: insufficient_evidence (expected partially_supported) 4s
+  [75/196] Virtual-clinic::BR-7::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [76/196] Virtual-clinic::BR-8::absent: insufficient_evidence (expected not_supported_by_candidate) 5s
+  [77/196] Virtual-clinic::BR-10::absent: insufficient_evidence (expected not_supported_by_candidate) 5s
+  [78/196] Virtual-clinic::REQ-003::gold: insufficient_evidence (expected partially_supported) 8s
+  [79/196] Virtual-clinic::REQ-003::distractor: insufficient_evidence (expected not_supported_by_candidate) 8s
+  [80/196] Virtual-clinic::REQ-005::gold: partially_supported (expected partially_supported) 10s
+  [81/196] Virtual-clinic::REQ-005::distractor: insufficient_evidence (expected not_supported_by_candidate) 6s
+  [82/196] Virtual-clinic::REQ-007::absent: not_supported_by_candidate (expected not_supported_by_candidate) 4s
+  [83/196] Virtual-clinic::REQ-008::absent: insufficient_evidence (expected not_supported_by_candidate) 6s
+  [84/196] Virtual-clinic::REQ-009::absent: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [85/196] Virtual-clinic::REQ-019::absent: insufficient_evidence (expected not_supported_by_candidate) 5s
+  [86/196] Travel-Agency-Automation-System::FEAT-4.1::gold: partially_supported (expected partially_supported) 14s
+  [87/196] Travel-Agency-Automation-System::FEAT-4.1::distractor: partially_supported (expected not_supported_by_candidate) 8s
+  [88/196] Travel-Agency-Automation-System::FEAT-4.2::absent: not_supported_by_candidate (expected not_supported_by_candidate) 6s
+  [89/196] Travel-Agency-Automation-System::FEAT-4.3::gold: supported (expected supported) 14s
+  [90/196] Travel-Agency-Automation-System::FEAT-4.3::distractor: partially_supported (expected not_supported_by_candidate) 7s
+  [91/196] Travel-Agency-Automation-System::FEAT-4.4::gold: supported (expected partially_supported) 11s
+  [92/196] Travel-Agency-Automation-System::FEAT-4.4::distractor: insufficient_evidence (expected not_supported_by_candidate) 8s
+  [93/196] Travel-Agency-Automation-System::FEAT-4.5::gold: partially_supported (expected partially_supported) 16s
+  [94/196] Travel-Agency-Automation-System::FEAT-4.5::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 11s
+  [95/196] Travel-Agency-Automation-System::FEAT-4.6::gold: partially_supported (expected partially_supported) 12s
+  [96/196] Travel-Agency-Automation-System::FEAT-4.6::distractor: insufficient_evidence (expected not_supported_by_candidate) 8s
+  [97/196] Travel-Agency-Automation-System::FEAT-4.7::gold: partially_supported (expected partially_supported) 27s
+  [98/196] Travel-Agency-Automation-System::FEAT-4.7::distractor: partially_supported (expected not_supported_by_candidate) 10s
+  [99/196] Travel-Agency-Automation-System::FEAT-4.8::gold: partially_supported (expected partially_supported) 8s
+  [100/196] Travel-Agency-Automation-System::FEAT-4.8::distractor: partially_supported (expected not_supported_by_candidate) 8s
+  [101/196] Travel-Agency-Automation-System::FEAT-4.9::gold: not_supported_by_candidate (expected partially_supported) 10s
+  [102/196] Travel-Agency-Automation-System::FEAT-4.9::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 10s
+  [103/196] Travel-Agency-Automation-System::FEAT-4.10::gold: partially_supported (expected partially_supported) 10s
+  [104/196] Travel-Agency-Automation-System::FEAT-4.10::distractor: partially_supported (expected not_supported_by_candidate) 10s
+  [105/196] Travel-Agency-Automation-System::FEAT-4.11::absent: not_supported_by_candidate (expected not_supported_by_candidate) 11s
+  [106/196] Travel-Agency-Automation-System::REQ-001::gold: supported (expected supported) 9s
+  [107/196] Travel-Agency-Automation-System::REQ-001::distractor: partially_supported (expected not_supported_by_candidate) 5s
+  [108/196] Travel-Agency-Automation-System::REQ-005::gold: partially_supported (expected supported) 6s
+  [109/196] Travel-Agency-Automation-System::REQ-005::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [110/196] Books-Recommender-System::FR-1.1::gold: supported (expected supported) 2s
+  [111/196] Books-Recommender-System::FR-1.1::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [112/196] Books-Recommender-System::FR-1.2::gold: supported (expected supported) 15s
+  [113/196] Books-Recommender-System::FR-1.2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [114/196] Books-Recommender-System::FR-1.4::gold: supported (expected supported) 4s
+  [115/196] Books-Recommender-System::FR-1.4::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 4s
+  [116/196] Books-Recommender-System::FR-2.1::gold: supported (expected supported) 4s
+  [117/196] Books-Recommender-System::FR-2.1::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 5s
+  [118/196] Books-Recommender-System::FR-2.2::gold: supported (expected supported) 3s
+  [119/196] Books-Recommender-System::FR-2.2::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [120/196] Books-Recommender-System::FR-2.3::gold: not_supported_by_candidate (expected partially_supported) 2s
+  [121/196] Books-Recommender-System::FR-2.3::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [122/196] Books-Recommender-System::FR-3.1::gold: supported (expected supported) 4s
+  [123/196] Books-Recommender-System::FR-3.1::distractor: supported (expected not_supported_by_candidate) 5s
+  [124/196] Books-Recommender-System::FR-3.2::gold: not_supported_by_candidate (expected partially_supported) 5s
+  [125/196] Books-Recommender-System::FR-3.2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 7s
+  [126/196] Books-Recommender-System::FR-3.3::gold: not_supported_by_candidate (expected partially_supported) 6s
+  [127/196] Books-Recommender-System::FR-3.3::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [128/196] Books-Recommender-System::FR-3.4::gold: supported (expected supported) 4s
+  [129/196] Books-Recommender-System::FR-3.4::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 8s
+  [130/196] Books-Recommender-System::FR-3.5::gold: supported (expected supported) 5s
+  [131/196] Books-Recommender-System::FR-3.5::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [132/196] Books-Recommender-System::FR-4.1::gold: supported (expected supported) 5s
+  [133/196] Books-Recommender-System::FR-4.1::distractor: partially_supported (expected not_supported_by_candidate) 5s
+  [134/196] Books-Recommender-System::FR-4.2::gold: supported (expected supported) 3s
+  [135/196] Books-Recommender-System::FR-4.2::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [136/196] Books-Recommender-System::FR-4.3::gold: supported (expected supported) 5s
+  [137/196] Books-Recommender-System::FR-4.3::distractor: supported (expected not_supported_by_candidate) 4s
+  [138/196] Books-Recommender-System::FR-5.1::gold: supported (expected supported) 2s
+  [139/196] Books-Recommender-System::FR-5.1::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [140/196] Books-Recommender-System::FR-5.2::gold: supported (expected supported) 6s
+  [141/196] Books-Recommender-System::FR-5.2::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 5s
+  [142/196] Books-Recommender-System::FR-5.3::gold: supported (expected supported) 3s
+  [143/196] Books-Recommender-System::FR-5.3::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [144/196] Books-Recommender-System::FR-6.1::gold: supported (expected supported) 3s
+  [145/196] Books-Recommender-System::FR-6.1::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 3s
+  [146/196] Books-Recommender-System::FR-6.2::gold: supported (expected supported) 4s
+  [147/196] Books-Recommender-System::FR-6.2::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [148/196] Books-Recommender-System::FR-6.3::gold: supported (expected supported) 3s
+  [149/196] Books-Recommender-System::FR-6.3::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [150/196] Books-Recommender-System::FR-6.4::gold: supported (expected supported) 6s
+  [151/196] Books-Recommender-System::FR-6.4::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 7s
+  [152/196] Books-Recommender-System::FR-6.5::gold: supported (expected supported) 13s
+  [153/196] Books-Recommender-System::FR-6.5::distractor: supported (expected not_supported_by_candidate) 10s
+  [154/196] Books-Recommender-System::FR-7.1::gold: supported (expected supported) 3s
+  [155/196] Books-Recommender-System::FR-7.1::distractor: supported (expected not_supported_by_candidate) 4s
+  [156/196] Books-Recommender-System::FR-7.2::gold: partially_supported (expected supported) 10s
+  [157/196] Books-Recommender-System::FR-7.2::distractor: partially_supported (expected not_supported_by_candidate) 7s
+  [158/196] Books-Recommender-System::FR-7.3::gold: not_supported_by_candidate (expected supported) 2s
+  [159/196] Books-Recommender-System::FR-7.3::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 2s
+  [160/196] Books-Recommender-System::REQ-009::gold: supported (expected partially_supported) 8s
+  [161/196] Books-Recommender-System::REQ-009::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 5s
+  [162/196] Books-Recommender-System::REQ-011::gold: supported (expected partially_supported) 3s
+  [163/196] Books-Recommender-System::REQ-011::distractor: supported (expected not_supported_by_candidate) 5s
+  [164/196] ProClinic::FR-1::gold: supported (expected supported) 13s
+  [165/196] ProClinic::FR-1::distractor: partially_supported (expected not_supported_by_candidate) 9s
+  [166/196] ProClinic::FR-2::gold: supported (expected supported) 11s
+  [167/196] ProClinic::FR-2::distractor: partially_supported (expected not_supported_by_candidate) 8s
+  [168/196] ProClinic::FR-3::gold: supported (expected supported) 30s
+  [169/196] ProClinic::FR-3::distractor: supported (expected not_supported_by_candidate) 13s
+  [170/196] ProClinic::FR-4::gold: partially_supported (expected partially_supported) 6s
+  [171/196] ProClinic::FR-4::distractor: partially_supported (expected not_supported_by_candidate) 5s
+  [172/196] ProClinic::FR-5::gold: supported (expected supported) 25s
+  [173/196] ProClinic::FR-5::distractor: partially_supported (expected not_supported_by_candidate) 5s
+  [174/196] ProClinic::FR-6::gold: not_supported_by_candidate (expected partially_supported) 5s
+  [175/196] ProClinic::FR-6::distractor: insufficient_evidence (expected not_supported_by_candidate) 4s
+  [176/196] ProClinic::NFR-3::gold: insufficient_evidence (expected supported) 3s
+  [177/196] ProClinic::NFR-3::distractor: partially_supported (expected not_supported_by_candidate) 5s
+  [178/196] ProClinic::NFR-4::gold: insufficient_evidence (expected supported) 2s
+  [179/196] ProClinic::NFR-4::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [180/196] ProClinic::US001::gold: supported (expected supported) 5s
+  [181/196] ProClinic::US001::distractor: supported (expected not_supported_by_candidate) 3s
+  [182/196] ProClinic::US002::gold: supported (expected partially_supported) 3s
+  [183/196] ProClinic::US002::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [184/196] ProClinic::US003::gold: supported (expected supported) 5s
+  [185/196] ProClinic::US003::distractor: not_supported_by_candidate (expected not_supported_by_candidate) 7s
+  [186/196] ProClinic::US004::gold: supported (expected supported) 4s
+  [187/196] ProClinic::US004::distractor: insufficient_evidence (expected not_supported_by_candidate) 3s
+  [188/196] ProClinic::US005::gold: supported (expected supported) 3s
+  [189/196] ProClinic::US005::distractor: supported (expected not_supported_by_candidate) 6s
+  [190/196] ProClinic::US006::absent: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [191/196] ProClinic::US007::gold: supported (expected supported) 7s
+  [192/196] ProClinic::US007::distractor: insufficient_evidence (expected not_supported_by_candidate) 2s
+  [193/196] ProClinic::US008::gold: supported (expected supported) 4s
+  [194/196] ProClinic::US008::distractor: supported (expected not_supported_by_candidate) 5s
+  [195/196] ProClinic::US009::absent: not_supported_by_candidate (expected not_supported_by_candidate) 4s
+  [196/196] ProClinic::US010::absent: supported (expected not_supported_by_candidate) 5s
+  done in 1079s
+
+######## 2026-11-19 12:10:27 3. SRS extractor evaluation + report (only missing judgments run)
+8 models, 156 items extracted by all, sample 10
+
+[1/3] objective metrics
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7280.55it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[2/3] point-wise judging
+  point-wise judge qwen2.5-coder-7b: 10 calls
+  point-wise judge qwen3-8b: 0 calls
+  point-wise judge llama3.1-8b: 10 calls
+  point-wise judge mistral-7b: 10 calls
+  point-wise judge deepseek-coder-6.7b: 10 calls
+  point-wise judge codegemma-7b: 10 calls
+  point-wise judge codellama-7b: 10 calls
+  point-wise judge yi-coder-9b: 10 calls
+
+[3/3] pairwise judging
+  pairwise judge qwen2.5-coder-7b: 60 items x 2 orderings
+  pairwise judge qwen3-8b: 0 items x 2 orderings
+  pairwise judge llama3.1-8b: 60 items x 2 orderings
+  pairwise judge mistral-7b: 60 items x 2 orderings
+  pairwise judge deepseek-coder-6.7b: 60 items x 2 orderings
+  pairwise judge codegemma-7b: 60 items x 2 orderings
+  pairwise judge codellama-7b: 60 items x 2 orderings
+  pairwise judge yi-coder-9b: 60 items x 2 orderings
+
+report: /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/benchmark/results/srs_agent/extractor/final_report.md
+
+######## 2026-11-19 12:38:38 4. verifier evaluation + report (only missing judgments run)
+8 models, 194 cases complete for all, sample 10
+
+[1/3] objective metrics
+
+[2/3] point-wise judging
+  point-wise judge qwen2.5-coder-7b: 10 calls
+  point-wise judge qwen3-8b: 0 calls
+  point-wise judge llama3.1-8b: 10 calls
+  point-wise judge mistral-7b: 10 calls
+  point-wise judge deepseek-coder-6.7b: 10 calls
+  point-wise judge codegemma-7b: 10 calls
+  point-wise judge codellama-7b: 10 calls
+  point-wise judge yi-coder-9b: 10 calls
+
+[3/3] pairwise judging
+  pairwise judge qwen2.5-coder-7b: 60 items x 2 orderings
+  pairwise judge qwen3-8b: 0 items x 2 orderings
+  pairwise judge llama3.1-8b: 60 items x 2 orderings
+  pairwise judge mistral-7b: 60 items x 2 orderings
+  pairwise judge deepseek-coder-6.7b: 60 items x 2 orderings
+  pairwise judge codegemma-7b: 60 items x 2 orderings
+  pairwise judge codellama-7b: 60 items x 2 orderings
+  pairwise judge yi-coder-9b: 60 items x 2 orderings
+
+report: /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/benchmark/results/verifier/final_report.md
+1095 samples, 2026-11-19 11:33:25 → 2026-11-19 13:05:50
+
+| Loaded model | Samples | Processor (ollama ps) | GPU util avg / max | GPU mem max (MiB) | Runner CPU avg / max (%, 100 = 1 core) | Host CPU avg | Other users on GPU |
+|---|---|---|---|---|---|---|---|
+| qwen3:8b | 445 | 100% GPU | 94% / 100% | 12640 | 434 / 475 | 20% | none |
+| qwen2.5-coder:7b;qwen3:8b | 3 | 100% GPU;100% GPU | 59% / 97% | 13182 | 293 / 475 | 17% | none |
+| llama3.1:8b;qwen3:8b | 7 | 100% GPU;100% GPU | 98% / 98% | 13942 | 429 / 468 | 18% | none |
+| mistral:7b;qwen3:8b | 3 | 100% GPU;100% GPU | 99% / 100% | 13636 | 386 / 437 | 16% | none |
+| (none loaded) | 16 | — | 18% / 97% | 10219 | 0 / 0 | 11% | none |
+| deepseek-coder:6.7b | 60 | 100% GPU | 90% / 100% | 9915 | 365 / 480 | 16% | none |
+| codegemma:7b | 102 | 100% GPU | 91% / 100% | 10761 | 399 / 472 | 17% | none |
+| codellama:7b | 163 | 100% GPU | 94% / 100% | 9913 | 412 / 482 | 18% | none |
+| yi-coder:9b | 104 | 100% GPU | 89% / 100% | 7836 | 396 / 485 | 17% | none |
+| qwen2.5-coder:7b;yi-coder:9b | 19 | 100% GPU;100% GPU | 89% / 100% | 12784 | 386 / 526 | 18% | none |
+| llama3.1:8b;yi-coder:9b | 107 | 100% GPU;100% GPU | 97% / 100% | 13544 | 438 / 479 | 19% | none |
+| llama3.1:8b | 12 | 100% GPU | 94% / 98% | 7713 | 442 / 463 | 19% | none |
+| mistral:7b | 47 | 100% GPU | 95% / 100% | 7407 | 408 / 475 | 18% | none |
+| mistral:7b;yi-coder:9b | 7 | 100% GPU;100% GPU | 90% / 100% | 12721 | 348 / 435 | 16% | none |
+
+######## 2026-11-19 13:05:50 done

@@ -70,7 +70,8 @@ def run_model(cfg, entry, cases, comps_by_pair, out: Path) -> None:
     done: Dict[str, Any] = {}
     if out.exists():
         done = json.loads(out.read_text(encoding="utf-8")).get("cases", {})
-    llm = OllamaClient(model=entry["ollama_model"], host=cfg["ollama"]["host"], timeout=cfg["ollama"]["timeout_s"])
+    llm = OllamaClient(model=entry["ollama_model"], host=cfg["ollama"]["host"], timeout=cfg["ollama"]["timeout_s"],
+                       think=entry.get("think"))
     verifier = BenchVerifier(llm)
     started = time.time()
     prev = sum(v["seconds"] for v in done.values())
@@ -97,7 +98,7 @@ def run_model(cfg, entry, cases, comps_by_pair, out: Path) -> None:
 
 
 def _save(out: Path, entry, done) -> None:
-    out.write_text(json.dumps({"model": entry["name"], "ollama_model": entry["ollama_model"],
+    out.write_text(json.dumps({"model": entry["name"], "ollama_model": entry["ollama_model"], "think": entry.get("think"),
                                "seconds": round(sum(v["seconds"] for v in done.values()), 1),
                                "cases": done}, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
 

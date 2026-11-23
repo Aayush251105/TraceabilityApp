@@ -177,7 +177,26 @@ judges are the same 7B–9B models being compared.
 
 ## Changes Made to the Existing Codebase
 
-None. The benchmark only imports `SRSAgent` (app, parsers, detector,
-`CandidateJudge`, `SRSAgent`), `traceability.verification` (`Verifier`,
-`build_context`, `OllamaClient`) and `SRS_to_code_traceability/texts.py`
-(`requirement_text`).
+The benchmark imports `SRSAgent` (app, parsers, detector, `CandidateJudge`,
+`SRSAgent`), `traceability.verification` (`Verifier`, `build_context`,
+`OllamaClient`) and `SRS_to_code_traceability/texts.py` (`requirement_text`).
+
+One change was made to the agents (2026-11-19): both Ollama clients
+(`SRSAgent/llm/ollama_provider.py`, `SRS_to_code_traceability/verification/llm.py`)
+accept an optional `think` argument. `None` (the default) sends nothing, so
+every other model and caller behaves exactly as before; `think: false` in
+`config.yaml` disables the hidden reasoning pass of thinking models.
+
+**qwen3:8b re-run.** In the first run the agents ran qwen3:8b with thinking on:
+extraction took 11h 44m (7 failures) and verification 7h 36m. It was re-run with
+`think: false` (`rerun_model.sh qwen3-8b`): 19 min and 18 min, no failures. Only
+the judgments involving qwen3 as the judged model were redone; the judged sample
+is pinned (`sample_items.json`), so the other models' cached judgments stay
+valid. The thinking-on outputs and reports are kept in `results/*/archive/qwen3-8b_think-on/`.
+
+## Resource monitoring
+
+`common/resource_monitor.py` samples GPU utilisation and memory, the GPU
+processes of all users, the CPU/GPU split of the loaded Ollama model(s)
+(`ollama ps`) and the Ollama runner's CPU use every 5 s; `rerun_model.sh` runs it
+automatically → `results/resource_usage/rerun_<model>.csv` and `_summary.md`.

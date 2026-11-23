@@ -42,10 +42,11 @@ def generate(cfg, entry, out: Path) -> None:
     from llm.ollama_provider import OllamaProvider
 
     retained = retained_candidates(cfg)
-    res = {"model": entry["name"], "ollama_model": entry["ollama_model"], "pairs": {}}
+    res = {"model": entry["name"], "ollama_model": entry["ollama_model"], "think": entry.get("think"), "pairs": {}}
     total = 0.0
     for pair in cfg["pairs"]:
-        agent = SRSAgent(llm_provider=OllamaProvider(model=entry["ollama_model"], host=cfg["ollama"]["host"]))
+        agent = SRSAgent(llm_provider=OllamaProvider(model=entry["ollama_model"], host=cfg["ollama"]["host"],
+                                                     think=entry.get("think")))
         cands = retained[pair["id"]]
         t0 = time.time()
         reqs = agent.extract(cands)

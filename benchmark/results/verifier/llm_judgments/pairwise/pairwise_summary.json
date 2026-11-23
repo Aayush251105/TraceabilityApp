@@ -2,8 +2,8 @@
   "head_to_head": {
     "qwen2.5-coder-7b": {
       "qwen3-8b": [
-        5,
-        9,
+        3,
+        11,
         46
       ],
       "llama3.1-8b": [
@@ -39,29 +39,29 @@
     },
     "qwen3-8b": {
       "qwen2.5-coder-7b": [
-        9,
-        5,
+        11,
+        3,
         46
       ],
       "llama3.1-8b": [
-        14,
+        19,
         5,
-        41
+        36
       ],
       "mistral-7b": [
         4,
-        11,
-        45
+        8,
+        48
       ],
       "deepseek-coder-6.7b": [
-        12,
-        7,
-        41
+        11,
+        9,
+        40
       ],
       "codegemma-7b": [
-        12,
-        9,
-        39
+        8,
+        8,
+        44
       ],
       "codellama-7b": [
         20,
@@ -69,9 +69,9 @@
         30
       ],
       "yi-coder-9b": [
-        5,
-        10,
-        45
+        2,
+        14,
+        44
       ]
     },
     "llama3.1-8b": {
@@ -82,8 +82,8 @@
       ],
       "qwen3-8b": [
         5,
-        14,
-        41
+        19,
+        36
       ],
       "mistral-7b": [
         1,
@@ -118,9 +118,9 @@
         52
       ],
       "qwen3-8b": [
-        11,
+        8,
         4,
-        45
+        48
       ],
       "llama3.1-8b": [
         14,
@@ -155,9 +155,9 @@
         34
       ],
       "qwen3-8b": [
-        7,
-        12,
-        41
+        9,
+        11,
+        40
       ],
       "llama3.1-8b": [
         14,
@@ -192,9 +192,9 @@
         36
       ],
       "qwen3-8b": [
-        9,
-        12,
-        39
+        8,
+        8,
+        44
       ],
       "llama3.1-8b": [
         17,
@@ -266,9 +266,9 @@
         37
       ],
       "qwen3-8b": [
-        10,
-        5,
-        45
+        14,
+        2,
+        44
       ],
       "llama3.1-8b": [
         26,
@@ -300,43 +300,51 @@
   "ranking": [
     {
       "model": "yi-coder-9b",
-      "wins": 111,
-      "losses": 46,
-      "ties": 263,
+      "wins": 115,
+      "losses": 43,
+      "ties": 262,
       "total": 420,
-      "win_rate": 0.2642857142857143
+      "win_rate": 0.27380952380952384
     },
     {
       "model": "codegemma-7b",
-      "wins": 80,
-      "losses": 73,
-      "ties": 267,
+      "wins": 79,
+      "losses": 69,
+      "ties": 272,
       "total": 420,
-      "win_rate": 0.19047619047619047
-    },
-    {
-      "model": "mistral-7b",
-      "wins": 76,
-      "losses": 32,
-      "ties": 312,
-      "total": 420,
-      "win_rate": 0.18095238095238095
+      "win_rate": 0.1880952380952381
     },
     {
       "model": "qwen3-8b",
-      "wins": 76,
+      "wins": 75,
       "losses": 57,
-      "ties": 287,
+      "ties": 288,
       "total": 420,
-      "win_rate": 0.18095238095238095
+      "win_rate": 0.17857142857142858
+    },
+    {
+      "model": "mistral-7b",
+      "wins": 73,
+      "losses": 32,
+      "ties": 315,
+      "total": 420,
+      "win_rate": 0.1738095238095238
+    },
+    {
+      "model": "deepseek-coder-6.7b",
+      "wins": 71,
+      "losses": 76,
+      "ties": 273,
+      "total": 420,
+      "win_rate": 0.16904761904761906
     },
     {
       "model": "qwen2.5-coder-7b",
-      "wins": 72,
-      "losses": 69,
+      "wins": 70,
+      "losses": 71,
       "ties": 279,
       "total": 420,
-      "win_rate": 0.17142857142857143
+      "win_rate": 0.16666666666666666
     },
     {
       "model": "codellama-7b",
@@ -347,18 +355,10 @@
       "win_rate": 0.16666666666666666
     },
     {
-      "model": "deepseek-coder-6.7b",
-      "wins": 69,
-      "losses": 77,
-      "ties": 274,
-      "total": 420,
-      "win_rate": 0.16428571428571428
-    },
-    {
       "model": "llama3.1-8b",
       "wins": 44,
-      "losses": 118,
-      "ties": 258,
+      "losses": 123,
+      "ties": 253,
       "total": 420,
       "win_rate": 0.10476190476190476
     }

@@ -2,9 +2,9 @@
   "head_to_head": {
     "qwen2.5-coder-7b": {
       "qwen3-8b": [
-        0,
-        8,
-        52
+        1,
+        3,
+        56
       ],
       "llama3.1-8b": [
         8,
@@ -39,39 +39,39 @@
     },
     "qwen3-8b": {
       "qwen2.5-coder-7b": [
-        8,
-        0,
-        52
+        3,
+        1,
+        56
       ],
       "llama3.1-8b": [
-        16,
-        1,
-        43
-      ],
-      "mistral-7b": [
-        6,
-        4,
-        50
-      ],
-      "deepseek-coder-6.7b": [
-        11,
-        1,
-        48
-      ],
-      "codegemma-7b": [
         15,
         2,
         43
       ],
-      "codellama-7b": [
-        17,
+      "mistral-7b": [
+        5,
+        5,
+        50
+      ],
+      "deepseek-coder-6.7b": [
+        10,
+        2,
+        48
+      ],
+      "codegemma-7b": [
+        12,
         1,
-        42
+        47
+      ],
+      "codellama-7b": [
+        15,
+        5,
+        40
       ],
       "yi-coder-9b": [
-        20,
-        0,
-        40
+        14,
+        2,
+        44
       ]
     },
     "llama3.1-8b": {
@@ -81,8 +81,8 @@
         50
       ],
       "qwen3-8b": [
-        1,
-        16,
+        2,
+        15,
         43
       ],
       "mistral-7b": [
@@ -118,8 +118,8 @@
         53
       ],
       "qwen3-8b": [
-        4,
-        6,
+        5,
+        5,
         50
       ],
       "llama3.1-8b": [
@@ -155,8 +155,8 @@
         48
       ],
       "qwen3-8b": [
-        1,
-        11,
+        2,
+        10,
         48
       ],
       "llama3.1-8b": [
@@ -192,9 +192,9 @@
         51
       ],
       "qwen3-8b": [
-        2,
-        15,
-        43
+        1,
+        12,
+        47
       ],
       "llama3.1-8b": [
         10,
@@ -229,9 +229,9 @@
         51
       ],
       "qwen3-8b": [
-        1,
-        17,
-        42
+        5,
+        15,
+        40
       ],
       "llama3.1-8b": [
         10,
@@ -266,9 +266,9 @@
         53
       ],
       "qwen3-8b": [
-        0,
-        20,
-        40
+        2,
+        14,
+        44
       ],
       "llama3.1-8b": [
         7,
@@ -300,67 +300,67 @@
   "ranking": [
     {
       "model": "qwen3-8b",
-      "wins": 93,
-      "losses": 9,
-      "ties": 318,
+      "wins": 74,
+      "losses": 18,
+      "ties": 328,
       "total": 420,
-      "win_rate": 0.22142857142857142
+      "win_rate": 0.1761904761904762
     },
     {
       "model": "mistral-7b",
-      "wins": 54,
-      "losses": 24,
+      "wins": 55,
+      "losses": 23,
       "ties": 342,
       "total": 420,
-      "win_rate": 0.12857142857142856
-    },
-    {
-      "model": "codegemma-7b",
-      "wins": 40,
-      "losses": 36,
-      "ties": 344,
-      "total": 420,
-      "win_rate": 0.09523809523809523
+      "win_rate": 0.13095238095238096
     },
     {
       "model": "qwen2.5-coder-7b",
-      "wins": 38,
-      "losses": 24,
-      "ties": 358,
+      "wins": 39,
+      "losses": 19,
+      "ties": 362,
       "total": 420,
-      "win_rate": 0.09047619047619047
+      "win_rate": 0.09285714285714286
+    },
+    {
+      "model": "codegemma-7b",
+      "wins": 39,
+      "losses": 33,
+      "ties": 348,
+      "total": 420,
+      "win_rate": 0.09285714285714286
     },
     {
       "model": "deepseek-coder-6.7b",
-      "wins": 38,
-      "losses": 50,
+      "wins": 39,
+      "losses": 49,
       "ties": 332,
       "total": 420,
-      "win_rate": 0.09047619047619047
+      "win_rate": 0.09285714285714286
     },
     {
       "model": "codellama-7b",
-      "wins": 32,
-      "losses": 68,
-      "ties": 320,
+      "wins": 36,
+      "losses": 66,
+      "ties": 318,
       "total": 420,
-      "win_rate": 0.0761904761904762
+      "win_rate": 0.08571428571428572
     },
     {
       "model": "yi-coder-9b",
-      "wins": 25,
-      "losses": 63,
-      "ties": 332,
+      "wins": 27,
+      "losses": 57,
+      "ties": 336,
       "total": 420,
-      "win_rate": 0.05952380952380952
+      "win_rate": 0.06428571428571428
     },
     {
       "model": "llama3.1-8b",
-      "wins": 22,
-      "losses": 68,
+      "wins": 23,
+      "losses": 67,
       "ties": 330,
       "total": 420,
-      "win_rate": 0.05238095238095238
+      "win_rate": 0.05476190476190476
     }
   ]
 }

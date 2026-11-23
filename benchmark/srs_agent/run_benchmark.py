@@ -56,6 +56,17 @@ def build_items(cfg, gens):
     return items_by_model, contexts, sorted(common)
 
 
+def pinned_sample(path, valid, fresh):
+    """Reuse the saved sample when every item is still valid for all models, so
+    re-running one model does not change the items the other models were judged on."""
+    if path.exists():
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        if saved and all(i in valid for i in saved):
+            return saved
+        print(f"saved sample {path.name} no longer valid for all models; drawing a new one")
+    return fresh()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     for s in ("objective", "pointwise", "pairwise", "report"):
@@ -69,7 +80,8 @@ def main() -> None:
     models = [m for m in cfg["models"] if m["name"] in gens]
     names = [m["name"] for m in models]
     items_by_model, contexts, common = build_items(cfg, gens)
-    sample = judging.sample_items(common, cfg["sampling"]["n_samples"], cfg["sampling"]["seed"])
+    sample = pinned_sample(out / "sample_items.json", common,
+                           lambda: judging.sample_items(common, cfg["sampling"]["n_samples"], cfg["sampling"]["seed"]))
     print(f"{len(models)} models, {len(common)} items extracted by all, sample {len(sample)}")
 
     if not args.skip_objective:

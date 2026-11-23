@@ -42,43 +42,43 @@
   },
   "qwen3-8b": {
     "cases": 196,
-    "seconds": 27377.6,
-    "exact_accuracy": 0.45918367346938777,
-    "macro_f1": 0.507272515186591,
+    "seconds": 1078.2,
+    "exact_accuracy": 0.3979591836734694,
+    "macro_f1": 0.463123394454779,
     "f1_per_class": {
-      "supported": 0.6896551724137931,
-      "partially_supported": 0.2857142857142857,
-      "not_supported_by_candidate": 0.5464480874316939
+      "supported": 0.7358490566037736,
+      "partially_supported": 0.25352112676056343,
+      "not_supported_by_candidate": 0.39999999999999997
     },
-    "support_accuracy": 0.7295918367346939,
-    "false_support_rate": 0.14150943396226415,
-    "implemented_recall": 0.7872340425531915,
-    "implemented_exact": 0.6382978723404256,
-    "partial_recall": 0.3488372093023256,
-    "abstain_rate": 0.2653061224489796,
-    "citation_validity": 0.8818897637795275,
-    "valid_citations": 224,
-    "rejected_citations": 30,
-    "model_failures": 1,
-    "sec_per_case": 139.68163265306123,
+    "support_accuracy": 0.7091836734693877,
+    "false_support_rate": 0.25471698113207547,
+    "implemented_recall": 0.9148936170212766,
+    "implemented_exact": 0.8297872340425532,
+    "partial_recall": 0.3953488372093023,
+    "abstain_rate": 0.33163265306122447,
+    "citation_validity": 0.9906976744186047,
+    "valid_citations": 213,
+    "rejected_citations": 2,
+    "model_failures": 0,
+    "sec_per_case": 5.501020408163265,
     "confusion": {
       "partially_supported": {
-        "supported": 5,
-        "not_supported_by_candidate": 22,
-        "partially_supported": 10,
-        "insufficient_evidence": 6
+        "supported": 8,
+        "insufficient_evidence": 14,
+        "not_supported_by_candidate": 12,
+        "partially_supported": 9
       },
       "not_supported_by_candidate": {
-        "insufficient_evidence": 41,
-        "not_supported_by_candidate": 50,
-        "supported": 5,
-        "partially_supported": 10
+        "insufficient_evidence": 49,
+        "not_supported_by_candidate": 30,
+        "supported": 12,
+        "partially_supported": 15
       },
       "supported": {
-        "supported": 30,
-        "partially_supported": 7,
-        "not_supported_by_candidate": 5,
-        "insufficient_evidence": 5
+        "supported": 39,
+        "partially_supported": 4,
+        "not_supported_by_candidate": 2,
+        "insufficient_evidence": 2
       }
     }
   },

@@ -37,6 +37,17 @@ def stratified_sample(cases, common, n, seed):
     return sorted(picked)
 
 
+def pinned_sample(path, valid, fresh):
+    """Reuse the saved sample when every item is still valid for all models, so
+    re-running one model does not change the items the other models were judged on."""
+    if path.exists():
+        saved = json.loads(path.read_text(encoding="utf-8"))
+        if saved and all(i in valid for i in saved):
+            return saved
+        print(f"saved sample {path.name} no longer valid for all models; drawing a new one")
+    return fresh()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     for s in ("objective", "pointwise", "pairwise", "report"):
@@ -56,7 +67,8 @@ def main() -> None:
     items_by_model = {m: g["cases"] for m, g in gens.items()}
     # judge only cases every model completed without a model failure
     common = set.intersection(*({k for k, v in g.items() if not v.get("error")} for g in items_by_model.values()))
-    sample = stratified_sample(cases, common, cfg["sampling"]["n_samples"], cfg["sampling"]["seed"])
+    sample = pinned_sample(root / "sample_items.json", common,
+                           lambda: stratified_sample(cases, common, cfg["sampling"]["n_samples"], cfg["sampling"]["seed"]))
     ref = next(iter(gens.values()))["cases"]
     contexts = {i: prompts.render_context(by_id[i], ref[i]["context_text"]) for i in sample}
     print(f"{len(models)} models, {len(common)} cases complete for all, sample {len(sample)}")

@@ -11,15 +11,15 @@
     "unparsed": 61
   },
   "qwen3-8b": {
-    "faithfulness": 4.483333333333333,
-    "completeness": 4.516666666666667,
-    "structure": 4.75,
-    "normalized_text": 4.8,
-    "retrieval": 4.75,
-    "conciseness": 4.583333333333333,
-    "llm_avg": 4.647222222222222,
+    "faithfulness": 4.590163934426229,
+    "completeness": 4.672131147540983,
+    "structure": 4.852459016393443,
+    "normalized_text": 4.885245901639344,
+    "retrieval": 4.819672131147541,
+    "conciseness": 4.688524590163935,
+    "llm_avg": 4.751366120218579,
     "n_judgments": 70,
-    "unparsed": 60
+    "unparsed": 54
   },
   "llama3.1-8b": {
     "faithfulness": 4.65,

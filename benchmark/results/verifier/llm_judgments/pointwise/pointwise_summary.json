@@ -11,13 +11,13 @@
     "unparsed": 0
   },
   "qwen3-8b": {
-    "verdict": 3.4285714285714284,
-    "evidence": 3.8857142857142857,
-    "consistency": 4.057142857142857,
-    "reasoning": 4.085714285714285,
-    "clarity": 4.242857142857143,
-    "conciseness": 4.171428571428572,
-    "llm_avg": 3.978571428571428,
+    "verdict": 4.128571428571429,
+    "evidence": 4.214285714285714,
+    "consistency": 4.571428571428571,
+    "reasoning": 4.4,
+    "clarity": 4.414285714285715,
+    "conciseness": 4.357142857142857,
+    "llm_avg": 4.347619047619047,
     "n_judgments": 70,
     "unparsed": 0
   },

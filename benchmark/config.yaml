@@ -13,7 +13,9 @@ models:
     ollama_model: "qwen2.5-coder:7b"
   - name: "qwen3-8b"
     ollama_model: "qwen3:8b"
-    think: false            # thinking models: judge calls disable thinking
+    think: false            # thinking model: disabled in judge calls AND in the agents
+                            # (extractor + verifier); before 2026-11-19 the agents ran it
+                            # with thinking on (11h44m extraction, 7h36m verification)
   - name: "llama3.1-8b"
     ollama_model: "llama3.1:8b"
   - name: "mistral-7b"

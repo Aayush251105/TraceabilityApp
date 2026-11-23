@@ -1,0 +1,90 @@
+{
+  "qwen2.5-coder-7b": {
+    "faithfulness": 4.483333333333333,
+    "completeness": 4.4,
+    "structure": 4.677966101694915,
+    "normalized_text": 4.75,
+    "retrieval": 4.716666666666667,
+    "conciseness": 4.566666666666666,
+    "llm_avg": 4.599105461393597,
+    "n_judgments": 70,
+    "unparsed": 61
+  },
+  "qwen3-8b": {
+    "faithfulness": 4.483333333333333,
+    "completeness": 4.516666666666667,
+    "structure": 4.75,
+    "normalized_text": 4.8,
+    "retrieval": 4.75,
+    "conciseness": 4.583333333333333,
+    "llm_avg": 4.647222222222222,
+    "n_judgments": 70,
+    "unparsed": 60
+  },
+  "llama3.1-8b": {
+    "faithfulness": 4.65,
+    "completeness": 4.6,
+    "structure": 4.833333333333333,
+    "normalized_text": 4.866666666666666,
+    "retrieval": 4.783333333333333,
+    "conciseness": 4.716666666666667,
+    "llm_avg": 4.741666666666666,
+    "n_judgments": 70,
+    "unparsed": 60
+  },
+  "mistral-7b": {
+    "faithfulness": 4.365079365079365,
+    "completeness": 4.492063492063492,
+    "structure": 4.666666666666667,
+    "normalized_text": 4.666666666666667,
+    "retrieval": 4.714285714285714,
+    "conciseness": 4.532258064516129,
+    "llm_avg": 4.572836661546339,
+    "n_judgments": 70,
+    "unparsed": 43
+  },
+  "deepseek-coder-6.7b": {
+    "faithfulness": 4.435483870967742,
+    "completeness": 4.387096774193548,
+    "structure": 4.629032258064516,
+    "normalized_text": 4.709677419354839,
+    "retrieval": 4.596774193548387,
+    "conciseness": 4.516129032258065,
+    "llm_avg": 4.545698924731183,
+    "n_judgments": 70,
+    "unparsed": 48
+  },
+  "codegemma-7b": {
+    "faithfulness": 4.475409836065574,
+    "completeness": 4.475409836065574,
+    "structure": 4.683333333333334,
+    "normalized_text": 4.80327868852459,
+    "retrieval": 4.60655737704918,
+    "conciseness": 4.491803278688525,
+    "llm_avg": 4.589298724954463,
+    "n_judgments": 70,
+    "unparsed": 55
+  },
+  "codellama-7b": {
+    "faithfulness": 4.5285714285714285,
+    "completeness": 4.557142857142857,
+    "structure": 4.728571428571429,
+    "normalized_text": 4.728571428571429,
+    "retrieval": 4.685714285714286,
+    "conciseness": 4.550724637681159,
+    "llm_avg": 4.629882677708765,
+    "n_judgments": 70,
+    "unparsed": 1
+  },
+  "yi-coder-9b": {
+    "faithfulness": 4.612903225806452,
+    "completeness": 4.419354838709677,
+    "structure": 4.645161290322581,
+    "normalized_text": 4.67741935483871,
+    "retrieval": 4.612903225806452,
+    "conciseness": 4.516129032258065,
+    "llm_avg": 4.580645161290323,
+    "n_judgments": 70,
+    "unparsed": 48
+  }
+}
