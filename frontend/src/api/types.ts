@@ -327,6 +327,44 @@ export interface SearchMatch {
   exact_id?: boolean;
 }
 
+export interface AskComponent {
+  component_id: string;
+  name: string;
+  type: string;
+  path: string;
+  start_line: number;
+  end_line: number;
+  relation?: string;
+  lines?: number[];
+  summary?: string;
+  summary_kind?: "generated" | "existing" | null;
+  requirements: { requirement_id: string; role: string | null; title?: string | null; verdict: string }[];
+}
+
+export interface AskRequirement {
+  requirement_id: string;
+  title: string | null;
+  verdict: string;
+  components: { component_id: string; role: string | null; path: string; start_line: number; end_line: number }[];
+}
+
+export type AskIntent = "callers" | "callees" | "describe" | "component_requirements" | "requirement_code"
+  | "requirements_by_status" | "find" | "empty";
+
+export interface AskResult {
+  question: string;
+  intent: AskIntent;
+  target?: string;
+  parsed_by?: "rules" | "llm" | "fallback";
+  answer: string;
+  note?: string;
+  statuses?: string[];
+  matches: AskComponent[];
+  components: AskComponent[];
+  requirements: AskRequirement[];
+  search?: SearchResult | null;
+}
+
 export interface SearchResult {
   query: string;
   mode: "id" | "text" | "empty";

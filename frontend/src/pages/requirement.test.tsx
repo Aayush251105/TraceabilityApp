@@ -5,7 +5,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import type { RequirementDetail } from "../api/types";
 import {
-  citationLabel, claimMeta, codeSpans, discardedLabel, edgeLabel, layoutGraph, lineMarks, tagMap, whyRows,
+  citationLabel, claimMeta, codeSpans, discardedLabel, docSummary, edgeLabel, helperOverview, helperRows, layoutGraph, lineMarks,
+  plainReason, tagMap, whyRows,
 } from "../lib/requirement";
 import { makeRun, mockFetch } from "../test/fixtures";
 import { Requirement } from "./Requirement";
@@ -106,6 +107,35 @@ describe("requirement helpers", () => {
     expect(rows[0].semantic).toBe("0.62");
     expect(rows[1].because).toBe("called by LendingService.checkout");
   });
+
+  it("helper: docstring summary stops at the first paragraph or section", () => {
+    expect(docSummary("Checks out a book.\n\nArgs:\n    member_id: who borrows.")).toBe("Checks out a book.");
+    expect(docSummary("Checks out a\n  book for a member.\nArgs:\n  x: y")).toBe("Checks out a book for a member.");
+    expect(docSummary("Summary line.\nParameters\n----------\nx : int")).toBe("Summary line.");
+    expect(docSummary(null)).toBe("");
+    const long = docSummary("word ".repeat(100), 40);
+    expect(long.length).toBeLessThanOrEqual(41);
+    expect(long.endsWith("…")).toBe(true);
+  });
+
+  it("helper: mapping reasons in plain words", () => {
+    expect(plainReason(null, 1)).toBe("Best search match for this requirement");
+    expect(plainReason("rank 1", 1)).toBe("Best search match for this requirement");
+    expect(plainReason("rank 2; top-3 in 3/4 eligible channels", 2)).toBe("Strong search match: #2 overall, in the top 3 of 3 of 4 search methods");
+    expect(plainReason("promoted: method of top-ranked class lib.services.catalog.Catalog", 3)).toBe("Method of catalog.Catalog, the class that matched best");
+  });
+
+  it("helper rows: what it does, why it is here, which claims cite it", () => {
+    const [direct, supporting] = helperRows(detail());
+    expect(direct).toMatchObject({ name: "LendingService.checkout", role: "direct", where: "lending.py:21–27",
+      what: { text: "Checks out a copy.", kind: "generated" } });
+    expect(direct.why).toEqual(["Best search match for this requirement", "Calls Member.can_borrow"]);
+    expect(direct.claims.map((c) => c.n)).toEqual([1]);
+    expect(supporting.what).toBeNull();
+    expect(supporting.why).toEqual(["Called by LendingService.checkout"]);
+    expect(helperOverview(detail())).toBe("Mainly implemented in LendingService.checkout; 1 supporting component gives context; the verifier confirmed 1 of 2 claims.");
+    expect(helperOverview(detail({ components: [] }))).toBe("No code was mapped to this requirement.");
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -145,6 +175,20 @@ describe("Requirement page", () => {
     expect(screen.getByText("GENERATED DOCUMENTATION, NOT EVIDENCE")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Go to claim C1" })).toBeInTheDocument();
     expect(screen.getByText("Checked the call path by hand", { exact: false })).toBeInTheDocument();
+  });
+
+  it("helper panel explains each linked component and opens its code", async () => {
+    setup(detail());
+    expect(await screen.findByRole("heading", { name: "Helper" })).toBeInTheDocument();
+    expect(screen.getByText(/Mainly implemented in LendingService.checkout/)).toBeInTheDocument();
+    expect(screen.getByText("Called by LendingService.checkout")).toBeInTheDocument();
+    expect(screen.getByText("No description available.")).toBeInTheDocument();
+    expect(screen.getByText("(generated description, may be imprecise)")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Member.can_borrow" }));
+    expect(await screen.findByText("member 18")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Member.can_borrow/ })).toHaveAttribute("aria-selected", "true");
+    fireEvent.click(screen.getByRole("button", { name: /Helper/ }));                  // collapses
+    expect(screen.queryByText("No description available.")).not.toBeInTheDocument();
   });
 
   it("a citation opens the cited component", async () => {

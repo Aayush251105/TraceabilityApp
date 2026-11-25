@@ -25,6 +25,11 @@ Settings and health
   GET    /api/settings | PUT /api/settings (partial; nested keys merge)
   GET    /api/health                       database, Ollama, models pulled, agents found
 
+Search
+  GET    /api/runs/{id}/search?q=          keyword / sentence / ID (hybrid search)
+  GET    /api/runs/{id}/ask?q=             plain-language question (callers, callees, what X does,
+                                           requirements of X, code of FR-x, requirements by verdict)
+
 Single-user and local: bind to 127.0.0.1.  No authentication.
 """
 
@@ -58,6 +63,7 @@ from ..orchestrator.source import (SourceError, extract_zip, inspect_tree, size_
 from ..settings import DEFAULTS
 from .progress import run_progress
 from .results import OVERRIDE_STATUSES, ResultsReader
+from .ask import ask_run
 from .search import search_run
 
 TERMINAL = ("completed", "failed", "cancelled")
@@ -609,6 +615,21 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
                 return {"query": q, "mode": "empty", "requirements": [], "components": [],
                         "scope": {"requirements": False, "code": False}}
             return jsonable_encoder(search_run(r, orch.embedder_factory(), q, limit=limit))
+
+    @app.get("/api/runs/{run_id}/ask")
+    def ask(run_id: int, q: str = "", limit: int = Query(10, ge=1, le=50)) -> Dict[str, Any]:
+        """Answer a plain-language question ("which functions use renew()?") from the run's code graph,
+        trace links and verdicts. A small LLM only classifies questions the built-in rules do not."""
+        with _reader(run_id) as r:
+            if not r.run.get("document_id") and not r.run.get("repo_id"):
+                return {"question": q, "intent": "empty", "answer": "Nothing is indexed for this run yet.",
+                        "components": [], "requirements": [], "matches": []}
+            settings = r.run.get("settings") or orch.settings_store.load()
+            try:
+                llm = orch.ask_llm_factory(settings)
+            except Exception:                      # no model configured: rules + search only
+                llm = None
+            return jsonable_encoder(ask_run(r, orch.embedder_factory(), q, llm=llm, limit=limit))
 
     @app.get("/api/runs/{run_id}/code")
     def code_view(run_id: int) -> Dict[str, Any]:

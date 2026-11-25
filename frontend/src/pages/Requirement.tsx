@@ -10,7 +10,8 @@ import { Alert } from "../components/ui/Form";
 import { Glyph } from "../components/ui/Status";
 import { dateTime } from "../lib/format";
 import {
-  citationLabel, claimMeta, codeSpans, discardedLabel, GRAPH_MIN_W, INCOMPLETE_PREFIX, layoutGraph, lineMarks, tagMap, whyRows,
+  citationLabel, claimMeta, codeSpans, discardedLabel, GRAPH_MIN_W, helperOverview, helperRows, INCOMPLETE_PREFIX, layoutGraph,
+  lineMarks, tagMap, whyRows,
 } from "../lib/requirement";
 import { locationLabel } from "../lib/review";
 import { typeLabel } from "../lib/results";
@@ -74,6 +75,7 @@ export function Requirement() {
   const [pulse, setPulse] = useState<{ a: number; b: number; flip: boolean } | null>(null);
   const [hover, setHover] = useState<string | null>(null);
   const [whyOpen, setWhyOpen] = useState(false);
+  const [helperOpen, setHelperOpen] = useState(true);
   const [overrideOpen, setOverrideOpen] = useState(false);
   const [ovVerdict, setOvVerdict] = useState<string>("supported");
   const [ovNote, setOvNote] = useState("");
@@ -177,7 +179,13 @@ export function Requirement() {
   }, `Re-verifying ${rid}. The verdict updates when it finishes.`);
 
   const why = whyRows(d);
+  const helper = helperRows(d);
   const location = locationLabel(req.location);
+  const openComponent = (componentId: string) => {
+    setComp(componentId);
+    setActiveClaim(null);
+    codePanel.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div className="flex flex-col">
@@ -365,6 +373,68 @@ export function Requirement() {
 
         {/* Right column */}
         <div className="flex min-w-0 flex-col gap-4">
+          {d.components.length > 0 && (
+            <section aria-labelledby="helper-h" className="min-w-0 rounded-lg border border-border bg-panel">
+              <button onClick={() => setHelperOpen((o) => !o)} aria-expanded={helperOpen} aria-controls="helper-body"
+                className="flex w-full cursor-pointer items-center gap-2.5 border-0 bg-transparent px-4 py-3 text-left">
+                <span className="inline-block text-[10px] text-fg3 transition-transform duration-150 ease-out" style={{ transform: helperOpen ? "rotate(90deg)" : "none" }}>▶</span>
+                <h2 id="helper-h" className="m-0 text-sm font-semibold">Helper</h2>
+                <span className="text-xs text-fg3">What each piece of code does and why it is linked</span>
+              </button>
+              {helperOpen && (
+                <div id="helper-body" className="border-t border-border">
+                  <p className="m-0 px-4 pt-3 pb-2 text-[13px] text-pretty text-fg2">{helperOverview(d)}</p>
+                  <ul className="m-0 list-none p-0">
+                    {helper.map((h) => {
+                      const dir = h.role === "direct";
+                      return (
+                        <li key={h.component_id} className="border-t border-border px-4 py-3 first:border-t-0">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <span className="rounded-[3px] px-[5px] font-mono text-[10px] leading-4 font-semibold tracking-[.04em]"
+                              style={{ background: dir ? "var(--fg)" : "var(--hover)", color: dir ? "var(--bg)" : "var(--fg2)" }}>
+                              {dir ? "DIRECT" : "SUPPORTING"}
+                            </span>
+                            <button onClick={() => openComponent(h.component_id)} title="Show this code"
+                              className="cursor-pointer border-0 bg-transparent p-0 font-mono text-[13px] font-medium text-fg underline-offset-2 hover:underline">
+                              {h.name}
+                            </button>
+                            <span className="font-mono text-[11px] text-fg3">{h.where}</span>
+                            {h.claims.length > 0 && (
+                              <span className="ml-auto flex items-center gap-1 text-[11px] text-fg3">
+                                Cited by
+                                {h.claims.map((cl) => (
+                                  <span key={cl.n} className="inline-flex items-center gap-0.5 rounded-[3px] px-1 font-mono text-[10px] leading-4 font-semibold"
+                                    style={{ background: cl.meta.b, color: cl.meta.c }} title={cl.meta.label}>
+                                    <Glyph meta={cl.meta} size={9} />C{cl.n}
+                                  </span>
+                                ))}
+                              </span>
+                            )}
+                          </div>
+                          <dl className="m-0 mt-1.5 grid gap-x-3 gap-y-1 text-[13px]" style={{ gridTemplateColumns: "auto minmax(0,1fr)" }}>
+                            <dt className="text-fg3">What it does</dt>
+                            <dd className="m-0 text-pretty text-fg2">
+                              {h.what ? (
+                                <>
+                                  {h.what.text}{" "}
+                                  <span className="text-[11px] text-fg3">
+                                    ({h.what.kind === "generated" ? "generated description, may be imprecise" : "from the code's docstring"})
+                                  </span>
+                                </>
+                              ) : <span className="text-fg3">No description available.</span>}
+                            </dd>
+                            <dt className="text-fg3">Why it is here</dt>
+                            <dd className="m-0 text-fg2">{h.why.join(" · ")}</dd>
+                          </dl>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
+
           <section ref={codePanel} aria-labelledby="code-h" className="min-w-0 rounded-lg border border-border bg-panel">
             <div className="flex items-center justify-between gap-3 px-4 pt-3">
               <h2 id="code-h" className="m-0 text-sm font-semibold">Code evidence</h2>
