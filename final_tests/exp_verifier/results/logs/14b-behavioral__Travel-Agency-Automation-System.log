@@ -1,0 +1,1185 @@
+$ traceability.cli verify --document-id run-2-SRS --model qwen2.5-coder:14b --prompt behavioral --think default --pipeline-version verification-exp-14b-behavioral --keep-link-status --json --requirements REQ-001,REQ-005,REQ-010,REQ-011,REQ-012,REQ-013,REQ-014,REQ-015,REQ-016,REQ-018,REQ-019,REQ-026
+{
+  "document_id": "run-2-SRS",
+  "pipeline_version": "verification-exp-14b-behavioral",
+  "mapping_version": "mapping-v1",
+  "model": "qwen2.5-coder:14b",
+  "prompt_version": "verify-v2.3-bc",
+  "claims_source": "llm",
+  "requirements": 12,
+  "status_counts": {
+    "insufficient_evidence": 3,
+    "supported": 2,
+    "partially_supported": 7
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "REQ-001",
+      "req_pk": 1,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "REQ-001.c1",
+          "text": "Operating system: windows",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not contain any checks or specifications related to the operating system. It focuses on file operations and car availability checks.",
+          "code_behaviour": "The code does not specify or check the operating system. It reads an Excel file, checks for car availability, updates the file, and returns a token and price if available."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-005",
+      "req_pk": 5,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "REQ-005.c1",
+          "text": "Front-end: Text-based interface.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 298,
+              "path": "main.py",
+              "start_line": 13,
+              "end_line": 17,
+              "tag": "C1",
+              "quote": "print(\"Are you owner or customer\")\nprint(\"1: Owner\")\nprint(\"2: Customer\")\nprint(\"3: Exit\",end=\"\")\nchoice = input(\"\\nEnter your choice : \")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 298,
+              "path": "main.py",
+              "start_line": 24,
+              "end_line": 30,
+              "tag": "C1",
+              "quote": "print(\"\\nWhat do you want to do?\")\nprint(\"1: Look at database \")\nprint(\"2: Update database\")\nprint(\"3: Get Info of Car\")\nprint(\"4: Set price of a car\")\nprint(\"5: Exit\")\nchoice = input(\"Enter your choice: \")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 298,
+              "path": "main.py",
+              "start_line": 87,
+              "end_line": 91,
+              "tag": "C1",
+              "quote": "print(\"\\nWhat do you want to do?\")\nprint(\"1: Book a Car \")\nprint(\"2: Return a Car\")\nprint(\"3: Exit\")\nchoice = input(\"Enter your choice: \")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code consistently uses text-based prompts and inputs to interact with the user, matching the claim's description of a text-based interface.",
+          "code_behaviour": "The code continuously prompts the user with text-based options and collects input through the console. It displays text-based menus for both owners and customers, and handles user choices through text inputs and outputs."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-010",
+      "req_pk": 10,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-010.c1",
+          "text": "4.1.1 The customer can be able to ask for the availability of a particular car which he could take for rent 4.1.2 In the options after selecting 'book a car,' there will be an option called 'ask for availability.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 332,
+              "path": "main.py",
+              "start_line": 88,
+              "end_line": 98,
+              "tag": "C1",
+              "quote": "print(\"1: Book a Car \")\nprint(\"2: Return a Car\")\nprint(\"3: Exit\")\nchoice = input(\"Enter your choice: \")\nif (choice == '3'):\n    break\nelif (choice == '1'):\n    print(\"1. Ask for certain car\")\n    print(\"2. Show all available Cars\")\n    print(\"3. Exit\")\n    choice1 = input(\"Enter your choice: \")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides the option to 'Ask for certain car' after selecting 'Book a Car'.",
+          "code_behaviour": "The code provides an option for the customer to ask for the availability of a particular car after selecting 'book a car'."
+        },
+        {
+          "claim_id": "REQ-010.c2",
+          "text": "After selecting it, the system will ask the user to enter the car's name.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 332,
+              "path": "main.py",
+              "start_line": 106,
+              "end_line": 107,
+              "tag": "C1",
+              "quote": "model = input(\"Enter Car Model: \")\ntype = input(\"Enter Car Type: \")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code prompts the user to enter the car's model and type.",
+          "code_behaviour": "The code asks the user to enter the car's name after selecting 'ask for availability'."
+        },
+        {
+          "claim_id": "REQ-010.c3",
+          "text": "After selecting it, the system will ask the user if they need it with AC or non-AC.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not ask the user about the AC preference.",
+          "code_behaviour": "The code does not ask the user if they need the car with AC or non-AC."
+        },
+        {
+          "claim_id": "REQ-010.c4",
+          "text": "Then the system will output if it is available.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 332,
+              "path": "main.py",
+              "start_line": 113,
+              "end_line": 114,
+              "tag": "C1",
+              "quote": "if item[1].lower() == model.lower() and item[2].lower() == type.lower() and item[3].lower() == 'available':\navailable=\"1\"",
+              "quote_checked": true,
+              "realigned_from": [
+                114,
+                115
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the car is available and sets a flag if it is.",
+          "code_behaviour": "The code outputs if the car is available."
+        },
+        {
+          "claim_id": "REQ-010.c5",
+          "text": "Then the system will output if it is not.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 332,
+              "path": "main.py",
+              "start_line": 117,
+              "end_line": 118,
+              "tag": "C1",
+              "quote": "else:\navailable =\"0\"",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code sets a flag if the car is not available.",
+          "code_behaviour": "The code outputs if the car is not available."
+        },
+        {
+          "claim_id": "REQ-010.c6",
+          "text": "If the ordered car is available, the user can proceed to payment. 4.1.3 REQ1: the input, which is a car name, should be among the cars which the company provides; otherwise, the system will print\" Our company does not provide cars\" (with the car name in the blank) REQ2: The system should have access to the company database",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 332,
+              "path": "main.py",
+              "start_line": 119,
+              "end_line": 121,
+              "tag": "C1",
+              "quote": "if available == \"1\":\n    print(\"Car is Available\")\nrtime = str(input(\"enter Expected return time in HH:MM:SS format :\"))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows the user to proceed with booking if the car is available.",
+          "code_behaviour": "If the ordered car is available, the user can proceed to payment."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "After selecting it, the system will ask the user to enter the car's name and if they need it with AC or non-AC.",
+          "parts": [
+            "After selecting it, the system will ask the user to enter the car's name.",
+            "After selecting it, the system will ask the user if they need it with AC or non-AC."
+          ]
+        },
+        {
+          "claim": "Then the system will output if it is available or not.",
+          "parts": [
+            "Then the system will output if it is available.",
+            "Then the system will output if it is not."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-011",
+      "req_pk": 11,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-011.c1",
+          "text": "4.2.1 From feature 4.1, if the asked car is not available at the moment, with this feature, the user will be able to ask the system when can the car be available 4.2.2 There will be an option after the system says the car is not available at the moment.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 344,
+              "path": "Booking.py",
+              "start_line": 15,
+              "end_line": 20,
+              "tag": "C1",
+              "quote": "if item[1].lower()==self.model.lower() and item[2].lower()==self.type.lower() and item[3].lower()=='available' : item[3]='Not Available' item[6]=time price=item[4] flag=1 break",
+              "quote_checked": true
+            },
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 344,
+              "path": "Booking.py",
+              "start_line": 29,
+              "end_line": 30,
+              "tag": "C1",
+              "quote": "else: return str('Car Not Available')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks for car availability and provides an option to ask when the car can be available by marking it as 'Not Available' and returning 'Car Not Available'. This matches the claim's description of handling unavailable cars and providing an option to ask for availability time.",
+          "code_behaviour": "The code checks if a car is available by reading an Excel file and marking it as 'Not Available' if found. If the car is not available, it returns 'Car Not Available'."
+        },
+        {
+          "claim_id": "REQ-011.c2",
+          "text": "The system checks the returning time of the previous customers of the car and outputs the nearest time. 4.2.3 REQ1: The system should have access to the company database",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 344,
+              "path": "Booking.py",
+              "start_line": 15,
+              "end_line": 20,
+              "tag": "C1",
+              "quote": "if item[1].lower()==self.model.lower() and item[2].lower()==self.type.lower() and item[3].lower()=='available' : item[3]='Not Available' item[6]=time price=item[4] flag=1 break",
+              "quote_checked": true
+            },
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 344,
+              "path": "Booking.py",
+              "start_line": 29,
+              "end_line": 30,
+              "tag": "C1",
+              "quote": "else: return str('Car Not Available')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality to check the returning time of previous customers or output the nearest time. It only marks cars as 'Not Available' and returns 'Car Not Available', which does not match the claim's description.",
+          "code_behaviour": "The code does not check the returning time of previous customers or output the nearest time. It only marks cars as 'Not Available' and returns 'Car Not Available'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "The system checks the returning time of the previous customers of the car and outputs the nearest time. 4.2.3 REQ1: The system should have access to the company database",
+          "rejected_split": [
+            "The system checks the returning time of the previous customers of the car and outputs the nearest time.",
+            "The system should have access to the company database."
+          ],
+          "reason": "drops values ['1', '3', '4.2']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-012",
+      "req_pk": 12,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "REQ-012.c1",
+          "text": "4.3.1 The user can choose this feature other than 4.1.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide any mechanism for the user to choose features or options. There is no indication of a feature selection process or options being presented to the user.",
+          "code_behaviour": "The code does not show any feature selection process or options for the user. It only initializes a Booking object with model, type, and file attributes."
+        },
+        {
+          "claim_id": "REQ-012.c2",
+          "text": "To see all the cars available at the moment and choose from them. 4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars. ' If the user selects the option, then the system will output all the available cars.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality to display all available cars. The `token` method only checks for a specific car and updates its status, without listing all cars.",
+          "code_behaviour": "The code does not show any functionality to display all available cars. The `token` method in the Booking class checks for a specific car model and type and updates its availability status, but it does not list all available cars."
+        },
+        {
+          "claim_id": "REQ-012.c3",
+          "text": "The user can choose any car from it then the user will proceed to payment. 4.3.3 REQ1: The system should have access to the company database",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality for the user to choose a car and proceed to payment. The `token` method only updates the availability of a car and returns a token and price, without allowing the user to select a car.",
+          "code_behaviour": "The code does not show any functionality for the user to choose a car and proceed to payment. The `token` method updates the availability of a car and returns a token and price, but there is no mechanism for the user to select a car and proceed to payment."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "To see all the cars available at the moment and choose from them. 4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars. ' If the user selects the option, then the system will output all the available cars.",
+          "rejected_split": [
+            "To see all the cars available at the moment and choose from them.",
+            "4.3.2 After selecting the 'Book a car' option, this option is called 'see all available cars.'",
+            "If the user selects the option, then the system will output all the available cars."
+          ],
+          "reason": "a part is not a complete requirement sentence"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-013",
+      "req_pk": 13,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-013.c1",
+          "text": "4.4.1 The user will pay a minimum advance to take the required car for rent 4.4.2 When the user proceeds to payment, the system will display the minimum advance required to pay.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 354,
+              "path": "main.py",
+              "start_line": 123,
+              "end_line": 123,
+              "tag": "C1",
+              "quote": "print(\"Pay Advance Amount: \" + str(price))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code prints the minimum advance required to pay, which matches the claim's description of displaying the minimum advance required to pay when the user proceeds to payment.",
+          "code_behaviour": "The code displays the minimum advance required to pay when the user proceeds to payment."
+        },
+        {
+          "claim_id": "REQ-013.c2",
+          "text": "If the customer pays it, the system notes down the car's initial readings.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality to note down the car's initial readings when the customer pays.",
+          "code_behaviour": "The code does not note down the car's initial readings."
+        },
+        {
+          "claim_id": "REQ-013.c3",
+          "text": "If the customer pays it, the system asks the user for an expected time of return.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 354,
+              "path": "main.py",
+              "start_line": 120,
+              "end_line": 120,
+              "tag": "C1",
+              "quote": "rtime = str(input(\"enter Expected return time in HH:MM:SS format :\"))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code prompts the user to enter the expected return time in HH:MM:SS format, which matches the claim's description of asking the user for an expected time of return.",
+          "code_behaviour": "The code asks the user for an expected time of return when the customer pays."
+        },
+        {
+          "claim_id": "REQ-013.c4",
+          "text": "The system updates the database, and the car will be the customers to take for rent. 4.4.3 REQ1: A valid expected time of return should be inputted; otherwise, \"invalid return time\" will display on the screen REQ2: The system should have access to the company database",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 360,
+              "path": "Booking.py",
+              "start_line": 17,
+              "end_line": 17,
+              "tag": "C6",
+              "quote": "item[3]='Not Available'",
+              "quote_checked": true
+            },
+            {
+              "component_id": "Booking.Booking.token",
+              "comp_pk": 12,
+              "link_pk": 360,
+              "path": "Booking.py",
+              "start_line": 25,
+              "end_line": 25,
+              "tag": "C6",
+              "quote": "data.to_excel(self.file,index=False)",
+              "quote_checked": true,
+              "realigned_from": [
+                23,
+                23
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code updates the database by marking the car as 'Not Available' and saves the changes to the file, which matches the claim's description of updating the database and making the car available for rent.",
+          "code_behaviour": "The code updates the database and marks the car as 'Not Available' when the customer pays."
+        }
+      ],
+      "error": null,
+      "omitted_components": [
+        "Owner.Owner.updateData"
+      ],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "If the customer pays it, the system notes down the car's initial readings and asks the user for an expected time of return.",
+          "parts": [
+            "If the customer pays it, the system notes down the car's initial readings.",
+            "If the customer pays it, the system asks the user for an expected time of return."
+          ]
+        },
+        {
+          "claim": "The system updates the database, and the car will be the customers to take for rent. 4.4.3 REQ1: A valid expected time of return should be inputted; otherwise, \"invalid return time\" will display on the screen REQ2: The system should have access to the company database",
+          "rejected_split": [
+            "The system updates the database.",
+            "The car will be the customers to take for rent."
+          ],
+          "reason": "drops values ['1', '2', '3', '4.4']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-014",
+      "req_pk": 14,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-014.c1",
+          "text": "4.5.1 The customer can return a car using this feature.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 366,
+              "path": "main.py",
+              "start_line": 88,
+              "end_line": 90,
+              "tag": "C1",
+              "quote": "print(\"2: Return a Car\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option for the customer to return a car, which matches the claim.",
+          "code_behaviour": "The code allows the customer to return a car by selecting the 'Return a Car' option from the menu."
+        },
+        {
+          "claim_id": "REQ-014.c2",
+          "text": "The customer will proceed to the payment section 4.5.2 There will be an option to return a car in the interface.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 366,
+              "path": "main.py",
+              "start_line": 88,
+              "end_line": 90,
+              "tag": "C1",
+              "quote": "print(\"2: Return a Car\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option for the customer to return a car, which implies proceeding to the payment section, matching the claim.",
+          "code_behaviour": "The code allows the customer to proceed to the payment section by selecting the 'Return a Car' option from the menu."
+        },
+        {
+          "claim_id": "REQ-014.c3",
+          "text": "After selecting it, the system will ask the user for the name of the car.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any prompt for the user to enter the name of the car when returning a car, which does not match the claim.",
+          "code_behaviour": "The code does not explicitly ask for the name of the car when returning a car."
+        },
+        {
+          "claim_id": "REQ-014.c4",
+          "text": "After selecting it, the system will ask the user for the token number.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any prompt for the user to enter the token number when returning a car, which does not match the claim.",
+          "code_behaviour": "The code does not explicitly ask for the token number when returning a car."
+        },
+        {
+          "claim_id": "REQ-014.c5",
+          "text": "The system will ask the user to enter the mile reading of the user's car.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any prompt for the user to enter the mile reading of the car when returning a car, which does not match the claim.",
+          "code_behaviour": "The code does not explicitly ask for the mile reading of the user's car when returning a car."
+        },
+        {
+          "claim_id": "REQ-014.c6",
+          "text": "Then the system calculates the cost for the car and outputs it. 4.5.3 REQ1: The customer must input the mile-reading and token number correctly; otherwise system outputs\" Invalid Input.\" REQ2: The system should have access to the company database",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any calculation of the cost for the car and output it when returning a car, which does not match the claim.",
+          "code_behaviour": "The code does not explicitly calculate the cost for the car and output it when returning a car."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "After selecting it, the system will ask the user for the name of the car and token number.",
+          "parts": [
+            "After selecting it, the system will ask the user for the name of the car.",
+            "After selecting it, the system will ask the user for the token number."
+          ]
+        },
+        {
+          "claim": "Then the system calculates the cost for the car and outputs it. 4.5.3 REQ1: The customer must input the mile-reading and token number correctly; otherwise system outputs\" Invalid Input.\" REQ2: The system should have access to the company database",
+          "rejected_split": [
+            "The customer must input the mile-reading and token number correctly; otherwise system outputs 'Invalid Input.'",
+            "The system should have access to the company database."
+          ],
+          "reason": "drops values ['1', '2', '3', '4.5']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-015",
+      "req_pk": 15,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "REQ-015.c1",
+          "text": "4.6.1 The owner would be able to access the database to look at the number of cars and their present status.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 24,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "print(\"\\nWhat do you want to do?\")\nprint(\"1: Look at database \")\nprint(\"2: Update database\")\nprint(\"3: Get Info of Car\")\nprint(\"4: Set price of a car\")\nprint(\"5: Exit\")\nchoice = input(\"Enter your choice: \")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 35,
+              "end_line": 46,
+              "tag": "C1",
+              "quote": "elif(choice == '1'):\nmodel = input(\"Enter Car Model: \")\nType = input(\"Enter Car Type: \")\ncar = Car(model,Type,\"DataCars.xlsx\")\nif(model == ''):\nprint(owner.getData().to_string(index = False))\nelse:\nif(owner.getData(car) is None):\nprint(\"\\nPlease enter correct Model and Type \")\nelse:\nprint(owner.getData(car).to_string(index = False))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option for the owner to look at the database and displays the number of cars and their present status. The owner can choose to look at the complete database or a specific car by entering its model and type.",
+          "code_behaviour": "The code allows the owner to access the database to look at the number of cars and their present status."
+        },
+        {
+          "claim_id": "REQ-015.c2",
+          "text": "4.6.1 The owner would be able to access the database to look at the number of cars and their present status, i.e., in repair, available, or rented.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Owner.Owner.getData",
+              "comp_pk": 24,
+              "link_pk": 379,
+              "path": "Owner.py",
+              "start_line": 18,
+              "end_line": 35,
+              "tag": "C2",
+              "quote": "def getData(self,car = None):\nif(car is None):\nndata = self.data[[",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows the owner to access the database and look at the number of cars and their present status, including whether they are in repair, available, or rented. The owner can choose to look at the complete database or a specific car by entering its model and type.",
+          "code_behaviour": "The code allows the owner to access the database to look at the number of cars and their present status, i.e., in repair, available, or rented."
+        },
+        {
+          "claim_id": "REQ-015.c3",
+          "text": "4.6.2 Choose the Owner in the login options and enter a password.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 13,
+              "end_line": 18,
+              "tag": "C1",
+              "quote": "print(\"Are you owner or customer\")\nprint(\"1: Owner\")\nprint(\"2: Customer\")\nprint(\"3: Exit\",end=\"\")\nchoice = input(\"\\nEnter your choice : \")\nif(choice == '1'):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 19,
+              "end_line": 20,
+              "tag": "C1",
+              "quote": "owner = Owner(\"DataCars.xlsx\")\npassword = input(\"Enter Password:\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option for the owner to log in by selecting the Owner option and entering a password.",
+          "code_behaviour": "The code allows the owner to choose the Owner option in the login options and enter a password."
+        },
+        {
+          "claim_id": "REQ-015.c4",
+          "text": "After that, choose the option of lookup database in the given options.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 24,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "print(\"\\nWhat do you want to do?\")\nprint(\"1: Look at database \")\nprint(\"2: Update database\")\nprint(\"3: Get Info of Car\")\nprint(\"4: Set price of a car\")\nprint(\"5: Exit\")\nchoice = input(\"Enter your choice: \")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option for the owner to look up the database after logging in by selecting the appropriate option.",
+          "code_behaviour": "The code allows the owner to choose the option of looking up the database after logging in."
+        },
+        {
+          "claim_id": "REQ-015.c5",
+          "text": "Can enter a model if you want to look at the data of one car only or look at the complete database. 4.6.3 REQ1: Password is a unique string.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 35,
+              "end_line": 46,
+              "tag": "C1",
+              "quote": "elif(choice == '1'):\nmodel = input(\"Enter Car Model: \")\nType = input(\"Enter Car Type: \")\ncar = Car(model,Type,\"DataCars.xlsx\")\nif(model == ''):\nprint(owner.getData().to_string(index = False))\nelse:\nif(owner.getData(car) is None):\nprint(\"\\nPlease enter correct Model and Type \")\nelse:\nprint(owner.getData(car).to_string(index = False))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows the owner to enter a model to look at the data of one car only or look at the complete database by selecting the appropriate option and entering the model and type.",
+          "code_behaviour": "The code allows the owner to enter a model to look at the data of one car only or look at the complete database."
+        },
+        {
+          "claim_id": "REQ-015.c6",
+          "text": "REQ2: If the password is wrong, then outputs message\" Wrong password.\" REQ3: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 18,
+              "end_line": 19,
+              "tag": "C1",
+              "quote": "if(choice == '1'):\nowner = Owner(\"DataCars.xlsx\")\npassword = input(\"Enter Password:\")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 21,
+              "end_line": 22,
+              "tag": "C1",
+              "quote": "if(password == owner.password):\nprint(\"\\nWelcome!!!\")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 79,
+              "end_line": 80,
+              "tag": "C1",
+              "quote": "else:\nprint(\"Please enter the correct password\")",
+              "quote_checked": true
+            },
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 378,
+              "path": "main.py",
+              "start_line": 35,
+              "end_line": 46,
+              "tag": "C1",
+              "quote": "elif(choice == '1'):\nmodel = input(\"Enter Car Model: \")\nType = input(\"Enter Car Type: \")\ncar = Car(model,Type,\"DataCars.xlsx\")\nif(model == ''):\nprint(owner.getData().to_string(index = False))\nelse:\nif(owner.getData(car) is None):\nprint(\"\\nPlease enter correct Model and Type \")\nelse:\nprint(owner.getData(car).to_string(index = False))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code outputs a message 'Wrong password' if the password is wrong and outputs a message 'Wrong model entered' and prints the list of all models available if the wrong model is entered.",
+          "code_behaviour": "The code outputs a message 'Wrong password' if the password is wrong and outputs a message 'Wrong model entered' and prints the list of all models available if the wrong model is entered."
+        }
+      ],
+      "error": null,
+      "omitted_components": [
+        "Booking.returning.returnCar"
+      ],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "4.6.1 The owner would be able to access the database to look at the number of cars and their present status. i.e., in repair, available, or rented. 4.6.2 Choose the Owner in the login options and enter a password.",
+          "parts": [
+            "4.6.1 The owner would be able to access the database to look at the number of cars and their present status.",
+            "4.6.1 The owner would be able to access the database to look at the number of cars and their present status, i.e., in repair, available, or rented.",
+            "4.6.2 Choose the Owner in the login options and enter a password."
+          ]
+        },
+        {
+          "claim": "Can enter a model if you want to look at the data of one car only or look at the complete database. 4.6.3 REQ1: Password is a unique string.",
+          "rejected_split": [
+            "Can enter a model if you want to look at the data of one car only.",
+            "Can enter a model if you want to look at the complete database."
+          ],
+          "reason": "drops values ['1', '3', '4.6']"
+        },
+        {
+          "claim": "REQ2: If the password is wrong, then outputs message\" Wrong password.\" REQ3: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "rejected_split": [
+            "If the password is wrong, then outputs message 'Wrong password.'",
+            "If the wrong model is entered, then software outputs a message 'Wrong model entered' and prints the list of all models available."
+          ],
+          "reason": "drops values ['2', '3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-016",
+      "req_pk": 16,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": null,
+          "text": "4.7.1 The owner would be able to update the number of cars in the fleet. If he buys or sells a car, the same can be reflected in the database. 4.7.2 There would be an option to update databases in the options. Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars. 4.7.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "source": "requirement",
+          "verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "model failure",
+          "model_verdict": null
+        }
+      ],
+      "error": "qwen2.5-coder:14b failed after 3 attempts: timed out",
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "If he buys or sells a car, the same can be reflected in the database. 4.7.2 There would be an option to update databases in the options.",
+          "rejected_split": [
+            "If he buys a car, the same can be reflected in the database.",
+            "If he sells a car, the same can be reflected in the database."
+          ],
+          "reason": "drops values ['2', '4.7']"
+        },
+        {
+          "claim": "Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars. 4.7.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "rejected_split": [
+            "Choose that option, enter model, choose to buy or sell cars to fleet, enter the number of cars.",
+            "If the wrong model is entered, then software outputs a message 'Wrong model entered' and prints the list of all models available."
+          ],
+          "reason": "drops values ['1', '3', '4.7']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-018",
+      "req_pk": 18,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-018.c1",
+          "text": "4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out. 4.8.2 When a customer makes a booking, the system will record necessary data.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Booking.returning.returnCar",
+              "comp_pk": 15,
+              "link_pk": 406,
+              "path": "Booking.py",
+              "start_line": 35,
+              "end_line": 64,
+              "tag": "C1",
+              "quote": "def returnCar(self,token, MileReading, StartTime, ReturnTime):\n    self.data = pds.read_excel(self.file)\n    headers = self.data.columns.tolist()\n    data = self.data.values.tolist()\n    flag = 0\n    for item in data:\n        if item[8] == token and item[3].lower() == 'not available':\n            item[3] = 'Available'\n            oldReturnTime = item[6]\n            item[6] = ''\n            phr = item[4]\n            pkm = item[5]\n            oldMileReading = int(item[7])\n            item[7] = MileReading\n            flag = 1\n            price = returning.priceCal(StartTime,ReturnTime,oldReturnTime,MileReading,oldMileReading,phr,pkm)\n            adv = phr*4\n            break\n        elif item[3].lower() == 'available' and item[8] == token:\n            print(",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code reads data from an Excel file, checks if a car with a given token is rented, updates the car's status to 'Available', records the return time, and calculates the price based on the time and mileage. This matches the claim that the software records date and time, mile reading, and other valuable metrics when a car is rented out and when a customer makes a booking. The owner has to do nothing as the code handles the recording process automatically. The recorded data is stored in another Excel sheet indexed with a token number, as shown in the `__init__` method of the `Owner` class where `self.rfile` is set to 'DataRecord.xlsx'. This matches the claim that the recorded data will be stored in another Excel sheet indexed with a token number. The code supports all the claims by performing the necessary actions and storing the data as specified.",
+          "code_behaviour": "The code reads data from an Excel file, checks if a car with a given token is rented, updates the car's status to 'Available', records the return time, and calculates the price based on the time and mileage."
+        },
+        {
+          "claim_id": "REQ-018.c2",
+          "text": "The owner has to do nothing. 4.8.3 REQ1: The Recorded data will be stored in another excel sheet indexed with a token number.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": null,
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The model returned no verdict for this claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out. 4.8.2 When a customer makes a booking, the system will record necessary data.",
+          "rejected_split": [
+            "4.8.1 The software records to date and time, mile reading, and other valuable metrics when a car is rented out.",
+            "4.8.2 When a customer makes a booking, the system will record necessary data."
+          ],
+          "reason": "a part is not a complete requirement sentence"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-019",
+      "req_pk": 19,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-019.c1",
+          "text": "4.10.1 The software helps in calculating a profitable price for each model of car.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for calculating a profitable price. It only sets prices based on user input without any calculation or consideration of profitability.",
+          "code_behaviour": "The code does not provide any functionality to calculate a profitable price for each model of car. It only allows setting prices based on user input."
+        },
+        {
+          "claim_id": "REQ-019.c2",
+          "text": "4.10.1 The software helps in calculating a competitive price for each model of car.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for calculating a competitive price. It only sets prices based on user input without any calculation or consideration of competitiveness.",
+          "code_behaviour": "The code does not provide any functionality to calculate a competitive price for each model of car. It only allows setting prices based on user input."
+        },
+        {
+          "claim_id": "REQ-019.c3",
+          "text": "4.10.2 There would be an option to set the price in the options.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Owner.Owner.setPrice",
+              "comp_pk": 27,
+              "link_pk": 418,
+              "path": "Owner.py",
+              "start_line": 105,
+              "end_line": 136,
+              "tag": "C1",
+              "quote": "def setPrice(self,car):\n        if(car.getModel() == \"Invalid\"):\n            return None\n        else:\n            print(\"Choose 1 to set Price per Hour\")\n            print(\"Choose 2 to set Price per Km\")\n            pph,ppk = car.getPrice()\n            choice = input(\"Choice: \")\n            if(choice == \"1\"):\n                print(\"Present Price:\",end=\" \")\n                print(pph)\n                print(self.getInfo(car).to_string(index = False))\n                nprice = input(\"Enter new price: \")\n                nprice = int(nprice)\n                self.data.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Hour)\"] = nprice\n                self.rdata.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Hour)\"] = nprice\n            elif(choice == \"2\"):\n                print(\"Present Price:\",end=\" \")\n                print(ppk)\n                print(self.getInfo(car).to_string(index = False))\n                nprice = input(\"Enter new price: \")\n                nprice = int(nprice)\n                self.data.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Km)\"] = nprice\n                self.rdata.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Km)\"] = nprice\n            print(\"Price Changed Successfully\")\n            self.data.to_excel(self.file,index = False)\n            self.rdata.to_excel(self.rfile,index = False)\n            return self.data",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option to set the price per hour or per kilometer, allowing the user to choose between the two.",
+          "code_behaviour": "The code provides an option to set the price in the options. The user can choose between setting the price per hour or per kilometer."
+        },
+        {
+          "claim_id": "REQ-019.c4",
+          "text": "Choose that option, enter model, the sys will show required stats for deciding price, enter the price to set. 4.10.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Owner.Owner.setPrice",
+              "comp_pk": 27,
+              "link_pk": 418,
+              "path": "Owner.py",
+              "start_line": 105,
+              "end_line": 136,
+              "tag": "C1",
+              "quote": "def setPrice(self,car):\n        if(car.getModel() == \"Invalid\"):\n            return None\n        else:\n            print(\"Choose 1 to set Price per Hour\")\n            print(\"Choose 2 to set Price per Km\")\n            pph,ppk = car.getPrice()\n            choice = input(\"Choice: \")\n            if(choice == \"1\"):\n                print(\"Present Price:\",end=\" \")\n                print(pph)\n                print(self.getInfo(car).to_string(index = False))\n                nprice = input(\"Enter new price: \")\n                nprice = int(nprice)\n                self.data.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Hour)\"] = nprice\n                self.rdata.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Hour)\"] = nprice\n            elif(choice == \"2\"):\n                print(\"Present Price:\",end=\" \")\n                print(ppk)\n                print(self.getInfo(car).to_string(index = False))\n                nprice = input(\"Enter new price: \")\n                nprice = int(nprice)\n                self.data.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Km)\"] = nprice\n                self.rdata.loc[(self.data.Model == car.getModel()) & (self.data.Type == car.getType()), \"Price(Per Km)\"] = nprice\n            print(\"Price Changed Successfully\")\n            self.data.to_excel(self.file,index = False)\n            self.rdata.to_excel(self.rfile,index = False)\n            return self.data",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows the user to enter a model, displays the current price and other stats, and then allows the user to enter a new price to set.",
+          "code_behaviour": "The code allows the user to enter a model, displays required stats for deciding the price, and then allows the user to enter the new price to set."
+        },
+        {
+          "claim_id": "REQ-019.c5",
+          "text": "REQ2: The sys will only display all the required stats for making this choice but will not choose us.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not display any stats or guidance for making the choice. It only allows the user to enter a new price without providing any stats or guidance.",
+          "code_behaviour": "The code does not display any stats for making the choice. It only allows the user to enter a new price without providing any stats or guidance."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "4.10.1 The software helps in calculating a profitable and competitive price for each model of car. 4.10.2 There would be an option to set the price in the options.",
+          "parts": [
+            "4.10.1 The software helps in calculating a profitable price for each model of car.",
+            "4.10.1 The software helps in calculating a competitive price for each model of car.",
+            "4.10.2 There would be an option to set the price in the options."
+          ]
+        },
+        {
+          "claim": "Choose that option, enter model, the sys will show required stats for deciding price, enter the price to set. 4.10.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "rejected_split": [
+            "If the wrong model is entered, then software outputs a message 'Wrong model entered'.",
+            "If the wrong model is entered, then software prints the list of all models available."
+          ],
+          "reason": "drops values ['1', '3', '4.10']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-026",
+      "req_pk": 26,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-026.c1",
+          "text": "other valuable stats for each car model. 4.9.2 There would be an option to calc stats in the options.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "main.main",
+              "comp_pk": 9,
+              "link_pk": 468,
+              "path": "main.py",
+              "start_line": 24,
+              "end_line": 35,
+              "tag": "C4",
+              "quote": "print(\"What do you want to do?\")\nprint(\"1: Look at database \")\nprint(\"2: Update database\")\nprint(\"3: Get Info of Car\")\nprint(\"4: Set price of a car\")\nprint(\"5: Exit\")\nchoice = input(\"Enter your choice: \")\n\nif(choice == '5'):\n    break\n\nelif(choice == '1'):\n    model = input(\"Enter Car Model: \")\n    Type = input(\"Enter Car Type: \")\ncar = Car(model,Type,\"DataCars.xlsx\")\nif(model == ''):\n    print(owner.getData().to_string(index = False))\nelse:\n    if(owner.getData(car) is None):\n        print(\"\\nPlease enter correct Model and Type \")\n    else:\n        print(owner.getData(car).to_string(index = False))",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides an option to get information about a car by entering its model and type, which aligns with the claim that there is an option to calculate stats in the options and enter a model.",
+          "code_behaviour": "The code allows an owner to look at the database, which includes an option to get information about a car by entering its model and type."
+        },
+        {
+          "claim_id": "REQ-026.c2",
+          "text": "Choose that option, enter a model. 4.9.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "Owner.Owner.getData",
+              "comp_pk": 24,
+              "link_pk": 464,
+              "path": "Owner.py",
+              "start_line": 33,
+              "end_line": 35,
+              "tag": "C1",
+              "quote": "else:\n    print(\"\\nPlease enter correct Model and Type \")\n    return None",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code prints a message 'Please enter correct Model and Type' when an incorrect model is entered, which matches the claim that the software outputs a message 'Wrong model entered' and prints the list of all models available.",
+          "code_behaviour": "If an incorrect model is entered, the code prints a message 'Please enter correct Model and Type' and returns None."
+        },
+        {
+          "claim_id": "REQ-026.c3",
+          "text": "REQ2: Previous data and some dummy data which satisfies the industry standards are entered first to get fair stats.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide any evidence of entering previous data or dummy data to get fair stats, as required by the claim.",
+          "code_behaviour": "The code does not explicitly show the entry of previous data or dummy data to get fair stats."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Choose that option, enter a model. 4.9.3 REQ1: If the wrong model is entered, then software outputs a message \"Wrong model entered\" and prints the list of all models available.",
+          "rejected_split": [
+            "If the wrong model is entered, then software outputs a message 'Wrong model entered'.",
+            "If the wrong model is entered, then software prints the list of all models available."
+          ],
+          "reason": "drops values ['1', '3', '4.9']"
+        },
+        {
+          "claim": "REQ2: Previous data and some dummy data which satisfies the industry standards are entered first to get fair stats.",
+          "rejected_split": [
+            "Previous data is entered first to get fair stats.",
+            "Some dummy data which satisfies the industry standards is entered first to get fair stats."
+          ],
+          "reason": "drops values ['2']"
+        }
+      ]
+    }
+  ]
+}
+
+[1/12] REQ-001    insufficient_evidence
+[2/12] REQ-005    supported
+[3/12] REQ-010    partially_supported
+[4/12] REQ-011    partially_supported
+[5/12] REQ-012    insufficient_evidence
+[6/12] REQ-013    partially_supported
+[7/12] REQ-014    partially_supported
+[8/12] REQ-015    supported
+17:20:31 WARNING  traceability.verification.llm — LLM call failed (attempt 1/3): timed out
+17:25:33 WARNING  traceability.verification.llm — LLM call failed (attempt 2/3): timed out
+17:30:37 WARNING  traceability.verification.llm — LLM call failed (attempt 3/3): timed out
+17:30:37 WARNING  traceability.verification.verifier — Verification of REQ-016 failed: qwen2.5-coder:14b failed after 3 attempts: timed out
+[9/12] REQ-016    insufficient_evidence
+[10/12] REQ-018    partially_supported
+[11/12] REQ-019    partially_supported
+[12/12] REQ-026    partially_supported
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/Travel-Agency-Automation-System_gold_standard_v2.json --document-id run-2-SRS --pipeline-version verification-exp-14b-behavioral --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/14b-behavioral/Travel-Agency-Automation-System/eval_verification.json
+Verification verification-exp-14b-behavioral for run-2-SRS: 13 gold requirements with an expected verdict
+
+  exact accuracy        0.538
+  false-support rate    0.100  (1 of 10 partial/not-implemented declared supported)
+  implemented recall    0.333  (1 of 3 implemented declared supported)
+  citation validity     1.000  (34 valid, 0 rejected)
+  citations on gold code 1.000
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    partial          insufficient_evidence=1, partially_supported=6, supported=1
+    not_implemented  partially_supported=1, unverified=1
+    implemented      insufficient_evidence=2, supported=1
+    cross_cutting    unverified=1
+
+  disagreements: FEAT-4.2(not_implemented->partially_supported), FEAT-4.3(implemented->insufficient_evidence), FEAT-4.6(partial->supported), FEAT-4.7(partial->insufficient_evidence), FEAT-4.11(not_implemented->unverified), REQ-001(implemented->insufficient_evidence)
+
+

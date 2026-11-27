@@ -1,0 +1,10 @@
+{
+  "config": "7b-strict",
+  "model": "qwen2.5-coder:7b",
+  "prompt": "strict",
+  "think": "default",
+  "pipeline_version": "verification-exp-7b-strict",
+  "requirements": 28,
+  "minutes": 4.91,
+  "document_id": "run-3-SRS"
+}

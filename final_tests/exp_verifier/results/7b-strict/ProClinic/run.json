@@ -1,0 +1,10 @@
+{
+  "config": "7b-strict",
+  "model": "qwen2.5-coder:7b",
+  "prompt": "strict",
+  "think": "default",
+  "pipeline_version": "verification-exp-7b-strict",
+  "requirements": 18,
+  "minutes": 3.09,
+  "document_id": "run-6-ProClinicSRS"
+}

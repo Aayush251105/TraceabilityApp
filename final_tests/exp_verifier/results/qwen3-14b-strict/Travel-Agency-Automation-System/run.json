@@ -1,0 +1,10 @@
+{
+  "config": "qwen3-14b-strict",
+  "model": "qwen3:14b",
+  "prompt": "strict",
+  "think": "off",
+  "pipeline_version": "verification-exp-qwen3-14b-strict",
+  "requirements": 12,
+  "minutes": 17.45,
+  "document_id": "run-2-SRS"
+}

@@ -1,0 +1,328 @@
+{
+  "dataset": "Travel-Agency-Automation-System",
+  "document_id": "run-2-SRS",
+  "pipeline_version": "verification-exp-14b-behavioral",
+  "requirements_judged": 13,
+  "scores": {
+    "exact_accuracy": 0.5385,
+    "false_support_rate": 0.1,
+    "implemented_recall": 0.3333,
+    "citation_validity": 1.0,
+    "citation_on_gold": 1.0,
+    "claim_accuracy": null
+  },
+  "counts": {
+    "false_support": 1,
+    "partial_or_not_implemented": 10,
+    "implemented_supported": 1,
+    "implemented": 3,
+    "citations_valid": 34,
+    "citations_rejected": 0,
+    "gold_claims_compared": 0,
+    "incomplete_requirement_text": 0
+  },
+  "confusion": {
+    "partial": {
+      "partially_supported": 6,
+      "supported": 1,
+      "insufficient_evidence": 1
+    },
+    "not_implemented": {
+      "partially_supported": 1,
+      "unverified": 1
+    },
+    "implemented": {
+      "insufficient_evidence": 2,
+      "supported": 1
+    },
+    "cross_cutting": {
+      "unverified": 1
+    }
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FEAT-4.1",
+      "gold_status": "partial",
+      "matched_to": "REQ-010",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-010.c1",
+          "supported"
+        ],
+        [
+          "REQ-010.c2",
+          "supported"
+        ],
+        [
+          "REQ-010.c3",
+          "not_supported"
+        ],
+        [
+          "REQ-010.c4",
+          "supported"
+        ],
+        [
+          "REQ-010.c5",
+          "supported"
+        ],
+        [
+          "REQ-010.c6",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.2",
+      "gold_status": "not_implemented",
+      "matched_to": "REQ-011",
+      "predicted": "partially_supported",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-011.c1",
+          "supported"
+        ],
+        [
+          "REQ-011.c2",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.3",
+      "gold_status": "implemented",
+      "matched_to": "REQ-012",
+      "predicted": "insufficient_evidence",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-012.c1",
+          "insufficient_evidence"
+        ],
+        [
+          "REQ-012.c2",
+          "insufficient_evidence"
+        ],
+        [
+          "REQ-012.c3",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.4",
+      "gold_status": "partial",
+      "matched_to": "REQ-013",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-013.c1",
+          "supported"
+        ],
+        [
+          "REQ-013.c2",
+          "not_supported"
+        ],
+        [
+          "REQ-013.c3",
+          "supported"
+        ],
+        [
+          "REQ-013.c4",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.5",
+      "gold_status": "partial",
+      "matched_to": "REQ-014",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-014.c1",
+          "supported"
+        ],
+        [
+          "REQ-014.c2",
+          "supported"
+        ],
+        [
+          "REQ-014.c3",
+          "not_supported"
+        ],
+        [
+          "REQ-014.c4",
+          "not_supported"
+        ],
+        [
+          "REQ-014.c5",
+          "not_supported"
+        ],
+        [
+          "REQ-014.c6",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.6",
+      "gold_status": "partial",
+      "matched_to": "REQ-015",
+      "predicted": "supported",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-015.c1",
+          "supported"
+        ],
+        [
+          "REQ-015.c2",
+          "supported"
+        ],
+        [
+          "REQ-015.c3",
+          "supported"
+        ],
+        [
+          "REQ-015.c4",
+          "supported"
+        ],
+        [
+          "REQ-015.c5",
+          "supported"
+        ],
+        [
+          "REQ-015.c6",
+          "supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.7",
+      "gold_status": "partial",
+      "matched_to": "REQ-016",
+      "predicted": "insufficient_evidence",
+      "correct": false,
+      "claims": [
+        [
+          null,
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.8",
+      "gold_status": "partial",
+      "matched_to": "REQ-018",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-018.c1",
+          "supported"
+        ],
+        [
+          "REQ-018.c2",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.9",
+      "gold_status": "partial",
+      "matched_to": "REQ-026",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-026.c1",
+          "supported"
+        ],
+        [
+          "REQ-026.c2",
+          "supported"
+        ],
+        [
+          "REQ-026.c3",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.10",
+      "gold_status": "partial",
+      "matched_to": "REQ-019",
+      "predicted": "partially_supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-019.c1",
+          "not_supported"
+        ],
+        [
+          "REQ-019.c2",
+          "not_supported"
+        ],
+        [
+          "REQ-019.c3",
+          "supported"
+        ],
+        [
+          "REQ-019.c4",
+          "supported"
+        ],
+        [
+          "REQ-019.c5",
+          "not_supported"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "FEAT-4.11",
+      "gold_status": "not_implemented",
+      "matched_to": null,
+      "predicted": "unverified",
+      "correct": false,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-001",
+      "gold_status": "implemented",
+      "matched_to": "REQ-001",
+      "predicted": "insufficient_evidence",
+      "correct": false,
+      "claims": [
+        [
+          "REQ-001.c1",
+          "insufficient_evidence"
+        ]
+      ]
+    },
+    {
+      "requirement_id": "REQ-002",
+      "gold_status": "cross_cutting",
+      "matched_to": "REQ-002",
+      "predicted": "unverified",
+      "correct": null,
+      "claims": []
+    },
+    {
+      "requirement_id": "REQ-005",
+      "gold_status": "implemented",
+      "matched_to": "REQ-005",
+      "predicted": "supported",
+      "correct": true,
+      "claims": [
+        [
+          "REQ-005.c1",
+          "supported"
+        ]
+      ]
+    }
+  ]
+}

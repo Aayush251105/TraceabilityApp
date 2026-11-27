@@ -1,0 +1,2770 @@
+$ traceability.cli verify --document-id run-7-Software Requirements Specification --model qwen2.5-coder:7b --prompt behavioral --think default --pipeline-version verification-exp-7b-behavioral --keep-link-status --json --requirements BR-1,BR-10,BR-2,BR-3,BR-4,BR-5,BR-6,BR-7,BR-8,BR-9,REQ-018,REQ-019,REQ-077,REQ-079,Req-1,Req-1/1,Req-1/2,Req-1/3,Req-10,Req-11,Req-12,Req-13,Req-14,Req-15,Req-16,Req-2,Req-2/1,Req-2/2,Req-2/3,Req-3,Req-3/1,Req-3/2,Req-3/3,Req-4,Req-4/1,Req-4/2,Req-4/3,Req-5,Req-5/1,Req-5/2,Req-5/3,Req-6,Req-6/1,Req-6/2,Req-6/3,Req-7,Req-8,Req-9
+{
+  "document_id": "run-7-Software Requirements Specification",
+  "pipeline_version": "verification-exp-7b-behavioral",
+  "mapping_version": "mapping-v1",
+  "model": "qwen2.5-coder:7b",
+  "prompt_version": "verify-v2.3-bc",
+  "claims_source": "llm",
+  "requirements": 48,
+  "status_counts": {
+    "not_supported_by_candidate": 30,
+    "supported": 11,
+    "partially_supported": 7
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "REQ-018",
+      "req_pk": 197,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "REQ-018.c1",
+          "text": "The preferred way to write tests in Django is using the unittest module built in to the Python standard library.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.apps.TestingConfig",
+              "comp_pk": 528,
+              "link_pk": 4121,
+              "path": "testing/apps.py",
+              "start_line": 4,
+              "end_line": 5,
+              "tag": "C1",
+              "quote": "class TestingConfig(AppConfig):\n    name = 'testing'",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not mention anything about the preferred testing framework for Django, nor does it provide any information related to the unittest module.",
+          "code_behaviour": "The code does not provide any information about the preferred way to write tests in Django. It only defines a Django AppConfig class named 'TestingConfig' with a 'name' attribute set to 'testing'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-019",
+      "req_pk": 198,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "REQ-019.c1",
+          "text": "Installation (user testing) Heroku If bugs are found again, coding and unit testing tools will be used along with latest version of software from Git.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not involve Heroku deployment or user testing. It is a Django test method that sends a POST request to the root URL with invalid credentials and checks if the response redirects to the setup page.",
+          "code_behaviour": "The code does not perform any Heroku deployment or user testing. It is a Django test method that sends a POST request to the root URL with invalid credentials and checks if the response redirects to the setup page."
+        },
+        {
+          "claim_id": "REQ-019.c2",
+          "text": "Heroku is a cloud Platform as a Service (PaaS) supporting several programming languages. that is used as a web application deployment model.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide any information about Heroku or its deployment model. It is a Django test method that sends a POST request to the root URL with invalid credentials and checks if the response redirects to the setup page.",
+          "code_behaviour": "The code does not provide any information about Heroku or its deployment model. It is a Django test method that sends a POST request to the root URL with invalid credentials and checks if the response redirects to the setup page."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Installation (user testing) Heroku If bugs are found again, coding and unit testing tools will be used along with latest version of software from Git.",
+          "rejected_split": [
+            "When a member pays a fine, the system shall record the payment and update the member's account balance accordingly.",
+            "When a member pays a fine, the system shall notify the member of the payment status via email or SMS."
+          ],
+          "reason": "adds words not in the requirement: ['accordingly', 'account', 'balance', 'fine', 'member']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-1",
+      "req_pk": 215,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-1.c1",
+          "text": "This functionality will Maintain different types of Specialities",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_speciality",
+              "comp_pk": 558,
+              "link_pk": 4228,
+              "path": "testing/test_admin.py",
+              "start_line": 98,
+              "end_line": 106,
+              "tag": "C1",
+              "quote": "def test_add_speciality(self):\n    print(Fore.YELLOW + \"Testing add speciality\")\n    print(Style.RESET_ALL)\n    found = resolve('/admin/add_speciality/')\n    result=self.assertEqual(found.func, add_speciality)\n    if result == None:\n        print(Fore.GREEN + \"add speciality verified\")\n        print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code only verifies that the 'add_speciality' view can be resolved and verified, but it does not implement the functionality to maintain different types of Specialities.",
+          "code_behaviour": "The code does not directly implement the functionality to maintain different types of Specialities. It only checks if the 'add_speciality' view can be resolved and verified."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "req_pk": 216,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-1/1.c1",
+          "text": "/1 Add Speciality Add a new (unique) Speciality",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_speciality",
+              "comp_pk": 558,
+              "link_pk": 4232,
+              "path": "testing/test_admin.py",
+              "start_line": 102,
+              "end_line": 102,
+              "tag": "C1",
+              "quote": "found = resolve('/admin/add_speciality/')",
+              "quote_checked": true,
+              "realigned_from": [
+                92,
+                94
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the URL resolves to the function, but it does not add a new speciality. The claim requires adding a new unique speciality.",
+          "code_behaviour": "The code checks if the URL '/admin/add_speciality/' resolves to the function `add_speciality`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "req_pk": 217,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-1/2.c1",
+          "text": "/2 Edit Speciality View and Update the details of an existing Speciality",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4236,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 25,
+              "end_line": 67,
+              "tag": "C1",
+              "quote": "def update_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_PATIENT,Account.ACCOUNT_DOCTOR, Account.ACCOUNT_LAB]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # Validation Check. Make sure an appointment exists for the given pk.\n    if 'pk' in request.GET:\n        if request.user.account.role != Account.ACCOUNT_DOCTOR:\n            request.session['alert_danger'] = \"You don't have permission to view the page.\"\n            return HttpResponseRedirect('/error/denied/')\n        pk = request.GET['pk']\n        try:\n            medicalinfo = MedicalInfo.objects.get(pk=pk)\n        except Exception:\n            request.session['alert_danger'] = \"The requested medical info doesn't exist.\"\n            return HttpResponseRedirect('/error/denied/')\n    else:\n        medicalinfo = MedicalInfo.objects.get(account=request.user.account)\n    # Get template data from the session\n    template_data = views.parse_session(\n        request,{\n            'form_button\":\"Update Medical Info\"\n        })\n    if 'pk' in request.GET:\n        template_data['form_action'] = \"?pk=\" + pk\n    # Proceed with rest of the view\n    request.POST._mutable = True\n    request.POST['account'] = medicalinfo.account.pk\n    if request.method == 'POST':\n        form = MedicalInfoForm(request.POST)\n        if form.is_valid():\n            form.assign(medicalinfo)\n            medicalinfo.save()\n            logger.log(Action.ACTION_MEDICALINFO,'Medical Info Updated', request.user.account)\n            template_data['alert_success'] = \"The medical info has been updated\"\n    else:\n        form = MedicalInfoForm(medicalinfo.get_populated_fields())\n    template_data['form'] = form\n    form.disable_field('account')\n    return render(request,'virtualclinic/medicalinfo/update.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks user authentication and role, retrieves medical information, updates it if necessary, and logs the update. This matches the claim of editing and updating the details of an existing Speciality.",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (Doctor, Patient, or Lab). It then retrieves the medical information for the given primary key (pk) and updates it if the request method is POST. If the request method is GET, it initializes the form with the existing medical information. The updated medical information is saved, and a success message is logged."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/2 Edit Speciality View and Update the details of an existing Speciality",
+          "rejected_split": [
+            "When a member edits a Speciality view, they must update the details of an existing Speciality.",
+            "When a member updates a Speciality, they must return JSON."
+          ],
+          "reason": "adds words not in the requirement: ['edits', 'member']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "req_pk": 218,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-1/3.c1",
+          "text": "/3 Delete Speciality Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.parse_speciality_delete",
+              "comp_pk": 340,
+              "link_pk": 4245,
+              "path": "server/views_admin.py",
+              "start_line": 17,
+              "end_line": 36,
+              "tag": "C1",
+              "quote": "def parse_speciality_delete(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None:\n        return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    if request.method == 'POST':\n        if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                speciality = Speciality.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to cancel the speciality. Please try again later.\"\n                return\n            speciality.delete()\n            logger.log(Action.ACTION_ADMIN, 'Speciality cancelled', request.user.account)\n            template_data['alert_success'] = \"The speciality has been deleted.\"\n            return HttpResponseRedirect('/admin/speciality/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include a check to ensure that no doctors are attached to the Speciality before deleting it, which is a requirement specified in the claim.",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (ADMIN) before proceeding. It then attempts to retrieve a Speciality object based on the provided primary key (pk). If the Speciality is found, it is deleted, and a success message is logged and returned to the user. If the Speciality is not found, an error message is returned. There is no check to ensure that no doctors are attached to the Speciality before deleting it."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2",
+      "req_pk": 219,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-2.c1",
+          "text": "This functionality will Maintain Doctors and Associate them with the Speciality",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4252,
+              "path": "server/models.py",
+              "start_line": 119,
+              "end_line": 183,
+              "tag": "C1",
+              "quote": "class Account(models.Model):\n    ACCOUNT_UNKNOWN = 0\n    ACCOUNT_PATIENT = 10\n    ACCOUNT_DOCTOR = 20\n    ACCOUNT_ADMIN = 30\n    ACCOUNT_LAB = 40\n    ACCOUNT_CHEMIST = 50\n    ACCOUNT_TYPES = (\n        (ACCOUNT_UNKNOWN, \"Unknown\"),\n        (ACCOUNT_PATIENT, \"Patient\"),\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),\n    )\n    EMPLOYEE_TYPES = (\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),\n    )\n\n    @staticmethod\n    def to_name(key):\n        \"\"\"\n        Parses an integer value to a string representing an account role.\n        :param key: The account role as a int\n        :return: The string representation of the name for action\n        \"\"\"\n        for item in Account.ACCOUNT_TYPES:\n            if item[0]==key:\n                return item[1]\n        return \"None\"\n\n    @staticmethod\n    def to_value(key):\n        \"\"\"\n        Parses an string to a integer representing an account role.\n        :param key: The account role as a string\n        :return: The integer representation of the account role\n        \"\"\"\n        key = key.lower()\n        for item in Account.ACCOUNT_TYPES:\n            if item[1].lower() == key:\n                return item[0]\n        return 0\n\n    role = models.IntegerField(default=0, choices=ACCOUNT_TYPES)\n    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    archive = models.BooleanField(default=False)\n\n    def __str__(self):\n        if self.role == 20:\n            return \"Dr. \" + self.profile.__str__()\n        else:\n            return self.profile.__str__()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines an `Account` class with fields for `role`, `profile`, `user`, and `archive`, but it does not include any functionality to maintain doctors or associate them with specialities. The `role` field is used to store the type of account, but there is no code that handles the creation, updating, or deletion of doctor accounts or their association with specialities.",
+          "code_behaviour": "The code defines an `Account` class with fields for `role`, `profile`, `user`, and `archive`. It includes static methods `to_name()` and `to_value()` for converting between integer and string representations of account roles. The `__str__()` method provides a string representation of the account, specifically prefixing the profile name with 'Dr. ' if the role is 'Doctor'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "This functionality will Maintain Doctors and Associate them with the Speciality",
+          "rejected_split": [
+            "This functionality shall Maintain Doctors",
+            "and Associate them with the Speciality"
+          ],
+          "reason": "a part is not a complete requirement sentence"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "req_pk": 220,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-2/1.c1",
+          "text": "/1 Add Doctor Add a new (unique) Doctor - Name, Age,Sex, Qualification, Experience, Speciality",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.ProfileForm",
+              "comp_pk": 429,
+              "link_pk": 4255,
+              "path": "server/forms.py",
+              "start_line": 134,
+              "end_line": 165,
+              "tag": "C1",
+              "quote": "class ProfileForm(BasicForm):\n    firstname = forms.CharField(label='First Name', max_length=50)\n    lastname = forms.CharField(label='Last Name', max_length=50)\n    sex = forms.ChoiceField(required=False, choices=Profile.GENDER)\n    birthday = forms.DateField(required=False, validators=[validate_birthday])\n    phone = forms.CharField(required=False, max_length=10)\n    allergies = forms.CharField(required=False, max_length=250)\n    prefHospital = forms.ModelChoiceField(label=\"Preferred Hospital\", required=False, queryset=Hospital.objects.all())\n    primaryCareDoctor = forms.ModelChoiceField(label=\"Primary Care Doctor\", required=False,\n                                               queryset=Account.objects.filter(role=Account.ACCOUNT_DOCTOR))\n    speciality = forms.ModelChoiceField(label=\"Speciality\", required=False, queryset=Speciality.objects.all())\n\n    def assign(self, profile):\n        profile.firstname = self.cleaned_data['firstname']\n        profile.lastname = self.cleaned_data['lastname']\n        profile.sex = self.cleaned_data['sex']\n        if self.cleaned_data['birthday'] is not None:\n            profile.birthday = self.cleaned_data['birthday']\n        profile.phone = self.cleaned_data['phone']\n        profile.allergies = self.cleaned_data['allergies']\n        profile.prefHospital = self.cleaned_data['prefHospital']\n        profile.primaryCareDoctor = self.cleaned_data['primaryCareDoctor']\n        profile.speciality = self.cleaned_data['speciality']",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `ProfileForm` class defines fields for a user's first name, last name, sex, birthday, phone number, allergies, preferred hospital, primary care doctor, and speciality, which matches the claim's requirement for adding a new doctor with these details.",
+          "code_behaviour": "The `ProfileForm` class defines a form with fields for a user's first name, last name, sex, birthday, phone number, allergies, preferred hospital, primary care doctor, and speciality. The form includes methods to assign the cleaned data to a profile object."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "req_pk": 221,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-2/2.c1",
+          "text": "/2 Edit Doctor View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medtest.update_view",
+              "comp_pk": 339,
+              "link_pk": 4259,
+              "path": "server/views_medtest.py",
+              "start_line": 116,
+              "end_line": 153,
+              "tag": "C1",
+              "quote": "def update_view(request): ... return render(request,'virtualclinic/medtest/update.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic to update the doctor's speciality, which is required by the claim.",
+          "code_behaviour": "The code in `update_view` in `server/views_medtest.py` handles the update of medical tests. It checks authentication, retrieves the medical test, and updates the details if the form is valid. It does not include any logic to update the doctor's speciality."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "req_pk": 222,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-2/3.c1",
+          "text": "/3 Delete Doctor Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.list_view",
+              "comp_pk": 463,
+              "link_pk": 4271,
+              "path": "server/views_prescription.py",
+              "start_line": 66,
+              "end_line": 84,
+              "tag": "C1",
+              "quote": "if request.method == 'POST':\n    if 'delete' in request.POST and 'pk' in request.POST:\n        pk = request.POST['pk']\n        try:\n            prescription = Prescription.objects.get(pk=pk)\n            prescription.active = False\n            prescription.save()\n            logger.log(Action.ACTION_PRESCRIPTION,'Prescription Cancelled', request.user.account)\n            template_data['alert_success'] = \"The prescription has been deleted.\"\n        except Exception:\n            template_data['alert_danger'] = \"Unable to delete the prescription. Please try again later.\"",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not check for pending patient consultation requests before deleting a doctor. It only checks for pending prescriptions, not consultations.",
+          "code_behaviour": "The code checks if a doctor can be deleted by verifying if there are any pending patient consultation requests associated with the doctor. If there are no pending requests, the doctor can be deleted; otherwise, the deletion is not allowed."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3",
+      "req_pk": 223,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-3.c1",
+          "text": "Maintain Chemist & Labs This functionality will Maintain Chemist and Lab Details",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4278,
+              "path": "server/models.py",
+              "start_line": 120,
+              "end_line": 132,
+              "tag": "C1",
+              "quote": "ACCOUNT_CHEMIST = 50\nACCOUNT_LAB = 40\nACCOUNT_TYPES = (\n    (ACCOUNT_UNKNOWN, \"Unknown\"),\n    (ACCOUNT_PATIENT, \"Patient\"),\n    (ACCOUNT_DOCTOR, \"Doctor\"),\n    (ACCOUNT_ADMIN, \"Admin\"),\n    (ACCOUNT_LAB, \"Lab\"),\n    (ACCOUNT_CHEMIST, \"Chemist\"),\n)",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4278,
+              "path": "server/models.py",
+              "start_line": 142,
+              "end_line": 150,
+              "tag": "C1",
+              "quote": "def to_name(key):\n    for item in Account.ACCOUNT_TYPES:\n        if item[0]==key:\n            return item[1]\n    return \"None\"",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4278,
+              "path": "server/models.py",
+              "start_line": 153,
+              "end_line": 161,
+              "tag": "C1",
+              "quote": "def to_value(key):\n    key = key.lower()\n    for item in Account.ACCOUNT_TYPES:\n        if item[1].lower() == key:\n            return item[0]\n    return 0",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines constants for Chemist and Lab roles, and methods to convert between integer and string representations of these roles, which aligns with the requirement to maintain Chemist and Lab details.",
+          "code_behaviour": "The code defines an `Account` class with various attributes and methods to manage user accounts, including roles for Chemist and Lab. It includes constants for different account types, methods to convert between integer and string representations of roles, and a method to return a string representation of the account."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "req_pk": 224,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-3/1.c1",
+          "text": "/1 Add Chemist / Lab Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.validate_username_available",
+              "comp_pk": 415,
+              "link_pk": 4281,
+              "path": "server/forms.py",
+              "start_line": 10,
+              "end_line": 14,
+              "tag": "C1",
+              "quote": "def validate_username_available(username):\n    if User.objects.filter(username__icontains=username).count():\n        raise forms.ValidationError(\"This email is already registered\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks for a username, not a pincode, and raises an error if it exists. It does not ensure that there is only one lab per pincode.",
+          "code_behaviour": "The code checks if a username already exists in the database and raises a ValidationError if it does."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/1 Add Chemist / Lab Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+          "rejected_split": [
+            "When a member adds a Chemist, there can be ONLY 1 lab in a Pincode",
+            "When a member adds a Lab, there can be ONLY 1 lab in a Pincode"
+          ],
+          "reason": "adds words not in the requirement: ['adds', 'member']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "req_pk": 225,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-3/2.c1",
+          "text": "/2 Edit Chemist/Lab View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+              "comp_pk": 498,
+              "link_pk": 4284,
+              "path": "testing/test_prescription.py",
+              "start_line": 29,
+              "end_line": 36,
+              "tag": "C1",
+              "quote": "def test_prescription_update(self):\n    found = resolve('/prescription/update/')\n    print(Fore.YELLOW + \"Testing update prescription\")\n    print(Style.RESET_ALL)\n    result = self.assertEqual(found.func, update_view)\n    if result == None:\n        print(Fore.GREEN + \"update prescription verified\")\n        print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not perform any actions related to editing Chemist/Lab details or updating prescription details. It only resolves a URL and compares it with a view function, which does not address the requirement.",
+          "code_behaviour": "The code does not contain any functionality related to editing Chemist/Lab details or updating prescription details. It only resolves a URL and compares it with a view function."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "req_pk": 226,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-3/3.c1",
+          "text": "/3 Delete Chemist/ Lab Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.list_view",
+              "comp_pk": 463,
+              "link_pk": 4288,
+              "path": "server/views_prescription.py",
+              "start_line": 55,
+              "end_line": 84,
+              "tag": "C1",
+              "quote": "def list_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_DOCTOR,Account.ACCOUNT_PATIENT,Account.ACCOUNT_CHEMIST]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # get template data from session\n    template_data = views.parse_session(request)\n    # proceed with rest of the view\n    if request.method == 'POST':\n        if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                prescription = Prescription.objects.get(pk=pk)\n                prescription.active = False\n                prescription.save()\n                logger.log(Action.ACTION_PRESCRIPTION,'Prescription Cancelled', request.user.account)\n                template_data['alert_success'] = \"The prescription has been deleted.\"\n            except Exception:\n                template_data['alert_danger'] = \"Unable to delete the prescription. Please try again later.\"\n    if request.user.account.role == Account.ACCOUNT_DOCTOR:\n        prescriptions = Prescription.objects.filter(doctor=request.user.account)\n    elif request.user.account.role == Account.ACCOUNT_PATIENT:\n        prescriptions = Prescription.objects.filter(patient=request.user.account)\n    else:\n        prescriptions = Prescription.objects.all()\n    template_data['query'] = prescriptions.order_by('date')\n    return render(request,'virtualclinic/prescription/list.html',template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not check if there are any pending prescriptions before allowing a Chemist or Lab to delete a prescription. It only checks if the user is authenticated and has the required role.",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (Chemist or Lab). It then attempts to delete a prescription if the 'delete' button is clicked and a valid prescription ID is provided. If the prescription is successfully deleted, a success message is logged and displayed to the user. If the prescription deletion fails, an error message is logged and displayed."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/3 Delete Chemist/ Lab Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+          "rejected_split": [
+            "When a Chemist or a Lab is deleted, the Chemist / Lab Details must be deleted.",
+            "A Chemist or a Lab can be deleted if and only if no new Prescription is pending."
+          ],
+          "reason": "drops values ['3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-4",
+      "req_pk": 227,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-4.c1",
+          "text": "This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.view_symptom",
+              "comp_pk": 348,
+              "link_pk": 4295,
+              "path": "server/views_admin.py",
+              "start_line": 172,
+              "end_line": 173,
+              "tag": "C1",
+              "quote": "template_data['query'] = Symptom.objects.all()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code retrieves all symptoms from the database and includes them in the template data, which is then rendered for the admin user.",
+          "code_behaviour": "The code defines a function `view_symptom` that renders a list of all symptoms in the system for an admin user. It checks the user's authentication status, retrieves all symptoms from the database, and returns a rendered HTML template with the list of symptoms."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "req_pk": 228,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-4/1.c1",
+          "text": "/1 Add Symptom Add a new Symptom",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_symptom",
+              "comp_pk": 559,
+              "link_pk": 4300,
+              "path": "testing/test_admin.py",
+              "start_line": 108,
+              "end_line": 116,
+              "tag": "C1",
+              "quote": "def test_add_symptom(self):\n    print(Fore.YELLOW + \"Testing add symptom\")\n    print(Style.RESET_ALL)\n\n    found = resolve('/admin/add_symptom/')\n    result=self.assertEqual(found.func, add_symptom)\n    if result == None:\n        print(Fore.GREEN + \"add symptom verified\")\n        print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not actually add a new Symptom. It only checks if the URL resolves to the correct view function and prints a message. It does not perform any action related to adding a Symptom.",
+          "code_behaviour": "The code defines a test method `test_add_symptom` within the `TestAdminViews` class. It checks if the URL `/admin/add_symptom/` resolves to the `add_symptom` view function and prints a success message if the resolution is successful."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "req_pk": 229,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-4/2.c1",
+          "text": "/2 Edit Symptom View and Update the details of an existing Symptom i,e. description",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.SymptomForm",
+              "comp_pk": 436,
+              "link_pk": 4304,
+              "path": "server/forms.py",
+              "start_line": 228,
+              "end_line": 232,
+              "tag": "C1",
+              "quote": "class SymptomForm(BasicForm):\n    name = forms.CharField(label='Name of symptom',max_length=50)\n    setup_field(name, 'Enter symptom name here')\n    description = forms.CharField(label='Description of Symptom')\n    setup_field(description, 'Enter symptom description here')",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_admin.add_symptom",
+              "comp_pk": 350,
+              "link_pk": 4305,
+              "path": "server/views_admin.py",
+              "start_line": 217,
+              "end_line": 228,
+              "tag": "C2",
+              "quote": "if request.method == 'POST':\n    form = SymptomForm(request.POST)\n    if form.is_valid():\n        symptom = Symptom(\n            name=form.cleaned_data['name'],\n            description=form.cleaned_data['description']\n        )\n        symptom.save()\n        form = SymptomForm()     # Clean the form when page is redisplayed\n        template_data['alert_success'] = \"Successfully added the Symptom!\"\n        logger.log(Action.ACTION_ADMIN, 'Admin added ' + symptom.name, request.user.account)\n        return HttpResponseRedirect('/admin/symptom')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a form for adding a new symptom but does not include any functionality to edit an existing symptom. The form is only used for creating new symptoms, not updating existing ones.",
+          "code_behaviour": "The code defines a Django form `SymptomForm` with fields for the name and description of a symptom. When the form is submitted via a POST request, it validates the input, creates a new `Symptom` object with the provided name and description, saves it to the database, and then redirects the user to the symptom list page with a success message."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "req_pk": 230,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-4/3.c1",
+          "text": "/3 Delete Symptom Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.parse_symptom_delete",
+              "comp_pk": 341,
+              "link_pk": 4309,
+              "path": "server/views_admin.py",
+              "start_line": 39,
+              "end_line": 58,
+              "tag": "C1",
+              "quote": "def parse_symptom_delete(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None:\n        return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    if request.method == 'POST':\n        if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                symptom = Symptom.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to delete the symptom. Please try again later.\"\n                return\n            symptom.delete()\n            logger.log(Action.ACTION_ADMIN, 'Symptom cancelled', request.user.account)\n            template_data['alert_success'] = \"The symptom has been deleted.\"\n            return HttpResponseRedirect('/admin/symptom/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not check if any Consultation request has used the symptom before deleting it. It only checks if the user is an administrator and then deletes the symptom.",
+          "code_behaviour": "The code checks if the user is authenticated as an administrator. If the user is authenticated, it retrieves the symptom with the given primary key and deletes it. It logs the action and redirects to the symptom page. If any error occurs during the process, it sets an alert message."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/3 Delete Symptom Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+          "rejected_split": [
+            "When a Symptom is deleted, the Symptom Details must be removed.",
+            "A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom."
+          ],
+          "reason": "adds words not in the requirement: ['removed']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5",
+      "req_pk": 231,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-5.c1",
+          "text": "This is Patient Registration Functionality",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Appointment.get_populated_fields",
+              "comp_pk": 390,
+              "link_pk": 4316,
+              "path": "server/models.py",
+              "start_line": 252,
+              "end_line": 263,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n        fields = {\n            'doctor': self.doctor,\n            'patient': self.patient,\n            'symptom': self.symptom,\n            'description': self.description,\n            'hospital': self.hospital,\n            'appointment_type': self.appointment_type,\n            'startTime': self.startTime,\n            'endTime': self.endTime,\n        }\n        return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code collects and returns a dictionary of appointment fields, which aligns with the claim that this is Patient Registration Functionality.",
+          "code_behaviour": "The code defines a method `get_populated_fields` in the `Appointment` class, which collects and returns a dictionary of fields related to an appointment, including the doctor, patient, symptom, description, hospital, appointment type, start time, and end time."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "req_pk": 232,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-5/1.c1",
+          "text": "/1 Create Patient Profile Register a new Patient",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4320,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C1",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):\n    user = User.objects.create_user(\n        email.lower(),\n        email.lower(),\n        password\n    )\n    profile = Profile(\n        firstname=firstname,\n        lastname=lastname,\n        speciality=speciality\n    )\n    profile.save()\n    account = Account(\n        role=role,\n        profile=profile,\n        user=user\n    )\n    account.save()\n    medical_info = MedicalInfo(\n        account=account\n    )\n    medical_info.save()\n    logger.log(Action.ACTION_ACCOUNT,\"Account registered\",account)\n    return user",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code creates a new user, profile, account, and medical info, and logs the action of registering an account, which matches the claim of registering a new patient profile.",
+          "code_behaviour": "The code defines a function `register_user` that takes parameters for email, password, firstname, lastname, role, and speciality (optional). It creates a new user with the provided email and password, and a new profile with the provided firstname, lastname, and speciality. It then creates an account with the provided role and links it to the user and profile. Finally, it logs the action of registering an account."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "req_pk": 233,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "Req-5/2.c1",
+          "text": "/2 Edit Patient Profile View and Update the details of an existing Patient.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.update_view",
+              "comp_pk": 467,
+              "link_pk": 4329,
+              "path": "server/views_appointment.py",
+              "start_line": 50,
+              "end_line": 107,
+              "tag": "C1",
+              "quote": "def update_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(request, None, ['pk'])\n    if authentication_result is not None:\n        return authentication_result\n    # Validation check. Make sure appointment exists for given pk\n    pk = request.GET['pk']\n    try:\n        appointment = Appointment.objects.get(pk=pk)\n    except Exception:\n        request.session['alert_danger'] = \"The requested appointment does not exist.\"\n        return HttpResponseRedirect('/error/denied/')\n    # Get template data from session\n    template_data = views.parse_session(\n        request,\n        {\n            'form_button': \"Update Appointment\",\n            'form_action': \"?pk=\"+pk,\n            'appointment': appointment\n        }\n    )\n    # Proceed with rest of the view\n    request.POST._mutable = True\n    if request.user.account.role == Account.ACCOUNT_PATIENT:\n        request.POST['patient'] = request.user.account.pk\n    elif request.user.account.role == Account.ACCOUNT_DOCTOR:\n        request.POST['doctor'] = request.user.account.pk\n    if request.method == 'POST':\n        form = AppointmentForm(request.POST)\n        if form.is_valid():\n            form.assign(appointment)\n            if Appointment.objects.filter(\n                    ~Q(pk=appointment.pk),\n                    Q(status=\"Active\"),\n                    Q(doctor=appointment.doctor) | Q(patient=appointment.patient),\n                    Q(startTime__range=(appointment.startTime, appointment.endTime)) | Q(endTime__range=(appointment.startTime,appointment.endTime))).count():\n                form.mark_error('startTime', 'This time conflicts with another appointment.')\n                form.mark_error('endTime', 'This time conflicts with another appointment.')\n            else:\n                appointment.save()\n                logger.log(Action.ACTION_APPOINTMENT, 'Appointment Updated', request.user.account)\n                template_data['alert_success'] = \"The appointment has been updated!\"\n                template_data['form'] = form\n                if request.user.account.role == Account.ACCOUNT_PATIENT:\n                    message.send_appointment_update(request, appointment,appointment.doctor)\n                elif request.user.account.role == Account.ACCOUNT_DOCTOR:\n                    message.send_appointment_update(request, appointment,appointment.patient)\n                else:\n                    message.send_appointment_update(request, appointment, appointment.patient)\n                    message.send_appointment_update(request, appointment, appointment.doctor)\n    else:\n        form = AppointmentForm(appointment.get_populated_fields())\n    if request.user.account.role == Account.ACCOUNT_PATIENT:\n        form.disable_field('patient')\n    elif request.user.account.role == Account.ACCOUNT_DOCTOR:\n        form.disable_field('doctor')\n    template_data['form'] = form\n    return render(request, 'virtualclinic/appointment/update.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a view function `update_view` that handles updating an appointment, which aligns with the claim.",
+          "code_behaviour": "The code defines a view function `update_view` that handles updating an appointment. It checks authentication, retrieves the appointment, validates the form data, and saves the updated appointment. It also sends an update message to the patient and doctor."
+        },
+        {
+          "claim_id": "Req-5/2.c2",
+          "text": "Only latest details shall be maintained by the system",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.update_view",
+              "comp_pk": 467,
+              "link_pk": 4329,
+              "path": "server/views_appointment.py",
+              "start_line": 80,
+              "end_line": 90,
+              "tag": "C1",
+              "quote": "if form.is_valid():\n    form.assign(appointment)\n    if Appointment.objects.filter(\n            ~Q(pk=appointment.pk),\n            Q(status=\"Active\"),\n            Q(doctor=appointment.doctor) | Q(patient=appointment.patient),\n            Q(startTime__range=(appointment.startTime, appointment.endTime)) | Q(endTime__range=(appointment.startTime,appointment.endTime))).count():\n        form.mark_error('startTime', 'This time conflicts with another appointment.')\n        form.mark_error('endTime', 'This time conflicts with another appointment.')\n    else:\n        appointment.save()\n        logger.log(Action.ACTION_APPOINTMENT, 'Appointment Updated', request.user.account)\n        template_data['alert_success'] = \"The appointment has been updated!\"\n        template_data['form'] = form\n        if request.user.account.role == Account.ACCOUNT_PATIENT:\n            message.send_appointment_update(request, appointment,appointment.doctor)\n        elif request.user.account.role == Account.ACCOUNT_DOCTOR:\n            message.send_appointment_update(request, appointment,appointment.patient)\n        else:\n            message.send_appointment_update(request, appointment, appointment.patient)\n            message.send_appointment_update(request, appointment, appointment.doctor)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows updating an appointment regardless of its current status or whether it conflicts with other appointments, which does not enforce that only the latest details are maintained.",
+          "code_behaviour": "The code does not explicitly enforce that only the latest details are maintained. It allows updating an appointment regardless of its current status or whether it conflicts with other appointments."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "req_pk": 234,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-5/3.c1",
+          "text": "/3 Delete Patient Profile Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4338,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None:\n        return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    if request.method == 'POST':\n        if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                user = Account.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to delete the user. Please try again later\"\n                return\n            user.archive = True\n            user.save()\n            #logger.log(Action.ACTION_ADMIN, 'Admin deleted a user',user)\n            template_data['alert_success'] = \"The user has been deleted.\"\n            return HttpResponseRedirect('/admin/users')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not check for Consultation Requests in the last 3 years before deleting a patient. It only checks if the user is an administrator and then proceeds with the deletion if the required POST keys are present.",
+          "code_behaviour": "The code checks if the user making the request is an administrator. If the user is an administrator, it proceeds to delete the user if the 'delete' and 'pk' keys are in the POST data. It sets the 'archive' field to True and redirects the user to the '/admin/users' page. If the user is not an administrator, it returns an error message."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/3 Delete Patient Profile Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+          "rejected_split": [
+            "When a member deletes a patient profile, the patient details must be deleted.",
+            "A patient cannot be deleted if there is one or more consultation requests in the last 3 years."
+          ],
+          "reason": "adds words not in the requirement: ['deletes', 'member']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6",
+      "req_pk": 235,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-6.c1",
+          "text": "Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.appointment.parse_appointments",
+              "comp_pk": 334,
+              "link_pk": 4344,
+              "path": "server/appointment.py",
+              "start_line": 11,
+              "end_line": 48,
+              "tag": "C1",
+              "quote": "def parse_appointments(request):\\n    if request.user.account.role == Account.ACCOUNT_PATIENT:\\n        appointments = Appointment.objects.filter(status=\"Active\", patient=request.user.account)\\n    elif request.user.account.role == Account.ACCOUNT_DOCTOR:\\n        appointments = Appointment.objects.filter(status=\"Active\", doctor=request.user.account)\\n    else:\\n        appointments = Appointment.objects.filter(status=\"Active\")\\n    body = []\\n    if appointments.count() > 0:\\n        for appointment in appointments:\\n            body.append(\"{\")\\n            body.append(\"id: {0},\".format(appointment.pk))\\n            body.append(\"formatted_start: '{0}',\".format(timezone.localtime(appointment.startTime).strftime(datetime_strftime)))\\n            body.append(\"formatted_end: '{0}',\".format(timezone.localtime(appointment.endTime).strftime(datetime_strftime)))\\n            body.append(\"hospital: '{0}',\".format(sanitize_js(appointment.hospital.name)))\\n            body.append(\"patient: '{0}',\".format(sanitize_js(appointment.doctor.__str__())))\\n            body.append(\"doctor: '{0}',\".format(sanitize_js(appointment.patient.__str__())))\\n            if request.user.account.role == Account.ACCOUNT_PATIENT:\\n                message = \"{0}, {1}\".format(appointment.doctor.profile, appointment.description)\\n            else:\\n                message = \"{0}, {1}\".format(appointment.patient.profile, appointment.description)\\n            body.append(\"title: '{0}',\".format(sanitize_js(message)))\\n            stime = timezone.localtime(appointment.startTime)\\n            sdate = stime.date()\\n            stime = stime.time()\\n            body.append(\"start: new Date({0},{1},{2},{3},{4}),\".format(sdate.year, sdate.month - 1, sdate.day, stime.hour,\\n                                                               stime.minute))\\n            stime = timezone.localtime(appointment.endTime)\\n            sdate = stime.date()\\n            stime = stime.time()\\n            body.append(\"end: new Date({0},{1},{2},{3},{4})\".format(sdate.year, sdate.month - 1, sdate.day, stime.hour,\\n                                                                     stime.minute))\\n            body.append(\"},\")\\n        return mark_safe('\\n'.join(body)[:-1])\\n    return mark_safe(\"\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code retrieves active appointments for the authenticated user based on their role and formats them into a JavaScript-friendly string, which matches the claim.",
+          "code_behaviour": "The code defines a function `parse_appointments` that retrieves active appointments for the authenticated user based on their role (patient or doctor). It then formats the appointment details into a JavaScript-friendly string."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+          "rejected_split": [
+            "Registered Patients shall have the ability to raise Consultation Requests - Appointment mode would be available",
+            "Registered Patients shall have the ability to raise Consultation Requests - Offline Consultation mode would be available"
+          ],
+          "reason": "adds words not in the requirement: ['mode']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "req_pk": 236,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-6/1.c1",
+          "text": "/1 Create Consultation Request Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.AppointmentForm",
+              "comp_pk": 431,
+              "link_pk": 4356,
+              "path": "server/forms.py",
+              "start_line": 168,
+              "end_line": 218,
+              "tag": "C1",
+              "quote": "class AppointmentForm(BasicForm):\n    description = forms.CharField(required=True, max_length=50)\n    setup_field(description,'Enter description here')\n    symptom = forms.ModelChoiceField(queryset=Symptom.objects.all())\n    setup_field(symptom)\n    hospital = forms.ModelChoiceField(queryset=Hospital.objects.all())\n    setup_field(hospital)\n    doctor = forms.ModelChoiceField(queryset=Account.objects.filter(role=Account.ACCOUNT_DOCTOR))\n    setup_field(doctor)\n    patient = forms.ModelChoiceField(queryset=Account.objects.filter(role=Account.ACCOUNT_PATIENT))\n    setup_field(patient)\n    appointment_type = forms.ChoiceField(choices=APPOINTMENT_TYPE)\n    setup_field(appointment_type)\n    startTime = forms.DateTimeField(label=\"Start Time\")\n    setup_field(startTime, \"Enter as YYYY-MM-DD HH:MM\")\n    endTime = forms.DateTimeField(label=\"End Time\")\n    setup_field(endTime, \"Enter as YYYY-MM-DD HH:MM\")\n\n    def assign(self, appointment):\n        appointment.description = self.cleaned_data['description']\n        appointment.symptom = self.cleaned_data['symptom']\n        appointment.hospital = self.cleaned_data['hospital']\n        appointment.doctor = self.cleaned_data['doctor']\n        appointment.patient = self.cleaned_data['patient']\n        appointment.appointment_type = self.cleaned_data['appointment_type']\n        appointment.startTime = self.cleaned_data['startTime']\n        appointment.endTime = self.cleaned_data['endTime']\n\n    def generate(self):\n        return Appointment(\n            doctor=self.cleaned_data['doctor'],\n            patient=self.cleaned_data['patient'],\n            description=self.cleaned_data['description'],\n            symptom=self.cleaned_data['symptom'],\n            hospital=self.cleaned_data['hospital'],\n            appointment_type = self.cleaned_data['appointment_type'],\n            startTime=self.cleaned_data['startTime'],\n            endTime=self.cleaned_data['endTime']\n        )\n\n    def clean(self):\n        cleaned_data = super(AppointmentForm, self).clean()\n        startTime = cleaned_data.get('startTime')\n        endTime = cleaned_data.get('endTime')\n        if startTime and endTime:\n            if endTime<=startTime:\n                self.mark_error('endTime', 'The appointment end time must come after the start time')\n        return cleaned_data",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a form with all the required fields and a validator for the end time, which matches the claim.",
+          "code_behaviour": "The code defines a form (`AppointmentForm`) for creating a consultation request. It includes fields for description, symptom, hospital, doctor, patient, appointment type, start time, and end time. The form also includes methods to assign the form data to an appointment instance and to generate a new appointment instance. Additionally, it includes a validator to ensure the end time is after the start time."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/1 Create Consultation Request Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+          "rejected_split": [
+            "When a member pays a fine, they shall enter the Symptoms.",
+            "When a member pays a fine, they shall upload reports, if any.",
+            "When a member pays a fine, they shall define the mode of request (Offline/Appointment)."
+          ],
+          "reason": "adds words not in the requirement: ['enter', 'fine', 'member', 'pays']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-6/2",
+      "req_pk": 237,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-6/2.c1",
+          "text": "/2 Create Appointment- Online For Appointment Requests, an entry shall be created in the Patient Appointment File if the appointment is for next day",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.create_view",
+              "comp_pk": 468,
+              "link_pk": 4365,
+              "path": "server/views_appointment.py",
+              "start_line": 143,
+              "end_line": 143,
+              "tag": "C2",
+              "quote": "appointment.save()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code saves the appointment if it is valid, which creates an entry in the Patient Appointment File.",
+          "code_behaviour": "The code checks if the appointment is for the next day and creates an entry in the Patient Appointment File if it is."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-6/3",
+      "req_pk": 238,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-6/3.c1",
+          "text": "/3 Create Appointment - Batch This is batch program that will be run by Administration every night to create Appointment File for next 5 days.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.message.send_appointment_create",
+              "comp_pk": 369,
+              "link_pk": 4369,
+              "path": "server/message.py",
+              "start_line": 73,
+              "end_line": 84,
+              "tag": "C1",
+              "quote": "def send_appointment_create(request, appointment, target):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not create an appointment file or batch process for creating appointments over multiple days.",
+          "code_behaviour": "The code defines a function `send_appointment_create` that sends a message to a target user with a header 'Appointment created' and a body describing the created appointment."
+        },
+        {
+          "claim_id": "Req-6/3.c2",
+          "text": "It will purge the existing files",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.message.send_appointment_create",
+              "comp_pk": 369,
+              "link_pk": 4369,
+              "path": "server/message.py",
+              "start_line": 73,
+              "end_line": 84,
+              "tag": "C1",
+              "quote": "def send_appointment_create(request, appointment, target):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic to delete or purge existing files.",
+          "code_behaviour": "The code does not include any functionality to purge existing files."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-7",
+      "req_pk": 239,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-7.c1",
+          "text": "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.appointment.parse_appointments",
+              "comp_pk": 334,
+              "link_pk": 4374,
+              "path": "server/appointment.py",
+              "start_line": 11,
+              "end_line": 48,
+              "tag": "C1",
+              "quote": "def parse_appointments(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any machine learning algorithm for disease prediction or prioritize the requests based on disease severity (Critical/ Medium/ Low). It only retrieves and formats appointment details.",
+          "code_behaviour": "The code defines a function `parse_appointments` that retrieves active appointments for the authenticated user based on their role and formats the appointment details into a JavaScript-friendly string."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+          "rejected_split": [
+            "When a batch program runs periodically on new Consultation Requests, it shall predict diseases based on a machine learning Algorithm.",
+            "When a batch program runs periodically on new Consultation Requests, it shall prioritize the Requests (Critical/ Medium/ Low)."
+          ],
+          "reason": "adds words not in the requirement: ['runs']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-8",
+      "req_pk": 240,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-8.c1",
+          "text": "Provide Consultation Doctors shall see the prioritized consultation requests",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for displaying or prioritizing consultation requests.",
+          "code_behaviour": "The code does not directly provide any functionality for doctors to see prioritized consultation requests. It only handles the update of existing prescriptions."
+        },
+        {
+          "claim_id": "Req-8.c2",
+          "text": "Provide Consultation Doctors shall provide diagnosis",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for providing diagnosis.",
+          "code_behaviour": "The code does not provide any functionality for doctors to provide diagnosis. It only handles the update of existing prescriptions."
+        },
+        {
+          "claim_id": "Req-8.c3",
+          "text": "Provide Consultation Doctors shall prescribe medicines",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for prescribing medicines.",
+          "code_behaviour": "The code does not provide any functionality for doctors to prescribe medicines. It only handles the update of existing prescriptions."
+        },
+        {
+          "claim_id": "Req-8.c4",
+          "text": "Provide Consultation Doctors shall suggest lab requests, if any",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for suggesting lab requests.",
+          "code_behaviour": "The code does not provide any functionality for doctors to suggest lab requests. It only handles the update of existing prescriptions."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Provide Consultation Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+          "parts": [
+            "Provide Consultation Doctors shall see the prioritized consultation requests",
+            "Provide Consultation Doctors shall provide diagnosis",
+            "Provide Consultation Doctors shall prescribe medicines",
+            "Provide Consultation Doctors shall suggest lab requests, if any"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-9",
+      "req_pk": 241,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "Req-9.c1",
+          "text": "Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.update_view",
+              "comp_pk": 464,
+              "link_pk": 4385,
+              "path": "server/views_prescription.py",
+              "start_line": 87,
+              "end_line": 120,
+              "tag": "C1",
+              "quote": "def update_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(request, None, ['pk'])\n    if authentication_result is not None:\n        return authentication_result\n    # Validation check. Make sure a prescription exists for given pk.\n    pk = request.GET['pk']\n    try:\n        prescription = Prescription.objects.get(pk=pk)\n    except Exception:\n        request.session['alert_danger'] = \"The requested prescription does not exist\"\n        return HttpResponseRedirect('/error/denied')\n    # Get the template data from the session\n    template_data = views.parse_session(\n        request,\n        {\n            'form_button': \"Update Prescription\",\n            'form_action': \"?pk=\"+pk,\n            'prescription': prescription\n        })\n    # Proceed with rest of view\n    request.POST._mutable = True\n    if request.method == 'POST':\n        form = PrescriptionForm(request.POST)\n        if form.is_valid():\n            form.assign(prescription)\n            prescription.save()\n            logger.log(Action.ACTION_PRESCRIPTION, 'Prescription Updated', request.user.account)\n            template_data['alert_success'] = \"Prescription has been updated\"\n            template_data['form'] = form\n        else:\n            template_data['form'] = form\n    else:\n        form = PrescriptionForm(prescription.get_populated_fields())\n    template_data['form'] = form\n    return render(request, 'virtualclinic/prescription/update.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides a view function that allows updating a prescription, which matches the claim.",
+          "code_behaviour": "The code defines a view function `update_view` that handles updating a prescription. It checks authentication, validates the prescription, and updates the prescription status based on the form data submitted by the user."
+        },
+        {
+          "claim_id": "Req-9.c2",
+          "text": "Medicines shall be delivered offline to Patient by Chemist",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 87-120"
+            }
+          ],
+          "rationale": "The code does not include any functionality for offline prescription delivery, which is required by the claim.",
+          "code_behaviour": "The code does not provide any functionality related to offline prescription delivery to patients by chemists."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status.",
+          "rejected_split": [
+            "When a Medicines Chemist views prescriptions, they shall be able to see the open prescriptions assigned to them based on Pincode.",
+            "When a Medicines Chemist updates prescriptions, they shall have the facility to update the status."
+          ],
+          "reason": "adds words not in the requirement: ['see', 'views']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-10",
+      "req_pk": 242,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-10.c1",
+          "text": "Lab In-charge shall be able to view open lab-requests.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medtest.create_view",
+              "comp_pk": 336,
+              "link_pk": 4394,
+              "path": "server/views_medtest.py",
+              "start_line": 11,
+              "end_line": 45,
+              "tag": "C1",
+              "quote": "def create_view(request): ... return render(request,'virtualclinic/medtest/upload.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include functionality to view open lab-requests. It only handles the creation of new requests.",
+          "code_behaviour": "The code defines a view function `create_view` that handles the creation of medical test requests. It checks user authentication, parses session data, and sets default values for the form. If the form is valid, it saves the medical test request."
+        },
+        {
+          "claim_id": "Req-10.c2",
+          "text": "Lab In-charge shall have the facility to update the status.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.MedTestForm",
+              "comp_pk": 442,
+              "link_pk": 4395,
+              "path": "server/forms.py",
+              "start_line": 314,
+              "end_line": 341,
+              "tag": "C2",
+              "quote": "class MedTestForm(BasicForm): ... completed = forms.BooleanField(required=False)",
+              "quote_checked": true,
+              "realigned_from": [
+                314,
+                372
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include functionality to update the status of existing lab-requests. It only defines a form for creating new requests.",
+          "code_behaviour": "The code defines a form `MedTestForm` with fields for various attributes of a medical test request, including status fields like `completed`."
+        },
+        {
+          "claim_id": "Req-10.c3",
+          "text": "Actual Sample Collection and lab tests shall be offline.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medtest.create_view",
+              "comp_pk": 336,
+              "link_pk": 4394,
+              "path": "server/views_medtest.py",
+              "start_line": 11,
+              "end_line": 45,
+              "tag": "C1",
+              "quote": "def create_view(request): ... return render(request,'virtualclinic/medtest/upload.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality to perform sample collection or lab tests offline. It only handles the creation and updating of medical test requests through a web interface.",
+          "code_behaviour": "The code does not explicitly mention offline operations for sample collection or lab tests. It only handles the creation and updating of medical test requests through a web interface."
+        },
+        {
+          "claim_id": "Req-10.c4",
+          "text": "Labs shall also submit reports to Patient offline",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medtest.create_view",
+              "comp_pk": 336,
+              "link_pk": 4394,
+              "path": "server/views_medtest.py",
+              "start_line": 11,
+              "end_line": 45,
+              "tag": "C1",
+              "quote": "def create_view(request): ... return render(request,'virtualclinic/medtest/upload.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality to submit reports to patients offline. It only handles the creation and updating of medical test requests through a web interface.",
+          "code_behaviour": "The code does not explicitly mention offline operations for submitting reports to patients. It only handles the creation and updating of medical test requests through a web interface."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Perform Lab Tests Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline.",
+          "parts": [
+            "Lab In-charge shall be able to view open lab-requests.",
+            "Lab In-charge shall have the facility to update the status.",
+            "Actual Sample Collection and lab tests shall be offline."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-11",
+      "req_pk": 243,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-11.c1",
+          "text": "Patient shall have the facility to view the Prescription.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for viewing a prescription.",
+          "code_behaviour": "The code does not show any functionality for viewing a prescription. It only tests the URL '/prescription/list/' and compares it with the `list_view` function."
+        },
+        {
+          "claim_id": "Req-11.c2",
+          "text": "Patient shall have the facility to print the invoice.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for printing an invoice.",
+          "code_behaviour": "The code does not show any functionality for printing an invoice. It only tests the URL '/prescription/list/' and compares it with the `list_view` function."
+        },
+        {
+          "claim_id": "Req-11.c3",
+          "text": "Admin can print the Prescription",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for printing a prescription.",
+          "code_behaviour": "The code does not show any functionality for printing a prescription. It only tests the URL '/prescription/list/' and compares it with the `list_view` function."
+        },
+        {
+          "claim_id": "Req-11.c4",
+          "text": "Admin can email the Invoice",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for emailing an invoice.",
+          "code_behaviour": "The code does not show any functionality for emailing an invoice. It only tests the URL '/prescription/list/' and compares it with the `list_view` function."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "View/Generate Prescription/ Print Invoice Patient shall have the facility to view the Prescription and print the invoice.",
+          "parts": [
+            "Patient shall have the facility to view the Prescription.",
+            "Patient shall have the facility to print the invoice."
+          ]
+        },
+        {
+          "claim": "Alternately, Admin can print and email the Prescription and Invoice",
+          "parts": [
+            "Admin can print the Prescription",
+            "Admin can email the Invoice"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-12",
+      "req_pk": 244,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-12.c1",
+          "text": "Housekeeping Patient Profiles and Consultation Requests Quarterly all Patient Profiles which have not raised any Consultation Request for last 3 years will be archived.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4405,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request): ... return HttpResponseRedirect('/admin/users')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in C1 is designed to delete user accounts, not to archive patient profiles or consultation requests.",
+          "code_behaviour": "The code does not perform any action related to archiving patient profiles or consultation requests. It only handles user deletion requests."
+        },
+        {
+          "claim_id": "Req-12.c2",
+          "text": "Every quarter, Consultation Requests that are more than 3 years old shall be archived.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4405,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request): ... return HttpResponseRedirect('/admin/users')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in C1 is designed to delete user accounts, not to archive consultation requests.",
+          "code_behaviour": "The code does not perform any action related to archiving consultation requests. It only handles user deletion requests."
+        },
+        {
+          "claim_id": "Req-12.c3",
+          "text": "This will improve the performance.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4405,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request): ... return HttpResponseRedirect('/admin/users')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in C1 is designed to delete user accounts, not to improve performance.",
+          "code_behaviour": "The code does not perform any action related to improving performance. It only handles user deletion requests."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Also, every quarter, Consultation Requests that are more than 3 years old shall be archived on This will improve the performance",
+          "parts": [
+            "Every quarter, Consultation Requests that are more than 3 years old shall be archived.",
+            "This will improve the performance."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-13",
+      "req_pk": 245,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-13.c1",
+          "text": "Daily Back-up Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4411,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 608,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models) ...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not specify when or how often the backup occurs, only that it happens when the `backup_data` function is called.",
+          "code_behaviour": "The code defines a function `backup_data` that serializes data from various models and writes it to JSON files in the 'backups' directory. It does not specify when or how often this backup occurs."
+        },
+        {
+          "claim_id": "Req-13.c2",
+          "text": "The back-ups shall be rotated every 30 days",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4411,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 608,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models) ...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanism for rotating backups or deleting old backups.",
+          "code_behaviour": "The code does not include any mechanism for rotating backups or deleting old backups."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-14",
+      "req_pk": 246,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-14.c1",
+          "text": "Learning Disease Every Month Administration will improve the Disease Prediction Database with learning of the prior month, i.e. improve the training data-set by including the actual learning for the month",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "testing.test_form.TestProfileForm.setUp",
+              "comp_pk": 523,
+              "link_pk": 4416,
+              "path": "testing/test_form.py",
+              "start_line": 13,
+              "end_line": 33,
+              "tag": "C1",
+              "quote": "def setUp(self):\n    birthday = datetime.now()\n    location_data = Location.objects.create(\n            city=\"Mangalore\",\n            zip=\"575025\",\n            state=\"Karnataka\",\n            country=\"India\",\n            address=\"None\"\n        )\n    test_hospital = Hospital.objects.create(location=location_data)\n\n    self.form_data = {\n        'firstname\":\"Test\",\n        'lastname\" :\"Test\",\n        'sex':'M',\n        'birthday': birthday,\n        'phone\":\"9989727245\",\n        'allergies\":\"Sand\",\n        'created':datetime.now(),\n        'prefHospital':test_hospital.id,\n    }",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any functionality for updating a disease prediction database or improving the training data-set. It only sets up a test environment for a profile form.",
+          "code_behaviour": "The code sets up a test environment by creating a birthday, a location, a hospital, and a profile form data dictionary. It does not include any code for updating a disease prediction database or improving the training data-set."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-15",
+      "req_pk": 247,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "Req-15.c1",
+          "text": "Maintain Users (Doctors, Patients, Chemist/ Labs) The system shall have a login functionality.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4420,
+              "path": "server/models.py",
+              "start_line": 119,
+              "end_line": 183,
+              "tag": "C1",
+              "quote": "class Account(models.Model):\n    ACCOUNT_UNKNOWN = 0\n    ACCOUNT_PATIENT = 10\n    ACCOUNT_DOCTOR = 20\n    ACCOUNT_ADMIN = 30\n    ACCOUNT_LAB = 40\n    ACCOUNT_CHEMIST = 50\n    ACCOUNT_TYPES = (\n        (ACCOUNT_UNKNOWN, \"Unknown\"),\n        (ACCOUNT_PATIENT, \"Patient\"),\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),\n    )\n    EMPLOYEE_TYPES = (\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),\n    )\n\n    @staticmethod\n    def to_name(key):\n        \"\"\"\n        Parses an integer value to a string representing an account role.\n        :param key: The account role as a int\n        :return: The string representation of the name for action\n        \"\"\"\n        for item in Account.ACCOUNT_TYPES:\n            if item[0]==key:\n                return item[1]\n        return \"None\"\n\n    @staticmethod\n    def to_value(key):\n        \"\"\"\n        Parses an string to a integer representing an account role.\n        :param key: The account role as a string\n        :return: The integer representation of the account role\n        \"\"\"\n        key = key.lower()\n        for item in Account.ACCOUNT_TYPES:\n            if item[1].lower() == key:\n                return item[0]\n        return 0\n\n    role = models.IntegerField(default=0, choices=ACCOUNT_TYPES)\n    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    archive = models.BooleanField(default=False)\n\n    def __str__(self):\n        if self.role == 20:\n            return \"Dr. \" + self.profile.__str__()\n        else:\n            return self.profile.__str__()\n\n    class Admin:\n        list_display = (\n            'role',\n            'profile',\n            'user',\n            'archive'\n        )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines an `Account` class with fields for user role, profile, user, and archive status, which supports the claim of having a login functionality.",
+          "code_behaviour": "The code defines an `Account` class with fields for user role, profile, user, and archive status. It includes methods to convert between integer and string representations of account roles."
+        },
+        {
+          "claim_id": "Req-15.c2",
+          "text": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors can change the password and log-in using their own credentials.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 119-183"
+            }
+          ],
+          "rationale": "The code does not include any functionality for changing passwords or logging in users, which contradicts the claim.",
+          "code_behaviour": "The code does not include any functionality for changing passwords or logging in users."
+        },
+        {
+          "claim_id": "Req-15.c3",
+          "text": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Chemists can change the password and log-in using their own credentials.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 119-183"
+            }
+          ],
+          "rationale": "The code does not include any functionality for changing passwords or logging in users, which contradicts the claim.",
+          "code_behaviour": "The code does not include any functionality for changing passwords or logging in users."
+        },
+        {
+          "claim_id": "Req-15.c4",
+          "text": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Labs can change the password and log-in using their own credentials.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 119-183"
+            }
+          ],
+          "rationale": "The code does not include any functionality for changing passwords or logging in users, which contradicts the claim.",
+          "code_behaviour": "The code does not include any functionality for changing passwords or logging in users."
+        },
+        {
+          "claim_id": "Req-15.c5",
+          "text": "For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4421,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C2",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):\n    user = User.objects.create_user(\n        email.lower(),\n        email.lower(),\n        password\n    )\n    profile = Profile(\n        firstname=firstname,\n        lastname=lastname,\n        speciality=speciality\n    )\n    profile.save()\n    account = Account(\n        role=role,\n        profile=profile,\n        user=user\n    )\n    account.save()\n    medical_info = MedicalInfo(\n        account=account\n    )\n    medical_info.save()\n    logger.log(Action.ACTION_ACCOUNT,\"Account registered\",account)\n    return user",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code includes a `register_user` function that creates a new user with a default password and assigns a role, which supports the claim for patients.",
+          "code_behaviour": "The code includes a `register_user` function that creates a new user with a default password and assigns a role."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials.",
+          "parts": [
+            "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors can change the password and log-in using their own credentials.",
+            "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Chemists can change the password and log-in using their own credentials.",
+            "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Labs can change the password and log-in using their own credentials."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-16",
+      "req_pk": 248,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-16.c1",
+          "text": "Reports The System will generate following reports Doctor wise Appointment file for next 5 days.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Appointment.get_populated_fields",
+              "comp_pk": 390,
+              "link_pk": 4424,
+              "path": "server/models.py",
+              "start_line": 252,
+              "end_line": 264,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n        \"\"\"used to collect form data\"\"\"\n        fields = {\n            'doctor': self.doctor,\n            'patient': self.patient,\n            'symptom': self.symptom,\n            'description': self.description,\n            'hospital': self.hospital,\n            'appointment_type': self.appointment_type,\n            'startTime': self.startTime,\n            'endTime': self.endTime,\n        }\n        return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not generate a report for a doctor-wise appointment file for the next 5 days. It only collects and returns appointment data.",
+          "code_behaviour": "The code defines a method `get_populated_fields` in the `Appointment` model that collects and returns a dictionary of appointment fields, including the doctor, patient, symptom, description, hospital, appointment type, start time, and end time."
+        },
+        {
+          "claim_id": "Req-16.c2",
+          "text": "Reports The System will generate following reports Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Appointment.get_populated_fields",
+              "comp_pk": 390,
+              "link_pk": 4424,
+              "path": "server/models.py",
+              "start_line": 252,
+              "end_line": 264,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n        \"\"\"used to collect form data\"\"\"\n        fields = {\n            'doctor': self.doctor,\n            'patient': self.patient,\n            'symptom': self.symptom,\n            'description': self.description,\n            'hospital': self.hospital,\n            'appointment_type': self.appointment_type,\n            'startTime': self.startTime,\n            'endTime': self.endTime,\n        }\n        return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not generate a report for a speciality-wise number of consultations by doctor per month/quarter/year. It only collects and returns appointment data.",
+          "code_behaviour": "The code defines a method `get_populated_fields` in the `Appointment` model that collects and returns a dictionary of appointment fields, including the doctor, patient, symptom, description, hospital, appointment type, start time, and end time."
+        },
+        {
+          "claim_id": "Req-16.c3",
+          "text": "Reports The System will generate following reports Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Appointment.get_populated_fields",
+              "comp_pk": 390,
+              "link_pk": 4424,
+              "path": "server/models.py",
+              "start_line": 252,
+              "end_line": 264,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n        \"\"\"used to collect form data\"\"\"\n        fields = {\n            'doctor': self.doctor,\n            'patient': self.patient,\n            'symptom': self.symptom,\n            'description': self.description,\n            'hospital': self.hospital,\n            'appointment_type': self.appointment_type,\n            'startTime': self.startTime,\n            'endTime': self.endTime,\n        }\n        return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not generate a report for a speciality-wise revenue earned per month/quarter/year. It only collects and returns appointment data.",
+          "code_behaviour": "The code defines a method `get_populated_fields` in the `Appointment` model that collects and returns a dictionary of appointment fields, including the doctor, patient, symptom, description, hospital, appointment type, start time, and end time."
+        },
+        {
+          "claim_id": "Req-16.c4",
+          "text": "Reports The System will generate following reports Patient History File - For a patient, history of consultations done in last 3 years.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Appointment.get_populated_fields",
+              "comp_pk": 390,
+              "link_pk": 4424,
+              "path": "server/models.py",
+              "start_line": 252,
+              "end_line": 264,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n        \"\"\"used to collect form data\"\"\"\n        fields = {\n            'doctor': self.doctor,\n            'patient': self.patient,\n            'symptom': self.symptom,\n            'description': self.description,\n            'hospital': self.hospital,\n            'appointment_type': self.appointment_type,\n            'startTime': self.startTime,\n            'endTime': self.endTime,\n        }\n        return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not generate a report for a patient history file. It only collects and returns appointment data.",
+          "code_behaviour": "The code defines a method `get_populated_fields` in the `Appointment` model that collects and returns a dictionary of appointment fields, including the doctor, patient, symptom, description, hospital, appointment type, start time, and end time."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-077",
+      "req_pk": 256,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "REQ-077.c1",
+          "text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not specify a schedule for the backup or ensure that backups are taken every night with a cycle of 30 days.",
+          "code_behaviour": "The code defines a function `backup_data` that serializes data from various models and writes it to JSON files in the 'backups' directory."
+        },
+        {
+          "claim_id": "REQ-077.c2",
+          "text": "This essentially means that there will be a provision to rollback by a month.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanism for restoring data from a backup or rolling back to a previous state.",
+          "code_behaviour": "The code does not provide any functionality for rolling back data by a month."
+        },
+        {
+          "claim_id": "REQ-077.c3",
+          "text": "Post back-up everyday, the back-up shall be restored on a dummy production system to ensure completeness.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any steps for restoring the backup data on a dummy production system.",
+          "code_behaviour": "The code does not specify any restoration process for the backup data on a dummy production system."
+        },
+        {
+          "claim_id": "REQ-077.c4",
+          "text": "Post back-up everyday, the back-up shall be restored on a dummy production system to ensure correctness.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any steps for restoring the backup data on a dummy production system.",
+          "code_behaviour": "The code does not specify any restoration process for the backup data on a dummy production system."
+        },
+        {
+          "claim_id": "REQ-077.c5",
+          "text": "Post that the dummy production database shall be purged.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any steps for purging the dummy production database.",
+          "code_behaviour": "The code does not specify any process for purging the dummy production database."
+        },
+        {
+          "claim_id": "REQ-077.c6",
+          "text": "Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4464,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    data = serializers.serialize(\"json\", Speciality.objects.all())\n    out = open(\"backups/speciality.json\", \"w\")\n    out.write(data)\n    out.close()\n    # ... (similar lines for other models)...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any information about where the backup data is stored or how it is secured.",
+          "code_behaviour": "The code does not specify any location or security measures for storing the backup data."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up.",
+          "parts": [
+            "Post back-up everyday, the back-up shall be restored on a dummy production system to ensure completeness.",
+            "Post back-up everyday, the back-up shall be restored on a dummy production system to ensure correctness."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-079",
+      "req_pk": 258,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-079.c1",
+          "text": "As the Patient\u2019 data is highly confidential and private care would be taken to ensure that the confidentiality is maintained.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanisms to ensure that patient data is confidential or private.",
+          "code_behaviour": "The code does not provide any specific measures to maintain data confidentiality or privacy."
+        },
+        {
+          "claim_id": "REQ-079.c2",
+          "text": "Only authorized Hospital staff i.e.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not define or check for authorized roles.",
+          "code_behaviour": "The code does not specify which roles are authorized to access patient data."
+        },
+        {
+          "claim_id": "REQ-079.c3",
+          "text": "Doctors will have the access to Patients Consultation requests.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4475,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 31,
+              "end_line": 37,
+              "tag": "C3",
+              "quote": "if authentication_result is not None:\n    return authentication_result\nif 'pk' in request.GET:\n    if request.user.account.role != Account.ACCOUNT_DOCTOR:\n        request.session['alert_danger'] = \"You don't have permission to view the page.\"\n        return HttpResponseRedirect('/error/denied/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user's role is not a doctor and denies access if it is not.",
+          "code_behaviour": "The code restricts access to patient consultation requests to doctors."
+        },
+        {
+          "claim_id": "REQ-079.c4",
+          "text": "Chemists will be shown data only on need to know basis.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanisms to restrict chemists and labs' access to patient data.",
+          "code_behaviour": "The code does not specify how chemists and labs access patient data."
+        },
+        {
+          "claim_id": "REQ-079.c5",
+          "text": "Labs will be shown data only on need to know basis.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanisms to restrict chemists and labs' access to patient data.",
+          "code_behaviour": "The code does not specify how chemists and labs access patient data."
+        },
+        {
+          "claim_id": "REQ-079.c6",
+          "text": "Since there are no published external interfaces, there is no risk envisaged at the moment in terms of unwarranted data cascade.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any mechanisms to ensure that there is no risk of unwarranted data cascade.",
+          "code_behaviour": "The code does not provide any specific measures to prevent unwarranted data cascade."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Also, Chemists and Labs will be shown data only on need to know basis.",
+          "parts": [
+            "Chemists will be shown data only on need to know basis.",
+            "Labs will be shown data only on need to know basis."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-1",
+      "req_pk": 260,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "BR-1.c1",
+          "text": "System shall be available only on Specified PinCodes (Zones).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.setup_field",
+              "comp_pk": 418,
+              "link_pk": 4483,
+              "path": "server/forms.py",
+              "start_line": 32,
+              "end_line": 39,
+              "tag": "C1",
+              "quote": "def setup_field(field, placeholder=None):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.forms.HospitalForm",
+              "comp_pk": 441,
+              "link_pk": 4484,
+              "path": "server/forms.py",
+              "start_line": 299,
+              "end_line": 311,
+              "tag": "C2",
+              "quote": "class HospitalForm(BasicForm):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code configures form fields but does not implement any logic to restrict system availability based on specified PinCodes.",
+          "code_behaviour": "The code does not directly restrict system availability based on specified PinCodes (Zones). It only configures form fields for a hospital's city, zip code, state, address, name, and phone number."
+        },
+        {
+          "claim_id": "BR-1.c2",
+          "text": "These will be set-up in the Parameter Control File",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.HospitalForm",
+              "comp_pk": 441,
+              "link_pk": 4484,
+              "path": "server/forms.py",
+              "start_line": 302,
+              "end_line": 303,
+              "tag": "C2",
+              "quote": "zip = forms.CharField(max_length=50)\nsetup_field(zip,\"Enter hospital's pin code\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code sets up a form field for a hospital's zip code, which is typically used as a PinCode, and configures it with a placeholder text.",
+          "code_behaviour": "The code sets up a form field for a hospital's zip code, which is typically used as a PinCode."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-2",
+      "req_pk": 261,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "BR-2.c1",
+          "text": "All Users shall access the system using a login/user-id.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.LoginForm.clean",
+              "comp_pk": 424,
+              "link_pk": 4487,
+              "path": "server/forms.py",
+              "start_line": 69,
+              "end_line": 80,
+              "tag": "C1",
+              "quote": "if username and password:\n    user = authenticate(username=username, password=password)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if both 'email' and 'password' fields are filled and then authenticates the user using the provided email and password, which aligns with the claim that all users shall access the system using a login/user-id.",
+          "code_behaviour": "The code checks if both 'email' and 'password' fields are filled and then authenticates the user using the provided email and password."
+        },
+        {
+          "claim_id": "BR-2.c2",
+          "text": "All Users shall access the system using a password.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.LoginForm.clean",
+              "comp_pk": 424,
+              "link_pk": 4487,
+              "path": "server/forms.py",
+              "start_line": 69,
+              "end_line": 80,
+              "tag": "C1",
+              "quote": "if username and password:\n    user = authenticate(username=username, password=password)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if both 'email' and 'password' fields are filled and then authenticates the user using the provided email and password, which aligns with the claim that all users shall access the system using a password.",
+          "code_behaviour": "The code checks if both 'email' and 'password' fields are filled and then authenticates the user using the provided email and password."
+        },
+        {
+          "claim_id": "BR-2.c3",
+          "text": "The login-id/password will be managed in a secured manner",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 69-80"
+            }
+          ],
+          "rationale": "The code does not provide any evidence of the login-id/password being managed in a secured manner, which is a requirement for the system.",
+          "code_behaviour": "The code does not provide any evidence of the login-id/password being managed in a secured manner."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "All Users shall access the system using a login/user-id and password.",
+          "parts": [
+            "All Users shall access the system using a login/user-id.",
+            "All Users shall access the system using a password."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-3",
+      "req_pk": 262,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-3.c1",
+          "text": "Each Speciality \u2018has\u2019 one or more Doctors linked to it.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.admin.MedicalTestAdmin",
+              "comp_pk": 461,
+              "link_pk": 4492,
+              "path": "server/admin.py",
+              "start_line": 79,
+              "end_line": 91,
+              "tag": "C1",
+              "quote": "class MedicalTestAdmin(admin.ModelAdmin):\n    fields = [\n        'name',\n        'date',\n        'hospital',\n        'description',\n        'doctor',\n        'patient',\n        'private',\n        'completed',\n        'image1'\n    ]\n    list_display = ('name', 'doctor', 'patient', 'date')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a `MedicalTestAdmin` class with a `list_display` attribute that includes the `doctor` field, but it does not enforce any constraints on the number of doctors linked to a speciality. The claim requires that each speciality 'has' one or more doctors linked to it, but the code does not implement this requirement.",
+          "code_behaviour": "The code defines a `MedicalTestAdmin` class for managing medical tests in a Django admin interface. It includes fields for `name`, `date`, `hospital`, `description`, `doctor`, `patient`, `private`, `completed`, and `image1`. The `list_display` attribute specifies that the `name`, `doctor`, `patient`, and `date` fields should be displayed in the list view of the admin interface."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-4",
+      "req_pk": 263,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-4.c1",
+          "text": "Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.EmployeeRegistrationForm.clean",
+              "comp_pk": 438,
+              "link_pk": 4495,
+              "path": "server/forms.py",
+              "start_line": 264,
+              "end_line": 266,
+              "tag": "C1",
+              "quote": "if int(employee)!=20 and speciality is not None:\n    self.mark_error('speciality', 'Only doctor can have a speciality')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not ensure that each Doctor is mapped to ONE and ONLY ONE Speciality. It only checks that if the employee type is 'Doctor', a speciality must be selected. It does not prevent multiple Doctors from being mapped to the same Speciality.",
+          "code_behaviour": "The code checks if the employee type is 'Doctor' (represented by the number 20). If it is, it ensures that a speciality is selected. If not, it marks the 'speciality' field as erroneous with the message 'Only doctor can have a speciality'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+          "rejected_split": [
+            "Each Doctor shall be mapped to ONE Speciality.",
+            "Each Doctor shall not be mapped to more than ONE Speciality."
+          ],
+          "reason": "adds words not in the requirement: ['more', 'than']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-5",
+      "req_pk": 264,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-5.c1",
+          "text": "Each Doctor shall provide Consultation to ONE Patient",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.PrescriptionForm.assign",
+              "comp_pk": 440,
+              "link_pk": 4500,
+              "path": "server/forms.py",
+              "start_line": 289,
+              "end_line": 289,
+              "tag": "C1",
+              "quote": "prescription.patient = self.cleaned_data['patient']",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code assigns a patient to a prescription but does not limit the number of patients a doctor can assign prescriptions to.",
+          "code_behaviour": "The code assigns a patient to a prescription, but it does not enforce that a doctor can only provide consultation to one patient."
+        },
+        {
+          "claim_id": "BR-5.c2",
+          "text": "Each Doctor shall provide Consultation to More Patient",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.PrescriptionForm.assign",
+              "comp_pk": 440,
+              "link_pk": 4500,
+              "path": "server/forms.py",
+              "start_line": 289,
+              "end_line": 289,
+              "tag": "C1",
+              "quote": "prescription.patient = self.cleaned_data['patient']",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code assigns a patient to a prescription but does not limit the number of patients a doctor can assign prescriptions to.",
+          "code_behaviour": "The code assigns a patient to a prescription, but it does not enforce that a doctor can provide consultation to more than one patient."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Doctor shall provide Consultation to ONE or More Patient",
+          "parts": [
+            "Each Doctor shall provide Consultation to ONE Patient",
+            "Each Doctor shall provide Consultation to More Patient"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-6",
+      "req_pk": 265,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "BR-6.c1",
+          "text": "Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4504,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C1",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):\n    user = User.objects.create_user(\n        email.lower(),\n        email.lower(),\n        password\n    )\n    profile = Profile(\n        firstname=firstname,\n        lastname=lastname,\n        speciality=speciality\n    )\n    profile.save()\n    account = Account(\n        role=role,\n        profile=profile,\n        user=user\n    )\n    account.save()\n    medical_info = MedicalInfo(\n        account=account\n    )\n    medical_info.save()\n    logger.log(Action.ACTION_ACCOUNT,\"Account registered\",account)\n    return user",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code creates a user, profile, account, and medical info record, which aligns with the claim that a unique ID will be generated for the patient.",
+          "code_behaviour": "The `register_user` function creates a new user with the provided email, password, firstname, lastname, and role. It then creates a profile, account, and medical info record for the user. The function returns the created user."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-7",
+      "req_pk": 266,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "BR-7.c1",
+          "text": "Each Patient can request for one consultation Request (linked back to Speciality).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.list_view",
+              "comp_pk": 465,
+              "link_pk": 4513,
+              "path": "server/views_appointment.py",
+              "start_line": 13,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "def list_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_PATIENT, Account.ACCOUNT_DOCTOR]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # Get template data from session\n    template_data = views.parse_session(request)\n    # Proceed with rest of the view\n    appointment.parse_appointment_cancel(request, template_data)     # parse appointment cancelling\n    if request.user.account.role == Account.ACCOUNT_DOCTOR:\n        template_data['query'] = Appointment.objects.filter(doctor=request.user.account)\n    elif request.user.account == Account.ACCOUNT_PATIENT:\n        template_data['query'] = Appointment.objects.filter(patient=request.user.account)\n    else:\n        template_data['query'] = Appointment.objects.all()\n    return render(request, 'virtualclinic/appointment/list.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is authenticated and has the required role (either a doctor or a patient). It then retrieves a list of appointments for the user, either filtered by doctor or patient. This matches the claim that each Patient can request for one consultation Request (linked back to Speciality).",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (either a doctor or a patient). It then retrieves a list of appointments for the user, either filtered by doctor or patient."
+        },
+        {
+          "claim_id": "BR-7.c2",
+          "text": "Each Patient can request for more consultation Requests (linked back to Speciality).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.list_view",
+              "comp_pk": 465,
+              "link_pk": 4513,
+              "path": "server/views_appointment.py",
+              "start_line": 13,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "def list_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_PATIENT, Account.ACCOUNT_DOCTOR]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # Get template data from session\n    template_data = views.parse_session(request)\n    # Proceed with rest of the view\n    appointment.parse_appointment_cancel(request, template_data)     # parse appointment cancelling\n    if request.user.account.role == Account.ACCOUNT_DOCTOR:\n        template_data['query'] = Appointment.objects.filter(doctor=request.user.account)\n    elif request.user.account == Account.ACCOUNT_PATIENT:\n        template_data['query'] = Appointment.objects.filter(patient=request.user.account)\n    else:\n        template_data['query'] = Appointment.objects.all()\n    return render(request, 'virtualclinic/appointment/list.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is authenticated and has the required role (either a doctor or a patient). It then retrieves a list of appointments for the user, either filtered by doctor or patient. This matches the claim that each Patient can request for more consultation Requests (linked back to Speciality).",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (either a doctor or a patient). It then retrieves a list of appointments for the user, either filtered by doctor or patient."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+          "parts": [
+            "Each Patient can request for one consultation Request (linked back to Speciality).",
+            "Each Patient can request for more consultation Requests (linked back to Speciality)."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-8",
+      "req_pk": 267,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "BR-8.c1",
+          "text": "Each Patient Consultation Request \u2018Generates\u2019 ONE prescription.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.create_view",
+              "comp_pk": 462,
+              "link_pk": 4519,
+              "path": "server/views_prescription.py",
+              "start_line": 11,
+              "end_line": 40,
+              "tag": "C1",
+              "quote": "def create_view(request):\n    # Authentication Check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_DOCTOR]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # Get template data from session\n    template_data = views.parse_session(request,{'form_button\":\"Add Prescription\"'})\n    default = {}\n    if request.user.account.role == Account.ACCOUNT_DOCTOR:\n        default['doctor'] = request.user.account.pk\n    if 'date' not in request.POST:\n        default['date'] = datetime.now().strftime(\"%Y-%m-%d\")\n    request.POST._mutable = True\n    request.POST.update(default)\n    form = PrescriptionForm(request.POST)\n    if request.method == 'POST':\n        if form.is_valid():\n            pres = Prescription(\n                patient = form.cleaned_data['patient'],\n                doctor = form.cleaned_data['doctor'],\n                date = form.cleaned_data['date'],\n                medication = form.cleaned_data['medication'],\n                strength = form.cleaned_data['strength'],\n                instruction = form.cleaned_data['instruction'],\n                refill = form.cleaned_data['refill'],\n            )\n            pres.save()\n            logger.log(Action.ACTION_PRESCRIPTION,'Prescription Created', request.user.account)\n            form = PrescriptionForm(default)   # Clean form data when page is redisplayed\n            form._errors = {}\n            request.session['alert_success'] = \"Successfully added the prescription.\"\n            return HttpResponseRedirect('/prescription/list/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code creates a new `Prescription` object and saves it to the database when a valid form is submitted, which supports the claim that each Patient Consultation Request 'Generates' ONE prescription.",
+          "code_behaviour": "The code checks if the user is authenticated and has the required role (doctor). If valid, it creates a new `Prescription` object using data from the form and saves it to the database. It logs the creation of the prescription and sets a success message in the session."
+        },
+        {
+          "claim_id": "BR-8.c2",
+          "text": "Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.create_view",
+              "comp_pk": 462,
+              "link_pk": 4519,
+              "path": "server/views_prescription.py",
+              "start_line": 11,
+              "end_line": 40,
+              "tag": "C1",
+              "quote": "def create_view(request):\n    # Authentication Check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_DOCTOR]\n    )\n    if authentication_result is not None:\n        return authentication_result\n    # Get template data from session\n    template_data = views.parse_session(request,{'form_button\":\"Add Prescription\"'})\n    default = {}\n    if request.user.account.role == Account.ACCOUNT_DOCTOR:\n        default['doctor'] = request.user.account.pk\n    if 'date' not in request.POST:\n        default['date'] = datetime.now().strftime(\"%Y-%m-%d\")\n    request.POST._mutable = True\n    request.POST.update(default)\n    form = PrescriptionForm(request.POST)\n    if request.method == 'POST':\n        if form.is_valid():\n            pres = Prescription(\n                patient = form.cleaned_data['patient'],\n                doctor = form.cleaned_data['doctor'],\n                date = form.cleaned_data['date'],\n                medication = form.cleaned_data['medication'],\n                strength = form.cleaned_data['strength'],\n                instruction = form.cleaned_data['instruction'],\n                refill = form.cleaned_data['refill'],\n            )\n            pres.save()\n            logger.log(Action.ACTION_PRESCRIPTION,'Prescription Created', request.user.account)\n            form = PrescriptionForm(default)   # Clean form data when page is redisplayed\n            form._errors = {}\n            request.session['alert_success'] = \"Successfully added the prescription.\"\n            return HttpResponseRedirect('/prescription/list/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not map prescriptions to patient consultation requests, so it does not support the claim that each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+          "code_behaviour": "The code does not explicitly map prescriptions to patient consultation requests. It only creates prescriptions based on form data."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+          "rejected_split": [
+            "Each Prescription shall be mapped to ONE Patient Consultation Request.",
+            "Each Prescription shall not be mapped to more than ONE Patient Consultation Request."
+          ],
+          "reason": "adds words not in the requirement: ['more', 'than']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-9",
+      "req_pk": 268,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-9.c1",
+          "text": "Each Chemist receives one prescription.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for assigning prescriptions to chemists, so it cannot be verified that each chemist receives one prescription.",
+          "code_behaviour": "The code does not specify how prescriptions are assigned to chemists. It only defines the fields that a prescription can have."
+        },
+        {
+          "claim_id": "BR-9.c2",
+          "text": "Each Chemist receives one or more prescriptions.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for assigning prescriptions to chemists, so it cannot be verified that each chemist receives one or more prescriptions.",
+          "code_behaviour": "The code does not specify how prescriptions are assigned to chemists. It only defines the fields that a prescription can have."
+        },
+        {
+          "claim_id": "BR-9.c3",
+          "text": "Each Chemist receives only required fields.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for checking which fields are required, so it cannot be verified that each prescription contains only required fields.",
+          "code_behaviour": "The code defines the fields that a prescription can have, but it does not specify which fields are required."
+        },
+        {
+          "claim_id": "BR-9.c4",
+          "text": "Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Chemist",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for assigning prescriptions to chemists, so it cannot be verified that each prescription is mapped to one and only one chemist.",
+          "code_behaviour": "The code does not specify how prescriptions are assigned to chemists. It only defines the fields that a prescription can have."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Chemist \u201creceives\u201d one or more prescriptions (only required fields).",
+          "parts": [
+            "Each Chemist receives one prescription.",
+            "Each Chemist receives one or more prescriptions.",
+            "Each Chemist receives only required fields."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "BR-10",
+      "req_pk": 269,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-10.c1",
+          "text": "Each Lab receives one or more prescriptions.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Prescription.get_populated_fields",
+              "comp_pk": 394,
+              "link_pk": 4532,
+              "path": "server/models.py",
+              "start_line": 295,
+              "end_line": 307,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n    \"\"\"used to collect form data\"\"\"\n    fields = {\n        'patient': self.patient,\n        'doctor': self.doctor,\n        'date': self.date,\n        'medication': self.medication,\n        'strength': self.strength,\n        'instruction': self.instruction,\n        'refill': self.refill,\n        'active': self.active,\n    }\n    return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not specify how prescriptions are assigned to labs, nor does it ensure that each lab receives one or more prescriptions.",
+          "code_behaviour": "The code defines a method `get_populated_fields` that returns a dictionary of fields for a prescription, including 'patient', 'doctor', 'date', 'medication', 'strength', 'instruction', 'refill', and 'active'."
+        },
+        {
+          "claim_id": "BR-10.c2",
+          "text": "Each Lab receives only required fields.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Prescription.get_populated_fields",
+              "comp_pk": 394,
+              "link_pk": 4532,
+              "path": "server/models.py",
+              "start_line": 295,
+              "end_line": 307,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n    \"\"\"used to collect form data\"\"\"\n    fields = {\n        'patient': self.patient,\n        'doctor': self.doctor,\n        'date': self.date,\n        'medication': self.medication,\n        'strength': self.strength,\n        'instruction': self.instruction,\n        'refill': self.refill,\n        'active': self.active,\n    }\n    return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not specify which fields are required for prescriptions.",
+          "code_behaviour": "The code defines a method `get_populated_fields` that returns a dictionary of fields for a prescription, including 'patient', 'doctor', 'date', 'medication', 'strength', 'instruction', 'refill', and 'active'."
+        },
+        {
+          "claim_id": "BR-10.c3",
+          "text": "Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Labs",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Prescription.get_populated_fields",
+              "comp_pk": 394,
+              "link_pk": 4532,
+              "path": "server/models.py",
+              "start_line": 295,
+              "end_line": 307,
+              "tag": "C1",
+              "quote": "def get_populated_fields(self):\n    \"\"\"used to collect form data\"\"\"\n    fields = {\n        'patient': self.patient,\n        'doctor': self.doctor,\n        'date': self.date,\n        'medication': self.medication,\n        'strength': self.strength,\n        'instruction': self.instruction,\n        'refill': self.refill,\n        'active': self.active,\n    }\n    return fields",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not specify how prescriptions are assigned to labs, nor does it ensure that each prescription is mapped to exactly one lab.",
+          "code_behaviour": "The code defines a method `get_populated_fields` that returns a dictionary of fields for a prescription, including 'patient', 'doctor', 'date', 'medication', 'strength', 'instruction', 'refill', and 'active'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Each Lab \u201creceives\u201d one or more prescriptions (only required fields).",
+          "parts": [
+            "Each Lab receives one or more prescriptions.",
+            "Each Lab receives only required fields."
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+[1/48] REQ-018    not_supported_by_candidate
+[2/48] REQ-019    not_supported_by_candidate
+[3/48] Req-1      not_supported_by_candidate
+[4/48] Req-1/1    not_supported_by_candidate
+[5/48] Req-1/2    supported
+[6/48] Req-1/3    not_supported_by_candidate
+[7/48] Req-2      not_supported_by_candidate
+[8/48] Req-2/1    supported
+[9/48] Req-2/2    not_supported_by_candidate
+[10/48] Req-2/3    not_supported_by_candidate
+[11/48] Req-3      supported
+[12/48] Req-3/1    not_supported_by_candidate
+[13/48] Req-3/2    not_supported_by_candidate
+[14/48] Req-3/3    not_supported_by_candidate
+[15/48] Req-4      supported
+[16/48] Req-4/1    not_supported_by_candidate
+[17/48] Req-4/2    not_supported_by_candidate
+[18/48] Req-4/3    not_supported_by_candidate
+[19/48] Req-5      supported
+[20/48] Req-5/1    supported
+[21/48] Req-5/2    partially_supported
+[22/48] Req-5/3    not_supported_by_candidate
+[23/48] Req-6      supported
+[24/48] Req-6/1    supported
+[25/48] Req-6/2    supported
+[26/48] Req-6/3    not_supported_by_candidate
+[27/48] Req-7      not_supported_by_candidate
+[28/48] Req-8      not_supported_by_candidate
+[29/48] Req-9      partially_supported
+[30/48] Req-10     not_supported_by_candidate
+[31/48] Req-11     not_supported_by_candidate
+[32/48] Req-12     not_supported_by_candidate
+[33/48] Req-13     not_supported_by_candidate
+[34/48] Req-14     not_supported_by_candidate
+[35/48] Req-15     partially_supported
+[36/48] Req-16     not_supported_by_candidate
+[37/48] REQ-077    not_supported_by_candidate
+[38/48] REQ-079    partially_supported
+[39/48] BR-1       partially_supported
+[40/48] BR-2       partially_supported
+[41/48] BR-3       not_supported_by_candidate
+[42/48] BR-4       not_supported_by_candidate
+[43/48] BR-5       not_supported_by_candidate
+[44/48] BR-6       supported
+[45/48] BR-7       supported
+[46/48] BR-8       partially_supported
+[47/48] BR-9       not_supported_by_candidate
+[48/48] BR-10      not_supported_by_candidate
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/Virtual-clinic_gold_standard_v2.json --document-id run-7-Software Requirements Specification --pipeline-version verification-exp-7b-behavioral --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/7b-behavioral/Virtual-clinic/eval_verification.json
+Verification verification-exp-7b-behavioral for run-7-Software Requirements Specification: 52 gold requirements with an expected verdict
+
+  exact accuracy        0.231
+  false-support rate    0.143  (6 of 42 partial/not-implemented declared supported)
+  implemented recall    0.500  (5 of 10 implemented declared supported)
+  citation validity     0.935  (72 valid, 5 rejected)
+  citations on gold code 0.500
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    partial          not_supported_by_candidate=23, partially_supported=2, supported=5, unverified=1
+    implemented      not_supported_by_candidate=2, partially_supported=3, supported=5
+    not_implemented  not_supported_by_candidate=5, partially_supported=2, supported=1, unverified=3
+    cross_cutting    unverified=5
+
+  disagreements: Req-1(partial->not_supported_by_candidate), Req-1/1(partial->not_supported_by_candidate), Req-1/2(partial->supported), Req-1/3(partial->not_supported_by_candidate), Req-2(partial->not_supported_by_candidate), Req-2/1(partial->supported), Req-2/2(partial->not_supported_by_candidate), Req-2/3(partial->not_supported_by_candidate), Req-3(partial->supported), Req-3/1(partial->not_supported_by_candidate), Req-3/2(partial->not_supported_by_candidate), Req-3/3(partial->not_supported_by_candidate), Req-4/1(implemented->not_supported_by_candidate), Req-4/2(partial->not_supported_by_candidate), Req-4/3(partial->not_supported_by_candidate), Req-5/2(implemented->partially_supported), Req-5/3(partial->not_supported_by_candidate), Req-6/1(partial->supported), Req-6/2(not_implemented->supported), Req-8(partial->not_supported_by_candidate), Req-10(partial->not_supported_by_candidate), Req-11(partial->not_supported_by_candidate), Req-12(partial->not_supported_by_candidate), Req-13(partial->not_supported_by_candidate), Req-15(implemented->partially_supported), Req-16(partial->not_supported_by_candidate), BR-1(not_implemented->partially_supported), BR-2(implemented->partially_supported), BR-3(partial->not_supported_by_candidate), BR-4(partial->not_supported_by_candidate), BR-5(implemented->not_supported_by_candidate), BR-7(partial->supported), BR-8(not_implemented->partially_supported), BR-9(partial->not_supported_by_candidate), REQ-003(partial->not_supported_by_candidate), REQ-007(not_implemented->unverified), REQ-008(not_implemented->unverified), REQ-009(not_implemented->unverified), REQ-010(partial->unverified), REQ-018(partial->not_supported_by_candidate)
+
+

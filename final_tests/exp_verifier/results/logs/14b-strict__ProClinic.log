@@ -1,0 +1,766 @@
+$ traceability.cli verify --document-id run-6-ProClinicSRS --model qwen2.5-coder:14b --prompt strict --think default --pipeline-version verification-exp-14b-strict --keep-link-status --json --requirements FR-1,FR-2,FR-3,FR-4,FR-5,FR-6,NFR-3,NFR-4,US001,US002,US003,US004,US005,US006,US007,US008,US009,US010
+{
+  "document_id": "run-6-ProClinicSRS",
+  "pipeline_version": "verification-exp-14b-strict",
+  "mapping_version": "mapping-v1",
+  "model": "qwen2.5-coder:14b",
+  "prompt_version": "verify-v2.3",
+  "claims_source": "llm",
+  "requirements": 18,
+  "status_counts": {
+    "supported": 6,
+    "not_supported_by_candidate": 8,
+    "insufficient_evidence": 3,
+    "partially_supported": 1
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "US001",
+      "req_pk": 282,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US001.c1",
+          "text": "US001 Admin Manage system roles I can control system permissions.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole.has_permission",
+              "comp_pk": 814,
+              "link_pk": 4904,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n        return (\n            request.user\n            and request.user.is_authenticated\n            and getattr(request.user, 'role', None) == 'ADMIN'\n        )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in [C1] checks if the user making the request is authenticated and has the 'ADMIN' role, which aligns with the claim that the admin can control system permissions."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US002",
+      "req_pk": 283,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US002.c1",
+          "text": "US002 Doctor Book a visit slot I can manage my clinical workload.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any functionality related to doctors booking visit slots. The code only allows patients to view their own visit history."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US003",
+      "req_pk": 284,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US003.c1",
+          "text": "US003 Patient View medical records I can track my health status.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not implement the functionality to track health status. It only provides endpoints for listing and creating appointments."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US004",
+      "req_pk": 285,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US004.c1",
+          "text": "US004 Accountant Generate a final bill Charges are transparent for the patient.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.billing.views.invoice_send_email_manual",
+              "comp_pk": 676,
+              "link_pk": 4921,
+              "path": "backend/billing/views.py",
+              "start_line": 496,
+              "end_line": 500,
+              "tag": "C1",
+              "quote": "f",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code includes detailed information about the invoice status, grand total, and amount due in the email body, making the charges transparent for the patient."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US005",
+      "req_pk": 286,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "US005.c1",
+          "text": "US005 Pharmacist View prescriptions I can dispense the correct medications.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any functionality related to dispensing medications. It only retrieves and displays prescription details."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US006",
+      "req_pk": 287,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US006.c1",
+          "text": "US006 User Access AI Help Desk I can get immediate answers to system queries.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4930,
+              "path": "backend/patients/views.py",
+              "start_line": 395,
+              "end_line": 406,
+              "tag": "C1",
+              "quote": "try:\n    import google.generativeai as genai\n    genai.configure(api_key=api_key)\n\n    _MODEL = 'gemini-2.5-flash'\n    logger_ai.info(\"Calling Gemini model: %s\", _MODEL)\n    model = genai.GenerativeModel(\n        model_name=_MODEL,\n        system_instruction=_GEMINI_SYSTEM_PROMPT,\n    )\n    response = model.generate_content(question)\n    ai_response = response.text\n    logger_ai.info(\"Gemini response received from model: %s\", _MODEL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code successfully sends a question to the Gemini AI model and retrieves a response, which supports the claim of getting immediate answers to system queries."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US007",
+      "req_pk": 288,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US007.c1",
+          "text": "US007 Admin View daily system metrics I can monitor system health.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not include any functionality related to monitoring system health. It only manages appointments and does not provide any system health metrics."
+        },
+        {
+          "claim_id": "US007.c2",
+          "text": "US007 Admin View daily system metrics I can monitor system usage.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not include any functionality related to monitoring system usage. It only manages appointments and does not provide any system usage metrics."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US007 Admin View daily system metrics I can monitor system health and usage.",
+          "parts": [
+            "US007 Admin View daily system metrics I can monitor system health.",
+            "US007 Admin View daily system metrics I can monitor system usage."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US008",
+      "req_pk": 289,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US008.c1",
+          "text": "US008 Doctor Upload research paper I can submit research for internal approval.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.publications.views.submit_paper",
+              "comp_pk": 1001,
+              "link_pk": 4936,
+              "path": "backend/publications/views.py",
+              "start_line": 83,
+              "end_line": 98,
+              "tag": "C1",
+              "quote": "if request.user.role != 'DOCTOR':\n    return redirect('dashboard')\n...\nif request.method == 'POST':\n    form = PublicationForm(request.POST, request.FILES)\n    if form.is_valid():\n        publication = form.save(commit=False)\n        publication.doctor = request.user\n        if request.POST.get('action') == 'draft':\n            publication.status = Publication.STATUS_DRAFT\n        else:\n            publication.status = Publication.STATUS_PENDING\n        publication.save()\n        messages.success(request, \"Publication saved as draft.\" if publication.status == 'DRAFT' else \"Publication submitted for review.\")\n        return redirect('doctor_my_papers')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in [C1] checks if the user is a doctor and allows them to submit a research paper with a status of either DRAFT or PENDING, which aligns with the requirement."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US009",
+      "req_pk": 290,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US009.c1",
+          "text": "US009 Staff Create support tickets I can track operational issues.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any functionality related to creating or tracking support tickets. It only includes views and serializers for managing research publications."
+        },
+        {
+          "claim_id": "US009.c2",
+          "text": "US009 Staff Create support tickets I can track resolutions.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any functionality related to creating or tracking support tickets. It only includes views and serializers for managing research publications."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US009 Staff Create support tickets I can track operational issues and resolutions.",
+          "parts": [
+            "US009 Staff Create support tickets I can track operational issues.",
+            "US009 Staff Create support tickets I can track resolutions."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US010",
+      "req_pk": 291,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US010.c1",
+          "text": "US010 Manager Generate management reports I can analyze clinic performance and revenue. 3",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not contain any functionality related to generating management reports for analyzing clinic performance and revenue. The code only includes views and serializers for patient lab reports."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US010 Manager Generate management reports I can analyze clinic performance and revenue. 3",
+          "rejected_split": [
+            "US010 Manager Generate management reports I can analyze clinic performance.",
+            "US010 Manager Generate management reports I can analyze revenue."
+          ],
+          "reason": "drops values ['3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-1",
+      "req_pk": 292,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "FR-1.c1",
+          "text": "Secure Auth Authentication using system credentials; passwords hashed with Argon2. 1 Critical (5%)",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any implementation related to user registration, login, or password hashing with Argon2. The code only contains a permission class for admin roles."
+        },
+        {
+          "claim_id": "FR-1.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-1: Users can register/login; password storage verified as Argon2; admin can assign roles.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any implementation related to user registration, login, or password hashing with Argon2. The code only contains a permission class for admin roles."
+        },
+        {
+          "claim_id": "FR-1.c3",
+          "text": "Unit tests cover login.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any unit tests or any implementation related to login functionality."
+        },
+        {
+          "claim_id": "FR-1.c4",
+          "text": "Unit tests cover role checks.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any unit tests or any implementation related to role checks."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Unit tests cover login and role checks.",
+          "parts": [
+            "Unit tests cover login.",
+            "Unit tests cover role checks."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2",
+      "req_pk": 293,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-2.c1",
+          "text": "Conflict Check Rejects appointment booking if the doctor is busy in the requested slot. 1 High (10%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+              "comp_pk": 772,
+              "link_pk": 4956,
+              "path": "backend/api/tests.py",
+              "start_line": 233,
+              "end_line": 255,
+              "tag": "C1",
+              "quote": "self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The test case `test_reschedule_conflict_fails` in component C1 demonstrates that attempting to book an appointment during a time when the doctor is already booked results in a 400 Bad Request response, indicating a conflict error."
+        },
+        {
+          "claim_id": "FR-2.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-2: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+              "comp_pk": 772,
+              "link_pk": 4956,
+              "path": "backend/api/tests.py",
+              "start_line": 233,
+              "end_line": 255,
+              "tag": "C1",
+              "quote": "self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The test case `test_reschedule_conflict_fails` in component C1 demonstrates that attempting to book an appointment during a time when the doctor is already booked results in a 400 Bad Request response, indicating a conflict error. This confirms the temporal-overlap check and the rejection of overlapping appointments."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "[Acceptance Criteria] \u2022 FR-2: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+          "rejected_split": [
+            "Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start)",
+            "Attempting to book overlapping appointments for the same doctor returns a conflict error; covered by integration tests"
+          ],
+          "reason": "drops values ['2']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3",
+      "req_pk": 294,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "FR-3.c1",
+          "text": "EHR Hub Digital registration and retrieval of patient profiles and history. 1 High (15%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_my_visits",
+              "comp_pk": 1047,
+              "link_pk": 4960,
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "tag": "C1",
+              "quote": "def patient_my_visits(request):\n    ... \n    profile = get_patient_profile(request.user)\n    visits = []\n    if profile:\n        visits = (\n            Visit.objects.filter(patient=profile)\n            .select_related('doctor', 'appointment')\n            .order_by('-visit_date')\n        )\n    return render(request, 'patients/my_visits.html', {\n        'visits': visits,\n        'profile': profile,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in [C1] retrieves the patient's profile and visit history, which supports the claim of digital registration and retrieval of patient profiles and history."
+        },
+        {
+          "claim_id": "FR-3.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-3: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code provided does not show any operations for creating or updating patient profiles, nor does it include API tests. Therefore, there is insufficient evidence to verify the acceptance criteria."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "EHR Hub Digital registration and retrieval of patient profiles and history. 1 High (15%)",
+          "rejected_split": [
+            "EHR Hub shall provide digital registration of patient profiles and history. 1 High (15%)",
+            "EHR Hub shall provide digital retrieval of patient profiles and history. 1 High (15%)"
+          ],
+          "reason": "adds words not in the requirement: ['provide']"
+        },
+        {
+          "claim": "[Acceptance Criteria] \u2022 FR-3: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+          "rejected_split": [
+            "Create/update/view patient profile operations persist changes",
+            "Create/update/view patient profile operations display visit history",
+            "API tests included"
+          ],
+          "reason": "drops values ['3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4",
+      "req_pk": 295,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-4.c1",
+          "text": "Auto- Billing System calculates total bill including services and 18% GST.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any calculation of GST or inclusion of services in the total bill. The code only posts pre-calculated totals and does not perform any arithmetic operations to include GST or services."
+        },
+        {
+          "claim_id": "FR-4.c2",
+          "text": "Auto- Billing System calculates total bill including 2 Medium (20%).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any calculation for '2 Medium (20%)'. The code only posts pre-calculated totals and does not perform any arithmetic operations to include this specific service or its associated percentage."
+        },
+        {
+          "claim_id": "FR-4.c3",
+          "text": "[Acceptance Criteria] \u2022 FR-4: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any calculation of GST or inclusion of services in the total bill. The code only posts pre-calculated totals and does not perform any arithmetic operations to include GST or services. Additionally, there is no evidence of PDF export or matching to a template."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Auto- Billing System calculates total bill including services and 18% GST. 2 Medium (20%)",
+          "parts": [
+            "Auto- Billing System calculates total bill including services and 18% GST.",
+            "Auto- Billing System calculates total bill including 2 Medium (20%)."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5",
+      "req_pk": 296,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-5.c1",
+          "text": "Audit Log Automated tracking of all record deletions and administrative changes. 2 Medium (10%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.audit.utils.log_action",
+              "comp_pk": 1089,
+              "link_pk": 4973,
+              "path": "backend/audit/utils.py",
+              "start_line": 6,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "def log_action(*, actor, action_type, entity_type, entity_id=None, changes=None):\n    AuditLog.objects.create(\n        actor=actor,\n        action_type=action_type,\n        entity_type=entity_type,\n        entity_id=entity_id,\n        changes=changes,\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `log_action` function in `backend.audit.utils` creates an AuditLog entry with the actor, action type, entity type, entity ID, and changes. This supports the automated tracking of all record deletions and administrative changes."
+        },
+        {
+          "claim_id": "FR-5.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-5: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.audit.utils.log_action",
+              "comp_pk": 1089,
+              "link_pk": 4973,
+              "path": "backend/audit/utils.py",
+              "start_line": 6,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "def log_action(*, actor, action_type, entity_type, entity_id=None, changes=None):\n    AuditLog.objects.create(\n        actor=actor,\n        action_type=action_type,\n        entity_type=entity_type,\n        entity_id=entity_id,\n        changes=changes,\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `log_action` function in `backend.audit.utils` creates an AuditLog entry with the actor, action type, entity type, entity ID, and changes. This supports the creation of an audit entry with actor and timestamp for any DELETE/UPDATE on sensitive records."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Audit Log Automated tracking of all record deletions and administrative changes. 2 Medium (10%)",
+          "rejected_split": [
+            "Audit Log shall automatically track all record deletions.",
+            "Audit Log shall automatically track all administrative changes."
+          ],
+          "reason": "adds words not in the requirement: ['automatically', 'track']"
+        },
+        {
+          "claim": "[Acceptance Criteria] \u2022 FR-5: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+          "rejected_split": [
+            "Any DELETE on sensitive records creates an audit entry with actor and timestamp.",
+            "Any UPDATE on sensitive records creates an audit entry with actor and timestamp."
+          ],
+          "reason": "drops values ['5']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6",
+      "req_pk": 297,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-6.c1",
+          "text": "AI-powered assistant using NLP-based FAQ to answer system-related queries. 4 Low (30%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not explicitly mention or use NLP-based FAQ to answer system-related queries. It uses a generative model to generate responses based on the input question."
+        },
+        {
+          "claim_id": "FR-6.c2",
+          "text": "AI-powered assistant using Retrieval-Augmented Generation (RAG) to answer system-related queries. 4 Low (30%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not explicitly mention or use Retrieval-Augmented Generation (RAG) to answer system-related queries. It uses a generative model to generate responses based on the input question."
+        },
+        {
+          "claim_id": "FR-6.c3",
+          "text": "[Acceptance Criteria] \u2022 FR-6: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review. 4",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not explicitly mention or use contextual answers (MVP: canned responses + FAQ) or logging queries for review. It generates responses using a generative model and does not log queries for review."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "AI-powered assistant using NLP-based FAQ and Retrieval- Augmented Generation (RAG) to answer system-related queries. 4 Low (30%)",
+          "parts": [
+            "AI-powered assistant using NLP-based FAQ to answer system-related queries. 4 Low (30%)",
+            "AI-powered assistant using Retrieval-Augmented Generation (RAG) to answer system-related queries. 4 Low (30%)"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-3",
+      "req_pk": 300,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "NFR-3.c1",
+          "text": "Security Enforce HTTPS, CSRF protection, and role-based data isolation. 1 Critical (5%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code only implements role-based data isolation by checking if the user has the 'ADMIN' role. It does not show any implementation for enforcing HTTPS or CSRF protection."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Security Enforce HTTPS, CSRF protection, and role-based data isolation. 1 Critical (5%)",
+          "rejected_split": [
+            "Security shall enforce HTTPS.",
+            "Security shall enforce CSRF protection.",
+            "Security shall enforce role-based data isolation."
+          ],
+          "reason": "drops values ['1', '5']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-4",
+      "req_pk": 301,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "NFR-4.c1",
+          "text": "up to 5,000 active patient records; use pagination/indexing for large lists. 3 Low (50%)",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any implementation details related to handling up to 5,000 active patient records or using pagination/indexing for large lists. The test code only verifies that a paginated listing of patients returns a successful response with the 'results' key present."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    }
+  ]
+}
+
+[1/18] US001      supported
+[2/18] US002      not_supported_by_candidate
+[3/18] US003      not_supported_by_candidate
+[4/18] US004      supported
+[5/18] US005      insufficient_evidence
+[6/18] US006      supported
+[7/18] US007      not_supported_by_candidate
+[8/18] US008      supported
+[9/18] US009      not_supported_by_candidate
+[10/18] US010      not_supported_by_candidate
+[11/18] FR-1       insufficient_evidence
+[12/18] FR-2       supported
+[13/18] FR-3       partially_supported
+[14/18] FR-4       not_supported_by_candidate
+[15/18] FR-5       supported
+[16/18] FR-6       not_supported_by_candidate
+[17/18] NFR-3      not_supported_by_candidate
+[18/18] NFR-4      insufficient_evidence
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/ProClinic_gold_standard_v2.json --document-id run-6-ProClinicSRS --pipeline-version verification-exp-14b-strict --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/14b-strict/ProClinic/eval_verification.json
+Verification verification-exp-14b-strict for run-6-ProClinicSRS: 18 gold requirements with an expected verdict
+
+  exact accuracy        0.389
+  false-support rate    0.167  (1 of 6 partial/not-implemented declared supported)
+  implemented recall    0.417  (5 of 12 implemented declared supported)
+  citation validity     1.000  (9 valid, 0 rejected)
+  citations on gold code 0.250
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    implemented      insufficient_evidence=3, not_supported_by_candidate=3, partially_supported=1, supported=5
+    partial          not_supported_by_candidate=3
+    cross_cutting    unverified=3
+    not_implemented  not_supported_by_candidate=2, supported=1
+
+  disagreements: FR-1(implemented->insufficient_evidence), FR-3(implemented->partially_supported), FR-4(partial->not_supported_by_candidate), FR-6(partial->not_supported_by_candidate), NFR-3(implemented->not_supported_by_candidate), NFR-4(implemented->insufficient_evidence), US002(partial->not_supported_by_candidate), US003(implemented->not_supported_by_candidate), US005(implemented->insufficient_evidence), US006(not_implemented->supported), US007(implemented->not_supported_by_candidate)
+
+

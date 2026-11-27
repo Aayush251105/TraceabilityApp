@@ -1,0 +1,10 @@
+{
+  "config": "qwen3-14b-behavioral",
+  "model": "qwen3:14b",
+  "prompt": "behavioral",
+  "think": "off",
+  "pipeline_version": "verification-exp-qwen3-14b-behavioral",
+  "requirements": 48,
+  "minutes": 11.65,
+  "document_id": "run-7-Software Requirements Specification"
+}

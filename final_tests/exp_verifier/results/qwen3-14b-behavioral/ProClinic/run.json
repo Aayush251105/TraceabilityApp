@@ -1,0 +1,10 @@
+{
+  "config": "qwen3-14b-behavioral",
+  "model": "qwen3:14b",
+  "prompt": "behavioral",
+  "think": "off",
+  "pipeline_version": "verification-exp-qwen3-14b-behavioral",
+  "requirements": 18,
+  "minutes": 4.08,
+  "document_id": "run-6-ProClinicSRS"
+}

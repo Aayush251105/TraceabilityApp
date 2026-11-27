@@ -1,0 +1,43 @@
+15:19:32 7b-behavioral / Travel-Agency-Automation-System: verifying 12 requirements with qwen2.5-coder:7b (behavioral, think=default)
+15:28:13 7b-behavioral / Travel-Agency-Automation-System: done in 8.69 min
+15:28:13 7b-behavioral / Books-Recommender-System: verifying 28 requirements with qwen2.5-coder:7b (behavioral, think=default)
+15:34:03 7b-behavioral / Books-Recommender-System: done in 5.83 min
+15:34:03 7b-behavioral / Virtual-clinic: verifying 48 requirements with qwen2.5-coder:7b (behavioral, think=default)
+15:50:33 7b-behavioral / Virtual-clinic: done in 16.48 min
+15:50:33 7b-behavioral / ProClinic: verifying 18 requirements with qwen2.5-coder:7b (behavioral, think=default)
+15:56:56 7b-behavioral / ProClinic: done in 6.38 min
+15:56:57 14b-strict / Travel-Agency-Automation-System: verifying 12 requirements with qwen2.5-coder:14b (strict, think=default)
+16:13:18 14b-strict / Travel-Agency-Automation-System: done in 16.35 min
+16:13:18 14b-strict / Books-Recommender-System: verifying 28 requirements with qwen2.5-coder:14b (strict, think=default)
+16:27:44 14b-strict / Books-Recommender-System: done in 14.44 min
+16:27:44 14b-strict / Virtual-clinic: verifying 48 requirements with qwen2.5-coder:14b (strict, think=default)
+16:53:51 14b-strict / Virtual-clinic: done in 26.11 min
+16:53:51 14b-strict / ProClinic: verifying 18 requirements with qwen2.5-coder:14b (strict, think=default)
+17:02:24 14b-strict / ProClinic: done in 8.54 min
+17:02:25 14b-behavioral / Travel-Agency-Automation-System: verifying 12 requirements with qwen2.5-coder:14b (behavioral, think=default)
+17:36:34 14b-behavioral / Travel-Agency-Automation-System: done in 34.15 min
+17:36:34 14b-behavioral / Books-Recommender-System: verifying 28 requirements with qwen2.5-coder:14b (behavioral, think=default)
+17:57:31 14b-behavioral / Books-Recommender-System: done in 20.94 min
+17:57:31 14b-behavioral / Virtual-clinic: verifying 48 requirements with qwen2.5-coder:14b (behavioral, think=default)
+18:58:21 14b-behavioral / Virtual-clinic: done in 60.83 min
+18:58:21 14b-behavioral / ProClinic: verifying 18 requirements with qwen2.5-coder:14b (behavioral, think=default)
+19:13:39 14b-behavioral / ProClinic: done in 15.28 min
+19:13:39 qwen3-14b-strict / Travel-Agency-Automation-System: verifying 12 requirements with qwen3:14b (strict, think=off)
+19:31:07 qwen3-14b-strict / Travel-Agency-Automation-System: done in 17.45 min
+19:31:07 qwen3-14b-strict / Books-Recommender-System: verifying 28 requirements with qwen3:14b (strict, think=off)
+19:55:34 qwen3-14b-strict / Books-Recommender-System: done in 24.44 min
+19:55:34 qwen3-14b-strict / Virtual-clinic: verifying 48 requirements with qwen3:14b (strict, think=off)
+=== resumed 2026-11-27 10:46:26 after power cut ===
+10:46:30 qwen3-14b-strict / Virtual-clinic: verifying 48 requirements with qwen3:14b (strict, think=off)
+10:53:24 qwen3-14b-strict / Virtual-clinic: done in 6.89 min
+10:53:24 qwen3-14b-strict / ProClinic: verifying 18 requirements with qwen3:14b (strict, think=off)
+10:55:51 qwen3-14b-strict / ProClinic: done in 2.44 min
+10:55:51 qwen3-14b-behavioral / Travel-Agency-Automation-System: verifying 12 requirements with qwen3:14b (behavioral, think=off)
+10:59:58 qwen3-14b-behavioral / Travel-Agency-Automation-System: done in 4.1 min
+10:59:58 qwen3-14b-behavioral / Books-Recommender-System: verifying 28 requirements with qwen3:14b (behavioral, think=off)
+11:05:52 qwen3-14b-behavioral / Books-Recommender-System: done in 5.89 min
+11:05:52 qwen3-14b-behavioral / Virtual-clinic: verifying 48 requirements with qwen3:14b (behavioral, think=off)
+11:17:31 qwen3-14b-behavioral / Virtual-clinic: done in 11.65 min
+11:17:31 qwen3-14b-behavioral / ProClinic: verifying 18 requirements with qwen3:14b (behavioral, think=off)
+11:21:36 qwen3-14b-behavioral / ProClinic: done in 4.08 min
+11:21:37 Wrote /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/summary.json and /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/REPORT.md

@@ -1,0 +1,10 @@
+{
+  "config": "7b-behavioral",
+  "model": "qwen2.5-coder:7b",
+  "prompt": "behavioral",
+  "think": "default",
+  "pipeline_version": "verification-exp-7b-behavioral",
+  "requirements": 18,
+  "minutes": 6.38,
+  "document_id": "run-6-ProClinicSRS"
+}

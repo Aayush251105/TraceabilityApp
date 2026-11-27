@@ -1,0 +1,1053 @@
+$ traceability.cli verify --document-id run-6-ProClinicSRS --model qwen2.5-coder:7b --prompt behavioral --think default --pipeline-version verification-exp-7b-behavioral --keep-link-status --json --requirements FR-1,FR-2,FR-3,FR-4,FR-5,FR-6,NFR-3,NFR-4,US001,US002,US003,US004,US005,US006,US007,US008,US009,US010
+{
+  "document_id": "run-6-ProClinicSRS",
+  "pipeline_version": "verification-exp-7b-behavioral",
+  "mapping_version": "mapping-v1",
+  "model": "qwen2.5-coder:7b",
+  "prompt_version": "verify-v2.3-bc",
+  "claims_source": "llm",
+  "requirements": 18,
+  "status_counts": {
+    "supported": 9,
+    "not_supported_by_candidate": 9
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "US001",
+      "req_pk": 282,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US001.c1",
+          "text": "US001 Admin Manage system roles I can control system permissions.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole.has_permission",
+              "comp_pk": 814,
+              "link_pk": 4904,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is authenticated and has the 'ADMIN' role, which aligns with the claim that admins can control system permissions.",
+          "code_behaviour": "The code checks if the user making the request is authenticated and has the 'ADMIN' role. It returns `True` if both conditions are met, otherwise it returns `False`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US002",
+      "req_pk": 283,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US002.c1",
+          "text": "US002 Doctor Book a visit slot I can manage my clinical workload.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_my_visits",
+              "comp_pk": 1047,
+              "link_pk": 4908,
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 231,
+              "tag": "C1",
+              "quote": "if request.user.role != 'PATIENT':\n    return redirect('dashboard')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user's role is 'PATIENT' and redirects to the dashboard if it is not, which aligns with the claim that the user can manage their clinical workload.",
+          "code_behaviour": "The function `patient_my_visits` checks if the user is a patient. If the user is a patient, it retrieves the patient's profile and their visit history, then renders an HTML page with this information. If the user is not a patient, it redirects them to the dashboard."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US003",
+      "req_pk": 284,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US003.c1",
+          "text": "US003 Patient View medical records I can track my health status.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.patient_views.PatientAppointmentListCreateView",
+              "comp_pk": 957,
+              "link_pk": 4912,
+              "path": "backend/api/patient_views.py",
+              "start_line": 95,
+              "end_line": 149,
+              "tag": "C1",
+              "quote": "class PatientAppointmentListCreateView(APIView):\n    permission_classes = [IsAuthenticated, IsPatient]\n\n    def get(self, request):\n        patient = _require_patient(request.user)\n        qs = Appointment.objects.filter(patient=patient).select_related('doctor').order_by('-scheduled_time')\n        status_filter = request.query_params.get('status')\n        now = timezone.now()\n        if status_filter == 'upcoming':\n            qs = qs.filter(scheduled_time__gte=now, status='SCHEDULED')\n        elif status_filter == 'past':\n            qs = qs.filter(Q(scheduled_time__lt=now) | ~Q(status='SCHEDULED'))\n        serializer = PatientAppointmentSerializer(qs, many=True)\n        return Response(serializer.data)\n\n    def post(self, request):\n        patient = _require_patient(request.user)\n        serializer = PatientAppointmentBookSerializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        appointment = Appointment(\n            patient=patient,\n            doctor=serializer.validated_data['doctor'],\n            scheduled_time=serializer.validated_data['scheduled_time'],\n            reason=serializer.validated_data.get('reason', ''),\n            created_by=request.user,\n        )\n        try:\n            appointment.full_clean()\n        except DjangoValidationError as exc:\n            raise ValidationError(exc.message_dict)\n        appointment.save()\n        log_action(\n            actor=request.user,\n            action_type='CREATE',\n            entity_type='Appointment',\n            entity_id=appointment.pk,\n            changes={\n                'doctor_id': appointment.doctor_id,\n                'scheduled_time': str(appointment.scheduled_time),\n            },\n        )\n        return Response(\n            PatientAppointmentSerializer(appointment).data,\n            status=status.HTTP_201_CREATED,\n        )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code provides functionalities for listing and creating appointments, including filtering by status, which aligns with the claim that patients can track their health status.",
+          "code_behaviour": "The code defines a view for managing patient appointments, including listing and creating appointments. It supports filtering appointments by status (upcoming or past) and allows patients to book new appointments."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US004",
+      "req_pk": 285,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US004.c1",
+          "text": "US004 Accountant Generate a final bill Charges are transparent for the patient.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.billing.views.invoice_send_email_manual",
+              "comp_pk": 676,
+              "link_pk": 4921,
+              "path": "backend/billing/views.py",
+              "start_line": 475,
+              "end_line": 553,
+              "tag": "C1",
+              "quote": "def invoice_send_email_manual(request, pk): ... return redirect('invoice_detail', pk=pk)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code sends an invoice email with the invoice details and PDF attached, checks if the patient has an email address, and logs the action. This matches the requirement that charges are transparent for the patient.",
+          "code_behaviour": "The code sends an invoice email to the patient with the invoice details and PDF attached. It checks if the patient has an email address and logs the action. If PDF generation fails, it sends the email without the attachment."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US005",
+      "req_pk": 286,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US005.c1",
+          "text": "US005 Pharmacist View prescriptions I can dispense the correct medications.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.prescriptions.views.pharmacist_prescription_detail",
+              "comp_pk": 723,
+              "link_pk": 4927,
+              "path": "backend/prescriptions/views.py",
+              "start_line": 126,
+              "end_line": 145,
+              "tag": "C1",
+              "quote": "def pharmacist_prescription_detail(request, pk):\n    if request.user.role != 'PHARMACIST':\n        return redirect('dashboard')\n\n    prescription = get_object_or_404(\n        Prescription.objects\n        .select_related('patient', 'doctor', 'visit', 'appointment')\n        .prefetch_related('items'),\n        pk=pk,\n    )\n\n    return render(request, 'prescriptions/pharmacist_prescription_detail.html', {\n        'rx': prescription,\n        'items': prescription.items.all(),\n        'pending_count': Prescription.objects.filter(dispense_status='PENDING').count(),\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user's role is 'PHARMACIST' and redirects if not, but it does not dispense medications. The claim requires the pharmacist to dispense correct medications, which is not addressed in the provided code.",
+          "code_behaviour": "The function `pharmacist_prescription_detail` checks if the user's role is 'PHARMACIST' and if so, retrieves a prescription based on the provided primary key (pk) and renders a detailed view of the prescription, including patient and doctor information, and dispense controls. If the user's role is not 'PHARMACIST', it redirects the user to the dashboard."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US006",
+      "req_pk": 287,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US006.c1",
+          "text": "US006 User Access AI Help Desk I can get immediate answers to system queries.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4930,
+              "path": "backend/patients/views.py",
+              "start_line": 372,
+              "end_line": 425,
+              "tag": "C1",
+              "quote": "def patient_ai_ask(request):\n    \"\"\"Patient-only: Ask a general health question to Gemini AI.\"\"\"\n    if request.user.role != 'PATIENT':\n        messages.error(request, \"The AI Assistant is only available for patients.\")\n        return redirect('dashboard')\n\n    ai_response = None\n    error_message = None\n    question = ''\n\n    if request.method == 'POST':\n        question = request.POST.get('question', '').strip()\n\n        if not question:\n            error_message = \"Please enter a question before submitting.\"\n        elif len(question) > 1000:\n            error_message = \"Question is too long. Please keep it under 1000 characters.\"\n        else:\n            api_key = os.environ.get('GEMINI_API_KEY', '')\n            if not api_key:\n                logger_ai.error(\"GEMINI_API_KEY environment variable is not set.\")\n                error_message = \"The AI service is not configured. Please contact support.\"\n            else:\n                try:\n                    import google.generativeai as genai\n                    genai.configure(api_key=api_key)\n\n                    _MODEL = 'gemini-2.5-flash'\n                    logger_ai.info(\"Calling Gemini model: %s\", _MODEL)\n                    model = genai.GenerativeModel(\n                        model_name=_MODEL,\n                        system_instruction=_GEMINI_SYSTEM_PROMPT,\n                    )\n                    response = model.generate_content(question)\n                    ai_response = response.text\n                    logger_ai.info(\"Gemini response received from model: %s\", _MODEL)\n\n                except ImportError:\n                    logger_ai.error(\"google-generativeai package is not installed.\")\n                    error_message = \"AI service is unavailable at this time. Please try again later.\"\n                except Exception as exc:\n                    exc_str = str(exc).lower()\n                    if '429' in exc_str or 'quota' in exc_str or 'resource_exhausted' in exc_str or 'resourceexhausted' in exc_str:\n                        logger_ai.warning(\"Gemini quota exceeded for model %s: %s\", _MODEL, exc)\n                        error_message = \"AI assistant is temporarily busy. Please try again later.\"\n                    else:\n                        logger_ai.error(\"Gemini API error (model: %s): %s\", _MODEL, exc)\n                        error_message = \"The AI assistant could not process your question right now. Please try again.\"\n\n    return render(request, 'patients/patient_ai_ask.html', {\n        'question': question,\n        'ai_response': ai_response,\n        'error_message': error_message,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is a patient, validates the question length, and sends the question to the Gemini AI model if all checks pass. If any error occurs, it logs the error and sets an error message. The function then renders a template with the question, AI response, and error message, which aligns with the requirement of providing immediate answers to system queries.",
+          "code_behaviour": "The function `patient_ai_ask` handles POST requests from a patient AI assistant form. It checks if the user is a patient, validates the question length, and sends the question to the Gemini AI model if all checks pass. If any error occurs, it logs the error and sets an error message. The function then renders a template with the question, AI response, and error message."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US007",
+      "req_pk": 288,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US007.c1",
+          "text": "US007 Admin View daily system metrics I can monitor system health.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.appointments.views.receptionist_appointments",
+              "comp_pk": 621,
+              "link_pk": 4933,
+              "path": "backend/appointments/views.py",
+              "start_line": 321,
+              "end_line": 368,
+              "tag": "C1",
+              "quote": "def receptionist_appointments(request):\n    \"\"\"Full appointment management view for Receptionist and Admin.\"\"\"\n    if request.user.role not in RECEPTIONIST_ROLES:\n        return redirect('dashboard')\n\n    status_filter = request.GET.get('status', '')\n    date_filter = request.GET.get('date', '')\n    search_query = request.GET.get('q', '').strip()\n\n    qs = Appointment.objects.select_related(\n        'patient', 'doctor', 'created_by'\n    ).order_by('-scheduled_time')\n\n    if status_filter in ('SCHEDULED', 'COMPLETED', 'CANCELLED', 'NOSHOW', 'RESCHEDULED'):\n        qs = qs.filter(status=status_filter)\n\n    if date_filter:\n        try:\n            import datetime\n            filter_date = datetime.datetime.strptime(date_filter, '%Y-%m-%d').date()\n            qs = qs.filter(scheduled_time__date=filter_date)\n        except ValueError:\n            pass\n\n    if search_query:\n        qs = qs.filter(\n            Q(patient__first_name__icontains=search_query) |\n            Q(patient__last_name__icontains=search_query) |\n            Q(doctor__first_name__icontains=search_query) |\n            Q(doctor__last_name__icontains=search_query)\n        )\n\n    counts = {\n        'all':         Appointment.objects.count(),\n        'SCHEDULED':   Appointment.objects.filter(status='SCHEDULED').count(),\n        'COMPLETED':   Appointment.objects.filter(status='COMPLETED').count(),\n        'CANCELLED':   Appointment.objects.filter(status='CANCELLED').count(),\n        'NOSHOW':      Appointment.objects.filter(status='NOSHOW').count(),\n        'RESCHEDULED': Appointment.objects.filter(status='RESCHEDULED').count(),\n    }\n\n    return render(request, 'appointments/receptionist_appointments.html', {\n        'appointments': qs,\n        'current_status': status_filter,\n        'date_filter': date_filter,\n        'search_query': search_query,\n        'counts': counts,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide a view for monitoring system health. It only manages appointments and provides counts of different statuses.",
+          "code_behaviour": "The code filters and orders appointments based on the user's role, status, date, and search query. It then renders a view with the filtered appointments and counts of different statuses."
+        },
+        {
+          "claim_id": "US007.c2",
+          "text": "US007 Admin View daily system metrics I can monitor system usage.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.appointments.views.receptionist_appointments",
+              "comp_pk": 621,
+              "link_pk": 4933,
+              "path": "backend/appointments/views.py",
+              "start_line": 321,
+              "end_line": 368,
+              "tag": "C1",
+              "quote": "def receptionist_appointments(request):\n    \"\"\"Full appointment management view for Receptionist and Admin.\"\"\"\n    if request.user.role not in RECEPTIONIST_ROLES:\n        return redirect('dashboard')\n\n    status_filter = request.GET.get('status', '')\n    date_filter = request.GET.get('date', '')\n    search_query = request.GET.get('q', '').strip()\n\n    qs = Appointment.objects.select_related(\n        'patient', 'doctor', 'created_by'\n    ).order_by('-scheduled_time')\n\n    if status_filter in ('SCHEDULED', 'COMPLETED', 'CANCELLED', 'NOSHOW', 'RESCHEDULED'):\n        qs = qs.filter(status=status_filter)\n\n    if date_filter:\n        try:\n            import datetime\n            filter_date = datetime.datetime.strptime(date_filter, '%Y-%m-%d').date()\n            qs = qs.filter(scheduled_time__date=filter_date)\n        except ValueError:\n            pass\n\n    if search_query:\n        qs = qs.filter(\n            Q(patient__first_name__icontains=search_query) |\n            Q(patient__last_name__icontains=search_query) |\n            Q(doctor__first_name__icontains=search_query) |\n            Q(doctor__last_name__icontains=search_query)\n        )\n\n    counts = {\n        'all':         Appointment.objects.count(),\n        'SCHEDULED':   Appointment.objects.filter(status='SCHEDULED').count(),\n        'COMPLETED':   Appointment.objects.filter(status='COMPLETED').count(),\n        'CANCELLED':   Appointment.objects.filter(status='CANCELLED').count(),\n        'NOSHOW':      Appointment.objects.filter(status='NOSHOW').count(),\n        'RESCHEDULED': Appointment.objects.filter(status='RESCHEDULED').count(),\n    }\n\n    return render(request, 'appointments/receptionist_appointments.html', {\n        'appointments': qs,\n        'current_status': status_filter,\n        'date_filter': date_filter,\n        'search_query': search_query,\n        'counts': counts,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide a view for monitoring system usage. It only manages appointments and provides counts of different statuses.",
+          "code_behaviour": "The code filters and orders appointments based on the user's role, status, date, and search query. It then renders a view with the filtered appointments and counts of different statuses."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US007 Admin View daily system metrics I can monitor system health and usage.",
+          "parts": [
+            "US007 Admin View daily system metrics I can monitor system health.",
+            "US007 Admin View daily system metrics I can monitor system usage."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "US008",
+      "req_pk": 289,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "US008.c1",
+          "text": "US008 Doctor Upload research paper I can submit research for internal approval.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.publications.views.submit_paper",
+              "comp_pk": 1001,
+              "link_pk": 4936,
+              "path": "backend/publications/views.py",
+              "start_line": 83,
+              "end_line": 101,
+              "tag": "C1",
+              "quote": "def submit_paper(request):\n    if request.user.role != 'DOCTOR':\n        return redirect('dashboard')\n    if request.method == 'POST':\n        form = PublicationForm(request.POST, request.FILES)\n        if form.is_valid():\n            publication = form.save(commit=False)\n            publication.doctor = request.user\n            if request.POST.get('action') == 'draft':\n                publication.status = Publication.STATUS_DRAFT\n            else:\n                publication.status = Publication.STATUS_PENDING\n            publication.save()\n            messages.success(request, \"Publication saved as draft.\" if publication.status == 'DRAFT' else \"Publication submitted for review.\")\n            return redirect('doctor_my_papers')\n    else:\n        form = PublicationForm()\n    return render(request, 'publications/submit_paper.html', {'form': form})",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is a DOCTOR, validates the form, saves the publication with the correct status, and redirects the user to their papers page, which aligns with the claim.",
+          "code_behaviour": "The code defines a view function `submit_paper` that handles the submission of a research paper. It checks if the user is a DOCTOR, validates the form, saves the publication with a status of either DRAFT or PENDING based on the user's action, and then redirects the user to a page listing their papers."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "US009",
+      "req_pk": 290,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US009.c1",
+          "text": "US009 Staff Create support tickets I can track operational issues and resolutions.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.views.PublicationViewSet",
+              "comp_pk": 937,
+              "link_pk": 4941,
+              "path": "backend/api/views.py",
+              "start_line": 187,
+              "end_line": 280,
+              "tag": "C1",
+              "quote": "class PublicationViewSet(viewsets.ModelViewSet): ...",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include functionality for creating support tickets or tracking operational issues and resolutions. It only manages research publications with actions like listing, approving, and rejecting.",
+          "code_behaviour": "The code defines a `PublicationViewSet` class with actions to list, approve, and reject publications. It includes filtering, searching, ordering, and pagination. Only staff or admins can approve or reject publications."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US009 Staff Create support tickets I can track operational issues and resolutions.",
+          "rejected_split": [
+            "US009 Staff Create support tickets",
+            "I can track operational issues",
+            "I can track resolutions"
+          ],
+          "reason": "a part is not a complete requirement sentence"
+        }
+      ]
+    },
+    {
+      "requirement_id": "US010",
+      "req_pk": 291,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "US010.c1",
+          "text": "US010 Manager Generate management reports I can analyze clinic performance and revenue. 3",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.patient_views.PatientLabReportListCreateView",
+              "comp_pk": 971,
+              "link_pk": 4946,
+              "path": "backend/api/patient_views.py",
+              "start_line": 301,
+              "end_line": 331,
+              "tag": "C1",
+              "quote": "class PatientLabReportListCreateView(APIView):\n    permission_classes = [IsAuthenticated, IsPatient]\n    parser_classes = [parsers.MultiPartParser, parsers.FormParser]\n\n    def get(self, request):\n        patient = _require_patient(request.user)\n        reports = LabReport.objects.filter(patient=patient)\n        serializer = LabReportSerializer(reports, many=True)\n        return Response(serializer.data)\n\n    def post(self, request):\n        patient = _require_patient(request.user)\n        serializer = LabReportSerializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        report = serializer.save(patient=patient, uploaded_by=request.user)\n\n        log_action(\n            actor=request.user,\n            action_type='CREATE',\n            entity_type='LabReport',\n            entity_id=report.pk,\n            changes={'test_name': report.test_name, 'filename': report.pdf_file.name},\n        )\n        return Response(\n            LabReportSerializer(report).data,\n            status=status.HTTP_201_CREATED,\n        )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include functionality to analyze clinic performance and revenue. It only handles the creation and listing of lab reports.",
+          "code_behaviour": "The code defines a view `PatientLabReportListCreateView` that allows a patient to list their own lab reports and upload new lab reports. It checks if the user is authenticated and is a patient, retrieves or creates the patient's lab reports, and logs the creation of new reports."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "US010 Manager Generate management reports I can analyze clinic performance and revenue. 3",
+          "rejected_split": [
+            "US010 Manager Generate management reports I can analyze clinic performance.",
+            "US010 Manager Generate management reports I can analyze revenue."
+          ],
+          "reason": "drops values ['3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-1",
+      "req_pk": 292,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-1.c1",
+          "text": "Secure Auth Authentication using system credentials; passwords hashed with Argon2. 1 Critical (5%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole",
+              "comp_pk": 813,
+              "link_pk": 4953,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is authenticated and has the 'ADMIN' role, but it does not involve password hashing with Argon2 or user registration/login.",
+          "code_behaviour": "The code checks if the user making the request is authenticated and has the 'ADMIN' role."
+        },
+        {
+          "claim_id": "FR-1.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-1: Users can register/login; password storage verified as Argon2; admin can assign roles.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole",
+              "comp_pk": 813,
+              "link_pk": 4953,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is authenticated and has the 'ADMIN' role, but it does not involve password hashing with Argon2 or user registration/login.",
+          "code_behaviour": "The code checks if the user making the request is authenticated and has the 'ADMIN' role."
+        },
+        {
+          "claim_id": "FR-1.c3",
+          "text": "Unit tests cover login.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole",
+              "comp_pk": 813,
+              "link_pk": 4953,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for user registration or login.",
+          "code_behaviour": "The code does not cover login functionality."
+        },
+        {
+          "claim_id": "FR-1.c4",
+          "text": "Unit tests cover role checks.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole",
+              "comp_pk": 813,
+              "link_pk": 4953,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any logic for role checks.",
+          "code_behaviour": "The code does not cover role checks functionality."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Unit tests cover login and role checks.",
+          "parts": [
+            "Unit tests cover login.",
+            "Unit tests cover role checks."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2",
+      "req_pk": 293,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-2.c1",
+          "text": "Conflict Check Rejects appointment booking if the doctor is busy in the requested slot. 1 High (10%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+              "comp_pk": 772,
+              "link_pk": 4956,
+              "path": "backend/api/tests.py",
+              "start_line": 233,
+              "end_line": 255,
+              "tag": "C1",
+              "quote": "def test_reschedule_conflict_fails(self):\n    self.authenticate_patient()\n    conflict_time = self._future_time(264)\n    self.authenticate_patient(self.patient_user2)\n    self.client.post('/api/patient/appointments/', {\n        'doctor': self.doctor.pk,\n        'scheduled_time': conflict_time.isoformat(),\n    })\n    self.authenticate_patient()\n    book_resp = self.client.post('/api/patient/appointments/', {\n        'doctor': self.doctor.pk,\n        'scheduled_time': self._future_time(288).isoformat(),\n    })\n    appt_id = book_resp.data['id']\n    resp = self.client.put(f'/api/patient/appointments/{appt_id}/reschedule/', {\n        'scheduled_time': conflict_time.isoformat(),\n    })\n    self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code explicitly tests for a conflict by attempting to reschedule an appointment to a time when the doctor is already booked and verifies that a 400 Bad Request response is returned.",
+          "code_behaviour": "The code tests that attempting to reschedule an appointment to a time where the doctor is already booked results in a 400 Bad Request response."
+        },
+        {
+          "claim_id": "FR-2.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-2: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.tests.PatientAppointmentTests.test_reschedule_conflict_fails",
+              "comp_pk": 772,
+              "link_pk": 4956,
+              "path": "backend/api/tests.py",
+              "start_line": 233,
+              "end_line": 255,
+              "tag": "C1",
+              "quote": "def test_reschedule_conflict_fails(self):\n    self.authenticate_patient()\n    conflict_time = self._future_time(264)\n    self.authenticate_patient(self.patient_user2)\n    self.client.post('/api/patient/appointments/', {\n        'doctor': self.doctor.pk,\n        'scheduled_time': conflict_time.isoformat(),\n    })\n    self.authenticate_patient()\n    book_resp = self.client.post('/api/patient/appointments/', {\n        'doctor': self.doctor.pk,\n        'scheduled_time': self._future_time(288).isoformat(),\n    })\n    appt_id = book_resp.data['id']\n    resp = self.client.put(f'/api/patient/appointments/{appt_id}/reschedule/', {\n        'scheduled_time': conflict_time.isoformat(),\n    })\n    self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code explicitly tests for a conflict by attempting to book overlapping appointments for the same doctor and verifies that a conflict error is returned.",
+          "code_behaviour": "The code tests that attempting to book overlapping appointments for the same doctor results in a conflict error."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "[Acceptance Criteria] \u2022 FR-2: Attempting to book overlapping appointments for the same doctor returns a conflict error; implemented by a temporal-overlap check (i.e., start time < existing end AND end time > existing start) and covered by integration tests.",
+          "rejected_split": [
+            "When a member attempts to book an appointment that overlaps with an existing appointment for the same doctor, the system returns a conflict error.",
+            "The conflict error is implemented using a temporal-overlap check (i.e., start time < existing end AND end time > existing start).",
+            "The temporal-overlap check is covered by integration tests."
+          ],
+          "reason": "adds words not in the requirement: ['attempts', 'member', 'overlaps']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3",
+      "req_pk": 294,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-3.c1",
+          "text": "EHR Hub Digital registration of patient profiles and history. 1 High (15%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_my_visits",
+              "comp_pk": 1047,
+              "link_pk": 4960,
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "tag": "C1",
+              "quote": "def patient_my_visits(request):\n    if request.user.role != 'PATIENT':\n        return redirect('dashboard')\n\n    profile = get_patient_profile(request.user)\n    visits = []\n    if profile:\n        visits = (\n            Visit.objects.filter(patient=profile)\n            .select_related('doctor', 'appointment')\n            .order_by('-visit_date')\n        )\n\n    return render(request, 'patients/my_visits.html', {\n        'visits': visits,\n        'profile': profile,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is a patient, retrieves the patient's profile and visit history, and renders an HTML page with the visit history and profile, which matches the claim.",
+          "code_behaviour": "The function `patient_my_visits` checks if the user is a patient and then retrieves the patient's profile and visit history. It filters the visits by the patient's profile and orders them by visit date in descending order. The function then renders an HTML page with the visit history and profile."
+        },
+        {
+          "claim_id": "FR-3.c2",
+          "text": "EHR Hub Digital retrieval of patient profiles and history. 1 High (15%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_my_visits",
+              "comp_pk": 1047,
+              "link_pk": 4960,
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "tag": "C1",
+              "quote": "def patient_my_visits(request):\n    if request.user.role != 'PATIENT':\n        return redirect('dashboard')\n\n    profile = get_patient_profile(request.user)\n    visits = []\n    if profile:\n        visits = (\n            Visit.objects.filter(patient=profile)\n            .select_related('doctor', 'appointment')\n            .order_by('-visit_date')\n        )\n\n    return render(request, 'patients/my_visits.html', {\n        'visits': visits,\n        'profile': profile,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is a patient, retrieves the patient's profile and visit history, and renders an HTML page with the visit history and profile, which matches the claim.",
+          "code_behaviour": "The function `patient_my_visits` checks if the user is a patient and then retrieves the patient's profile and visit history. It filters the visits by the patient's profile and orders them by visit date in descending order. The function then renders an HTML page with the visit history and profile."
+        },
+        {
+          "claim_id": "FR-3.c3",
+          "text": "[Acceptance Criteria] \u2022 FR-3: Create/update/view patient profile operations persist changes and display visit history; API tests included.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_my_visits",
+              "comp_pk": 1047,
+              "link_pk": 4960,
+              "path": "backend/patients/views.py",
+              "start_line": 228,
+              "end_line": 245,
+              "tag": "C1",
+              "quote": "def patient_my_visits(request):\n    if request.user.role != 'PATIENT':\n        return redirect('dashboard')\n\n    profile = get_patient_profile(request.user)\n    visits = []\n    if profile:\n        visits = (\n            Visit.objects.filter(patient=profile)\n            .select_related('doctor', 'appointment')\n            .order_by('-visit_date')\n        )\n\n    return render(request, 'patients/my_visits.html', {\n        'visits': visits,\n        'profile': profile,\n    })",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the user is a patient, retrieves the patient's profile and visit history, and renders an HTML page with the visit history and profile, which matches the claim.",
+          "code_behaviour": "The function `patient_my_visits` checks if the user is a patient and then retrieves the patient's profile and visit history. It filters the visits by the patient's profile and orders them by visit date in descending order. The function then renders an HTML page with the visit history and profile."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "EHR Hub Digital registration and retrieval of patient profiles and history. 1 High (15%)",
+          "parts": [
+            "EHR Hub Digital registration of patient profiles and history. 1 High (15%)",
+            "EHR Hub Digital retrieval of patient profiles and history. 1 High (15%)"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4",
+      "req_pk": 295,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-4.c1",
+          "text": "Auto- Billing System calculates total bill including services and 18% GST. 2 Medium (20%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest._post_invoice",
+              "comp_pk": 689,
+              "link_pk": 4964,
+              "path": "backend/billing/test_invoice_flow.py",
+              "start_line": 111,
+              "end_line": 137,
+              "tag": "C1",
+              "quote": "def _post_invoice(self, subtotal, grand_total, paid=0, discount=0, tax=0,\n                      items=None):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not perform any calculations or checks for GST or total bill. It only constructs and sends a POST request with the provided parameters.",
+          "code_behaviour": "The code defines a method `_post_invoice` that takes parameters for subtotal, grand total, and items. It constructs a POST request to generate an invoice with these parameters and logs in as a user to perform the request."
+        },
+        {
+          "claim_id": "FR-4.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-4: Invoice total = sum(items) + 18% GST; exported PDF matches template.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.billing.test_invoice_flow.InvoiceTotalCalculationTest.test_invoice_total_500_saved_correctly",
+              "comp_pk": 690,
+              "link_pk": 4965,
+              "path": "backend/billing/test_invoice_flow.py",
+              "start_line": 139,
+              "end_line": 153,
+              "tag": "C2",
+              "quote": "def test_invoice_total_500_saved_correctly(self):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not perform any calculations or checks for GST or total bill. It only posts an invoice with a fixed subtotal and grand total and verifies that the invoice is saved correctly.",
+          "code_behaviour": "The code defines a method `test_invoice_total_500_saved_correctly` that posts an invoice with a subtotal and grand total of 500 and verifies that the invoice is saved correctly in the database."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Auto- Billing System calculates total bill including services and 18% GST. 2 Medium (20%)",
+          "rejected_split": [
+            "Auto- Billing System calculates total bill including services and 18% GST.",
+            "Auto- Billing System charges 2 Medium (20%)."
+          ],
+          "reason": "adds words not in the requirement: ['charges']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5",
+      "req_pk": 296,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-5.c1",
+          "text": "Audit Log Automated tracking of all record deletions and administrative changes. 2 Medium (10%)",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.audit.utils.log_action",
+              "comp_pk": 1089,
+              "link_pk": 4973,
+              "path": "backend/audit/utils.py",
+              "start_line": 6,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "def log_action(*, actor, action_type, entity_type, entity_id=None, changes=None):\n    AuditLog.objects.create(\n        actor=actor,\n        action_type=action_type,\n        entity_type=entity_type,\n        entity_id=entity_id,\n        changes=changes,\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a function `log_action` that creates an `AuditLog` entry with the required details, including the actor, action type, entity type, entity ID, and changes. This matches the claim that the system should automatically track all record deletions and administrative changes.",
+          "code_behaviour": "The code defines a function `log_action` that creates an `AuditLog` entry with details such as the actor, action type, entity type, entity ID, and changes. The function is designed to handle various types of actions including 'CREATE', 'UPDATE', 'DELETE', and 'LOGIN'."
+        },
+        {
+          "claim_id": "FR-5.c2",
+          "text": "[Acceptance Criteria] \u2022 FR-5: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "backend.audit.utils.log_action",
+              "comp_pk": 1089,
+              "link_pk": 4973,
+              "path": "backend/audit/utils.py",
+              "start_line": 6,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "def log_action(*, actor, action_type, entity_type, entity_id=None, changes=None):\n    AuditLog.objects.create(\n        actor=actor,\n        action_type=action_type,\n        entity_type=entity_type,\n        entity_id=entity_id,\n        changes=changes,\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a function `log_action` that creates an `AuditLog` entry with the required details, including the actor, action type, entity type, entity ID, and changes. This matches the claim that any DELETE/UPDATE on sensitive records should create an audit entry with the actor and timestamp.",
+          "code_behaviour": "The code defines a function `log_action` that creates an `AuditLog` entry with details such as the actor, action type, entity type, entity ID, and changes. The function is designed to handle various types of actions including 'CREATE', 'UPDATE', 'DELETE', and 'LOGIN'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Audit Log Automated tracking of all record deletions and administrative changes. 2 Medium (10%)",
+          "rejected_split": [
+            "Audit Log Automated tracking of all record deletions.",
+            "Audit Log Automated tracking of all administrative changes."
+          ],
+          "reason": "drops values ['10', '2']"
+        },
+        {
+          "claim": "[Acceptance Criteria] \u2022 FR-5: Any DELETE/UPDATE on sensitive records creates an audit entry with actor and timestamp.",
+          "rejected_split": [
+            "When a DELETE/UPDATE on sensitive records occurs, an audit entry is created.",
+            "This audit entry includes the actor and timestamp."
+          ],
+          "reason": "adds words not in the requirement: ['created', 'occurs']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6",
+      "req_pk": 297,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-6.c1",
+          "text": "AI-powered assistant using NLP-based FAQ to answer system-related queries.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4979,
+              "path": "backend/patients/views.py",
+              "start_line": 374,
+              "end_line": 376,
+              "tag": "C1",
+              "quote": "if request.user.role != 'PATIENT':\n    messages.error(request, \"The AI Assistant is only available for patients.\")\n    return redirect('dashboard')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not use NLP-based FAQ to answer system-related queries. It only checks if the user is a patient and then sends the question to the Gemini AI model.",
+          "code_behaviour": "The code checks if the user is a patient and then sends a question to the Gemini AI model for an NLP-based FAQ response."
+        },
+        {
+          "claim_id": "FR-6.c2",
+          "text": "AI-powered assistant using Retrieval-Augmented Generation (RAG) to answer system-related queries.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4979,
+              "path": "backend/patients/views.py",
+              "start_line": 395,
+              "end_line": 408,
+              "tag": "C1",
+              "quote": "import google.generativeai as genai\ngenai.configure(api_key=api_key)\n\n_MODEL = 'gemini-2.5-flash'\nlogger_ai.info(\"Calling Gemini model: %s\", _MODEL)\nmodel = genai.GenerativeModel(\n    model_name=_MODEL,\n    system_instruction=_GEMINI_SYSTEM_PROMPT,\n)\nresponse = model.generate_content(question)\nai_response = response.text\nlogger_ai.info(\"Gemini response received from model: %s\", _MODEL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code uses the Gemini AI model to generate a response, but it does not use NLP-based FAQ to answer system-related queries.",
+          "code_behaviour": "The code sends a question to the Gemini AI model for an NLP-based FAQ response."
+        },
+        {
+          "claim_id": "FR-6.c3",
+          "text": "AI-powered assistant using NLP-based FAQ and Retrieval-Augmented Generation (RAG) to answer system-related queries.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4979,
+              "path": "backend/patients/views.py",
+              "start_line": 395,
+              "end_line": 408,
+              "tag": "C1",
+              "quote": "import google.generativeai as genai\ngenai.configure(api_key=api_key)\n\n_MODEL = 'gemini-2.5-flash'\nlogger_ai.info(\"Calling Gemini model: %s\", _MODEL)\nmodel = genai.GenerativeModel(\n    model_name=_MODEL,\n    system_instruction=_GEMINI_SYSTEM_PROMPT,\n)\nresponse = model.generate_content(question)\nai_response = response.text\nlogger_ai.info(\"Gemini response received from model: %s\", _MODEL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code uses the Gemini AI model to generate a response, but it does not use NLP-based FAQ to answer system-related queries.",
+          "code_behaviour": "The code sends a question to the Gemini AI model for an NLP-based FAQ response."
+        },
+        {
+          "claim_id": "FR-6.c4",
+          "text": "4 Low (30%)",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not provide any specific information about the complexity level.",
+          "code_behaviour": "The code does not provide any specific information about the complexity level."
+        },
+        {
+          "claim_id": "FR-6.c5",
+          "text": "[Acceptance Criteria] \u2022 FR-6: AI helpdesk responds with contextual answers (MVP: canned responses + FAQ), logs queries for review. 4",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.patients.views.patient_ai_ask",
+              "comp_pk": 1050,
+              "link_pk": 4979,
+              "path": "backend/patients/views.py",
+              "start_line": 395,
+              "end_line": 408,
+              "tag": "C1",
+              "quote": "import google.generativeai as genai\ngenai.configure(api_key=api_key)\n\n_MODEL = 'gemini-2.5-flash'\nlogger_ai.info(\"Calling Gemini model: %s\", _MODEL)\nmodel = genai.GenerativeModel(\n    model_name=_MODEL,\n    system_instruction=_GEMINI_SYSTEM_PROMPT,\n)\nresponse = model.generate_content(question)\nai_response = response.text\nlogger_ai.info(\"Gemini response received from model: %s\", _MODEL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code logs queries for review, but it does not provide contextual answers (MVP: canned responses + FAQ).",
+          "code_behaviour": "The code logs queries for review and responds with contextual answers (MVP: canned responses + FAQ)."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "AI-powered assistant using NLP-based FAQ and Retrieval- Augmented Generation (RAG) to answer system-related queries. 4 Low (30%)",
+          "parts": [
+            "AI-powered assistant using NLP-based FAQ to answer system-related queries.",
+            "AI-powered assistant using Retrieval-Augmented Generation (RAG) to answer system-related queries.",
+            "AI-powered assistant using NLP-based FAQ and Retrieval-Augmented Generation (RAG) to answer system-related queries.",
+            "4 Low (30%)"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-3",
+      "req_pk": 300,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "NFR-3.c1",
+          "text": "Security Enforce HTTPS, CSRF protection, and role-based data isolation. 1 Critical (5%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.permissions.IsAdminRole",
+              "comp_pk": 813,
+              "link_pk": 4990,
+              "path": "backend/api/permissions.py",
+              "start_line": 36,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def has_permission(self, request, view):\n    return (\n        request.user\n        and request.user.is_authenticated\n        and getattr(request.user, 'role', None) == 'ADMIN'\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code only checks for the 'ADMIN' role and does not enforce HTTPS, CSRF protection, or role-based data isolation.",
+          "code_behaviour": "The code checks if the user making the request is authenticated and has the 'ADMIN' role. If both conditions are met, it returns True; otherwise, it returns False."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Security Enforce HTTPS, CSRF protection, and role-based data isolation. 1 Critical (5%)",
+          "rejected_split": [
+            "Security Enforce HTTPS.",
+            "Security Implement CSRF protection.",
+            "Security Apply role-based data isolation."
+          ],
+          "reason": "adds words not in the requirement: ['implement']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "NFR-4",
+      "req_pk": 301,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "NFR-4.c1",
+          "text": "up to 5,000 active patient records; use pagination/indexing for large lists. 3 Low (50%)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "backend.api.tests_extended.StaffPatientAPITests.test_list_patients_paginated",
+              "comp_pk": 908,
+              "link_pk": 4993,
+              "path": "backend/api/tests_extended.py",
+              "start_line": 683,
+              "end_line": 686,
+              "tag": "C1",
+              "quote": "def test_list_patients_paginated(self):\n    resp = self.c.get('/api/patients/')\n    self.assertEqual(resp.status_code, 200)\n    self.assertIn('results', resp.data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not implement pagination or indexing for large lists of patient records. It only checks that the response status code is 200 and that the 'results' key is present, but it does not verify that the list is paginated or that it handles large numbers of records.",
+          "code_behaviour": "The code sends a GET request to the '/api/patients/' endpoint and checks that the response status code is 200, indicating a successful request. It also verifies that the 'results' key is present in the response data."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    }
+  ]
+}
+
+[1/18] US001      supported
+[2/18] US002      supported
+[3/18] US003      supported
+[4/18] US004      supported
+[5/18] US005      not_supported_by_candidate
+[6/18] US006      supported
+[7/18] US007      not_supported_by_candidate
+[8/18] US008      supported
+[9/18] US009      not_supported_by_candidate
+[10/18] US010      not_supported_by_candidate
+[11/18] FR-1       not_supported_by_candidate
+[12/18] FR-2       supported
+[13/18] FR-3       supported
+[14/18] FR-4       not_supported_by_candidate
+[15/18] FR-5       supported
+[16/18] FR-6       not_supported_by_candidate
+[17/18] NFR-3      not_supported_by_candidate
+[18/18] NFR-4      not_supported_by_candidate
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/ProClinic_gold_standard_v2.json --document-id run-6-ProClinicSRS --pipeline-version verification-exp-7b-behavioral --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/7b-behavioral/ProClinic/eval_verification.json
+Verification verification-exp-7b-behavioral for run-6-ProClinicSRS: 18 gold requirements with an expected verdict
+
+  exact accuracy        0.500
+  false-support rate    0.333  (2 of 6 partial/not-implemented declared supported)
+  implemented recall    0.583  (7 of 12 implemented declared supported)
+  citation validity     1.000  (30 valid, 0 rejected)
+  citations on gold code 0.364
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    implemented      not_supported_by_candidate=5, supported=7
+    partial          not_supported_by_candidate=2, supported=1
+    cross_cutting    unverified=3
+    not_implemented  not_supported_by_candidate=2, supported=1
+
+  disagreements: FR-1(implemented->not_supported_by_candidate), FR-4(partial->not_supported_by_candidate), FR-6(partial->not_supported_by_candidate), NFR-3(implemented->not_supported_by_candidate), NFR-4(implemented->not_supported_by_candidate), US002(partial->supported), US005(implemented->not_supported_by_candidate), US006(not_implemented->supported), US007(implemented->not_supported_by_candidate)
+
+

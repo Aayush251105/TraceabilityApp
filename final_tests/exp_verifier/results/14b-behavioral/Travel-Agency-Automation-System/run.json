@@ -1,0 +1,10 @@
+{
+  "config": "14b-behavioral",
+  "model": "qwen2.5-coder:14b",
+  "prompt": "behavioral",
+  "think": "default",
+  "pipeline_version": "verification-exp-14b-behavioral",
+  "requirements": 12,
+  "minutes": 34.15,
+  "document_id": "run-2-SRS"
+}

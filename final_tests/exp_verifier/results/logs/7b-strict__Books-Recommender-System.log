@@ -1,0 +1,1296 @@
+$ traceability.cli verify --document-id run-3-SRS --model qwen2.5-coder:7b --prompt strict --think default --pipeline-version verification-exp-7b-strict --keep-link-status --json --requirements FR-1.1,FR-1.2,FR-1.4,FR-2.1,FR-2.2,FR-2.3,FR-3.1,FR-3.2,FR-3.3,FR-3.4,FR-3.5,FR-4.1,FR-4.2,FR-4.3,FR-5.1,FR-5.2,FR-5.3,FR-6.1,FR-6.2,FR-6.3,FR-6.4,FR-6.5,FR-7.1,FR-7.2,FR-7.3,REQ-009,REQ-054,REQ-055
+{
+  "document_id": "run-3-SRS",
+  "pipeline_version": "verification-exp-7b-strict",
+  "mapping_version": "mapping-v1",
+  "model": "qwen2.5-coder:7b",
+  "prompt_version": "verify-v2.3",
+  "claims_source": "llm",
+  "requirements": 28,
+  "status_counts": {
+    "supported": 11,
+    "not_supported_by_candidate": 16,
+    "partially_supported": 1
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "FR-1.1",
+      "req_pk": 32,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-1.1.c1",
+          "text": "- FR-1.1: The system shall read pipeline settings from `config.yaml` using a YAML reader utility in `src/utils/common.py`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.config.configuration.AppConfiguration.__init__",
+              "comp_pk": 77,
+              "link_pk": 1122,
+              "path": "src/config/configuration.py",
+              "start_line": 15,
+              "end_line": 15,
+              "tag": "C2",
+              "quote": "self.config = read_yaml(config_filepath)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `AppConfiguration` class in `src/config/configuration.py` (C2) uses the `read_yaml` function from `src/utils/common.py` (C1) to read the pipeline settings from `config.yaml`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-1.2",
+      "req_pk": 33,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-1.2.c1",
+          "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage `DataIngestionConfig`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any instantiation of `ConfigEntity` objects for the `DataIngestionConfig` stage."
+        },
+        {
+          "claim_id": "FR-1.2.c2",
+          "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage `DataValidationConfig`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any instantiation of `ConfigEntity` objects for the `DataValidationConfig` stage."
+        },
+        {
+          "claim_id": "FR-1.2.c3",
+          "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage `DataTransformationConfig`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any instantiation of `ConfigEntity` objects for the `DataTransformationConfig` stage."
+        },
+        {
+          "claim_id": "FR-1.2.c4",
+          "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage `ModelTrainerConfig`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any instantiation of `ConfigEntity` objects for the `ModelTrainerConfig` stage."
+        },
+        {
+          "claim_id": "FR-1.2.c5",
+          "text": "- FR-1.2: The `AppConfiguration` class (`configuration.py`) shall instantiate immutable `ConfigEntity` objects for each stage `ModelRecommendationConfig`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any instantiation of `ConfigEntity` objects for the `ModelRecommendationConfig` stage."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-1.4",
+      "req_pk": 35,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-1.4.c1",
+          "text": "- FR-1.4: The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.exception.__init__.CustomException.__init__",
+              "comp_pk": 48,
+              "link_pk": 1149,
+              "path": "src/exception/__init__.py",
+              "start_line": 15,
+              "end_line": 17,
+              "tag": "C1",
+              "quote": "def __init__(self, error_message, error_detail: sys):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "src.exception.__init__.error_message_detail",
+              "comp_pk": 46,
+              "link_pk": 1150,
+              "path": "src/exception/__init__.py",
+              "start_line": 3,
+              "end_line": 11,
+              "tag": "C2",
+              "quote": "def error_message_detail(error, error_detail: sys):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "src.utils.common.save_bin",
+              "comp_pk": 52,
+              "link_pk": 1152,
+              "path": "src/utils/common.py",
+              "start_line": 30,
+              "end_line": 38,
+              "tag": "C4",
+              "quote": "def save_bin(data: Any, path: Path):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+              "comp_pk": 64,
+              "link_pk": 1155,
+              "path": "src/pipeline/training_pipeline.py",
+              "start_line": 10,
+              "end_line": 33,
+              "tag": "C7",
+              "quote": "def run_pipeline(self):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not include any mechanism to catch runtime exceptions, capture traceback details, or format structured error reports. The code snippets provided are related to exception handling but do not implement the specific requirements mentioned in the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-1.4: The Exception Handler module shall catch runtime exceptions, capture traceback details, and format structured error reports.",
+          "rejected_split": [
+            "The Exception Handler module shall catch runtime exceptions.",
+            "The Exception Handler module shall capture traceback details.",
+            "The Exception Handler module shall format structured error reports."
+          ],
+          "reason": "drops values ['1.4']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-009",
+      "req_pk": 36,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-009.c1",
+          "text": "Handles automated retrieval of raw datasets from remote repositories.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_ingestion.DataIngestion.download_file",
+              "comp_pk": 88,
+              "link_pk": 1159,
+              "path": "src/components/data_ingestion.py",
+              "start_line": 17,
+              "end_line": 27,
+              "tag": "C1",
+              "quote": "try:\n    response = requests.get(self.config.source_URL, timeout=15)\n    if response.status_code == 200:\n        with open(self.config.local_data_file, 'wb') as f:\n            f.write(response.content)\n        logger.info(\"Download completed successfully.\")\n        return",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `download_file` method attempts to download a dataset from a remote URL and saves it locally if successful. If the download fails, it falls back to creating a sample dataset."
+        },
+        {
+          "claim_id": "REQ-009.c2",
+          "text": "Handles extraction of raw datasets from remote repositories.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 15-33"
+            }
+          ],
+          "rationale": "The `download_file` method only handles downloading the dataset and does not include any extraction logic. Extraction would typically involve unzipping the downloaded file, which is not shown in the provided code."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Handles automated retrieval and extraction of raw datasets from remote repositories.",
+          "parts": [
+            "Handles automated retrieval of raw datasets from remote repositories.",
+            "Handles extraction of raw datasets from remote repositories."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2.1",
+      "req_pk": 37,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-2.1.c1",
+          "text": "- FR-2.1: The component shall download raw zip archives containing `BX-Books.csv`, `BX-Book-Ratings.csv`, and `BX-Users.csv` from a remote GitHub storage URL specified in configuration.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_ingestion.DataIngestion._create_sample_dataset",
+              "comp_pk": 90,
+              "link_pk": 1168,
+              "path": "src/components/data_ingestion.py",
+              "start_line": 51,
+              "end_line": 102,
+              "tag": "C1",
+              "quote": "def _create_sample_dataset(self):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The method `_create_sample_dataset` generates sample CSV files if the remote download is unavailable, but it does not download raw zip archives from a remote GitHub storage URL specified in configuration."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-2.1: The component shall download raw zip archives containing `BX-Books.csv`, `BX-Book-Ratings.csv`, and `BX-Users.csv` from a remote GitHub storage URL specified in configuration.",
+          "rejected_split": [
+            "The component shall download raw zip archives containing `BX-Books.csv` from a remote GitHub storage URL specified in configuration.",
+            "The component shall download raw zip archives containing `BX-Book-Ratings.csv` from a remote GitHub storage URL specified in configuration.",
+            "The component shall download raw zip archives containing `BX-Users.csv` from a remote GitHub storage URL specified in configuration."
+          ],
+          "reason": "drops values ['2.1']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-2.2",
+      "req_pk": 38,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-2.2.c1",
+          "text": "- FR-2.2: The system shall extract zip contents into `artifacts/dataset/raw_data/`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_ingestion.DataIngestion.extract_zip_file",
+              "comp_pk": 89,
+              "link_pk": 1175,
+              "path": "src/components/data_ingestion.py",
+              "start_line": 41,
+              "end_line": 43,
+              "tag": "C1",
+              "quote": "if os.path.exists(self.config.local_data_file) and zipfile.is_zipfile(self.config.local_data_file):\n                with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:\n                    zip_ref.extractall(unzip_path)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `extract_zip_file` method checks if the local data file exists and is a zip file, and if so, extracts it into the `unzip_path` directory."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-2.3",
+      "req_pk": 39,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-2.3.c1",
+          "text": "- FR-2.3: Upon successful extraction, raw files shall be verified and moved to `artifacts/dataset/ingested_data/`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.stage_00_data_ingestion.DataIngestionPipeline.main",
+              "comp_pk": 67,
+              "link_pk": 1184,
+              "path": "src/pipeline/stage_00_data_ingestion.py",
+              "start_line": 17,
+              "end_line": 18,
+              "tag": "C1",
+              "quote": "data_ingestion.extract_zip_file()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code extracts the zip file but does not verify the raw files or move them to the specified directory."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-2.3: Upon successful extraction, raw files shall be verified and moved to `artifacts/dataset/ingested_data/`.",
+          "rejected_split": [
+            "Upon successful extraction, raw files shall be verified.",
+            "Upon successful extraction, raw files shall be moved to `artifacts/dataset/ingested_data/`."
+          ],
+          "reason": "drops values ['2.3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.1",
+      "req_pk": 41,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-3.1.c1",
+          "text": "- FR-3.1: The system shall load `BX-Books.csv` and `BX-Book-Ratings.csv`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.entity.config_entity.DataValidationConfig",
+              "comp_pk": 72,
+              "link_pk": 1205,
+              "path": "src/entity/config_entity.py",
+              "start_line": 12,
+              "end_line": 19,
+              "tag": "C1",
+              "quote": "class DataValidationConfig:\n    root_dir: Path\n    books_csv: Path\n    ratings_csv: Path\n    clean_data_path: Path\n    final_rating_path: Path\n    min_user_ratings: int\n    min_book_ratings: int",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The provided code defines a configuration class for data validation but does not include any code for loading the CSV files."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-3.1: The system shall load `BX-Books.csv` and `BX-Book-Ratings.csv`.",
+          "rejected_split": [
+            "The system shall load `BX-Books.csv`.",
+            "The system shall load `BX-Book-Ratings.csv`."
+          ],
+          "reason": "drops values ['3.1']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.2",
+      "req_pk": 42,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-3.2.c1",
+          "text": "- FR-3.2: User Filtering Rule: The component shall compute rating counts per user and discard users with fewer than 200 total ratings ($\\text{ratings\\_count} < 200$).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 15-40"
+            }
+          ],
+          "rationale": "The provided source code does not include any logic to compute rating counts per user or discard users with fewer than 200 total ratings. The code in `DataTransformation.initiate_data_transformation` and `DataValidation.validate_and_clean_data` does not address user filtering based on rating counts."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-3.3",
+      "req_pk": 43,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-3.3.c1",
+          "text": "- FR-3.3: Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings ($\\text{ratings\\_count} < 50$).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+              "comp_pk": 85,
+              "link_pk": 1221,
+              "path": "src/components/data_validation.py",
+              "start_line": 67,
+              "end_line": 74,
+              "tag": "C2",
+              "quote": "book_rating_counts = filtered_by_user.groupby('title').count()['rating']\nmin_books = self.config.min_book_ratings\nfamous_books = book_rating_counts[book_rating_counts >= min_books].index",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in C2 calculates the rating counts per book title and filters books with fewer than 50 ratings, but it does not discard these books. Instead, it adjusts the threshold adaptively if necessary."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-3.3: Book Filtering Rule: The component shall compute rating counts per book title and discard books with fewer than 50 total ratings ($\\text{ratings\\_count} < 50$).",
+          "rejected_split": [
+            "The component shall compute rating counts per book title.",
+            "The component shall discard books with fewer than 50 total ratings ($\text{ratings_count} < 50$)."
+          ],
+          "reason": "adds words not in the requirement: ['ext']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-3.4",
+      "req_pk": 44,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-3.4.c1",
+          "text": "- FR-3.4: The component shall perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1232,
+              "path": "src/components/data_transformation.py",
+              "start_line": 15,
+              "end_line": 40,
+              "tag": "C1",
+              "quote": "def initiate_data_transformation(self):",
+              "quote_checked": true
+            },
+            {
+              "component_id": "src.components.data_validation.DataValidation.validate_and_clean_data",
+              "comp_pk": 85,
+              "link_pk": 1233,
+              "path": "src/components/data_validation.py",
+              "start_line": 14,
+              "end_line": 88,
+              "tag": "C2",
+              "quote": "def validate_and_clean_data(self):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "Neither `initiate_data_transformation` nor `validate_and_clean_data` perform an inner join on filtered users and filtered books to create the final cleaned ratings dataset."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-3.5",
+      "req_pk": 45,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-3.5.c1",
+          "text": "- FR-3.5: Output files shall be saved to `artifacts/dataset/clean_data.csv`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not provide any evidence that output files are saved to `artifacts/dataset/clean_data.csv`. The `DataValidationConfig` class and the `get_data_validation_config` method do not mention this specific file path."
+        },
+        {
+          "claim_id": "FR-3.5.c2",
+          "text": "- FR-3.5: Output files shall be saved to `artifacts/serialized_objects/final_rating.pkl`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not provide any evidence that output files are saved to `artifacts/serialized_objects/final_rating.pkl`. The `DataValidationConfig` class and the `get_data_validation_config` method do not mention this specific file path."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-4.1",
+      "req_pk": 47,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-4.1.c1",
+          "text": "- FR-4.1: The system shall construct a pivot table where rows represent unique Book Titles (`title`) and columns represent unique User IDs (`user_id`).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1257,
+              "path": "src/components/data_transformation.py",
+              "start_line": 23,
+              "end_line": 24,
+              "tag": "C1",
+              "quote": "book_pivot = final_rating.pivot_table(index='title', columns='user_id', values='rating')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code creates a pivot table with 'title' as the index and 'user_id' as the columns."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-4.1: The system shall construct a pivot table where rows represent unique Book Titles (`title`) and columns represent unique User IDs (`user_id`).",
+          "rejected_split": [
+            "The system shall construct a pivot table where rows represent unique Book Titles (`title`).",
+            "The system shall construct a pivot table where columns represent unique User IDs (`user_id`)."
+          ],
+          "reason": "drops values ['4.1']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-4.2",
+      "req_pk": 48,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-4.2.c1",
+          "text": "- FR-4.2: The system shall replace all $NaN$ entries with $0$ to populate missing user ratings.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1266,
+              "path": "src/components/data_transformation.py",
+              "start_line": 24,
+              "end_line": 25,
+              "tag": "C1",
+              "quote": "book_pivot.fillna(0, inplace=True)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `initiate_data_transformation` method replaces all NaN entries with 0 using `book_pivot.fillna(0, inplace=True)`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-4.3",
+      "req_pk": 49,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-4.3.c1",
+          "text": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `artifacts/serialized_objects/book_pivot.pkl`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1275,
+              "path": "src/components/data_transformation.py",
+              "start_line": 31,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "save_bin(book_pivot, self.config.book_pivot_path)",
+              "quote_checked": true,
+              "realigned_from": [
+                30,
+                30
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `src.components.data_transformation.DataTransformation.initiate_data_transformation` serializes the `book_pivot` object to `self.config.book_pivot_path`, which is `artifacts/serialized_objects/book_pivot.pkl`."
+        },
+        {
+          "claim_id": "FR-4.3.c2",
+          "text": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `artifacts/serialized_objects/book_names.pkl`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1275,
+              "path": "src/components/data_transformation.py",
+              "start_line": 31,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "save_bin(book_names, self.config.book_names_path)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `src.components.data_transformation.DataTransformation.initiate_data_transformation` serializes the `book_names` list to `self.config.book_names_path`, which is `artifacts/serialized_objects/book_names.pkl`."
+        },
+        {
+          "claim_id": "FR-4.3.c3",
+          "text": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `templates/book_names.pkl` (for Streamlit UI binding).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.data_transformation.DataTransformation.initiate_data_transformation",
+              "comp_pk": 97,
+              "link_pk": 1275,
+              "path": "src/components/data_transformation.py",
+              "start_line": 35,
+              "end_line": 35,
+              "tag": "C1",
+              "quote": "shutil.copy(self.config.book_names_path, self.config.template_book_names_path)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `src.components.data_transformation.DataTransformation.initiate_data_transformation` copies the serialized `book_names` file to `self.config.template_book_names_path`, which is `templates/book_names.pkl`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `artifacts/serialized_objects/book_pivot.pkl`.",
+          "rejected_split": [
+            "The transformed pivot table shall be serialized to `artifacts/serialized_objects/book_pivot.pkl`.",
+            "The book title list shall be serialized to `artifacts/serialized_objects/book_pivot.pkl`."
+          ],
+          "reason": "drops values ['4.3']"
+        },
+        {
+          "claim": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `artifacts/serialized_objects/book_names.pkl`.",
+          "rejected_split": [
+            "The transformed pivot table shall be serialized to `artifacts/serialized_objects/book_names.pkl`.",
+            "The book title list shall be serialized to `artifacts/serialized_objects/book_names.pkl`."
+          ],
+          "reason": "drops values ['4.3']"
+        },
+        {
+          "claim": "- FR-4.3: The transformed pivot table and book title list shall be serialized to `templates/book_names.pkl` (for Streamlit UI binding).",
+          "rejected_split": [
+            "The transformed pivot table shall be serialized to `templates/book_names.pkl` (for Streamlit UI binding).",
+            "The book title list shall be serialized to `templates/book_names.pkl` (for Streamlit UI binding)."
+          ],
+          "reason": "drops values ['4.3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5.1",
+      "req_pk": 51,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-5.1.c1",
+          "text": "- FR-5.1: The component shall convert `book_pivot` into a Compressed Sparse Row matrix (`scipy.sparse.csr_matrix`).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+              "comp_pk": 94,
+              "link_pk": 1293,
+              "path": "src/components/model_trainer.py",
+              "start_line": 22,
+              "end_line": 23,
+              "tag": "C1",
+              "quote": "book_sparse = csr_matrix(book_pivot.values)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `initiate_model_training` method converts `book_pivot` to a Compressed Sparse Row matrix (`scipy.sparse.csr_matrix`) using the line `book_sparse = csr_matrix(book_pivot.values)`. This line directly supports the requirement."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-5.2",
+      "req_pk": 52,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-5.2.c1",
+          "text": "- FR-5.2: The system shall initialize and fit a Scikit-Learn `NearestNeighbors` estimator with parameters `algorithm = 'brute'`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+              "comp_pk": 94,
+              "link_pk": 1302,
+              "path": "src/components/model_trainer.py",
+              "start_line": 26,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "model = NearestNeighbors(\n                algorithm=self.config.algorithm,\n                metric=self.config.metric\n            )",
+              "quote_checked": true,
+              "realigned_from": [
+                26,
+                26
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code initializes a `NearestNeighbors` estimator with the `algorithm` parameter set to `self.config.algorithm`, which is expected to be `'brute'`."
+        },
+        {
+          "claim_id": "FR-5.2.c2",
+          "text": "- FR-5.2: The system shall initialize and fit a Scikit-Learn `NearestNeighbors` estimator with parameters `metric = 'cosine'` (or Euclidean distance as defined in configuration).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+              "comp_pk": 94,
+              "link_pk": 1302,
+              "path": "src/components/model_trainer.py",
+              "start_line": 26,
+              "end_line": 29,
+              "tag": "C1",
+              "quote": "model = NearestNeighbors(\n                algorithm=self.config.algorithm,\n                metric=self.config.metric\n            )",
+              "quote_checked": true,
+              "realigned_from": [
+                26,
+                26
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code initializes a `NearestNeighbors` estimator with the `metric` parameter set to `self.config.metric`, which is expected to be `'cosine'` or Euclidean distance as defined in configuration."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-5.2: The system shall initialize and fit a Scikit-Learn `NearestNeighbors` estimator with parameters `metric = 'cosine'` (or Euclidean distance as defined in configuration).",
+          "rejected_split": [
+            "The system shall initialize a Scikit-Learn `NearestNeighbors` estimator with parameters `metric = 'cosine'`,",
+            "The system shall initialize a Scikit-Learn `NearestNeighbors` estimator with parameters `metric = 'Euclidean'` as defined in configuration."
+          ],
+          "reason": "drops values ['5.2']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-5.3",
+      "req_pk": 53,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-5.3.c1",
+          "text": "- FR-5.3: The trained model instance shall be serialized and saved to `artifacts/trained_model/model.pkl`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.components.model_trainer.ModelTrainer.initiate_model_training",
+              "comp_pk": 94,
+              "link_pk": 1311,
+              "path": "src/components/model_trainer.py",
+              "start_line": 34,
+              "end_line": 34,
+              "tag": "C1",
+              "quote": "save_bin(model, self.config.model_path)",
+              "quote_checked": true,
+              "realigned_from": [
+                33,
+                33
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The model is saved to `self.config.model_path`, but the requirement specifies `artifacts/trained_model/model.pkl`. The code does not check or enforce this specific path."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-6.1",
+      "req_pk": 55,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-6.1.c1",
+          "text": "- FR-6.1: The engine shall deserialize `model.pkl`, `book_pivot.pkl`, and `final_rating.pkl`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.__init__",
+              "comp_pk": 61,
+              "link_pk": 1332,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 16,
+              "end_line": 18,
+              "tag": "C1",
+              "quote": "self.model = load_bin(rec_config.model_path)\nself.book_pivot = load_bin(rec_config.book_pivot_path)\nself.final_rating = load_bin(rec_config.final_rating_path)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `RecommendationEngine` class in `src.pipeline.prediction_pipeline.py` deserializes `model.pkl`, `book_pivot.pkl`, and `final_rating.pkl` using the `load_bin` function."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "- FR-6.1: The engine shall deserialize `model.pkl`, `book_pivot.pkl`, and `final_rating.pkl`.",
+          "rejected_split": [
+            "The engine shall deserialize `model.pkl`.",
+            "The engine shall deserialize `book_pivot.pkl`.",
+            "The engine shall deserialize `final_rating.pkl`."
+          ],
+          "reason": "drops values ['6.1']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "FR-6.2",
+      "req_pk": 56,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-6.2.c1",
+          "text": "- FR-6.2: Given a input book title, the engine shall look up its row index in `book_pivot`.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1342,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 26,
+              "end_line": 28,
+              "tag": "C1",
+              "quote": "if book_name not in self.book_pivot.index:\n    logger.warning(f\"Book title '{book_name}' not found in pivot table index.\")\n    return [], []",
+              "quote_checked": true
+            },
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1342,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 30,
+              "end_line": 31,
+              "tag": "C1",
+              "quote": "book_id = np.where(self.book_pivot.index == book_name)[0][0]",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code checks if the book title is in the `book_pivot` index and, if so, locates its row index using `np.where`."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-6.3",
+      "req_pk": 57,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-6.3.c1",
+          "text": "- FR-6.3: The engine shall invoke `model.kneighbors(..., n_neighbors=6)` to retrieve the top 6 nearest neighbor indices (where the 1st neighbor is the query book itself).",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1354,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 33,
+              "end_line": 36,
+              "tag": "C1",
+              "quote": "distances, suggestions = self.model.kneighbors(\n                self.book_pivot.iloc[book_id, :].values.reshape(1, -1),\n                n_neighbors=6\n            )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code explicitly calls `model.kneighbors(..., n_neighbors=6)` to retrieve the top 6 nearest neighbor indices."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-6.4",
+      "req_pk": 58,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-6.4.c1",
+          "text": "- FR-6.4: For each of the top 5 recommended books, the engine shall query `final_rating.pkl` to extract the corresponding book image cover URL (`Image-URL-L` or `Image-URL-M`).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1361,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 44,
+              "end_line": 60,
+              "tag": "C1",
+              "quote": "for i in range(len(suggestions[0])):\n    idx = suggestions[0][i]\n    title = self.book_pivot.index[idx]\n    if title == book_name and i == 0:\n        continue\n    recommended_books.append(title)\n    matching_items = self.final_rating[self.final_rating['title'] == title]\n    if not matching_items.empty and 'image_url' in matching_items.columns:\n        url = matching_items.iloc[0]['image_url']\n        poster_urls.append(url if isinstance(url, str) and url.startswith(\"http\") else default_poster)\n    else:\n        poster_urls.append(default_poster)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code extracts poster URLs for recommended books but does not specifically extract book image cover URLs (`Image-URL-L` or `Image-URL-M`)."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-6.5",
+      "req_pk": 59,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "FR-6.5.c1",
+          "text": "- FR-6.5: The engine shall return a dictionary/tuple list containing recommended titles and image URLs.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1368,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 23,
+              "end_line": 62,
+              "tag": "C1",
+              "quote": "def recommend(self, book_name: str):\n    try:\n        if book_name not in self.book_pivot.index:\n            logger.warning(f\"Book title '{book_name}' not found in pivot table index.\")\n            return [], []\n        \n        # Locate row index of book_name\n        book_id = np.where(self.book_pivot.index == book_name)[0][0]\n        \n        # Find 6 nearest neighbors (1st neighbor is the query book itself)\n        distances, suggestions = self.model.kneighbors(\n            self.book_pivot.iloc[book_id, :].values.reshape(1, -1),\n            n_neighbors=6\n        )\n        \n        recommended_books = []\n        poster_urls = []\n        \n        default_poster = \"https://images.amazon.com/images/P/059035342X.01.MZZZZZZZ.jpg\"\n        \n        for i in range(len(suggestions[0])):\n            idx = suggestions[0][i]\n            title = self.book_pivot.index[idx]\n            \n            # Skip the input query book itself\n            if title == book_name and i == 0:\n                continue\n            \n            recommended_books.append(title)\n            \n            # Fetch image URL from final_rating dataset\n            matching_items = self.final_rating[self.final_rating['title'] == title]\n            if not matching_items.empty and 'image_url' in matching_items.columns:\n                url = matching_items.iloc[0]['image_url']\n                poster_urls.append(url if isinstance(url, str) and url.startswith(\"http\") else default_poster)\n            else:\n                poster_urls.append(default_poster)\n        \n        return recommended_books[:5], poster_urls[:5]\n        \n    except Exception as e:\n        raise CustomException(e, sys)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The method `recommend` returns a tuple containing two lists: one with recommended book titles and another with their corresponding image URLs."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-7.1",
+      "req_pk": 61,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-7.1.c1",
+          "text": "- FR-7.1: Book Selector Dropdown: Render a searchable dropdown populated with book titles from `templates/book_names.pkl`.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "app.get_book_names",
+              "comp_pk": 45,
+              "link_pk": 1384,
+              "path": "app.py",
+              "start_line": 70,
+              "end_line": 88,
+              "tag": "C1",
+              "quote": "def get_book_names():\n    paths = [\n        \"templates/book_names.pkl\",\n        \"artifacts/serialized_objects/book_names.pkl\"\n    ]\n    for p in paths:\n        if os.path.exists(p):\n            with open(p, \"rb\") as f:\n                return pickle.load(f)\n    return []",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The function `get_book_names` retrieves book names from specified paths but does not render a searchable dropdown. The function is not responsible for rendering the dropdown."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-7.2",
+      "req_pk": 62,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-7.2.c1",
+          "text": "- FR-7.2: Recommendation Button: Render a \"Show Recommendation\" button.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not contain any code related to rendering a 'Show Recommendation' button."
+        },
+        {
+          "claim_id": "FR-7.2.c2",
+          "text": "Upon clicking Compute recommendations using the Recommendation Engine.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not contain any code related to computing recommendations using the Recommendation Engine upon clicking a button."
+        },
+        {
+          "claim_id": "FR-7.2.c3",
+          "text": "Upon clicking Display recommendations in a responsive 5-Column Layout.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not contain any code related to displaying recommendations in a responsive 5-Column Layout upon clicking a button."
+        },
+        {
+          "claim_id": "FR-7.2.c4",
+          "text": "Upon clicking Show the cover poster image above each recommended book title.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The source code does not contain any code related to showing the cover poster image above each recommended book title upon clicking a button."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "FR-7.3",
+      "req_pk": 63,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "FR-7.3.c1",
+          "text": "- FR-7.3: Train Button: Render a \"Train\" trigger button allowing developers/admins to re-execute the ML Training Pipeline on demand.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.training_pipeline.TrainingPipeline.run_pipeline",
+              "comp_pk": 64,
+              "link_pk": 1396,
+              "path": "src/pipeline/training_pipeline.py",
+              "start_line": 10,
+              "end_line": 33,
+              "tag": "C1",
+              "quote": "def run_pipeline(self):\n    try:\n        logger.info(\"Starting End-to-End Books Recommender System Training Pipeline...\")\n        ...\n        logger.info(\"End-to-End Training Pipeline executed successfully!\")\n    except Exception as e:\n        logger.exception(e)\n        raise CustomException(e, sys)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in C1 defines a method `run_pipeline` that executes the ML Training Pipeline but does not render a 'Train' trigger button."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-054",
+      "req_pk": 81,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "REQ-054.c1",
+          "text": "Configuration Driven: Hyperparameters (e.g., $k=6$, user rating threshold $=200$, book rating threshold $=50$) can be tuned directly via `config.yaml` without changing python source code.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.config.configuration.AppConfiguration.get_data_validation_config",
+              "comp_pk": 79,
+              "link_pk": 1539,
+              "path": "src/config/configuration.py",
+              "start_line": 29,
+              "end_line": 41,
+              "tag": "C1",
+              "quote": "def get_data_validation_config(self) -> DataValidationConfig:\n    config = self.config['data_validation']\n    create_directories([Path(config['root_dir']), Path(\"artifacts/serialized_objects\")])\n\n    return DataValidationConfig(\n        root_dir=Path(config['root_dir']),\n        books_csv=Path(config['books_csv']),\n        ratings_csv=Path(config['ratings_csv']),\n        clean_data_path=Path(config['clean_data_path']),\n        final_rating_path=Path(config['final_rating_path']),\n        min_user_ratings=int(config['min_user_ratings']),\n        min_book_ratings=int(config['min_book_ratings'])\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code in `get_data_validation_config` reads hyperparameters from `config.yaml` and uses them to configure the `DataValidationConfig` object. However, there is no evidence that the hyperparameters can be directly tuned via `config.yaml` without changing the Python source code."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-055",
+      "req_pk": 82,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "REQ-055.c1",
+          "text": "Input validation on book search queries to prevent script injection.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "src.pipeline.prediction_pipeline.RecommendationEngine.recommend",
+              "comp_pk": 62,
+              "link_pk": 1547,
+              "path": "src/pipeline/prediction_pipeline.py",
+              "start_line": 23,
+              "end_line": 23,
+              "tag": "C1",
+              "quote": "def recommend(self, book_name: str):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not include any input validation to prevent script injection. The method simply checks if the book title exists in the pivot table index and proceeds with the recommendation process without sanitizing the input."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    }
+  ]
+}
+
+[1/28] FR-1.1     supported
+[2/28] FR-1.2     not_supported_by_candidate
+[3/28] FR-1.4     not_supported_by_candidate
+[4/28] REQ-009    partially_supported
+[5/28] FR-2.1     not_supported_by_candidate
+[6/28] FR-2.2     supported
+[7/28] FR-2.3     not_supported_by_candidate
+[8/28] FR-3.1     not_supported_by_candidate
+[9/28] FR-3.2     not_supported_by_candidate
+[10/28] FR-3.3     not_supported_by_candidate
+[11/28] FR-3.4     not_supported_by_candidate
+[12/28] FR-3.5     not_supported_by_candidate
+[13/28] FR-4.1     supported
+[14/28] FR-4.2     supported
+[15/28] FR-4.3     supported
+[16/28] FR-5.1     supported
+[17/28] FR-5.2     supported
+[18/28] FR-5.3     not_supported_by_candidate
+[19/28] FR-6.1     supported
+[20/28] FR-6.2     supported
+[21/28] FR-6.3     supported
+[22/28] FR-6.4     not_supported_by_candidate
+[23/28] FR-6.5     supported
+[24/28] FR-7.1     not_supported_by_candidate
+[25/28] FR-7.2     not_supported_by_candidate
+[26/28] FR-7.3     not_supported_by_candidate
+[27/28] REQ-054    not_supported_by_candidate
+[28/28] REQ-055    not_supported_by_candidate
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/Books-Recommender-System_gold_standard_v2.json --document-id run-3-SRS --pipeline-version verification-exp-7b-strict --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/7b-strict/Books-Recommender-System/eval_verification.json
+Verification verification-exp-7b-strict for run-3-SRS: 28 gold requirements with an expected verdict
+
+  exact accuracy        0.429
+  false-support rate    0.000  (0 of 6 partial/not-implemented declared supported)
+  implemented recall    0.500  (11 of 22 implemented declared supported)
+  citation validity     0.941  (32 valid, 2 rejected)
+  citations on gold code 1.000
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    implemented      not_supported_by_candidate=11, supported=11
+    partial          not_supported_by_candidate=5, partially_supported=1
+    cross_cutting    unverified=5
+
+  disagreements: FR-1.2(implemented->not_supported_by_candidate), FR-1.4(implemented->not_supported_by_candidate), FR-2.1(implemented->not_supported_by_candidate), FR-2.3(partial->not_supported_by_candidate), FR-3.1(implemented->not_supported_by_candidate), FR-3.2(partial->not_supported_by_candidate), FR-3.3(partial->not_supported_by_candidate), FR-3.4(implemented->not_supported_by_candidate), FR-3.5(implemented->not_supported_by_candidate), FR-5.3(implemented->not_supported_by_candidate), FR-6.4(implemented->not_supported_by_candidate), FR-7.1(implemented->not_supported_by_candidate), FR-7.2(implemented->not_supported_by_candidate), FR-7.3(implemented->not_supported_by_candidate), REQ-011(partial->not_supported_by_candidate), REQ-012(partial->not_supported_by_candidate)
+
+

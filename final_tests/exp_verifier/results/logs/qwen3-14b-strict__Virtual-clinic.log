@@ -1,0 +1,2045 @@
+$ traceability.cli verify --document-id run-7-Software Requirements Specification --model qwen3:14b --prompt strict --think off --pipeline-version verification-exp-qwen3-14b-strict --keep-link-status --json --requirements BR-1,BR-10,BR-2,BR-3,BR-4,BR-5,BR-6,BR-7,BR-8,BR-9,REQ-018,REQ-019,REQ-077,REQ-079,Req-1,Req-1/1,Req-1/2,Req-1/3,Req-10,Req-11,Req-12,Req-13,Req-14,Req-15,Req-16,Req-2,Req-2/1,Req-2/2,Req-2/3,Req-3,Req-3/1,Req-3/2,Req-3/3,Req-4,Req-4/1,Req-4/2,Req-4/3,Req-5,Req-5/1,Req-5/2,Req-5/3,Req-6,Req-6/1,Req-6/2,Req-6/3,Req-7,Req-8,Req-9
+{
+  "document_id": "run-7-Software Requirements Specification",
+  "pipeline_version": "verification-exp-qwen3-14b-strict",
+  "mapping_version": "mapping-v1",
+  "model": "qwen3:14b",
+  "prompt_version": "verify-v2.3",
+  "claims_source": "llm",
+  "requirements": 48,
+  "status_counts": {
+    "insufficient_evidence": 29,
+    "not_supported_by_candidate": 14,
+    "supported": 1,
+    "partially_supported": 4
+  },
+  "per_requirement": [
+    {
+      "requirement_id": "REQ-018",
+      "req_pk": 197,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "REQ-018.c1",
+          "text": "The preferred way to write tests in Django is using the unittest module built in to the Python standard library.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "testing.apps.TestingConfig",
+              "comp_pk": 528,
+              "link_pk": 4121,
+              "path": "testing/apps.py",
+              "start_line": 4,
+              "end_line": 5,
+              "tag": "C1",
+              "quote": "class TestingConfig(AppConfig):\n    name = 'testing'",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The provided code defines a Django AppConfig class but does not show any usage of the unittest module or any test-related code that would confirm the preferred testing framework."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-019",
+      "req_pk": 198,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "REQ-019.c1",
+          "text": "Installation (user testing) Heroku If bugs are found again, coding and unit testing tools will be used along with latest version of software from Git.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not provide any evidence related to Heroku deployment or the use of coding and unit testing tools with the latest version of software from Git."
+        },
+        {
+          "claim_id": "REQ-019.c2",
+          "text": "Heroku is a cloud Platform as a Service (PaaS) supporting several programming languages. that is used as a web application deployment model.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not provide any evidence related to Heroku being a PaaS or its use as a web application deployment model."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1",
+      "req_pk": 215,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-1.c1",
+          "text": "This functionality will Maintain different types of Specialities",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_speciality",
+              "comp_pk": 558,
+              "link_pk": 4228,
+              "path": "testing/test_admin.py",
+              "start_line": 98,
+              "end_line": 106,
+              "tag": "C1",
+              "quote": "def test_add_speciality(self):\n        print(Fore.YELLOW + \"Testing add speciality\")\n        print(Style.RESET_ALL)\n\n        found = resolve('/admin/add_speciality/')\n        result=self.assertEqual(found.func, add_speciality)\n        if result == None:\n            print(Fore.GREEN + \"add speciality verified\")\n            print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows a test for adding a speciality, but it does not demonstrate the functionality to maintain different types of specialities as claimed."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1/1",
+      "req_pk": 216,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-1/1.c1",
+          "text": "/1 Add Speciality Add a new (unique) Speciality",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_speciality",
+              "comp_pk": 558,
+              "link_pk": 4232,
+              "path": "testing/test_admin.py",
+              "start_line": 98,
+              "end_line": 106,
+              "tag": "C1",
+              "quote": "def test_add_speciality(self):\n        print(Fore.YELLOW + \"Testing add speciality\")\n        print(Style.RESET_ALL)\n\n        found = resolve('/admin/add_speciality/')\n        result=self.assertEqual(found.func, add_speciality)\n        if result == None:\n            print(Fore.GREEN + \"add speciality verified\")\n            print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code tests that the '/admin/add_speciality/' URL resolves to the 'add_speciality' function, but it does not show any implementation of adding a new (unique) Speciality, nor does it verify uniqueness or the actual addition of a speciality."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1/2",
+      "req_pk": 217,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-1/2.c1",
+          "text": "/2 Edit Speciality View and Update the details of an existing Speciality",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4236,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 35,
+              "end_line": 37,
+              "tag": "C1",
+              "quote": "if request.user.account.role != Account.ACCOUNT_DOCTOR:\n            request.session['alert_danger'] = \"You don't have permission to view the page.\"\n            return HttpResponseRedirect('/error/denied/')",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4236,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 40,
+              "end_line": 43,
+              "tag": "C1",
+              "quote": "try:\n            medicalinfo = MedicalInfo.objects.get(pk=pk)\n        except Exception:\n            request.session['alert_danger'] = \"The requested medical info doesn't exist.\"\n            return HttpResponseRedirect('/error/denied/')",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4236,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 56,
+              "end_line": 60,
+              "tag": "C1",
+              "quote": "if request.method == 'POST':\n            form = MedicalInfoForm(request.POST)\n            if form.is_valid():\n                form.assign(medicalinfo)\n                medicalinfo.save()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not implement the functionality to view and update the details of an existing 'Speciality'. Instead, it handles 'MedicalInfo' and not 'Speciality'."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-1/3",
+      "req_pk": 218,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-1/3.c1",
+          "text": "/3 Delete Speciality Delete the Speciality - A Speciality can be deleted only if no doctors are attached to it",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.parse_speciality_delete",
+              "comp_pk": 340,
+              "link_pk": 4245,
+              "path": "server/views_admin.py",
+              "start_line": 26,
+              "end_line": 35,
+              "tag": "C1",
+              "quote": "if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                speciality = Speciality.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to cancel the speciality. Please try again later.\"\n                return\n            speciality.delete()\n            logger.log(Action.ACTION_ADMIN, 'Speciality cancelled', request.user.account)\n            template_data['alert_success'] = \"The speciality has been deleted.\"\n            return HttpResponseRedirect('/admin/speciality/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code deletes the speciality without checking whether any doctors are attached to it, which violates the requirement that a speciality can be deleted only if no doctors are attached to it."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2",
+      "req_pk": 219,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-2.c1",
+          "text": "This functionality will Maintain Doctors and Associate them with the Speciality",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4252,
+              "path": "server/models.py",
+              "start_line": 120,
+              "end_line": 132,
+              "tag": "C1",
+              "quote": "ACCOUNT_TYPES = (\n        (ACCOUNT_UNKNOWN, \"Unknown\"),\n        (ACCOUNT_PATIENT, \"Patient\"),\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),\n    )",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines account roles, including 'Doctor', but there is no evidence of functionality to maintain doctors or associate them with a specialty."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2/1",
+      "req_pk": 220,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-2/1.c1",
+          "text": "/1 Add Doctor Add a new (unique) Doctor - Name, Age,Sex, Qualification, Experience, Speciality",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not implement functionality to add a new Doctor with the specified attributes (Name, Age, Sex, Qualification, Experience, Speciality). The code defines a ProfileForm, but it does not include fields for 'Age', 'Qualification', or 'Experience', which are required by the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2/2",
+      "req_pk": 221,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-2/2.c1",
+          "text": "/2 Edit Doctor View and Update the details of an existing Doctor - Speciality cannot be updated i.e. a doctor cannot move from one speciality to another",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any functionality related to editing or updating doctor details, and no code is shown that enforces the restriction on updating a doctor's speciality."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-2/3",
+      "req_pk": 222,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-2/3.c1",
+          "text": "/3 Delete Doctor Delete the Doctor Details - A doctor can be deleted if and only if no new Patient Consultation Request is pending",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.list_view",
+              "comp_pk": 463,
+              "link_pk": 4271,
+              "path": "server/views_prescription.py",
+              "start_line": 67,
+              "end_line": 73,
+              "tag": "C1",
+              "quote": "if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                prescription = Prescription.objects.get(pk=pk)\n                prescription.active = False\n                prescription.save()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows deletion of a prescription by setting its 'active' field to False, but there is no check to ensure that no new Patient Consultation Requests are pending before deletion."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3",
+      "req_pk": 223,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-3.c1",
+          "text": "Maintain Chemist & Labs This functionality will Maintain Chemist and Lab Details",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.models.Account",
+              "comp_pk": 382,
+              "link_pk": 4278,
+              "path": "server/models.py",
+              "start_line": 120,
+              "end_line": 132,
+              "tag": "C1",
+              "quote": "ACCOUNT_LAB = 40\n    ACCOUNT_CHEMIST = 50\n    ACCOUNT_TYPES = (\n        (ACCOUNT_UNKNOWN, \"Unknown\"),\n        (ACCOUNT_PATIENT, \"Patient\"),\n        (ACCOUNT_DOCTOR, \"Doctor\"),\n        (ACCOUNT_ADMIN, \"Admin\"),\n        (ACCOUNT_LAB, \"Lab\"),\n        (ACCOUNT_CHEMIST, \"Chemist\"),",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines account roles for 'Lab' and 'Chemist', but there is no evidence that the system supports functionality to maintain or manage chemist and lab details beyond defining roles."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3/1",
+      "req_pk": 224,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-3/1.c1",
+          "text": "/1 Add Chemist / Lab Add a new Chemist or a Lab - There can be ONLY 1 lab in a Pincode",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.forms.validate_username_available",
+              "comp_pk": 415,
+              "link_pk": 4281,
+              "path": "server/forms.py",
+              "start_line": 10,
+              "end_line": 14,
+              "tag": "C1",
+              "quote": "def validate_username_available(username):\n    \"\"\" validator that throws an error if the given username already exists.\"\"\"\n\n    if User.objects.filter(username__icontains=username).count():\n        raise forms.ValidationError(\"This email is already registered\")",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown checks for the availability of a username, but it does not enforce the rule that there can be only one lab per pincode. There is no code related to pincodes or lab uniqueness in the provided component."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3/2",
+      "req_pk": 225,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-3/2.c1",
+          "text": "/2 Edit Chemist/Lab View and Update the details of an existing Chemist/ Lab - Pincode cannot be updated",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "testing.test_prescription.TestPrescriptionViews.test_prescription_update",
+              "comp_pk": 498,
+              "link_pk": 4284,
+              "path": "testing/test_prescription.py",
+              "start_line": 29,
+              "end_line": 36,
+              "tag": "C1",
+              "quote": "def test_prescription_update(self):\n    found = resolve('/prescription/update/')\n    print(Fore.YELLOW + \"Testing update prescription\")\n    print(Style.RESET_ALL)\n    result = self.assertEqual(found.func, update_view)\n    if result == None:\n        print(Fore.GREEN + \"update prescription verified\")\n        print(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown only tests the URL resolution for a prescription update view, but does not include any logic related to chemist/lab details or pincode restrictions. There is no evidence in the provided code that verifies whether the pincode can or cannot be updated for a chemist/lab."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-3/3",
+      "req_pk": 226,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-3/3.c1",
+          "text": "/3 Delete Chemist/ Lab Delete the Chemist / Lab Details - A Chemist or a Lan can be deleted if and only if no new Prescription is pending",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.list_view",
+              "comp_pk": 463,
+              "link_pk": 4288,
+              "path": "server/views_prescription.py",
+              "start_line": 67,
+              "end_line": 73,
+              "tag": "C1",
+              "quote": "if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                prescription = Prescription.objects.get(pk=pk)\n                prescription.active = False\n                prescription.save()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code deletes a prescription by setting its 'active' field to False, but there is no check to ensure that no new prescriptions are pending before allowing the deletion of a Chemist or Lab."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4",
+      "req_pk": 227,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-4.c1",
+          "text": "This is a master list of Symptoms that can be selected by Patient during Consultation Request",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.view_symptom",
+              "comp_pk": 348,
+              "link_pk": 4295,
+              "path": "server/views_admin.py",
+              "start_line": 172,
+              "end_line": 173,
+              "tag": "C1",
+              "quote": "template_data['query'] = Symptom.objects.all()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code retrieves all symptoms from the database and passes them to the template, but there is no evidence that this is a master list used by patients during consultation requests."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/1",
+      "req_pk": 228,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-4/1.c1",
+          "text": "/1 Add Symptom Add a new Symptom",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "testing.test_admin.TestAdminViews.test_add_symptom",
+              "comp_pk": 559,
+              "link_pk": 4300,
+              "path": "testing/test_admin.py",
+              "start_line": 108,
+              "end_line": 116,
+              "tag": "C1",
+              "quote": "def test_add_symptom(self):\n\tprint(Fore.YELLOW + \"Testing add symptom\")\n\tprint(Style.RESET_ALL)\n\n\tfound = resolve('/admin/add_symptom/')\n\tresult=self.assertEqual(found.func, add_symptom)\n\tif result == None:\n\t\tprint(Fore.GREEN + \"add symptom verified\")\n\t\tprint(Style.RESET_ALL)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code tests if the add_symptom view can be resolved, but it does not show any implementation of adding a new Symptom, nor does it confirm that the Symptom is actually added."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/2",
+      "req_pk": 229,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-4/2.c1",
+          "text": "/2 Edit Symptom View and Update the details of an existing Symptom i,e. description",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.forms.SymptomForm",
+              "comp_pk": 436,
+              "link_pk": 4304,
+              "path": "server/forms.py",
+              "start_line": 228,
+              "end_line": 232,
+              "tag": "C1",
+              "quote": "class SymptomForm(BasicForm):\n    name = forms.CharField(label='Name of symptom',max_length=50)\n    setup_field(name, 'Enter symptom name here')\n    description = forms.CharField(label='Description of Symptom')\n    setup_field(description, 'Enter symptom description here')",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_admin.add_symptom",
+              "comp_pk": 350,
+              "link_pk": 4305,
+              "path": "server/views_admin.py",
+              "start_line": 205,
+              "end_line": 232,
+              "tag": "C2",
+              "quote": "def add_symptom(request):\n    # Authentication check\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None: \n        return authentication_result\n    # Get template data from the session\n    template_data = views.parse_session(\n        request,\n        {'form_button': \"Add Symptom\"}\n    )\n    #parse_speciality_delete(request, template_data)  # parse appointment cancelling\n    # Proceed with the rest of the view\n    if request.method == 'POST':\n        form = SymptomForm(request.POST)\n        if form.is_valid():\n            symptom = Symptom(\n                name=form.cleaned_data['name'],\n                description=form.cleaned_data['description']\n            )\n            symptom.save()\n            form = SymptomForm()     # Clean the form when page is redisplayed\n            template_data['alert_success'] = \"Successfully added the Symptom!\"\n            logger.log(Action.ACTION_ADMIN, 'Admin added ' + symptom.name, request.user.account)\n            return HttpResponseRedirect('/admin/symptom')\n    else:\n        form = SymptomForm()\n    template_data['form'] = form\n    return render(request, 'virtualclinic/admin/add_symptom.html', template_data)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown implements functionality for adding a symptom, not editing an existing one. There is no evidence of code that allows viewing or updating an existing symptom."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-4/3",
+      "req_pk": 230,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-4/3.c1",
+          "text": "/3 Delete Symptom Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.parse_symptom_delete",
+              "comp_pk": 341,
+              "link_pk": 4309,
+              "path": "server/views_admin.py",
+              "start_line": 48,
+              "end_line": 55,
+              "tag": "C1",
+              "quote": "if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                symptom = Symptom.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to delete the symptom. Please try again later.\"\n                return\n            symptom.delete()",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code deletes the symptom without checking whether any consultation request has ever used this symptom, which is required by the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "/3 Delete Symptom Delete the Symptom Details - A Symptom can be deleted if and only if no Consultation request ever raised has used this symptom",
+          "rejected_split": [
+            "Delete Symptom Delete the Symptom Details - A Symptom can be deleted if no Consultation request ever raised has used this symptom",
+            "Delete Symptom Delete the Symptom Details - A Symptom can be deleted only if no Consultation request ever raised has used this symptom"
+          ],
+          "reason": "drops values ['3']"
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-5",
+      "req_pk": 231,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-5.c1",
+          "text": "This is Patient Registration Functionality",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any functionality related to patient registration. The code shown is related to the Appointment model and its method for collecting populated fields, which is unrelated to patient registration."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/1",
+      "req_pk": 232,
+      "status": "supported",
+      "claims": [
+        {
+          "claim_id": "Req-5/1.c1",
+          "text": "/1 Create Patient Profile Register a new Patient",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4320,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C1",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):\n    user = User.objects.create_user(\n        email.lower(),\n        email.lower(),\n        password\n    )\n    profile = Profile(\n        firstname=firstname,\n        lastname=lastname,\n        speciality=speciality\n    )\n    profile.save()\n    account = Account(\n        role=role,\n        profile=profile,\n        user=user\n    )\n    account.save()\n    medical_info = MedicalInfo(\n        account=account\n    )\n    medical_info.save()\n    logger.log(Action.ACTION_ACCOUNT,\"Account registered\",account)\n    return user",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The function register_user creates a new user, their profile, account, and medical information, which aligns with the claim to register a new patient."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/2",
+      "req_pk": 233,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-5/2.c1",
+          "text": "/2 Edit Patient Profile View and Update the details of an existing Patient.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.update_view",
+              "comp_pk": 467,
+              "link_pk": 4329,
+              "path": "server/views_appointment.py",
+              "start_line": 50,
+              "end_line": 107,
+              "tag": "C1",
+              "quote": "def update_view(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown is for updating an appointment, not a patient profile. There is no code related to viewing or updating patient details."
+        },
+        {
+          "claim_id": "Req-5/2.c2",
+          "text": "Only latest details shall be maintained by the system",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.update_view",
+              "comp_pk": 467,
+              "link_pk": 4329,
+              "path": "server/views_appointment.py",
+              "start_line": 50,
+              "end_line": 107,
+              "tag": "C1",
+              "quote": "def update_view(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "No code related to maintaining patient profile details is shown. The code shown is for appointments, not patient profiles."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-5/3",
+      "req_pk": 234,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-5/3.c1",
+          "text": "/3 Delete Patient Profile Delete the Patient Details - A Patient cannot be deleted if there is one or more Consultation Requests in last 3 years",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4338,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])\n    if authentication_result is not None:\n        return authentication_result\n    # Get the template data from the session\n    template_data = views.parse_session(request)\n    # Proceed with the rest of the view\n    if request.method == 'POST':\n        if 'delete' in request.POST and 'pk' in request.POST:\n            pk = request.POST['pk']\n            try:\n                user = Account.objects.get(pk=pk)\n            except Exception:\n                template_data['alert_danger'] = \"Unable to delete the user. Please try again later\"\n                return\n            user.archive = True\n            user.save()\n            #logger.log(Action.ACTION_ADMIN, 'Admin deleted a user',user)\n            template_data['alert_success'] = \"The user has been deleted.\"\n            return HttpResponseRedirect('/admin/users')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code does not check for any consultation requests in the last 3 years before deleting a user, which is required by the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-6",
+      "req_pk": 235,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-6.c1",
+          "text": "Registered Patients shall have the ability to raise Consultation Requests - 2 Modes would be available - Appointment and Offline Consultation",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.appointment.parse_appointments",
+              "comp_pk": 334,
+              "link_pk": 4344,
+              "path": "server/appointment.py",
+              "start_line": 11,
+              "end_line": 48,
+              "tag": "C1",
+              "quote": "def parse_appointments(request):\n    if request.user.account.role == Account.ACCOUNT_PATIENT:\n        appointments = Appointment.objects.filter(status=\"Active\", patient=request.user.account)",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_appointment.list_view",
+              "comp_pk": 465,
+              "link_pk": 4345,
+              "path": "server/views_appointment.py",
+              "start_line": 13,
+              "end_line": 31,
+              "tag": "C2",
+              "quote": "def list_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,\n        [Account.ACCOUNT_PATIENT, Account.ACCOUNT_DOCTOR]",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_appointment.calendar_view",
+              "comp_pk": 466,
+              "link_pk": 4350,
+              "path": "server/views_appointment.py",
+              "start_line": 34,
+              "end_line": 47,
+              "tag": "C7",
+              "quote": "def calendar_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(\n        request,",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.views_profile.profile_view",
+              "comp_pk": 403,
+              "link_pk": 4351,
+              "path": "server/views_profile.py",
+              "start_line": 12,
+              "end_line": 31,
+              "tag": "C8",
+              "quote": "def profile_view(request):\n    # Authentication check\n    authentication_result = views.authentication_check(request)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows functionality for retrieving and managing appointments, but there is no evidence of functionality for raising consultation requests in either 'Appointment' or 'Offline Consultation' modes."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-6/1",
+      "req_pk": 236,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-6/1.c1",
+          "text": "/1 Create Consultation Request Patient creates a Consultation Request by entering the Symptoms, uploads reports, if any and defines the mode of request (Offline/Appointment)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.AppointmentForm",
+              "comp_pk": 431,
+              "link_pk": 4356,
+              "path": "server/forms.py",
+              "start_line": 168,
+              "end_line": 218,
+              "tag": "C1",
+              "quote": "class AppointmentForm(BasicForm):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The source code shows an AppointmentForm class, but it does not support the creation of a Consultation Request as described in the requirement. The form is for creating an appointment, not a consultation request, and there is no code shown that handles symptoms, report uploads, or the mode of request (Offline/Appointment)."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-6/2",
+      "req_pk": 237,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-6/2.c1",
+          "text": "/2 Create Appointment- Online For Appointment Requests, an entry shall be created in the Patient Appointment File if the appointment is for next day",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any logic for creating an entry in the Patient Appointment File based on whether the appointment is for the next day."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-6/3",
+      "req_pk": 238,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-6/3.c1",
+          "text": "/3 Create Appointment - Batch This is batch program that will be run by Administration every night to create Appointment File for next 5 days.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that implements a batch program to create appointment files for the next 5 days."
+        },
+        {
+          "claim_id": "Req-6/3.c2",
+          "text": "It will purge the existing files",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that implements the purging of existing files."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-7",
+      "req_pk": 239,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-7.c1",
+          "text": "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.appointment.parse_appointments",
+              "comp_pk": 334,
+              "link_pk": 4374,
+              "path": "server/appointment.py",
+              "start_line": 11,
+              "end_line": 48,
+              "tag": "C1",
+              "quote": "def parse_appointments(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not implement a batch program that runs periodically on new Consultation Requests to predict diseases using a machine learning algorithm. The function parse_appointments is related to retrieving and formatting appointment data, not disease prediction."
+        },
+        {
+          "claim_id": "Req-7.c2",
+          "text": "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to prioritize the Requests (Critical/ Medium/ Low)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.appointment.parse_appointments",
+              "comp_pk": 334,
+              "link_pk": 4374,
+              "path": "server/appointment.py",
+              "start_line": 11,
+              "end_line": 48,
+              "tag": "C1",
+              "quote": "def parse_appointments(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown does not implement a mechanism to prioritize Consultation Requests as Critical, Medium, or Low. The function parse_appointments is related to retrieving and formatting appointment data, not prioritization."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm and prioritize the Requests (Critical/ Medium/ Low)",
+          "parts": [
+            "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to predict diseases based on machine learning Algorithm",
+            "Predict Disease This is a batch program ? that will run periodically on new Consultation Requests to prioritize the Requests (Critical/ Medium/ Low)"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-8",
+      "req_pk": 240,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "Req-8.c1",
+          "text": "Provide Consultation Doctors shall see the prioritized consultation requests and provide diagnosis",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to doctors viewing prioritized consultation requests or providing diagnosis."
+        },
+        {
+          "claim_id": "Req-8.c2",
+          "text": "Provide Consultation Doctors shall prescribe medicines and suggest lab requests, if any",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.models.Prescription.get_populated_fields",
+              "comp_pk": 394,
+              "link_pk": 4380,
+              "path": "server/models.py",
+              "start_line": 297,
+              "end_line": 307,
+              "tag": "C1",
+              "quote": "fields = {\n            'patient': self.patient,\n            'doctor': self.doctor,\n            'date': self.date,\n            'medication': self.medication,\n            'strength': self.strength,\n            'instruction': self.instruction,\n            'refill': self.refill,\n            'active': self.active,\n        }",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The `get_populated_fields` method in the Prescription class includes fields such as 'medication', 'instruction', and 'refill', which are relevant to prescribing medicines and suggesting lab requests."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Provide Consultation Doctors shall see the prioritized consultation requests and provide diagnosis, prescribe medicines and suggest lab requests, if any",
+          "parts": [
+            "Provide Consultation Doctors shall see the prioritized consultation requests and provide diagnosis",
+            "Provide Consultation Doctors shall prescribe medicines and suggest lab requests, if any"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-9",
+      "req_pk": 241,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "Req-9.c1",
+          "text": "Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode)",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.update_view",
+              "comp_pk": 464,
+              "link_pk": 4385,
+              "path": "server/views_prescription.py",
+              "start_line": 93,
+              "end_line": 97,
+              "tag": "C1",
+              "quote": "pk = request.GET['pk']\n        try:\n            prescription = Prescription.objects.get(pk=pk)\n        except Exception:\n            request.session['alert_danger'] = \"The requested prescription does not exist\"",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code retrieves a prescription by its primary key (pk), but there is no check for the prescription's pincode or any indication that the prescription is assigned to the chemist based on pincode."
+        },
+        {
+          "claim_id": "Req-9.c2",
+          "text": "Deliver Medicines Chemist shall have the facility to update the status.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_prescription.update_view",
+              "comp_pk": 464,
+              "link_pk": 4385,
+              "path": "server/views_prescription.py",
+              "start_line": 110,
+              "end_line": 113,
+              "tag": "C1",
+              "quote": "form = PrescriptionForm(request.POST)\n        if form.is_valid():\n            form.assign(prescription)\n            prescription.save()",
+              "quote_checked": true
+            },
+            {
+              "component_id": "server.forms.PrescriptionForm.assign",
+              "comp_pk": 440,
+              "link_pk": 4386,
+              "path": "server/forms.py",
+              "start_line": 288,
+              "end_line": 296,
+              "tag": "C2",
+              "quote": "def assign(self, prescription):\n        prescription.patient = self.cleaned_data['patient']\n        prescription.doctor = self.cleaned_data['doctor']\n        prescription.date = self.cleaned_data['date']\n        prescription.medication = self.cleaned_data['medication']\n        prescription.strength = self.cleaned_data['strength']\n        prescription.instruction = self.cleaned_data['instruction']\n        prescription.refill = self.cleaned_data['refill']\n        prescription.active = self.cleaned_data['active']",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code allows the chemist to update the prescription by assigning new data from the form to the prescription and saving it."
+        },
+        {
+          "claim_id": "Req-9.c3",
+          "text": "Medicines shall be delivered offline to Patient by Chemist",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that indicates how medicines are delivered offline to the patient by the chemist."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode) and have the facility to update the status.",
+          "parts": [
+            "Deliver Medicines Chemist shall be able to view the open prescriptions assigned to them (based on Pincode)",
+            "Deliver Medicines Chemist shall have the facility to update the status."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-10",
+      "req_pk": 242,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-10.c1",
+          "text": "Perform Lab Tests Lab In-charge shall be able to view open lab-requests",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to viewing open lab-requests by the Lab In-charge."
+        },
+        {
+          "claim_id": "Req-10.c2",
+          "text": "Perform Lab Tests Lab In-charge shall have the facility to update the status",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to updating the status of lab-requests by the Lab In-charge."
+        },
+        {
+          "claim_id": "Req-10.c3",
+          "text": "Actual Sample Collection and lab tests shall be offline.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to performing lab tests or sample collection offline."
+        },
+        {
+          "claim_id": "Req-10.c4",
+          "text": "Labs shall also submit reports to Patient offline",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to submitting reports to patients offline."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Perform Lab Tests Lab In-charge shall be able to view open lab-requests and have the facility to update the status- Actual Sample Collection and lab tests shall be offline.",
+          "parts": [
+            "Perform Lab Tests Lab In-charge shall be able to view open lab-requests",
+            "Perform Lab Tests Lab In-charge shall have the facility to update the status",
+            "Actual Sample Collection and lab tests shall be offline."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-11",
+      "req_pk": 243,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-11.c1",
+          "text": "View/Generate Prescription/ Print Invoice Patient shall have the facility to view the Prescription",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to viewing or generating a prescription by the patient."
+        },
+        {
+          "claim_id": "Req-11.c2",
+          "text": "View/Generate Prescription/ Print Invoice Patient shall have the facility to print the invoice.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to printing an invoice by the patient."
+        },
+        {
+          "claim_id": "Req-11.c3",
+          "text": "Alternately, Admin can print the Prescription and Invoice",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to printing a prescription or invoice by the admin."
+        },
+        {
+          "claim_id": "Req-11.c4",
+          "text": "Alternately, Admin can email the Prescription and Invoice",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality related to emailing a prescription or invoice by the admin."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "View/Generate Prescription/ Print Invoice Patient shall have the facility to view the Prescription and print the invoice.",
+          "parts": [
+            "View/Generate Prescription/ Print Invoice Patient shall have the facility to view the Prescription",
+            "View/Generate Prescription/ Print Invoice Patient shall have the facility to print the invoice."
+          ]
+        },
+        {
+          "claim": "Alternately, Admin can print and email the Prescription and Invoice",
+          "parts": [
+            "Alternately, Admin can print the Prescription and Invoice",
+            "Alternately, Admin can email the Prescription and Invoice"
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-12",
+      "req_pk": 244,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-12.c1",
+          "text": "Housekeeping Patient Profiles and Consultation Requests Quarterly all Patient Profiles which have not raised any Consultation Request for last 3 years will be archived.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4405,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown in C1 is for manually archiving a user by an admin, not for automatically archiving patient profiles that have not raised any consultation requests in the last 3 years."
+        },
+        {
+          "claim_id": "Req-12.c2",
+          "text": "Also, every quarter, Consultation Requests that are more than 3 years old shall be archived on This will improve the performance",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.user_archive",
+              "comp_pk": 342,
+              "link_pk": 4405,
+              "path": "server/views_admin.py",
+              "start_line": 61,
+              "end_line": 81,
+              "tag": "C1",
+              "quote": "def user_archive(request):\n    # Authentication check.\n    authentication_result = views.authentication_check(request, [Account.ACCOUNT_ADMIN])",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shown in C1 is for manually archiving a user by an admin, not for automatically archiving consultation requests that are more than 3 years old on a quarterly basis."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-13",
+      "req_pk": 245,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-13.c1",
+          "text": "Daily Back-up Every night, full back-up of the system (both Database and Code) shall be taken and sent to remote site for safekeeping.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views_admin.backup_data",
+              "comp_pk": 360,
+              "link_pk": 4411,
+              "path": "server/views_admin.py",
+              "start_line": 538,
+              "end_line": 609,
+              "tag": "C1",
+              "quote": "def backup_data(request):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a function for backing up data, but it does not indicate that the backup is performed automatically every night. The function is manually triggered, not scheduled."
+        },
+        {
+          "claim_id": "Req-13.c2",
+          "text": "The back-ups shall be rotated every 30 days",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that implements the rotation of backups every 30 days."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-14",
+      "req_pk": 246,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-14.c1",
+          "text": "Learning Disease Every Month Administration will improve the Disease Prediction Database with learning of the prior month, i.e. improve the training data-set by including the actual learning for the month",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided source code does not show any functionality related to updating a Disease Prediction Database or learning from prior months' data."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "Req-15",
+      "req_pk": 247,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "Req-15.c1",
+          "text": "Maintain Users (Doctors, Patients, Chemist/ Labs) The system shall have a login functionality.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code defines user roles and account management, but there is no explicit implementation of a login functionality."
+        },
+        {
+          "claim_id": "Req-15.c2",
+          "text": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality for changing passwords after initial setup by the Admin."
+        },
+        {
+          "claim_id": "Req-15.c3",
+          "text": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can log-in using their own credentials.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any functionality for logging in using individual credentials after setup."
+        },
+        {
+          "claim_id": "Req-15.c4",
+          "text": "For Patients, while registering a Patient will have to first create a User-id/ Password, which will then be used for authentication purposes.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4421,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C2",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows a registration function, but it does not explicitly require the creation of a User-id/Password during Patient registration as stated in the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password and log-in using their own credentials.",
+          "parts": [
+            "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can change the password",
+            "Once the Doctor, Chemists and Labs have been set-up with default passwords by Admin, individual Doctors/ Chemists and Labs can log-in using their own credentials."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "Req-16",
+      "req_pk": 248,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "Req-16.c1",
+          "text": "Reports The System will generate following reports Doctor wise Appointment file for next 5 days.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that generates a report of doctor-wise appointments for the next 5 days."
+        },
+        {
+          "claim_id": "Req-16.c2",
+          "text": "Reports The System will generate following reports Speciality wise - Number of Consultations by Doctor per month/ quarter/ year (run on last day of the month).",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that generates a report of specialty-wise number of consultations by doctor per month/quarter/year."
+        },
+        {
+          "claim_id": "Req-16.c3",
+          "text": "Reports The System will generate following reports Speciality wise - Revenue Earned per month/quarter/year (run on last day of the month).",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that generates a report of specialty-wise revenue earned per month/quarter/year."
+        },
+        {
+          "claim_id": "Req-16.c4",
+          "text": "Reports The System will generate following reports Patient History File - For a patient, history of consultations done in last 3 years.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that generates a patient history file for consultations in the last 3 years."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "REQ-077",
+      "req_pk": 256,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "REQ-077.c1",
+          "text": "The system data shall be backed up every night (full back-up) with a cycle of 30 days.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shows a backup function, but there is no evidence of a nightly schedule or a 30-day cycle for backups."
+        },
+        {
+          "claim_id": "REQ-077.c2",
+          "text": "This essentially means that there will be a provision to rollback by a month.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that provides a mechanism for rolling back data by a month."
+        },
+        {
+          "claim_id": "REQ-077.c3",
+          "text": "Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness of back-up.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shows a backup function, but there is no evidence of restoring the backup on a dummy production system to ensure completeness."
+        },
+        {
+          "claim_id": "REQ-077.c4",
+          "text": "Post back-up everyday the back-up shall be restored on a dummy production system to ensure correctness of back-up.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code shows a backup function, but there is no evidence of restoring the backup on a dummy production system to ensure correctness."
+        },
+        {
+          "claim_id": "REQ-077.c5",
+          "text": "Post that the dummy production database shall be purged.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that purges the dummy production database after the backup is restored."
+        },
+        {
+          "claim_id": "REQ-077.c6",
+          "text": "Since the data is confidential, it will be maintained in Mangalore HQ in a fire proof cabinet 25 KM away from the Hospital",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that handles the storage of backups in a fireproof cabinet in Mangalore HQ."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": [
+        {
+          "claim": "Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness and correctness of back-up.",
+          "parts": [
+            "Post back-up everyday the back-up shall be restored on a dummy production system to ensure completeness of back-up.",
+            "Post back-up everyday the back-up shall be restored on a dummy production system to ensure correctness of back-up."
+          ]
+        }
+      ]
+    },
+    {
+      "requirement_id": "REQ-079",
+      "req_pk": 258,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "REQ-079.c1",
+          "text": "As the Patient\u2019 data is highly confidential and private care would be taken to ensure that the confidentiality is maintained.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that explicitly ensures data confidentiality or implements measures to maintain patient data privacy."
+        },
+        {
+          "claim_id": "REQ-079.c2",
+          "text": "Only authorized Hospital staff i.e.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that explicitly restricts access to authorized hospital staff."
+        },
+        {
+          "claim_id": "REQ-079.c3",
+          "text": "Doctors will have the access to Patients Consultation requests.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.views_medicalinfo.update_view",
+              "comp_pk": 333,
+              "link_pk": 4475,
+              "path": "server/views_medicalinfo.py",
+              "start_line": 35,
+              "end_line": 37,
+              "tag": "C3",
+              "quote": "if request.user.account.role != Account.ACCOUNT_DOCTOR:\n            request.session['alert_danger'] = \"You don't have permission to view the page.\"\n            return HttpResponseRedirect('/error/denied/')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code explicitly restricts access to medical information to doctors by checking the user's role."
+        },
+        {
+          "claim_id": "REQ-079.c4",
+          "text": "Also, Chemists and Labs will be shown data only on need to know basis.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that explicitly restricts Chemists and Labs to data on a 'need to know' basis."
+        },
+        {
+          "claim_id": "REQ-079.c5",
+          "text": "Since there are no published external interfaces, there is no risk envisaged at the moment in terms of unwarranted data cascade.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "No code is shown that explicitly confirms the absence of external interfaces or mitigates risks from data cascade."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-1",
+      "req_pk": 260,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-1.c1",
+          "text": "System shall be available only on Specified PinCodes (Zones).",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.HospitalForm",
+              "comp_pk": 441,
+              "link_pk": 4484,
+              "path": "server/forms.py",
+              "start_line": 302,
+              "end_line": 302,
+              "tag": "C2",
+              "quote": "zip = forms.CharField(max_length=50)",
+              "quote_checked": true,
+              "realigned_from": [
+                303,
+                303
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows a zip field being defined, but there is no logic to restrict system availability based on specified PinCodes (Zones)."
+        },
+        {
+          "claim_id": "BR-1.c2",
+          "text": "These will be set-up in the Parameter Control File",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.HospitalForm",
+              "comp_pk": 441,
+              "link_pk": 4484,
+              "path": "server/forms.py",
+              "start_line": 302,
+              "end_line": 302,
+              "tag": "C2",
+              "quote": "zip = forms.CharField(max_length=50)",
+              "quote_checked": true,
+              "realigned_from": [
+                303,
+                303
+              ]
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code defines a zip field, but there is no indication that PinCodes are set up in a Parameter Control File as claimed."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-2",
+      "req_pk": 261,
+      "status": "partially_supported",
+      "claims": [
+        {
+          "claim_id": "BR-2.c1",
+          "text": "All Users shall access the system using a login/user-id and password.",
+          "source": "requirement_text",
+          "verdict": "supported",
+          "model_verdict": "supported",
+          "evidence": [
+            {
+              "component_id": "server.forms.LoginForm.clean",
+              "comp_pk": 424,
+              "link_pk": 4487,
+              "path": "server/forms.py",
+              "start_line": 74,
+              "end_line": 75,
+              "tag": "C1",
+              "quote": "username = cleaned_data.get('email')\npassword = cleaned_data.get('password')",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code explicitly retrieves 'email' and 'password' fields, confirming that users must provide both to access the system."
+        },
+        {
+          "claim_id": "BR-2.c2",
+          "text": "The login-id/password will be managed in a secured manner",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show how login credentials are stored, encrypted, or otherwise secured, so there is insufficient evidence to confirm that the login-id/password are managed in a secured manner."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-3",
+      "req_pk": 262,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-3.c1",
+          "text": "Each Speciality \u2018has\u2019 one or more Doctors linked to it.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [
+            {
+              "reference": {
+                "component": "C1",
+                "start_line": 0,
+                "end_line": 0,
+                "quote": ""
+              },
+              "reason": "C1: lines 0-0 outside the shown range 79-91"
+            }
+          ],
+          "rationale": "The provided code does not show any logic or data structures that enforce a relationship between Speciality and Doctor. The code only defines an admin interface for MedicalTest, which includes a 'doctor' field, but this does not establish or enforce the required 'has' relationship between Speciality and Doctor."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-4",
+      "req_pk": 263,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-4.c1",
+          "text": "Each Doctor shall be mapped to ONE and ONLY ONE Speciality.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not enforce that each Doctor is mapped to exactly one and only one Speciality. It only checks that a speciality is present for doctors and not present for non-doctors, but it does not ensure uniqueness or enforce a one-to-one mapping."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-5",
+      "req_pk": 264,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-5.c1",
+          "text": "Each Doctor shall provide Consultation to ONE or More Patient",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The provided code does not show any logic related to assigning consultations to doctors or ensuring that each doctor provides consultation to one or more patients."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-6",
+      "req_pk": 265,
+      "status": "not_supported_by_candidate",
+      "claims": [
+        {
+          "claim_id": "BR-6.c1",
+          "text": "Each Patient has to register himself/ herself by filling Patient profile - a unique id will be generated for the Patient.",
+          "source": "requirement_text",
+          "verdict": "not_supported",
+          "model_verdict": "not_supported",
+          "evidence": [
+            {
+              "component_id": "server.views.register_user",
+              "comp_pk": 412,
+              "link_pk": 4504,
+              "path": "server/views.py",
+              "start_line": 102,
+              "end_line": 125,
+              "tag": "C1",
+              "quote": "def register_user(email, password, firstname, lastname, role, speciality=None):",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows a function for registering a user, but there is no explicit mention of a unique ID being generated for the Patient, which is a key part of the claim."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-7",
+      "req_pk": 266,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-7.c1",
+          "text": "Each Patient can request for one or more consultation Requests (linked back to Speciality).",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [
+            {
+              "component_id": "server.views_appointment.list_view",
+              "comp_pk": 465,
+              "link_pk": 4513,
+              "path": "server/views_appointment.py",
+              "start_line": 27,
+              "end_line": 28,
+              "tag": "C1",
+              "quote": "template_data['query'] = Appointment.objects.filter(patient=request.user.account)",
+              "quote_checked": true
+            }
+          ],
+          "rejected_evidence": [],
+          "rationale": "The code shows that a Patient can view their own appointments, but there is no evidence that a Patient can request one or more consultation requests linked to a Speciality."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-8",
+      "req_pk": 267,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-8.c1",
+          "text": "Each Patient Consultation Request \u2018Generates\u2019 ONE prescription.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any mechanism that ensures a Patient Consultation Request generates exactly one prescription."
+        },
+        {
+          "claim_id": "BR-8.c2",
+          "text": "Each Prescription shall be mapped to ONE AND ONLY ONE Patient Consultation Request.",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any mechanism that ensures a Prescription is mapped to exactly one Patient Consultation Request."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-9",
+      "req_pk": 268,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-9.c1",
+          "text": "Each Chemist \u201creceives\u201d one or more prescriptions (only required fields).",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any mechanism for mapping prescriptions to chemists or enforcing that a chemist receives one or more prescriptions."
+        },
+        {
+          "claim_id": "BR-9.c2",
+          "text": "Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Chemist",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any mechanism for ensuring that each prescription is mapped to exactly one chemist, nor does it show any use of pincodes in this mapping."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    },
+    {
+      "requirement_id": "BR-10",
+      "req_pk": 269,
+      "status": "insufficient_evidence",
+      "claims": [
+        {
+          "claim_id": "BR-10.c1",
+          "text": "Each Lab \u201creceives\u201d one or more prescriptions (only required fields).",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "The code does not show any logic or relationships that indicate how labs receive prescriptions, nor does it show any fields or relationships related to labs."
+        },
+        {
+          "claim_id": "BR-10.c2",
+          "text": "Each prescription is mapped to (vide workflow using Pincode) ONE and ONLY ONE Labs",
+          "source": "requirement_text",
+          "verdict": "insufficient_evidence",
+          "model_verdict": "insufficient_evidence",
+          "evidence": [],
+          "rejected_evidence": [],
+          "rationale": "There is no code shown that indicates how prescriptions are mapped to labs, or that enforces a one-to-one relationship between prescriptions and labs."
+        }
+      ],
+      "error": null,
+      "omitted_components": [],
+      "incomplete_requirement_text": false,
+      "claim_splits": []
+    }
+  ]
+}
+
+[1/48] REQ-018    insufficient_evidence
+[2/48] REQ-019    insufficient_evidence
+[3/48] Req-1      insufficient_evidence
+[4/48] Req-1/1    insufficient_evidence
+[5/48] Req-1/2    not_supported_by_candidate
+[6/48] Req-1/3    not_supported_by_candidate
+[7/48] Req-2      insufficient_evidence
+[8/48] Req-2/1    insufficient_evidence
+[9/48] Req-2/2    insufficient_evidence
+[10/48] Req-2/3    not_supported_by_candidate
+[11/48] Req-3      insufficient_evidence
+[12/48] Req-3/1    insufficient_evidence
+[13/48] Req-3/2    insufficient_evidence
+[14/48] Req-3/3    not_supported_by_candidate
+[15/48] Req-4      insufficient_evidence
+[16/48] Req-4/1    insufficient_evidence
+[17/48] Req-4/2    insufficient_evidence
+[18/48] Req-4/3    not_supported_by_candidate
+[19/48] Req-5      insufficient_evidence
+[20/48] Req-5/1    supported
+[21/48] Req-5/2    not_supported_by_candidate
+[22/48] Req-5/3    not_supported_by_candidate
+[23/48] Req-6      insufficient_evidence
+[24/48] Req-6/1    not_supported_by_candidate
+[25/48] Req-6/2    insufficient_evidence
+[26/48] Req-6/3    insufficient_evidence
+[27/48] Req-7      not_supported_by_candidate
+[28/48] Req-8      partially_supported
+[29/48] Req-9      partially_supported
+[30/48] Req-10     insufficient_evidence
+[31/48] Req-11     insufficient_evidence
+[32/48] Req-12     not_supported_by_candidate
+[33/48] Req-13     not_supported_by_candidate
+[34/48] Req-14     insufficient_evidence
+[35/48] Req-15     not_supported_by_candidate
+[36/48] Req-16     insufficient_evidence
+[37/48] REQ-077    insufficient_evidence
+[38/48] REQ-079    partially_supported
+[39/48] BR-1       not_supported_by_candidate
+[40/48] BR-2       partially_supported
+[41/48] BR-3       insufficient_evidence
+[42/48] BR-4       insufficient_evidence
+[43/48] BR-5       insufficient_evidence
+[44/48] BR-6       not_supported_by_candidate
+[45/48] BR-7       insufficient_evidence
+[46/48] BR-8       insufficient_evidence
+[47/48] BR-9       insufficient_evidence
+[48/48] BR-10      insufficient_evidence
+
+$ traceability.cli evaluate-verification --gold /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/v1/gold/Virtual-clinic_gold_standard_v2.json --document-id run-7-Software Requirements Specification --pipeline-version verification-exp-qwen3-14b-strict --out /home/aayush_sukhraj/Desktop/FINAL_TESTING_TRACELITE/TraceabilityApp/final_tests/exp_verifier/results/qwen3-14b-strict/Virtual-clinic/eval_verification.json
+Verification verification-exp-qwen3-14b-strict for run-7-Software Requirements Specification: 52 gold requirements with an expected verdict
+
+  exact accuracy        0.115
+  false-support rate    0.000  (0 of 42 partial/not-implemented declared supported)
+  implemented recall    0.100  (1 of 10 implemented declared supported)
+  citation validity     0.977  (43 valid, 1 rejected)
+  citations on gold code 1.000
+  claim accuracy        n/a  (0 gold claims compared)
+
+  gold status -> predicted verdicts:
+    partial          insufficient_evidence=18, not_supported_by_candidate=9, partially_supported=3, unverified=1
+    implemented      insufficient_evidence=5, not_supported_by_candidate=3, partially_supported=1, supported=1
+    not_implemented  insufficient_evidence=6, not_supported_by_candidate=2, unverified=3
+    cross_cutting    unverified=5
+
+  disagreements: Req-1(partial->insufficient_evidence), Req-1/1(partial->insufficient_evidence), Req-1/2(partial->not_supported_by_candidate), Req-1/3(partial->not_supported_by_candidate), Req-2(partial->insufficient_evidence), Req-2/1(partial->insufficient_evidence), Req-2/2(partial->insufficient_evidence), Req-2/3(partial->not_supported_by_candidate), Req-3(partial->insufficient_evidence), Req-3/1(partial->insufficient_evidence), Req-3/2(partial->insufficient_evidence), Req-3/3(partial->not_supported_by_candidate), Req-4(implemented->insufficient_evidence), Req-4/1(implemented->insufficient_evidence), Req-4/2(partial->insufficient_evidence), Req-4/3(partial->not_supported_by_candidate), Req-5(implemented->insufficient_evidence), Req-5/2(implemented->not_supported_by_candidate), Req-5/3(partial->not_supported_by_candidate), Req-6(implemented->insufficient_evidence), Req-6/1(partial->not_supported_by_candidate), Req-6/2(not_implemented->insufficient_evidence), Req-6/3(not_implemented->insufficient_evidence), Req-10(partial->insufficient_evidence), Req-11(partial->insufficient_evidence), Req-12(partial->not_supported_by_candidate), Req-13(partial->not_supported_by_candidate), Req-14(not_implemented->insufficient_evidence), Req-15(implemented->not_supported_by_candidate), Req-16(partial->insufficient_evidence), BR-2(implemented->partially_supported), BR-3(partial->insufficient_evidence), BR-4(partial->insufficient_evidence), BR-5(implemented->insufficient_evidence), BR-6(implemented->not_supported_by_candidate), BR-7(partial->insufficient_evidence), BR-8(not_implemented->insufficient_evidence), BR-9(partial->insufficient_evidence), BR-10(not_implemented->insufficient_evidence), REQ-003(partial->insufficient_evidence), REQ-007(not_implemented->unverified), REQ-008(not_implemented->unverified), REQ-009(not_implemented->unverified), REQ-010(partial->unverified), REQ-018(partial->insufficient_evidence), REQ-019(not_implemented->insufficient_evidence)
+
+

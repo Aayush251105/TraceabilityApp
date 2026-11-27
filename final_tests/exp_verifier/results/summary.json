@@ -1,0 +1,2171 @@
+{
+  "configs": {
+    "v1": {
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.26126126126126126,
+        "exact_accuracy_ci": [
+          0.17117117117117117,
+          0.35135135135135137
+        ],
+        "macro_f1": 0.2713685703376425,
+        "macro_f1_ci": [
+          0.1846611232405816,
+          0.35224520415818233
+        ],
+        "weighted_kappa": 0.15207242891498085,
+        "weighted_kappa_ci": [
+          0.07157548334018915,
+          0.23917164940936264
+        ],
+        "false_support_rate": 0.03125,
+        "false_support_rate_ci": [
+          0.0,
+          0.08
+        ],
+        "false_support_not_implemented": 0.0625,
+        "false_support_not_implemented_ci": [
+          0.0,
+          0.21052631578947367
+        ],
+        "implemented_recall": 0.2978723404255319,
+        "implemented_recall_ci": [
+          0.16981132075471697,
+          0.4339622641509434
+        ],
+        "implemented_recall_code_shown": 0.4482758620689655,
+        "implemented_recall_code_shown_ci": [
+          0.26666666666666666,
+          0.64
+        ],
+        "partial_found_code_shown": 0.15,
+        "partial_found_code_shown_ci": [
+          0.0,
+          0.3333333333333333
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 4,
+            "not_supported_by_candidate": 41,
+            "supported": 2,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 11,
+            "unverified": 4,
+            "partially_supported": 1
+          },
+          "implemented": {
+            "not_supported_by_candidate": 29,
+            "insufficient_evidence": 1,
+            "supported": 14,
+            "partially_supported": 3
+          }
+        }
+      },
+      "per_pair": {
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.3076923076923077,
+          "exact_accuracy_ci": [
+            0.07692307692307693,
+            0.5384615384615384
+          ],
+          "macro_f1": 0.24848484848484845,
+          "macro_f1_ci": [
+            0.06666666666666667,
+            0.4511784511784511
+          ],
+          "weighted_kappa": 0.07741935483870965,
+          "weighted_kappa_ci": [
+            0.0,
+            0.3157894736842105
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.0,
+          "implemented_recall_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall_code_shown": 0.0,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "partial_found_code_shown": 0.42857142857142855,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.8
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 3,
+              "not_supported_by_candidate": 5
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 2,
+              "insufficient_evidence": 1
+            }
+          }
+        },
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.42857142857142855,
+          "exact_accuracy_ci": [
+            0.25,
+            0.6071428571428571
+          ],
+          "macro_f1": 0.47619047619047616,
+          "macro_f1_ci": [
+            0.25806451612903225,
+            0.7142857142857143
+          ],
+          "weighted_kappa": 0.14864864864864868,
+          "weighted_kappa_ci": [
+            0.04680851063829794,
+            0.2962962962962963
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.5,
+          "implemented_recall_ci": [
+            0.3,
+            0.7142857142857143
+          ],
+          "implemented_recall_code_shown": 0.55,
+          "implemented_recall_code_shown_ci": [
+            0.3333333333333333,
+            0.7777777777777778
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 11,
+              "not_supported_by_candidate": 11
+            },
+            "partial": {
+              "not_supported_by_candidate": 5,
+              "partially_supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.15384615384615385,
+          "exact_accuracy_ci": [
+            0.057692307692307696,
+            0.2692307692307692
+          ],
+          "macro_f1": 0.13933236574746008,
+          "macro_f1_ci": [
+            0.04938271604938271,
+            0.24405458089668616
+          ],
+          "weighted_kappa": 0.028037383177569986,
+          "weighted_kappa_ci": [
+            -0.06879194630872498,
+            0.12811693895098886
+          ],
+          "false_support_rate": 0.047619047619047616,
+          "false_support_rate_ci": [
+            0.0,
+            0.11904761904761904
+          ],
+          "false_support_not_implemented": 0.09090909090909091,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.3125
+          ],
+          "implemented_recall": 0.1,
+          "implemented_recall_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "implemented_recall_code_shown": 0.25,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "partial": {
+              "not_supported_by_candidate": 28,
+              "supported": 2,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 7,
+              "supported": 1,
+              "partially_supported": 2
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 7,
+              "partially_supported": 1,
+              "unverified": 3
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.2777777777777778,
+          "exact_accuracy_ci": [
+            0.1111111111111111,
+            0.5
+          ],
+          "macro_f1": 0.20634920634920637,
+          "macro_f1_ci": [
+            0.07017543859649122,
+            0.37229437229437234
+          ],
+          "weighted_kappa": 0.09589041095890405,
+          "weighted_kappa_ci": [
+            0.0,
+            0.27586206896551735
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.16666666666666666,
+          "implemented_recall_ci": [
+            0.0,
+            0.4
+          ],
+          "implemented_recall_code_shown": 0.3333333333333333,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "not_supported_by_candidate": 9,
+              "partially_supported": 1,
+              "supported": 2
+            },
+            "partial": {
+              "not_supported_by_candidate": 3
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 0.7832167832167832
+    },
+    "7b-strict": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.27927927927927926,
+        "exact_accuracy_ci": [
+          0.1891891891891892,
+          0.36936936936936937
+        ],
+        "macro_f1": 0.2889003742307214,
+        "macro_f1_ci": [
+          0.20162098437960507,
+          0.37006535947712416
+        ],
+        "weighted_kappa": 0.1795479009687837,
+        "weighted_kappa_ci": [
+          0.0935075541037157,
+          0.2706093189964158
+        ],
+        "false_support_rate": 0.03125,
+        "false_support_rate_ci": [
+          0.0,
+          0.08
+        ],
+        "false_support_not_implemented": 0.0625,
+        "false_support_not_implemented_ci": [
+          0.0,
+          0.21052631578947367
+        ],
+        "implemented_recall": 0.3404255319148936,
+        "implemented_recall_ci": [
+          0.2,
+          0.48
+        ],
+        "implemented_recall_code_shown": 0.4482758620689655,
+        "implemented_recall_code_shown_ci": [
+          0.26666666666666666,
+          0.64
+        ],
+        "partial_found_code_shown": 0.15,
+        "partial_found_code_shown_ci": [
+          0.0,
+          0.3333333333333333
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 4,
+            "not_supported_by_candidate": 41,
+            "supported": 2,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 11,
+            "unverified": 4,
+            "partially_supported": 1
+          },
+          "implemented": {
+            "not_supported_by_candidate": 26,
+            "insufficient_evidence": 1,
+            "supported": 16,
+            "partially_supported": 4
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.42857142857142855,
+          "exact_accuracy_ci": [
+            0.25,
+            0.6071428571428571
+          ],
+          "macro_f1": 0.47619047619047616,
+          "macro_f1_ci": [
+            0.25806451612903225,
+            0.7142857142857143
+          ],
+          "weighted_kappa": 0.14864864864864868,
+          "weighted_kappa_ci": [
+            0.04680851063829794,
+            0.2962962962962963
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.5,
+          "implemented_recall_ci": [
+            0.3,
+            0.7142857142857143
+          ],
+          "implemented_recall_code_shown": 0.55,
+          "implemented_recall_code_shown_ci": [
+            0.3333333333333333,
+            0.7777777777777778
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 11,
+              "not_supported_by_candidate": 11
+            },
+            "partial": {
+              "not_supported_by_candidate": 5,
+              "partially_supported": 1
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.3888888888888889,
+          "exact_accuracy_ci": [
+            0.16666666666666666,
+            0.6111111111111112
+          ],
+          "macro_f1": 0.2916666666666667,
+          "macro_f1_ci": [
+            0.12962962962962962,
+            0.4590964590964591
+          ],
+          "weighted_kappa": 0.19402985074626866,
+          "weighted_kappa_ci": [
+            0.038461538461538436,
+            0.43428571428571416
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.08333333333333333,
+            0.6153846153846154
+          ],
+          "implemented_recall_code_shown": 0.3333333333333333,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "not_supported_by_candidate": 7,
+              "supported": 4,
+              "partially_supported": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 3
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 3
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.3076923076923077,
+          "exact_accuracy_ci": [
+            0.07692307692307693,
+            0.5384615384615384
+          ],
+          "macro_f1": 0.24848484848484845,
+          "macro_f1_ci": [
+            0.06666666666666667,
+            0.4511784511784511
+          ],
+          "weighted_kappa": 0.07741935483870965,
+          "weighted_kappa_ci": [
+            0.0,
+            0.3157894736842105
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.0,
+          "implemented_recall_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall_code_shown": 0.0,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "partial_found_code_shown": 0.42857142857142855,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.8
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 3,
+              "not_supported_by_candidate": 5
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 2,
+              "insufficient_evidence": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.15384615384615385,
+          "exact_accuracy_ci": [
+            0.057692307692307696,
+            0.2692307692307692
+          ],
+          "macro_f1": 0.141025641025641,
+          "macro_f1_ci": [
+            0.04938271604938271,
+            0.24654088050314468
+          ],
+          "weighted_kappa": 0.03703703703703709,
+          "weighted_kappa_ci": [
+            -0.06478034251675346,
+            0.13770728190338866
+          ],
+          "false_support_rate": 0.047619047619047616,
+          "false_support_rate_ci": [
+            0.0,
+            0.11904761904761904
+          ],
+          "false_support_not_implemented": 0.09090909090909091,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.3125
+          ],
+          "implemented_recall": 0.1,
+          "implemented_recall_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "implemented_recall_code_shown": 0.25,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "partial": {
+              "not_supported_by_candidate": 28,
+              "supported": 2,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 6,
+              "supported": 1,
+              "partially_supported": 3
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 7,
+              "partially_supported": 1,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 0.8615384615384616,
+      "minutes": 19.0,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 0,
+        "config_right_baseline_wrong": 2,
+        "p_value": 0.5
+      },
+      "agreement_with_v1": 0.972972972972973
+    },
+    "7b-behavioral": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.38738738738738737,
+        "exact_accuracy_ci": [
+          0.2972972972972973,
+          0.4774774774774775
+        ],
+        "macro_f1": 0.3697474719968048,
+        "macro_f1_ci": [
+          0.288023088023088,
+          0.45208672086720864
+        ],
+        "weighted_kappa": 0.27003328732645937,
+        "weighted_kappa_ci": [
+          0.14901772879731678,
+          0.3900598704174526
+        ],
+        "false_support_rate": 0.171875,
+        "false_support_rate_ci": [
+          0.08571428571428572,
+          0.2753623188405797
+        ],
+        "false_support_not_implemented": 0.25,
+        "false_support_not_implemented_ci": [
+          0.05263157894736842,
+          0.47368421052631576
+        ],
+        "implemented_recall": 0.5957446808510638,
+        "implemented_recall_ci": [
+          0.45454545454545453,
+          0.7358490566037735
+        ],
+        "implemented_recall_code_shown": 0.7241379310344828,
+        "implemented_recall_code_shown_ci": [
+          0.5483870967741935,
+          0.88
+        ],
+        "partial_found_code_shown": 0.2,
+        "partial_found_code_shown_ci": [
+          0.047619047619047616,
+          0.4
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 7,
+            "not_supported_by_candidate": 31,
+            "supported": 9,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 8,
+            "unverified": 4,
+            "supported": 2,
+            "partially_supported": 2
+          },
+          "implemented": {
+            "not_supported_by_candidate": 15,
+            "supported": 28,
+            "partially_supported": 4
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.5714285714285714,
+          "exact_accuracy_ci": [
+            0.39285714285714285,
+            0.75
+          ],
+          "macro_f1": 0.5197368421052632,
+          "macro_f1_ci": [
+            0.33333333333333337,
+            0.751937984496124
+          ],
+          "weighted_kappa": 0.2124999999999999,
+          "weighted_kappa_ci": [
+            0.026490066225165587,
+            0.41666666666666663
+          ],
+          "false_support_rate": 0.16666666666666666,
+          "false_support_rate_ci": [
+            0.0,
+            0.5
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.6818181818181818,
+          "implemented_recall_ci": [
+            0.4782608695652174,
+            0.8695652173913043
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.55,
+            0.9333333333333333
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 15,
+              "not_supported_by_candidate": 6,
+              "partially_supported": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 4,
+              "partially_supported": 1,
+              "supported": 1
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.5,
+          "exact_accuracy_ci": [
+            0.2777777777777778,
+            0.7222222222222222
+          ],
+          "macro_f1": 0.3333333333333333,
+          "macro_f1_ci": [
+            0.17543859649122806,
+            0.5245098039215687
+          ],
+          "weighted_kappa": 0.16666666666666663,
+          "weighted_kappa_ci": [
+            -0.2127659574468086,
+            0.5
+          ],
+          "false_support_rate": 0.3333333333333333,
+          "false_support_rate_ci": [
+            0.0,
+            0.8
+          ],
+          "false_support_not_implemented": 0.3333333333333333,
+          "false_support_not_implemented_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall": 0.5833333333333334,
+          "implemented_recall_ci": [
+            0.3076923076923077,
+            0.8666666666666667
+          ],
+          "implemented_recall_code_shown": 0.6666666666666666,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "not_supported_by_candidate": 5,
+              "supported": 7
+            },
+            "partial": {
+              "not_supported_by_candidate": 2,
+              "supported": 1
+            },
+            "not_implemented": {
+              "supported": 1,
+              "not_supported_by_candidate": 2
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.46153846153846156,
+          "exact_accuracy_ci": [
+            0.23076923076923078,
+            0.6923076923076923
+          ],
+          "macro_f1": 0.42857142857142855,
+          "macro_f1_ci": [
+            0.17777777777777778,
+            0.7179487179487178
+          ],
+          "weighted_kappa": 0.2571428571428571,
+          "weighted_kappa_ci": [
+            -0.08333333333333326,
+            0.6829268292682926
+          ],
+          "false_support_rate": 0.2,
+          "false_support_rate_ci": [
+            0.0,
+            0.5
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.42857142857142855,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.8333333333333334
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 4,
+              "not_supported_by_candidate": 2,
+              "supported": 2
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 2,
+              "supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.23076923076923078,
+          "exact_accuracy_ci": [
+            0.11538461538461539,
+            0.34615384615384615
+          ],
+          "macro_f1": 0.2751186910365344,
+          "macro_f1_ci": [
+            0.14764957264957265,
+            0.3886639676113361
+          ],
+          "weighted_kappa": 0.15584415584415579,
+          "weighted_kappa_ci": [
+            -0.012987012987013102,
+            0.3224125093075204
+          ],
+          "false_support_rate": 0.14285714285714285,
+          "false_support_rate_ci": [
+            0.047619047619047616,
+            0.2558139534883721
+          ],
+          "false_support_not_implemented": 0.2727272727272727,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.5555555555555556
+          ],
+          "implemented_recall": 0.5,
+          "implemented_recall_ci": [
+            0.16666666666666666,
+            0.8571428571428571
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.125,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.4
+          ],
+          "confusion": {
+            "partial": {
+              "not_supported_by_candidate": 23,
+              "supported": 5,
+              "partially_supported": 2,
+              "unverified": 1
+            },
+            "implemented": {
+              "supported": 5,
+              "not_supported_by_candidate": 2,
+              "partially_supported": 3
+            },
+            "not_implemented": {
+              "supported": 1,
+              "not_supported_by_candidate": 5,
+              "partially_supported": 2,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 0.9649122807017544,
+      "minutes": 37.4,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 4,
+        "config_right_baseline_wrong": 18,
+        "p_value": 0.004343509674072266
+      },
+      "agreement_with_v1": 0.7297297297297297
+    },
+    "14b-strict": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.36036036036036034,
+        "exact_accuracy_ci": [
+          0.26126126126126126,
+          0.45045045045045046
+        ],
+        "macro_f1": 0.3798919373007236,
+        "macro_f1_ci": [
+          0.2919468238617175,
+          0.46725076330811094
+        ],
+        "weighted_kappa": 0.2948130277442702,
+        "weighted_kappa_ci": [
+          0.1835625199872083,
+          0.41182314952806753
+        ],
+        "false_support_rate": 0.09375,
+        "false_support_rate_ci": [
+          0.03076923076923077,
+          0.16923076923076924
+        ],
+        "false_support_not_implemented": 0.1875,
+        "false_support_not_implemented_ci": [
+          0.0,
+          0.4
+        ],
+        "implemented_recall": 0.5531914893617021,
+        "implemented_recall_ci": [
+          0.41025641025641024,
+          0.6956521739130435
+        ],
+        "implemented_recall_code_shown": 0.6896551724137931,
+        "implemented_recall_code_shown_ci": [
+          0.5172413793103449,
+          0.8571428571428571
+        ],
+        "partial_found_code_shown": 0.2,
+        "partial_found_code_shown_ci": [
+          0.047619047619047616,
+          0.38461538461538464
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 8,
+            "supported": 5,
+            "not_supported_by_candidate": 21,
+            "insufficient_evidence": 13,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 6,
+            "unverified": 4,
+            "insufficient_evidence": 3,
+            "partially_supported": 2,
+            "supported": 1
+          },
+          "implemented": {
+            "not_supported_by_candidate": 8,
+            "insufficient_evidence": 6,
+            "supported": 26,
+            "partially_supported": 7
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.6071428571428571,
+          "exact_accuracy_ci": [
+            0.42857142857142855,
+            0.7857142857142857
+          ],
+          "macro_f1": 0.5213675213675213,
+          "macro_f1_ci": [
+            0.35294117647058826,
+            0.7402597402597403
+          ],
+          "weighted_kappa": 0.26056338028169024,
+          "weighted_kappa_ci": [
+            0.042735042735042916,
+            0.4838709677419355
+          ],
+          "false_support_rate": 0.16666666666666666,
+          "false_support_rate_ci": [
+            0.0,
+            0.5714285714285714
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.7272727272727273,
+          "implemented_recall_ci": [
+            0.5416666666666666,
+            0.9047619047619048
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.5555555555555556,
+            0.9166666666666666
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 16,
+              "partially_supported": 2,
+              "not_supported_by_candidate": 3,
+              "insufficient_evidence": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 3,
+              "supported": 1,
+              "partially_supported": 1,
+              "insufficient_evidence": 1
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.3888888888888889,
+          "exact_accuracy_ci": [
+            0.16666666666666666,
+            0.6111111111111112
+          ],
+          "macro_f1": 0.3063973063973064,
+          "macro_f1_ci": [
+            0.1346153846153846,
+            0.5
+          ],
+          "weighted_kappa": 0.11475409836065564,
+          "weighted_kappa_ci": [
+            -0.19653179190751424,
+            0.39097744360902253
+          ],
+          "false_support_rate": 0.16666666666666666,
+          "false_support_rate_ci": [
+            0.0,
+            0.5
+          ],
+          "false_support_not_implemented": 0.3333333333333333,
+          "false_support_not_implemented_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall": 0.4166666666666667,
+          "implemented_recall_ci": [
+            0.13333333333333333,
+            0.7
+          ],
+          "implemented_recall_code_shown": 0.3333333333333333,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "insufficient_evidence": 3,
+              "supported": 5,
+              "partially_supported": 1,
+              "not_supported_by_candidate": 3
+            },
+            "partial": {
+              "not_supported_by_candidate": 3
+            },
+            "not_implemented": {
+              "supported": 1,
+              "not_supported_by_candidate": 2
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.5384615384615384,
+          "exact_accuracy_ci": [
+            0.3076923076923077,
+            0.7692307692307693
+          ],
+          "macro_f1": 0.5008547008547009,
+          "macro_f1_ci": [
+            0.22857142857142856,
+            0.7857142857142857
+          ],
+          "weighted_kappa": 0.30534351145038163,
+          "weighted_kappa_ci": [
+            -0.10169491525423724,
+            0.7547169811320754
+          ],
+          "false_support_rate": 0.2,
+          "false_support_rate_ci": [
+            0.0,
+            0.45454545454545453
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.5714285714285714,
+          "partial_found_code_shown_ci": [
+            0.16666666666666666,
+            1.0
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 5,
+              "supported": 2,
+              "not_supported_by_candidate": 1
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 1,
+              "insufficient_evidence": 1,
+              "supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.17307692307692307,
+          "exact_accuracy_ci": [
+            0.07692307692307693,
+            0.28846153846153844
+          ],
+          "macro_f1": 0.2698202180960802,
+          "macro_f1_ci": [
+            0.12634408602150538,
+            0.39662618083670714
+          ],
+          "weighted_kappa": 0.1633663366336634,
+          "weighted_kappa_ci": [
+            -0.0034305317324185847,
+            0.3226053639846743
+          ],
+          "false_support_rate": 0.047619047619047616,
+          "false_support_rate_ci": [
+            0.0,
+            0.125
+          ],
+          "false_support_not_implemented": 0.18181818181818182,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.4444444444444444
+          ],
+          "implemented_recall": 0.4,
+          "implemented_recall_ci": [
+            0.1,
+            0.75
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "partial": {
+              "insufficient_evidence": 12,
+              "not_supported_by_candidate": 14,
+              "partially_supported": 2,
+              "supported": 2,
+              "unverified": 1
+            },
+            "implemented": {
+              "supported": 4,
+              "insufficient_evidence": 1,
+              "partially_supported": 4,
+              "not_supported_by_candidate": 1
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 3,
+              "insufficient_evidence": 3,
+              "partially_supported": 2,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 1.0,
+      "minutes": 65.4,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 6,
+        "config_right_baseline_wrong": 17,
+        "p_value": 0.03468966484069824
+      },
+      "agreement_with_v1": 0.5495495495495496
+    },
+    "14b-behavioral": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.43243243243243246,
+        "exact_accuracy_ci": [
+          0.3333333333333333,
+          0.5315315315315315
+        ],
+        "macro_f1": 0.4302483784211359,
+        "macro_f1_ci": [
+          0.3386479591836735,
+          0.5152713952713953
+        ],
+        "weighted_kappa": 0.3113906600034464,
+        "weighted_kappa_ci": [
+          0.19063515769129402,
+          0.4313524590163934
+        ],
+        "false_support_rate": 0.15625,
+        "false_support_rate_ci": [
+          0.07352941176470588,
+          0.2463768115942029
+        ],
+        "false_support_not_implemented": 0.3125,
+        "false_support_not_implemented_ci": [
+          0.09090909090909091,
+          0.55
+        ],
+        "implemented_recall": 0.6170212765957447,
+        "implemented_recall_ci": [
+          0.4791666666666667,
+          0.7551020408163265
+        ],
+        "implemented_recall_code_shown": 0.7241379310344828,
+        "implemented_recall_code_shown_ci": [
+          0.5555555555555556,
+          0.8846153846153846
+        ],
+        "partial_found_code_shown": 0.4,
+        "partial_found_code_shown_ci": [
+          0.1875,
+          0.625
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 13,
+            "supported": 8,
+            "insufficient_evidence": 7,
+            "not_supported_by_candidate": 19,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "partially_supported": 3,
+            "unverified": 4,
+            "not_supported_by_candidate": 6,
+            "insufficient_evidence": 1,
+            "supported": 2
+          },
+          "implemented": {
+            "insufficient_evidence": 4,
+            "supported": 29,
+            "partially_supported": 6,
+            "not_supported_by_candidate": 8
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.6428571428571429,
+          "exact_accuracy_ci": [
+            0.4642857142857143,
+            0.8214285714285714
+          ],
+          "macro_f1": 0.5158730158730158,
+          "macro_f1_ci": [
+            0.3513513513513513,
+            0.741860465116279
+          ],
+          "weighted_kappa": 0.1651376146788991,
+          "weighted_kappa_ci": [
+            -0.1200000000000001,
+            0.4374999999999999
+          ],
+          "false_support_rate": 0.5,
+          "false_support_rate_ci": [
+            0.0,
+            1.0
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.7727272727272727,
+          "implemented_recall_ci": [
+            0.5909090909090909,
+            0.9230769230769231
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.5555555555555556,
+            0.9166666666666666
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 17,
+              "partially_supported": 2,
+              "not_supported_by_candidate": 3
+            },
+            "partial": {
+              "not_supported_by_candidate": 2,
+              "supported": 3,
+              "partially_supported": 1
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.5,
+          "exact_accuracy_ci": [
+            0.2777777777777778,
+            0.7222222222222222
+          ],
+          "macro_f1": 0.46296296296296297,
+          "macro_f1_ci": [
+            0.19047619047619044,
+            0.7333333333333334
+          ],
+          "weighted_kappa": 0.07692307692307687,
+          "weighted_kappa_ci": [
+            -0.2857142857142856,
+            0.4545454545454546
+          ],
+          "false_support_rate": 0.3333333333333333,
+          "false_support_rate_ci": [
+            0.0,
+            0.75
+          ],
+          "false_support_not_implemented": 0.6666666666666666,
+          "false_support_not_implemented_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall": 0.5833333333333334,
+          "implemented_recall_ci": [
+            0.3076923076923077,
+            0.8666666666666667
+          ],
+          "implemented_recall_code_shown": 0.6666666666666666,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 1.0,
+          "partial_found_code_shown_ci": [
+            1.0,
+            1.0
+          ],
+          "confusion": {
+            "implemented": {
+              "insufficient_evidence": 2,
+              "supported": 7,
+              "not_supported_by_candidate": 3
+            },
+            "partial": {
+              "not_supported_by_candidate": 2,
+              "partially_supported": 1
+            },
+            "not_implemented": {
+              "supported": 2,
+              "not_supported_by_candidate": 1
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.5384615384615384,
+          "exact_accuracy_ci": [
+            0.23076923076923078,
+            0.7692307692307693
+          ],
+          "macro_f1": 0.39999999999999997,
+          "macro_f1_ci": [
+            0.19607843137254902,
+            0.7166666666666667
+          ],
+          "weighted_kappa": 0.20869565217391317,
+          "weighted_kappa_ci": [
+            -0.18181818181818188,
+            0.6976744186046512
+          ],
+          "false_support_rate": 0.1,
+          "false_support_rate_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "false_support_not_implemented": 0.5,
+          "false_support_not_implemented_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.7142857142857143,
+          "partial_found_code_shown_ci": [
+            0.3333333333333333,
+            1.0
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 6,
+              "supported": 1,
+              "insufficient_evidence": 1
+            },
+            "not_implemented": {
+              "partially_supported": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "insufficient_evidence": 2,
+              "supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.2692307692307692,
+          "exact_accuracy_ci": [
+            0.15384615384615385,
+            0.38461538461538464
+          ],
+          "macro_f1": 0.3285233285233285,
+          "macro_f1_ci": [
+            0.18103818103818106,
+            0.45972222222222214
+          ],
+          "weighted_kappa": 0.19931565440547483,
+          "weighted_kappa_ci": [
+            0.03119584055459279,
+            0.36155800169348007
+          ],
+          "false_support_rate": 0.09523809523809523,
+          "false_support_rate_ci": [
+            0.022727272727272728,
+            0.19148936170212766
+          ],
+          "false_support_not_implemented": 0.18181818181818182,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.4444444444444444
+          ],
+          "implemented_recall": 0.4,
+          "implemented_recall_ci": [
+            0.1,
+            0.75
+          ],
+          "implemented_recall_code_shown": 0.75,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.25,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.6
+          ],
+          "confusion": {
+            "partial": {
+              "not_supported_by_candidate": 15,
+              "supported": 4,
+              "insufficient_evidence": 6,
+              "partially_supported": 5,
+              "unverified": 1
+            },
+            "implemented": {
+              "supported": 4,
+              "not_supported_by_candidate": 2,
+              "partially_supported": 4
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 5,
+              "insufficient_evidence": 1,
+              "partially_supported": 2,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 0.9666666666666667,
+      "minutes": 131.2,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 6,
+        "config_right_baseline_wrong": 25,
+        "p_value": 0.0008779102936387062
+      },
+      "agreement_with_v1": 0.5315315315315315
+    },
+    "qwen3-14b-strict": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.24324324324324326,
+        "exact_accuracy_ci": [
+          0.16216216216216217,
+          0.32432432432432434
+        ],
+        "macro_f1": 0.3111111111111111,
+        "macro_f1_ci": [
+          0.21631464446614249,
+          0.39855699855699855
+        ],
+        "weighted_kappa": 0.17589948600799543,
+        "weighted_kappa_ci": [
+          0.10304692712580621,
+          0.25717780816003444
+        ],
+        "false_support_rate": 0.0,
+        "false_support_rate_ci": [
+          0.0,
+          0.0
+        ],
+        "false_support_not_implemented": 0.0,
+        "false_support_not_implemented_ci": [
+          0.0,
+          0.0
+        ],
+        "implemented_recall": 0.2765957446808511,
+        "implemented_recall_ci": [
+          0.1568627450980392,
+          0.40816326530612246
+        ],
+        "implemented_recall_code_shown": 0.4482758620689655,
+        "implemented_recall_code_shown_ci": [
+          0.2692307692307692,
+          0.64
+        ],
+        "partial_found_code_shown": 0.35,
+        "partial_found_code_shown_ci": [
+          0.14285714285714285,
+          0.5714285714285714
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 10,
+            "not_supported_by_candidate": 17,
+            "insufficient_evidence": 20,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 4,
+            "unverified": 4,
+            "insufficient_evidence": 8
+          },
+          "implemented": {
+            "not_supported_by_candidate": 11,
+            "insufficient_evidence": 21,
+            "supported": 13,
+            "partially_supported": 2
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.39285714285714285,
+          "exact_accuracy_ci": [
+            0.21428571428571427,
+            0.5714285714285714
+          ],
+          "macro_f1": 0.4375,
+          "macro_f1_ci": [
+            0.23333333333333334,
+            0.6666666666666666
+          ],
+          "weighted_kappa": 0.1327433628318585,
+          "weighted_kappa_ci": [
+            0.04378283712784603,
+            0.26865671641791045
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.45454545454545453,
+          "implemented_recall_ci": [
+            0.25,
+            0.6666666666666666
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.29411764705882354,
+            0.7272727272727273
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 10,
+              "not_supported_by_candidate": 6,
+              "insufficient_evidence": 5,
+              "partially_supported": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 4,
+              "partially_supported": 1,
+              "insufficient_evidence": 1
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.1111111111111111,
+          "exact_accuracy_ci": [
+            0.0,
+            0.2777777777777778
+          ],
+          "macro_f1": 0.14652014652014653,
+          "macro_f1_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "weighted_kappa": 0.038461538461538436,
+          "weighted_kappa_ci": [
+            0.0,
+            0.1473684210526317
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.08333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            0.2727272727272727
+          ],
+          "implemented_recall_code_shown": 0.3333333333333333,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "insufficient_evidence": 10,
+              "not_supported_by_candidate": 1,
+              "supported": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 2,
+              "insufficient_evidence": 1
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "insufficient_evidence": 2
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.6153846153846154,
+          "exact_accuracy_ci": [
+            0.38461538461538464,
+            0.8461538461538461
+          ],
+          "macro_f1": 0.5634920634920635,
+          "macro_f1_ci": [
+            0.26666666666666666,
+            0.86007326007326
+          ],
+          "weighted_kappa": 0.38095238095238093,
+          "weighted_kappa_ci": [
+            0.0,
+            0.8311688311688312
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.8571428571428571,
+          "partial_found_code_shown_ci": [
+            0.5,
+            1.0
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 6,
+              "not_supported_by_candidate": 2
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "not_supported_by_candidate": 1,
+              "insufficient_evidence": 1,
+              "supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.11538461538461539,
+          "exact_accuracy_ci": [
+            0.038461538461538464,
+            0.21153846153846154
+          ],
+          "macro_f1": 0.17108225108225109,
+          "macro_f1_ci": [
+            0.04579579579579579,
+            0.30656707127295363
+          ],
+          "weighted_kappa": 0.07655880031570639,
+          "weighted_kappa_ci": [
+            0.010101010101010055,
+            0.1798806479113384
+          ],
+          "false_support_rate": 0.0,
+          "false_support_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.1,
+          "implemented_recall_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "implemented_recall_code_shown": 0.25,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.125,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.4
+          ],
+          "confusion": {
+            "partial": {
+              "insufficient_evidence": 18,
+              "not_supported_by_candidate": 9,
+              "partially_supported": 3,
+              "unverified": 1
+            },
+            "implemented": {
+              "insufficient_evidence": 5,
+              "supported": 1,
+              "not_supported_by_candidate": 3,
+              "partially_supported": 1
+            },
+            "not_implemented": {
+              "insufficient_evidence": 6,
+              "not_supported_by_candidate": 2,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 0.9929078014184397,
+      "minutes": 51.2,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 10,
+        "config_right_baseline_wrong": 8,
+        "p_value": 0.8145294189453125
+      },
+      "agreement_with_v1": 0.45045045045045046
+    },
+    "qwen3-14b-behavioral": {
+      "pairs_done": [
+        "Books-Recommender-System",
+        "ProClinic",
+        "Travel-Agency-Automation-System",
+        "Virtual-clinic"
+      ],
+      "pooled": {
+        "requirements_judged": 111,
+        "exact_accuracy": 0.3063063063063063,
+        "exact_accuracy_ci": [
+          0.21621621621621623,
+          0.3963963963963964
+        ],
+        "macro_f1": 0.3488670398193156,
+        "macro_f1_ci": [
+          0.2556124666294158,
+          0.43666490857946555
+        ],
+        "weighted_kappa": 0.23413063477460894,
+        "weighted_kappa_ci": [
+          0.13178866587957494,
+          0.3410685375067458
+        ],
+        "false_support_rate": 0.09375,
+        "false_support_rate_ci": [
+          0.029411764705882353,
+          0.16666666666666666
+        ],
+        "false_support_not_implemented": 0.0625,
+        "false_support_not_implemented_ci": [
+          0.0,
+          0.2
+        ],
+        "implemented_recall": 0.425531914893617,
+        "implemented_recall_ci": [
+          0.2826086956521739,
+          0.5652173913043478
+        ],
+        "implemented_recall_code_shown": 0.5517241379310345,
+        "implemented_recall_code_shown_ci": [
+          0.37142857142857144,
+          0.7407407407407407
+        ],
+        "partial_found_code_shown": 0.35,
+        "partial_found_code_shown_ci": [
+          0.14285714285714285,
+          0.5714285714285714
+        ],
+        "confusion": {
+          "partial": {
+            "partially_supported": 9,
+            "supported": 5,
+            "not_supported_by_candidate": 18,
+            "insufficient_evidence": 15,
+            "unverified": 1
+          },
+          "not_implemented": {
+            "not_supported_by_candidate": 5,
+            "unverified": 4,
+            "insufficient_evidence": 6,
+            "supported": 1
+          },
+          "implemented": {
+            "partially_supported": 5,
+            "insufficient_evidence": 13,
+            "supported": 20,
+            "not_supported_by_candidate": 9
+          }
+        }
+      },
+      "per_pair": {
+        "Books-Recommender-System": {
+          "requirements_judged": 28,
+          "exact_accuracy": 0.42857142857142855,
+          "exact_accuracy_ci": [
+            0.25,
+            0.6071428571428571
+          ],
+          "macro_f1": 0.33333333333333326,
+          "macro_f1_ci": [
+            0.23333333333333334,
+            0.41463414634146345
+          ],
+          "weighted_kappa": 0.07407407407407407,
+          "weighted_kappa_ci": [
+            -0.08450704225352101,
+            0.24683544303797478
+          ],
+          "false_support_rate": 0.3333333333333333,
+          "false_support_rate_ci": [
+            0.0,
+            0.8
+          ],
+          "false_support_not_implemented": null,
+          "false_support_not_implemented_ci": null,
+          "implemented_recall": 0.5454545454545454,
+          "implemented_recall_ci": [
+            0.34615384615384615,
+            0.7619047619047619
+          ],
+          "implemented_recall_code_shown": 0.6,
+          "implemented_recall_code_shown_ci": [
+            0.38095238095238093,
+            0.8181818181818182
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "supported": 12,
+              "not_supported_by_candidate": 4,
+              "insufficient_evidence": 5,
+              "partially_supported": 1
+            },
+            "partial": {
+              "not_supported_by_candidate": 4,
+              "supported": 2
+            }
+          }
+        },
+        "ProClinic": {
+          "requirements_judged": 18,
+          "exact_accuracy": 0.2222222222222222,
+          "exact_accuracy_ci": [
+            0.05555555555555555,
+            0.4444444444444444
+          ],
+          "macro_f1": 0.14814814814814814,
+          "macro_f1_ci": [
+            0.041666666666666664,
+            0.2608695652173913
+          ],
+          "weighted_kappa": 0.016393442622950727,
+          "weighted_kappa_ci": [
+            -0.2857142857142858,
+            0.2921348314606741
+          ],
+          "false_support_rate": 0.3333333333333333,
+          "false_support_rate_ci": [
+            0.0,
+            0.75
+          ],
+          "false_support_not_implemented": 0.3333333333333333,
+          "false_support_not_implemented_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.07692307692307693,
+            0.6153846153846154
+          ],
+          "implemented_recall_code_shown": 0.3333333333333333,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.0,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.0
+          ],
+          "confusion": {
+            "implemented": {
+              "insufficient_evidence": 3,
+              "supported": 4,
+              "partially_supported": 1,
+              "not_supported_by_candidate": 4
+            },
+            "partial": {
+              "insufficient_evidence": 1,
+              "supported": 1,
+              "not_supported_by_candidate": 1
+            },
+            "not_implemented": {
+              "supported": 1,
+              "insufficient_evidence": 2
+            }
+          }
+        },
+        "Travel-Agency-Automation-System": {
+          "requirements_judged": 13,
+          "exact_accuracy": 0.6923076923076923,
+          "exact_accuracy_ci": [
+            0.46153846153846156,
+            0.9230769230769231
+          ],
+          "macro_f1": 0.6472222222222223,
+          "macro_f1_ci": [
+            0.27777777777777773,
+            0.9111111111111111
+          ],
+          "weighted_kappa": 0.5094339622641508,
+          "weighted_kappa_ci": [
+            0.0,
+            1.0
+          ],
+          "false_support_rate": 0.1,
+          "false_support_rate_ci": [
+            0.0,
+            0.3333333333333333
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3333333333333333,
+          "implemented_recall_ci": [
+            0.0,
+            1.0
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.8571428571428571,
+          "partial_found_code_shown_ci": [
+            0.5,
+            1.0
+          ],
+          "confusion": {
+            "partial": {
+              "partially_supported": 7,
+              "supported": 1
+            },
+            "not_implemented": {
+              "not_supported_by_candidate": 1,
+              "unverified": 1
+            },
+            "implemented": {
+              "partially_supported": 1,
+              "insufficient_evidence": 1,
+              "supported": 1
+            }
+          }
+        },
+        "Virtual-clinic": {
+          "requirements_judged": 52,
+          "exact_accuracy": 0.17307692307692307,
+          "exact_accuracy_ci": [
+            0.07692307692307693,
+            0.28846153846153844
+          ],
+          "macro_f1": 0.27290640394088667,
+          "macro_f1_ci": [
+            0.11396011396011396,
+            0.40557960557960554
+          ],
+          "weighted_kappa": 0.16062992125984255,
+          "weighted_kappa_ci": [
+            0.041134751773049705,
+            0.29160530191458023
+          ],
+          "false_support_rate": 0.023809523809523808,
+          "false_support_rate_ci": [
+            0.0,
+            0.075
+          ],
+          "false_support_not_implemented": 0.0,
+          "false_support_not_implemented_ci": [
+            0.0,
+            0.0
+          ],
+          "implemented_recall": 0.3,
+          "implemented_recall_ci": [
+            0.0,
+            0.6153846153846154
+          ],
+          "implemented_recall_code_shown": 0.5,
+          "implemented_recall_code_shown_ci": [
+            0.0,
+            1.0
+          ],
+          "partial_found_code_shown": 0.125,
+          "partial_found_code_shown_ci": [
+            0.0,
+            0.4
+          ],
+          "confusion": {
+            "partial": {
+              "insufficient_evidence": 14,
+              "not_supported_by_candidate": 13,
+              "supported": 1,
+              "partially_supported": 2,
+              "unverified": 1
+            },
+            "implemented": {
+              "supported": 3,
+              "not_supported_by_candidate": 1,
+              "insufficient_evidence": 4,
+              "partially_supported": 2
+            },
+            "not_implemented": {
+              "insufficient_evidence": 4,
+              "not_supported_by_candidate": 4,
+              "unverified": 3
+            }
+          }
+        }
+      },
+      "citation_validity": 1.0,
+      "minutes": 25.7,
+      "mcnemar_vs_v1": {
+        "baseline_right_config_wrong": 9,
+        "config_right_baseline_wrong": 14,
+        "p_value": 0.4048728942871094
+      },
+      "agreement_with_v1": 0.5045045045045045
+    }
+  },
+  "pairs": [
+    "Travel-Agency-Automation-System",
+    "Books-Recommender-System",
+    "Virtual-clinic",
+    "ProClinic"
+  ],
+  "fsr_limit": 0.1
+}
