@@ -322,10 +322,25 @@ def test_exports(api, done_run):
     assert j["requirements"][0]["claims"]
 
 
+def test_report(api, done_run):
+    r = api.get(f"/api/runs/{done_run}/report.html")
+    assert r.status_code == 200 and r.headers["content-type"].startswith("text/html")
+    assert "content-disposition" not in r.headers                     # opens in the browser
+    html = r.text
+    for section in ("1. Summary", "2. Requirements at a glance", "3. Needs attention", "4. Requirement details",
+                    "5. Code coverage by file", "6. About this report"):
+        assert section in html
+    assert "FR-001" in html and "shop/cart.py" in html and "Print / Save as PDF" in html
+    assert str(api.env["repo"]) not in html                           # no local paths in a shareable report
+    d = api.get(f"/api/runs/{done_run}/report.html", params={"download": "true"})
+    assert d.headers["content-disposition"].endswith(f'tracelight-run-{done_run}-report.html"')
+
+
 def test_results_before_tracing(api):
     run_id = create(api, start="false")["run_id"]
     assert api.get(f"/api/runs/{run_id}/results").json() == {"ready": False, "summary": None, "requirements": []}
     assert api.get(f"/api/runs/{run_id}/export.csv").status_code == 409
+    assert api.get(f"/api/runs/{run_id}/report.html").status_code == 409
     assert api.get(f"/api/runs/{run_id}/code").json()["files"] == []
 
 

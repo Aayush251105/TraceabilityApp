@@ -62,9 +62,12 @@ function ExportMenu({ runId, rows }: { runId: number; rows: number }) {
       {open && (
         <div role="menu" className="tl-in absolute top-[38px] right-0 z-[5] w-[250px] rounded-lg border border-border-strong bg-panel p-1 shadow-panel"
           style={{ animationDuration: "150ms" }}>
-          <button role="menuitem" className={`${item} cursor-pointer border-0 bg-transparent`} onClick={() => { setOpen(false); window.print(); }}>
-            <span>PDF report</span><span className="font-mono text-[11px] text-fg3">print · save as PDF</span>
-          </button>
+          <a role="menuitem" className={item} href={`/api/runs/${runId}/report.html`} target="_blank" rel="noopener" onClick={() => setOpen(false)}>
+            <span>Report</span><span className="font-mono text-[11px] text-fg3">opens · save as PDF</span>
+          </a>
+          <a role="menuitem" className={item} href={`/api/runs/${runId}/report.html?download=true`} download onClick={() => setOpen(false)}>
+            <span>Report file</span><span className="font-mono text-[11px] text-fg3">.html, offline</span>
+          </a>
           <a role="menuitem" className={item} href={`/api/runs/${runId}/export.csv`} download onClick={() => setOpen(false)}>
             <span>CSV</span><span className="font-mono text-[11px] text-fg3">{plural(rows, "row")}</span>
           </a>
@@ -338,6 +341,11 @@ function ResultsHeader({ id, run, rows }: { id: number; run: ReturnType<typeof u
           className="inline-flex h-8 items-center rounded-md border border-border-strong bg-panel px-3 text-[13px] font-medium text-fg no-underline hover:bg-hover hover:no-underline">
           Code view
         </Link>
+        <a href={`/api/runs/${id}/report.html`} target="_blank" rel="noopener"
+          title="A formatted report of these results. Use Print → Save as PDF to keep a copy."
+          className="inline-flex h-8 items-center rounded-md border border-accent bg-accent px-3 text-[13px] font-medium text-accent-fg no-underline hover:brightness-110 hover:no-underline">
+          Generate report
+        </a>
         <ExportMenu runId={id} rows={rows} />
       </div>
     </header>

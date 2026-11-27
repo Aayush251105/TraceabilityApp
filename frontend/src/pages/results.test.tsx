@@ -104,6 +104,11 @@ describe("Results page", () => {
     const menu = screen.getByRole("menu");
     expect(within(menu).getByText("CSV").closest("a")).toHaveAttribute("href", "/api/runs/2/export.csv");
     expect(within(menu).getByText("JSON").closest("a")).toHaveAttribute("href", "/api/runs/2/export.json");
+    expect(within(menu).getByText("Report").closest("a")).toHaveAttribute("href", "/api/runs/2/report.html");
+    expect(within(menu).getByText("Report file").closest("a")).toHaveAttribute("href", "/api/runs/2/report.html?download=true");
+    const generate = screen.getByRole("link", { name: "Generate report" });
+    expect(generate).toHaveAttribute("href", "/api/runs/2/report.html");
+    expect(generate).toHaveAttribute("target", "_blank");
     fireEvent.keyDown(window, { key: "Escape" });
     expect(screen.queryByRole("menu")).not.toBeInTheDocument();
   });

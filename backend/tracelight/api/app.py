@@ -671,6 +671,24 @@ def create_app(orchestrator: Optional[Orchestrator] = None, *, recover: bool = T
         return Response(body, media_type="application/json",
                         headers={"Content-Disposition": f'attachment; filename="tracelight-run-{run_id}.json"'})
 
+    @app.get("/api/runs/{run_id}/report.html")
+    def report_html(run_id: int, download: bool = False):
+        """A formatted, print-ready traceability report (open it, then Print → Save as PDF)."""
+        from datetime import datetime, timezone
+
+        from .report import render_report
+
+        with _reader(run_id) as r:
+            if not r.ready:
+                raise HTTPException(409, "No results yet")
+            data = r.export_json()
+            data["run"].update({k: r.run.get(k) for k in ("source_kind", "source_ref", "git_ref")})
+            data["code"] = r.code_view() if r.run.get("repo_id") else None
+        data["generated_at"] = datetime.now(timezone.utc).astimezone()
+        headers = {"Content-Disposition": f'attachment; filename="tracelight-run-{run_id}-report.html"'} if download else {}
+        return Response(render_report(jsonable_encoder(data) | {"generated_at": data["generated_at"]}),
+                        media_type="text/html; charset=utf-8", headers=headers)
+
     return app
 
 
