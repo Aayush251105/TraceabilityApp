@@ -193,11 +193,14 @@ Make sure Ollama is running (its icon is in the system tray; or run
 
 ```powershell
 ollama pull yi-coder:9b         # docstrings (DocAgent)      ~5 GB
-ollama pull llama3.1            # requirement extraction     ~5 GB
-ollama pull qwen2.5:3b          # candidate judge            ~2 GB
-ollama pull qwen2.5-coder:7b    # verification               ~5 GB
+ollama pull qwen3:8b            # requirement extraction     ~5 GB
+ollama pull qwen3:4b            # candidate judge            ~2.5 GB
+ollama pull qwen2.5-coder:14b   # verification               ~9 GB
 ollama list                     # all four should be listed
 ```
+
+On a GPU with less than about 10 GB, also pull `qwen2.5-coder:7b` (~5 GB)
+and choose it as the verification model in **Settings**.
 
 These are the defaults. You can pick other pulled models later in **Settings**
 or per run.

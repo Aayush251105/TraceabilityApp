@@ -44,7 +44,11 @@ DEFAULTS: Dict[str, Any] = {
         "docagent": "yi-coder:9b",          # docstring generation
         "srs": "qwen3:8b",                  # requirement extraction
         "judge": "qwen3:4b",                # candidate judge
-        "verifier": "qwen2.5-coder:7b",     # claim verification
+        # Claim verification. Chosen by the verifier experiment
+        # (final_tests/exp_verifier/REPORT.md): best macro-F1 with false support <= 10%
+        # (0.38 vs 0.27 for qwen2.5-coder:7b; implemented recall 55% vs 30%).
+        # Needs about 10 GB of VRAM; on smaller GPUs choose qwen2.5-coder:7b in Settings.
+        "verifier": "qwen2.5-coder:14b",
     },
     # Thinking models (qwen3): false disables the hidden reasoning pass, null
     # leaves the model's default. Chosen from the model benchmark
